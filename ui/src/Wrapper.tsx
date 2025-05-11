@@ -28,7 +28,7 @@ const Wrapper = () => {
               <Route 
                 key={project.title}
                 path={`${projectGroup.path}/${project.path}`} 
-                element={<ProjectDetailsPage title={project.title} />} 
+                element={<ProjectDetailsPage data={project} />} 
               />
             ))}
           </React.Fragment>

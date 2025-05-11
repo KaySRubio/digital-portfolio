@@ -1,14 +1,15 @@
 // This component shows details about an individual project
 // by rendering the projectPageComponents from the projectPageData array
+import type { Project } from './types/portfolioTypes';
 import './App.css'
 
 type ProjectDetailsPageProps = {
-  title: string;
+  data: Project;
 }
 
-const ProjectDetailsPage = ({title}: ProjectDetailsPageProps) => {
+const ProjectDetailsPage = ({data}: ProjectDetailsPageProps) => {
   return (
-    <p>{title}</p>
+    <p>{data.title}</p>
   )
 }
 
