@@ -33,7 +33,8 @@ jobs:
       # Setup nodejs
       - name: Set up Node.js
         uses: actions/setup-node@v3
-        with: node-version: 22
+        with: 
+          node-version: 22
 
       # Move into ui folder
       - name: Move into ui folder
