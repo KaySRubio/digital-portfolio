@@ -36,17 +36,15 @@ jobs:
         with: 
           node-version: 22
 
-      # Move into ui folder
-      - name: Move into ui folder
-        run: cd ui
-
       # Install Dependencies
       - name: Install Dependencies
         run: npm install
+        working-directory: ui
 
       # Build
       - name: Build
         run: npm run build
+        working-directory: ui
 
       # Deploy to github pages
       - name: Deploy to github pages
@@ -55,4 +53,5 @@ jobs:
         with: 
           # github_token: ${{ secrets.GITHUB_TOKEN }}
           # publish_dir: dist
-          path: './ui/dist'
+          # path: './ui/dist'
+          path: ui/dist
