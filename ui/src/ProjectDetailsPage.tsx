@@ -4,12 +4,12 @@ import type { Project } from './types/portfolioTypes';
 import './App.css'
 
 type ProjectDetailsPageProps = {
-  data: Project;
+  project: Project;
 }
 
-const ProjectDetailsPage = ({data}: ProjectDetailsPageProps) => {
+const ProjectDetailsPage = ({project}: ProjectDetailsPageProps) => {
   return (
-    <p>{data.title}</p>
+    <p>{project.title}</p>
   )
 }
 

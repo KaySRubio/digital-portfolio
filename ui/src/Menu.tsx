@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom';
 import './App.css'
-import { projectList, base_path } from './data/portfolioData';
+import { topics, base_path } from './data/portfolioData';
 
 const Menu = () => {
 
   
   return (
-    <nav className='largeMenu'>
-      <Link className='largeMenuHomeButton' to='/'>Kay Rubio</Link>
-      <div className='largeMenuProjectButtonGroup'>
-        {projectList.map(projectGroup => (
-          <Link to={`${base_path}${projectGroup.path}`} key={projectGroup.title} className="largeMenuButton">
-            <img className='largeMenuIcon' src={projectGroup.icon} alt='' />
-            {projectGroup.title}
+    <nav className='large-menu'>
+      <Link className='large-menu-home-button' to={base_path}>Kay Rubio</Link>
+      <div className='large-menu-project-button-group'>
+        {topics.map(topic => (
+          <Link to={`${base_path}${topic.path}`} key={topic.title} className="large-menu-button">
+            <img className='large-menu-icon' src={topic.icon} alt='' />
+            {topic.title}
           </Link>
         ))}
       </div>

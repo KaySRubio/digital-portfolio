@@ -26,6 +26,10 @@ html, body, #root {
   white-space: nowrap;
 }
 
+h1, h2, h3 {
+  margin: 0;
+  text-align: center;
+}
 
 
 /*

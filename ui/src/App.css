@@ -1,5 +1,5 @@
 /* Styles for digital portfolio components */
-.largeMenu {
+.large-menu {
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -9,14 +9,14 @@
 
 }
 
-.largeMenuHomeButton {
+.large-menu-home-button {
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
   color: var(--dark_blue);
 }
 
-.largeMenuProjectButtonGroup {
+.large-menu-project-button-group {
   display: flex;
   margin: 0;
   gap: 2rem; /* spacing between the project buttons */
@@ -24,7 +24,7 @@
   font-size: 0.7em;
 }
 
-.largeMenuButton {
+.large-menu-button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@
   color: var(--dark_blue);
 }
 
-.largeMenuIcon {
+.large-menu-icon {
   width: 70px;
   margin-bottom: 0.25rem;
 }
@@ -48,16 +48,16 @@
   width: 180px;
 }
 
-.centeredRow {
+.centered-row {
   margin: 0;
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 3rem;
-  
+  justify-content: center;
 }
 
-.headlineDescArea {
+.headline-desc-area {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,11 +77,47 @@
   text-align: center;
 }
 
-.long_desc {
+.long-desc {
   margin-top: 35px;
   font-size: 15px;
   color: var(--dark_blue);
   text-align: center;
+}
+
+.wave-background {
+  height: 150px; 
+  background-repeat: repeat-x;
+  background-position: bottom; 
+  margin: 0px;
+  padding: 0;
+  background-size: 650px; 
+}
+
+.featured-projects-section {
+  background-color: var(--dark_blue);
+  margin: 0;
+  color: white;
+  padding: 20px;
+}
+
+.featured-projects-section h2 {
+  margin-bottom: 40px;
+}
+
+.project-card {
+  height: 260px;
+  width: 185px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--med_blue);
+}
+
+.project-card-icon {
+  width: 200px;
+  color: var(--med_blue);
+  fill: currentColor;
 }
 
 
