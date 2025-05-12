@@ -6,7 +6,7 @@ import Footer from './Footer';
 import Home from './Home';
 import ProjectListPage from './ProjectListPage';
 import ProjectDetailsPage from './ProjectDetailsPage';
-import { projectList } from './data/portfolioData';
+import { projectList, base_path } from './data/portfolioData';
 import Breadcrumbs from './Breadcrumbs';
 
 import './App.css'
@@ -17,17 +17,17 @@ const Wrapper = () => {
       <Menu />
       <Breadcrumbs />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path={base_path} element={<Home />} />
         {projectList.map(projectGroup => (
           <React.Fragment key={projectGroup.path}>
             <Route 
-              path={`/${projectGroup.path}`} 
+              path={`${base_path}${projectGroup.path}`} 
               element={<ProjectListPage data={projectGroup} />} 
             />
             {projectGroup.projects.map(project => (
               <Route 
                 key={project.title}
-                path={`${projectGroup.path}/${project.path}`} 
+                path={`${base_path}${projectGroup.path}/${project.path}`} 
                 element={<ProjectDetailsPage data={project} />} 
               />
             ))}

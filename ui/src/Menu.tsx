@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './App.css'
-import { projectList } from './data/portfolioData';
+import { projectList, base_path } from './data/portfolioData';
 
 const Menu = () => {
 
@@ -10,7 +10,7 @@ const Menu = () => {
       <Link className='largeMenuHomeButton' to='/'>Kay Rubio</Link>
       <div className='largeMenuProjectButtonGroup'>
         {projectList.map(projectGroup => (
-          <Link to={projectGroup.path} key={projectGroup.title} className="largeMenuButton">
+          <Link to={`${base_path}${projectGroup.path}`} key={projectGroup.title} className="largeMenuButton">
             <img className='largeMenuIcon' src={projectGroup.icon} alt='' />
             {projectGroup.title}
           </Link>

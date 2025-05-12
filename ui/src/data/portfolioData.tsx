@@ -10,6 +10,8 @@ export const homePageData = {
   long_desc: 'As a React developer I build interactive educational websites. In my free time I dabble in machine learning and record wildlife. My dream is to analyze animal communication to decode structure and meaning and use the web to engage the public in bioacoustics.',
 }
 
+export const base_path = '/digital-portfolio/'
+
 export const projectList: ProjectList = [
   {
     path: 'bioacoustics',
