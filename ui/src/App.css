@@ -187,13 +187,55 @@
 }
 
 
-
-
 .project-card-icon {
   width: 180px;
 }
 
+.contact-form-area {
+  width: 100%;
+  padding: 20px 0;
+  /*display: flex;
+  justify-content: center;
+  gap: 2em; */
+  background-color: var(--sand);
+  color: var(--dark_blue);
+}
 
+.contact-form-area p {
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+  margin: 10px 0;
+}
+
+.form-text-area input {
+  border: none;
+  height: 30px;
+  width: 250px;
+}
+
+.form-text-area textarea {
+  border: none;
+  height: 200px;
+  width: 538px;
+}
+
+.form-text-area label {
+  font-size: 12px;
+}
+
+form button {
+  border: none;
+  color: var(--dark_blue);
+  background-color: white;
+  border-radius: 50px;
+  padding: 10px;
+}
 
 
 /*

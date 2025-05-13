@@ -2,9 +2,12 @@
 :root {
   --med_blue: #0378ab;
   --dark_blue: #035085;
+  --sand: #fef3e0;
 }
 
-
+.hidden, .clear {
+  display: none;
+}
 html, body, #root {
   margin: 0;
   padding: 0;
