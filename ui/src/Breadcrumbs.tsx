@@ -9,11 +9,10 @@ export default function Breadcrumbs() {
     .filter(crumb => crumb !== '');
 
   return (
-    <nav>
+    <nav className='breadcrumbs'>
       {location.pathname !== base_path && <div>
         <Link to={base_path}>Home</Link>
         {crumbs.map((crumb, index) => {
-          console.log('crumb: ', crumb);
           const path = '/' + crumbs.slice(0, index + 1).join('/');
           return (
             <span key={index}>

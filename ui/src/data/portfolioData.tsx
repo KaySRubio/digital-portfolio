@@ -1,11 +1,9 @@
 
 import type { Project, Topic } from '../types/portfolioTypes';
 import { TopicNames } from '../types/portfolioTypes';
-import waveIcon from '@/assets/svg/wave.svg';
-import wwwIcon from '@/assets/svg/www.svg';
-import aiIcon from '@/assets/svg/ai.svg';
-// import chickenIcon from '@/assets/svg/chicken.svg';
-// import { ReactComponent as chickenIcon } from '@/assets/svg/chicken.svg';
+import waveIcon  from '@/assets/svg/wave.svg?react';
+import wwwIcon  from '@/assets/svg/www.svg?react';
+import aiIcon from '@/assets/svg/ai.svg?react';
 import chickenIcon from '@/assets/svg/chicken.svg?react';
 
 export const homePageData = {
@@ -42,7 +40,14 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Practiced creating spectrograms and extracting features',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      'Audio Signal Processing',
+      {
+        type: 'link',
+        text: 'librosa',
+        src: 'https://librosa.org/doc/latest/index.html',
+      },
+    ],
     project_details: [
       {
         type: 'H1',
@@ -57,7 +62,14 @@ export const projects: Project[] = [
     featured: true,
     desc: 'Created algorithm that extracts features like number of clicks and inter-click-intervals',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      'Audio Signal Processing',
+      {
+        type: 'link',
+        text: 'librosa',
+        src: 'https://librosa.org/doc/latest/index.html',
+      },
+    ],
     project_details: [],
   },
   {
@@ -67,17 +79,31 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Exploring ultrasonic social calls during flight of big brown bats',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      'Audio Signal Processing',
+      {
+        type: 'link',
+        text: 'librosa',
+        src: 'https://librosa.org/doc/latest/index.html',
+      },
+    ],
     project_details: [],
   },
   {
     path: 'chicken-vocalizations',
     title: 'Chicken Vocalizations',
     topics: [TopicNames.BIOACOUSTICS],
-    featured: true,
+    featured: false,
     desc: 'Documenting chicken sound patterns',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      'Audio Signal Processing',
+      {
+        type: 'link',
+        text: 'librosa',
+        src: 'https://librosa.org/doc/latest/index.html',
+      },
+    ],
     project_details: [],
   },
   {
@@ -87,7 +113,14 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Exploring ultrasonic \'popping\' of distressed veggies',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      'Audio Signal Processing',
+      {
+        type: 'link',
+        text: 'librosa',
+        src: 'https://librosa.org/doc/latest/index.html',
+      },
+    ],
     project_details: [],
   },
   {
@@ -97,7 +130,14 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Fine-tuned an image recognition model to identify species',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      'Neural networks',
+      {
+        type: 'link',
+        text: 'fast.ai',
+        src: 'https://www.fast.ai/',
+      },
+    ],
     project_details: [],
   },
   {
@@ -105,9 +145,12 @@ export const projects: Project[] = [
     title: 'Voice Detection',
     topics: [TopicNames.MACHINELEARNING],
     featured: false,
-    desc: 'Using Voice Activity Detection algorithms to detect speech',
+    desc: 'Comparing algorithms that detect speech',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      'Voice Activity Detection (VAD)',
+      'Neural networks',
+    ],
     project_details: [],
   },
   {
@@ -117,7 +160,18 @@ export const projects: Project[] = [
     featured: true,
     desc: 'Fine-tuned a neural network for accent classification',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      {
+        type: 'link',
+        text: 'HuggingFace Transformers',
+        src: 'https://huggingface.co/',
+      },
+      {
+        type: 'link',
+        text: 'DistilHuBERT',
+        src: 'https://huggingface.co/ntu-spml/distilhubert',
+      },
+    ],
     project_details: [],
   },
   {
@@ -127,7 +181,14 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Trained models to predict the danceability of songs',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      'Traditional Machine Learning',
+      {
+        type: 'link',
+        text: 'scikit-learn',
+        src: 'https://scikit-learn.org/stable/index.html',
+      },
+    ],
     project_details: [],
   },
   {
@@ -137,7 +198,14 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Trained models to predict hospital readmission',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      'Traditional Machine Learning',
+      {
+        type: 'link',
+        text: 'scikit-learn',
+        src: 'https://scikit-learn.org/stable/index.html',
+      },
+    ],
     project_details: [],
   },
   {
@@ -147,7 +215,14 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Explored underlying topics in 20,000 Dear Abby questions',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      'Natural Language Processing',
+      {
+        type: 'link',
+        text: 'Natural Language Toolkit',
+        src: 'https://www.nltk.org/',
+      },
+    ],
     project_details: [],
   },
   {
@@ -157,7 +232,18 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Web app to teach students sorting algorithms with an under-the-sea theme',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      {
+        type: 'link',
+        text: 'React',
+        src: 'https://react.dev/',
+      },
+      {
+        type: 'link',
+        text: 'TypeScript',
+        src: 'https://www.typescriptlang.org/',
+      },
+    ],
     project_details: [],
   },
   {
@@ -167,7 +253,18 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Math and literacy programs for kids at Curriculum Associates',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      {
+        type: 'link',
+        text: 'React',
+        src: 'https://react.dev/',
+      },
+      {
+        type: 'link',
+        text: 'Nodejs',
+        src: 'https://nodejs.org/en',
+      },
+    ],
     project_details: [],
   },
   {
@@ -177,7 +274,18 @@ export const projects: Project[] = [
     featured: true,
     desc: 'A tool to input audio and display phonemic transcriptions and data',
     icon: chickenIcon,
-    techStack: [''],
+    techStack: [
+      {
+        type: 'link',
+        text: 'React',
+        src: 'https://react.dev/',
+      },
+      {
+        type: 'link',
+        text: 'TypeScript',
+        src: 'https://www.typescriptlang.org/',
+      },
+    ],
     project_details: [],
   },
 ]

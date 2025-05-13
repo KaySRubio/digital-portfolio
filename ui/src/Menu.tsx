@@ -9,12 +9,15 @@ const Menu = () => {
     <nav className='large-menu'>
       <Link className='large-menu-home-button' to={base_path}>Kay Rubio</Link>
       <div className='large-menu-project-button-group'>
-        {topics.map(topic => (
-          <Link to={`${base_path}${topic.path}`} key={topic.title} className="large-menu-button">
-            <img className='large-menu-icon' src={topic.icon} alt='' />
+      {topics.map(topic => {
+        const Icon = topic.icon; // move this outside of JSX
+        return (
+          <Link to={`${base_path}${topic.path}`} key={topic.title} className={`large-menu-button dark-blue`}>
+            <Icon className={`large-menu-icon dark-blue`} />
             {topic.title}
           </Link>
-        ))}
+        );
+      })}
       </div>
     </nav>
   )

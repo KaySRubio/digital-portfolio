@@ -6,7 +6,6 @@ import Footer from './Footer';
 import Home from './Home';
 import ProjectListPage from './TopicPage';
 import ProjectDetailsPage from './ProjectDetailsPage';
-// import { projectList, base_path } from './data/portfolioData';
 import { topics, projects, base_path } from './data/portfolioData';
 import Breadcrumbs from './Breadcrumbs';
 
@@ -25,6 +24,7 @@ const Wrapper = () => {
               path={`${base_path}${topic.path}`} 
               element={<ProjectListPage topic={topic} />} 
             />
+            {/* nested routes within topics for individual projects */}
             {projects
               .filter(project => project.topics.includes(topic.path))
               .map(project => (
@@ -36,6 +36,14 @@ const Wrapper = () => {
             ))}
           </React.Fragment>
         ))}
+        {/* individual projects can also be accessed without being underneath a topic */}
+        {projects.map(project => (
+            <Route 
+              key={project.path}
+              path={`${base_path}${project.path}`} 
+              element={<ProjectDetailsPage project={project} />} 
+            />
+        ))}
         
         <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>
@@ -45,33 +53,4 @@ const Wrapper = () => {
 }
 
 export default Wrapper;
-
-/*
-           {projects.map(project => (
-              <Route 
-                key={project.title}
-                // path={`${base_path}${project.path}/${project.path}`} 
-                path={`${base_path}${topic.path}/${project.path}`} 
-                element={<ProjectDetailsPage data={project} />} 
-              />
-            ))}
-*/
-
-/*
-        {projectList.map(projectGroup => (
-          <React.Fragment key={projectGroup.path}>
-            <Route 
-              path={`${base_path}${projectGroup.path}`} 
-              element={<ProjectListPage data={projectGroup} />} 
-            />
-            {projectGroup.projects.map(project => (
-              <Route 
-                key={project.title}
-                path={`${base_path}${projectGroup.path}/${project.path}`} 
-                element={<ProjectDetailsPage data={project} />} 
-              />
-            ))}
-          </React.Fragment>
-        ))}
-*/
 

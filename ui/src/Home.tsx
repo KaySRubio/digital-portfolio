@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import ProjectCard from './ProjectCard'
 import avatar from '@/assets/svg/avatar.svg';
 import long_wave from '@/assets/svg/long_wave.png'
 import './App.css'
-import { homePageData, projects } from './data/portfolioData';
+import { homePageData, projects, topics, base_path } from './data/portfolioData';
 
 const Home = () => {
 
@@ -31,12 +32,22 @@ const Home = () => {
       ></div>
       <div className="featured-projects-section">
         <h2>Featured Projects</h2>
-        <div className='centered-row'>
-          {featured_projects.map(project => ( <ProjectCard key={project.path} project={project} />))}
+        <div className='project-card-container'>
+          {featured_projects.map(project => ( <ProjectCard key={project.path} project={project} theme='white' />))}
         </div>
-        <p>See more projects</p>
-        <div className='centered-row'>
-          <p> buttons here </p>
+      </div>
+      <div className="featured-projects-section">
+        <h2>See more projects</h2>
+        <div className='project-icon-row'>
+          {topics.map(topic => {
+          const Icon = topic.icon; // move this outside of JSX
+          return (
+            <Link to={`${base_path}${topic.path}`} key={topic.title} className={`large-menu-button white`}>
+              <Icon className={`large-menu-icon white`} />
+              See more {topic.title}
+            </Link>
+          );
+        })}
         </div>
       </div>
     </div>
