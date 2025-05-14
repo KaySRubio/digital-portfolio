@@ -4,7 +4,20 @@ import { TopicNames } from '../types/portfolioTypes';
 import waveIcon  from '@/assets/svg/wave.svg?react';
 import wwwIcon  from '@/assets/svg/www.svg?react';
 import aiIcon from '@/assets/svg/ai.svg?react';
-import chickenIcon from '@/assets/svg/chicken.svg?react';
+import anemone from '@/assets/svg/anemone.svg?react';
+import mic from '@/assets/svg/mic.svg?react';
+import people_talking from '@/assets/svg/people_talking.svg?react';
+import chicken from '@/assets/png/chicken.png';
+import spermwhalepng from '@/assets/png/spermwhale.png';
+import frogpng from '@/assets/png/frog.png';
+import dearabby from '@/assets/png/dearabby.png';
+import dancing from '@/assets/svg/dancing.svg?react';
+import hospitalization from '@/assets/svg/hospitalization.svg?react';
+import iready from '@/assets/png/iready.png';
+import asrPng from '@/assets/png/asr.png';
+import batPng from '@/assets/png/bat.png';
+import plantPng from '@/assets/png/plant.png';
+import spectrogram from '@/assets/png/spectrogram.png';
 
 export const homePageData = {
   headline: 'Listener, Developer, Explorer',
@@ -18,17 +31,17 @@ export const topics: Topic[] = [
   {
     path: 'bioacoustics',
     title: 'Bioacoustics Projects',
-    icon: waveIcon,
+    iconComponent: waveIcon,
   },
   {
     path: 'machine-learning',
     title: 'AI and Machine Learning Projects',
-    icon: aiIcon,
+    iconComponent: aiIcon,
   },
   {
     path: 'web-app-development',
     title: 'Web App Development',
-    icon: wwwIcon,
+    iconComponent: wwwIcon,
   },
 ]
 
@@ -39,7 +52,8 @@ export const projects: Project[] = [
     topics: [TopicNames.BIOACOUSTICS],
     featured: false,
     desc: 'Practiced creating spectrograms and extracting features',
-    icon: chickenIcon,
+    // iconComponent: wave_diagram,
+    icon: spectrogram,
     techStack: [
       'Audio Signal Processing',
       {
@@ -61,7 +75,8 @@ export const projects: Project[] = [
     topics: [TopicNames.BIOACOUSTICS],
     featured: true,
     desc: 'Created algorithm that extracts features like number of clicks and inter-click-intervals',
-    icon: chickenIcon,
+    // iconComponent: spermwhale,
+    icon: spermwhalepng,
     techStack: [
       'Audio Signal Processing',
       {
@@ -78,7 +93,8 @@ export const projects: Project[] = [
     topics: [TopicNames.BIOACOUSTICS],
     featured: false,
     desc: 'Exploring ultrasonic social calls during flight of big brown bats',
-    icon: chickenIcon,
+    // iconComponent: bat,
+    icon: batPng,
     techStack: [
       'Audio Signal Processing',
       {
@@ -95,7 +111,8 @@ export const projects: Project[] = [
     topics: [TopicNames.BIOACOUSTICS],
     featured: false,
     desc: 'Documenting chicken sound patterns',
-    icon: chickenIcon,
+    // iconComponent: chickenIcon,
+    icon: chicken,
     techStack: [
       'Audio Signal Processing',
       {
@@ -112,7 +129,8 @@ export const projects: Project[] = [
     topics: [TopicNames.BIOACOUSTICS],
     featured: false,
     desc: 'Exploring ultrasonic \'popping\' of distressed veggies',
-    icon: chickenIcon,
+    // iconComponent: plant,
+    icon: plantPng,
     techStack: [
       'Audio Signal Processing',
       {
@@ -129,7 +147,8 @@ export const projects: Project[] = [
     topics: [TopicNames.MACHINELEARNING],
     featured: false,
     desc: 'Fine-tuned an image recognition model to identify species',
-    icon: chickenIcon,
+    // iconComponent: frog,
+    icon: frogpng,
     techStack: [
       'Neural networks',
       {
@@ -146,7 +165,7 @@ export const projects: Project[] = [
     topics: [TopicNames.MACHINELEARNING],
     featured: false,
     desc: 'Comparing algorithms that detect speech',
-    icon: chickenIcon,
+    iconComponent: people_talking,
     techStack: [
       'Voice Activity Detection (VAD)',
       'Neural networks',
@@ -159,7 +178,8 @@ export const projects: Project[] = [
     topics: [TopicNames.MACHINELEARNING],
     featured: true,
     desc: 'Fine-tuned a neural network for accent classification',
-    icon: chickenIcon,
+    // iconComponent: asr,
+    icon: asrPng,
     techStack: [
       {
         type: 'link',
@@ -180,7 +200,8 @@ export const projects: Project[] = [
     topics: [TopicNames.MACHINELEARNING],
     featured: false,
     desc: 'Trained models to predict the danceability of songs',
-    icon: chickenIcon,
+    //iconComponent: music,
+    iconComponent: dancing,
     techStack: [
       'Traditional Machine Learning',
       {
@@ -197,7 +218,8 @@ export const projects: Project[] = [
     topics: [TopicNames.MACHINELEARNING],
     featured: false,
     desc: 'Trained models to predict hospital readmission',
-    icon: chickenIcon,
+    // iconComponent: medical,
+    iconComponent: hospitalization,
     techStack: [
       'Traditional Machine Learning',
       {
@@ -214,7 +236,8 @@ export const projects: Project[] = [
     topics: [TopicNames.MACHINELEARNING],
     featured: false,
     desc: 'Explored underlying topics in 20,000 Dear Abby questions',
-    icon: chickenIcon,
+    //iconComponent: news,
+    icon: dearabby,
     techStack: [
       'Natural Language Processing',
       {
@@ -231,7 +254,7 @@ export const projects: Project[] = [
     topics: [TopicNames.WEBAPPDEVELOPMENT],
     featured: false,
     desc: 'Web app to teach students sorting algorithms with an under-the-sea theme',
-    icon: chickenIcon,
+    iconComponent: anemone,
     techStack: [
       {
         type: 'link',
@@ -252,7 +275,8 @@ export const projects: Project[] = [
     topics: [TopicNames.WEBAPPDEVELOPMENT],
     featured: false,
     desc: 'Math and literacy programs for kids at Curriculum Associates',
-    icon: chickenIcon,
+    // iconComponent: chickenIcon,
+    icon: iready,
     techStack: [
       {
         type: 'link',
@@ -273,7 +297,7 @@ export const projects: Project[] = [
     topics: [TopicNames.WEBAPPDEVELOPMENT],
     featured: true,
     desc: 'A tool to input audio and display phonemic transcriptions and data',
-    icon: chickenIcon,
+    iconComponent: mic,
     techStack: [
       {
         type: 'link',

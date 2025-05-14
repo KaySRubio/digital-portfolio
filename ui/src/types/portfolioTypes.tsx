@@ -3,7 +3,7 @@ import type { SVGProps, FunctionComponent } from 'react';
 export type Topic = {
   path: TopicName;
   title: string;
-  icon: FunctionComponent<SVGProps<SVGSVGElement>>;
+  iconComponent: FunctionComponent<SVGProps<SVGSVGElement>>;
 }
 
 export const TopicNames = {
@@ -21,7 +21,8 @@ export type Project = {
   topics: TopicName[];
   featured: boolean;
   desc: string;
-  icon: FunctionComponent<SVGProps<SVGSVGElement>>;
+  iconComponent?: FunctionComponent<SVGProps<SVGSVGElement>> | null;
+  icon?: string;
   techStack: TechStackItem[];
   project_details: ProjectDetails;
 }

@@ -22,10 +22,10 @@ const FeaturedProjects = () => {
         <h2>See more projects</h2>
         <div className='project-icon-row'>
           {topics.map(topic => {
-          const Icon = topic.icon;
+          const Icon = topic.iconComponent;
           return (
-            <Link to={`${base_path}${topic.path}`} key={topic.title} className={`large-menu-button white`}>
-              <Icon className={`large-menu-icon white`} />
+            <Link to={`${base_path}${topic.path}`} key={topic.title} className={`large-menu-button white-icon`}>
+              <Icon className={`large-menu-icon white-icon`} />
               See all {topic.title}
             </Link>
           );

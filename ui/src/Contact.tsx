@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import './App.css'
 
+// Uses https://web3forms.com/#start
 const Contact = () => {
   const [formSent, setFormSent] = useState(false);
 

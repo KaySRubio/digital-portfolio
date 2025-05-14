@@ -5,6 +5,7 @@ import { projects } from './data/portfolioData';
 
 import './App.css'
 
+
 type ProjectListPageProps = {
   topic: Topic;
 }
@@ -21,7 +22,6 @@ const TopicPage = ({topic}: ProjectListPageProps) => {
       <div className='project-card-container'>
       {projectsOnTopic.map(project => ( <ProjectCard key={project.path} project={project} theme='blue' />))}
       </div>
-      
     </div>
   )
 }
