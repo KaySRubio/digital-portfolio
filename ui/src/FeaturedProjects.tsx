@@ -24,8 +24,8 @@ const FeaturedProjects = () => {
           {topics.map(topic => {
           const Icon = topic.iconComponent;
           return (
-            <Link to={`${base_path}${topic.path}`} key={topic.title} className={`large-menu-button white-icon`}>
-              <Icon className={`large-menu-icon white-icon`} />
+            <Link to={`${base_path}${topic.path}`} key={topic.title} className={`large-menu-button white`}>
+              <Icon className={`large-menu-icon white`} />
               See all {topic.title}
             </Link>
           );

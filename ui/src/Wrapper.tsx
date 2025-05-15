@@ -5,9 +5,8 @@ import Menu from './Menu';
 import Footer from './Footer';
 import Home from './Home';
 import ProjectListPage from './TopicPage';
-import ProjectDetailsPage from './ProjectDetailsPage';
+import ProjectDetailsPage from './projectDetailsComponents/ProjectDetailsPage';
 import { topics, projects, base_path } from './data/portfolioData';
-import Breadcrumbs from './Breadcrumbs';
 
 import './App.css'
 
@@ -16,7 +15,6 @@ const Wrapper = () => {
     <div className='page-wrapper'>
       <div className='content'>
         <Menu />
-        <Breadcrumbs />
         <Routes>
           <Route path={base_path} element={<Home />} />
           {topics.map(topic => (

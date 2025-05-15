@@ -13,16 +13,16 @@ const ProjectCard = ({project, theme='white'}: ProjectCardProps) => {
   let projectCardClass;
   let iconClass;
   if(theme === 'white') {
-    projectCardClass = 'white-background';
-    iconClass = 'blue-icon';
+    projectCardClass = 'white-background blue';
+    iconClass = 'blue';
   } else {
     projectCardClass = 'dark-blue-background';
-    iconClass = 'white-icon';
+    iconClass = 'white';
   }
 
   return (
     <Link className={`project-card ${projectCardClass}`} to={`${project.path}`}>
-      <h3>{project.title}</h3>
+      <h3>{project.short_title}</h3>
       <p>{project.desc}</p>
       {Icon && <Icon className={`project-card-icon-svg ${iconClass}`} /> }
       {project.icon && <img className='project-card-icon' src={project.icon} />}

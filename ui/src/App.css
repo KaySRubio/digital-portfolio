@@ -20,7 +20,6 @@
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-  color: var(--dark-blue);
   margin: 0 0 0 20px;
 }
 
@@ -45,8 +44,6 @@
   margin-bottom: 0.25rem;
   height: 70px;
 }
-
-
 
 .project-icon-row {
   display: flex;
@@ -112,10 +109,15 @@
   background-position: bottom; 
   margin: 0px;
   padding: 0;
-  background-size: 650px; 
 }
 
-.repeat-horiz-background-wave {
+.repeat-horiz-background-small {
+  background-size: 250px;
+  height: 45px; 
+}
+
+.repeat-horiz-background-large {
+  background-size: 650px;
   height: 150px; 
 }
 
@@ -123,14 +125,12 @@
   height: 114px; 
 }
 
-
 .breadcrumbs {
-  margin: 0 0 0 40px;
+  margin: 10px 0 0 20px;
+  font-size: 12px;
 }
 
-.breadcrumbs a {
-  color: var(--dark-blue);
-}
+
 
 .featured-projects-section {
   background-color: var(--dark-blue);
@@ -164,6 +164,10 @@
   padding: 10px;
   text-decoration: none;
   flex: 0 0 auto;
+  text-align: center;
+}
+
+.project-card h3 {
   text-align: center;
 }
 
@@ -284,7 +288,10 @@ form button {
   .hamburger-button {
     display: inline;
     border: none;
-    background-color: white;
+    /* background-color: white; */
+    padding: 0;
+    width: 30px;
+    height: 30px;
     color: none;
   }
 
@@ -326,6 +333,7 @@ form button {
     justify-content: center;
     align-items: center;
     font-size: 12px;
+    background-color: var(--dark-blue);
   }
 
   .dropdown-menu-button {

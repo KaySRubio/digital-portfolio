@@ -22,10 +22,10 @@ const Footer = () => {
   let iconClass;
   if(isHomePage()) {
     footerClass = 'sand-background';
-    iconClass = 'dark-blue-icon';
+    iconClass = 'dark-blue';
   } else {
     footerClass = 'dark-blue-background';
-    iconClass = 'white-icon';
+    iconClass = 'white';
   }
 
   const pathToResume = `${base_path}resume.pdf`;

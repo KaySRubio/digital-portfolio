@@ -12,15 +12,15 @@ type ProjectListPageProps = {
 
 const TopicPage = ({topic}: ProjectListPageProps) => {
 
-  const projectsOnTopic = projects.filter((project) =>
-    project.topics.includes(topic.path)
+  const visibleProjectsOnTopic = projects.filter((project) =>
+    project.topics.includes(topic.path) && project.visible
   );
 
   return (
     <div>
       <h1 className='topic-page-title'>{topic.title}</h1>
       <div className='project-card-container'>
-      {projectsOnTopic.map(project => ( <ProjectCard key={project.path} project={project} theme='blue' />))}
+      {visibleProjectsOnTopic.map(project => ( <ProjectCard key={project.path} project={project} theme='blue' />))}
       </div>
     </div>
   )

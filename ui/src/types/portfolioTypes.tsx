@@ -1,5 +1,6 @@
 
 import type { SVGProps, FunctionComponent } from 'react';
+import { techStack } from '../data/portfolioData';
 export type Topic = {
   path: TopicName;
   title: string;
@@ -17,8 +18,11 @@ export type TopicName = typeof TopicNames[keyof typeof TopicNames];
 
 export type Project = {
   path: string;
+  short_title: string;
   title: string;
+  date: string;
   topics: TopicName[];
+  visible: boolean;
   featured: boolean;
   desc: string;
   iconComponent?: FunctionComponent<SVGProps<SVGSVGElement>> | null;
@@ -38,32 +42,111 @@ export type Link = {
 export type ProjectDetails = ProjectDetailComponent[];
 
 export type ProjectDetailComponent = 
-  TextComponent;
+  TextComponent |
+  ListComponent | 
+  ImageComponent |
+  LinkType |
+  TableComponent |
+  DivComponent | 
+  DisclosurePanel |
+  TechStackComponent;
 
-export const TextType = {
-  H1: 'h1',
-  P: 'p',
-  H2: 'h2',
-} as const;
+export type TextType = 
+  'h2' |
+  'h3' |
+  'h4' |
+  'text' |
+  'p'
 
-export type TextType = keyof typeof TextType;
 
 export type TextComponent = {
   type: TextType,
-  text: '',
+  text: string,
+  key?: number | string;
 }
 
-/*
+export type LinkType = {
+  type: 'a',
+  href: string,
+  text: string,
+  key?: number | string;
+}
+
+export type ListType = 
+  'ul' | 
+  'ol'
+
+export type ListComponent = {
+  type: ListType,
+  elements: ProjectDetailComponent[],
+  key?: number | string;
+};
+
+
 export type TableComponent = {
   type: 'table',
-  data: {
-    columns: [
-      {
-        header: string,
-        key: string,
-      },
-    ],
-    rows: any,
-  }
+  headers: string[],
+  rows: string[][],
+  key?: number | string;
 }
+
+export type ImageComponent = {
+  type: 'img',
+  src: string,
+  alt: string,
+  className?: string,
+  key?: number | string;
+}
+
+export type DivComponent = {
+  type: 'div',
+  className?: string,
+  elements: ProjectDetailComponent[]
+  key?: number | string;
+}
+
+export type DisclosurePanel = {
+  type: 'DisclosurePanel',
+  title: string,
+  elements: ProjectDetailComponent[],
+  key?: number | string;
+}
+
+// Tech stack type for rendering tech stack with images on project details pages
+export type TechStackType = keyof typeof techStack;
+
+/*
+export type TeckStackType = 
+  // data science libraries
+  'nltk' |
+  'scikitlearn' |
+  'skopt' |
+  'librosa' |
+
+  // neural network libraries
+  'fastai' |
+  'huggingface' |
+  'torch' |
+
+  // front-end technologies
+  'react' |
+  'nodejs' |
+  'vite' |
+  'webpack' |
+
+  // environments
+  'vsCode' |
+  'jupyterLab' |
+
+  // languages
+  'typescript' |
+  'python' |
+  'javascript'
 */
+
+export type TechStackComponent = {
+  type: 'TechStack',
+  techList: TechStackType[]
+  key?: number | string;
+}
+

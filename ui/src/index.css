@@ -2,11 +2,22 @@
 :root {
   --med-blue: #0378ab;
   --dark-blue: #035085;
+  --very-light-gray: #f5f7f9;
+  --light-blue-gray: #f2f3f5;
+  --light-gray: #cdcfd0;
+  --light-blue-gray2: #ced4dc;
+  --med-blue-gray: #7f8b97;
+  --dark-blue-gray: #2d3f53;
   --sand: #fef3e0;
+
 }
 
 button {
   cursor: pointer;
+}
+
+.upside-down {
+  transform: rotate(180deg);
 }
 
 .hidden, .clear {
@@ -50,7 +61,6 @@ h1, h2, h3 {
 
 .white-background, .white-background a {
   background-color: white;
-  color: var(--med-blue);
 }
 
 .sand-background, .sand-background a {
@@ -63,17 +73,17 @@ h1, h2, h3 {
   color: white;
 }
 
-.dark-blue-icon {
+.dark-blue {
   color: var(--dark-blue);
   fill: currentColor;
 }
 
-.white-icon {
+.white {
   color: white;
   fill: currentColor;
 }
 
-.blue-icon {
+.blue {
   color: var(--med-blue);
   fill: currentColor;
 }
