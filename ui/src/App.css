@@ -122,15 +122,13 @@
 }
 
 .repeat-horiz-background-sand {
-  height: 114px; 
+  height: 140px; 
 }
 
 .breadcrumbs {
   margin: 10px 0 0 20px;
   font-size: 12px;
 }
-
-
 
 .featured-projects-section {
   background-color: var(--dark-blue);
@@ -159,7 +157,7 @@
 
 .project-card {
   min-height: 280px;
-  width: 200px;
+  width: 220px;
   border-radius: 5px;
   padding: 10px;
   text-decoration: none;
@@ -169,6 +167,8 @@
 
 .project-card h3 {
   text-align: center;
+  font-size: 24px;
+  
 }
 
 .project-card p {
@@ -256,6 +256,22 @@ form button {
 }
 
 .footer-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.tech-stack-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.project-card-tech-stack-row {
+  justify-content: center;
+}
+
+.project-card-tech-stack-row svg {
   width: 40px;
   height: 40px;
 }

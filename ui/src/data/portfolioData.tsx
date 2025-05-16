@@ -1,5 +1,5 @@
 
-import type { Project, Topic } from '../types/portfolioTypes';
+import type { Project, Topic, TechStackData } from '../types/portfolioTypes';
 import { TopicNames } from '../types/portfolioTypes';
 import waveIcon  from '@/assets/svg/wave.svg?react';
 import wwwIcon  from '@/assets/svg/www.svg?react';
@@ -20,7 +20,18 @@ import plantPng from '@/assets/png/plant.png';
 import spectrogram from '@/assets/png/spectrogram.png';
 import dear_abby_word_cloud from '@/assets/png/dear_abby_word_cloud.png';
 import dear_abby_lda_5 from '@/assets/png/dear_abby_lda_5.png';
-import nltk from '@/assets/svg/nltk.svg?react';
+import nltk from '@/assets/svg/nltk3.svg?react';
+import scikitlearn from '@/assets/svg/scikitlearn.svg?react';
+import skopt from '@/assets/svg/skopt.svg?react';
+import librosa from '@/assets/svg/librosa.svg?react';
+import fastai from '@/assets/svg/fastai.svg?react';
+import huggingface from '@/assets/svg/huggingface.svg?react';
+import pytorch from '@/assets/svg/pytorch.svg?react';
+import reactIcon from '@/assets/svg/react.svg?react';
+import nodejs from '@/assets/svg/nodejs.svg?react';
+import vite from '@/assets/svg/vite.svg?react';
+import webpack from '@/assets/svg/webpack.svg?react';
+import typescript from '@/assets/svg/typescript.svg?react';
 
 export const homePageData = {
   headline: 'Listener, Developer, Explorer',
@@ -58,16 +69,12 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Practiced creating spectrograms and extracting features',
-    // iconComponent: wave_diagram,
-    icon: spectrogram,
-    techStack: [
-      'Audio Signal Processing',
-      {
-        type: 'link',
-        text: 'librosa',
-        src: 'https://librosa.org/doc/latest/index.html',
-      },
-    ],
+    mainImage: {
+      type: 'png',
+      src: spectrogram,
+      alt: 'A waveform and spectrogram visually representing sound',
+    },
+    techStack: ['Audio Signal Processing', 'librosa'],
     project_details: [
       {
         type: 'h2',
@@ -84,16 +91,13 @@ export const projects: Project[] = [
     visible: true,
     featured: true,
     desc: 'Created algorithm that extracts features like number of clicks and inter-click-intervals',
-    // iconComponent: spermwhale,
-    icon: spermwhalepng,
+    mainImage: {
+      type: 'png',
+      src: spermwhalepng,
+      alt: 'A sperm whale with its mouth open showing teeth',
+    },
     techStack: [
-      'Audio Signal Processing',
-      {
-        type: 'link',
-        text: 'librosa',
-        src: 'https://librosa.org/doc/latest/index.html',
-      },
-    ],
+      'Audio Signal Processing', 'librosa'],
     project_details: [],
   },
   {
@@ -105,16 +109,12 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Exploring ultrasonic social calls during flight of big brown bats',
-    // iconComponent: bat,
-    icon: batPng,
-    techStack: [
-      'Audio Signal Processing',
-      {
-        type: 'link',
-        text: 'librosa',
-        src: 'https://librosa.org/doc/latest/index.html',
-      },
-    ],
+    mainImage: {
+      type: 'png',
+      src: batPng,
+      alt: 'A bat flying through the air',
+    },
+    techStack: ['Audio Signal Processing', 'librosa'],
     project_details: [],
   },
   {
@@ -126,16 +126,13 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Documenting chicken sound patterns',
-    // iconComponent: chickenIcon,
-    icon: chicken,
+    mainImage: {
+      type: 'png',
+      src: chicken,
+      alt: 'A white and brown chicken standing',
+    },
     techStack: [
-      'Audio Signal Processing',
-      {
-        type: 'link',
-        text: 'librosa',
-        src: 'https://librosa.org/doc/latest/index.html',
-      },
-    ],
+      'Audio Signal Processing', 'librosa'],
     project_details: [],
   },
   {
@@ -144,19 +141,16 @@ export const projects: Project[] = [
     title: '',
     date: '',
     topics: [TopicNames.BIOACOUSTICS],
-    visible: false,
+    visible: true,
     featured: false,
     desc: 'Exploring ultrasonic \'popping\' of distressed veggies',
-    // iconComponent: plant,
-    icon: plantPng,
+    mainImage: {
+      type: 'png',
+      src: plantPng,
+      alt: 'A tomato plant and a corn stalk',
+    },
     techStack: [
-      'Audio Signal Processing',
-      {
-        type: 'link',
-        text: 'librosa',
-        src: 'https://librosa.org/doc/latest/index.html',
-      },
-    ],
+      'Audio Signal Processing', 'librosa'],
     project_details: [],
   },
   {
@@ -168,16 +162,13 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Fine-tuned an image recognition model to identify species',
-    // iconComponent: frog,
-    icon: frogpng,
+    mainImage: {
+      type: 'png',
+      src: frogpng,
+      alt: 'A green frog',
+    },
     techStack: [
-      'Neural networks',
-      {
-        type: 'link',
-        text: 'fast.ai',
-        src: 'https://www.fast.ai/',
-      },
-    ],
+      'Neural networks', 'fast.ai'],
     project_details: [],
   },
   {
@@ -188,8 +179,12 @@ export const projects: Project[] = [
     topics: [TopicNames.MACHINELEARNING, TopicNames.WEBAPPDEVELOPMENT],
     visible: true,
     featured: false,
+    mainImage: {
+      type: 'svg',
+      src: people_talking,
+      alt: 'A cartoon of multiple people talking',
+    },
     desc: 'Comparing algorithms that detect speech',
-    iconComponent: people_talking,
     techStack: [
       'Voice Activity Detection (VAD)',
       'Neural networks',
@@ -205,20 +200,12 @@ export const projects: Project[] = [
     visible: true,
     featured: true,
     desc: 'Fine-tuned a neural network for accent classification',
-    // iconComponent: asr,
-    icon: asrPng,
-    techStack: [
-      {
-        type: 'link',
-        text: 'HuggingFace Transformers',
-        src: 'https://huggingface.co/',
-      },
-      {
-        type: 'link',
-        text: 'DistilHuBERT',
-        src: 'https://huggingface.co/ntu-spml/distilhubert',
-      },
-    ],
+    mainImage: {
+      type: 'png',
+      src: asrPng,
+      alt: 'A cartoon of a woman talking in front of a microphone and a computer screen with a robot on the screen',
+    },
+    techStack: ['HuggingFace Transformers', 'DistilHuBERT'],
     project_details: [],
   },
   {
@@ -230,16 +217,12 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Trained models to predict the danceability of songs',
-    //iconComponent: music,
-    iconComponent: dancing,
-    techStack: [
-      'Traditional Machine Learning',
-      {
-        type: 'link',
-        text: 'scikit-learn',
-        src: 'https://scikit-learn.org/stable/index.html',
-      },
-    ],
+    mainImage: {
+      type: 'svg',
+      src: dancing,
+      alt: 'Three people dancing in colorful clothing',
+    },
+    techStack: ['Traditional Machine Learning','scikit-learn'],
     project_details: [],
   },
   {
@@ -251,16 +234,13 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Trained models to predict hospital readmission',
-    // iconComponent: medical,
-    iconComponent: hospitalization,
+    mainImage: {
+      type: 'svg',
+      src: hospitalization,
+      alt: 'A patient laying in a hospital bed with a medical professional standing over with a notepad while smiling',
+    },
     techStack: [
-      'Traditional Machine Learning',
-      {
-        type: 'link',
-        text: 'scikit-learn',
-        src: 'https://scikit-learn.org/stable/index.html',
-      },
-    ],
+      'Traditional Machine Learning', 'scikit-learn'],
     project_details: [],
   },
   {
@@ -271,28 +251,25 @@ export const projects: Project[] = [
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
     featured: false,
-    desc: 'Explored underlying topics in 20,000 Dear Abby questions',
-    //iconComponent: news,
-    icon: dearabby,
-    techStack: [
-      'Natural Language Processing',
-      {
-        type: 'link',
-        text: 'Natural Language Toolkit',
-        src: 'https://www.nltk.org/',
-      },
-    ],
+    desc: 'Explored underlying topics in 20,000 Dear Abby questions to practice Natural Language Processing (NLP)',
+    mainImage: {
+      type: 'png',
+      src: dearabby,
+      alt: 'A photo of Abigail Van Buren\'s column Dear Abby that includes a picture of her face as well as some small text',
+    },
+    projectCardTechStack: ['nltk', 'scikitlearn'],
     project_details: [
       {type: 'h2', text: 'Goal'},
       {type: 'div', className: 'align-row', elements: [
         {type: 'p', text: 'I used unsupervised machine learning to explore underlying topics in 20,000 Dear Abby questions from 1985-2017. This involved cleaning and preparing the data using natural language processing techniques like tokenization and lemmatization. Then I used topic modeling algorithms including Latent Dirichlet Allocation (LDA) and Non-negative matrix factorization (NMF) to generate underlying topics from the data.'},
-        {type: 'img', src: dearabby, alt: ''},
+        {type: 'img', src: dearabby, alt: 'A photo of Abigail Van Buren\'s column Dear Abby that includes a picture of her face as well as some small text'},
       ]},
       {type: 'img', src: dear_abby_word_cloud, alt: 'A word cloud with the largest words being year, time, husband, friend, mother, love, old, people, children, family, marry, etc.', className: 'medium-large-img'},
       {type: 'h2', text: 'Methods'},
+      {type: 'h3', text: 'Tech Stack'},
       {
         type: 'TechStack',
-        techList: ['nltk', 'scikitlearn', 'jupyterLab'],
+        techList: ['nltk', 'scikitlearn'],
       },
       {type: 'h3', text: 'Data Preparation Steps'},
       {
@@ -499,7 +476,7 @@ export const projects: Project[] = [
           },
         ],
       },
-      {type: 'img', src: dear_abby_lda_5, alt: '', className: 'medium-large-img'}, // TODO
+      {type: 'img', src: dear_abby_lda_5, alt: 'A diagram of LDA results showing 5 topics, 3 of which overlap, and listing 30 most relevant terms for topic #1 which include husband, years, mother, time, etc.', className: 'medium-large-img'},
       {type: 'h2', text: 'Next Steps'},
       {type: 'p', text: 'Future directions include modeling how topics may have changed over time from 1985-2017 and identifying trends. Also, there\'s always more data cleaning to do. While I excluded some column-related phrasing and words in the first pass, I discovered that some logistical info was still left in and affected some of the topics, so more rigorous data cleaning could improve results. I\'d also like to explore Latent Semantic Analysis (LSA) and other topic modeling algorithms.',},
       {type: 'h2', text: 'Sources'},
@@ -511,9 +488,6 @@ export const projects: Project[] = [
           {type: 'a', href: 'https://www.kaggle.com/datasets/thedevastator/american-anxieties-dear-abby-s-questions', text: 'American Anxieties: Dear Abby\'s Questions 20,000 Questions to Dear Abby: Insights on American Anxieties By Kelly Garrett'},
         ]
       },
-      
-      // TODO - add link to on LDA and NMF
-      
     ],
   },
   {
@@ -525,19 +499,12 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Web app to teach students sorting algorithms with an under-the-sea theme',
-    iconComponent: anemone,
-    techStack: [
-      {
-        type: 'link',
-        text: 'React',
-        src: 'https://react.dev/',
-      },
-      {
-        type: 'link',
-        text: 'TypeScript',
-        src: 'https://www.typescriptlang.org/',
-      },
-    ],
+    mainImage: {
+      type: 'svg',
+      src: anemone,
+      alt: 'A cartoon anemone with a green body and pink tentacles and eyes looking up',
+    },
+    techStack: ['React', 'TypeScript'],
     project_details: [],
   },
   {
@@ -549,20 +516,12 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Math and literacy programs for kids at Curriculum Associates',
-    // iconComponent: chickenIcon,
-    icon: iready,
-    techStack: [
-      {
-        type: 'link',
-        text: 'React',
-        src: 'https://react.dev/',
-      },
-      {
-        type: 'link',
-        text: 'Nodejs',
-        src: 'https://nodejs.org/en',
-      },
-    ],
+    mainImage: {
+      type: 'png',
+      src: iready,
+      alt: 'A cartoon with 3 alien characters from the i-Ready program smiling and dancing around the i-Ready logo',
+    },
+    techStack: ['React', 'Nodejs'],
     project_details: [],
   },
   {
@@ -574,19 +533,12 @@ export const projects: Project[] = [
     visible: true,
     featured: true,
     desc: 'A tool to input audio and display phonemic transcriptions and data',
-    iconComponent: mic,
-    techStack: [
-      {
-        type: 'link',
-        text: 'React',
-        src: 'https://react.dev/',
-      },
-      {
-        type: 'link',
-        text: 'TypeScript',
-        src: 'https://www.typescriptlang.org/',
-      },
-    ],
+    mainImage: {
+      type: 'svg',
+      src: mic,
+      alt: 'A cartoon microphone',
+    },
+    techStack: ['React', 'Nodejs'],
     project_details: [],
   },
 ];
@@ -594,76 +546,88 @@ export const projects: Project[] = [
 export const projectPaths = projects.map(project => project.path);
 
 // Tech stack data for rendering tech stack with images on project details pages
-export const techStackData = [
+export const techStackData: TechStackData = [
   // data science libraries
   {
     type: 'nltk',
     name: 'Natural Language Toolkit',
     iconComponent: nltk,
+    href: '',
   },
   {
     type: 'scikitlearn',
     name: '',
-    iconComponent: '',
+    iconComponent: scikitlearn,
+    href: '',
   },
+ 
   {
     type: 'skopt',
-    name: '',
-    iconComponent: '',
+    name: 'scikit-optimize',
+    iconComponent: skopt,
+    href: 'https://scikit-optimize.github.io/stable/',
   },
-  /*
-  librosa: {
-    name: '',
-    iconComponent: '',
+   
+  {
+    type: 'librosa',
+    name: 'librosa',
+    iconComponent: librosa,
+    href: 'https://librosa.org/doc/latest/index.html',
   },
-
+  
   // neural network libraries
-  fastai: {
-    name: '',
-    iconComponent: '',
+  {
+    type: 'fastai',
+    name: 'fastai',
+    iconComponent: fastai,
+    href: 'https://docs.fast.ai/',
   },
-  huggingface: {
-    name: '',
-    iconComponent: '',
+  {
+    type: 'huggingface',
+    name: 'HuggingFace',
+    iconComponent: huggingface,
+    href: 'https://huggingface.co/',
   },
-  torch: {
-    name: '',
-    iconComponent: '',
+  {
+    type: 'pytorch',
+    name: 'PyTorch',
+    iconComponent: pytorch,
+    href: 'https://pytorch.org/',
   },
+  {
+    type: 'react',
+    name: 'React',
+    iconComponent: reactIcon,
+    href: 'https://react.dev/'
+  },
+  {
+    type: 'nodejs',
+    name: 'Node.js',
+    iconComponent: nodejs,
+    href: 'https://nodejs.org/en',
+  },
+  {
+    type: 'vite',
+    name: 'Vite',
+    iconComponent: vite,
+    href: 'https://vite.dev/guide/static-deploy',
+  },
+  {
+    type: 'webpack',
+    name: 'webpack',
+    iconComponent: webpack,
+    href: 'https://webpack.js.org/',
+  },
+  {
+    type: 'typescript',
+    name: 'TypeScript',
+    iconComponent: typescript,
+    href: 'https://www.typescriptlang.org/',
+  }
 
-  // front-end technologies
-  react: {
-    name: '',
-    iconComponent: '',
-  },
-  nodejs: {
-    name: '',
-    iconComponent: '',
-  },
-  vite: {
-    name: '',
-    iconComponent: '',
-  },
-  webpack: {
-    name: '',
-    iconComponent: '',
-  },
 
-  // environments
-  vsCode: {
-    name: '',
-    iconComponent: '',
-  },
-  jupyterLab: {
-    name: '',
-    iconComponent: '',
-  },
-
+  /*
   // languages
-  typescript: {
-    name: '',
-    iconComponent: '',
-  },
   python: {
     name: '',
     iconComponent: '',
@@ -672,5 +636,21 @@ export const techStackData = [
     name: '',
     iconComponent: '',
   },
+
+  // environments
+  {
+    type: 'vscode',
+    name: 'Visual Studio Code',
+    iconComponent: null,
+    href: 'https://code.visualstudio.com/',
+  },
+  {
+    type: 'jupyterLab',
+    name: '',
+    iconComponent: '',
+    href: '',
+  },
   */
 ];
+
+export const techStackList = techStackData.map(tech => tech.type);

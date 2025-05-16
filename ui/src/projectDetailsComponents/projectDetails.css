@@ -1,6 +1,3 @@
-
-
-
 .project-details {
   padding: 40px;
   text-align: left;
@@ -14,9 +11,13 @@
   text-align: center;
 }
 
-.project-date {
+.project-date, .note {
   font-size: 12px;
   color: var(--med-blue-gray);
+}
+
+.project-details h1 {
+  font-size: 28px;
 }
 
 .project-details h2, h3, h4 {
@@ -24,17 +25,16 @@
 }
 
 .project-details h2 {
-
   text-transform: uppercase;
+  font-size: 24px;
+}
+
+.project-details h3 {
   font-size: 20px;
 }
 
-.project-details h3 {
-  font-size: 18px;
-}
-
-.project-details h3 {
-
+.project-details a {
+  color: var(--med-blue);
 }
 
 .project-details h1, h2, h3, h4 {
@@ -88,11 +88,13 @@
   border: 1px solid gray;
   margin: 10px 0;
   padding: 10px 20px;
-  background-color: var(--very-light-gray)
+  background-color: var(--very-light-gray);
+  border-radius: 5px;
 }
 
 .disclosure-panel span {
-  background-color: var(--very-light-gray)
+  background-color: var(--very-light-gray);
+  font-size: 16px;
 }
 
 .disclosure-panel-button {
@@ -112,7 +114,10 @@
   fill: currentColor;
 }
 
-
+.project-details-tech-stack-row a svg {
+  width: 90px;
+  height: 90px;
+}
 
 @media (max-width: 600px) {
   .align-row {
@@ -121,4 +126,8 @@
     justify-content: center;
     align-items: center;
   }
+  .project-details {
+    padding: 10px;
+  }
 }
+

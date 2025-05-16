@@ -64,7 +64,7 @@ const ProjectDetailsPage = ({project}: ProjectDetailsPageProps) => {
         break;
       case 'TechStack':
         returnComponent = (
-          <TechStack data={data} index={key} />
+          <TechStack techList={data.techList} index={key} className='project-details-tech-stack-row' />
         )
         break;
       default:

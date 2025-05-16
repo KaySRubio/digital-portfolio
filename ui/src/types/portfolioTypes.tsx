@@ -1,6 +1,7 @@
 
 import type { SVGProps, FunctionComponent } from 'react';
-import { techStack } from '../data/portfolioData';
+// import { techStackData, techStackList } from '../data/portfolioData';
+
 export type Topic = {
   path: TopicName;
   title: string;
@@ -25,13 +26,17 @@ export type Project = {
   visible: boolean;
   featured: boolean;
   desc: string;
-  iconComponent?: FunctionComponent<SVGProps<SVGSVGElement>> | null;
-  icon?: string;
-  techStack: TechStackItem[];
+  mainImage: MainImage;
+  techStack?: string[]; // older list version
+  projectCardTechStack?: string[]; // better icon version
   project_details: ProjectDetails;
 }
 
-type TechStackItem = string | Link;
+export type MainImage = {
+  type: 'png' | 'jpg' | 'svg';
+  src: string | FunctionComponent<SVGProps<SVGSVGElement>>;
+  alt: string;
+}
 
 export type Link = {
   type: 'link',
@@ -49,7 +54,7 @@ export type ProjectDetailComponent =
   TableComponent |
   DivComponent | 
   DisclosurePanel |
-  TechStackComponent;
+  ProjectTechStackComponent;
 
 export type TextType = 
   'h2' |
@@ -113,7 +118,7 @@ export type DisclosurePanel = {
 }
 
 // Tech stack type for rendering tech stack with images on project details pages
-export type TechStackType = keyof typeof techStack;
+// export type TechStackType = keyof typeof techStackData;
 
 /*
 export type TeckStackType = 
@@ -144,9 +149,22 @@ export type TeckStackType =
   'javascript'
 */
 
-export type TechStackComponent = {
+
+
+
+// type TechStackListType = typeof techStackList[number];
+export type TechStackData = TechStackDataItem2[];
+
+export type TechStackDataItem2 = {
+  type: string;
+  name: string;
+  iconComponent: FunctionComponent<SVGProps<SVGSVGElement>>,
+  href: string;
+}
+
+export type ProjectTechStackComponent = {
   type: 'TechStack',
-  techList: TechStackType[]
+  techList: string[],
   key?: number | string;
 }
 

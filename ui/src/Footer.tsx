@@ -39,13 +39,13 @@ const Footer = () => {
     <footer className={`footer ${footerClass}`}>
       <p>&copy; 2025 Kay Rubio</p>
       <div className={`footer-button-group`}>
-        <a href={pathToResume} download='resume.pdf'>
+        <a aria-label='download resume' href={pathToResume} download='resume.pdf'>
         <DocumentIcon className={`footer-icon ${iconClass}`} />
         </a>
-        <a href='https://www.linkedin.com/in/kay-sweeney-rubio-731abb114/'>
+        <a aria-label='linkedIn' href='https://www.linkedin.com/in/kay-sweeney-rubio-731abb114/'>
           <LinkedInIcon className={`footer-icon ${iconClass}`} />
         </a>
-        <a href='https://github.com/KaySRubio'>
+        <a aria-label='github' href='https://github.com/KaySRubio'>
           <GithubIcon className={`footer-icon ${iconClass}`} />
         </a>
       </div>

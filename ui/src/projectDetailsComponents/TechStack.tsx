@@ -1,38 +1,71 @@
-import type { ReactNode } from 'react';
-import type { TechStackComponent } from '../types/portfolioTypes';
+
+// import type { ProjectTechStackComponent } from '../types/portfolioTypes';
 import { techStackData } from '../data/portfolioData';
 
 type TechStackProps = {
-  data: TechStackComponent,
+  techList: string[],
   index: number | null,
+  className?: string;
 }
 
-export default function TechStack({data, index}: TechStackProps) {
-  console.log('data: ', data);
+export default function TechStack({techList, index, className}: TechStackProps) {
+  console.log('data: ', techList);
 
-  // From the list of project tech stack, retrieve the data that includes the name
-  // and icon
-  /*
-  const filteredTechStackData = Object.fromEntries(
-    Object.entries(techStackData).filter(([key]) => data.techList.includes(key))
+  // Filter the techStackData, which includes all possible tech stack items and icons,
+  // to just those for this project
+  const filteredTechStackData = techStackData.filter(item =>
+    techList.includes(item.type)
   );
-  */
 
-  return (<div></div>)
-  /*
-  return (
-    <div key={index} className='project-details-tech-stack'>
-      {Object.entries(filteredTechStackData).map((tech, index) => {
-      console.log('tech: ', tech);
-      // const Icon = tech.iconComponent;
+  // Check for any in the project list that don't exist in the data
+  const techStackTypes = techStackData.map(item => item.type);
+  techList.forEach(type => {
+    if(!techStackTypes.includes(type)) {
+      console.log('Error: ', type, ' is not in the techStackData so this item will not be rendered');
+    }
+  })
 
-      return (
-        <div key={index}>
-          <p>{tech.name}</p>
-          <Icon />
-        </div>
+
+  // TODO simplify this, the project-card is already a Link so it can't hold <a>
+  let returnComponent;
+  if(className==='project-card-tech-stack-row') {
+    returnComponent = (
+      <div key={index} className={`${className} tech-stack-row`}>
+      {filteredTechStackData.map((tech, index) => {
+        const Icon = tech.iconComponent;
+        return (
+          <div key={index}>
+            <Icon />
+          </div>
       )})}
-      
+    </div>
+    )
+  } else {
+    returnComponent = (
+      <div key={index} className={`${className} tech-stack-row`}>
+      {filteredTechStackData.map((tech, index) => {
+        const Icon = tech.iconComponent;
+        return (
+          <a href={tech.href} key={index}>
+            {/*<p>{tech.name}</p>*/}
+            <Icon />
+          </a>
+      )})}
+    </div>
+    )
+  }
+  return returnComponent;
+/*
+  return (
+    <div key={index} className={`${className} tech-stack-row`}>
+      {filteredTechStackData.map((tech, index) => {
+        const Icon = tech.iconComponent;
+        return (
+          <a href={tech.href} key={index}>
+            <p>{tech.name}</p>
+            <Icon />
+          </a>
+      )})}
     </div>
   ) */
 }
