@@ -31,7 +31,7 @@ const ProjectCard = ({project, theme='white'}: ProjectCardProps) => {
         </span>
       )
     } else {
-      return (<img className='project-card-icon' src={project.mainImage.src} alt={project.mainImage.alt} />)
+      return (<img className='project-card-icon' src={project.mainImage.src as string} alt={project.mainImage.alt} />)
     }
   }
 
@@ -53,12 +53,3 @@ const ProjectCard = ({project, theme='white'}: ProjectCardProps) => {
 }
 
 export default ProjectCard;
-// originally planned to use links, but can't use a link inside another link
-// {typeof tech === 'string' ? tech : <a href={tech.src}>{tech.text}</a>}
-/*
-{Icon && 
-        <span role='img' aria-label='hello' >
-          <Icon className={`project-card-icon-svg ${iconClass}`} />
-        </span>
-      } 
-*/
