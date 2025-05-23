@@ -3,17 +3,16 @@ import type { ReactNode } from 'react';
 import DownArrow  from '@/assets/svg/down-arrow.svg?react';
 
 type DisclosurePanelProps = {
-  title?: string;
-  //children: ProjectDetailComponent[];
+  title: ReactNode;
   children: ReactNode;
   index: number | null;
 }
 
-export default function DisclosurePanel({title = 'Click to see more information', children, index}: DisclosurePanelProps) {
+export default function DisclosurePanel({title, children, index}: DisclosurePanelProps) {
   const [expanded, setExpanded] = useState(false);
-
+  
   return (
-    <div key={index} className='disclosure-panel'>
+    <div className='disclosure-panel'>
       <dt>
         <button
           className='disclosure-panel-button'
@@ -23,7 +22,7 @@ export default function DisclosurePanel({title = 'Click to see more information'
             setExpanded(prev => !prev);
           }}
         >
-          <span>{title}</span>
+          {title}
           <DownArrow className={`arrow ${expanded ? 'upside-down' : ''}`} />
         </button>
       </dt>
@@ -32,6 +31,6 @@ export default function DisclosurePanel({title = 'Click to see more information'
           {children}
         </dd>
       )}
-  </div>
+    </div>
   )
 }

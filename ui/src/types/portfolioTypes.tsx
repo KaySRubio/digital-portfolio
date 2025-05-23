@@ -36,6 +36,7 @@ export type MainImage = {
   type: 'png' | 'jpg' | 'svg';
   src: string | FunctionComponent<SVGProps<SVGSVGElement>>;
   alt: string;
+  className?: string;
 }
 
 export type Link = {
@@ -54,7 +55,10 @@ export type ProjectDetailComponent =
   TableComponent |
   DivComponent | 
   DisclosurePanel |
-  ProjectTechStackComponent;
+  ProjectTechStackComponent |
+  MainImage | 
+  GoalAndGithub | 
+  DemoBoard;
 
 export type TextType = 
   'h2' |
@@ -67,13 +71,15 @@ export type TextType =
 export type TextComponent = {
   type: TextType,
   text: string,
+  className?: string,
   key?: number | string;
 }
 
 export type LinkType = {
   type: 'a',
   href: string,
-  text: string,
+  text?: string,
+  children?: ProjectDetailComponent[];
   key?: number | string;
 }
 
@@ -83,17 +89,20 @@ export type ListType =
 
 export type ListComponent = {
   type: ListType,
-  elements: ProjectDetailComponent[],
+  className?: string,
+  childGroup: ProjectDetailComponent[][],
   key?: number | string;
 };
 
 
 export type TableComponent = {
   type: 'table',
-  headers: string[],
-  rows: string[][],
+  headers: TableEl[],
+  rows: TableEl[][],
   key?: number | string;
 }
+
+export type TableEl = string | LinkType;
 
 export type ImageComponent = {
   type: 'img',
@@ -106,14 +115,22 @@ export type ImageComponent = {
 export type DivComponent = {
   type: 'div',
   className?: string,
-  elements: ProjectDetailComponent[]
+  childGroup: ProjectDetailComponent[],
+  key?: number | string;
+}
+
+export type GoalAndGithub = {
+  type: 'GoalAndGithub',
+  className?: string,
+  childGroup: ProjectDetailComponent[],
+  href: string,
   key?: number | string;
 }
 
 export type DisclosurePanel = {
   type: 'DisclosurePanel',
-  title: string,
-  elements: ProjectDetailComponent[],
+  title: ProjectDetailComponent,
+  children: ProjectDetailComponent[],
   key?: number | string;
 }
 
@@ -168,3 +185,21 @@ export type ProjectTechStackComponent = {
   key?: number | string;
 }
 
+export type DemoBoard = {
+  type: 'DemoBoard',
+  page: string,
+  sampleAudio: sampleFile[],
+  requests: [
+    {
+      type: 'get' | 'post' | 'gradio',
+      url?: string,
+      huggingFaceModelName?: string,
+      huggingFacePredict?: string,
+    }
+  ],
+}
+
+export type sampleFile = {
+  display_text: string,
+  location: string,
+}

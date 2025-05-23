@@ -9,11 +9,37 @@
   --med-blue-gray: #7f8b97;
   --dark-blue-gray: #2d3f53;
   --sand: #fef3e0;
+  --Speech_red_error: #990D36;
+  --Speech_red: #DA534F;
+  --Speech_light_red: #F3DEDE;
+  --Speech_orange: #F8A503;
+  --Speech_light_orange: #FCF8E3;
+  --Speech_light_green: #D9F2D0;
+  --Speech_green: #5CB85C;
+  --Speech_dark_green: #388485;
+  --Speech_light_blue: #F4FAFF;
+  --Speech_very_light_gray: #F9F9F9;
+  --Speech_light_gray: #E8E8E8;
+  --Speech_med_gray: #C1C1C1;
+  --Speech_dark_blue_gray: #576A76;
 
 }
 
 button {
   cursor: pointer;
+}
+
+.margin0 {
+  margin: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.width90px {
+  width: 90px;
+  height: 90px;
 }
 
 .upside-down {

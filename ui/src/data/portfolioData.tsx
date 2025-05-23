@@ -32,6 +32,17 @@ import nodejs from '@/assets/svg/nodejs.svg?react';
 import vite from '@/assets/svg/vite.svg?react';
 import webpack from '@/assets/svg/webpack.svg?react';
 import typescript from '@/assets/svg/typescript.svg?react';
+import joblib from '@/assets/svg/joblib.svg?react';
+import pandas from '@/assets/svg/pandas.svg?react';
+import matplotlib from '@/assets/svg/matplotlib.svg?react';
+import numpy from '@/assets/svg/numpy.svg?react';
+import seaborn from '@/assets/svg/seaborn.svg?react';
+import irish from '@/assets/wav/irish.wav';
+import chineseAmerican from '@/assets/wav/chinese-american.wav';
+import indian from '@/assets/wav/indian.wav';
+import mexican from '@/assets/wav/mexican.wav';
+import nigerian from '@/assets/wav/nigerian.wav';
+import vietnamese from '@/assets/wav/vietnamese.wav';
 
 export const homePageData = {
   headline: 'Listener, Developer, Explorer',
@@ -60,6 +71,7 @@ export const topics: Topic[] = [
 ]
 
 export const projects: Project[] = [
+  // audio-feature-extraction
   {
     path: 'audio-feature-extraction',
     short_title: 'Audio Feature Extraction',
@@ -82,6 +94,7 @@ export const projects: Project[] = [
       },
     ],
   },
+  // sperm-whale-codas
   {
     path: 'sperm-whale-codas',
     short_title: 'Sperm Whale Codas',
@@ -100,6 +113,7 @@ export const projects: Project[] = [
       'Audio Signal Processing', 'librosa'],
     project_details: [],
   },
+  // bat-social-calls
   {
     path: 'bat-social-calls',
     short_title: 'Bat Social Calls',
@@ -117,6 +131,7 @@ export const projects: Project[] = [
     techStack: ['Audio Signal Processing', 'librosa'],
     project_details: [],
   },
+  // chicken-vocalizations
   {
     path: 'chicken-vocalizations',
     short_title: 'Chicken Vocalizations',
@@ -135,6 +150,7 @@ export const projects: Project[] = [
       'Audio Signal Processing', 'librosa'],
     project_details: [],
   },
+  // plant-sound
   {
     path: 'plant-sound',
     short_title: 'Plant Sound',
@@ -153,6 +169,7 @@ export const projects: Project[] = [
       'Audio Signal Processing', 'librosa'],
     project_details: [],
   },
+  // frog-identifier
   {
     path: 'frog-identifier',
     short_title: 'Frog Identifier',
@@ -171,6 +188,7 @@ export const projects: Project[] = [
       'Neural networks', 'fast.ai'],
     project_details: [],
   },
+  // voice-detection
   {
     path: 'voice-detection',
     short_title: 'Voice Detection',
@@ -191,28 +209,163 @@ export const projects: Project[] = [
     ],
     project_details: [],
   },
+  // speech-recognition
   {
     path: 'speech-recognition',
     short_title: 'Speech Recognition',
-    title: '',
-    date: '',
+    title: 'Speech Recognition and Accent Classification using Neural Networks',
+    date: 'February 2025',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
     featured: true,
-    desc: 'Fine-tuned a neural network for accent classification',
+    desc: 'Fine-tuned a neural network for accent classification and explored existing ASR models',
     mainImage: {
       type: 'png',
       src: asrPng,
       alt: 'A cartoon of a woman talking in front of a microphone and a computer screen with a robot on the screen',
     },
-    techStack: ['HuggingFace Transformers', 'DistilHuBERT'],
-    project_details: [],
+    projectCardTechStack: ['huggingface'], // TODO - add ways and means, etc.
+    project_details: [
+      {
+        type: 'GoalAndGithub',
+        childGroup: [
+          {type: 'h2', text: 'Goal'},
+          {type: 'text', text: 'This was a personal project I completed to practice skills learned from the '},
+          {type: 'a', text: 'Hugging Face Transformers for Audio', href: 'https://huggingface.co/learn/audio-course/en/chapter0/introduction'},
+          {type: 'text', text: ' course.'},
+          {type: 'ol', childGroup: [
+            [{type: 'text', text: 'Explore and implement preexisting open-source transformers models for speech including ASR, phonemic transcription, and accent classification'}],
+            [{type: 'text', text: 'Fine-tune my own ASR model for accent classification'}],
+            [
+              {type: 'text', text: 'Demo work on '},
+              {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/'},
+              {type: 'text', text: ' with '},
+              {type: 'a', text: 'Gradio', href: 'https://www.gradio.app/'},
+              {type: 'text', text: ' and create an API endpoint that can take in audio and pass ASR output in json format to a front-end application'}
+            ],
+          ]},
+        ],
+        href: 'https://github.com/KaySRubio/transformers_speech_recognition_and_classification/tree/main',
+      },
+      {type: 'h2', text: 'Demo'},
+      {
+        type: 'DemoBoard',
+        page: 'speech-recognition-2025',
+        sampleAudio: [
+          {display_text: 'Chinese American comedian Ronny Chieng', location: chineseAmerican},
+          {display_text: 'Irish accent from Derry Girls', location: irish},
+          {display_text: 'Indian professor Abdul Bari', location: indian},
+          {display_text: 'Mexican actor Jaime Camil in Jane the Virgin', location: mexican},
+          {display_text: 'Nigerian actors Daniel Effiong & Tana Adelana', location: nigerian},
+          {display_text: 'Vietnamese accent from L2-Arctic-Corpus', location: vietnamese},
+        ],
+        requests: [
+          {
+            type: 'gradio',
+            huggingFaceModelName: 'kaysrubio/speech_transcribe_phonemes_and_accent',
+            huggingFacePredict: '/transcribe_and_classify_speech_1',
+          }
+        ],
+      },
+      {type: 'h2', text: 'Models used'},
+      {
+        type: 'table',
+        headers: ['Type', 'Model', 'Data used'],
+        rows: [
+          ['Automatic Speech Recognition', {type: 'a', text: 'openai/whisper-base.end', href: 'https://huggingface.co/openai/whisper-base.en'}, '680k hours of labelled data'],
+          ['Phonemic Transcription', {type: 'a', text: 'vitouphy/wav2vec2-xls-r-300m-timit-phoneme', href: 'https://huggingface.co/vitouphy/wav2vec2-xls-r-300m-timit-phoneme'}, 'DARPA TIMIT American English'],
+          ['Phonemic Transcription', {type: 'a', text: 'mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme', href: 'https://huggingface.co/mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme'}, 'L2 arctic, speakers of English as a second langauge'],
+          ['Accent Classification', {type: 'a', text: 'Jzuluaga/accent-id-commonaccent_ecapa', href: 'https://github.com/KaySRubio/transformers_speech_recognition_and_classification/blob/main/Jzuluaga/accent-id-commonaccent_ecapa'}, ' Native English speakers from around the world'],
+          ['Accent Classification', {type: 'a', text: 'kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2', href: 'https://huggingface.co/kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2'}, 'L2 arctic, speakers of English as a second langauge'],
+        ],
+      },
+      {type: 'h2', text: 'Fine-tuning DistilHuBERT for Accent Classification'},
+      {type: 'h3', text: 'Purpose'},
+      {type: 'p', text: 'Existing accent classifiers focus on native English speakers from around the world but exclude people who learned English as a second language rendering them inaccurate for many common accents among people in the US, such as people whose first language is Spanish or Chinese.'},
+      {type: 'p', text: 'My goal was to create an accent classifier for people who learned English as a second language by fine-tuning a speech recognition model.'},      
+      {
+        type: 'DisclosurePanel', 
+        title: {type: 'h3', text: 'Data and Data Preparation'},
+        children: [
+          {type: 'h4', text: 'Data source'},
+          {type: 'text', text: 'The '},
+          {type: 'a', text: 'L2-Actic', href: 'https://psi.engr.tamu.edu/l2-arctic-corpus/'},
+          {type: 'text', text: ' data is ~8GB and comes via email. It includes approximately 24-30 hours of recordings where 24 speakers read passages in English. The first languages of the speakers are Arabic, Hindi, Korean, Mandarin, Spanish, and Vietnamese. There\'s 2 women and 2 men in each language group.'},
+          {type: 'h4', text: 'Data preparation'},
+          {
+            type: 'ol',
+            childGroup: [
+              [{type: 'text', text: 'Split the dataset in 6 smaller pieces, one for each language group to reduce memory problems during reformatting. The number of files per speaker is limited to 560 to use approximately half of the original data. Thus each piece is about 0.66GB with 2,240 rows.'}],
+              [{type: 'text', text: 'Resampled audio to 16,000 Hz using PyTorch.'}],
+              [{type: 'text', text: 'Combined sequential audio files from the same speaker to improve training efficiency. For instance, instead of a lot of audio files that are only 1-3 seconds, I combined them so there were fewer files and they were just under 30 seconds in length.'}],
+              [{type: 'text', text: 'Reformatted data so that it is wrapped in the Hugging Face dataset class.'}],
+              [{type: 'text', text: 'Add the language category and stack the final 6 datasets on top of one another to create a unified dataset.'}],
+            ]
+          },
+          {type: 'p', text: 'Final dataset inluded 6 language groups with about 300 rows per group. Each row contains the label for the language group and an audio file of 30 seconds or less at 16k Hz.'},
+          {type: 'p', className: 'note', text: 'Note: Reformatting such a large volume of audio took quite a bit of computing resources, and so I explored/compared different free resources like Kaggle, GoogleCollab, as well as CPU vs. GPU.'}, 
+        ],
+      },
+
+      {
+        type: 'DisclosurePanel', 
+        title: {type: 'h3', text: 'Fine-tuning the model'},
+        children: [
+          {type: 'h4', text: 'Foundation Model'},
+          {type: 'a', text: 'DistilHuBERT', href: 'https://huggingface.co/ntu-spml/distilhubert'},
+          {type: 'text', text: ' is a smaller version of HuBERT that was modified from BERT. BERT is a speech recognition model with encoder-only CTC architecture. For this project, a classification layer was added.'},
+          {type: 'h4', text: 'Fine-tuning Process'},
+          {type: 'text', text: 'I fine-tuned '},
+          {type: 'a', text: 'DistilHuBERT', href: 'https://huggingface.co/ntu-spml/distilhubert'},
+          {type: 'text', text: ' on 50% of the '},
+          {type: 'a', text: 'L2-Actic', href: 'https://psi.engr.tamu.edu/l2-arctic-corpus/'},
+          {type: 'text', text: ' data to classify the accents in the 6 language groups and create this model on Hugging Face: '},
+          {type: 'a', text: 'kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2', href: 'https://huggingface.co/kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2'},
+          {type: 'h4', text: 'Hyperparameters used'},
+          {
+            type: 'table', headers: ['Hyperparameter', 'Value'],
+            rows: [
+              ['learning_rate', '5e-05'],
+              ['train_batch_size', '8'],
+              ['eval_batch_size', '8'],
+              ['seed', '42'],
+              ['optimizer', 'Use OptimizerNames.ADAMW_TORCH with betas=(0.9,0.999) and epsilon=1e-08 and optimizer_args=No additional optimizer arguments'],
+              ['lr_scheduler_type', 'linear'],
+              ['lr_scheduler_warmup_ratio', '0.1'],
+              ['num_epochs', '10'],
+              ['mixed_precision_training', 'Native AMP'],
+            ],
+          },
+          {type: 'h4', text: 'Environment used: '},
+          {type: 'a', text: 'Google Collab', href: 'https://colab.research.google.com/'},
+          {type: 'text', text: ' T4 GPU'},
+        ],
+      },
+      {type: 'h3', text: 'Limitations'},
+      {type: 'p', text: 'The model is very accurate for novel recordings from the original dataset that were not used for train/test. However, the model is not accurate for voices from outside the dataset. Unfortunately with only 24 speakers represented, it seems like the model memorized other characteristics of these voices besides accent, thus not creating a model very generalizable to the real world.'},
+      {type: 'h3', text: 'Next Steps'},
+      {type: 'p', text: 'The code is good! If a new dataset becomes available that includes many more voices and clear accent categories, this code may be reused to train a model that generalizes to the real world.'},
+      {type: 'h2', text: 'Audio Sources Used'},
+      {type: 'ul', className: 'shortLineHeight', childGroup: [
+        [{type: 'text', text: 'irish.wav, a clip from '}, {type: 'a', text: 'Derry Girls', href: 'https://www.youtube.com/watch?v=5J211yVWIzg'}],
+        [{type: 'text', text: 'indian.wav, a from '}, {type: 'a', text: 'Abdul Bari teaching on Algorithms', href: 'https://www.youtube.com/watch?v=0IAPZzGSbME&list=PLEouKpnYLW8Gk4w7pe8F5J5UNNIkljZWn'}],
+        [{type: 'text', text: 'mexican.wav, a clip from Jaime Camil playing Rogelio de la Vega on '}, {type: 'a', text: 'Jane the Virgin', href: 'https://www.youtube.com/watch?v=7HwnS6R7_wQ'}],
+        [{type: 'text', text: 'south_african.wav, a clip from '}, {type: 'a', text: 'Trevor Noah', href: 'https://www.youtube.com/watch?v=xma3ZdwtEJ4'}],
+        [{type: 'text', text: 'chinese-american.wav, a clip from '}, {type: 'a', text: 'Ronny Chieng', href: 'https://www.tiktok.com/@netflixisajoke/video/7450493571158920478?lang=en'}],
+        [{type: 'text', text: 'nigerian.wav, a clip from Daniel Etim Effiong and Tana Adelana in '}, {type: 'a', text: 'Dinner for Four', href: 'https://www.youtube.com/watch?v=QFhI71C4iRI'}],
+        [{type: 'text', text: 'vietnamese.wav, a clip from the '}, {type: 'a', text: 'L2-Arctic', href: 'https://psi.engr.tamu.edu/l2-arctic-corpus/'}, {type: 'text', text: ' data, participant THV file b0303.wav'}],
+      ]}
+      
+
+
+    ],
   },
+  // danceability
   {
     path: 'danceability',
     short_title: 'Danceability',
-    title: '',
-    date: '',
+    title: 'Predicting Danceability using Machine Learning Models for Regression',
+    date: 'January 2024',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
     featured: false,
@@ -223,26 +376,133 @@ export const projects: Project[] = [
       alt: 'Three people dancing in colorful clothing',
     },
     techStack: ['Traditional Machine Learning','scikit-learn'],
-    project_details: [],
+    project_details: [
+      {
+        type: 'GoalAndGithub',
+        childGroup: [
+          {type: 'h2', text: 'Goal'},
+          {type: 'p', text: 'Train a model that predicts danceability scores from the temporal features of songs. This was a practice project I completed after completing trainings in scikit-learn.'},
+        ],
+        href: 'https://github.com/KaySRubio/music-data-sci-regression',
+      },
+      {type: 'h2', text: 'Methods'},
+      {type: 'h3', text: 'Tech Stack'},
+      {
+        type: 'TechStack',
+        techList: ['scikitlearn',  'joblib', 'pandas', 'matplotlib', 'numpy', 'seaborn'],
+      },
+      {type: 'h3', text: 'Data'},
+      {type: 'p', text: 'I chose an open-source dataset from EchoNest (now Spotify) that contained metadata on 13,000 songs, a subset of the Free Music Archive. Features include 223 temporal features, along with instrumentalness and tempo. I split data into 75% training and 25% test.'},
+      {type: 'h2', text: 'Results'},
+      {
+        type: 'table',
+        headers: ['Model', 'Best Hyperparameters', 'Best mean accuracy score*'],
+        rows: [
+          ['Gradient Boosting', 'max_depth: 3, n_estimators: 500', '0.0666'],
+          ['Random Forest Regressor', 'max_depth: 20, n_estimators: 100', '0.0773'],
+          ['Multivariate Linear Regression**', 'N/A', '	0.0995'],
+          ['Multilayer Perceptron', 'activation: logistic, hidden_layer_sizes: 50', '1.3223'],
+        ],
+      },
+      {type: 'p', className: 'note', text: '*Mean accuracy score is how far off the model\'s predictions of danceability was from the actual danceability score in the test data. Danceability ranged from 0-1, so the best model was able to predict danceability of songs very close to the actual scores, only an average of 0.06 points off!'},
+      {type: 'p', className: 'note', text: '**I used a restricted set of predictors were used based on what I found to be linearly related to the outcome during data cleaning'},
+      {type: 'h2', text: 'Putting the strongest model to the test'},
+      {type: 'p', text: 'The gradient boosting model with max-depth of 3 and number of estimators of 100 was used on 3 new songs'},
+      {
+        type: 'table',
+        headers: ['Song name', 'Artist', 'Predicted Danceability', 'Actual Danceability'],
+        rows: [
+          ['Wooden Ships', 'Unknown', '0.04867972', '0.05166771'],
+          ['Shakkei (Remixed)', '	Origamibiro', '0.51086412', '0.44688061'],
+          ['Niris', 'Nicky Cook', '0.83163573', '0.94879937'],
+        ]
+      },
+      {type: 'h3', text: 'Takeaways'},
+      {type: 'ul', childGroup: [
+        [{type: 'p', text: 'Danceabilty ranges from 0-1 so these danceability predictions are pretty close!'}],
+        [{type: 'p', text: 'Model agreed that Wooden Ships is not very danceable with a score of 0.0487 (actual: 0.0517)'}],
+        [{type: 'p', text: 'Model agreed that Shakkei (Remixed) by Origamibiro is medium danceable with a score of 0.511 (actual 0.447)'}],
+        [{type: 'p', text: 'Model agreed that Niris by Nicky Cook is super danceable with a score of 0.832 (actual 0.949)'}],
+      ]},
+      {type: 'h2', text: 'Dataset Citation'},
+      {type: 'p', text: 'Defferrard, Michael and Benzi, Kirell and Vandergheynst, Pierre and Bresson, Xavier (2017). FMA: A Dataset for Music Analysis. In 18th International Society for Music Information Retrieval Conference (ISMIR). arXiv. 1612.01840. https://arxiv.org/abs/1612.01840'},
+    ],
   },
+  // diabetes-classifier
   {
     path: 'diabetes-classifier',
     short_title: 'Diabetes Classifier',
-    title: '',
-    date: '',
+    title: 'Using ML Classification Algorithms to Predict Hospital Readmission in Patients with Diabetes',
+    date: 'January 2024',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
     featured: false,
-    desc: 'Trained models to predict hospital readmission',
+    desc: 'Trained traditional machine learning models to predict hospital readmission',
     mainImage: {
       type: 'svg',
       src: hospitalization,
       alt: 'A patient laying in a hospital bed with a medical professional standing over with a notepad while smiling',
     },
-    techStack: [
-      'Traditional Machine Learning', 'scikit-learn'],
-    project_details: [],
+    projectCardTechStack: ['scikitlearn', 'skopt'],
+    // techStack: ['Traditional Machine Learning', 'scikit-learn'],
+    project_details: [
+      {
+        type: 'GoalAndGithub',
+        childGroup: [
+          {type: 'h2', text: 'Goal'},
+          {type: 'p', text: 'Train traditional machine learning models to predict hospital readmission within 30 days for patients with diabetes and compare results to pick the best model. This was a practice project I completed after completing trainings in scikit-learn.'},
+        ],
+        href: 'https://github.com/KaySRubio/data-sci-diabetes-readmission-classifier',
+      },
+      {type: 'h2', text: 'Methods'},
+      {type: 'h3', text: 'Tech Stack'},
+      {
+        type: 'TechStack',
+        techList: ['scikitlearn', 'skopt', 'joblib', 'pandas', 'matplotlib', 'numpy', 'seaborn'],
+      },
+      {type: 'h3', text: 'Data'},
+      {type: 'p', text: 'I picked an open-source dataset from the UC Irvine Machine Learning Repository containing hospital records on 101,766 hospitalizations among patients with diabetes from 1999-2008 at 130 US hospitals. Predictors include some demographics (race, gender, age), admission type, discharge type, time in hospital, number of lab procedures and medications given during hospitalization, number of prior visits (outpatient, emergency, inpatient) in the last year, a number of lab values, etc. I split data into 75% training and 25% test.'},
+      {type: 'p', text: 'I cleaned the data, checking values and imputing missing data (where variables had a relatively small percent of missing data). I dropped variables with very high amounts of missing data, as well as variables unlikely to be related to the outcome like insurance payer code. I also collapsed some categories where variables had a lot of categories, and checked linear relationships with outcome. Variables without a linear relationship with the outcome were left out of the logitsic regression model.'},
+      {type: 'h2', text: 'Results'},
+      {
+        type: 'table',
+        headers: ['Model', 'Hyperparameters*', 'Accuracy*', 'Precision', 'Recall'],
+        rows: [
+          ['Random Forest Classifier', 'max_depth: 20, n_estimators: 100', '88.783%', '66.667%', '0.64%'],
+          ['Gradient Boosting Classifier', 'learning_rate: 0.1, max_depth: 3, n_estimators: 50', '88.747%', '50.0%', '0.605%'],
+          ['Logistic Regression', 'default', '88.731%', '47.619%', '1.422%'],
+          ['Multilayer Perceptron', 'activation: relu, learning_rate: constant', '88.695%', '41.096%', '1.067%'],
+          ['K-Neighbors Classifier', 'leaf_size: 50, n_neighbors: 7, weights: uniform', '88.447%', '30.366%', '2.063%'],
+        ]
+      },
+      {type: 'p', className: 'note', text: '*Hyperparameter combinations were examined using Bayes Search CV from scikit-optimize with 3-fold cross-validation on the training data'},
+      {type: 'p', className: 'note', text: '*Accuracy, Precision, and Recall were calculated on the test data'},
+      {type: 'h3', text: 'Random Forest Classifier Results after Tuning for Precision'},
+      {type: 'p', text: 'Since users of this type of medical model would likely want to prioritize identifying as many people who are going to be rehospitalized and keep a low false-negative rate, I tuned the best model, Random Forest Classifier, to reduce precision'},
+      {type: 'ul', childGroup: [
+        [{type: 'p', text: 'At threshold: 0.07, predicted readmitted: 19882, predicted not readmitted: 19558, accuracy: 29.737%, precision: 12.916%, recall: 91.323%'}],
+        [{type: 'p', text: 'At threshold: 0.05, predicted readmitted: 24129, predicted not readmitted: 19558, accuracy: 14.414%, precision: 11.509%, recall: 98.755%'}],
+      ]},
+      {type: 'h3', text: 'Best predictors'},
+      {type: 'p', text: 'According to logistic regression, the 3 strongest predictors in a linear model are:'},
+      {type: 'ul', childGroup: [
+        [{type: 'p', text: 'discharge disposition'}],
+        [{type: 'p', text: 'number of inpatient visits in past year'}],
+        [{type: 'p', text: 'change in diabetes medication during hospitalization'}],
+      ]},
+      {type: 'p', text: 'Note: During data cleaning/exploration, I noted that many predictors in the dataset did not have a significant linear relationship with the outcome. I left out these out of some models such as logistic regression. I checked other models on both datasets (all predictors vs. only predictors with a linear relationships) but including more or fewer predictors did not make a significant difference on results.'},
+      {type: 'h2', text: 'Discussion'},
+      {type: 'ul', childGroup: [
+        [{type: 'p', text: 'All models struggled to differentiate between patients destined to be readmitted in 30 days from those who weren\'t based on predictors available, but Random Forest Classifier came out the strongest.'}],
+        [{type: 'p', text: 'When tuned by default to prioritize accuracy, the highest accuracy rate of 88.8% is little better than a prediction that 0 patients would be re-hospitalized in 30 days, which would be correct 88.7% of the time.'}],
+        [{type: 'p', text: 'When the best model was tuned to prioritize precision, I\'d have to assume that just over half of all patients are at risk of being re-hospitalized in order to capture almost all of the 11% who will be re-hospitalized.'}],
+        [{type: 'p', text: 'more data exploration/preparation could be conducted to reduce skew, bring back categorical diversity among some variables, and work with a medical expert to deturmine what comorbid diagnoses are relevant and create categories around that. This could improve the relationships in the data for future models.'}],
+      ]},
+      {type: 'h2', text: 'Dataset Citation'},
+      {type: 'p', text: 'Beata Strack, Jonathan P. DeShazo, Chris Gennings, Juan L. Olmo, Sebastian Ventura, Krzysztof J. Cios, and John N. Clore, “Impact of HbA1c Measurement on Hospital Readmission Rates: Analysis of 70,000 Clinical Database Patient Records,” BioMed Research International, vol. 2014, Article ID 781670, 11 pages, 2014.'}
+    ],
   },
+  // dear abby topic-modeling
   {
     path: 'topic-modeling',
     short_title: 'Topic Modeling',
@@ -259,33 +519,39 @@ export const projects: Project[] = [
     },
     projectCardTechStack: ['nltk', 'scikitlearn'],
     project_details: [
-      {type: 'h2', text: 'Goal'},
-      {type: 'div', className: 'align-row', elements: [
-        {type: 'p', text: 'I used unsupervised machine learning to explore underlying topics in 20,000 Dear Abby questions from 1985-2017. This involved cleaning and preparing the data using natural language processing techniques like tokenization and lemmatization. Then I used topic modeling algorithms including Latent Dirichlet Allocation (LDA) and Non-negative matrix factorization (NMF) to generate underlying topics from the data.'},
-        {type: 'img', src: dearabby, alt: 'A photo of Abigail Van Buren\'s column Dear Abby that includes a picture of her face as well as some small text'},
-      ]},
-      {type: 'img', src: dear_abby_word_cloud, alt: 'A word cloud with the largest words being year, time, husband, friend, mother, love, old, people, children, family, marry, etc.', className: 'medium-large-img'},
+      {
+        type: 'GoalAndGithub',
+        childGroup: [
+          {type: 'h2', text: 'Goal'},
+          {type: 'p', text: 'I used unsupervised machine learning to explore underlying topics in 20,000 Dear Abby questions from 1985-2017. This involved cleaning and preparing the data using natural language processing (NLP) techniques like tokenization and lemmatization. Then I used topic modeling algorithms including Latent Dirichlet Allocation (LDA) and Non-negative matrix factorization (NMF) to generate underlying topics from the data. This was a practice project I completed after completing trainings in NLP.'},
+        ],
+        href: 'https://github.com/KaySRubio/dear-abby-topic-modeling'
+      },
       {type: 'h2', text: 'Methods'},
       {type: 'h3', text: 'Tech Stack'},
       {
         type: 'TechStack',
-        techList: ['nltk', 'scikitlearn'],
+        techList: ['nltk', 'scikitlearn', 'joblib', 'matplotlib', 'numpy', 'pandas'],
       },
       {type: 'h3', text: 'Data Preparation Steps'},
-      {
-        type: 'ol', 
-        elements: [
-          {type: 'text', text: 'Expanded contractions, removed symbols, punctuation, numbers, and some content-specific phrases such as copyright or booklet information'},
-          {type: 'text', text: 'Tokenized and lemmatized the data'},
-          {type: 'text', text: 'Removed stopwords from the data such as generic words as well as content-specific words like "feel", "say", "go", "dear", "abby"'},
-          {type: 'text', text: 'Created a dictionary and a term-document frequency corpus'},
-          {type: 'text', text: 'Generated coherence scores which indicated that the ideal number of topics could be 1, 2, 4, 5, or 21'},
-        ]
-      },
+      {type: 'div', className: 'align-row', childGroup: [
+        {
+          type: 'ol', 
+          childGroup: [
+            [{type: 'text', text: 'Expanded contractions, removed symbols, punctuation, numbers, and some content-specific phrases such as copyright or booklet information'}],
+            [{type: 'text', text: 'Tokenized and lemmatized the data'}],
+            [{type: 'text', text: 'Removed stopwords from the data such as generic words as well as content-specific words like "feel", "say", "go", "dear", "abby"'}],
+            [{type: 'text', text: 'Created a dictionary and a term-document frequency corpus'}],
+            [{type: 'text', text: 'Generated coherence scores which indicated that the ideal number of topics could be 1, 2, 4, 5, or 21'}],
+          ]
+        },
+        {type: 'img', src: dearabby, alt: 'A photo of Abigail Van Buren\'s column Dear Abby that includes a picture of her face as well as some small text'},
+      ]},
+      
       {
         type: 'DisclosurePanel',
-        title: 'Example of original and cleaned data (click for details):',
-        elements: [
+        title: {type: 'text', text: 'Example of original and cleaned data (click for details):'},
+        children: [
           {
             type: 'table',
             headers: ['Original', 'Cleaned'],
@@ -302,12 +568,13 @@ export const projects: Project[] = [
       {type: 'p', text: 'Non-Negative Matrix Factorization (NMF) is a topic modeling algorithm that assumes each question belongs to only 1 topic. I used Inverse document frequency (TF-IDF) Vectorization to create a document-term matrix for each unique single word (unigram) and pair of words (bigram). I used both unigrams and bigrams as input for NMF.'},
       {type: 'p', text: 'In contrast with NMF, Latent Dirichlet Allocation (LDA) assumes all questions share topics but have different weightings of those topics.'},
       {type: 'h2', text: 'Results'},
+      {type: 'img', src: dear_abby_word_cloud, alt: 'A word cloud with the largest words being year, time, husband, friend, mother, love, old, people, children, family, marry, etc.', className: 'medium-large-img'},
       {type: 'h3', text: 'Topic Modeling with Non-Negative Matrix Factorization (NMF)'},
       {type: 'p', text: 'Since Non-Negative Matrix Factorization (NMF) assumes each question belongs to only 1 topic, the results seemed less repetitive and more interesting compared to LDA in this project. I also appreciated having the algorithm to pull out more topics (21) rather than fewer (4), so I\'ll highlight these results.'},
       {
         type: 'DisclosurePanel',
-        title: '21 Topics generated by NMF (click to see all topics):',
-        elements: [
+        title: {type: 'text', text: '21 Topics generated by NMF (click to see all topics):'},
+        children: [
           {
             type: 'table',
             headers: ['Topic', 'Topic Words', 'Example question', 'Percent of questions in this topic'],
@@ -446,8 +713,8 @@ export const projects: Project[] = [
       {type: 'p', text: 'I found that LDA tended to identify topics focused heavily on time, husbands, and mothers, with some additional more minor themes that were present in most or all of the questions. Coherence scores suggested trying 2, 5, and 21 topics. 2 topics didn\'t seem to provide enough information and 21 topics had a lot of overlap so I will highlight the results using 5 topics here.'},
       {
         type: 'DisclosurePanel',
-        title: '5 Topics generated by LDA (click to see all topics):',
-        elements: [
+        title: {type: 'text', text: '5 Topics generated by LDA (click to see all topics):'},
+        children: [
           {
             type: 'table',
             headers: ['Topic', 'Topic Words'],
@@ -482,14 +749,15 @@ export const projects: Project[] = [
       {type: 'h2', text: 'Sources'},
       {
         type: 'ul',
-        elements: [
-          {type: 'a', text: 'pyLDAvis', href: 'https://pyldavis.readthedocs.io/en/latest/readme.html'},
-          {type: 'a', text: 'NMF from scikit-learn', href: 'https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html'},
-          {type: 'a', href: 'https://www.kaggle.com/datasets/thedevastator/american-anxieties-dear-abby-s-questions', text: 'American Anxieties: Dear Abby\'s Questions 20,000 Questions to Dear Abby: Insights on American Anxieties By Kelly Garrett'},
+        childGroup: [
+          [{type: 'a', text: 'pyLDAvis', href: 'https://pyldavis.readthedocs.io/en/latest/readme.html'}],
+          [{type: 'a', text: 'NMF from scikit-learn', href: 'https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html'}],
+          [{type: 'a', href: 'https://www.kaggle.com/datasets/thedevastator/american-anxieties-dear-abby-s-questions', text: 'American Anxieties: Dear Abby\'s Questions 20,000 Questions to Dear Abby: Insights on American Anxieties By Kelly Garrett'}],
         ]
       },
     ],
   },
+  // algorithm-ocean
   {
     path: 'algorithm-ocean',
     short_title: 'Algorithm Ocean',
@@ -507,6 +775,7 @@ export const projects: Project[] = [
     techStack: ['React', 'TypeScript'],
     project_details: [],
   },
+  // i-ready
   {
     path: 'i-ready',
     short_title: 'i-Ready',
@@ -524,6 +793,7 @@ export const projects: Project[] = [
     techStack: ['React', 'Nodejs'],
     project_details: [],
   },
+  // speech-app
   {
     path: 'speech-app',
     short_title: 'Speech App',
@@ -560,20 +830,51 @@ export const techStackData: TechStackData = [
     iconComponent: scikitlearn,
     href: '',
   },
- 
   {
     type: 'skopt',
     name: 'scikit-optimize',
     iconComponent: skopt,
     href: 'https://scikit-optimize.github.io/stable/',
   },
-   
   {
     type: 'librosa',
     name: 'librosa',
     iconComponent: librosa,
     href: 'https://librosa.org/doc/latest/index.html',
   },
+  {
+    type: 'joblib',
+    name: 'JobLib',
+    iconComponent: joblib,
+    href: 'https://joblib.readthedocs.io/en/stable/',
+  },
+  {
+    type: 'pandas',
+    name: 'pandas',
+    iconComponent: pandas,
+    href: 'https://pandas.pydata.org/',
+  },
+  {
+    type: 'matplotlib',
+    name: 'matplotlib',
+    iconComponent: matplotlib,
+    href: 'https://matplotlib.org/',
+  },
+  {
+    type: 'numpy',
+    name: 'NumPy',
+    iconComponent: numpy,
+    href: 'https://numpy.org/',
+  },
+  {
+    type: 'seaborn',
+    name: 'seaborn',
+    iconComponent: seaborn,
+    href: 'https://seaborn.pydata.org/',
+  },
+
+
+
   
   // neural network libraries
   {

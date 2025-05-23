@@ -22,7 +22,6 @@ const ProjectCard = ({project, theme='white'}: ProjectCardProps) => {
   }
 
   const renderProjectImage = () => {
-    console.log('project.mainImage: ', project.mainImage);
     if(project.mainImage.type === 'svg') {
       const Icon = project.mainImage.src;
       return (
@@ -40,7 +39,7 @@ const ProjectCard = ({project, theme='white'}: ProjectCardProps) => {
       <h3>{project.short_title}</h3>
       <p>{project.desc}</p>
       {project.mainImage && renderProjectImage()}
-      {project.projectCardTechStack && <TechStack index={null} techList={project.projectCardTechStack} className='project-card-tech-stack-row' />}
+      {project.projectCardTechStack && <TechStack techList={project.projectCardTechStack} className='project-card-tech-stack-row' />}
       {project.techStack && <ul>
         {project.techStack.map((tech, index) => (
           <li key={index}>

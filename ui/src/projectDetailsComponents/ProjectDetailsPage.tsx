@@ -3,7 +3,9 @@
 import React from 'react';
 import Table from './Table';
 import DisclosurePanel from './DisclosurePanel';
+import DemoBoard from './demoComponents/DemoBoard';
 import TechStack from './TechStack';
+import GoalAndGithub from './GoalAndGithub';
 import type { Project, ProjectDetailComponent } from '../types/portfolioTypes';
 import './projectDetails.css'
 
@@ -14,26 +16,33 @@ type ProjectDetailsPageProps = {
 const ProjectDetailsPage = ({project}: ProjectDetailsPageProps) => {
 
   // loops through project_details array and renders each item as a component with that data
-  // if project_details is empty, displays the Coming Soon page
-  // TODO
+  // TODO if project_details is empty, displays the Coming Soon page
   const renderComponent = (data: ProjectDetailComponent, key: number | null = null) => {
     let returnComponent;
     let children;
+    let el;
+    let Icon;
 
     switch(data.type) {
       case 'h2':
       case 'h3':
       case 'h4':
-        returnComponent = React.createElement(data.type, {key: key}, data.text);
+        returnComponent = React.createElement(data.type, { key }, data.text);
         break;
       case 'text':
         returnComponent = <span key={key}>{data.text}</span>
         break;
       case 'p':
-        returnComponent = <p key={key}>{data.text}</p>
+        returnComponent = <p key={key} className={data.className}>{data.text}</p>
         break;
       case 'a':
-        returnComponent = (<a key={key} href={data.href}>{data.text}</a>);
+        if(data.text) {
+          returnComponent = (<a key={key} href={data.href}>{data.text}</a>);
+        } else if (data.children) {
+          children = data.children.map((element, index) => {
+            return (renderComponent(element, index))})
+          returnComponent = (<div key={key}>{children}</div>)
+        }
         break;
       case 'img':
         returnComponent = (<img key={key} src={data.src} className={data.className ? data.className : 'default-img'} />);
@@ -43,32 +52,48 @@ const ProjectDetailsPage = ({project}: ProjectDetailsPageProps) => {
         break;
       case 'ul':
       case 'ol':
-        children = data.elements.map((el, index) => (<li key={index}>
-          {renderComponent(el, key)}
-        </li>))
+        children = data.childGroup.map((childGroup, index) => {
+          return (
+          <li key={index} className={data.className}>
+            { childGroup.map((el, i) => renderComponent(el, i)) }
+          </li>
+        )})
         returnComponent = React.createElement(data.type, {key: key}, children)
         break;
       case 'div':
-        returnComponent = (
-          <div className={data.className} key={key}>
-            {data.elements.map((el, key) => renderComponent(el, key))}
-          </div>
-        )
+        children = data.childGroup.map((el, i) => renderComponent(el, i))
+        returnComponent = (<div key={key} className={data.className}>{children}</div>)
+        break;
+      case 'GoalAndGithub':
+        children = data.childGroup.map((el, i) => renderComponent(el, i))
+        returnComponent = (<GoalAndGithub key={key} className={data.className} href={data.href}>{children}</GoalAndGithub>)
         break;
       case 'DisclosurePanel':
+        el = renderComponent(data.title, key);
         returnComponent = (
-          <DisclosurePanel title={data.title} index={key}>
-            {data.elements.map((el, key) => renderComponent(el, key))}
+          <DisclosurePanel key={key} title={el} index={key} >
+            { data.children.map((el, idx) => renderComponent(el, idx))}
           </DisclosurePanel>
         )
         break;
       case 'TechStack':
         returnComponent = (
-          <TechStack techList={data.techList} index={key} className='project-details-tech-stack-row' />
+          <TechStack key={key} techList={data.techList} className='project-details-tech-stack-row' />
         )
         break;
+      case 'svg':
+        Icon = data.src;
+        returnComponent = (
+          <span key={key} role='img' aria-label={data.alt} >
+            <Icon className={data.className} />
+          </span>
+        )
+        break;
+      case 'DemoBoard':
+        returnComponent = <DemoBoard key={key} data={data} />
+        break;
       default:
-        returnComponent = (<div key={key}></div>);
+        returnComponent = null;
     } 
     return (
       returnComponent
@@ -87,4 +112,3 @@ const ProjectDetailsPage = ({project}: ProjectDetailsPageProps) => {
 }
 
 export default ProjectDetailsPage;
-// {visibleProjectsOnTopic.map(project => ( <ProjectCard key={project.path} project={project} theme='blue' />))}

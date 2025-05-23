@@ -4,13 +4,10 @@ import { techStackData } from '../data/portfolioData';
 
 type TechStackProps = {
   techList: string[],
-  index: number | null,
   className?: string;
 }
 
-export default function TechStack({techList, index, className}: TechStackProps) {
-  console.log('data: ', techList);
-
+export default function TechStack({techList, className}: TechStackProps) {
   // Filter the techStackData, which includes all possible tech stack items and icons,
   // to just those for this project
   const filteredTechStackData = techStackData.filter(item =>
@@ -25,12 +22,11 @@ export default function TechStack({techList, index, className}: TechStackProps) 
     }
   })
 
-
   // TODO simplify this, the project-card is already a Link so it can't hold <a>
   let returnComponent;
   if(className==='project-card-tech-stack-row') {
     returnComponent = (
-      <div key={index} className={`${className} tech-stack-row`}>
+      <div className={`${className} tech-stack-row`}>
       {filteredTechStackData.map((tech, index) => {
         const Icon = tech.iconComponent;
         return (
@@ -42,7 +38,7 @@ export default function TechStack({techList, index, className}: TechStackProps) 
     )
   } else {
     returnComponent = (
-      <div key={index} className={`${className} tech-stack-row`}>
+      <div className={`${className} tech-stack-row`}>
       {filteredTechStackData.map((tech, index) => {
         const Icon = tech.iconComponent;
         return (
@@ -55,17 +51,4 @@ export default function TechStack({techList, index, className}: TechStackProps) 
     )
   }
   return returnComponent;
-/*
-  return (
-    <div key={index} className={`${className} tech-stack-row`}>
-      {filteredTechStackData.map((tech, index) => {
-        const Icon = tech.iconComponent;
-        return (
-          <a href={tech.href} key={index}>
-            <p>{tech.name}</p>
-            <Icon />
-          </a>
-      )})}
-    </div>
-  ) */
 }
