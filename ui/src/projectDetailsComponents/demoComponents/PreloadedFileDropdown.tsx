@@ -3,7 +3,7 @@ import React from 'react';
 // import { categoricalDropdownDataType, preloadedAudioFileData } from '../types/type';
 import type { sampleFile } from '../../types/portfolioTypes';
 
-type DropdownProps = {
+type PreloadedFileDropdownProps = {
   // options: string[] | sampleFile[];
   // options: string[];
   options: sampleFile[];
@@ -13,13 +13,13 @@ type DropdownProps = {
   className?: string;
 };
 
-export default function Dropdown({
+export default function PreloadedFileDropdown({
   options,
   name,
   handleChange,
   defaultOption = '-- Select a file --',
   className,
-}: DropdownProps) {
+}: PreloadedFileDropdownProps) {
 
   return(
     <select 
@@ -35,13 +35,15 @@ export default function Dropdown({
           </option>
         )}
         {options.map(option => (
-          <option value={option.location} key={option.display_text}>
+          <option value={JSON.stringify(option)} key={option.display_text}>
             {option.display_text}
           </option>
         ))}
       </select>
   )
 }
+
+// <option value={option.location} key={option.display_text}>
 
 /*
 if (Array.isArray(options)) {

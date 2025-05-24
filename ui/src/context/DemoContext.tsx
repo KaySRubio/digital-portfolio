@@ -3,6 +3,7 @@ import type { ReactNode, RefObject } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import RecordPlugin from 'wavesurfer.js/dist/plugins/record';
 // import RegionsPlugin from 'wavesurfer.js/dist/plugins/regions';
+import SpectrogramPlugin from 'wavesurfer.js/dist/plugins/spectrogram';
 
 
 type DemoContextType = {
@@ -22,6 +23,10 @@ type DemoContextType = {
   waveformRef: RefObject<HTMLDivElement | null>;
   wavesurferRef: React.RefObject<WaveSurfer | null>;
   recordPluginRef: React.RefObject<InstanceType<typeof RecordPlugin> | null>;
+  spectrogramContainerRef: RefObject<HTMLDivElement | null>;
+  spectrogramRef: React.RefObject<InstanceType<typeof SpectrogramPlugin> | null>;
+  showSpectrogram: boolean;
+  setShowSpectrogram: React.Dispatch<React.SetStateAction<boolean>>;
   audioPlaying: boolean;
   setAudioPlaying: React.Dispatch<React.SetStateAction<boolean>>;
   onPlay: () => void;
@@ -43,7 +48,9 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const wavesurferRef = useRef<WaveSurfer | null>(null);
   const recordPluginRef = useRef<InstanceType<typeof RecordPlugin> | null>(null);
   const waveformRef = useRef<HTMLDivElement | null>(null);
+  const spectrogramContainerRef = useRef<HTMLDivElement | null>(null);
   // const regionsPluginRef = useRef(null);
+  const spectrogramRef = useRef<InstanceType<typeof SpectrogramPlugin> | null>(null);
 
 
   const [isRecording, setIsRecording] = useState(false);
@@ -54,13 +61,31 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const [uploadedFileError, setUploadedFileError] = useState<string>('Error! Please fix this wack file');
   const [audioPlaying, setAudioPlaying] = useState(false);
   const [resultFromBackend, setResultFromBackend] = useState(null);
+  const [showSpectrogram, setShowSpectrogram] = useState(false);
   // const [regionsOnWaveform, setRegionsOnWaveform] = useState<regionOnWaveform[]>([]);
 
   useEffect(() => {
+    // if (!waveformRef.current) return;
     if (!waveformRef.current) return;
 
     // const regionsPlugin = RegionsPlugin.create();
     // regionsPluginRef.current = regionsPlugin;
+
+    /*
+    const ws = WaveSurfer.create({
+      container: waveformRef.current,
+      waveColor: 'blue',
+      progressColor: 'darkblue',
+      // plugins: [regionsPlugin],
+      plugins: [
+        // Timeline.create();
+        SpectrogramPlugin.create({
+          container: spectrogramContainerRef.current,
+          labels: true,
+          fftSamples: 2048,
+        })
+      ]
+    }); */
 
     const ws = WaveSurfer.create({
       container: waveformRef.current,
@@ -69,7 +94,12 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       // plugins: [regionsPlugin],
     });
 
+    
+
+    // ws.registerPlugin(spectrogram);
+
     wavesurferRef.current = ws;
+    
 
     ws.on('finish', () => {
       setAudioPlaying(false);
@@ -93,6 +123,8 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       console.error('WaveSurfer error:', e);
       setUploadedFileError('Failed to load audio in wavesurfer. The file may be corrupt or unsupported.');
     });
+
+
 
     /*
     const handleRegionClick = (region, e) => {
@@ -120,6 +152,21 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       // regionsPlugin.un('region-clicked', handleRegionClick);
     };
   }, []);
+
+  useEffect(() => {
+    if(showSpectrogram && wavesurferRef.current && spectrogramContainerRef.current) {
+      const spectrogram = SpectrogramPlugin.create({
+        container: spectrogramContainerRef.current,
+        labels: true,
+        fftSamples: 2048,
+      });
+      wavesurferRef.current.registerPlugin(spectrogram);
+      spectrogramRef.current = spectrogram;
+    } else {
+      spectrogramRef.current?.destroy();
+      spectrogramRef.current = null;
+    }
+  }, [showSpectrogram])
 
   /*
   const updateRegions = () => {
@@ -159,11 +206,13 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   useEffect(() => {
     const ws = wavesurferRef.current;
     if (!ws) return;
-    const urlToLoad = uploadedUrl || preloadedUrl;
+    const urlToLoad = uploadedUrl || preloadedUrl || recordedUrl;
     if (urlToLoad) {
       ws.load(urlToLoad);
+    } else {
+      ws.empty();
     }
-  }, [uploadedUrl, preloadedUrl]);
+  }, [uploadedUrl, recordedUrl, preloadedUrl]);
 
   const onPlay = () => {
     if (wavesurferRef.current) {
@@ -177,12 +226,6 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       }
     }
   };
-
-  useEffect(() => {
-    // setRegionsOnWaveform([]);
-    setResultFromBackend(null);
-  }, [recordedUrl, preloadedUrl, uploadedUrl]);
-
 
   return (
     <DemoContext.Provider
@@ -202,6 +245,10 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         waveformRef,
         wavesurferRef,
         recordPluginRef,
+        spectrogramContainerRef,
+        spectrogramRef,
+        showSpectrogram,
+        setShowSpectrogram,
         audioPlaying,
         setAudioPlaying,
         onPlay,

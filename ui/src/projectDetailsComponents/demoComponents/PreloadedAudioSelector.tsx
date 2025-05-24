@@ -1,13 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Dropdown from './Dropdown';
-// import MoreInformationButton from '../buttons/MoreInformationButton';
-/* import {
-  fluencyPreloadedAudioFileData,
-  recognitionPreloadedAudioFileData,
-  verificationPreloadedAudioFileData,
-} from '../data/preloadedAudioFileData'; */
-// import { preloadedAudioFile, preloadedAudioFileData } from '../types/type';
-// import { SpeechApiEnum } from '../types/type';
+import PreloadedFileDropdown from './PreloadedFileDropdown';
 import { useDemoContext } from "../../context/DemoContext";
 import '../projectDetails.css'
 import type { sampleFile } from '../../types/portfolioTypes';
@@ -23,39 +14,25 @@ export const PreloadedAudioSelector = ({ children, preloadedFileData }: Preloade
     setAudioFileAvailable,
     setRecordedUrl,
     setPreloadedUrl,
-    // selectedPreloadedFileData,
-    // setSelectedPreloadedFileData,
+    setResultFromBackend
   } = useDemoContext();
 
-  const [fileUrl, setFileUrl] = useState<string | null>(null);
-  // const [showMoreInfo, setShowMoreInfo] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (fileUrl) {
-      // clear url's for other inputs
-      setRecordedUrl('');
-      setPreloadedUrl(fileUrl);
-      setUploadedUrl('');
-      setAudioFileAvailable(true);
-    }
-  }, [fileUrl]);
-
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const url = e.target.value;
-    setFileUrl(url);
-    // setSelectedPreloadedFileData(selectedFile);
+    const fileData: sampleFile = JSON.parse(e.target.value);
+    setPreloadedUrl(fileData.location);
+    setResultFromBackend(fileData.results);
+    setAudioFileAvailable(true);
+    // clear url's for other inputs
+    setRecordedUrl('');
+    setUploadedUrl('');
   };
-
-  // const handleMoreInfoButtonClick = () => {
-    // setShowMoreInfo(prev => !prev);
-  // };
 
   return (
     <div className='input-area-parent'>
       <h4 className='sr-only'>Preloaded</h4>
       <div className='preloaded-input-area'>
         <div>
-          <Dropdown
+          <PreloadedFileDropdown
             options={preloadedFileData}
             name="preloaded"
             handleChange={handleChange}

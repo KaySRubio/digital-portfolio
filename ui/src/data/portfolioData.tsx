@@ -4,15 +4,16 @@ import { TopicNames } from '../types/portfolioTypes';
 import waveIcon  from '@/assets/svg/wave.svg?react';
 import wwwIcon  from '@/assets/svg/www.svg?react';
 import aiIcon from '@/assets/svg/ai.svg?react';
-import anemone from '@/assets/svg/anemone.svg?react';
+// import anemone from '@/assets/svg/anemone.svg?react';
+ import anemone from '@/assets/png/anemone.png';
 import mic from '@/assets/svg/mic.svg?react';
-import people_talking from '@/assets/svg/people_talking.svg?react';
+import people_talking from '@/assets/png/people_talking.png';
 import chicken from '@/assets/png/chicken.png';
 import spermwhalepng from '@/assets/png/spermwhale.png';
 import frogpng from '@/assets/png/frog.png';
 import dearabby from '@/assets/png/dearabby.png';
-import dancing from '@/assets/svg/dancing.svg?react';
-import hospitalization from '@/assets/svg/hospitalization.svg?react';
+import dancing from '@/assets/png/dancing.png';
+import hospitalization from '@/assets/png/hospitalization.png';
 import iready from '@/assets/png/iready.png';
 import asrPng from '@/assets/png/asr.png';
 import batPng from '@/assets/png/bat.png';
@@ -43,6 +44,9 @@ import indian from '@/assets/wav/indian.wav';
 import mexican from '@/assets/wav/mexican.wav';
 import nigerian from '@/assets/wav/nigerian.wav';
 import vietnamese from '@/assets/wav/vietnamese.wav';
+import transcription from '@/assets/png/transcription.png';
+import accent from '@/assets/png/accent.png';
+import phonemes from '@/assets/png/phonemes.png';
 
 export const homePageData = {
   headline: 'Listener, Developer, Explorer',
@@ -198,7 +202,7 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     mainImage: {
-      type: 'svg',
+      type: 'png',
       src: people_talking,
       alt: 'A cartoon of multiple people talking',
     },
@@ -252,12 +256,192 @@ export const projects: Project[] = [
         type: 'DemoBoard',
         page: 'speech-recognition-2025',
         sampleAudio: [
-          {display_text: 'Chinese American comedian Ronny Chieng', location: chineseAmerican},
-          {display_text: 'Irish accent from Derry Girls', location: irish},
-          {display_text: 'Indian professor Abdul Bari', location: indian},
-          {display_text: 'Mexican actor Jaime Camil in Jane the Virgin', location: mexican},
-          {display_text: 'Nigerian actors Daniel Effiong & Tana Adelana', location: nigerian},
-          {display_text: 'Vietnamese accent from L2-Arctic-Corpus', location: vietnamese},
+          {
+            display_text: 'Chinese American comedian Ronny Chieng',
+            location: chineseAmerican,
+            results: [
+              {
+                "transcription": " We try not to talk about politics. My mega friends and I, out of mutual respect, inevitably it comes up. Some stuff I'm wrong about, some stuff I write about, but sometimes the messaging is so convoluted. I can't get to what their core issue actually is. Sometimes they're like, Ronnie, China caused COVID, but COVID isn't real. So is it fine then?"
+              },
+              {
+                "phonemes_native_eng": "wi t ɹaɪnɑ tə tɑ kbɑ pɑlə tɪ s maɪmæ əf ɹɛn zɪnaɪaɪɾəmju ʧɹɪs pɛ t aɪ ɪnɛvɪɾɪ b li kəm zɑ  səm s təfəm ɹɑŋə baʊssəm zəvzɹaɪɾə baʊ bəsəm taɪm z laɪ ðɛmɛsɪ ʤiŋ ɪsoʊ   kɑm vəludɪ laɪaɪ kæŋ gɛ tuwə ðɪ ðɛ kɑɪʃu  æ ʃliɪz aɪ səm aɪm zoʊlaɪ ɹɑni ʧaɪnə kɑz d koʊvɪ dbə koʊvɪ d ɪzɪn ɹisoʊɪzɪfaɪnðɛn"
+              },
+              {
+                "phonemes_eng_second_lang": "wi tɹaɪ nɑt tʌ tɔk ʌb ʌpɑlʌtɪks maɪ mæɡʌfɹˌɛnz ʌn aɪ ɑdʌ mjɪt͡ʃuʌl ɹispɛkt maɪ ɪnɛvʌtʌbli kʌmz ʌp sʌmstʌf ʌn ɹɔŋ ʌbaʊz sʌmsʌv ðʌ ɹaɪt ʌbaʊ ʌ sʌmtˌaɪmz laɪ  ʌ mɛsɪd͡ʒɪŋ ɪz soʊ kɑnvʌludʌ laɪ aɪ kæn ɡɛt tu wʌt ðʌ dɛɹ ko ɪʃu æktʃʌli ɪz laɪ sʌmɪz ʌ vaɪɹɑnɪk t͡ʃaɪnʌ kɑzd koʊvɪt bʌt koʊvɪd ɪz ʌn ɹiwso ɪz ðʌ faɪn dæn"
+              },
+              {
+                "native_eng_country": [
+                  {
+                    "accent": "us",
+                    "score": 0.62
+                  }
+                ]
+              },
+              {
+                "first_lang_if_not_eng": [
+                  {
+                    "accent": "Hindi",
+                    "score": 0.47
+                  }
+                ]
+              }
+            ],
+          },
+          {
+            display_text: 'Irish accent from Derry Girls',
+            location: irish,
+            results: [
+              {
+                "transcription": " And I also screw up years ago, but I have changed. I want my daughter to have the pleasure of knowing me. I became an international star just a few years ago. Imagine what at this service it would have been to the world if I had given up. Oh, sure. Who should I make it out to? Oh, it's the... Oh, yeah. Excuse me, miss?"
+              },
+              {
+                "phonemes_native_eng": "naɪwəzəs k ɹuə jɪzɪ goʊ bəɾaɪhæv ʧeɪnʤ d mwən maɪ dɑɾɝ tuhævðə p lɛʃɝəv noʊɪnmi aɪ bi keɪmɪnɪn tɝnæʃn ls ʧɑɹ ʤɪs tɪfujɪzɪ goʊmæ ʤɪnwəɾæ ðisɝvɪsɪwʊ dhæv bin təðəwɝl ifaɪhæ d gɪvɪnə p ɹoʊhɛɾʊðɪləvɪ əbɛləvɪ ɹɾðələvɛ oʊʃɝ huʃʊɾaɪmeɪ kɪɾaʊ tuoʊwɪ s d əms ɪz oʊjɛs kuz mimɪs uɪɪɪɪɪ"
+              },
+              {
+                "phonemes_eng_second_lang": "æn aɪ wʌs ʌ skuʌp jˌɹiʌs ʌɡoʊ bʌt a hæv t͡ʃeɪnd͡ʒd aɪm wʌn maɪ dɔɪɚ tu hæv ðʌ plɛʃɚ ʌv noʊɪn miaɪ bikɛɪm ʌn ˌɪntɚnɑʃʌŋʌstɹɑd͡ʒʌt͡ʃʌfi jɪɹs ʌɡoʊ ɪmæd͡ʒʌn wʌt æt distɹivʌsi wʊd hæv bin tu dʌ wɚld ɪf aɪ hæd ɡivʌn ʌp ɹɔɛdlʌl dʌ lɛlʌɡʌt ɹɔɛlʌlʌlɡʌ oʊ ʃʊɹhu ʃʊd aɪ meɪk ɪt aʊt u oʊ wɪt ð ɔmʊst ɛz ɔ jɛsjuz meɪ mɪs ʌ"
+              },
+              {
+                "native_eng_country": [
+                  {
+                    "accent": "australia",
+                    "score": 0.58
+                  }
+                ]
+              },
+              {
+                "first_lang_if_not_eng": [
+                  {
+                    "accent": "Hindi",
+                    "score": 0.33
+                  }
+                ]
+              }
+            ],
+          },
+          {
+            display_text: 'Indian professor Abdul Bari',
+            location: indian,
+            results: [
+              {
+                "transcription": ""
+              },
+              {
+                "phonemes_native_eng": ""
+              },
+              {
+                "phonemes_eng_second_lang": ""
+              },
+              {
+                "native_eng_country": [
+                  {
+                    "accent": "",
+                    "score": 0.
+                  }
+                ]
+              },
+              {
+                "first_lang_if_not_eng": [
+                  {
+                    "accent": "",
+                    "score": 0.
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            display_text: 'Mexican actor Jaime Camil in Jane the Virgin',
+            location: mexican,
+            results: [
+              {
+                "transcription": " What's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, I'm with clients, molar. Have you seen my green scarf? I'm busy. What is it? I'm going to be late for bingo. I'm trying to commute."
+              },
+              {
+                "phonemes_native_eng": "ʤɑn səmwənɛl shɪɝəwʊmənəfɑm lɪmɛm bɝ hæmiwʊudumaɪɹɪðɝ ʃihɛzəmoʊs tb juɾəfəlhɛɾəvhɛkʃihɛzɪmsɪ ʤfɑjɪhəhɑvənʃiwən s mi tɪ tɛl ju ɑvəwɪə b ləɾiɑm sɝmɪ ʤ aɪm wɪθ k laɪɪn s mɑlɝhəv usin maɪ g ɹim s kɑɹɑm bɪz hæzəɾm goʊnɪvɪlɪfɝ bɪŋ g ɑn t ɹaɪɪŋtɪ k m ju"
+              },
+              {
+                "phonemes_eng_second_lang": "ʒɔnʌ sʌmʌn hʌsɪ ʌ wʊmʌn a sʌn aɪ nɛmbɚ hæni oʊnli  uz maɪ ɹɛʒɚ ʃi ævʌz ʌ moʊst bjutʌfʌl hɛd ʌnv hɛɹ ʃ hæz ʌ nɛsɪt͡ʃ fɔ hɪkʌma ææn ʃi wɑnt mi tʌ tɛl j æ waɪ hæv æi ænsʌn eɪt͡ʃ aɪm mʌt klaɪ ʌnt smɔlɚ hæv ju seɪn aɪɡɹɪnz jɑɹ ɑnd bɪzi aɪæv æn ɡɑt ʌt ʌ lɛt vɚbæŋɡˌoʊ ɑn tɹaɪɪŋ tʌ kʌnju"
+              },
+              {
+                "native_eng_country": [
+                  {
+                    "accent": "england",
+                    "score": 0.07
+                  }
+                ]
+              },
+              {
+                "first_lang_if_not_eng": [
+                  {
+                    "accent": "Hindi",
+                    "score": 0.52
+                  }
+                ]
+              }
+            ],
+          },
+          {
+            display_text: 'Nigerian actors Daniel Effiong & Tana Adelana',
+            location: nigerian,
+            results: [
+              {
+                "transcription": " You see, let me go. I have to run. I wake up early in the morning. I can't wait to see you this weekend. I have good news. You do? What's the good news, tell me. It's a surprise. Okay, now I can't wait. How was your hand? It's fine. It's healing. It's not as painful anymore. I can't believe you slammed your hand on your car door. Pop away your hand!"
+              },
+              {
+                "phonemes_native_eng": "ɪɪɪɪðɪsɪlɪv mi gh hæf tə b ɹəəwɪ kə pɛliɪnðəmɑnɪŋ ə kaʊweɪ tɪsiɪðɪs wi kɛnaɪhæv gʊ nuzju duwəzɪ gu nuz tɛl mi ɪ t sɪsə p ɹaɪz oʊ keɪnaʊaɪ kaʊɪ shaʊwɪʃɪhæn d s faɪnɪ tsɪshiliŋs nətəs pɪn fəlɛnim kɑm bəliv jus lɑm ɑhaɪn dɑn jʊ kɑ dɑhə weɪju"
+              },
+              {
+                "phonemes_eng_second_lang": "ɪɪz lɛmɪ ɡoʊ æv tʌ ɹʌm aɪ wʌlkʌp ɚli ɪn ðʌ mɔnɪŋʌkaʊ ʌweɪ tʌ si ts wi kæn aɪ hæv kʊɡ meɪs ju du u wʌz ʌ ɡʊdnus tɛ mi ɪts ʌ sʌpɹaɪs ʊk naʊ ʌkaʊɪtsʌhaʊ ɪʃ jʊ hænt ɪts faɪɪlʌts hilɪ lʌt ʌspɛn flɛnimɔ ʌkʌmpʌnli ɪf ju slɑmd jɔ hændɑl jʌ kɑto pʌkli hi"
+              },
+              {
+                "native_eng_country": [
+                  {
+                    "accent": "england",
+                    "score": 0.67
+                  }
+                ]
+              },
+              {
+                "first_lang_if_not_eng": [
+                  {
+                    "accent": "Hindi",
+                    "score": 0.47
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            display_text: 'Vietnamese accent from L2-Arctic-Corpus',
+            location: vietnamese,
+            results: [
+              {
+                "transcription": ""
+              },
+              {
+                "phonemes_native_eng": ""
+              },
+              {
+                "phonemes_eng_second_lang": ""
+              },
+              {
+                "native_eng_country": [
+                  {
+                    "accent": "",
+                    "score": 0.
+                  }
+                ]
+              },
+              {
+                "first_lang_if_not_eng": [
+                  {
+                    "accent": "",
+                    "score": 0.
+                  },
+                ],
+              },
+            ],
+          },
         ],
         requests: [
           {
@@ -266,6 +450,69 @@ export const projects: Project[] = [
             huggingFacePredict: '/transcribe_and_classify_speech_1',
           }
         ],
+        resultTabs: [
+          {
+            type: 'transcription',
+            display_text: 'Transcription',
+            icon: transcription,
+            resultsForEachModel: [
+              {
+                path: 'result[0].transcription',
+                description: [
+                  {type: 'text', text: 'Model: '},
+                  {type: 'a', href: 'https://huggingface.co/openai/whisper-base.en', text: 'openai/whisper-base.end'},
+                  {type: 'text', text: 'Trained on 680k hours of labelled data'},
+                ],
+              }
+            ]
+          },
+          {
+            type: 'phonememic_transcription',
+            display_text: 'Phonemes',
+            icon: phonemes,
+            resultsForEachModel: [
+              {
+                path: 'phonemes_native_eng',
+                description: [
+                  {type: 'text', text: 'Model: '},
+                  {type: 'a', href: 'https://huggingface.co/vitouphy/wav2vec2-xls-r-300m-timit-phoneme', text: 'vitouphy/wav2vec2-xls-r-300m-timit-phoneme'},
+                  {type: 'text', text: 'Trained on DARPA TIMIT American English'},
+                ]
+              },
+              {
+                path: '',
+                description: [
+                  {type: 'text', text: 'Model: '},
+                  {type: 'a', href: 'https://huggingface.co/mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme', text: 'mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme'},
+                  {type: 'text', text: 'Trained on L2 arctic, speakers of English as a second langauge'},
+                ]
+              },
+            ]
+          },
+          {
+            type: 'accent',
+            display_text: 'Accent',
+            icon: accent,
+            resultsForEachModel: [
+              {
+                path: '',
+                description: [
+                  {type: 'text', text: 'Model: '},
+                  {type: 'a', href: 'https://huggingface.co/Jzuluaga/accent-id-commonaccent_ecapa', text: 'Jzuluaga/accent-id-commonaccent_ecapa'},
+                  {type: 'text', text: 'Trained on Native English speakers from around the world'},
+                ]
+              },
+              {
+                path: '',
+                description: [
+                  {type: 'text', text: 'Model: '},
+                  {type: 'a', href: 'https://huggingface.co/kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2', text: 'kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2'},
+                  {type: 'text', text: 'Trained on L2 arctic, speakers of English as a second langauge'},
+                ]
+              }
+            ],
+          },
+        ]
       },
       {type: 'h2', text: 'Models used'},
       {
@@ -275,7 +522,7 @@ export const projects: Project[] = [
           ['Automatic Speech Recognition', {type: 'a', text: 'openai/whisper-base.end', href: 'https://huggingface.co/openai/whisper-base.en'}, '680k hours of labelled data'],
           ['Phonemic Transcription', {type: 'a', text: 'vitouphy/wav2vec2-xls-r-300m-timit-phoneme', href: 'https://huggingface.co/vitouphy/wav2vec2-xls-r-300m-timit-phoneme'}, 'DARPA TIMIT American English'],
           ['Phonemic Transcription', {type: 'a', text: 'mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme', href: 'https://huggingface.co/mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme'}, 'L2 arctic, speakers of English as a second langauge'],
-          ['Accent Classification', {type: 'a', text: 'Jzuluaga/accent-id-commonaccent_ecapa', href: 'https://github.com/KaySRubio/transformers_speech_recognition_and_classification/blob/main/Jzuluaga/accent-id-commonaccent_ecapa'}, ' Native English speakers from around the world'],
+          ['Accent Classification', {type: 'a', text: 'Jzuluaga/accent-id-commonaccent_ecapa', href: 'https://huggingface.co/Jzuluaga/accent-id-commonaccent_ecapa'}, ' Native English speakers from around the world'],
           ['Accent Classification', {type: 'a', text: 'kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2', href: 'https://huggingface.co/kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2'}, 'L2 arctic, speakers of English as a second langauge'],
         ],
       },
@@ -306,7 +553,6 @@ export const projects: Project[] = [
           {type: 'p', className: 'note', text: 'Note: Reformatting such a large volume of audio took quite a bit of computing resources, and so I explored/compared different free resources like Kaggle, GoogleCollab, as well as CPU vs. GPU.'}, 
         ],
       },
-
       {
         type: 'DisclosurePanel', 
         title: {type: 'h3', text: 'Fine-tuning the model'},
@@ -371,7 +617,7 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Trained models to predict the danceability of songs',
     mainImage: {
-      type: 'svg',
+      type: 'png',
       src: dancing,
       alt: 'Three people dancing in colorful clothing',
     },
@@ -439,7 +685,7 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Trained traditional machine learning models to predict hospital readmission',
     mainImage: {
-      type: 'svg',
+      type: 'png',
       src: hospitalization,
       alt: 'A patient laying in a hospital bed with a medical professional standing over with a notepad while smiling',
     },
@@ -768,7 +1014,7 @@ export const projects: Project[] = [
     featured: false,
     desc: 'Web app to teach students sorting algorithms with an under-the-sea theme',
     mainImage: {
-      type: 'svg',
+      type: 'png',
       src: anemone,
       alt: 'A cartoon anemone with a green body and pink tentacles and eyes looking up',
     },

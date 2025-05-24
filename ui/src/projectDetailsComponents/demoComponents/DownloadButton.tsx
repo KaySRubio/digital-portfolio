@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 // import { ICONS } from '../icons';
 import '../projectDetails.css'
 import downloadIcon from '@/assets/svg/download.svg';

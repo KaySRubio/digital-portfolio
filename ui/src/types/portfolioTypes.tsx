@@ -197,9 +197,24 @@ export type DemoBoard = {
       huggingFacePredict?: string,
     }
   ],
+  resultTabs: ResultTab[],
 }
 
 export type sampleFile = {
   display_text: string,
   location: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  results?: any[]
+}
+
+export type ResultTab = {
+  type: string,
+  display_text: string,
+  icon?: string,
+  resultsForEachModel: resultForEachModel[],
+}
+
+export type resultForEachModel = {
+  description?: ProjectDetailComponent[],
+  path: string,
 }

@@ -8,15 +8,12 @@ type RecordAudioProps = {
 };
 
 const RecordAudio: React.FC<RecordAudioProps> = ({ children }) => {
-
-  // const { isRecording, setIsRecording, recordedUrl, recordingAvailable, recordPluginRef } = useDemoContext;
-  // const { isRecording, setIsRecording, recordedUrl } = useDemoContext;
-  const { isRecording, setIsRecording, recordedUrl, audioFileAvailable } = useDemoContext();
+  const { isRecording, setIsRecording, recordedUrl, audioFileAvailable, recordPluginRef } = useDemoContext();
   
   const handleRecordClick = () => {
     setIsRecording(prev => !prev);
 
-    /*const recordPlugin = recordPluginRef.current;
+    const recordPlugin = recordPluginRef.current;
     if (recordPlugin) {
       if (recordPlugin.isRecording()) {
         recordPlugin.stopRecording();
@@ -25,7 +22,7 @@ const RecordAudio: React.FC<RecordAudioProps> = ({ children }) => {
         recordPlugin.startRecording();
         setIsRecording(true);
       }
-    } */
+    }
   }; 
 
   return (

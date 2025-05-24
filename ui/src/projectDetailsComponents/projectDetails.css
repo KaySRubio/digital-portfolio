@@ -144,14 +144,11 @@
   border-radius: 5px;
   background-color: var(--very-light-gray);
   padding: 20px;
-}
-
-.align-row-demo-board {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   gap: 20px;
+  
 }
 
 .interactive-box {
@@ -162,9 +159,12 @@
   margin-bottom: 20px;
 }
 
-.interactive-box-half-screen {
-  width: 47%;
-  min-width: 350px;
+.demo-input {
+  width: 340px;
+}
+
+.visualizer {
+  min-width: 493px;
 }
 
 .interactive-box-header {
@@ -197,6 +197,98 @@
   color: black;
 }
 
+.more-info-button {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  font-weight: bold;
+  padding: 0;
+}
+
+.toggle-options {
+	width: 100%;
+  height: 50px;
+  background-color: var(--Speech_very_light_gray);
+  font-weight: bold;
+  font-size: 12px;
+  color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.toggle-and-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.toggle-option {
+  border-right: 1px solid var(--Speech_med_gray);
+  margin: 0 0 0 5px;
+  padding: 0 5px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  display: inline-block;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin: 0;
+  width: 45px;
+  height: 21px;
+  background-color: #ccc;
+  transition: background-color 0.3s ease-in;
+}
+
+.toggle-label::after {
+  content: "";
+  display: block;
+  width: 21px;
+  height: 21px;
+  margin: 1px;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transition: left 0.3s ease-in;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #4fbe79;
+}
+
+.toggle-checkbox:checked + .toggle-label::after {
+  left: 24px;
+}
+
+.visualizer-more-info {
+  font-weight: normal;
+  width: 340px;
+  line-height: 1.3em;
+  padding: 7px;
+}
+
 .interactive-box-menu li {
   flex: 1;
   padding: 0;
@@ -207,13 +299,20 @@
 }
 
 .active-interactive-box-menu {
-  border-bottom: 2px solid black
+  border-bottom: 2px solid black;
 }
 
 .input-icon {
-  width: 100%;
   height: 15px;
-  margin: 0;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.input-icon-large {
+  height: 25px;
+  display: block;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -312,7 +411,7 @@
   border-radius: 8px;
   padding: 5px 10px;
   text-align: center;
-  height: 90px;
+  height: 100px;
   font-size: 12px;
   width: 210px;
 }
@@ -330,10 +429,25 @@
   border: none;
   width: 100px;
   height: 35px;
+  margin-bottom: 7px;
 }
 
 .none {
   display: none;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+.hidden {
+  /* visibility: hidden; */
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .error-msg {
@@ -376,7 +490,7 @@
 .play-button {
   border-radius: 50%;
   border: none;
-  width: 35px;
+  width: 40px;
   height: 35px;
   padding: 1px 0 0 5px;
 }
@@ -384,42 +498,48 @@
 .pause-button {
   border-radius: 50%;
   border: none;
-  width: 35px;
+  width: 40px;
   height: 35px;
-  padding: 0px;
+  padding: 3px 0px;
 }
 
 .pause-icon {
   width: 100%;
   height: 15px;
+  margin: 2px 0 0 0;
 }
 
 .visualizer-body {
   display: flex;
   flex-direction: row;
-  height: 150px;
+  height: 200px;
   padding: 10px;
   align-items: center;
   gap: 10px;
   width: 96%;
 }
 
+#waveform {
+  margin-top: 70px;
+}
+
 .waveform-area {
   width: 100%;
-  height: 130px;
+  height: 200px;
   margin: 0;
   padding: 0;
 }
 
-@media(max-width: 840px) {
-  .align-row-demo-board {
-    flex-direction: column;
-  }
-  .interactive-box-half-screen {
-    width: 97%;
-    min-width: 350px;
+.interactive-box-results {
+  width: 100%;
+}
+
+@media (max-width: 993px) {
+  .visualizer {
+    min-width: 100%;
   }
 }
+
 
 @media (max-width: 600px) {
   .align-row {

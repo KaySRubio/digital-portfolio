@@ -18,48 +18,8 @@ export default function SubmitButton() {
     setSpeechApiResult(result);
   };
 
-  const fetchSpeechApiResult = () => {
-    // TODO - submit audio and fetch result
-    if (api === SpeechApiEnum.RECOGNITION) return mockRecognitionData;
-    else if (api === SpeechApiEnum.VERIFICATION) return mockVerificationData;
-    else if (api === SpeechApiEnum.FLUENCY) return mockFluencyData;
-  };
 
-  const updateRegionsOnWaveform = () => {
-    if (api === SpeechApiEnum.RECOGNITION) {
-      const tokens = speechApiResult.results[0].tokens;
 
-      const regions = tokens.map(token => ({
-        start: token.start_time_s,
-        end: token.end_time_s,
-        content: token.token,
-      }));
-
-      const regionsWithColor = regions.map((region, i) => ({
-        ...region,
-        color: randomRegionColors[i % randomRegionColors.length],
-      }));
-      setRegionsOnWaveform(regionsWithColor);
-    } else if (api === SpeechApiEnum.FLUENCY) {
-      const tokens = speechApiResult.results[0].tokens;
-      const regions = tokens
-        ?.map(token => {
-          const color = fluencyLegend[token.alignment]?.color;
-
-          if (token.transcription_details) {
-            return {
-              start: token.transcription_details.start_time_s,
-              end: token.transcription_details.end_time_s,
-              content: token.transcription_details.transcription,
-              color: color || 'rgba(0, 123, 255, 0.3)',
-            };
-          }
-          return null;
-        })
-        .filter(Boolean);
-      setRegionsOnWaveform(regions);
-    }
-  };
 
   useEffect(() => {
     speechApiResult && updateRegionsOnWaveform();

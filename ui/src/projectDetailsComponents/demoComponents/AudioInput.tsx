@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AudioFileUpload from './AudioFileUpload';
 import PreloadedAudioSelector from './PreloadedAudioSelector';
 import RecordAudio from './RecordAudio';
@@ -9,26 +9,39 @@ import microphone  from '@/assets/svg/microphone.svg';
 import music  from '@/assets/svg/music.svg';
 import upload  from '@/assets/svg/upload.svg';
 import type { DemoBoard } from '../../types/portfolioTypes';
-
-/*
-enum audioInputTypes {
-  Record = 'Record',
-  Preloaded = 'Preloaded',
-  Upload = 'Upload',
-} */
+import { useDemoContext } from "../../context/DemoContext";
 
 type DemoBoardProps = {
   data: DemoBoard
 }
 
 export default function AudioInput({data}: DemoBoardProps) {
-  const [audioInput, setAudioInput] = useState('Upload');
+  const [audioInput, setAudioInput] = useState('Preloaded');
+    const { 
+      setUploadedUrl,
+      setAudioFileAvailable,
+      setRecordedUrl,
+      setPreloadedUrl,
+      setUploadedFileError,
+      setResultFromBackend,
+    } = useDemoContext();
 
   const children = (
     <>
       <SubmitButton />
     </>
   );
+
+  // When use changes type of audio input, clear url's and reset results from backend to null
+  useEffect(() => {
+    setUploadedUrl('');
+    setPreloadedUrl('');
+    setRecordedUrl('');
+    setAudioFileAvailable(false);
+    setResultFromBackend(null);
+    setUploadedFileError('');
+  }, [audioInput])
+
 
   let InputComponent;
   if (audioInput === 'Record') {
@@ -40,7 +53,7 @@ export default function AudioInput({data}: DemoBoardProps) {
   }
 
   return (
-    <div className={`interactive-box interactive-box-half-screen`}>
+    <div className={`interactive-box demo-input`}>
       <div className='interactive-box-header'>
         <h3>Input</h3>
       </div>
@@ -87,51 +100,3 @@ export default function AudioInput({data}: DemoBoardProps) {
     </div>
   );
 }
-
-/*
-    <div className={`${styles.interactiveBox} ${styles.language}`}>
-      <div className={styles.interactiveBoxHeader}>
-        <h3>Input</h3>
-      </div>
-
-      <menu className={styles.innerMenu}>
-        <li>
-          <button
-            onClick={() => setAudioInput('Record')}
-            className={`
-              ${styles.innerMenuItem} 
-              ${audioInput === 'Record' ? styles.activeInnerMenuItem : ''}
-            `}
-          >
-            <img className={styles.inputIcon} alt="" src={ICONS.MICROPHONE} />
-            Record
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => setAudioInput('Preloaded')}
-            className={`
-              ${styles.innerMenuItem}
-              ${audioInput === 'Preloaded' ? styles.activeInnerMenuItem : ''}
-            `}
-          >
-            <img className={styles.inputIcon} alt="" src={ICONS.MUSIC} />
-            Preloaded
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => setAudioInput('Upload')}
-            className={`
-              ${styles.innerMenuItem}
-              ${audioInput === 'Upload' ? styles.activeInnerMenuItem : ''}
-            `}
-          >
-            <img className={styles.inputIcon} alt="" src={ICONS.UPLOAD} />
-            Upload
-          </button>
-        </li>
-      </menu>
-      <div>{InputComponent}</div>
-    </div>
-*/
