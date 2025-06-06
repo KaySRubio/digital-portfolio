@@ -14,17 +14,18 @@ export const PreloadedAudioSelector = ({ children, preloadedFileData }: Preloade
     setAudioFileAvailable,
     setRecordedUrl,
     setPreloadedUrl,
-    setResultFromBackend
+    setSelectedFileDetails
   } = useDemoContext();
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const fileData: sampleFile = JSON.parse(e.target.value);
     setPreloadedUrl(fileData.location);
-    setResultFromBackend(fileData.results);
+    setSelectedFileDetails(fileData);
     setAudioFileAvailable(true);
     // clear url's for other inputs
     setRecordedUrl('');
     setUploadedUrl('');
+    
   };
 
   return (
@@ -39,7 +40,6 @@ export const PreloadedAudioSelector = ({ children, preloadedFileData }: Preloade
             defaultOption="-- Select an audio file --"
             className='preloaded-audio-selector-dropdown'
           />
-          {/*<MoreInformationButton onClick={handleMoreInfoButtonClick} />*/}
         </div>
         <div>{children}</div>
       </div>
@@ -48,31 +48,3 @@ export const PreloadedAudioSelector = ({ children, preloadedFileData }: Preloade
 };
 export default PreloadedAudioSelector;
 
-/*
-    <div className='inputAreaParent'}'>
-      <h4 className='sr-only'>Preloaded</h4>
-      <div className={`${styles.preloadedInputArea}`}>
-        <div>
-          <Dropdown
-            options={preloadedFileData}
-            name="preloaded"
-            handleChange={handleChange}
-            defaultOption="-- Select a file --"
-            className={styles.preloadedAudioSelectorDropdown}
-          />
-          {<MoreInformationButton onClick={handleMoreInfoButtonClick} />}
-        </div>
-        {showMoreInfo && (
-          {<span className={styles.moreInfoBox}>
-            {selectedPreloadedFileData.age && <p>Age: {selectedPreloadedFileData.age}</p>}
-            {selectedPreloadedFileData.gender && <p>Gender: {selectedPreloadedFileData.gender}</p>}
-            {selectedPreloadedFileData.accent && <p>Accent: {selectedPreloadedFileData.accent}</p>}
-            {selectedPreloadedFileData.region_code && <p>Region code: {selectedPreloadedFileData.region_code}</p>}
-            {selectedPreloadedFileData.notes && <p>Notes: {selectedPreloadedFileData.notes}</p>}
-          </span> }
-        )}
-        <div>{children}</div>
-      </div>
-    </div>
-  );
-*/

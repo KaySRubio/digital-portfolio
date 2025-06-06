@@ -6,13 +6,21 @@ type DisclosurePanelProps = {
   title: ReactNode;
   children: ReactNode;
   index: number | null;
+  className?: string;
+  expandedByDefault?: boolean;
 }
 
-export default function DisclosurePanel({title, children, index}: DisclosurePanelProps) {
-  const [expanded, setExpanded] = useState(false);
+export default function DisclosurePanel({
+  title,
+  children,
+  index,
+  className='disclosure-panel',
+  expandedByDefault=false,
+}: DisclosurePanelProps) {
+  const [expanded, setExpanded] = useState(expandedByDefault);
   
   return (
-    <div className='disclosure-panel'>
+    <div className={className}>
       <dt>
         <button
           className='disclosure-panel-button'

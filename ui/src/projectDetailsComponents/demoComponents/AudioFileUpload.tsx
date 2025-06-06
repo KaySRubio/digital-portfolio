@@ -59,11 +59,11 @@ export const AudioFileUpload = ({ children }: AudioFileUploadProps) => {
     try {
       if (file.type !== 'audio/wav' && file.type !== 'audio/opus') {
         setUploadedFileError(`File Format Error: ${file.type} not supported. Please upload .wav or .opus`);
-      } else if (file.size > 1000000) {
+      } else if (file.size > 10000000) {
         setUploadedFileError(`File Size Error: ${file.size} bytes is too large. File should be less than 10 MB`);
       } else {
         const metadata = await getAudioMetadata(file);
-        if (metadata.duration > 30) {
+        if (metadata.duration > 31) {
           setUploadedFileError(
             `Duration Error: Audio is ${Math.round(metadata.duration)} seconds long. Audio should be less than 30 seconds`
           );

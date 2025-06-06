@@ -1,7 +1,7 @@
 
 import FeaturedProjects from './FeaturedProjects';
 import Contact from './Contact';
-import avatar from '@/assets/svg/avatar.svg';
+import whale_music from '@/assets/png/whale_music.png';
 import sand from '@/assets/png/sand.png';
 import './App.css'
 import { homePageData } from './data/portfolioData';
@@ -15,7 +15,7 @@ const Home = () => {
         <div className='centered-row'>
           <h1 className='sr-only'>Home</h1>
           <h2 className='sr-only'>About</h2>
-          <img className='avatar' src={avatar} alt='Cartoon of woman with brown hair, glasses, smiling while wearing a suit' />
+          <img className='avatar' src={whale_music} alt='A whale swimming upwards with a wave of musical notes coming from it' />
           <div className='headline-desc-area'>
             <p className='headline'>{homePageData.headline}</p>
             <p className='desc'>{homePageData.desc}</p>
@@ -31,7 +31,6 @@ const Home = () => {
       ></div>
       <Contact />
     </div>
-    
   )
 }
 

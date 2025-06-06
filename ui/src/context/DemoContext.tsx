@@ -34,8 +34,14 @@ type DemoContextType = {
   resultFromBackend: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setResultFromBackend: (value: any) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  selectedFileDetails: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setSelectedFileDetails: (value: any) => void;
   // regionsOnWaveform: regionOnWaveform[];
   // setRegionsOnWaveform: (value: regionOnWaveform[]) => void;
+  waitingForResults: boolean;
+  setWaitingForResults: (value: boolean) => void;
 };
 
 const DemoContext = createContext<DemoContextType | undefined>(undefined);
@@ -63,6 +69,8 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const [resultFromBackend, setResultFromBackend] = useState(null);
   const [showSpectrogram, setShowSpectrogram] = useState(false);
   // const [regionsOnWaveform, setRegionsOnWaveform] = useState<regionOnWaveform[]>([]);
+  const [selectedFileDetails, setSelectedFileDetails] = useState([]);
+  const [waitingForResults, setWaitingForResults] = useState(false);
 
   useEffect(() => {
     // if (!waveformRef.current) return;
@@ -71,22 +79,6 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     // const regionsPlugin = RegionsPlugin.create();
     // regionsPluginRef.current = regionsPlugin;
 
-    /*
-    const ws = WaveSurfer.create({
-      container: waveformRef.current,
-      waveColor: 'blue',
-      progressColor: 'darkblue',
-      // plugins: [regionsPlugin],
-      plugins: [
-        // Timeline.create();
-        SpectrogramPlugin.create({
-          container: spectrogramContainerRef.current,
-          labels: true,
-          fftSamples: 2048,
-        })
-      ]
-    }); */
-
     const ws = WaveSurfer.create({
       container: waveformRef.current,
       waveColor: 'blue',
@@ -94,12 +86,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       // plugins: [regionsPlugin],
     });
 
-    
-
-    // ws.registerPlugin(spectrogram);
-
     wavesurferRef.current = ws;
-    
 
     ws.on('finish', () => {
       setAudioPlaying(false);
@@ -123,8 +110,6 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       console.error('WaveSurfer error:', e);
       setUploadedFileError('Failed to load audio in wavesurfer. The file may be corrupt or unsupported.');
     });
-
-
 
     /*
     const handleRegionClick = (region, e) => {
@@ -256,6 +241,10 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         setResultFromBackend,
         // regionsOnWaveform,
         // setRegionsOnWaveform,
+        selectedFileDetails,
+        setSelectedFileDetails,
+        waitingForResults,
+        setWaitingForResults,
       }}
     >
       {children}

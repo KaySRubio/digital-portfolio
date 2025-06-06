@@ -3,7 +3,6 @@ import AudioFileUpload from './AudioFileUpload';
 import PreloadedAudioSelector from './PreloadedAudioSelector';
 import RecordAudio from './RecordAudio';
 import SubmitButton from './SubmitButton';
-// import { ICONS } from '../icons';
 import '../projectDetails.css'
 import microphone  from '@/assets/svg/microphone.svg';
 import music  from '@/assets/svg/music.svg';
@@ -24,11 +23,12 @@ export default function AudioInput({data}: DemoBoardProps) {
       setPreloadedUrl,
       setUploadedFileError,
       setResultFromBackend,
+      setSelectedFileDetails,
     } = useDemoContext();
 
   const children = (
     <>
-      <SubmitButton />
+      <SubmitButton requests={data.requests} />
     </>
   );
 
@@ -40,6 +40,7 @@ export default function AudioInput({data}: DemoBoardProps) {
     setAudioFileAvailable(false);
     setResultFromBackend(null);
     setUploadedFileError('');
+    setSelectedFileDetails([]);
   }, [audioInput])
 
 

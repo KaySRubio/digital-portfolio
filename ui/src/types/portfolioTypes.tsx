@@ -58,7 +58,8 @@ export type ProjectDetailComponent =
   ProjectTechStackComponent |
   MainImage | 
   GoalAndGithub | 
-  DemoBoard;
+  DemoBoard | 
+  TextFromPath;
 
 export type TextType = 
   'h2' |
@@ -71,6 +72,13 @@ export type TextType =
 export type TextComponent = {
   type: TextType,
   text: string,
+  className?: string,
+  key?: number | string;
+}
+
+export type TextFromPath = {
+  type: 'textFromPath',
+  path: string,
   className?: string,
   key?: number | string;
 }
@@ -189,32 +197,33 @@ export type DemoBoard = {
   type: 'DemoBoard',
   page: string,
   sampleAudio: sampleFile[],
-  requests: [
-    {
-      type: 'get' | 'post' | 'gradio',
-      url?: string,
-      huggingFaceModelName?: string,
-      huggingFacePredict?: string,
-    }
-  ],
+  requests: Request[],
   resultTabs: ResultTab[],
+}
+
+export type Request = {
+  type: 'get' | 'post' | 'gradio',
+  url?: string,
+  huggingFaceModelName: string,
+  huggingFacePredict: string,
+  key?: string,
 }
 
 export type sampleFile = {
   display_text: string,
   location: string,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  results?: any[]
+  data?: any,
 }
 
 export type ResultTab = {
   type: string,
   display_text: string,
   icon?: string,
-  resultsForEachModel: resultForEachModel[],
+  resultsForEachModel: ResultForEachModel[],
 }
 
-export type resultForEachModel = {
+export type ResultForEachModel = {
   description?: ProjectDetailComponent[],
-  path: string,
+  results?: ProjectDetailComponent[],
 }

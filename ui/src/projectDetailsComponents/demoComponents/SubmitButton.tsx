@@ -1,48 +1,40 @@
-// import React, { useEffect } from 'react';
-// import { useApiName } from '../context/ApiNameContext';
-// import fetchContext from '../context/useFetchContext';
-// import { fluencyLegend, randomRegionColors } from '../data/componentData';
-// import { mockFluencyData, mockRecognitionData, mockVerificationData } from '../data/mockSpeechEngineResultData';
-// import { SpeechApiEnum } from '../types/type';
 import { useDemoContext } from '../../context/DemoContext';
 import '../projectDetails.css'
-// import { Client } from "@gradio/client";
+import { Client } from "@gradio/client";
+import type { Request } from '../../types/portfolioTypes';
 
-export default function SubmitButton() {
-  const { audioFileAvailable } = useDemoContext();
-  /*
-  const api = useApiName();
-  const { recordingAvailable, speechApiResult, setSpeechApiResult, setRegionsOnWaveform } = fetchContext(api);
-  const onClick = async () => {
-    const result = await fetchSpeechApiResult();
-    setSpeechApiResult(result);
-  };
+type SubmitButtonProps = {
+  requests: Request[],
+}
 
-
-
-
-  useEffect(() => {
-    speechApiResult && updateRegionsOnWaveform();
-  }, [speechApiResult]);
- */
-
-    // TODO - move elsewhere
+export default function SubmitButton({requests}: SubmitButtonProps) {
+  const { audioFileAvailable, selectedFileDetails, setResultFromBackend, recordedUrl, preloadedUrl, uploadedUrl, setWaitingForResults } = useDemoContext();
   const submitButtonClick = async () => {
+    // Handle case where preloaded files already have results so not necessary
+    // to query back end
+    if(selectedFileDetails.data) {
+      setResultFromBackend(selectedFileDetails);
+    } else {
+      setWaitingForResults(true);
+      for (const request of requests) {
+        if(request.type === 'gradio') {
+          
+          const url = recordedUrl || preloadedUrl || uploadedUrl;
+          const audio = await fetch(url);
+          const audioBlob = await audio.blob();
 
-
-    // Turn off for now since don't need to make extra requests 
-    /*
-    console.log('sending request');
-    const audioResponse = await fetch(data.sampleAudio[2]);
-    const audioBlob = await audioResponse.blob();
-
-    const client = await Client.connect("kaysrubio/speech_transcribe_phonemes_and_accent");
-    const result = await client.predict("/transcribe_and_classify_speech", { 
-      file: audioBlob, 
-      key: '682d2362-894c-800c-af30-a4c56b7f074b'
-    })
-    console.log(result); */
-    // returns result.data[0][0].transcription = " What's up..."
+          console.log('Connecting to ', request.huggingFaceModelName, ' to predict ', request.huggingFacePredict);
+          
+          const client = await Client.connect(request.huggingFaceModelName);
+          const result = await client.predict(request.huggingFacePredict, { 
+            file: audioBlob, 
+            key: request.key,
+          })
+          await setResultFromBackend(result);
+          await setWaitingForResults(false);
+        }
+      }
+    }
   }
   return (
     <button
@@ -54,13 +46,4 @@ export default function SubmitButton() {
       Submit
     </button>
   );
-  
-
-  /*
-    return (
-    <button
-    >
-      Submit
-    </button> 
-  ); */
 }
