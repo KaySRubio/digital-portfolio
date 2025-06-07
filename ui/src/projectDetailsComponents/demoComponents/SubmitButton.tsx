@@ -8,12 +8,22 @@ type SubmitButtonProps = {
 }
 
 export default function SubmitButton({requests}: SubmitButtonProps) {
-  const { audioFileAvailable, selectedFileDetails, setResultFromBackend, recordedUrl, preloadedUrl, uploadedUrl, setWaitingForResults } = useDemoContext();
+  const {
+    audioFileAvailable,
+    selectedFileDetails,
+    setResultFromBackend,
+    recordedUrl,
+    preloadedUrl,
+    uploadedUrl,
+    setWaitingForResults,
+    setRequestFromBackendError,
+  } = useDemoContext();
   const submitButtonClick = async () => {
+    setRequestFromBackendError('');
     // Handle case where preloaded files already have results so not necessary
     // to query back end
-    if(selectedFileDetails.data) {
-      setResultFromBackend(selectedFileDetails);
+    if(selectedFileDetails.sampleResults) {
+      setResultFromBackend(selectedFileDetails.sampleResults);
     } else {
       setWaitingForResults(true);
       for (const request of requests) {
@@ -25,13 +35,20 @@ export default function SubmitButton({requests}: SubmitButtonProps) {
 
           console.log('Connecting to ', request.huggingFaceModelName, ' to predict ', request.huggingFacePredict);
           
-          const client = await Client.connect(request.huggingFaceModelName);
-          const result = await client.predict(request.huggingFacePredict, { 
-            file: audioBlob, 
-            key: request.key,
-          })
-          await setResultFromBackend(result);
-          await setWaitingForResults(false);
+          try {
+            const client = await Client.connect(request.huggingFaceModelName);
+            const result = await client.predict(request.huggingFacePredict, { 
+              file: audioBlob, 
+              key: request.key,
+            })
+            await setResultFromBackend(result);
+            await setWaitingForResults(false);
+            await setRequestFromBackendError('');
+          } catch (error) {
+            console.log('Error: ', error);
+            await setWaitingForResults(false);
+            await setRequestFromBackendError('Error requesting data');
+          }
         }
       }
     }

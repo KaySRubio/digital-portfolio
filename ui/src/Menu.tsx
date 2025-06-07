@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css'
-import { topics, base_path, projectPaths } from './data/portfolioData';
+import { topics, projectPaths } from './data/portfolioData';
 import hamburger from '@/assets/svg/hamburger.svg?react';
 import Breadcrumbs from './Breadcrumbs';
 import WaveBackground from './WaveBackground';
@@ -41,7 +41,7 @@ const Menu = () => {
     <div>
     <nav className={`large-menu ${backgroundColor}`}>
       <div>
-        <Link className={`large-menu-home-button ${color}`} to={base_path}>Kay Rubio</Link>
+        <Link className={`large-menu-home-button ${color}`} to={''}>Kay Rubio</Link>
         <Breadcrumbs className={color} />
       </div>
 
@@ -49,7 +49,7 @@ const Menu = () => {
         {topics.map(topic => {
           const Icon = topic.iconComponent;
           return (
-            <Link to={`${base_path}${topic.path}`} key={topic.title} className={`large-menu-button ${color}`}>
+            <Link to={topic.path} key={topic.title} className={`large-menu-button ${color}`}>
               <Icon className={`large-menu-icon ${color}`} />
               {topic.title}
             </Link>
@@ -73,7 +73,7 @@ const Menu = () => {
             const Icon = topic.iconComponent;
             return (
               <li key={topic.title}>
-                <Link to={`${base_path}${topic.path}`} className={`dropdown-menu-button dark-blue`}>
+                <Link to={topic.path} className={`dropdown-menu-button dark-blue`}>
                   <Icon className={`dropdown-menu-icon white`} />
                   {topic.title}
                 </Link>

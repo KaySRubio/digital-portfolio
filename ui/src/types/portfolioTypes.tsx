@@ -212,8 +212,7 @@ export type Request = {
 export type sampleFile = {
   display_text: string,
   location: string,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data?: any,
+  sampleResults?: Kaysrubio_speech_transcribe_result,
 }
 
 export type ResultTab = {
@@ -226,4 +225,32 @@ export type ResultTab = {
 export type ResultForEachModel = {
   description?: ProjectDetailComponent[],
   results?: ProjectDetailComponent[],
+}
+
+export type Kaysrubio_speech_transcribe_result = {
+	data: [
+    [
+      {transcription: string },
+      {phonemes_native_eng: string },
+      {phonemes_eng_second_lang: string },
+      {
+        native_eng_country: [
+          {
+            accent: string,
+            score: number 
+          }
+        ]
+      },
+      {
+        first_lang_if_not_eng: [
+          {
+            accent: string,
+            score: number
+          }
+        ]
+      },
+	  ]
+  ],
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	[key: string]: any;
 }

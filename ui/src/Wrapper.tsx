@@ -10,17 +10,19 @@ import { topics, projects, base_path } from './data/portfolioData';
 
 import './App.css'
 
+// <Route path={base_path} element={<Home />} />
 const Wrapper = () => {
   return (
     <div className='page-wrapper'>
       <div className='content'>
         <Menu />
         <Routes>
-          <Route path={base_path} element={<Home />} />
+          <Route path={''} element={<Home />} />
           {topics.map(topic => (
             <React.Fragment key={topic.path}>
               <Route 
-                path={`${base_path}${topic.path}`} 
+                path={topic.path}
+                // path={`${base_path}${topic.path}`} 
                 element={<ProjectListPage topic={topic} />} 
               />
               {/* nested routes within topics for individual projects */}
@@ -29,7 +31,7 @@ const Wrapper = () => {
                 .map(project => (
                   <Route 
                     key={project.path}
-                    path={`${base_path}${topic.path}/${project.path}`} 
+                    path={`${topic.path}/${project.path}`} 
                     element={<ProjectDetailsPage project={project} />} 
                   />
               ))}

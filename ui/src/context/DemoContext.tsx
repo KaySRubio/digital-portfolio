@@ -42,6 +42,8 @@ type DemoContextType = {
   // setRegionsOnWaveform: (value: regionOnWaveform[]) => void;
   waitingForResults: boolean;
   setWaitingForResults: (value: boolean) => void;
+  requestFromBackendError: string,
+  setRequestFromBackendError: (value: string) => void;
 };
 
 const DemoContext = createContext<DemoContextType | undefined>(undefined);
@@ -71,6 +73,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   // const [regionsOnWaveform, setRegionsOnWaveform] = useState<regionOnWaveform[]>([]);
   const [selectedFileDetails, setSelectedFileDetails] = useState([]);
   const [waitingForResults, setWaitingForResults] = useState(false);
+  const [requestFromBackendError, setRequestFromBackendError] = useState('');
 
   useEffect(() => {
     // if (!waveformRef.current) return;
@@ -81,8 +84,8 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
 
     const ws = WaveSurfer.create({
       container: waveformRef.current,
-      waveColor: 'blue',
-      progressColor: 'darkblue',
+      waveColor: '#56AFCC',
+      progressColor: '#0378AB',
       // plugins: [regionsPlugin],
     });
 
@@ -106,7 +109,6 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       if (e?.message?.includes('Empty src')) {
         return;
       }
-      // eslint-disable-next-line no-console
       console.error('WaveSurfer error:', e);
       setUploadedFileError('Failed to load audio in wavesurfer. The file may be corrupt or unsupported.');
     });
@@ -245,6 +247,8 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         setSelectedFileDetails,
         waitingForResults,
         setWaitingForResults,
+        requestFromBackendError,
+        setRequestFromBackendError,
       }}
     >
       {children}

@@ -14,7 +14,7 @@ type ResultsProps = {
 };
 export default function Results({ data }: ResultsProps) {
   const [resultToShow, setResultToShow] = useState(data.resultTabs[0].type);
-  const { resultFromBackend, waitingForResults } = useDemoContext();
+  const { resultFromBackend, waitingForResults, requestFromBackendError } = useDemoContext();
 
   const renderDisclosurePanel = (model: ResultForEachModel, index: number) => {
     const title = (
@@ -37,9 +37,24 @@ export default function Results({ data }: ResultsProps) {
         children={children}
         index={index}
         className='demo-results-disclosure-panel'
-        expandedByDefault={index === 0}
+        expandedByDefault={true}
       />
     )
+  }
+
+  const showPlaceholder = () => {
+    if(requestFromBackendError) {
+      return (<p className='center'>{requestFromBackendError}</p>)
+    } else if (waitingForResults) {
+      // return (<p className='center'>Querying back end for results, it may take a few minutes.</p>)
+      return (
+        <div className="spinner-wrapper">
+          <div className="spinner" />
+        </div>
+      );
+    } else {
+      return (<p className='center'>Choose audio and click Submit</p>)
+    }
   }
 
   return (
@@ -85,8 +100,7 @@ export default function Results({ data }: ResultsProps) {
         )}
       )}
       {resultFromBackend && resultToShow === 'Json' && <JSONViewer />}
-      {!resultFromBackend && waitingForResults && <p className='center'>Querying back end for results, make take a few minutes.</p>}
-      {!resultFromBackend && !waitingForResults && <p className='center'>Choose audio and click Submit</p>}
+      {!resultFromBackend && showPlaceholder()}
     </div>
   );
 }

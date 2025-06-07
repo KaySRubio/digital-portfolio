@@ -85,9 +85,9 @@ export const renderComponent = (data: ProjectDetailComponent, key: number | null
         break;
       case 'textFromPath':
         if(resultData) {
-          el = get(resultData, data.path)
+          el = get(resultData, data.path, 'Error: Could not find data from path')
         } else {
-          el = ''
+          el = 'Error: Could not find data'
         }
         returnComponent = <span key={key}>{el}</span>
         break;

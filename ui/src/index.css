@@ -1,7 +1,10 @@
 /* Global styles for entire digital portfolio */
 :root {
-  --med-blue: #0378ab;
+
   --dark-blue: #035085;
+  --med-blue: #0378ab;
+  --light-teal: #56afcc;
+  --very-light-teal: #9dd4e6;
   --very-light-gray: #f5f7f9;
   --light-blue-gray: #f2f3f5;
   --light-gray: #cdcfd0;
@@ -22,6 +25,7 @@
   --Speech_light_gray: #E8E8E8;
   --Speech_med_gray: #C1C1C1;
   --Speech_dark_blue_gray: #576A76;
+
 
 }
 
