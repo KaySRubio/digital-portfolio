@@ -1,12 +1,11 @@
 import React from 'react';
 import get from 'lodash.get';
 import type { ProjectDetailComponent } from '../types/portfolioTypes';
-import Table from '../projectDetailsComponents/Table';
-import DisclosurePanel from '../projectDetailsComponents/DisclosurePanel';
-import DemoBoard from '../projectDetailsComponents/demoComponents/DemoBoard';
-import TechStack from '../projectDetailsComponents/TechStack';
-import GoalAndGithub from '../projectDetailsComponents/GoalAndGithub';
-import '../projectDetailsComponents/projectDetails.css';
+import Table from '../components/projectDescriptions/Table';
+import DisclosurePanel from '../components/projectDescriptions/DisclosurePanel';
+import DemoBoard from '../components/visualAudioDemo/DemoBoard';
+import TechStack from '../components/projectDescriptions/TechStack';
+import GoalAndGithub from '../components/projectDescriptions/GoalAndGithub';
 
 // loops through project_details array and renders each item as a component with that data
 export const renderComponent = (data: ProjectDetailComponent, key: number | null = null, resultData?: any) => {
