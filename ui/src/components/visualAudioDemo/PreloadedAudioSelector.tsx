@@ -1,30 +1,29 @@
 import PreloadedFileDropdown from './PreloadedFileDropdown';
 import { useDemoContext } from "../../context/DemoContext";
-import type { sampleFile } from '../../types/portfolioTypes';
+import type { SampleFile } from '../../types/portfolioTypes';
 
 type PreloadedAudioSelectorProps = {
   children: React.ReactNode;
-  preloadedFileData: sampleFile[];
+  sampleFileData: SampleFile[];
 };
 
-export const PreloadedAudioSelector = ({ children, preloadedFileData }: PreloadedAudioSelectorProps) => {
+export const PreloadedAudioSelector = ({ children, sampleFileData }: PreloadedAudioSelectorProps) => {
   const {
-    setUploadedUrl,
-    setAudioFileAvailable,
-    setRecordedUrl,
-    setPreloadedUrl,
+    setUploadedFileUrl,
+    setFileAvailable,
+    setUserInputUrl,
+    setSampleFileUrl,
     setSelectedFileDetails
   } = useDemoContext();
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const fileData: sampleFile = JSON.parse(e.target.value);
-    setPreloadedUrl(fileData.location);
+    const fileData: SampleFile = JSON.parse(e.target.value);
+    setSampleFileUrl(fileData.location);
     setSelectedFileDetails(fileData);
-    setAudioFileAvailable(true);
+    setFileAvailable(true);
     // clear url's for other inputs
-    setRecordedUrl('');
-    setUploadedUrl('');
-    
+    setUserInputUrl('');
+    setUploadedFileUrl('');
   };
 
   return (
@@ -33,7 +32,7 @@ export const PreloadedAudioSelector = ({ children, preloadedFileData }: Preloade
       <div className='preloaded-input-area'>
         <div>
           <PreloadedFileDropdown
-            options={preloadedFileData}
+            options={sampleFileData}
             name="preloaded"
             handleChange={handleChange}
             defaultOption="-- Select an audio file --"

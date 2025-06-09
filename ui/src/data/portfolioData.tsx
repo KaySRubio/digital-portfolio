@@ -1,51 +1,63 @@
 
 import type { Project, Topic, TechStackData } from '../types/portfolioTypes';
 import { TopicNames } from '../types/portfolioTypes';
-import waveIcon  from '@/assets/svg/wave.svg?react';
-import wwwIcon  from '@/assets/svg/www.svg?react';
-import aiIcon from '@/assets/svg/ai.svg?react';
+
+// jpg
+import american_bullfrog from '@/assets/jpg/american_bullfrog1.jpg';
+import gray_tree_frog from '@/assets/jpg/gray_tree_frog1.jpg';
+import northern_leopardfrog from '@/assets/jpg/northern_leopard_frog1.jpg';
+
+// png
+import accent from '@/assets/png/accent.png';
 import anemone from '@/assets/png/anemone.png';
-import mic from '@/assets/svg/mic.svg?react';
-import people_talking from '@/assets/png/people_talking.png';
-import chicken from '@/assets/png/chicken.png';
-import spermwhalepng from '@/assets/png/spermwhale.png';
-import frogpng from '@/assets/png/frog.png';
-import dearabby from '@/assets/png/dearabby.png';
-import dancing from '@/assets/png/dancing.png';
-import hospitalization from '@/assets/png/hospitalization.png';
-import iready from '@/assets/png/iready.png';
 import asrPng from '@/assets/png/asr.png';
 import batPng from '@/assets/png/bat.png';
-import plantPng from '@/assets/png/plant.png';
-import spectrogram from '@/assets/png/spectrogram.png';
+import chicken from '@/assets/png/chicken.png';
+import dancing from '@/assets/png/dancing.png';
+import dearabby from '@/assets/png/dearabby.png';
 import dear_abby_word_cloud from '@/assets/png/dear_abby_word_cloud.png';
 import dear_abby_lda_5 from '@/assets/png/dear_abby_lda_5.png';
-import nltk from '@/assets/svg/nltk3.svg?react';
-import scikitlearn from '@/assets/svg/scikitlearn.svg?react';
-import skopt from '@/assets/svg/skopt.svg?react';
-import librosa from '@/assets/svg/librosa.svg?react';
+import frog from '@/assets/png/frog.png';
+import hospitalization from '@/assets/png/hospitalization.png';
+import iready from '@/assets/png/iready.png';
+import irish from '@/assets/wav/irish.wav';
+import people_talking from '@/assets/png/people_talking.png';
+import phonemes from '@/assets/png/phonemes.png';
+import plantPng from '@/assets/png/plant.png';
+import spectrogram from '@/assets/png/spectrogram.png';
+import spermwhalepng from '@/assets/png/spermwhale.png';
+import transcription from '@/assets/png/transcription.png';
+import wandb from '@/assets/png/wandb.png';
+
+// svg
+import aiIcon from '@/assets/svg/ai.svg?react';
 import fastai from '@/assets/svg/fastai.svg?react';
 import huggingface from '@/assets/svg/huggingface.svg?react';
-import pytorch from '@/assets/svg/pytorch.svg?react';
-import reactIcon from '@/assets/svg/react.svg?react';
-import nodejs from '@/assets/svg/nodejs.svg?react';
-import vite from '@/assets/svg/vite.svg?react';
-import webpack from '@/assets/svg/webpack.svg?react';
-import typescript from '@/assets/svg/typescript.svg?react';
 import joblib from '@/assets/svg/joblib.svg?react';
+import librosa from '@/assets/svg/librosa.svg?react';
+import mic from '@/assets/svg/mic.svg?react';
 import pandas from '@/assets/svg/pandas.svg?react';
+import pytorch from '@/assets/svg/pytorch.svg?react';
 import matplotlib from '@/assets/svg/matplotlib.svg?react';
+import nltk from '@/assets/svg/nltk3.svg?react';
+import nodejs from '@/assets/svg/nodejs.svg?react';
 import numpy from '@/assets/svg/numpy.svg?react';
+import reactIcon from '@/assets/svg/react.svg?react';
+import scikitlearn from '@/assets/svg/scikitlearn.svg?react';
 import seaborn from '@/assets/svg/seaborn.svg?react';
-import irish from '@/assets/wav/irish.wav';
+import skopt from '@/assets/svg/skopt.svg?react';
+import typescript from '@/assets/svg/typescript.svg?react';
+import vite from '@/assets/svg/vite.svg?react';
+import waveIcon  from '@/assets/svg/wave.svg?react';
+import webpack from '@/assets/svg/webpack.svg?react';
+import wwwIcon  from '@/assets/svg/www.svg?react';
+
+// wav
 import chineseAmerican from '@/assets/wav/chinese-american.wav';
 import indian from '@/assets/wav/indian.wav';
 import mexican from '@/assets/wav/mexican.wav';
 import nigerian from '@/assets/wav/nigerian.wav';
 import vietnamese from '@/assets/wav/vietnamese.wav';
-import transcription from '@/assets/png/transcription.png';
-import accent from '@/assets/png/accent.png';
-import phonemes from '@/assets/png/phonemes.png';
 
 export const homePageData = {
   headline: 'Listener, Developer, Explorer',
@@ -176,7 +188,7 @@ export const projects: Project[] = [
   {
     path: 'frog-identifier',
     short_title: 'Frog Identifier',
-    title: '',
+    title: 'Frog Identifier',
     date: '',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
@@ -184,12 +196,114 @@ export const projects: Project[] = [
     desc: 'Fine-tuned an image recognition model to identify species',
     mainImage: {
       type: 'png',
-      src: frogpng,
+      src: frog,
       alt: 'A green frog',
     },
-    techStack: [
-      'Neural networks', 'fast.ai'],
-    project_details: [],
+    projectCardTechStack: ['fastai'],
+    project_details: [
+      {type: 'h2', text: 'Goals'},
+      {
+        type: 'GoalAndGithub',
+        childGroup: [
+          {type: 'text', text: 'I created an image classifier for frog species in Massachusetts by fine-tuning a pre-trained neural network model, '},
+          {type: 'a', text: 'resnet18', href: 'https://huggingface.co/microsoft/resnet-18'},
+          {type: 'text', text: ', on ~200 frog pictures per species collected from a search engine.'},
+        ],
+        href: 'https://github.com/KaySRubio/deep-learning-projects/blob/main/frog_image_classifier.ipynb',
+      },
+      {
+        type: 'DemoBoard',
+        input: ['image'],
+        sampleImages: [
+          {
+            display_text: 'American Bullfrog', 
+            location: american_bullfrog,
+            alt: 'A green and brown frog sitting in some grass',
+            /*sampleResults: {
+              data: [
+                {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.9746686816215515},
+                {species: 'Green Frog (Lithobates clamitans)', prob: 0.023729383945465088},
+                {species: 'Wood Frog (Lithobates sylvaticus)', prob: 0.0012509091757237911},
+                {species: 'Northern Leopard Frog (Lithobates pipiens)', prob: 0.00014007935533300042},
+                {species: 'American Toad (Anaxyrus americanus)', prob: 0.00010111537994816899},
+                {species: 'Spring Peeper (Pseudacris crucifer)', prob: 0.00005221633909968659},
+                {species: 'Eastern Spadefoot (Scaphiopus holbrookii)', prob: 0.00004317923230701126},
+                {species: 'Gray Treefrog (Hyla versicolor)', prob: 0.000009411439350515138},
+                {species: 'Fowlers Toad (Anaxyrus fowleri)', prob: 0.000004050126790389186},
+                {species: 'Pickerel Frog (Lithobates palustris)', prob: 8.979863537206256e-7},
+              ]
+            }*/
+          },
+          {
+            display_text: 'Gray Tree Frog', 
+            location: gray_tree_frog,
+            alt: 'A gray spotted frog on a branch in the woods',
+            sampleResults: {
+              data: [
+                {species: "Gray Treefrog (Hyla versicolor)", prob: 0.9943358302116394},
+                {species: "Fowlers Toad (Anaxyrus fowleri)", prob: 0.002308360766619444},
+                {species: "Eastern Spadefoot (Scaphiopus holbrookii)", prob: 0.001017067115753889},
+                {species: "Green Frog (Lithobates clamitans)", prob: 0.000824976246803999},
+                {species: "Wood Frog (Lithobates sylvaticus)", prob: 0.00045502890134230256},
+                {species: "Northern Leopard Frog (Lithobates pipiens)", prob: 0.0003748933377210051},
+                {species: "Pickerel Frog (Lithobates palustris)", prob: 0.00034524459624662995},
+                {species: 'Spring Peeper (Pseudacris crucifer)', prob: 0.0001683539740042761},
+                {species: 'American Toad (Anaxyrus americanus)', prob: 0.00013327246415428817},
+                {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.00003691832171170972}
+              ]
+            }
+          },
+          {
+            display_text: 'Northern Leopard Frog', 
+            location: northern_leopardfrog,
+            alt: 'A green frog with brown spots partially hidden in some leaves',
+            sampleResults: {
+              data: 
+              [
+                {species: "Northern Leopard Frog (Lithobates pipiens)", prob: 0.9989408850669861},
+                {species: "Pickerel Frog (Lithobates palustris)", prob: 0.0005622448516078293},
+                {species: "Wood Frog (Lithobates sylvaticus)", prob: 0.00036222580820322037},
+                {species: "Eastern Spadefoot (Scaphiopus holbrookii)", prob: 0.00007037333125481382},
+                {species: "Green Frog (Lithobates clamitans)", prob: 0.00002487793426553253},
+                {species: "Fowlers Toad (Anaxyrus fowleri)", prob: 0.000018251390429213643},
+                {species: "Gray Treefrog (Hyla versicolor)", prob: 0.000010626030416460708},
+                {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.000006336148999253055},
+                {species: 'Spring Peeper (Pseudacris crucifer)', prob: 0.0000024683827177796047},
+                {species: 'American Toad (Anaxyrus americanus)', prob: 0.0000017227010857823188},
+              ]
+            }
+          }
+        ],
+        requests: [
+          {
+            type: 'gradio',
+            huggingFaceModelName: 'kaysrubio/Identifying_Frogs_in_Massachusetts',
+            huggingFacePredict: '/predict',
+            key: '682d2362-894c-800c-af30-a4c56b7f074b'
+          }
+        ],
+        resultTabs: [
+          {
+            type: 'classification',
+            display_text: 'Classification',
+            resultsForEachModel: [
+              {}
+            ]
+          }
+        ]
+      },
+      {type: 'h2', text: 'Model Training Details'},
+      {
+        type: 'ol', childGroup: [
+          [{type: 'text', text: 'Model error rate improved from 40% to 34% when I shifted from 100 to 200 photos per frog species.'}],
+          [{type: 'text', text: 'Model error rate further improved from 34% to 27% when I used RandomResizedCrop rather than squish on the data each epoch.'}],
+          [{type: 'text', text: 'Final model only needed 2 epoch\'s to train. '}],
+          [{type: 'text', text: 'Epochs 3-4 showed overfitting as training loss decreased but validation loss didn\'t and error rate slightly increased.'}],
+          [{type: 'text', text: 'Final model trained on 200 pictures had 27% error rate.'}],
+          [{type: 'text', text: 'To improve this model, it would be helpful to clean the training data. Delete images of tadpoles and the occasional icon, as well as ask a frog expert to see if any are mis-labelled.'}],
+        ]
+      }
+    ],
   },
   // voice-detection
   {
@@ -227,7 +341,7 @@ export const projects: Project[] = [
       src: asrPng,
       alt: 'A cartoon of a woman talking in front of a microphone and a computer screen with a robot on the screen',
     },
-    projectCardTechStack: ['huggingface'], // TODO - add ways and means, etc.
+    projectCardTechStack: ['huggingface', 'wandb'],
     project_details: [
       {
         type: 'GoalAndGithub',
@@ -253,7 +367,10 @@ export const projects: Project[] = [
       {type: 'h2', text: 'Demo'},
       {
         type: 'DemoBoard',
-        page: 'speech-recognition-2025',
+        input: ['audio'],
+        directions: [
+          {type: 'p', text: 'Record, upload, or select a preloaded file. Then click "Submit" to see the transcription, phonemic transcriptions, and accent classification from different AI models.'}
+        ],
         sampleAudio: [
           {
             display_text: 'Chinese American comedian Ronny Chieng',
@@ -556,6 +673,11 @@ export const projects: Project[] = [
           },
         ]
       },
+      {type: 'h2', text: 'Tech Stack'},
+      {
+        type: 'TechStack',
+        techList: ['wandb', 'huggingface'],
+      },
       {type: 'h2', text: 'Models used'},
       {
         type: 'table',
@@ -643,9 +765,6 @@ export const projects: Project[] = [
         [{type: 'text', text: 'nigerian.wav, a clip from Daniel Etim Effiong and Tana Adelana in '}, {type: 'a', text: 'Dinner for Four', href: 'https://www.youtube.com/watch?v=QFhI71C4iRI'}],
         [{type: 'text', text: 'vietnamese.wav, a clip from the '}, {type: 'a', text: 'L2-Arctic', href: 'https://psi.engr.tamu.edu/l2-arctic-corpus/'}, {type: 'text', text: ' data, participant THV file b0303.wav'}],
       ]}
-      
-
-
     ],
   },
   // danceability
@@ -1110,13 +1229,13 @@ export const techStackData: TechStackData = [
     type: 'nltk',
     name: 'Natural Language Toolkit',
     iconComponent: nltk,
-    href: '',
+    href: 'https://www.nltk.org/',
   },
   {
     type: 'scikitlearn',
     name: '',
     iconComponent: scikitlearn,
-    href: '',
+    href: 'https://scikit-learn.org/stable/',
   },
   {
     type: 'skopt',
@@ -1161,9 +1280,6 @@ export const techStackData: TechStackData = [
     href: 'https://seaborn.pydata.org/',
   },
 
-
-
-  
   // neural network libraries
   {
     type: 'fastai',
@@ -1183,6 +1299,14 @@ export const techStackData: TechStackData = [
     iconComponent: pytorch,
     href: 'https://pytorch.org/',
   },
+  {
+    type: 'wandb',
+    name: 'Weights & Biases',
+    icon: wandb,
+    href: 'https://wandb.ai/site/',
+  },
+
+  // Front-end libraries
   {
     type: 'react',
     name: 'React',

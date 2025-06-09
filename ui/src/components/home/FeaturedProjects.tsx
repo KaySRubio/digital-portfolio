@@ -13,7 +13,7 @@ const FeaturedProjects = () => {
       <div className="featured-projects-section">
         <h2>Featured Projects</h2>
         <div className='project-card-container'>
-          {featured_projects.map(project => ( <ProjectCard key={project.path} project={project} theme='white' />))}
+          {featured_projects.map(project => ( <ProjectCard key={project.path} project={project} theme='light' />))}
         </div>
       </div>
       <div className="featured-projects-section">

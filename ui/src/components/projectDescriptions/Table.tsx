@@ -13,8 +13,6 @@ export default function Table({data}: TableProps) {
     console.error('Check table data, the number of headers does not match the number of table data items in one or more rows ');
   }
 
-
-
   return (
     <table>
       <thead>

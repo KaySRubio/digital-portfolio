@@ -1,8 +1,8 @@
 import React from 'react';
-import type { sampleFile } from '../../types/portfolioTypes';
+import type { SampleFile } from '../../types/portfolioTypes';
 
 type PreloadedFileDropdownProps = {
-  options: sampleFile[];
+  options: SampleFile[];
   name: string;
   handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   defaultOption?: string;

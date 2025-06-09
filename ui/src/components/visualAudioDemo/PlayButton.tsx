@@ -3,17 +3,16 @@ import play from '@/assets/svg/play.svg';
 import pause from '@/assets/svg/pause.svg';
 
 export default function PlayButton() {
-  const { audioFileAvailable, audioPlaying, onPlay } = useDemoContext();
-  // const { audioFileAvailable } = useDemoContext();
+  const { fileAvailable, audioPlaying, onPlay } = useDemoContext();
 
   return (
     <button
       className={`
         ${!audioPlaying ? 'play-button' : 'pause-button'}
-        ${audioFileAvailable ? 'enabled' : 'disabled'}
+        ${fileAvailable ? 'enabled' : 'disabled'}
       `}
-      disabled={!audioFileAvailable}
-      aria-disabled={!audioFileAvailable}
+      disabled={!fileAvailable}
+      aria-disabled={!fileAvailable}
       onClick={onPlay}
       aria-label="Play audio"
     >

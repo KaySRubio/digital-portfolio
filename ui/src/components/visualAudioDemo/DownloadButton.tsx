@@ -2,16 +2,16 @@ import { useState } from 'react';
 import downloadIcon from '@/assets/svg/download.svg';
 
 type DownloadButtonProps = {
-  recordedUrl: string;
+  userInputUrl: string;
   enabled: boolean;
 };
 
-export default function DownloadButton({ recordedUrl, enabled }: DownloadButtonProps) {
+export default function DownloadButton({ userInputUrl, enabled }: DownloadButtonProps) {
   const [download] = useState('');
   return (
     <a
       download={download}
-      href={recordedUrl}
+      href={userInputUrl}
       className={`download-button ${enabled ? 'enabled' : 'disabled'}`}
       aria-label="Download audio"
     >

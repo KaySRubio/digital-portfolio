@@ -6,9 +6,11 @@ import Toggle from './Toggle';
 import waveIcon  from '@/assets/svg/wave_diagram.svg';
 import spectrogramIcon  from '@/assets/svg/spectrogram.svg';
 
+type VisualizerType = 'Waveform' | 'Spectrogram';
+
 export default function Visualizer() {
   const { waveformRef, spectrogramContainerRef, showSpectrogram, setShowSpectrogram } = useDemoContext();
-  const [visualizerType, setVisualizerType] = useState('Waveform');
+  const [visualizerType, setVisualizerType] = useState<VisualizerType>('Waveform');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
 
   const onToggle = () => {

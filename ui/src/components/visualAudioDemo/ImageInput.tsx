@@ -1,22 +1,22 @@
 import { useState, useEffect } from 'react';
 import FileUpload from './FileUpload';
-import PreloadedAudioSelector from './PreloadedAudioSelector';
-import RecordAudio from './RecordAudio';
+import SampleImageSelector from './SampleImageSelector';
+import CameraInput from './CameraInput';
 import SubmitButton from './SubmitButton';
-import microphone  from '@/assets/svg/microphone.svg';
-import music  from '@/assets/svg/music.svg';
+import photo  from '@/assets/svg/photo.svg';
+import camera  from '@/assets/svg/camera.svg';
 import upload  from '@/assets/svg/upload.svg';
 import type { DemoBoard } from '../../types/portfolioTypes';
 import { useDemoContext } from "../../context/DemoContext";
 
-type AudioInputProps = {
+type ImageInputProps = {
   data: DemoBoard
 }
 
-export type AudioInput = 'Samples' | 'Record' | 'Upload';
+export type ImageInput = 'Camera' | 'Samples' | 'Upload';
 
-export default function AudioInput({data}: AudioInputProps) {
-  const [audioInput, setAudioInput] = useState<AudioInput>('Samples');
+export default function ImageInput({data}: ImageInputProps) {
+  const [imageInput, setImageInput] = useState<ImageInput>('Samples');
     const { 
       setUploadedFileUrl,
       setFileAvailable,
@@ -33,7 +33,7 @@ export default function AudioInput({data}: AudioInputProps) {
     </>
   );
 
-  // When use changes type of audio input, clear url's and reset results from backend to null
+  // When use changes type of input, clear url's and reset results from backend to null
   useEffect(() => {
     setUploadedFileUrl('');
     setSampleFileUrl('');
@@ -42,17 +42,17 @@ export default function AudioInput({data}: AudioInputProps) {
     setResultFromBackend(null);
     setUploadedFileError('');
     setSelectedFileDetails([]);
-  }, [audioInput])
+  }, [imageInput])
 
 
   let InputComponent;
-  if (audioInput === 'Record') {
-    InputComponent = <RecordAudio>{children}</RecordAudio>;
-  } else if (audioInput === 'Upload') {
-    InputComponent = <FileUpload type='audio'>{children}</FileUpload>;
+  if (imageInput === 'Camera') {
+    InputComponent = <CameraInput>{children}</CameraInput>;
+  } else if (imageInput === 'Upload') {
+    InputComponent = <FileUpload type='image'>{children}</FileUpload>;
   } else {
-    if(data.sampleAudio) {
-      InputComponent = <PreloadedAudioSelector sampleFileData={data.sampleAudio} >{children}</PreloadedAudioSelector>;
+    if(data.sampleImages) {
+      InputComponent = <SampleImageSelector sampleFileData={data.sampleImages} >{children}</SampleImageSelector >;
     } else {
       InputComponent = null;
     }
@@ -61,40 +61,40 @@ export default function AudioInput({data}: AudioInputProps) {
   return (
     <div className={`interactive-box demo-input`}>
       <div className='interactive-box-header'>
-        <h3>Audio Input</h3>
+        <h3>Image Input</h3>
       </div>
 
       <menu className='interactive-box-menu'>
         <li>
           <button
-            onClick={() => setAudioInput('Record')}
+            onClick={() => setImageInput('Camera')}
             className={`
               interactive-box-menu-item
-              ${audioInput === 'Record' ? 'active-interactive-box-menu' : ''}
+              ${imageInput === 'Camera' ? 'active-interactive-box-menu' : ''}
             `}
           >
-            <img className='input-icon' alt="" src={microphone} />
-            Record
+            <img className='input-icon' alt="" src={camera} />
+            Camera
           </button>
         </li>
         <li>
           <button
-            onClick={() => setAudioInput('Samples')}
+            onClick={() => setImageInput('Samples')}
             className={`
               interactive-box-menu-item
-              ${audioInput === 'Samples' ? 'active-interactive-box-menu' : ''}
+              ${imageInput === 'Samples' ? 'active-interactive-box-menu' : ''}
             `}
           >
-            <img className='input-icon' alt="" src={music} />
+            <img className='input-icon' alt="" src={photo} />
             Samples
           </button>
         </li>
         <li>
           <button
-            onClick={() => setAudioInput('Upload')}
+            onClick={() => setImageInput('Upload')}
             className={`
               interactive-box-menu-item
-              ${audioInput === 'Upload' ? 'active-interactive-box-menu' : ''}
+              ${imageInput === 'Upload' ? 'active-interactive-box-menu' : ''}
             `}
           >
             <img className='input-icon' alt="" src={upload} />

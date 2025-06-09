@@ -9,15 +9,15 @@ import SpectrogramPlugin from 'wavesurfer.js/dist/plugins/spectrogram';
 type DemoContextType = {
   isRecording: boolean;
   setIsRecording: React.Dispatch<React.SetStateAction<boolean>>;
-  recordedUrl: string;
+  userInputUrl: string;
   // setIsRecording: (value: boolean) => void;
-  setRecordedUrl: React.Dispatch<React.SetStateAction<string>>;
-  audioFileAvailable: boolean;
-  setAudioFileAvailable: React.Dispatch<React.SetStateAction<boolean>>;
-  uploadedUrl: string;
-  setUploadedUrl: React.Dispatch<React.SetStateAction<string>>;
-  preloadedUrl: string;
-  setPreloadedUrl: React.Dispatch<React.SetStateAction<string>>;
+  setUserInputUrl: React.Dispatch<React.SetStateAction<string>>;
+  fileAvailable: boolean;
+  setFileAvailable: React.Dispatch<React.SetStateAction<boolean>>;
+  uploadedFileUrl: string;
+  setUploadedFileUrl: React.Dispatch<React.SetStateAction<string>>;
+  sampleFileUrl: string;
+  setSampleFileUrl: React.Dispatch<React.SetStateAction<string>>;
   uploadedFileError: string;
   setUploadedFileError: React.Dispatch<React.SetStateAction<string>>;
   waveformRef: RefObject<HTMLDivElement | null>;
@@ -62,10 +62,10 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
 
 
   const [isRecording, setIsRecording] = useState(false);
-  const [recordedUrl, setRecordedUrl] = useState<string>('');
-  const [audioFileAvailable, setAudioFileAvailable] = useState(false);
-  const [uploadedUrl, setUploadedUrl] = useState<string>('');
-  const [preloadedUrl, setPreloadedUrl] = useState<string>('');
+  const [userInputUrl, setUserInputUrl] = useState<string>('');
+  const [fileAvailable, setFileAvailable] = useState(false);
+  const [uploadedFileUrl, setUploadedFileUrl] = useState<string>('');
+  const [sampleFileUrl, setSampleFileUrl] = useState<string>('');
   const [uploadedFileError, setUploadedFileError] = useState<string>('Error! Please fix this wack file');
   const [audioPlaying, setAudioPlaying] = useState(false);
   const [resultFromBackend, setResultFromBackend] = useState(null);
@@ -128,10 +128,10 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     recordPlugin.on('record-end', blob => {
       const url = URL.createObjectURL(blob);
       // clear previous urls from other inputs
-      setUploadedUrl('');
-      setPreloadedUrl('');
-      setRecordedUrl(url);
-      setAudioFileAvailable(true);
+      setUploadedFileUrl('');
+      setSampleFileUrl('');
+      setUserInputUrl(url);
+      setFileAvailable(true);
     });
 
     return () => {
@@ -193,13 +193,13 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   useEffect(() => {
     const ws = wavesurferRef.current;
     if (!ws) return;
-    const urlToLoad = uploadedUrl || preloadedUrl || recordedUrl;
+    const urlToLoad = uploadedFileUrl || sampleFileUrl || userInputUrl;
     if (urlToLoad) {
       ws.load(urlToLoad);
     } else {
       ws.empty();
     }
-  }, [uploadedUrl, recordedUrl, preloadedUrl]);
+  }, [uploadedFileUrl, userInputUrl, sampleFileUrl]);
 
   const onPlay = () => {
     if (wavesurferRef.current) {
@@ -218,15 +218,15 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     <DemoContext.Provider
       value={{
         isRecording,
-        recordedUrl,
+        userInputUrl,
         setIsRecording,
-        setRecordedUrl,
-        audioFileAvailable,
-        setAudioFileAvailable,
-        uploadedUrl,
-        setUploadedUrl,
-        preloadedUrl,
-        setPreloadedUrl,
+        setUserInputUrl,
+        fileAvailable,
+        setFileAvailable,
+        uploadedFileUrl,
+        setUploadedFileUrl,
+        sampleFileUrl,
+        setSampleFileUrl,
         uploadedFileError,
         setUploadedFileError,
         waveformRef,

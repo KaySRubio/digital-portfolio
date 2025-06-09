@@ -1,16 +1,17 @@
 import type { Project } from '../../types/portfolioTypes';
 import { Link } from 'react-router-dom';
 import TechStack from '../projectDescriptions/TechStack';
+import type { Theme } from '../../types/portfolioTypes';
 
 type ProjectCardProps = {
   project: Project;
-  theme: string;
+  theme: Theme;
 }
 
-const ProjectCard = ({project, theme='white'}: ProjectCardProps) => {
+const ProjectCard = ({project, theme='light'}: ProjectCardProps) => {
   let projectCardClass;
   let iconClass;
-  if(theme === 'white') {
+  if(theme === 'light') {
     projectCardClass = 'white-background dark-blue';
     iconClass = 'dark-blue';
   } else {
@@ -19,15 +20,17 @@ const ProjectCard = ({project, theme='white'}: ProjectCardProps) => {
   }
 
   const renderProjectImage = () => {
-    if(project.mainImage.type === 'svg') {
-      const Icon = project.mainImage.src;
-      return (
-        <span role='img' aria-label={project.mainImage.alt} >
-          <Icon className={`project-card-icon-svg ${iconClass}`} />
-        </span>
-      )
-    } else {
-      return (<img className='project-card-icon' src={project.mainImage.src as string} alt={project.mainImage.alt} />)
+    if(project.mainImage) {
+      if(project.mainImage.type === 'svg') {
+        const Icon = project.mainImage.src;
+        return (
+          <span role='img' aria-label={project.mainImage.alt} >
+            <Icon className={`project-card-icon-svg ${iconClass}`} />
+          </span>
+        )
+      } else if (project.mainImage.type === 'png' || project.mainImage.type === 'jpg') {
+        return (<img className='project-card-icon' src={project.mainImage.src as string} alt={project.mainImage.alt} />)
+      }
     }
   }
 

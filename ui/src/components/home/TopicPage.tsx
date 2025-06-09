@@ -17,7 +17,7 @@ const TopicPage = ({topic}: ProjectListPageProps) => {
     <div>
       <h1 className='topic-page-title'>{topic.title}</h1>
       <div className='project-card-container'>
-      {visibleProjectsOnTopic.map(project => ( <ProjectCard key={project.path} project={project} theme='blue' />))}
+      {visibleProjectsOnTopic.map(project => ( <ProjectCard key={project.path} project={project} theme='dark' />))}
       </div>
     </div>
   )

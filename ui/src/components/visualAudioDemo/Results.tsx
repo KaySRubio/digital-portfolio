@@ -10,8 +10,9 @@ type ResultsProps = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any;
 };
+
 export default function Results({ data }: ResultsProps) {
-  const [resultToShow, setResultToShow] = useState(data.resultTabs[0].type);
+  const [resultToShow, setResultToShow] = useState(data.resultTabs[0]?.type);
   const { resultFromBackend, waitingForResults, requestFromBackendError } = useDemoContext();
 
   const renderDisclosurePanel = (model: ResultForEachModel, index: number) => {

@@ -2,12 +2,13 @@ import React from 'react';
 import DownloadButton from './DownloadButton';
 import { useDemoContext } from "../../context/DemoContext";
 
-type RecordAudioProps = {
+type CameraInputProps = {
   children: React.ReactNode;
 };
 
-const RecordAudio: React.FC<RecordAudioProps> = ({ children }) => {
-  const { isRecording, setIsRecording, userInputUrl, fileAvailable, recordPluginRef } = useDemoContext();
+const CameraInput: React.FC<CameraInputProps> = ({ children }) => {
+  /*
+  const { isRecording, setIsRecording, userInputUrl, audioAvailable, recordPluginRef } = useDemoContext();
   
   const handleRecordClick = () => {
     setIsRecording(prev => !prev);
@@ -34,13 +35,23 @@ const RecordAudio: React.FC<RecordAudioProps> = ({ children }) => {
           </div>
           Record
         </button>
-        <DownloadButton userInputUrl={userInputUrl} enabled={fileAvailable} />
+        <DownloadButton userInputUrl={userInputUrl} enabled={audioAvailable} />
         {children}
       </div>
     </div>
   );
+  */
+ return (
+  <div className='input-area-parent'>
+    <h4 className='sr-only'>Camera</h4>
+    <div className={`input-area record-input-area`}>
+      <p>Use Camera</p>
+      {children}
+    </div>
+  </div>
+ )
 };
 
-export default RecordAudio;
+export default CameraInput;
 
 

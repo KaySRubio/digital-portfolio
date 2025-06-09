@@ -5,6 +5,7 @@ import Menu from './Menu';
 import Footer from './Footer';
 import Home from './Home';
 import ProjectListPage from './TopicPage';
+import ScrollToTop from './ScrollToTop';
 import ProjectDetailsPage from '../projectDescriptions/ProjectDetailsPage';
 import { topics, projects, base_path } from '../../data/portfolioData';
 
@@ -13,13 +14,13 @@ const Wrapper = () => {
     <div className='page-wrapper'>
       <div className='content'>
         <Menu />
+        <ScrollToTop />
         <Routes>
           <Route path={''} element={<Home />} />
           {topics.map(topic => (
             <React.Fragment key={topic.path}>
               <Route 
                 path={topic.path}
-                // path={`${base_path}${topic.path}`} 
                 element={<ProjectListPage topic={topic} />} 
               />
               {/* nested routes within topics for individual projects */}

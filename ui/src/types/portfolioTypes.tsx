@@ -14,6 +14,8 @@ export const TopicNames = {
   WEBAPPDEVELOPMENT: 'web-app-development',
 } as const;
 
+export type Theme = 'dark' | 'light';
+
 // This renames the type so it doesn't conflict with the object name
 export type TopicName = typeof TopicNames[keyof typeof TopicNames];
 
@@ -26,14 +28,14 @@ export type Project = {
   visible: boolean;
   featured: boolean;
   desc: string;
-  mainImage: MainImage;
+  mainImage?: MainImage;
   techStack?: string[]; // older list version
   projectCardTechStack?: string[]; // better icon version
   project_details: ProjectDetails;
 }
 
 export type MainImage = {
-  type: 'png' | 'jpg' | 'svg';
+  type: 'png' | 'jpg' | 'svg' | '';
   src: string | FunctionComponent<SVGProps<SVGSVGElement>>;
   alt: string;
   className?: string;
@@ -142,48 +144,13 @@ export type DisclosurePanel = {
   key?: number | string;
 }
 
-// Tech stack type for rendering tech stack with images on project details pages
-// export type TechStackType = keyof typeof techStackData;
-
-/*
-export type TeckStackType = 
-  // data science libraries
-  'nltk' |
-  'scikitlearn' |
-  'skopt' |
-  'librosa' |
-
-  // neural network libraries
-  'fastai' |
-  'huggingface' |
-  'torch' |
-
-  // front-end technologies
-  'react' |
-  'nodejs' |
-  'vite' |
-  'webpack' |
-
-  // environments
-  'vsCode' |
-  'jupyterLab' |
-
-  // languages
-  'typescript' |
-  'python' |
-  'javascript'
-*/
-
-
-
-
-// type TechStackListType = typeof techStackList[number];
 export type TechStackData = TechStackDataItem2[];
 
 export type TechStackDataItem2 = {
   type: string;
   name: string;
-  iconComponent: FunctionComponent<SVGProps<SVGSVGElement>>,
+  iconComponent?: FunctionComponent<SVGProps<SVGSVGElement>>,
+  icon?: string;
   href: string;
 }
 
@@ -195,11 +162,15 @@ export type ProjectTechStackComponent = {
 
 export type DemoBoard = {
   type: 'DemoBoard',
-  page: string,
-  sampleAudio: sampleFile[],
+  input?: DemoBoardInput[]
+  directions?: ProjectDetailComponent[],
+  sampleAudio?: SampleFile[],
+  sampleImages?: SampleFile[],
   requests: Request[],
   resultTabs: ResultTab[],
 }
+
+export type DemoBoardInput = 'audio' | 'image'
 
 export type Request = {
   type: 'get' | 'post' | 'gradio',
@@ -209,10 +180,11 @@ export type Request = {
   key?: string,
 }
 
-export type sampleFile = {
+export type SampleFile = {
   display_text: string,
   location: string,
-  sampleResults?: Kaysrubio_speech_transcribe_result,
+  alt?: string,
+  sampleResults?: Kaysrubio_speech_transcribe_result | Kaysrubio_frog_classifier_result,
 }
 
 export type ResultTab = {
@@ -226,6 +198,26 @@ export type ResultForEachModel = {
   description?: ProjectDetailComponent[],
   results?: ProjectDetailComponent[],
 }
+
+export type Kaysrubio_frog_classifier_result = {
+  data: 
+    {
+      species: 'American Bullfrog (Lithobates catesbeianus)' | 
+      'American Toad (Anaxyrus americanus)' | 
+      'Eastern Spadefoot (Scaphiopus holbrookii)' | 
+      'Fowlers Toad (Anaxyrus fowleri)' | 
+      'Gray Treefrog (Hyla versicolor)' | 
+      'Green Frog (Lithobates clamitans)' | 
+      'Northern Leopard Frog (Lithobates pipiens)' | 
+      'Pickerel Frog (Lithobates palustris)'| 
+      'Spring Peeper (Pseudacris crucifer)' |
+      'Wood Frog (Lithobates sylvaticus)';
+      prob: number;
+    }[],
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+}
+
 
 export type Kaysrubio_speech_transcribe_result = {
 	data: [

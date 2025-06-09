@@ -20,33 +20,28 @@ export default function TechStack({techList, className}: TechStackProps) {
     }
   })
 
-  // TODO simplify this, the project-card is already a Link so it can't hold <a>
-  let returnComponent;
-  if(className==='project-card-tech-stack-row') {
-    returnComponent = (
-      <div className={`${className} tech-stack-row`}>
+  return (
+    <div className={`${className} tech-stack-row`}>
       {filteredTechStackData.map((tech, index) => {
         const Icon = tech.iconComponent;
-        return (
-          <div key={index}>
-            <Icon />
-          </div>
-      )})}
+        const imgSrc = tech.icon;
+        // project-card is already a Link so it can't hold <a>
+        if(className==='project-card-tech-stack-row') {
+          return (
+            <div key={index}>
+              {Icon && <Icon />}
+              {imgSrc && <img className='footer-icon' src={imgSrc} alt='' />}
+            </div>
+          )
+        } else {
+          return (
+            <a href={tech.href} key={index}>
+              {Icon && <Icon />}
+              {imgSrc && <img src={imgSrc} alt='' />}
+            </a>
+          )
+        }
+      })}
     </div>
-    )
-  } else {
-    returnComponent = (
-      <div className={`${className} tech-stack-row`}>
-      {filteredTechStackData.map((tech, index) => {
-        const Icon = tech.iconComponent;
-        return (
-          <a href={tech.href} key={index}>
-            {/*<p>{tech.name}</p>*/}
-            <Icon />
-          </a>
-      )})}
-    </div>
-    )
-  }
-  return returnComponent;
+  )
 }
