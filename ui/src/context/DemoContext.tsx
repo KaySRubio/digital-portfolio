@@ -256,7 +256,6 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   );
 };
 
-// export const useDemoContext = () => useContext(DemoContext);
 export const useDemoContext = () => {
   const context = useContext(DemoContext);
   if (!context) {

@@ -30,7 +30,7 @@ export const SampleImageSelector = ({ children, sampleFileData }: SampleImageSel
   };
 
   return (
-    <div className='input-area-parent'>
+    <div className='input-area-parent-image'>
       <h4 className='sr-only'>Samples</h4>
       <div className='preloaded-input-area'>
         <div>

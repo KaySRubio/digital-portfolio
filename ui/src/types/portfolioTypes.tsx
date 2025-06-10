@@ -184,14 +184,15 @@ export type SampleFile = {
   display_text: string,
   location: string,
   alt?: string,
-  sampleResults?: Kaysrubio_speech_transcribe_result | Kaysrubio_frog_classifier_result,
+  sampleResults?: Kaysrubio_speech_transcribe_result | ClassificationArray,
 }
 
 export type ResultTab = {
   type: string,
   display_text: string,
   icon?: string,
-  resultsForEachModel: ResultForEachModel[],
+  resultsForEachModel?: ResultForEachModel[],
+  path?: string,
 }
 
 export type ResultForEachModel = {
@@ -199,24 +200,13 @@ export type ResultForEachModel = {
   results?: ProjectDetailComponent[],
 }
 
-export type Kaysrubio_frog_classifier_result = {
-  data: 
-    {
-      species: 'American Bullfrog (Lithobates catesbeianus)' | 
-      'American Toad (Anaxyrus americanus)' | 
-      'Eastern Spadefoot (Scaphiopus holbrookii)' | 
-      'Fowlers Toad (Anaxyrus fowleri)' | 
-      'Gray Treefrog (Hyla versicolor)' | 
-      'Green Frog (Lithobates clamitans)' | 
-      'Northern Leopard Frog (Lithobates pipiens)' | 
-      'Pickerel Frog (Lithobates palustris)'| 
-      'Spring Peeper (Pseudacris crucifer)' |
-      'Wood Frog (Lithobates sylvaticus)';
-      prob: number;
-    }[],
+export type ClassificationArray = {
+  data: [ClassificationObj[]],
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
+
+export type ClassificationObj = { species: string, prob: number}
 
 
 export type Kaysrubio_speech_transcribe_result = {

@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { useDemoContext } from "../../context/DemoContext";
 import JSONViewer from './JSONViewer';
 import DisclosurePanel from '../projectDescriptions/DisclosurePanel';
-import type { ResultTab, ResultForEachModel } from '../../types/portfolioTypes';
+import ClassificationResults from './ClassificationResults';
+import type { ResultTab, ResultForEachModel, DemoBoard } from '../../types/portfolioTypes';
 import { renderComponent } from '../../utils/renderComponent';
 import json from '@/assets/png/json.png';
+import get from 'lodash.get';
 
 type ResultsProps = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data: any;
+  data: DemoBoard;
 };
 
 export default function Results({ data }: ResultsProps) {
@@ -51,7 +52,7 @@ export default function Results({ data }: ResultsProps) {
         </div>
       );
     } else {
-      return (<p className='center'>Choose audio and click Submit</p>)
+      return (<p className='center'>Choose file and click Submit</p>)
     }
   }
 
@@ -90,8 +91,12 @@ export default function Results({ data }: ResultsProps) {
           </button>
         </li>
       </menu>
-      {resultFromBackend && data.resultTabs.map((tab: ResultTab) => {
-        if(resultToShow === tab.type) return (
+      {resultFromBackend && data.resultTabs.map((tab: ResultTab, index: number) => {
+        // Classification results get a specially formatted tab
+        if(resultToShow === tab.type && tab.type === 'classification' && tab.path) {
+          return (<ClassificationResults key={index} data={get(resultFromBackend, tab.path)} />)
+        // Other types of results just get a disclosure panel for each model
+        } else if(resultToShow === tab.type && tab.resultsForEachModel) return (
           tab.resultsForEachModel.map((model, index) => (
             renderDisclosurePanel(model, index)
           ))

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import upload from '@/assets/svg/upload.svg';
 import { useDemoContext } from "../../context/DemoContext";
-import { checkImageFile, checkAudioFile } from '../../utils/checkFile';
+import { checkImageFile, checkAudioFile } from '../../utils/fileUtils';
 
 type FileUploadProps = {
   children: React.ReactNode;
@@ -77,7 +77,7 @@ export const FileUpload = ({ children, type }: FileUploadProps) => {
   };
 
   return (
-    <div className='input-area-parent'>
+    <div className={type === 'image' ? 'input-area-parent-image' : 'input-area-parent'}>
       <h4 className='sr-only'>Upload</h4>
       <div className='upload-input-area'>
         

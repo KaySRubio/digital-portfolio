@@ -57,3 +57,23 @@ const getAudioMetadata = async (file: File) => {
     numberOfChannels,
   };
 };
+
+export const resizeImage = (
+  base64: string,
+  maxWidth: number,
+  maxHeight: number,
+  callback: (resizedBase64: string) => void
+) => {
+  const img = new Image();
+  img.onload = () => {
+    const canvas = document.createElement('canvas');
+    const ratio = Math.min(maxWidth / img.width, maxHeight / img.height);
+    canvas.width = img.width * ratio;
+    canvas.height = img.height * ratio;
+    const ctx = canvas.getContext('2d');
+    ctx?.drawImage(img, 0, 0, canvas.width, canvas.height);
+    const resized = canvas.toDataURL('image/jpeg', 0.8); // 0.8 = compression quality
+    callback(resized);
+  };
+  img.src = base64;
+};

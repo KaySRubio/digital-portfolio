@@ -41,6 +41,10 @@ button {
   text-align: center;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .width90px {
   width: 90px;
   height: 90px;
@@ -197,6 +201,22 @@ h1, h2, h3 {
   gap: 1em;
 }
 
+.button-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
 .headline-desc-area {
   display: flex;
   flex-direction: column;
@@ -209,6 +229,19 @@ h1, h2, h3 {
   font-weight: bold;
   color: var(--med-blue);
   text-align: center;
+}
+
+.photo-button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  padding: 2.5px;
+}
+
+.icon-30px {
+  width: 30px;
+  height: 30px;
 }
 
 .desc {
@@ -890,6 +923,12 @@ form button {
   height: 100px;
 }
 
+.input-area-parent-image {
+  display: flex;
+  padding: 10px;
+  height: 130px;
+}
+
 .input-area {
   padding: 10px;
   /* display: grid;
@@ -899,6 +938,20 @@ form button {
   flex-direction: row;
   gap: 0.5em;
 } 
+
+.classification-results-area {
+  font-size: 14px;
+  padding: 10px;
+}
+
+.classification-result {
+  margin: 0 !important; 
+  padding-inline-start: 0 !important;
+}
+
+.classification-results-area p, li, ul {
+  margin: 0;
+}
 
 .record-input-area {
   width: 280px;
@@ -962,6 +1015,11 @@ form button {
   border-radius: 50%;
   border: none;
   height: 25px;
+}
+
+.demo-user-photo {
+  width: 200px;
+  height: 140px;
 }
 
 .enabled {

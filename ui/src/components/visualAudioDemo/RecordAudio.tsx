@@ -34,7 +34,7 @@ const RecordAudio: React.FC<RecordAudioProps> = ({ children }) => {
           </div>
           Record
         </button>
-        <DownloadButton userInputUrl={userInputUrl} enabled={fileAvailable} />
+        <DownloadButton userInputUrl={userInputUrl} enabled={fileAvailable} label='Download Audio' />
         {children}
       </div>
     </div>

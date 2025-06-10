@@ -8,9 +8,6 @@ type ProjectDetailsPageProps = {
 }
 
 const ProjectDetailsPage = ({project}: ProjectDetailsPageProps) => {
-
-  console.log('project: ', project);
-
   // TODO if project_details is empty, displays the Coming Soon page
   return (
     <div className='project-details'>

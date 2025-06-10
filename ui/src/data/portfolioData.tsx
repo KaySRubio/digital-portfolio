@@ -18,6 +18,7 @@ import dearabby from '@/assets/png/dearabby.png';
 import dear_abby_word_cloud from '@/assets/png/dear_abby_word_cloud.png';
 import dear_abby_lda_5 from '@/assets/png/dear_abby_lda_5.png';
 import frog from '@/assets/png/frog.png';
+import frog_outline from '@/assets/png/frog_outline.png';
 import hospitalization from '@/assets/png/hospitalization.png';
 import iready from '@/assets/png/iready.png';
 import irish from '@/assets/wav/irish.wav';
@@ -219,8 +220,8 @@ export const projects: Project[] = [
             display_text: 'American Bullfrog', 
             location: american_bullfrog,
             alt: 'A green and brown frog sitting in some grass',
-            /*sampleResults: {
-              data: [
+            sampleResults: {
+              data: [[
                 {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.9746686816215515},
                 {species: 'Green Frog (Lithobates clamitans)', prob: 0.023729383945465088},
                 {species: 'Wood Frog (Lithobates sylvaticus)', prob: 0.0012509091757237911},
@@ -231,15 +232,15 @@ export const projects: Project[] = [
                 {species: 'Gray Treefrog (Hyla versicolor)', prob: 0.000009411439350515138},
                 {species: 'Fowlers Toad (Anaxyrus fowleri)', prob: 0.000004050126790389186},
                 {species: 'Pickerel Frog (Lithobates palustris)', prob: 8.979863537206256e-7},
-              ]
-            }*/
+              ]]
+            }
           },
           {
             display_text: 'Gray Tree Frog', 
             location: gray_tree_frog,
             alt: 'A gray spotted frog on a branch in the woods',
             sampleResults: {
-              data: [
+              data: [[
                 {species: "Gray Treefrog (Hyla versicolor)", prob: 0.9943358302116394},
                 {species: "Fowlers Toad (Anaxyrus fowleri)", prob: 0.002308360766619444},
                 {species: "Eastern Spadefoot (Scaphiopus holbrookii)", prob: 0.001017067115753889},
@@ -250,7 +251,7 @@ export const projects: Project[] = [
                 {species: 'Spring Peeper (Pseudacris crucifer)', prob: 0.0001683539740042761},
                 {species: 'American Toad (Anaxyrus americanus)', prob: 0.00013327246415428817},
                 {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.00003691832171170972}
-              ]
+              ]]
             }
           },
           {
@@ -259,7 +260,7 @@ export const projects: Project[] = [
             alt: 'A green frog with brown spots partially hidden in some leaves',
             sampleResults: {
               data: 
-              [
+              [[
                 {species: "Northern Leopard Frog (Lithobates pipiens)", prob: 0.9989408850669861},
                 {species: "Pickerel Frog (Lithobates palustris)", prob: 0.0005622448516078293},
                 {species: "Wood Frog (Lithobates sylvaticus)", prob: 0.00036222580820322037},
@@ -270,7 +271,7 @@ export const projects: Project[] = [
                 {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.000006336148999253055},
                 {species: 'Spring Peeper (Pseudacris crucifer)', prob: 0.0000024683827177796047},
                 {species: 'American Toad (Anaxyrus americanus)', prob: 0.0000017227010857823188},
-              ]
+              ]]
             }
           }
         ],
@@ -285,10 +286,9 @@ export const projects: Project[] = [
         resultTabs: [
           {
             type: 'classification',
+            icon: frog_outline,
             display_text: 'Classification',
-            resultsForEachModel: [
-              {}
-            ]
+            path: 'data[0]',
           }
         ]
       },
