@@ -44,20 +44,20 @@ export const renderComponent = (data: ProjectDetailComponent, key: number | null
       break;
     case 'ul':
     case 'ol':
-      children = data.childGroup.map((childGroup, index) => {
+      children = data.elements.map((elementGroup, index) => {
         return (
         <li key={index} className={data.className}>
-          { childGroup.map((el, i) => renderComponent(el, i)) }
+          { elementGroup.map((el, i) => renderComponent(el, i)) }
         </li>
       )})
       returnComponent = React.createElement(data.type, {key: key}, children)
       break;
     case 'div':
-      children = data.childGroup.map((el, i) => renderComponent(el, i))
+      children = data.elements.map((el, i) => renderComponent(el, i))
       returnComponent = (<div key={key} className={data.className}>{children}</div>)
       break;
     case 'GoalAndGithub':
-      children = data.childGroup.map((el, i) => renderComponent(el, i))
+      children = data.elements.map((el, i) => renderComponent(el, i))
       returnComponent = (<GoalAndGithub key={key} className={data.className} href={data.href}>{children}</GoalAndGithub>)
       break;
     case 'DisclosurePanel':

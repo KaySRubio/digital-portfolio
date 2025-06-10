@@ -77,7 +77,7 @@ project_details: [
   {type: 'text', text: ' project'},
   {type: 'p', text: 'I learned about: '},
   {
-    type: 'ol', childGroup: [
+    type: 'ol', elements: [
     [{type: 'text', text: 'Audio'}],
     [
       {type: 'a', text: 'Frogs', href: 'https://en.wikipedia.org/wiki/Frog'},
@@ -87,7 +87,7 @@ project_details: [
 ],
 ```
 8.	Composite ProjectDetailComponents that are pre-formatted include things like:
-    - `type="GoalAndGithub"` has a nice 2-column format which displays text about the project on the left wider column, and a thinner column with a github icon/button. It has a childGroup property for the text elements on the right, and an href property for a github link.
+    - `type="GoalAndGithub"` has a nice 2-column format which displays text about the project on the left wider column, and a thinner column with a github icon/button. It has a elements property for the text elements on the right, and an href property for a github link.
     - `type="TechStack"` takes in a techList and displays the relevant icons. Make sure the listed tech is in the techStackData object with the saved icon, name, and href so that it shows up correctly
     - `type="table"` has a property for headers (one-dimensional array of strings), and a property for rows (two-dimensional array of strings, where first dimension is for each row, and second dimension is for each column)
     - `type="DisclosurePanel"` creates a clickable disclosure panel so users can show or minimize content. A property for title takes in a text element such as an h3, and children is an array of elements. 
@@ -98,9 +98,11 @@ project_details: [
 ```
 {
   type: 'DemoBoard',
-  input: ['audio', 'image'], // Use one or both types of input
+  input: {
+    types: ['audio', 'image'], // Use one or both types of input
+  }
   requests: [],
-  resultTabs: []
+  results: []
 }
 ```
 
@@ -117,28 +119,30 @@ project_details: [
         ],
 ```
 
-11.	The resultTabs provide a list of results to show, descriptions of what these results mean (such as what ML models provided them) and the exact path to find the result in the data provided from the back end. A single resultsTab can show results from more than 1 model. 
+11.	The results has a tabs property that provides a list of results to show, descriptions of what these results mean (such as what ML models provided them) and the exact path to find the result in the data provided from the back end. A single tab can show results from more than 1 model. 
 
-<pre> ```
-resultTabs: [
-  {
-    type: 'transcription',
-    display_text: 'Transcription', // The name of the type of result that will be displayed as a tab name in the Results box
-    icon: transcription, // Optional to add a tiny icon, such as a 100x100px png. Make sure to import it.
-    resultsForEachModel: [ // Each object listed in here will be it's own disclosure panel within the same resultTab
-      {
-        description: [
-          {type: 'text', text: 'Model: '},
-          {type: 'a', href: 'https://huggingface.co/openai/whisper-base.en', text: 'openai/whisper-base.end'},
-          {type: 'text', text: '. Trained on 680k hours of labelled data'},
-        ],
-        results: [ // This is the contents inside the DisclosurePanel. You can add more information here in regular text, paragraph, etc. elements, as well as a textFromPath
-          {type: 'textFromPath', path: 'data[0][0].transcription'}, // make sure the path matches the exact location in the data returned from your backend, otherwise it won't be able to find it and will display an error message instead.
-        ],
-      }
-    ]
-  },
-]
-```</pre> 
+```
+results: {
+  tabs: [
+    {
+      type: 'transcription',
+      display_text: 'Transcription', // The name of the type of result that will be displayed as a tab name in the Results box
+      icon: transcription, // Optional to add a tiny icon, such as a 100x100px png. Make sure to import it.
+      resultsForEachModel: [ // Each object listed in here will be it's own disclosure panel in the same tab
+        {
+          description: [
+            {type: 'text', text: 'Model: '},
+            {type: 'a', href: 'https://huggingface.co/openai/whisper-base.en', text: 'openai/whisper-base.end'},
+            {type: 'text', text: '. Trained on 680k hours of labelled data'},
+          ],
+          results: [ // This is the contents inside the DisclosurePanel. You can add more information here in regular text, paragraph, etc. elements, as well as a textFromPath
+            {type: 'textFromPath', path: 'data[0][0].transcription'}, // make sure the path matches the exact location in the data returned from your backend, otherwise it won't be able to find it and will display an error message instead.
+          ],
+        }
+      ]
+    },
+  ]
+}
+```
 
 12.	Inside the DemoBoard object, you can also add a sampleAudio or sampleImages property for preloaded input, which should have the location to a .wav, .png, or .jpg file, some display_text for the dropdown, and you can include sampleResults which should be an exactly copy of what your back end returns, formatted exactly the same way. If you include sample results, the app won't query the backend, but will instead display the sampleResults (saves on time and repetitive requests). Make sure to test that the results display correctly.  

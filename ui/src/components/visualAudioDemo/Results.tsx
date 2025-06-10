@@ -13,7 +13,7 @@ type ResultsProps = {
 };
 
 export default function Results({ data }: ResultsProps) {
-  const [resultToShow, setResultToShow] = useState(data.resultTabs[0]?.type);
+  const [resultToShow, setResultToShow] = useState(data.results.tabs[0]?.type);
   const { resultFromBackend, waitingForResults, requestFromBackendError } = useDemoContext();
 
   const renderDisclosurePanel = (model: ResultForEachModel, index: number) => {
@@ -63,7 +63,7 @@ export default function Results({ data }: ResultsProps) {
       </div>
 
       <menu className='interactive-box-menu'>
-        {data.resultTabs.map((tab: ResultTab, index: number) => (
+        {data.results.tabs.map((tab: ResultTab, index: number) => (
           <li key={index}>
             <button
               onClick={() => setResultToShow(tab.type)}
@@ -91,7 +91,7 @@ export default function Results({ data }: ResultsProps) {
           </button>
         </li>
       </menu>
-      {resultFromBackend && data.resultTabs.map((tab: ResultTab, index: number) => {
+      {resultFromBackend && data.results.tabs.map((tab: ResultTab, index: number) => {
         // Classification results get a specially formatted tab
         if(resultToShow === tab.type && tab.type === 'classification' && tab.path) {
           return (<ClassificationResults key={index} data={get(resultFromBackend, tab.path)} />)

@@ -51,8 +51,8 @@ export default function AudioInput({data}: AudioInputProps) {
   } else if (audioInput === 'Upload') {
     InputComponent = <FileUpload type='audio'>{children}</FileUpload>;
   } else {
-    if(data.sampleAudio) {
-      InputComponent = <PreloadedAudioSelector sampleFileData={data.sampleAudio} >{children}</PreloadedAudioSelector>;
+    if(data.input?.sampleAudio) {
+      InputComponent = <PreloadedAudioSelector sampleFileData={data.input.sampleAudio} >{children}</PreloadedAudioSelector>;
     } else {
       InputComponent = null;
     }

@@ -5,7 +5,7 @@ import AudioInput from './AudioInput';
 import ImageInput from './ImageInput';
 import Visualizer from './Visualizer';
 import Results from './Results';
-import Directions from './Directions';
+import CustomSection from './CustomSection';
 
 type DemoBoardProps = {
   data: DemoBoard
@@ -15,11 +15,11 @@ export default function SoundBoard({data}: DemoBoardProps) {
   return (
     <DemoProvider>
       <div className='demo-board'>
-        {data.directions && <Directions directions={data.directions} />}
+        {data.customSection && <CustomSection data={data.customSection} />}
         {/* to do add ImageInput */}
-        {data.input?.includes('image') && <ImageInput data={data} />}
-        {data.input?.includes('audio') && <AudioInput data={data} />}
-        {data.input?.includes('audio') &&  <Visualizer /> }
+        {data.input?.types.includes('image') && <ImageInput data={data} />}
+        {data.input?.types.includes('audio') && <AudioInput data={data} />}
+        {data.input?.types.includes('audio') &&  <Visualizer /> }
         <Results data={data}/>
       </div>
     </DemoProvider>

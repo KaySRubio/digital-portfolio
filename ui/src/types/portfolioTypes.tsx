@@ -100,7 +100,7 @@ export type ListType =
 export type ListComponent = {
   type: ListType,
   className?: string,
-  childGroup: ProjectDetailComponent[][],
+  elements: ProjectDetailComponent[][],
   key?: number | string;
 };
 
@@ -125,14 +125,14 @@ export type ImageComponent = {
 export type DivComponent = {
   type: 'div',
   className?: string,
-  childGroup: ProjectDetailComponent[],
+  elements: ProjectDetailComponent[],
   key?: number | string;
 }
 
 export type GoalAndGithub = {
   type: 'GoalAndGithub',
   className?: string,
-  childGroup: ProjectDetailComponent[],
+  elements: ProjectDetailComponent[],
   href: string,
   key?: number | string;
 }
@@ -162,15 +162,31 @@ export type ProjectTechStackComponent = {
 
 export type DemoBoard = {
   type: 'DemoBoard',
-  input?: DemoBoardInput[]
-  directions?: ProjectDetailComponent[],
-  sampleAudio?: SampleFile[],
-  sampleImages?: SampleFile[],
+  input?: Input,
+  customSection?: CustomSection,
   requests: Request[],
-  resultTabs: ResultTab[],
+  results: Result,
 }
 
-export type DemoBoardInput = 'audio' | 'image'
+export type Input = {
+  types: InputTypes[],
+  sampleAudio?: SampleFile[],
+  sampleImages?: SampleFile[],
+}
+
+export type InputTypes = 'audio' | 'image'
+
+export type SampleFile = {
+  display_text: string,
+  location: string,
+  alt?: string,
+  sampleResults?: Kaysrubio_speech_transcribe_result | ClassificationArray,
+}
+
+export type CustomSection = {
+  display_text: string,
+  elements: ProjectDetailComponent[]
+}
 
 export type Request = {
   type: 'get' | 'post' | 'gradio',
@@ -180,11 +196,8 @@ export type Request = {
   key?: string,
 }
 
-export type SampleFile = {
-  display_text: string,
-  location: string,
-  alt?: string,
-  sampleResults?: Kaysrubio_speech_transcribe_result | ClassificationArray,
+export type Result = {
+  tabs: ResultTab[],
 }
 
 export type ResultTab = {

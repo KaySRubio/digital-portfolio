@@ -205,76 +205,81 @@ export const projects: Project[] = [
       {type: 'h2', text: 'Goals'},
       {
         type: 'GoalAndGithub',
-        childGroup: [
+        elements: [
           {type: 'text', text: 'I created an image classifier for frog species in Massachusetts by fine-tuning a pre-trained neural network model, '},
           {type: 'a', text: 'resnet18', href: 'https://huggingface.co/microsoft/resnet-18'},
           {type: 'text', text: ', on ~200 frog pictures per species collected from a search engine.'},
         ],
         href: 'https://github.com/KaySRubio/deep-learning-projects/blob/main/frog_image_classifier.ipynb',
       },
+      {type: 'h2', text: 'Demo'},
       {
         type: 'DemoBoard',
-        input: ['image'],
-        sampleImages: [
-          {
-            display_text: 'American Bullfrog', 
-            location: american_bullfrog,
-            alt: 'A green and brown frog sitting in some grass',
-            sampleResults: {
-              data: [[
-                {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.9746686816215515},
-                {species: 'Green Frog (Lithobates clamitans)', prob: 0.023729383945465088},
-                {species: 'Wood Frog (Lithobates sylvaticus)', prob: 0.0012509091757237911},
-                {species: 'Northern Leopard Frog (Lithobates pipiens)', prob: 0.00014007935533300042},
-                {species: 'American Toad (Anaxyrus americanus)', prob: 0.00010111537994816899},
-                {species: 'Spring Peeper (Pseudacris crucifer)', prob: 0.00005221633909968659},
-                {species: 'Eastern Spadefoot (Scaphiopus holbrookii)', prob: 0.00004317923230701126},
-                {species: 'Gray Treefrog (Hyla versicolor)', prob: 0.000009411439350515138},
-                {species: 'Fowlers Toad (Anaxyrus fowleri)', prob: 0.000004050126790389186},
-                {species: 'Pickerel Frog (Lithobates palustris)', prob: 8.979863537206256e-7},
-              ]]
-            }
-          },
-          {
-            display_text: 'Gray Tree Frog', 
-            location: gray_tree_frog,
-            alt: 'A gray spotted frog on a branch in the woods',
-            sampleResults: {
-              data: [[
-                {species: "Gray Treefrog (Hyla versicolor)", prob: 0.9943358302116394},
-                {species: "Fowlers Toad (Anaxyrus fowleri)", prob: 0.002308360766619444},
-                {species: "Eastern Spadefoot (Scaphiopus holbrookii)", prob: 0.001017067115753889},
-                {species: "Green Frog (Lithobates clamitans)", prob: 0.000824976246803999},
-                {species: "Wood Frog (Lithobates sylvaticus)", prob: 0.00045502890134230256},
-                {species: "Northern Leopard Frog (Lithobates pipiens)", prob: 0.0003748933377210051},
-                {species: "Pickerel Frog (Lithobates palustris)", prob: 0.00034524459624662995},
-                {species: 'Spring Peeper (Pseudacris crucifer)', prob: 0.0001683539740042761},
-                {species: 'American Toad (Anaxyrus americanus)', prob: 0.00013327246415428817},
-                {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.00003691832171170972}
-              ]]
-            }
-          },
-          {
-            display_text: 'Northern Leopard Frog', 
-            location: northern_leopardfrog,
-            alt: 'A green frog with brown spots partially hidden in some leaves',
-            sampleResults: {
-              data: 
-              [[
-                {species: "Northern Leopard Frog (Lithobates pipiens)", prob: 0.9989408850669861},
-                {species: "Pickerel Frog (Lithobates palustris)", prob: 0.0005622448516078293},
-                {species: "Wood Frog (Lithobates sylvaticus)", prob: 0.00036222580820322037},
-                {species: "Eastern Spadefoot (Scaphiopus holbrookii)", prob: 0.00007037333125481382},
-                {species: "Green Frog (Lithobates clamitans)", prob: 0.00002487793426553253},
-                {species: "Fowlers Toad (Anaxyrus fowleri)", prob: 0.000018251390429213643},
-                {species: "Gray Treefrog (Hyla versicolor)", prob: 0.000010626030416460708},
-                {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.000006336148999253055},
-                {species: 'Spring Peeper (Pseudacris crucifer)', prob: 0.0000024683827177796047},
-                {species: 'American Toad (Anaxyrus americanus)', prob: 0.0000017227010857823188},
-              ]]
+        input: {
+          types: ['image'],
+          sampleImages: [
+            {
+              display_text: 'American Bullfrog', 
+              location: american_bullfrog,
+              alt: 'A green and brown frog sitting in some grass',
+              sampleResults: {
+                data: [[
+                  {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.9746686816215515},
+                  {species: 'Green Frog (Lithobates clamitans)', prob: 0.023729383945465088},
+                  {species: 'Wood Frog (Lithobates sylvaticus)', prob: 0.0012509091757237911},
+                  {species: 'Northern Leopard Frog (Lithobates pipiens)', prob: 0.00014007935533300042},
+                  {species: 'American Toad (Anaxyrus americanus)', prob: 0.00010111537994816899},
+                  {species: 'Spring Peeper (Pseudacris crucifer)', prob: 0.00005221633909968659},
+                  {species: 'Eastern Spadefoot (Scaphiopus holbrookii)', prob: 0.00004317923230701126},
+                  {species: 'Gray Treefrog (Hyla versicolor)', prob: 0.000009411439350515138},
+                  {species: 'Fowlers Toad (Anaxyrus fowleri)', prob: 0.000004050126790389186},
+                  {species: 'Pickerel Frog (Lithobates palustris)', prob: 8.979863537206256e-7},
+                ]]
+              }
+            },
+            {
+              display_text: 'Gray Tree Frog', 
+              location: gray_tree_frog,
+              alt: 'A gray spotted frog on a branch in the woods',
+              sampleResults: {
+                data: [[
+                  {species: "Gray Treefrog (Hyla versicolor)", prob: 0.9943358302116394},
+                  {species: "Fowlers Toad (Anaxyrus fowleri)", prob: 0.002308360766619444},
+                  {species: "Eastern Spadefoot (Scaphiopus holbrookii)", prob: 0.001017067115753889},
+                  {species: "Green Frog (Lithobates clamitans)", prob: 0.000824976246803999},
+                  {species: "Wood Frog (Lithobates sylvaticus)", prob: 0.00045502890134230256},
+                  {species: "Northern Leopard Frog (Lithobates pipiens)", prob: 0.0003748933377210051},
+                  {species: "Pickerel Frog (Lithobates palustris)", prob: 0.00034524459624662995},
+                  {species: 'Spring Peeper (Pseudacris crucifer)', prob: 0.0001683539740042761},
+                  {species: 'American Toad (Anaxyrus americanus)', prob: 0.00013327246415428817},
+                  {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.00003691832171170972}
+                ]]
+              }
+            },
+            {
+              display_text: 'Northern Leopard Frog', 
+              location: northern_leopardfrog,
+              alt: 'A green frog with brown spots partially hidden in some leaves',
+              sampleResults: {
+                data: 
+                [[
+                  {species: "Northern Leopard Frog (Lithobates pipiens)", prob: 0.9989408850669861},
+                  {species: "Pickerel Frog (Lithobates palustris)", prob: 0.0005622448516078293},
+                  {species: "Wood Frog (Lithobates sylvaticus)", prob: 0.00036222580820322037},
+                  {species: "Eastern Spadefoot (Scaphiopus holbrookii)", prob: 0.00007037333125481382},
+                  {species: "Green Frog (Lithobates clamitans)", prob: 0.00002487793426553253},
+                  {species: "Fowlers Toad (Anaxyrus fowleri)", prob: 0.000018251390429213643},
+                  {species: "Gray Treefrog (Hyla versicolor)", prob: 0.000010626030416460708},
+                  {species: 'American Bullfrog (Lithobates catesbeianus)', prob: 0.000006336148999253055},
+                  {species: 'Spring Peeper (Pseudacris crucifer)', prob: 0.0000024683827177796047},
+                  {species: 'American Toad (Anaxyrus americanus)', prob: 0.0000017227010857823188},
+                ]
+              ]
             }
           }
         ],
+        },
+        
         requests: [
           {
             type: 'gradio',
@@ -283,18 +288,20 @@ export const projects: Project[] = [
             key: '682d2362-894c-800c-af30-a4c56b7f074b'
           }
         ],
-        resultTabs: [
-          {
-            type: 'classification',
-            icon: frog_outline,
-            display_text: 'Classification',
-            path: 'data[0]',
-          }
-        ]
+        results: {
+          tabs: [
+            {
+              type: 'classification',
+              icon: frog_outline,
+              display_text: 'Classification',
+              path: 'data[0]',
+            }
+          ]
+        }
       },
       {type: 'h2', text: 'Model Training Details'},
       {
-        type: 'ol', childGroup: [
+        type: 'ol', elements: [
           [{type: 'text', text: 'Model error rate improved from 40% to 34% when I shifted from 100 to 200 photos per frog species.'}],
           [{type: 'text', text: 'Model error rate further improved from 34% to 27% when I used RandomResizedCrop rather than squish on the data each epoch.'}],
           [{type: 'text', text: 'Final model only needed 2 epoch\'s to train. '}],
@@ -345,12 +352,12 @@ export const projects: Project[] = [
     project_details: [
       {
         type: 'GoalAndGithub',
-        childGroup: [
+        elements: [
           {type: 'h2', text: 'Goals'},
           {type: 'text', text: 'This was a personal project I completed to practice skills learned from the '},
           {type: 'a', text: 'Hugging Face Transformers for Audio', href: 'https://huggingface.co/learn/audio-course/en/chapter0/introduction'},
           {type: 'text', text: ' course.'},
-          {type: 'ol', childGroup: [
+          {type: 'ol', elements: [
             [{type: 'text', text: 'Explore and implement preexisting open-source transformers models for speech including ASR, phonemic transcription, and accent classification'}],
             [{type: 'text', text: 'Fine-tune my own ASR model for accent classification'}],
             [
@@ -367,222 +374,227 @@ export const projects: Project[] = [
       {type: 'h2', text: 'Demo'},
       {
         type: 'DemoBoard',
-        input: ['audio'],
-        directions: [
-          {type: 'p', text: 'Record, upload, or select a preloaded file. Then click "Submit" to see the transcription, phonemic transcriptions, and accent classification from different AI models.'}
-        ],
-        sampleAudio: [
-          {
-            display_text: 'Chinese American comedian Ronny Chieng',
-            location: chineseAmerican,
-            sampleResults: {
-              data: [
-                [
-                  {
-                    "transcription": " We try not to talk about politics. My mega friends and I, out of mutual respect, inevitably it comes up. Some stuff I'm wrong about, some stuff I write about, but sometimes the messaging is so convoluted. I can't get to what their core issue actually is. Sometimes they're like, Ronnie, China caused COVID, but COVID isn't real. So is it fine then?"
-                  },
-                  {
-                    "phonemes_native_eng": "wi t ɹaɪnɑ tə tɑ kbɑ pɑlə tɪ s maɪmæ əf ɹɛn zɪnaɪaɪɾəmju ʧɹɪs pɛ t aɪ ɪnɛvɪɾɪ b li kəm zɑ  səm s təfəm ɹɑŋə baʊssəm zəvzɹaɪɾə baʊ bəsəm taɪm z laɪ ðɛmɛsɪ ʤiŋ ɪsoʊ   kɑm vəludɪ laɪaɪ kæŋ gɛ tuwə ðɪ ðɛ kɑɪʃu  æ ʃliɪz aɪ səm aɪm zoʊlaɪ ɹɑni ʧaɪnə kɑz d koʊvɪ dbə koʊvɪ d ɪzɪn ɹisoʊɪzɪfaɪnðɛn"
-                  },
-                  {
-                    "phonemes_eng_second_lang": "wi tɹaɪ nɑt tʌ tɔk ʌb ʌpɑlʌtɪks maɪ mæɡʌfɹˌɛnz ʌn aɪ ɑdʌ mjɪt͡ʃuʌl ɹispɛkt maɪ ɪnɛvʌtʌbli kʌmz ʌp sʌmstʌf ʌn ɹɔŋ ʌbaʊz sʌmsʌv ðʌ ɹaɪt ʌbaʊ ʌ sʌmtˌaɪmz laɪ  ʌ mɛsɪd͡ʒɪŋ ɪz soʊ kɑnvʌludʌ laɪ aɪ kæn ɡɛt tu wʌt ðʌ dɛɹ ko ɪʃu æktʃʌli ɪz laɪ sʌmɪz ʌ vaɪɹɑnɪk t͡ʃaɪnʌ kɑzd koʊvɪt bʌt koʊvɪd ɪz ʌn ɹiwso ɪz ðʌ faɪn dæn"
-                  },
-                  {
-                    "native_eng_country": [
-                      {
-                        "accent": "us",
-                        "score": 0.62
-                      }
-                    ]
-                  },
-                  {
-                    "first_lang_if_not_eng": [
-                      {
-                        "accent": "Hindi",
-                        "score": 0.47
-                      }
-                    ]
-                  }
+        customSection: {
+          display_text: 'Directions',
+          elements: [
+            {type: 'p', text: 'Record, upload, or select a preloaded file. Then click "Submit" to see the transcription, phonemic transcriptions, and accent classification from different AI models.'}
+          ],
+        },
+        input: {
+          types: ['audio'],
+          sampleAudio: [
+            {
+              display_text: 'Chinese American comedian Ronny Chieng',
+              location: chineseAmerican,
+              sampleResults: {
+                data: [
+                  [
+                    {
+                      "transcription": " We try not to talk about politics. My mega friends and I, out of mutual respect, inevitably it comes up. Some stuff I'm wrong about, some stuff I write about, but sometimes the messaging is so convoluted. I can't get to what their core issue actually is. Sometimes they're like, Ronnie, China caused COVID, but COVID isn't real. So is it fine then?"
+                    },
+                    {
+                      "phonemes_native_eng": "wi t ɹaɪnɑ tə tɑ kbɑ pɑlə tɪ s maɪmæ əf ɹɛn zɪnaɪaɪɾəmju ʧɹɪs pɛ t aɪ ɪnɛvɪɾɪ b li kəm zɑ  səm s təfəm ɹɑŋə baʊssəm zəvzɹaɪɾə baʊ bəsəm taɪm z laɪ ðɛmɛsɪ ʤiŋ ɪsoʊ   kɑm vəludɪ laɪaɪ kæŋ gɛ tuwə ðɪ ðɛ kɑɪʃu  æ ʃliɪz aɪ səm aɪm zoʊlaɪ ɹɑni ʧaɪnə kɑz d koʊvɪ dbə koʊvɪ d ɪzɪn ɹisoʊɪzɪfaɪnðɛn"
+                    },
+                    {
+                      "phonemes_eng_second_lang": "wi tɹaɪ nɑt tʌ tɔk ʌb ʌpɑlʌtɪks maɪ mæɡʌfɹˌɛnz ʌn aɪ ɑdʌ mjɪt͡ʃuʌl ɹispɛkt maɪ ɪnɛvʌtʌbli kʌmz ʌp sʌmstʌf ʌn ɹɔŋ ʌbaʊz sʌmsʌv ðʌ ɹaɪt ʌbaʊ ʌ sʌmtˌaɪmz laɪ  ʌ mɛsɪd͡ʒɪŋ ɪz soʊ kɑnvʌludʌ laɪ aɪ kæn ɡɛt tu wʌt ðʌ dɛɹ ko ɪʃu æktʃʌli ɪz laɪ sʌmɪz ʌ vaɪɹɑnɪk t͡ʃaɪnʌ kɑzd koʊvɪt bʌt koʊvɪd ɪz ʌn ɹiwso ɪz ðʌ faɪn dæn"
+                    },
+                    {
+                      "native_eng_country": [
+                        {
+                          "accent": "us",
+                          "score": 0.62
+                        }
+                      ]
+                    },
+                    {
+                      "first_lang_if_not_eng": [
+                        {
+                          "accent": "Hindi",
+                          "score": 0.47
+                        }
+                      ]
+                    }
+                  ]
+                ],
+              }
+            },
+            {
+              display_text: 'Indian professor Abdul Bari',
+              location: indian,
+              sampleResults: {
+                data: [
+                  [
+                    {
+                      "transcription": " Hello friends, I am going to start a course on Algorithms. Algorithms are a common subject for computer science engineering students. Most of the new cities offer this course as a part of syllabus. And this is a very core subject and very important subject. And students face some difficulties in some of the topics in this one they could not understand them very clearly. So here I am"
+                    },
+                    {
+                      "phonemes_native_eng": "hɛləfɹɪn s ɑn goʊɪŋ tʊs tɑɾə kl z ɑn ɛlə gɑə dəm s ɛ oʊvənəzəsə ʤɪ tl oʊəəzɪkɑmən sə ʤɪ fɑɹ kəm ɹɪsaɪɪn sɪnʤɪnɪɾɪŋs t uɾɛnsmoʊs təvɪɝsɪtiz ɑfdɪz kul zæzə baɪəl sɪɾɪvəs  ɑn dɪsɪzəvɛɾi kl sə ʤɪ tænvɛɾi ɪm pɑɹɾ nsə ʤɛ tæn s tuɾɪn sfsəm dɪfɪ kəl dizɪn səməv dɪ tɑ pɪ sɪnðɪs fən deɪ kwʊ nɑtən dəs tæn ðɛmvɪɾi k lɪɝlisoʊhɪɹɑn"
+                    },
+                    {
+                      "phonemes_eng_second_lang": "ɛlʌfʌn ʌn ɪ tʌ stɑɹv ʌ koʊs ɔn ɛlɡoɔtʌns aɪl ɔn ɑ ðʌ sʌbd͡ʒɛt ʌɪ θɔtʌwʌz ðɛ ɡɔ ɑn sʌbd͡ʒɛkt fɔɚ kˌɑnvʌsaɪʌn sɪn stɹudʌnts moʊst ʌv ðʌ usɪtiz ɔ ɔv ðʌ skoʊls ʌdʌ pɑɹɑsɛlʌʌs ʌn ðɪs wʌz ɔlɛɹi ɡoʊl  ʌbd͡ʒɛkt ʌn vɛɹi ɪmpɔɹtʌn sʌbd͡ʒɛktʌn sun ɪn feɪ sʌm dɪfʌkʌltiz ɪn sʌm ʌv ðʌ kɹɑpɪks ʌn ðʌ sʌn ðɛ kʊd nɑt ˌʌndʌsfæn ʌm vɹi klɪɹlisoʊ hi æn"
+                    },
+                    {
+                      "native_eng_country": [
+                        {
+                          "accent": "indian",
+                          "score": 0.68
+                        }
+                      ]
+                    },
+                    {
+                      "first_lang_if_not_eng": [
+                        {
+                          "accent": "Hindi",
+                          "score": 0.54
+                        }
+                      ]
+                    }
+                  ]
                 ]
-              ],
-            }
-          },
-          {
-            display_text: 'Indian professor Abdul Bari',
-            location: indian,
-            sampleResults: {
-              data: [
-                [
-                  {
-                    "transcription": " Hello friends, I am going to start a course on Algorithms. Algorithms are a common subject for computer science engineering students. Most of the new cities offer this course as a part of syllabus. And this is a very core subject and very important subject. And students face some difficulties in some of the topics in this one they could not understand them very clearly. So here I am"
-                  },
-                  {
-                    "phonemes_native_eng": "hɛləfɹɪn s ɑn goʊɪŋ tʊs tɑɾə kl z ɑn ɛlə gɑə dəm s ɛ oʊvənəzəsə ʤɪ tl oʊəəzɪkɑmən sə ʤɪ fɑɹ kəm ɹɪsaɪɪn sɪnʤɪnɪɾɪŋs t uɾɛnsmoʊs təvɪɝsɪtiz ɑfdɪz kul zæzə baɪəl sɪɾɪvəs  ɑn dɪsɪzəvɛɾi kl sə ʤɪ tænvɛɾi ɪm pɑɹɾ nsə ʤɛ tæn s tuɾɪn sfsəm dɪfɪ kəl dizɪn səməv dɪ tɑ pɪ sɪnðɪs fən deɪ kwʊ nɑtən dəs tæn ðɛmvɪɾi k lɪɝlisoʊhɪɹɑn"
-                  },
-                  {
-                    "phonemes_eng_second_lang": "ɛlʌfʌn ʌn ɪ tʌ stɑɹv ʌ koʊs ɔn ɛlɡoɔtʌns aɪl ɔn ɑ ðʌ sʌbd͡ʒɛt ʌɪ θɔtʌwʌz ðɛ ɡɔ ɑn sʌbd͡ʒɛkt fɔɚ kˌɑnvʌsaɪʌn sɪn stɹudʌnts moʊst ʌv ðʌ usɪtiz ɔ ɔv ðʌ skoʊls ʌdʌ pɑɹɑsɛlʌʌs ʌn ðɪs wʌz ɔlɛɹi ɡoʊl  ʌbd͡ʒɛkt ʌn vɛɹi ɪmpɔɹtʌn sʌbd͡ʒɛktʌn sun ɪn feɪ sʌm dɪfʌkʌltiz ɪn sʌm ʌv ðʌ kɹɑpɪks ʌn ðʌ sʌn ðɛ kʊd nɑt ˌʌndʌsfæn ʌm vɹi klɪɹlisoʊ hi æn"
-                  },
-                  {
-                    "native_eng_country": [
-                      {
-                        "accent": "indian",
-                        "score": 0.68
-                      }
-                    ]
-                  },
-                  {
-                    "first_lang_if_not_eng": [
-                      {
-                        "accent": "Hindi",
-                        "score": 0.54
-                      }
-                    ]
-                  }
+              }
+            },
+            {
+              display_text: 'Mexican actor Jaime Camil in Jane the Virgin',
+              location: mexican,
+              sampleResults: {
+                data: [
+                  [
+                    {
+                      "transcription": " And I also screw up years ago, but I have changed. I want my daughter to have the pleasure of knowing me. I became an international star just a few years ago. Imagine what at this service it would have been to the world if I had given up. Oh, sure. Who should I make it out to? Oh, it's the... Oh, yeah. Excuse me, miss?"
+                    },
+                    {
+                      "phonemes_native_eng": "naɪwəzəs k ɹuə jɪzɪ goʊ bəɾaɪhæv ʧeɪnʤ d mwən maɪ dɑɾɝ tuhævðə p lɛʃɝəv noʊɪnmi aɪ bi keɪmɪnɪn tɝnæʃn ls ʧɑɹ ʤɪs tɪfujɪzɪ goʊmæ ʤɪnwəɾæ ðisɝvɪsɪwʊ dhæv bin təðəwɝl ifaɪhæ d gɪvɪnə p ɹoʊhɛɾʊðɪləvɪ əbɛləvɪ ɹɾðələvɛ oʊʃɝ huʃʊɾaɪmeɪ kɪɾaʊ tuoʊwɪ s d əms ɪz oʊjɛs kuz mimɪs uɪɪɪɪɪ"
+                    },
+                    {
+                      "phonemes_eng_second_lang": "æn aɪ wʌs ʌ skuʌp jˌɹiʌs ʌɡoʊ bʌt a hæv t͡ʃeɪnd͡ʒd aɪm wʌn maɪ dɔɪɚ tu hæv ðʌ plɛʃɚ ʌv noʊɪn miaɪ bikɛɪm ʌn ˌɪntɚnɑʃʌŋʌstɹɑd͡ʒʌt͡ʃʌfi jɪɹs ʌɡoʊ ɪmæd͡ʒʌn wʌt æt distɹivʌsi wʊd hæv bin tu dʌ wɚld ɪf aɪ hæd ɡivʌn ʌp ɹɔɛdlʌl dʌ lɛlʌɡʌt ɹɔɛlʌlʌlɡʌ oʊ ʃʊɹhu ʃʊd aɪ meɪk ɪt aʊt u oʊ wɪt ð ɔmʊst ɛz ɔ jɛsjuz meɪ mɪs ʌ"
+                    },
+                    {
+                      "native_eng_country": [
+                        {
+                          "accent": "australia",
+                          "score": 0.58
+                        }
+                      ]
+                    },
+                    {
+                      "first_lang_if_not_eng": [
+                        {
+                          "accent": "Hindi",
+                          "score": 0.33
+                        }
+                      ]
+                    }
+                  ]
+                ],
+              }
+            },
+            {
+              display_text: 'Irish accent from Derry Girls',
+              location: irish,
+              sampleResults: {
+                data: [
+                  [
+                    {
+                      "transcription": " What's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, I'm with clients, molar. Have you seen my green scarf? I'm busy. What is it? I'm going to be late for bingo. I'm trying to commute."
+                    },
+                    {
+                      "phonemes_native_eng": "ʤɑn səmwənɛl shɪɝəwʊmənəfɑm lɪmɛm bɝ hæmiwʊudumaɪɹɪðɝ ʃihɛzəmoʊs tb juɾəfəlhɛɾəvhɛkʃihɛzɪmsɪ ʤfɑjɪhəhɑvənʃiwən s mi tɪ tɛl ju ɑvəwɪə b ləɾiɑm sɝmɪ ʤ aɪm wɪθ k laɪɪn s mɑlɝhəv usin maɪ g ɹim s kɑɹɑm bɪz hæzəɾm goʊnɪvɪlɪfɝ bɪŋ g ɑn t ɹaɪɪŋtɪ k m ju"
+                    },
+                    {
+                      "phonemes_eng_second_lang": "ʒɔnʌ sʌmʌn hʌsɪ ʌ wʊmʌn a sʌn aɪ nɛmbɚ hæni oʊnli  uz maɪ ɹɛʒɚ ʃi ævʌz ʌ moʊst bjutʌfʌl hɛd ʌnv hɛɹ ʃ hæz ʌ nɛsɪt͡ʃ fɔ hɪkʌma ææn ʃi wɑnt mi tʌ tɛl j æ waɪ hæv æi ænsʌn eɪt͡ʃ aɪm mʌt klaɪ ʌnt smɔlɚ hæv ju seɪn aɪɡɹɪnz jɑɹ ɑnd bɪzi aɪæv æn ɡɑt ʌt ʌ lɛt vɚbæŋɡˌoʊ ɑn tɹaɪɪŋ tʌ kʌnju"
+                    },
+                    {
+                      "native_eng_country": [
+                        {
+                          "accent": "england",
+                          "score": 0.07
+                        }
+                      ]
+                    },
+                    {
+                      "first_lang_if_not_eng": [
+                        {
+                          "accent": "Hindi",
+                          "score": 0.52
+                        }
+                      ]
+                    }
+                  ]
+                ],
+              }
+            },
+            {
+              display_text: 'Nigerian actors Daniel Effiong & Tana Adelana',
+              location: nigerian,
+              sampleResults: {
+                data: [
+                  [
+                    {
+                      "transcription": " You see, let me go. I have to run. I wake up early in the morning. I can't wait to see you this weekend. I have good news. You do? What's the good news, tell me. It's a surprise. Okay, now I can't wait. How was your hand? It's fine. It's healing. It's not as painful anymore. I can't believe you slammed your hand on your car door. Pop away your hand!"
+                    },
+                    {
+                      "phonemes_native_eng": "ɪɪɪɪðɪsɪlɪv mi gh hæf tə b ɹəəwɪ kə pɛliɪnðəmɑnɪŋ ə kaʊweɪ tɪsiɪðɪs wi kɛnaɪhæv gʊ nuzju duwəzɪ gu nuz tɛl mi ɪ t sɪsə p ɹaɪz oʊ keɪnaʊaɪ kaʊɪ shaʊwɪʃɪhæn d s faɪnɪ tsɪshiliŋs nətəs pɪn fəlɛnim kɑm bəliv jus lɑm ɑhaɪn dɑn jʊ kɑ dɑhə weɪju"
+                    },
+                    {
+                      "phonemes_eng_second_lang": "ɪɪz lɛmɪ ɡoʊ æv tʌ ɹʌm aɪ wʌlkʌp ɚli ɪn ðʌ mɔnɪŋʌkaʊ ʌweɪ tʌ si ts wi kæn aɪ hæv kʊɡ meɪs ju du u wʌz ʌ ɡʊdnus tɛ mi ɪts ʌ sʌpɹaɪs ʊk naʊ ʌkaʊɪtsʌhaʊ ɪʃ jʊ hænt ɪts faɪɪlʌts hilɪ lʌt ʌspɛn flɛnimɔ ʌkʌmpʌnli ɪf ju slɑmd jɔ hændɑl jʌ kɑto pʌkli hi"
+                    },
+                    {
+                      "native_eng_country": [
+                        {
+                          "accent": "england",
+                          "score": 0.67
+                        }
+                      ]
+                    },
+                    {
+                      "first_lang_if_not_eng": [
+                        {
+                          "accent": "Hindi",
+                          "score": 0.47
+                        }
+                      ]
+                    }
+                  ]
                 ]
-              ]
-            }
-          },
-          {
-            display_text: 'Mexican actor Jaime Camil in Jane the Virgin',
-            location: mexican,
-            sampleResults: {
-              data: [
-                [
-                  {
-                    "transcription": " And I also screw up years ago, but I have changed. I want my daughter to have the pleasure of knowing me. I became an international star just a few years ago. Imagine what at this service it would have been to the world if I had given up. Oh, sure. Who should I make it out to? Oh, it's the... Oh, yeah. Excuse me, miss?"
-                  },
-                  {
-                    "phonemes_native_eng": "naɪwəzəs k ɹuə jɪzɪ goʊ bəɾaɪhæv ʧeɪnʤ d mwən maɪ dɑɾɝ tuhævðə p lɛʃɝəv noʊɪnmi aɪ bi keɪmɪnɪn tɝnæʃn ls ʧɑɹ ʤɪs tɪfujɪzɪ goʊmæ ʤɪnwəɾæ ðisɝvɪsɪwʊ dhæv bin təðəwɝl ifaɪhæ d gɪvɪnə p ɹoʊhɛɾʊðɪləvɪ əbɛləvɪ ɹɾðələvɛ oʊʃɝ huʃʊɾaɪmeɪ kɪɾaʊ tuoʊwɪ s d əms ɪz oʊjɛs kuz mimɪs uɪɪɪɪɪ"
-                  },
-                  {
-                    "phonemes_eng_second_lang": "æn aɪ wʌs ʌ skuʌp jˌɹiʌs ʌɡoʊ bʌt a hæv t͡ʃeɪnd͡ʒd aɪm wʌn maɪ dɔɪɚ tu hæv ðʌ plɛʃɚ ʌv noʊɪn miaɪ bikɛɪm ʌn ˌɪntɚnɑʃʌŋʌstɹɑd͡ʒʌt͡ʃʌfi jɪɹs ʌɡoʊ ɪmæd͡ʒʌn wʌt æt distɹivʌsi wʊd hæv bin tu dʌ wɚld ɪf aɪ hæd ɡivʌn ʌp ɹɔɛdlʌl dʌ lɛlʌɡʌt ɹɔɛlʌlʌlɡʌ oʊ ʃʊɹhu ʃʊd aɪ meɪk ɪt aʊt u oʊ wɪt ð ɔmʊst ɛz ɔ jɛsjuz meɪ mɪs ʌ"
-                  },
-                  {
-                    "native_eng_country": [
-                      {
-                        "accent": "australia",
-                        "score": 0.58
-                      }
-                    ]
-                  },
-                  {
-                    "first_lang_if_not_eng": [
-                      {
-                        "accent": "Hindi",
-                        "score": 0.33
-                      }
-                    ]
-                  }
-                ]
-              ],
-            }
-          },
-          {
-            display_text: 'Irish accent from Derry Girls',
-            location: irish,
-            sampleResults: {
-              data: [
-                [
-                  {
-                    "transcription": " What's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, what's up, I'm with clients, molar. Have you seen my green scarf? I'm busy. What is it? I'm going to be late for bingo. I'm trying to commute."
-                  },
-                  {
-                    "phonemes_native_eng": "ʤɑn səmwənɛl shɪɝəwʊmənəfɑm lɪmɛm bɝ hæmiwʊudumaɪɹɪðɝ ʃihɛzəmoʊs tb juɾəfəlhɛɾəvhɛkʃihɛzɪmsɪ ʤfɑjɪhəhɑvənʃiwən s mi tɪ tɛl ju ɑvəwɪə b ləɾiɑm sɝmɪ ʤ aɪm wɪθ k laɪɪn s mɑlɝhəv usin maɪ g ɹim s kɑɹɑm bɪz hæzəɾm goʊnɪvɪlɪfɝ bɪŋ g ɑn t ɹaɪɪŋtɪ k m ju"
-                  },
-                  {
-                    "phonemes_eng_second_lang": "ʒɔnʌ sʌmʌn hʌsɪ ʌ wʊmʌn a sʌn aɪ nɛmbɚ hæni oʊnli  uz maɪ ɹɛʒɚ ʃi ævʌz ʌ moʊst bjutʌfʌl hɛd ʌnv hɛɹ ʃ hæz ʌ nɛsɪt͡ʃ fɔ hɪkʌma ææn ʃi wɑnt mi tʌ tɛl j æ waɪ hæv æi ænsʌn eɪt͡ʃ aɪm mʌt klaɪ ʌnt smɔlɚ hæv ju seɪn aɪɡɹɪnz jɑɹ ɑnd bɪzi aɪæv æn ɡɑt ʌt ʌ lɛt vɚbæŋɡˌoʊ ɑn tɹaɪɪŋ tʌ kʌnju"
-                  },
-                  {
-                    "native_eng_country": [
-                      {
-                        "accent": "england",
-                        "score": 0.07
-                      }
-                    ]
-                  },
-                  {
-                    "first_lang_if_not_eng": [
-                      {
-                        "accent": "Hindi",
-                        "score": 0.52
-                      }
-                    ]
-                  }
-                ]
-              ],
-            }
-          },
-          {
-            display_text: 'Nigerian actors Daniel Effiong & Tana Adelana',
-            location: nigerian,
-            sampleResults: {
-              data: [
-                [
-                  {
-                    "transcription": " You see, let me go. I have to run. I wake up early in the morning. I can't wait to see you this weekend. I have good news. You do? What's the good news, tell me. It's a surprise. Okay, now I can't wait. How was your hand? It's fine. It's healing. It's not as painful anymore. I can't believe you slammed your hand on your car door. Pop away your hand!"
-                  },
-                  {
-                    "phonemes_native_eng": "ɪɪɪɪðɪsɪlɪv mi gh hæf tə b ɹəəwɪ kə pɛliɪnðəmɑnɪŋ ə kaʊweɪ tɪsiɪðɪs wi kɛnaɪhæv gʊ nuzju duwəzɪ gu nuz tɛl mi ɪ t sɪsə p ɹaɪz oʊ keɪnaʊaɪ kaʊɪ shaʊwɪʃɪhæn d s faɪnɪ tsɪshiliŋs nətəs pɪn fəlɛnim kɑm bəliv jus lɑm ɑhaɪn dɑn jʊ kɑ dɑhə weɪju"
-                  },
-                  {
-                    "phonemes_eng_second_lang": "ɪɪz lɛmɪ ɡoʊ æv tʌ ɹʌm aɪ wʌlkʌp ɚli ɪn ðʌ mɔnɪŋʌkaʊ ʌweɪ tʌ si ts wi kæn aɪ hæv kʊɡ meɪs ju du u wʌz ʌ ɡʊdnus tɛ mi ɪts ʌ sʌpɹaɪs ʊk naʊ ʌkaʊɪtsʌhaʊ ɪʃ jʊ hænt ɪts faɪɪlʌts hilɪ lʌt ʌspɛn flɛnimɔ ʌkʌmpʌnli ɪf ju slɑmd jɔ hændɑl jʌ kɑto pʌkli hi"
-                  },
-                  {
-                    "native_eng_country": [
-                      {
-                        "accent": "england",
-                        "score": 0.67
-                      }
-                    ]
-                  },
-                  {
-                    "first_lang_if_not_eng": [
-                      {
-                        "accent": "Hindi",
-                        "score": 0.47
-                      }
-                    ]
-                  }
-                ]
-              ]
-            }
-          },
-          {
-            display_text: 'Vietnamese accent from L2-Arctic-Corpus',
-            location: vietnamese,
-            sampleResults: {
-              data: [
-                [
-                  {
-                    "transcription": "Here we allow our silicator to look after our legal work."
-                  },
-                  {
-                    "phonemes_native_eng": "hiwiəlaʊ əsəli ki tə tulʊ k æf tə aʊəli g lwə  k"
-                  },
-                  {
-                    "phonemes_eng_second_lang": "hi wɪ ʌlaʊ aʊ sʌlʌkeɪtʌ tu lʊk æftʌ aʊʌ liɡoʊ wʊk"
-                  },
-                  {
-                    "native_eng_country": [
-                      {
-                        "accent": "us",
-                        "score": 0.42
-                      }
-                    ]
-                  },
-                  {
-                    "first_lang_if_not_eng": [
-                      {
-                        "accent": "Vietnamese",
-                        "score": 0.67
-                      },
-                    ],
-                  },
-                ]
-              ],
-            }
-          },
-        ],
+              }
+            },
+            {
+              display_text: 'Vietnamese accent from L2-Arctic-Corpus',
+              location: vietnamese,
+              sampleResults: {
+                data: [
+                  [
+                    {
+                      "transcription": "Here we allow our silicator to look after our legal work."
+                    },
+                    {
+                      "phonemes_native_eng": "hiwiəlaʊ əsəli ki tə tulʊ k æf tə aʊəli g lwə  k"
+                    },
+                    {
+                      "phonemes_eng_second_lang": "hi wɪ ʌlaʊ aʊ sʌlʌkeɪtʌ tu lʊk æftʌ aʊʌ liɡoʊ wʊk"
+                    },
+                    {
+                      "native_eng_country": [
+                        {
+                          "accent": "us",
+                          "score": 0.42
+                        }
+                      ]
+                    },
+                    {
+                      "first_lang_if_not_eng": [
+                        {
+                          "accent": "Vietnamese",
+                          "score": 0.67
+                        },
+                      ],
+                    },
+                  ]
+                ],
+              }
+            },
+          ],
+        },
         requests: [
           {
             type: 'gradio',
@@ -591,87 +603,89 @@ export const projects: Project[] = [
             key: '682d2362-894c-800c-af30-a4c56b7f074b'
           }
         ],
-        resultTabs: [
-          {
-            type: 'transcription',
-            display_text: 'Transcription',
-            icon: transcription,
-            resultsForEachModel: [
-              {
-                description: [
-                  {type: 'text', text: 'Model: '},
-                  {type: 'a', href: 'https://huggingface.co/openai/whisper-base.en', text: 'openai/whisper-base.end'},
-                  {type: 'text', text: '. Trained on 680k hours of labelled data'},
-                ],
-                results: [
-                  {type: 'textFromPath', path: 'data[0][0].transcription'},
-                ],
-              }
-            ]
-          },
-          {
-            type: 'phonememic_transcription',
-            display_text: 'Phonemes',
-            icon: phonemes,
-            resultsForEachModel: [
-              {
-                description: [
-                  {type: 'text', text: 'Model: '},
-                  {type: 'a', href: 'https://huggingface.co/vitouphy/wav2vec2-xls-r-300m-timit-phoneme', text: 'vitouphy/wav2vec2-xls-r-300m-timit-phoneme'},
-                  {type: 'text', text: '. Trained on DARPA TIMIT American English'},
-                ],
-                results: [
-                  {type: 'textFromPath', path: 'data[0][1].phonemes_native_eng'},
-                ],
-              },
-              {
-                description: [
-                  {type: 'text', text: 'Model: '},
-                  {type: 'a', href: 'https://huggingface.co/mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme', text: 'mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme'},
-                  {type: 'text', text: '. Trained on L2 arctic, speakers of English as a second langauge'},
-                ],
-                results: [
-                  {type: 'textFromPath', path: 'data[0][2].phonemes_eng_second_lang'},
-                ],
-              },
-            ]
-          },
-          {
-            type: 'accent',
-            display_text: 'Accent',
-            icon: accent,
-            resultsForEachModel: [
-              {
-                description: [
-                  {type: 'text', text: 'Model: '},
-                  {type: 'a', href: 'https://huggingface.co/Jzuluaga/accent-id-commonaccent_ecapa', text: 'Jzuluaga/accent-id-commonaccent_ecapa'},
-                  {type: 'text', text: '. Trained on Native English speakers from around the world'},
-                ],
-                results: [
-                  {type: 'text', text: 'Predicted Accent: '},
-                  {type: 'textFromPath', path: 'data[0][3].native_eng_country[0].accent'},
-                  {type: 'p', text: ''},
-                  {type: 'text', text: 'Confidence score: '},
-                  {type: 'textFromPath', path: 'data[0][3].native_eng_country[0].score'},
-                ],
-              },
-              {
-                description: [
-                  {type: 'text', text: 'Model: '},
-                  {type: 'a', href: 'https://huggingface.co/kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2', text: 'kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2'},
-                  {type: 'text', text: '. Trained on L2 arctic, speakers of English as a second langauge'},
-                ],
-                results: [
-                  {type: 'text', text: 'Predicted Accent: '},
-                  {type: 'textFromPath', path: 'data[0][4].first_lang_if_not_eng[0].accent'},
-                  {type: 'p', text: ''},
-                  {type: 'text', text: 'Confidence score: '},
-                  {type: 'textFromPath', path: 'data[0][4].first_lang_if_not_eng[0].score'},
-                ],
-              }
-            ],
-          },
-        ]
+        results: {
+          tabs: [
+            {
+              type: 'transcription',
+              display_text: 'Transcription',
+              icon: transcription,
+              resultsForEachModel: [
+                {
+                  description: [
+                    {type: 'text', text: 'Model: '},
+                    {type: 'a', href: 'https://huggingface.co/openai/whisper-base.en', text: 'openai/whisper-base.end'},
+                    {type: 'text', text: '. Trained on 680k hours of labelled data'},
+                  ],
+                  results: [
+                    {type: 'textFromPath', path: 'data[0][0].transcription'},
+                  ],
+                }
+              ]
+            },
+            {
+              type: 'phonememic_transcription',
+              display_text: 'Phonemes',
+              icon: phonemes,
+              resultsForEachModel: [
+                {
+                  description: [
+                    {type: 'text', text: 'Model: '},
+                    {type: 'a', href: 'https://huggingface.co/vitouphy/wav2vec2-xls-r-300m-timit-phoneme', text: 'vitouphy/wav2vec2-xls-r-300m-timit-phoneme'},
+                    {type: 'text', text: '. Trained on DARPA TIMIT American English'},
+                  ],
+                  results: [
+                    {type: 'textFromPath', path: 'data[0][1].phonemes_native_eng'},
+                  ],
+                },
+                {
+                  description: [
+                    {type: 'text', text: 'Model: '},
+                    {type: 'a', href: 'https://huggingface.co/mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme', text: 'mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme'},
+                    {type: 'text', text: '. Trained on L2 arctic, speakers of English as a second langauge'},
+                  ],
+                  results: [
+                    {type: 'textFromPath', path: 'data[0][2].phonemes_eng_second_lang'},
+                  ],
+                },
+              ]
+            },
+            {
+              type: 'accent',
+              display_text: 'Accent',
+              icon: accent,
+              resultsForEachModel: [
+                {
+                  description: [
+                    {type: 'text', text: 'Model: '},
+                    {type: 'a', href: 'https://huggingface.co/Jzuluaga/accent-id-commonaccent_ecapa', text: 'Jzuluaga/accent-id-commonaccent_ecapa'},
+                    {type: 'text', text: '. Trained on Native English speakers from around the world'},
+                  ],
+                  results: [
+                    {type: 'text', text: 'Predicted Accent: '},
+                    {type: 'textFromPath', path: 'data[0][3].native_eng_country[0].accent'},
+                    {type: 'p', text: ''},
+                    {type: 'text', text: 'Confidence score: '},
+                    {type: 'textFromPath', path: 'data[0][3].native_eng_country[0].score'},
+                  ],
+                },
+                {
+                  description: [
+                    {type: 'text', text: 'Model: '},
+                    {type: 'a', href: 'https://huggingface.co/kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2', text: 'kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2'},
+                    {type: 'text', text: '. Trained on L2 arctic, speakers of English as a second langauge'},
+                  ],
+                  results: [
+                    {type: 'text', text: 'Predicted Accent: '},
+                    {type: 'textFromPath', path: 'data[0][4].first_lang_if_not_eng[0].accent'},
+                    {type: 'p', text: ''},
+                    {type: 'text', text: 'Confidence score: '},
+                    {type: 'textFromPath', path: 'data[0][4].first_lang_if_not_eng[0].score'},
+                  ],
+                }
+              ],
+            },
+          ]
+        }
       },
       {type: 'h2', text: 'Tech Stack'},
       {
@@ -705,7 +719,7 @@ export const projects: Project[] = [
           {type: 'h4', text: 'Data preparation'},
           {
             type: 'ol',
-            childGroup: [
+            elements: [
               [{type: 'text', text: 'Split the dataset in 6 smaller pieces, one for each language group to reduce memory problems during reformatting. The number of files per speaker is limited to 560 to use approximately half of the original data. Thus each piece is about 0.66GB with 2,240 rows.'}],
               [{type: 'text', text: 'Resampled audio to 16,000 Hz using PyTorch.'}],
               [{type: 'text', text: 'Combined sequential audio files from the same speaker to improve training efficiency. For instance, instead of a lot of audio files that are only 1-3 seconds, I combined them so there were fewer files and they were just under 30 seconds in length.'}],
@@ -756,7 +770,7 @@ export const projects: Project[] = [
       {type: 'h3', text: 'Next Steps'},
       {type: 'p', text: 'The code is good! If a new dataset becomes available that includes many more voices and clear accent categories, this code may be reused to train a model that generalizes to the real world.'},
       {type: 'h2', text: 'Audio Sources Used'},
-      {type: 'ul', className: 'shortLineHeight', childGroup: [
+      {type: 'ul', className: 'shortLineHeight', elements: [
         [{type: 'text', text: 'irish.wav, a clip from '}, {type: 'a', text: 'Derry Girls', href: 'https://www.youtube.com/watch?v=5J211yVWIzg'}],
         [{type: 'text', text: 'indian.wav, a from '}, {type: 'a', text: 'Abdul Bari teaching on Algorithms', href: 'https://www.youtube.com/watch?v=0IAPZzGSbME&list=PLEouKpnYLW8Gk4w7pe8F5J5UNNIkljZWn'}],
         [{type: 'text', text: 'mexican.wav, a clip from Jaime Camil playing Rogelio de la Vega on '}, {type: 'a', text: 'Jane the Virgin', href: 'https://www.youtube.com/watch?v=7HwnS6R7_wQ'}],
@@ -786,7 +800,7 @@ export const projects: Project[] = [
     project_details: [
       {
         type: 'GoalAndGithub',
-        childGroup: [
+        elements: [
           {type: 'h2', text: 'Goal'},
           {type: 'p', text: 'Train a model that predicts danceability scores from the temporal features of songs. This was a practice project I completed after completing trainings in scikit-learn.'},
         ],
@@ -825,7 +839,7 @@ export const projects: Project[] = [
         ]
       },
       {type: 'h3', text: 'Takeaways'},
-      {type: 'ul', childGroup: [
+      {type: 'ul', elements: [
         [{type: 'p', text: 'Danceabilty ranges from 0-1 so these danceability predictions are pretty close!'}],
         [{type: 'p', text: 'Model agreed that Wooden Ships is not very danceable with a score of 0.0487 (actual: 0.0517)'}],
         [{type: 'p', text: 'Model agreed that Shakkei (Remixed) by Origamibiro is medium danceable with a score of 0.511 (actual 0.447)'}],
@@ -855,7 +869,7 @@ export const projects: Project[] = [
     project_details: [
       {
         type: 'GoalAndGithub',
-        childGroup: [
+        elements: [
           {type: 'h2', text: 'Goal'},
           {type: 'p', text: 'Train traditional machine learning models to predict hospital readmission within 30 days for patients with diabetes and compare results to pick the best model. This was a practice project I completed after completing trainings in scikit-learn.'},
         ],
@@ -886,20 +900,20 @@ export const projects: Project[] = [
       {type: 'p', className: 'note', text: '*Accuracy, Precision, and Recall were calculated on the test data'},
       {type: 'h3', text: 'Random Forest Classifier Results after Tuning for Precision'},
       {type: 'p', text: 'Since users of this type of medical model would likely want to prioritize identifying as many people who are going to be rehospitalized and keep a low false-negative rate, I tuned the best model, Random Forest Classifier, to reduce precision'},
-      {type: 'ul', childGroup: [
+      {type: 'ul', elements: [
         [{type: 'p', text: 'At threshold: 0.07, predicted readmitted: 19882, predicted not readmitted: 19558, accuracy: 29.737%, precision: 12.916%, recall: 91.323%'}],
         [{type: 'p', text: 'At threshold: 0.05, predicted readmitted: 24129, predicted not readmitted: 19558, accuracy: 14.414%, precision: 11.509%, recall: 98.755%'}],
       ]},
       {type: 'h3', text: 'Best predictors'},
       {type: 'p', text: 'According to logistic regression, the 3 strongest predictors in a linear model are:'},
-      {type: 'ul', childGroup: [
+      {type: 'ul', elements: [
         [{type: 'p', text: 'discharge disposition'}],
         [{type: 'p', text: 'number of inpatient visits in past year'}],
         [{type: 'p', text: 'change in diabetes medication during hospitalization'}],
       ]},
       {type: 'p', text: 'Note: During data cleaning/exploration, I noted that many predictors in the dataset did not have a significant linear relationship with the outcome. I left out these out of some models such as logistic regression. I checked other models on both datasets (all predictors vs. only predictors with a linear relationships) but including more or fewer predictors did not make a significant difference on results.'},
       {type: 'h2', text: 'Discussion'},
-      {type: 'ul', childGroup: [
+      {type: 'ul', elements: [
         [{type: 'p', text: 'All models struggled to differentiate between patients destined to be readmitted in 30 days from those who weren\'t based on predictors available, but Random Forest Classifier came out the strongest.'}],
         [{type: 'p', text: 'When tuned by default to prioritize accuracy, the highest accuracy rate of 88.8% is little better than a prediction that 0 patients would be re-hospitalized in 30 days, which would be correct 88.7% of the time.'}],
         [{type: 'p', text: 'When the best model was tuned to prioritize precision, I\'d have to assume that just over half of all patients are at risk of being re-hospitalized in order to capture almost all of the 11% who will be re-hospitalized.'}],
@@ -928,7 +942,7 @@ export const projects: Project[] = [
     project_details: [
       {
         type: 'GoalAndGithub',
-        childGroup: [
+        elements: [
           {type: 'h2', text: 'Goal'},
           {type: 'p', text: 'I used unsupervised machine learning to explore underlying topics in 20,000 Dear Abby questions from 1985-2017. This involved cleaning and preparing the data using natural language processing (NLP) techniques like tokenization and lemmatization. Then I used topic modeling algorithms including Latent Dirichlet Allocation (LDA) and Non-negative matrix factorization (NMF) to generate underlying topics from the data. This was a practice project I completed after completing trainings in NLP.'},
         ],
@@ -941,10 +955,10 @@ export const projects: Project[] = [
         techList: ['nltk', 'scikitlearn', 'joblib', 'matplotlib', 'numpy', 'pandas'],
       },
       {type: 'h3', text: 'Data Preparation Steps'},
-      {type: 'div', className: 'align-row', childGroup: [
+      {type: 'div', className: 'align-row', elements: [
         {
           type: 'ol', 
-          childGroup: [
+          elements: [
             [{type: 'text', text: 'Expanded contractions, removed symbols, punctuation, numbers, and some content-specific phrases such as copyright or booklet information'}],
             [{type: 'text', text: 'Tokenized and lemmatized the data'}],
             [{type: 'text', text: 'Removed stopwords from the data such as generic words as well as content-specific words like "feel", "say", "go", "dear", "abby"'}],
@@ -1156,7 +1170,7 @@ export const projects: Project[] = [
       {type: 'h2', text: 'Sources'},
       {
         type: 'ul',
-        childGroup: [
+        elements: [
           [{type: 'a', text: 'pyLDAvis', href: 'https://pyldavis.readthedocs.io/en/latest/readme.html'}],
           [{type: 'a', text: 'NMF from scikit-learn', href: 'https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html'}],
           [{type: 'a', href: 'https://www.kaggle.com/datasets/thedevastator/american-anxieties-dear-abby-s-questions', text: 'American Anxieties: Dear Abby\'s Questions 20,000 Questions to Dear Abby: Insights on American Anxieties By Kelly Garrett'}],

@@ -51,8 +51,8 @@ export default function ImageInput({data}: ImageInputProps) {
   } else if (imageInput === 'Upload') {
     InputComponent = <FileUpload type='image'>{children}</FileUpload>;
   } else {
-    if(data.sampleImages) {
-      InputComponent = <SampleImageSelector sampleFileData={data.sampleImages} >{children}</SampleImageSelector >;
+    if(data.input?.sampleImages) {
+      InputComponent = <SampleImageSelector sampleFileData={data.input?.sampleImages} >{children}</SampleImageSelector >;
     } else {
       InputComponent = null;
     }

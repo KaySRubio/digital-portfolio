@@ -30,32 +30,35 @@ const CameraInput: React.FC<CameraInputProps> = ({ children }) => {
   const videoConstraints = {
     width: 200,
     height: 140,
+    facingMode: "environment",
   };
 
   return (
     <div className='input-area-parent-image'>
       <h4 className='sr-only'>Camera</h4>
-      <div className={`input-area centered-row`}>
-        {userInputUrl ?
-        <img className='demo-user-photo' src={userInputUrl} alt='Photo taken by user' />
-        : <Webcam
-          audio={false}
-          ref={webcamRef}
-          screenshotFormat="image/jpeg"
-          width={200}
-          height={140}
-          videoConstraints={videoConstraints}
-        />}
+      <div className={`input-area-image`}>
+        <div className='centered-row'>
+          {userInputUrl ?
+          <img className='demo-user-photo' src={userInputUrl} alt='Photo taken by user' />
+          : <Webcam
+            audio={false}
+            ref={webcamRef}
+            screenshotFormat="image/jpeg"
+            width={200}
+            height={140}
+            videoConstraints={videoConstraints}
+          />}
+        </div>
         <div className='column'>
           <div className='button-row'>
             <button 
               className={`photo-button ${userInputUrl ? 'enabled' : 'disabled'}`}
               onClick={() => setUserInputUrl('')}
             >
-              <img className='icon-30px' src={camera_button} alt='' />
+              <img className='icon-40px' src={camera_button} alt='' />
             </button>
             <button className={`photo-button ${userInputUrl ? 'disabled' : 'enabled'}`} onClick={capture}>
-              <img className='icon-30px' src={shutter_button} alt='' />
+              <img className='icon-40px' src={shutter_button} alt='' />
             </button>
           </div>
           {children}

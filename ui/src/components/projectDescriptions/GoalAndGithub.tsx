@@ -16,7 +16,7 @@ export default function GoalAndGithub({children, className = '', href}: GoalAndG
         {children}
       </div>
       <a className={`align-column center`} href={href}>
-        <GithubIcon className='width90px' />
+        <GithubIcon className='github-icon' />
         View code on GitHub
       </a>
       
