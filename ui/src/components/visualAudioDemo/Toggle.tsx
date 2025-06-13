@@ -1,19 +1,20 @@
 type ToggleProps = {
   isOn: boolean;
   onToggle: () => void;
+  id: string;
 };
 
-const Toggle = ({ isOn, onToggle }: ToggleProps) => {
+const Toggle = ({ isOn, onToggle, id }: ToggleProps) => {
   return (
     <div className="toggle-switch">
       <input
         checked={isOn}
         onChange={onToggle}
         className="toggle-checkbox"
-        id="toggle"
+        id={id}
         type="checkbox"
       />
-      <label className="toggle-label" htmlFor="toggle" />
+      <label className="toggle-label" htmlFor={id} />
     </div>
   );
 };

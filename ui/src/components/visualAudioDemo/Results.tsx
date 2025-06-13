@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDemoContext } from "../../context/DemoContext";
 import JSONViewer from './JSONViewer';
 import DisclosurePanel from '../projectDescriptions/DisclosurePanel';
 import ClassificationResults from './ClassificationResults';
-import type { ResultTab, ResultForEachModel, DemoBoard } from '../../types/portfolioTypes';
+import type { ResultTab, ResultForEachModel, DemoBoard, Region } from '../../types/portfolioTypes';
 import { renderComponent } from '../../utils/renderComponent';
 import json from '@/assets/png/json.png';
 import get from 'lodash.get';
+import { randomRegionColors } from '../../data/helperData';
 
 type ResultsProps = {
   data: DemoBoard;
@@ -14,7 +15,7 @@ type ResultsProps = {
 
 export default function Results({ data }: ResultsProps) {
   const [resultToShow, setResultToShow] = useState(data.results.tabs[0]?.type);
-  const { resultFromBackend, waitingForResults, requestFromBackendError } = useDemoContext();
+  const { resultFromBackend, waitingForResults, requestFromBackendError, setRegionsOnWaveform } = useDemoContext();
 
   const renderDisclosurePanel = (model: ResultForEachModel, index: number) => {
     const title = (
@@ -55,6 +56,37 @@ export default function Results({ data }: ResultsProps) {
       return (<p className='center'>Choose file and click Submit</p>)
     }
   }
+
+  // If regions are included in the results, highlight them in the waveform
+  useEffect(() => {
+    const path = data.results?.regionSetup?.path;
+    const useRandomColors = data.results?.regionSetup?.useRandomColors;
+    let regions = [];
+    if(path) {
+      regions = get(resultFromBackend, path, [])
+      console.log('got these regions: ', regions);
+      let regionsWithColor = [];
+
+      if(useRandomColors) {
+        regionsWithColor = regions.map((region: Region, i: number) => ({
+          ...region,
+          color: randomRegionColors[i % randomRegionColors.length],
+        }));
+
+      } else if (data.results?.regionSetup?.colorMappings) {
+        const colorMappings = data.results.regionSetup.colorMappings;
+        const defaultColor = data.results.regionSetup.defaultColor;
+        regionsWithColor = regions.map((region: Region) => {
+          const mapping = colorMappings.find(m => m.type === region.type);
+          return {
+            ...region,
+            color: mapping?.color || defaultColor
+          };
+        });
+      }
+      setRegionsOnWaveform(regionsWithColor);
+    }
+  }, [resultFromBackend])
 
   return (
     <div className={`interactive-box interactive-box-results`}>

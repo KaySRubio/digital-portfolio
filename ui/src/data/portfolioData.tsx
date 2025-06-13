@@ -1,5 +1,5 @@
 
-import type { Project, Topic, TechStackData } from '../types/portfolioTypes';
+import type { Project, Topic, TechStackData, Kaysrubio_speech_transcribe_result } from '../types/portfolioTypes';
 import { TopicNames } from '../types/portfolioTypes';
 
 // jpg
@@ -413,10 +413,16 @@ export const projects: Project[] = [
                           "score": 0.47
                         }
                       ]
+                    },
+                    {
+                      "regions": [
+                        {"start": 0.1, "end": 0.3, "content": "insertion", "type": "insertion"}, // optional content and type properties
+                        {"start": 6, "end": 9},
+                      ],
                     }
                   ]
                 ],
-              }
+              } as Kaysrubio_speech_transcribe_result,
             },
             {
               display_text: 'Indian professor Abdul Bari',
@@ -448,10 +454,10 @@ export const projects: Project[] = [
                           "score": 0.54
                         }
                       ]
-                    }
+                    },
                   ]
                 ]
-              }
+              } as Kaysrubio_speech_transcribe_result,
             },
             {
               display_text: 'Mexican actor Jaime Camil in Jane the Virgin',
@@ -483,10 +489,10 @@ export const projects: Project[] = [
                           "score": 0.33
                         }
                       ]
-                    }
+                    },
                   ]
                 ],
-              }
+              } as Kaysrubio_speech_transcribe_result,
             },
             {
               display_text: 'Irish accent from Derry Girls',
@@ -518,10 +524,10 @@ export const projects: Project[] = [
                           "score": 0.52
                         }
                       ]
-                    }
+                    },
                   ]
                 ],
-              }
+              } as Kaysrubio_speech_transcribe_result,
             },
             {
               display_text: 'Nigerian actors Daniel Effiong & Tana Adelana',
@@ -553,10 +559,10 @@ export const projects: Project[] = [
                           "score": 0.47
                         }
                       ]
-                    }
+                    },
                   ]
                 ]
-              }
+              } as Kaysrubio_speech_transcribe_result,
             },
             {
               display_text: 'Vietnamese accent from L2-Arctic-Corpus',
@@ -591,9 +597,25 @@ export const projects: Project[] = [
                     },
                   ]
                 ],
-              }
+              } as Kaysrubio_speech_transcribe_result,
             },
           ],
+          audioVisualizerSettings: {
+            spectrogram: 'userToggleStartOff',
+            regions: 'userToggleStartOn',
+            lineGraphs: [
+              {
+                display_text: 'RMS energy',
+                setting: 'userToggle',
+                path: ''
+              }
+            ],
+            zoom: false,
+            changeSpeed: true,
+            waveColor: '',
+            progressColor: '',
+            barWidth: 2,
+          }
         },
         requests: [
           {
@@ -684,7 +706,11 @@ export const projects: Project[] = [
                 }
               ],
             },
-          ]
+          ],
+          regionSetup: {
+            path: 'data[0][5].regions',
+            useRandomColors: true,
+          },
         }
       },
       {type: 'h2', text: 'Tech Stack'},

@@ -16,10 +16,9 @@ export default function SoundBoard({data}: DemoBoardProps) {
     <DemoProvider>
       <div className='demo-board'>
         {data.customSection && <CustomSection data={data.customSection} />}
-        {/* to do add ImageInput */}
         {data.input?.types.includes('image') && <ImageInput data={data} />}
         {data.input?.types.includes('audio') && <AudioInput data={data} />}
-        {data.input?.types.includes('audio') &&  <Visualizer /> }
+        {data.input?.types.includes('audio') &&  <Visualizer data={data.input} /> }
         <Results data={data}/>
       </div>
     </DemoProvider>

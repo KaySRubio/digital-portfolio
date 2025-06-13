@@ -172,8 +172,28 @@ export type Input = {
   types: InputTypes[],
   sampleAudio?: SampleFile[],
   sampleImages?: SampleFile[],
+  audioVisualizerSettings?: AudioVisualizerSettings,
 }
 
+export type AudioVisualizerSettings = {
+  spectrogram?: SettingsOptions,
+  regions?: SettingsOptions,
+  zoom?: boolean,
+  changeSpeed?: boolean,
+  waveColor?: string,
+  progressColor?: string,
+  barWidth?: number,
+  lineGraphs?: LineGraph[],
+}
+
+export type SettingsOptions = 'on' | 'off' | 'userToggleStartOn' | 'userToggleStartOff';
+
+export type LineGraph = {
+  display_text: string,
+  setting: 'on' | 'off' | 'userToggle',
+  path: string,
+}
+     
 export type InputTypes = 'audio' | 'image'
 
 export type SampleFile = {
@@ -198,6 +218,17 @@ export type Request = {
 
 export type Result = {
   tabs: ResultTab[],
+  regionSetup?: {
+    path: string,
+    useRandomColors?: boolean,
+    colorMappings?: RegionColorMap[],
+    defaultColor?: string,
+  },
+}
+
+export type RegionColorMap = {
+  type: string,
+  color: string,
 }
 
 export type ResultTab = {
@@ -221,7 +252,6 @@ export type ClassificationArray = {
 
 export type ClassificationObj = { species: string, prob: number}
 
-
 export type Kaysrubio_speech_transcribe_result = {
 	data: [
     [
@@ -244,8 +274,27 @@ export type Kaysrubio_speech_transcribe_result = {
           }
         ]
       },
+      {
+        regions: Region[]
+      }?
 	  ]
   ],
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	[key: string]: any;
 }
+
+export type Region = {
+  start: number, 
+  end: number,
+  content: string,
+  type: string,
+}
+
+export type RegionOnWaveform = {
+  start: number;
+  end: number;
+  color: string;
+  content?: string;
+  drag?: boolean;
+  resize?: boolean;
+};

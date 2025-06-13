@@ -146,3 +146,42 @@ results: {
 ```
 
 12.	Inside the DemoBoard object, you can also add a sampleAudio or sampleImages property for preloaded input, which should have the location to a .wav, .png, or .jpg file, some display_text for the dropdown, and you can include sampleResults which should be an exactly copy of what your back end returns, formatted exactly the same way. If you include sample results, the app won't query the backend, but will instead display the sampleResults (saves on time and repetitive requests). Make sure to test that the results display correctly.  
+
+13. If your result involves highlighting regions on the waveform, follow these steps:
+
+  -  Make sure your backend returns results in this format somewhere
+```
+{
+  "regions": [
+    {"start": 0.1, "end": 0.3, "content": "insertion", "type": "insertion"}, // optional content and type properties
+    {"start": 6, "end": 9},
+  ],
+},
+```
+
+  - Then in your portfolio data, add regionSetup information to your results. Example using random colors to create regions on the waveform
+  
+```
+results: {
+  regionSetup: {
+    path: 'data[0][5].regions', // path to the regions array in your data
+    useRandomColors: true,
+  },
+}
+```
+
+  - Example using color mapping based on content:
+  
+```
+results: {
+  regionSetup: {
+    path: 'data[0][5].regions',
+    colorMappings: [ // Add as many color mappings as needed
+      {type: 'insertion', color: 'rgba(255, 162, 0, 0.3)'},
+    ],
+    defaultColor: 'rgba(0, 123, 255, 0.3)', // optional default color
+    useRandomColors: false,
+  },
+}
+```
+  
