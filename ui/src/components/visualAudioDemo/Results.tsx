@@ -14,7 +14,8 @@ type ResultsProps = {
 };
 
 export default function Results({ data }: ResultsProps) {
-  const [resultToShow, setResultToShow] = useState(data.results.tabs[0]?.type);
+  const defaultResults = data.results.tabs ? data.results.tabs[0]?.type : 'Json';
+  const [resultToShow, setResultToShow] = useState(defaultResults);
   const { resultFromBackend, waitingForResults, requestFromBackendError, setRegionsOnWaveform } = useDemoContext();
 
   const renderDisclosurePanel = (model: ResultForEachModel, index: number) => {
@@ -77,7 +78,13 @@ export default function Results({ data }: ResultsProps) {
         const colorMappings = data.results.regionSetup.colorMappings;
         const defaultColor = data.results.regionSetup.defaultColor;
         regionsWithColor = regions.map((region: Region) => {
-          const mapping = colorMappings.find(m => m.type === region.type);
+          let mapping;
+          if(colorMappings[0].type) {
+            mapping = colorMappings.find(m => m.type === region.type);
+          } else if (colorMappings[0].content) {
+            mapping = colorMappings.find(m => m.content === region.content);
+          }
+          
           return {
             ...region,
             color: mapping?.color || defaultColor
@@ -95,7 +102,7 @@ export default function Results({ data }: ResultsProps) {
       </div>
 
       <menu className='interactive-box-menu'>
-        {data.results.tabs.map((tab: ResultTab, index: number) => (
+        {data.results.tabs && data.results.tabs.map((tab: ResultTab, index: number) => (
           <li key={index}>
             <button
               onClick={() => setResultToShow(tab.type)}
@@ -105,7 +112,7 @@ export default function Results({ data }: ResultsProps) {
             `}
             >
               <img className='input-icon-large' alt="" src={tab.icon} />
-              {tab.display_text}
+              {tab.displayText}
             </button>
           </li>
         ))
@@ -123,17 +130,23 @@ export default function Results({ data }: ResultsProps) {
           </button>
         </li>
       </menu>
-      {resultFromBackend && data.results.tabs.map((tab: ResultTab, index: number) => {
+      {resultFromBackend && data.results.tabs && data.results.tabs.map((tab: ResultTab, index: number) => {
         // Classification results get a specially formatted tab
         if(resultToShow === tab.type && tab.type === 'classification' && tab.path) {
           return (<ClassificationResults key={index} data={get(resultFromBackend, tab.path)} />)
         // Other types of results just get a disclosure panel for each model
-        } else if(resultToShow === tab.type && tab.resultsForEachModel) return (
+        } else if(resultToShow === tab.type && tab.resultsForEachModel) {
+          return (
           tab.resultsForEachModel.map((model, index) => (
             renderDisclosurePanel(model, index)
           ))
+        )} else if (resultToShow === tab.type && tab.elements) {
+          return (
+          tab.elements.map((el, index) => (
+            renderComponent(el, index, resultFromBackend)
+          ))
         )}
-      )}
+      })}
       {resultFromBackend && resultToShow === 'Json' && <JSONViewer />}
       {!resultFromBackend && showPlaceholder()}
     </div>

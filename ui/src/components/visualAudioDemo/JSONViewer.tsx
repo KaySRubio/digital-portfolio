@@ -5,7 +5,7 @@ type JSONViewerProps = {
   collapseLevel?: number;
 };
 
-export default function JSONViewer({ collapseLevel = 4 }: JSONViewerProps) {
+export default function JSONViewer({ collapseLevel = 3 }: JSONViewerProps) {
   const { resultFromBackend } = useDemoContext();
   const json = resultFromBackend ? resultFromBackend : [];
 

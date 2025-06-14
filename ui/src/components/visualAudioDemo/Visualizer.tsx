@@ -33,18 +33,26 @@ export default function Visualizer({data}: VizualizerProps) {
     setShowZoom,
     setZoomLevel,
     zoomLevel,
+    fileAvailable,
+    setPlaybackSpeed,
+    playbackSpeed,
+    preservePitch,
+    setPreservePitch,
   } = useDemoContext();
   const [visualizerType, setVisualizerType] = useState<VisualizerType>('Waveform');
   const [isSpectrogramPopoverOpen, setIsSpectrogramPopoverOpen] = useState(false);
+  const [showSpectrogramHelp, setShowSpectrogramHelp] = useState(false);
+  const [showSpectrogramOffHelp, setShowSpectrogramOffHelp] = useState(false);
 
-  // Create directions for users where helpful
-  const directions: string[] = [];
+  const spectrogramHelpText = 'Spectrograms are awesome! ...but they are also large and may slow down the page so turn on with caution.'
+  const spectrogramOffHelpText = 'Refresh the browser tab to turn off the spectrogram'
 
-  // Add toggles for users to update visualizer settings
+  // Add toggles and other input for users to update visualizer settings
   const toggles: Toggle[] = [];
   const regionsSetting = data.audioVisualizerSettings?.regions;
   const spectrogramSetting = data.audioVisualizerSettings?.spectrogram;
   const zoomSetting = data.audioVisualizerSettings?.zoom;
+  const speedSetting = data.audioVisualizerSettings?.changeSpeed;
   if (
     regionsSetting === 'userToggleStartOn' ||
     regionsSetting === 'userToggleStartOff'
@@ -69,15 +77,36 @@ export default function Visualizer({data}: VizualizerProps) {
           if(!showSpectrogram) {
             setShowSpectrogram(true)
           } else {
-            // TODO - add react popover that asks user to refresh page to turn spectrogram back off
+            setShowSpectrogramOffHelp((prev) => !prev)
           }
         },
         moreInformation: true,
         onMoreInformationClick: () => setIsSpectrogramPopoverOpen(!isSpectrogramPopoverOpen), // set up react-popover?
       }
     )
-    directions.push('Spectrograms are awesome! ...but they are also large and may slow down the page.')
   }
+
+  const optionsToLetUserChangeSpeed = (
+    <>
+      <div className="toggle-option">
+        <label htmlFor="speed">Speed {playbackSpeed}x</label>
+        <input
+          className='slider'
+          id="speed"
+          type="range"
+          min="0.25"
+          max="2"
+          step="0.25"
+          value={playbackSpeed}
+          onChange={(e) => setPlaybackSpeed(parseFloat(e.target.value))}
+        />
+      </div>
+      <div className="toggle-option">
+        <label htmlFor='pitch'>Preserve pitch</label>
+        <Toggle id='pitch' isOn={preservePitch} onToggle={() => setPreservePitch((prev) => !prev)} />
+      </div>
+    </>
+  )
   
   // Set visualizer default settings
   useEffect(() => {
@@ -97,7 +126,7 @@ export default function Visualizer({data}: VizualizerProps) {
       <div className='interactive-box-header'>
         <h3>Audio Visualizer</h3>
       </div>
-      <div className="vizualizer-options">
+      {fileAvailable && <div className="vizualizer-options">
         <div className="play-button-area"><PlayButton /></div>
         {toggles.map((toggle, i) => (
           <div className="toggle-option" key={`toggle-option-${i}`}>
@@ -105,7 +134,11 @@ export default function Visualizer({data}: VizualizerProps) {
             <div className="toggle-and-button">
               <Toggle id={`toggle-${i}`} isOn={toggle.isOn} onToggle={toggle.onToggle} />
               {toggle.moreInformation && toggle.onMoreInformationClick && (
-                <MoreInformation onClick={toggle.onMoreInformationClick} />
+                
+
+                <MoreInformation onClick={() => {setShowSpectrogramHelp((prev) => (!prev))}} />
+
+
               )}
             </div>
           </div>
@@ -124,9 +157,8 @@ export default function Visualizer({data}: VizualizerProps) {
             />
           </div>
         }
-      </div>
-
-      
+        {speedSetting && optionsToLetUserChangeSpeed}
+      </div>}
 
       {showSpectrogram && <menu className='interactive-box-menu'>
         <li>
@@ -155,7 +187,10 @@ export default function Visualizer({data}: VizualizerProps) {
         </li>
       </menu>}
         
-        <h4 className='sr-only'>Waveform and Spectrogram</h4>
+      <h4 className='sr-only'>Waveform and Spectrogram</h4>
+      {showSpectrogramHelp && <p className='visualizer-help-text'>{spectrogramHelpText}</p>}
+      {showSpectrogramOffHelp && <p className='visualizer-help-text'>{spectrogramOffHelpText}</p>}
+      
       <div className='visualizer-body'>
         {/* To show spectrogram, waveform needs to be rendered, not hidden or opacity: 0 in any way */}
         <div 
@@ -166,7 +201,7 @@ export default function Visualizer({data}: VizualizerProps) {
         {showSpectrogram && <div 
           id='spectrogram'
           ref={spectrogramContainerRef}
-          className={`waveform-area ${visualizerType !== 'Spectrogram' ? 'offscreen' : ''}`}
+          className={`spectrogram-area ${visualizerType !== 'Spectrogram' ? 'offscreen' : ''}`}
         />}
       </div>
 

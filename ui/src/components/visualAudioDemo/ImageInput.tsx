@@ -48,8 +48,8 @@ export default function ImageInput({data}: ImageInputProps) {
   let InputComponent;
   if (imageInput === 'Camera') {
     InputComponent = <CameraInput>{children}</CameraInput>;
-  } else if (imageInput === 'Upload') {
-    InputComponent = <FileUpload type='image'>{children}</FileUpload>;
+  } else if (imageInput === 'Upload' && data.input) {
+    InputComponent = <FileUpload type='image' data={data.input}>{children}</FileUpload>;
   } else {
     if(data.input?.sampleImages) {
       InputComponent = <SampleImageSelector sampleFileData={data.input?.sampleImages} >{children}</SampleImageSelector >;

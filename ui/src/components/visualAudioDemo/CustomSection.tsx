@@ -13,7 +13,7 @@ export default function CustomSection({data}: CustomSectionProps) {
   return (
     <div className={`interactive-box demo-directions`}>
       <div className='interactive-box-header'>
-        <h3>{data.display_text}</h3>
+        <h3>{data.displayText}</h3>
       </div>
       { data.elements.map((el, idx) => renderComponent(el, idx))}
     </div>

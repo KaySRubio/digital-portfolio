@@ -2,13 +2,15 @@ import React, { useEffect, useRef, useState } from 'react';
 import upload from '@/assets/svg/upload.svg';
 import { useDemoContext } from "../../context/DemoContext";
 import { checkImageFile, checkAudioFile } from '../../utils/fileUtils';
+import type { Input } from '../../types/portfolioTypes'
 
 type FileUploadProps = {
   children: React.ReactNode;
   type: 'audio' | 'image';
+  data: Input;
 };
 
-export const FileUpload = ({ children, type }: FileUploadProps) => {
+export const FileUpload = ({ children, type, data }: FileUploadProps) => {
   const [fileUrl, setFileUrl] = useState<string | null>(null);
   const [filename, setFilename] = useState('');
   const dropRef = useRef<HTMLDivElement | null>(null);
@@ -63,7 +65,7 @@ export const FileUpload = ({ children, type }: FileUploadProps) => {
     if(type === 'image') {
       error = await checkImageFile(file);
     } else {
-      error = await checkAudioFile(file);
+      error = await checkAudioFile(file, data.audioLengthLimitInSeconds);
     }
     
     if(error) {

@@ -100,9 +100,9 @@ project_details: [
   type: 'DemoBoard',
   input: {
     types: ['audio', 'image'], // Use one or both types of input
-  }
+  },
   requests: [],
-  results: []
+  results: {}
 }
 ```
 
@@ -112,12 +112,14 @@ project_details: [
         requests: [
           {
             type: 'gradio',
-            huggingFaceModelName: 'kaysrubio/speech_transcribe_phonemes_and_accent',
-            huggingFacePredict: '/transcribe_and_classify_speech_1',
+            huggingFaceClient: 'kaysrubio/speech_transcribe_phonemes_and_accent',
+            huggingFaceApi: '/transcribe_and_classify_speech_1',
             key: '682d2362-894c-800c-af30-a4c56b7f074b'
           }
         ],
 ```
+
+  - Note: The hugging face client and api_name can be found by going to the hugging face space and scrolling to the bottom, and click on 'Use via API', e.g., https://huggingface.co/spaces/kaysrubio/transcribe_sperm_whale_coda
 
 11.	The results has a tabs property that provides a list of results to show, descriptions of what these results mean (such as what ML models provided them) and the exact path to find the result in the data provided from the back end. A single tab can show results from more than 1 model. 
 
@@ -126,7 +128,7 @@ results: {
   tabs: [
     {
       type: 'transcription',
-      display_text: 'Transcription', // The name of the type of result that will be displayed as a tab name in the Results box
+      displayText: 'Transcription', // The name of the type of result that will be displayed as a tab name in the Results box
       icon: transcription, // Optional to add a tiny icon, such as a 100x100px png. Make sure to import it.
       resultsForEachModel: [ // Each object listed in here will be it's own disclosure panel in the same tab
         {
@@ -145,7 +147,7 @@ results: {
 }
 ```
 
-12.	Inside the DemoBoard object, you can also add a sampleAudio or sampleImages property for preloaded input, which should have the location to a .wav, .png, or .jpg file, some display_text for the dropdown, and you can include sampleResults which should be an exactly copy of what your back end returns, formatted exactly the same way. If you include sample results, the app won't query the backend, but will instead display the sampleResults (saves on time and repetitive requests). Make sure to test that the results display correctly.  
+12.	Inside the DemoBoard object, you can also add a sampleAudio or sampleImages property for preloaded input, which should have the location to a .wav, .png, or .jpg file, some displayText for the dropdown, and you can include sampleResults which should be an exactly copy of what your back end returns, formatted exactly the same way. If you include sample results, the app won't query the backend, but will instead display the sampleResults (saves on time and repetitive requests). Make sure to test that the results display correctly.  
 
 13. If your result involves highlighting regions on the waveform, follow these steps:
 
@@ -157,6 +159,16 @@ results: {
     {"start": 6, "end": 9},
   ],
 },
+```
+
+  - In portfolio data, input section, make sure you turn allow regions in the audioVizualizerSettings:
+
+```
+input: {
+  audioVisualizerSettings: {
+    regions: 'on' | 'userToggleStartOn' | 'userToggleStartOff',
+  },
+}
 ```
 
   - Then in your portfolio data, add regionSetup information to your results. Example using random colors to create regions on the waveform

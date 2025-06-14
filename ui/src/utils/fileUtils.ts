@@ -22,7 +22,7 @@ export const checkImageFile = async (file: File) => {
   };
 
 
-export const checkAudioFile = async (file: File) => {
+export const checkAudioFile = async (file: File, audioLengthLimitInSeconds: number = 31) => {
   let error = '';
   try {
       if (file.type !== 'audio/wav' && file.type !== 'audio/opus') {
@@ -31,8 +31,8 @@ export const checkAudioFile = async (file: File) => {
         error = `File Size Error: ${file.size} bytes is too large. File should be less than 10 MB`;
       } else {
         const metadata = await getAudioMetadata(file);
-        if (metadata.duration > 31) {
-          error = `Duration Error: Audio is ${Math.round(metadata.duration)} seconds long. Audio should be less than 30 seconds`;
+        if (metadata.duration > audioLengthLimitInSeconds) {
+          error = `Duration Error: Audio is ${Math.round(metadata.duration)} seconds long. Audio should be less than ${audioLengthLimitInSeconds} seconds`;
         }
       }
     } catch (e) {

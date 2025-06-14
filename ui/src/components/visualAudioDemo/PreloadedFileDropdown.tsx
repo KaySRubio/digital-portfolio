@@ -31,8 +31,8 @@ export default function PreloadedFileDropdown({
           </option>
         )}
         {options.map(option => (
-          <option value={JSON.stringify(option)} key={option.display_text}>
-            {option.display_text}
+          <option value={JSON.stringify(option)} key={option.displayText}>
+            {option.displayText}
           </option>
         ))}
       </select>

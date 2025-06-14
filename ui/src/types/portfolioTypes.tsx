@@ -108,8 +108,17 @@ export type ListComponent = {
 export type TableComponent = {
   type: 'table',
   headers: TableEl[],
-  rows: TableEl[][],
+  rows?: TableEl[][],
   key?: number | string;
+  rowDataPath?: string;
+  dynamicRows?: DynamicRow[];
+  className?: string,
+}
+
+export type DynamicRow = {
+  propertyName: string,
+  type: 'number' | 'string' | 'numberArray',
+  rounding?: number,
 }
 
 export type TableEl = string | LinkType;
@@ -173,6 +182,7 @@ export type Input = {
   sampleAudio?: SampleFile[],
   sampleImages?: SampleFile[],
   audioVisualizerSettings?: AudioVisualizerSettings,
+  audioLengthLimitInSeconds?: number,
 }
 
 export type AudioVisualizerSettings = {
@@ -189,7 +199,7 @@ export type AudioVisualizerSettings = {
 export type SettingsOptions = 'on' | 'off' | 'userToggleStartOn' | 'userToggleStartOff';
 
 export type LineGraph = {
-  display_text: string,
+  displayText: string,
   setting: 'on' | 'off' | 'userToggle',
   path: string,
 }
@@ -197,27 +207,30 @@ export type LineGraph = {
 export type InputTypes = 'audio' | 'image'
 
 export type SampleFile = {
-  display_text: string,
+  displayText: string,
   location: string,
   alt?: string,
-  sampleResults?: Kaysrubio_speech_transcribe_result | ClassificationArray,
+  sampleResults?: 
+    Kaysrubio_speech_transcribe_result | 
+    ClassificationArray | 
+    Kaysrubio_sperm_whalish_results,
 }
 
 export type CustomSection = {
-  display_text: string,
+  displayText: string,
   elements: ProjectDetailComponent[]
 }
 
 export type Request = {
   type: 'get' | 'post' | 'gradio',
   url?: string,
-  huggingFaceModelName: string,
-  huggingFacePredict: string,
+  huggingFaceClient: string,
+  huggingFaceApi: string,
   key?: string,
 }
 
 export type Result = {
-  tabs: ResultTab[],
+  tabs?: ResultTab[],
   regionSetup?: {
     path: string,
     useRandomColors?: boolean,
@@ -227,16 +240,18 @@ export type Result = {
 }
 
 export type RegionColorMap = {
-  type: string,
+  type?: string,
+  content?: string,
   color: string,
 }
 
 export type ResultTab = {
   type: string,
-  display_text: string,
+  displayText: string,
   icon?: string,
   resultsForEachModel?: ResultForEachModel[],
   path?: string,
+  elements?: ProjectDetailComponent[],
 }
 
 export type ResultForEachModel = {
@@ -251,6 +266,22 @@ export type ClassificationArray = {
 }
 
 export type ClassificationObj = { species: string, prob: number}
+
+export type Region = {
+  start: number, 
+  end: number,
+  content: string,
+  type: string,
+}
+
+export type RegionOnWaveform = {
+  start: number;
+  end: number;
+  color: string;
+  content?: string;
+  drag?: boolean;
+  resize?: boolean;
+};
 
 export type Kaysrubio_speech_transcribe_result = {
 	data: [
@@ -283,18 +314,27 @@ export type Kaysrubio_speech_transcribe_result = {
 	[key: string]: any;
 }
 
-export type Region = {
-  start: number, 
-  end: number,
-  content: string,
-  type: string,
+export type Kaysrubio_sperm_whalish_results = {
+	data: [
+    SpermWhaleCodaResult[]
+  ],
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	[key: string]: any;
 }
 
-export type RegionOnWaveform = {
-  start: number;
+export type Timestamp = {
+  start: number,
   end: number;
-  color: string;
-  content?: string;
-  drag?: boolean;
-  resize?: boolean;
-};
+}
+
+export type SpermWhaleCodaResult = {
+  start: number,
+  end: number,
+  vad: number[],
+  click_timestamps: Timestamp[],
+  number_of_clicks: number,
+  duration: number,
+  silence_timestamps: Timestamp[],
+  durations_of_interclick_intervals: number[],
+  content: string,
+}

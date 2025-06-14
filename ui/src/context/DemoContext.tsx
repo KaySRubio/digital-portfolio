@@ -52,6 +52,10 @@ type DemoContextType = {
   setRequestFromBackendError: (value: string) => void;
   zoomLevel: number;
   setZoomLevel: React.Dispatch<React.SetStateAction<number>>;
+  playbackSpeed: number;
+  setPlaybackSpeed: React.Dispatch<React.SetStateAction<number>>;
+  preservePitch: boolean;
+  setPreservePitch: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const DemoContext = createContext<DemoContextType | undefined>(undefined);
@@ -84,6 +88,8 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const [requestFromBackendError, setRequestFromBackendError] = useState('');
   const [showZoom, setShowZoom] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(0);
+  const [playbackSpeed, setPlaybackSpeed] = useState(1);
+  const [preservePitch, setPreservePitch] = useState(true);
 
   useEffect(() => {
     if (!waveformRef.current) return;
@@ -96,10 +102,13 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     const gradient1 = ctx!.createLinearGradient(0, 0, 0, 150)
     const gradient2 = ctx!.createLinearGradient(0, 0, 0, 150)
     gradient1.addColorStop(0, 'rgb(218, 220, 251)')
-    gradient1.addColorStop(1, 'rgb(198, 199, 255)')
+    gradient1.addColorStop(0.3, 'rgb(182, 184, 252)')
+    gradient1.addColorStop(0.7, 'rgb(182, 184, 252)')
+    gradient1.addColorStop(1, 'rgb(218, 220, 251)')
 
-    gradient2.addColorStop(0, 'rgb(181, 171, 252)')
-    gradient2.addColorStop(1, 'rgb(148, 134, 253)')
+    gradient2.addColorStop(0, 'rgb(201, 194, 250)')
+    gradient2.addColorStop(0.5, 'rgb(148, 134, 253)')
+    gradient2.addColorStop(1, 'rgb(201, 194, 250)')
 
     // Create waveform
     const ws = WaveSurfer.create({
@@ -195,8 +204,6 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         contentElement.style.left = '4px';
         contentElement.style.padding = '0';
         contentElement.style.setProperty('margin-top', '0px', 'important');
-        
-
         regionsPlugin.addRegion({
           start: region.start,
           end: region.end,
@@ -209,8 +216,16 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     }
   };
 
+  
   useEffect(() => {
-    if(!wavesurferRef.current) return;
+    console.log('playbackSpeed: ', playbackSpeed);
+    if(!wavesurferRef.current || !fileAvailable) return;
+    const ws = wavesurferRef.current;
+    ws.setPlaybackRate(playbackSpeed, preservePitch)
+  }, [playbackSpeed, preservePitch])
+
+  useEffect(() => {
+    if(!wavesurferRef.current || !fileAvailable) return;
     if(showZoom) {
       const ws = wavesurferRef.current;
       ws.registerPlugin(
@@ -223,15 +238,14 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     if(!wavesurferRef.current || !fileAvailable) return;
     const ws = wavesurferRef.current;
     ws.zoom(zoomLevel)
-  }, [zoomLevel, fileAvailable])
+  }, [zoomLevel])
 
   useEffect(() => {
-    if(wavesurferRef.current && regionsPluginRef.current) {
-      if(showRegions) {
-        updateRegions();
-      } else {
-        regionsPluginRef.current.clearRegions();
-      }
+    if(!wavesurferRef.current || !regionsPluginRef.current || !fileAvailable) return;
+    if(showRegions) {
+      updateRegions();
+    } else {
+      regionsPluginRef.current.clearRegions();
     }
   }, [regionsOnWaveform, showRegions]);
   
@@ -301,6 +315,10 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         setShowZoom,
         zoomLevel,
         setZoomLevel,
+        playbackSpeed,
+        setPlaybackSpeed,
+        preservePitch,
+        setPreservePitch,
       }}
     >
       {children}

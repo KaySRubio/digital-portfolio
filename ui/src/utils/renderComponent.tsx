@@ -40,7 +40,7 @@ export const renderComponent = (data: ProjectDetailComponent, key: number | null
       returnComponent = (<img key={key} src={data.src} className={data.className ? data.className : 'default-img'} />);
       break;
     case 'table':
-      returnComponent = <Table key={key} data={data} />
+      returnComponent = <Table key={key} data={data} dynamicData={resultData} />
       break;
     case 'ul':
     case 'ol':

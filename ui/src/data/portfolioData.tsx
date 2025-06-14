@@ -1,6 +1,7 @@
 
 import type { Project, Topic, TechStackData, Kaysrubio_speech_transcribe_result } from '../types/portfolioTypes';
 import { TopicNames } from '../types/portfolioTypes';
+import { spermWhales1Results } from './sampleSpermWhaleCodaResults';
 
 // jpg
 import american_bullfrog from '@/assets/jpg/american_bullfrog1.jpg';
@@ -27,6 +28,7 @@ import phonemes from '@/assets/png/phonemes.png';
 import plantPng from '@/assets/png/plant.png';
 import spectrogram from '@/assets/png/spectrogram.png';
 import spermwhalepng from '@/assets/png/spermwhale.png';
+import tinyWhale from '@/assets/png/tiny_whale.png';
 import transcription from '@/assets/png/transcription.png';
 import wandb from '@/assets/png/wandb.png';
 
@@ -58,6 +60,7 @@ import chineseAmerican from '@/assets/wav/chinese-american.wav';
 import indian from '@/assets/wav/indian.wav';
 import mexican from '@/assets/wav/mexican.wav';
 import nigerian from '@/assets/wav/nigerian.wav';
+import spermWhales1 from '@/assets/wav/spermwhale1+1+3.wav';
 import vietnamese from '@/assets/wav/vietnamese.wav';
 
 export const homePageData = {
@@ -114,8 +117,8 @@ export const projects: Project[] = [
   {
     path: 'sperm-whale-codas',
     short_title: 'Sperm Whale Codas',
-    title: '',
-    date: '',
+    title: 'Transcribing Sperm Whale Codas',
+    date: 'January 2025',
     topics: [TopicNames.BIOACOUSTICS],
     visible: true,
     featured: true,
@@ -127,7 +130,89 @@ export const projects: Project[] = [
     },
     techStack: [
       'Audio Signal Processing', 'librosa'],
-    project_details: [],
+    project_details: [
+      {type: 'h2', text: 'About'},
+      {type: 'p', text: 'Sperm whales communicate with each other through making clicks, and combining these into patterns called codas. A sperm whale coda is 3-40 clicks grouped together usually lasting for less than 2 seconds, and separated from the next coda by a silence of at least a second. Different coda\'s differ in the number of clicks, the spacing between the clicks. The sperm whales of the Eastern Caribbean clan have at least 18 codas, but these codas are further modified in various ways such as varying the tempo.'},
+      {
+        type: 'GoalAndGithub',
+        elements: [
+          {type: 'h2', text: 'Goal'},
+          {type: 'text', text: 'Use Voice Activity Detection (VAD) to separate a recording of sperm whale vocalizations into individual codas, then use VAD to gather metadata on each coda that could be used to transcribe them, including the number of clicks per coda, the total coda duration, and the durations of inter-click intervals. For demonstration purposes a simple formula has been used to highlight the famous 1+1+3 coda, which is the most common coda the Eastern Caribbean clan and thought to be the clan membership name.'},
+        ],
+        href: 'https://github.com/KaySRubio/audio-signal-processing/blob/main/Analyzing%20Sperm%20Whale%20Codas%20with%20VAD.ipynb',
+      },
+      {type: 'h2', text: 'Demo'},
+      {
+        type: 'DemoBoard',
+        input: {
+          types: ['audio'],
+          audioLengthLimitInSeconds: 60,
+          audioVisualizerSettings: {
+            regions: 'userToggleStartOn',
+            spectrogram: 'userToggleStartOff',
+            zoom: true,
+          },
+          sampleAudio: [
+            {
+              displayText: 'Eastern Carribean Sperm Whales',
+              location: spermWhales1,
+              sampleResults: spermWhales1Results,
+            }
+          ],
+        },
+        requests: [
+          {
+            type: 'gradio',
+            huggingFaceClient: 'kaysrubio/transcribe_sperm_whale_coda',
+            huggingFaceApi: '/transcribe_whalish',
+            key: '682d2362-894c-800c-af30-a4c56b7f074b'
+          }
+        ],
+        results: {
+          regionSetup: {
+            path: 'data[0]', // path to the regions array in your data
+            colorMappings: [ // Add as many color mappings as needed
+              {content: '1+1+3', color: 'rgba(0, 123, 255, 0.3)'},
+            ],
+            defaultColor: 'rgba(255, 162, 0, 0.3)', // optional default color
+            useRandomColors: false,
+          },
+          tabs: [
+            {
+              type: 'coda_features',
+              displayText: 'Coda Features',
+              icon: tinyWhale,
+              elements: [
+                {
+                  type: 'table', 
+                  headers: [
+                    'Coda', 'Start', 'Duration', 'Num of Clicks', 'Inter-Click Intervals'
+                  ],
+                  className: 'demo-table',
+                  rowDataPath: 'data[0]',
+                  dynamicRows: 
+                    [
+                      {propertyName: 'index', type: 'number'},
+                      {propertyName: 'start', type: 'number', rounding: 2},
+                      {propertyName: 'duration', type: 'number', rounding: 2},
+                      {propertyName: 'number_of_clicks', type: 'number', rounding: 0},
+                      {propertyName: 'durations_of_interclick_intervals', type: 'numberArray', rounding: 2},
+                    ]
+                  
+                }
+              ]
+            }
+          ]
+        },
+      },
+      {type: 'h2', text: 'References'},
+      {type: 'ul', elements: [
+        [
+          {type: 'text', text: 'Audio from '},
+          {type: 'a', text: 'Dominica Sperm Whale Project', href: 'https://www.thespermwhaleproject.org/'}
+        ],
+      ]}
+    ],
   },
   // bat-social-calls
   {
@@ -219,7 +304,7 @@ export const projects: Project[] = [
           types: ['image'],
           sampleImages: [
             {
-              display_text: 'American Bullfrog', 
+              displayText: 'American Bullfrog', 
               location: american_bullfrog,
               alt: 'A green and brown frog sitting in some grass',
               sampleResults: {
@@ -238,7 +323,7 @@ export const projects: Project[] = [
               }
             },
             {
-              display_text: 'Gray Tree Frog', 
+              displayText: 'Gray Tree Frog', 
               location: gray_tree_frog,
               alt: 'A gray spotted frog on a branch in the woods',
               sampleResults: {
@@ -257,7 +342,7 @@ export const projects: Project[] = [
               }
             },
             {
-              display_text: 'Northern Leopard Frog', 
+              displayText: 'Northern Leopard Frog', 
               location: northern_leopardfrog,
               alt: 'A green frog with brown spots partially hidden in some leaves',
               sampleResults: {
@@ -283,8 +368,8 @@ export const projects: Project[] = [
         requests: [
           {
             type: 'gradio',
-            huggingFaceModelName: 'kaysrubio/Identifying_Frogs_in_Massachusetts',
-            huggingFacePredict: '/predict',
+            huggingFaceClient: 'kaysrubio/Identifying_Frogs_in_Massachusetts',
+            huggingFaceApi: '/predict',
             key: '682d2362-894c-800c-af30-a4c56b7f074b'
           }
         ],
@@ -293,7 +378,7 @@ export const projects: Project[] = [
             {
               type: 'classification',
               icon: frog_outline,
-              display_text: 'Classification',
+              displayText: 'Classification',
               path: 'data[0]',
             }
           ]
@@ -375,7 +460,7 @@ export const projects: Project[] = [
       {
         type: 'DemoBoard',
         customSection: {
-          display_text: 'Directions',
+          displayText: 'Directions',
           elements: [
             {type: 'p', text: 'Record, upload, or select a preloaded file. Then click "Submit" to see the transcription, phonemic transcriptions, and accent classification from different AI models.'}
           ],
@@ -384,7 +469,7 @@ export const projects: Project[] = [
           types: ['audio'],
           sampleAudio: [
             {
-              display_text: 'Chinese American comedian Ronny Chieng',
+              displayText: 'Chinese American comedian Ronny Chieng',
               location: chineseAmerican,
               sampleResults: {
                 data: [
@@ -413,19 +498,13 @@ export const projects: Project[] = [
                           "score": 0.47
                         }
                       ]
-                    },
-                    {
-                      "regions": [
-                        {"start": 0.1, "end": 0.3, "content": "insertion", "type": "insertion"}, // optional content and type properties
-                        {"start": 6, "end": 9},
-                      ],
                     }
                   ]
                 ],
               } as Kaysrubio_speech_transcribe_result,
             },
             {
-              display_text: 'Indian professor Abdul Bari',
+              displayText: 'Indian professor Abdul Bari',
               location: indian,
               sampleResults: {
                 data: [
@@ -460,7 +539,7 @@ export const projects: Project[] = [
               } as Kaysrubio_speech_transcribe_result,
             },
             {
-              display_text: 'Mexican actor Jaime Camil in Jane the Virgin',
+              displayText: 'Mexican actor Jaime Camil in Jane the Virgin',
               location: mexican,
               sampleResults: {
                 data: [
@@ -495,7 +574,7 @@ export const projects: Project[] = [
               } as Kaysrubio_speech_transcribe_result,
             },
             {
-              display_text: 'Irish accent from Derry Girls',
+              displayText: 'Irish accent from Derry Girls',
               location: irish,
               sampleResults: {
                 data: [
@@ -530,7 +609,7 @@ export const projects: Project[] = [
               } as Kaysrubio_speech_transcribe_result,
             },
             {
-              display_text: 'Nigerian actors Daniel Effiong & Tana Adelana',
+              displayText: 'Nigerian actors Daniel Effiong & Tana Adelana',
               location: nigerian,
               sampleResults: {
                 data: [
@@ -565,7 +644,7 @@ export const projects: Project[] = [
               } as Kaysrubio_speech_transcribe_result,
             },
             {
-              display_text: 'Vietnamese accent from L2-Arctic-Corpus',
+              displayText: 'Vietnamese accent from L2-Arctic-Corpus',
               location: vietnamese,
               sampleResults: {
                 data: [
@@ -602,10 +681,9 @@ export const projects: Project[] = [
           ],
           audioVisualizerSettings: {
             spectrogram: 'userToggleStartOff',
-            regions: 'userToggleStartOn',
             lineGraphs: [
               {
-                display_text: 'RMS energy',
+                displayText: 'RMS energy',
                 setting: 'userToggle',
                 path: ''
               }
@@ -620,8 +698,8 @@ export const projects: Project[] = [
         requests: [
           {
             type: 'gradio',
-            huggingFaceModelName: 'kaysrubio/speech_transcribe_phonemes_and_accent',
-            huggingFacePredict: '/transcribe_and_classify_speech_1',
+            huggingFaceClient: 'kaysrubio/speech_transcribe_phonemes_and_accent',
+            huggingFaceApi: '/transcribe_and_classify_speech_1',
             key: '682d2362-894c-800c-af30-a4c56b7f074b'
           }
         ],
@@ -629,7 +707,7 @@ export const projects: Project[] = [
           tabs: [
             {
               type: 'transcription',
-              display_text: 'Transcription',
+              displayText: 'Transcription',
               icon: transcription,
               resultsForEachModel: [
                 {
@@ -646,7 +724,7 @@ export const projects: Project[] = [
             },
             {
               type: 'phonememic_transcription',
-              display_text: 'Phonemes',
+              displayText: 'Phonemes',
               icon: phonemes,
               resultsForEachModel: [
                 {
@@ -673,7 +751,7 @@ export const projects: Project[] = [
             },
             {
               type: 'accent',
-              display_text: 'Accent',
+              displayText: 'Accent',
               icon: accent,
               resultsForEachModel: [
                 {
