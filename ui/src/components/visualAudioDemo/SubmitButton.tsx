@@ -25,6 +25,7 @@ export default function SubmitButton({requests}: SubmitButtonProps) {
       setResultFromBackend(selectedFileDetails.sampleResults);
     } else {
       setWaitingForResults(true);
+      setResultFromBackend(null);
       for (const request of requests) {
         if(request.type === 'gradio') {
           try {

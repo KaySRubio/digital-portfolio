@@ -156,8 +156,6 @@ export const projects: Project[] = [
           audioLengthLimitInSeconds: 30,
           fileSizeLimitInMb: 10,
           audioVisualizerSettings: {
-            // regions: 'userToggleStartOn',
-            
             spectrogram: 'userToggleStartOff',
             zoom: true,
           },
@@ -258,23 +256,21 @@ export const projects: Project[] = [
         [{type: 'text', text: 'Transcribe each coda by creating an algorithm that takes the known dialects and matches them to coda metadata like inter-click-intervals'}],
       ]},
       {type: 'h2', text: 'References'},
-      {type: 'a', text: 'Project CETI', href: 'https://www.projectceti.org/'},
-      {type: 'a', text: 'Dominica Sperm Whale Project', href: 'https://www.thespermwhaleproject.org/'},
+      {type: 'div', elements: [
+        {type: 'a', text: 'Project CETI', href: 'https://www.projectceti.org/'}
+      ]},
+      {type: 'div', elements: [
+        {type: 'a', text: 'Dominica Sperm Whale Project', href: 'https://www.thespermwhaleproject.org/'},
+      ]},
       {type: 'text', text: 'Audio sources '},
       {type: 'ul', elements: [
-        [
-          {type: 'a', text: '1-1-3 exchange 2 whales', href: 'https://soundcloud.com/user-152468598/1-1-3-exchange-2-whales'},
-          {type: 'a', text: '5R Exchange 2 Whales Diving', href: 'https://soundcloud.com/user-152468598/5r-exchange-2-whales-diving'},
-          {type: 'a', text: 'Communication', href: 'https://soundcloud.com/user-152468598/communication'},
-          {type: 'a', text: 'CommunicationSHORT', href: 'https://soundcloud.com/user-152468598/communicationshort?in=user-152468598/sets/sperm-whale-vocalizations'},
-          {type: 'a', text: 'Longer social sequence', href: 'https://soundcloud.com/user-152468598/longer-social-sequence?in=user-152468598/sets/sperm-whale-vocalizations'},
-          {type: 'a', text: 'Social Exchange Unit R', href: 'https://soundcloud.com/user-152468598/social-exchange-unit-r?in=user-152468598/sets/sperm-whale-vocalizations'},
-          {type: 'a', text: 'Talk Codas', href: ''},
-          {type: 'a', text: '', href: 'https://soundcloud.com/user-152468598/talk-codas?in=user-152468598/sets/sperm-whale-vocalizations'},
-        ],
-        [
-
-        ]
+        [{type: 'a', text: '1-1-3 exchange 2 whales', href: 'https://soundcloud.com/user-152468598/1-1-3-exchange-2-whales'}],
+        [{type: 'a', text: '5R Exchange 2 Whales Diving', href: 'https://soundcloud.com/user-152468598/5r-exchange-2-whales-diving'}],
+        [{type: 'a', text: 'Communication', href: 'https://soundcloud.com/user-152468598/communication'}],
+        [{type: 'a', text: 'CommunicationSHORT', href: 'https://soundcloud.com/user-152468598/communicationshort?in=user-152468598/sets/sperm-whale-vocalizations'}],
+        [{type: 'a', text: 'Longer social sequence', href: 'https://soundcloud.com/user-152468598/longer-social-sequence?in=user-152468598/sets/sperm-whale-vocalizations'}],
+        [{type: 'a', text: 'Social Exchange Unit R', href: 'https://soundcloud.com/user-152468598/social-exchange-unit-r?in=user-152468598/sets/sperm-whale-vocalizations'}],
+        [{type: 'a', text: 'Talk Codas', href: 'https://soundcloud.com/user-152468598/talk-codas?in=user-152468598/sets/sperm-whale-vocalizations'}],
       ]}
     ],
   },

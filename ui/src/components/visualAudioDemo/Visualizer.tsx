@@ -2,19 +2,12 @@ import { useState, useEffect } from 'react';
 import { useDemoContext } from "../../context/DemoContext";
 import PlayButton from './PlayButton';
 import MoreInformation from './MoreInformation';
-import Toggle from './Toggle';
+import { Toggle } from './Toggle';
 import waveIcon  from '@/assets/svg/wave_diagram.svg';
 import spectrogramIcon  from '@/assets/svg/spectrogram.svg';
 import type { DemoBoard } from '../../types/portfolioTypes';
 
 type VisualizerType = 'Waveform' | 'Spectrogram';
-type Toggle = {
-  displayText: string,
-  isOn: boolean,
-  onToggle: () => void,
-  moreInformation: boolean,
-  onMoreInformationClick?: () => void,
-}
 
 type VizualizerProps = {
   data: DemoBoard,
@@ -47,12 +40,14 @@ export default function Visualizer({data}: VizualizerProps) {
   const spectrogramOffHelpText = 'Refresh the browser tab to turn off the spectrogram'
 
   // Add toggles and other input for users to update visualizer settings
-  const toggles: Toggle[] = [];
+  const toggles = [];
+
   const regionGroups = data.results?.regionSetup;
   const spectrogramSetting = data.input?.audioVisualizerSettings?.spectrogram;
   const zoomSetting = data.input?.audioVisualizerSettings?.zoom;
   const speedSetting = data.input?.audioVisualizerSettings?.changeSpeed;
 
+  
   if (regionGroups && regionGroups.length > 0) {
     // Set up a variable in a state array
     regionGroups.forEach((regionGroup, i) => {
@@ -69,7 +64,7 @@ export default function Visualizer({data}: VizualizerProps) {
           moreInformation: false,
         })
       }) 
-  } 
+  }
 
   if (spectrogramSetting === 'userToggleStartOn' || spectrogramSetting === 'userToggleStartOff') {
     toggles.push(
@@ -106,7 +101,11 @@ export default function Visualizer({data}: VizualizerProps) {
       </div>
       <div className="toggle-option">
         <label htmlFor='pitch'>Preserve pitch</label>
-        <Toggle id='pitch' isOn={preservePitch} onToggle={() => setPreservePitch((prev) => !prev)} />
+        <Toggle
+          id='pitch'
+          checked={preservePitch}
+          onChange={() => setPreservePitch((prev) => !prev)}
+        />
       </div>
     </>
   )
@@ -144,10 +143,14 @@ export default function Visualizer({data}: VizualizerProps) {
         <div className="play-button-area"><PlayButton /></div>
         {toggles.map((toggle, i) => (
           <div className="toggle-option" key={`toggle-option-${i}`}>
-            {toggle.displayText}
+            <label htmlFor={`toggle-${i}`}>{toggle.displayText}</label>
             <div className="toggle-and-button">
-              <Toggle id={`toggle-${i}`} isOn={toggle.isOn} onToggle={toggle.onToggle} />
-              {toggle.moreInformation && toggle.onMoreInformationClick && (
+              <Toggle
+                id={`toggle-${i}`}
+                checked={toggle.isOn}
+                onChange={toggle.onToggle}
+              />
+              {toggle.moreInformation && (
                 <MoreInformation onClick={() => {setShowSpectrogramHelp((prev) => (!prev))}} />
               )}
             </div>
