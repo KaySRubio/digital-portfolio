@@ -1,6 +1,5 @@
-const MAX_FILE_SIZE = 1e+7;
-
-export const checkImageFile = async (file: File) => {
+export const checkImageFile = async (file: File, fileSizeLimitInMb: number = 10) => {
+  if(!fileSizeLimitInMb) fileSizeLimitInMb = 10;
   let error = '';
   try {
     if (!file.type.startsWith('image/')) {
@@ -11,8 +10,9 @@ export const checkImageFile = async (file: File) => {
       file.name.toLowerCase().endsWith('.svg')
     ) {
       error = `Error: ${file.type} not supported. Please upload .jpg, .jpeg, or .png`;
-    } else if (file.size > MAX_FILE_SIZE) {
-      error = `File Size Error: ${file.size} bytes is too large. File should be less than 10 MB`;
+    } else if (file.size / 1000000 > fileSizeLimitInMb) {
+      const fileSizeInMb = file.size / 1000000;
+      error = `File Size Error: ${fileSizeInMb.toFixed(1)} MB is too large. File should be less than ${fileSizeLimitInMb} MB`;
     }
   } catch (e) {
     console.error('File load error:', e);
@@ -21,14 +21,16 @@ export const checkImageFile = async (file: File) => {
   return error;
   };
 
+export const checkAudioFile = async (file: File, audioLengthLimitInSeconds: number = 31, fileSizeLimitInMb: number = 10) => {
+  if(!fileSizeLimitInMb) fileSizeLimitInMb = 10;
 
-export const checkAudioFile = async (file: File, audioLengthLimitInSeconds: number = 31) => {
   let error = '';
   try {
       if (file.type !== 'audio/wav' && file.type !== 'audio/opus') {
         error = `File Format Error: ${file.type} not supported. Please upload .wav or .opus`;
-      } else if (file.size > MAX_FILE_SIZE) {
-        error = `File Size Error: ${file.size} bytes is too large. File should be less than 10 MB`;
+      } else if (file.size / 1000000 > fileSizeLimitInMb) {
+        const fileSizeInMb = file.size / 1000000;
+        error = `File Size Error: ${fileSizeInMb.toFixed(1)} MB is too large. File should be less than ${fileSizeLimitInMb} MB`;
       } else {
         const metadata = await getAudioMetadata(file);
         if (metadata.duration > audioLengthLimitInSeconds) {

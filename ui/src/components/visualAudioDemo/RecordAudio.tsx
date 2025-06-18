@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DownloadButton from './DownloadButton';
 import { useDemoContext } from "../../context/DemoContext";
+import type { Input } from '../../types/portfolioTypes';
 
 type RecordAudioProps = {
-  children: React.ReactNode;
+  children: React.ReactNode,
+  data: Input,
 };
 
-const RecordAudio: React.FC<RecordAudioProps> = ({ children }) => {
+const RecordAudio: React.FC<RecordAudioProps> = ({ children, data }) => {
   const { isRecording, setIsRecording, userInputUrl, fileAvailable, recordPluginRef } = useDemoContext();
+  const [recordError, setRecordError] = useState<string>('');
+  const recordLimit = data.audioLengthLimitInSeconds ? data.audioLengthLimitInSeconds : 30;
+  const recordLimitMs = recordLimit * 1000;
   
+
   const handleRecordClick = () => {
     setIsRecording(prev => !prev);
 
@@ -19,10 +25,19 @@ const RecordAudio: React.FC<RecordAudioProps> = ({ children }) => {
         setIsRecording(false);
       } else {
         recordPlugin.startRecording();
+        setRecordError('')
+        setTimeout(() => {
+          recordPlugin.stopRecording();
+          setIsRecording(false);
+          setRecordError(`Recording limit for this demo is ${recordLimit} seconds`)
+        }, recordLimitMs)
         setIsRecording(true);
       }
     }
   }; 
+
+
+
 
   return (
     <div className='input-area-parent'>
@@ -37,10 +52,14 @@ const RecordAudio: React.FC<RecordAudioProps> = ({ children }) => {
         <DownloadButton userInputUrl={userInputUrl} enabled={fileAvailable} label='Download Audio' />
         {children}
       </div>
+      
+      <p className='error-msg'>{recordError}</p>
+      
+      
     </div>
   );
 };
 
 export default RecordAudio;
-
+//<p className='error-msg'>{uploadedFileError}</p>
 

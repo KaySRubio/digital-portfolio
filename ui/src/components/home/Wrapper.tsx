@@ -7,7 +7,7 @@ import Home from './Home';
 import ProjectListPage from './TopicPage';
 import ScrollToTop from './ScrollToTop';
 import ProjectDetailsPage from '../projectDescriptions/ProjectDetailsPage';
-import { topics, projects, base_path } from '../../data/portfolioData';
+import { topics, projects } from '../../data/portfolioData';
 
 const Wrapper = () => {
   return (
@@ -39,7 +39,7 @@ const Wrapper = () => {
           {projects.map(project => (
               <Route 
                 key={project.path}
-                path={`${base_path}${project.path}`} 
+                path={project.path} 
                 element={<ProjectDetailsPage project={project} />} 
               />
           ))}

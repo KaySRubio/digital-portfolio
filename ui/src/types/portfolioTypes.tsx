@@ -1,6 +1,7 @@
 
 import type { SVGProps, FunctionComponent } from 'react';
 // import { techStackData, techStackList } from '../data/portfolioData';
+// import type { Region } from 'wavesurfer.js/dist/plugins/regions';
 
 export type Topic = {
   path: TopicName;
@@ -183,11 +184,11 @@ export type Input = {
   sampleImages?: SampleFile[],
   audioVisualizerSettings?: AudioVisualizerSettings,
   audioLengthLimitInSeconds?: number,
+  fileSizeLimitInMb?: number,
 }
 
 export type AudioVisualizerSettings = {
   spectrogram?: SettingsOptions,
-  regions?: SettingsOptions,
   zoom?: boolean,
   changeSpeed?: boolean,
   waveColor?: string,
@@ -231,12 +232,16 @@ export type Request = {
 
 export type Result = {
   tabs?: ResultTab[],
-  regionSetup?: {
-    path: string,
-    useRandomColors?: boolean,
-    colorMappings?: RegionColorMap[],
-    defaultColor?: string,
-  },
+  regionSetup?: RegionSetup[]
+}
+
+export type RegionSetup = {
+  displayText: string,
+  default: SettingsOptions,
+  path: string,
+  useRandomColors: boolean,
+  colorMappings?: RegionColorMap[],
+  defaultColor?: string,
 }
 
 export type RegionColorMap = {
@@ -267,11 +272,11 @@ export type ClassificationArray = {
 
 export type ClassificationObj = { species: string, prob: number}
 
-export type Region = {
+export type MyRegion = {
   start: number, 
   end: number,
-  content: string,
-  type: string,
+  content?: HTMLElement | undefined,
+  type?: string,
 }
 
 export type RegionOnWaveform = {
@@ -306,7 +311,7 @@ export type Kaysrubio_speech_transcribe_result = {
         ]
       },
       {
-        regions: Region[]
+        regions: MyRegion[]
       }?
 	  ]
   ],
@@ -316,7 +321,13 @@ export type Kaysrubio_speech_transcribe_result = {
 
 export type Kaysrubio_sperm_whalish_results = {
 	data: [
-    SpermWhaleCodaResult[]
+    {
+      vad: number[],
+      codas: SpermWhaleCodaResult[],
+      clicks: Timestamp[],
+      inter_coda_intervals: Timestamp[],
+      inter_click_intervals: Timestamp[],
+    }
   ],
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	[key: string]: any;
@@ -334,7 +345,7 @@ export type SpermWhaleCodaResult = {
   click_timestamps: Timestamp[],
   number_of_clicks: number,
   duration: number,
-  silence_timestamps: Timestamp[],
-  durations_of_interclick_intervals: number[],
+  inter_click_intervals: Timestamp[],
+  inter_click_interval_durations: number[],
   content: string,
 }

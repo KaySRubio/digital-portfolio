@@ -65,7 +65,7 @@ export const FileUpload = ({ children, type, data }: FileUploadProps) => {
     if(type === 'image') {
       error = await checkImageFile(file);
     } else {
-      error = await checkAudioFile(file, data.audioLengthLimitInSeconds);
+      error = await checkAudioFile(file, data.audioLengthLimitInSeconds, data.fileSizeLimitInMb);
     }
     
     if(error) {

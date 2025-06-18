@@ -5,8 +5,7 @@ import MoreInformation from './MoreInformation';
 import Toggle from './Toggle';
 import waveIcon  from '@/assets/svg/wave_diagram.svg';
 import spectrogramIcon  from '@/assets/svg/spectrogram.svg';
-import type { Input } from '../../types/portfolioTypes';
-// import { Popover } from 'react-tiny-popover'
+import type { DemoBoard } from '../../types/portfolioTypes';
 
 type VisualizerType = 'Waveform' | 'Spectrogram';
 type Toggle = {
@@ -18,7 +17,7 @@ type Toggle = {
 }
 
 type VizualizerProps = {
-  data: Input,
+  data: DemoBoard,
 }
 
 export default function Visualizer({data}: VizualizerProps) {
@@ -27,8 +26,6 @@ export default function Visualizer({data}: VizualizerProps) {
     spectrogramContainerRef,
     showSpectrogram,
     setShowSpectrogram,
-    showRegions,
-    setShowRegions,
     showZoom,
     setShowZoom,
     setZoomLevel,
@@ -38,6 +35,8 @@ export default function Visualizer({data}: VizualizerProps) {
     playbackSpeed,
     preservePitch,
     setPreservePitch,
+    showRegionGroups,
+    setShowRegionGroups,
   } = useDemoContext();
   const [visualizerType, setVisualizerType] = useState<VisualizerType>('Waveform');
   const [isSpectrogramPopoverOpen, setIsSpectrogramPopoverOpen] = useState(false);
@@ -49,25 +48,29 @@ export default function Visualizer({data}: VizualizerProps) {
 
   // Add toggles and other input for users to update visualizer settings
   const toggles: Toggle[] = [];
-  const regionsSetting = data.audioVisualizerSettings?.regions;
-  const spectrogramSetting = data.audioVisualizerSettings?.spectrogram;
-  const zoomSetting = data.audioVisualizerSettings?.zoom;
-  const speedSetting = data.audioVisualizerSettings?.changeSpeed;
-  if (
-    regionsSetting === 'userToggleStartOn' ||
-    regionsSetting === 'userToggleStartOff'
-  ) {
-    toggles.push({
-      displayText: 'Show regions',
-      isOn: showRegions,
-      onToggle: () => {
-        console.log('onToggle was clicked, showRegions: ', showRegions);
-        setShowRegions((prev) => !prev);
-      },
-      moreInformation: false,
-    });
-  }
-  
+  const regionGroups = data.results?.regionSetup;
+  const spectrogramSetting = data.input?.audioVisualizerSettings?.spectrogram;
+  const zoomSetting = data.input?.audioVisualizerSettings?.zoom;
+  const speedSetting = data.input?.audioVisualizerSettings?.changeSpeed;
+
+  if (regionGroups && regionGroups.length > 0) {
+    // Set up a variable in a state array
+    regionGroups.forEach((regionGroup, i) => {
+      toggles.push({
+        displayText: regionGroup.displayText,
+        isOn: showRegionGroups[i],
+        onToggle: () => {
+            setShowRegionGroups(prev => {
+              const updated = [...prev];
+                updated[i] = !showRegionGroups[i];
+                return updated;
+            })
+          },
+          moreInformation: false,
+        })
+      }) 
+  } 
+
   if (spectrogramSetting === 'userToggleStartOn' || spectrogramSetting === 'userToggleStartOff') {
     toggles.push(
       {
@@ -107,11 +110,22 @@ export default function Visualizer({data}: VizualizerProps) {
       </div>
     </>
   )
-  
+
   // Set visualizer default settings
   useEffect(() => {
-    if (regionsSetting === 'on' || regionsSetting === 'userToggleStartOn') {
-      setShowRegions(true);
+    if(regionGroups && regionGroups.length > 0) {
+      regionGroups.forEach((regionGroup, i) => {
+        let toggleShouldStartOn = false;
+        if (regionGroup.default === 'on' || regionGroup.default === 'userToggleStartOn') {
+          toggleShouldStartOn = true;
+        }
+        setShowRegionGroups(prev => {
+            const updated = [...prev];
+            updated[i] = toggleShouldStartOn;
+            return updated;
+          })
+        
+      })
     }
     if (spectrogramSetting === 'on' || spectrogramSetting === 'userToggleStartOn') {
       setShowSpectrogram(true);
@@ -119,7 +133,7 @@ export default function Visualizer({data}: VizualizerProps) {
     if(zoomSetting) {
       setShowZoom(true);
     }
-  }, [data.audioVisualizerSettings?.regions, data.audioVisualizerSettings?.spectrogram])
+  }, [data.results?.regionSetup, data.input?.audioVisualizerSettings?.spectrogram])
 
   return (
     <div className={`interactive-box visualizer`}>
@@ -134,11 +148,7 @@ export default function Visualizer({data}: VizualizerProps) {
             <div className="toggle-and-button">
               <Toggle id={`toggle-${i}`} isOn={toggle.isOn} onToggle={toggle.onToggle} />
               {toggle.moreInformation && toggle.onMoreInformationClick && (
-                
-
                 <MoreInformation onClick={() => {setShowSpectrogramHelp((prev) => (!prev))}} />
-
-
               )}
             </div>
           </div>
@@ -208,68 +218,3 @@ export default function Visualizer({data}: VizualizerProps) {
     </div>
   );
 }
-
-//(note: spectrograms are awesome but also large so page may update more slowly)
-/*
-      {directions.length > 0 && <div className='vizualizer-directions'>
-        {directions.map((direction: string, i: number) => (
-          <p className='visualizer-direction' key={`vizualizer-direction-${i}`}>
-            Tip: {direction}
-          </p>
-        ))}
-      </div>} */
-
-/*
-      {!showSpectrogram && <div className='toggle-options'>
-        <div className='toggle-option'>
-          Show spectrogram
-          <div className='toggle-and-button'>
-            <Toggle isOn={showSpectrogram} onToggle={onToggle} />
-            <MoreInformation onClick={onMoreInformationClick} />
-          </div>
-        </div>
-        {showMoreInfo && <div className='visualizer-more-info'>
-          Spectrograms are awesome! ...but they are also large and may slow down the page. To turn off, refresh browser tab.
-        </div>}
-      </div>}
-
-      {showSpectrogram && <menu className='interactive-box-menu'>
-        <li>
-          <button
-            onClick={() => setVisualizerType('Waveform')}
-            className={`
-              interactive-box-menu-item
-              ${visualizerType === 'Waveform' ? 'active-interactive-box-menu' : ''}
-            `}
-          >
-            <img className='input-icon-large' alt="" src={waveIcon} />
-            Waveform
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => setVisualizerType('Spectrogram')}
-            className={`
-              interactive-box-menu-item
-            ${visualizerType === 'Spectrogram' ? 'active-interactive-box-menu' : ''}
-            `}
-          >
-            <img className='input-icon-large' alt="" src={spectrogramIcon} />
-            Spectrogram
-          </button>
-        </li>
-      </menu>}
-*/
-
-
-/*
-
-      <Popover
-        isOpen={isSpectrogramPopoverOpen}
-        positions={['top', 'bottom', 'left', 'right']} // preferred positions by priority
-        content={<div>Hi! I'm popover content.</div>}
-      >
-        <div>
-        </div>
-      </Popover>;
-*/

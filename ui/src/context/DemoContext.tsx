@@ -6,8 +6,7 @@ import RegionsPlugin from 'wavesurfer.js/dist/plugins/regions';
 import TimelinePlugin from 'wavesurfer.js/dist/plugins/timeline';
 import type { Region } from 'wavesurfer.js/dist/plugins/regions';
 import SpectrogramPlugin from 'wavesurfer.js/dist/plugins/spectrogram';
-import type { RegionOnWaveform } from "../types/portfolioTypes";
-
+import type { RegionOnWaveform, MyRegion } from "../types/portfolioTypes";
 
 type DemoContextType = {
   isRecording: boolean;
@@ -40,8 +39,6 @@ type DemoContextType = {
   selectedFileDetails: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setSelectedFileDetails: (value: any) => void;
-  showRegions: boolean;
-  setShowRegions: React.Dispatch<React.SetStateAction<boolean>>;
   showZoom: boolean;
   setShowZoom:  React.Dispatch<React.SetStateAction<boolean>>;
   regionsOnWaveform: RegionOnWaveform[];
@@ -56,6 +53,10 @@ type DemoContextType = {
   setPlaybackSpeed: React.Dispatch<React.SetStateAction<number>>;
   preservePitch: boolean;
   setPreservePitch: React.Dispatch<React.SetStateAction<boolean>>;
+  showRegionGroups: boolean[];
+  setShowRegionGroups: React.Dispatch<React.SetStateAction<boolean[]>>;
+  regionGroups: MyRegion[][];
+  setRegionGroups: React.Dispatch<React.SetStateAction<MyRegion[][]>>;
 };
 
 const DemoContext = createContext<DemoContextType | undefined>(undefined);
@@ -81,7 +82,6 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const [audioPlaying, setAudioPlaying] = useState(false);
   const [resultFromBackend, setResultFromBackend] = useState(null);
   const [showSpectrogram, setShowSpectrogram] = useState(false);
-  const [showRegions, setShowRegions] = useState(false);
   const [regionsOnWaveform, setRegionsOnWaveform] = useState<RegionOnWaveform[]>([]);
   const [selectedFileDetails, setSelectedFileDetails] = useState([]);
   const [waitingForResults, setWaitingForResults] = useState(false);
@@ -90,6 +90,8 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const [zoomLevel, setZoomLevel] = useState(0);
   const [playbackSpeed, setPlaybackSpeed] = useState(1);
   const [preservePitch, setPreservePitch] = useState(true);
+  const [showRegionGroups, setShowRegionGroups] = useState<boolean[]>([]);
+  const [regionGroups, setRegionGroups] = useState<Region[][]>([[]]);
 
   useEffect(() => {
     if (!waveformRef.current) return;
@@ -194,7 +196,11 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       regionsOnWaveform.forEach(region => {
         // label on region can be string or a plain htmlElement, not a react jsc element
         const contentElement = document.createElement('div');
-        contentElement.textContent = region.content as string ;
+        if(region.content) {
+          contentElement.textContent = region.content as string;
+        } else {
+          contentElement.textContent = '';
+        }
         contentElement.style.fontSize = '12px';
         // wavesurfer keeps overwriting margin-top to something else, so use this
         // to pin the context to the top of the region
@@ -216,9 +222,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     }
   };
 
-  
   useEffect(() => {
-    console.log('playbackSpeed: ', playbackSpeed);
     if(!wavesurferRef.current || !fileAvailable) return;
     const ws = wavesurferRef.current;
     ws.setPlaybackRate(playbackSpeed, preservePitch)
@@ -239,16 +243,27 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     const ws = wavesurferRef.current;
     ws.zoom(zoomLevel)
   }, [zoomLevel])
+  
+  useEffect(() => {
+    if(!wavesurferRef.current ||
+      !regionsPluginRef.current ||
+      !fileAvailable ||
+      showRegionGroups.length !== regionGroups.length
+    ) return;
+    
+
+    let newRegions: RegionOnWaveform[] = [];
+    showRegionGroups.forEach((regionGroup, i) => {
+      if(regionGroup) {
+        newRegions = [...newRegions, ...regionGroups[i]] as RegionOnWaveform[];
+      }
+    })
+    setRegionsOnWaveform(newRegions);
+  }, [showRegionGroups, regionGroups]);
 
   useEffect(() => {
-    if(!wavesurferRef.current || !regionsPluginRef.current || !fileAvailable) return;
-    if(showRegions) {
-      updateRegions();
-    } else {
-      regionsPluginRef.current.clearRegions();
-    }
-  }, [regionsOnWaveform, showRegions]);
-  
+    updateRegions();
+  }, [regionsOnWaveform])
 
   useEffect(() => {
     const ws = wavesurferRef.current;
@@ -301,8 +316,6 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         onPlay,
         resultFromBackend,
         setResultFromBackend,
-        showRegions,
-        setShowRegions,
         regionsOnWaveform,
         setRegionsOnWaveform,
         selectedFileDetails,
@@ -319,6 +332,11 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         setPlaybackSpeed,
         preservePitch,
         setPreservePitch,
+        showRegionGroups,
+        setShowRegionGroups,
+        regionGroups,
+        // @ts-expect-error OMG whyyy these types so picky
+        setRegionGroups,
       }}
     >
       {children}

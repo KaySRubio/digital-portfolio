@@ -36,11 +36,11 @@ export default function Table({data, dynamicData}: TableProps) {
       <tbody>
         {data.rows?.map((row, index) => (
           <tr key={index}>
-            {row.map((td, index) => {
+            {row.map((td, i) => {
               if(typeof td === 'string') {
-                return (<td key={index}>{td}</td>)
+                return (<td key={i}>{td}</td>)
               } else {
-                return (<td key={index}><a href={td.href}>{td.text}</a></td>)
+                return (<td key={i}><a href={td.href}>{td.text}</a></td>)
               }}
             )}
           </tr>
@@ -59,26 +59,19 @@ export default function Table({data, dynamicData}: TableProps) {
                 } else if (dynamicRow.type === 'string'){
                   return (<td key={index}>{row[dynamicRow.propertyName]}</td>)
                 } else if (dynamicRow.type === 'numberArray') {
-                  console.log('trying to print a number array: ', row[dynamicRow.propertyName]);
                   return (
-                    <td><span>[</span>
+                    <td key={index}><span>[</span>
                       {row[dynamicRow.propertyName].map((el: number, j: number) => (
-                      
                         (
                           <span key={j}>
                             {el.toFixed(dynamicRow.rounding)}
                             {j < row[dynamicRow.propertyName].length - 1 && ', '}
                           </span>
                         )
-                      
                       ))}
                     <span>]</span></td>
                   )
-                  
-                  
                 }
-                
-                
               }
             }
             )}
@@ -88,16 +81,3 @@ export default function Table({data, dynamicData}: TableProps) {
     </table>
   );
 }
-
-/*
-        {data.dynamicRows?.map((row, index) => (
-          <tr key={index}>
-            {row.map((td, index) => {
-              if(typeof td === 'string') {
-                return (<td key={index}>{td}</td>)
-              } 
-            }
-            )}
-          </tr>
-        ))}
-*/

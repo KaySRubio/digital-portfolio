@@ -1,7 +1,7 @@
 
 import type { Project, Topic, TechStackData, Kaysrubio_speech_transcribe_result } from '../types/portfolioTypes';
 import { TopicNames } from '../types/portfolioTypes';
-import { spermWhales1Results } from './sampleSpermWhaleCodaResults';
+import { spermWhale113Results, spermWhale5rResults, spermWhaleSocialResults } from './sampleSpermWhaleCodaResults';
 
 // jpg
 import american_bullfrog from '@/assets/jpg/american_bullfrog1.jpg';
@@ -60,7 +60,9 @@ import chineseAmerican from '@/assets/wav/chinese-american.wav';
 import indian from '@/assets/wav/indian.wav';
 import mexican from '@/assets/wav/mexican.wav';
 import nigerian from '@/assets/wav/nigerian.wav';
-import spermWhales1 from '@/assets/wav/spermwhale1+1+3.wav';
+import spermWhale113 from '@/assets/wav/1_1_3_exchange_2_whales.wav';
+import spermWhale5r from '@/assets/wav/5r_exchange_2_whales_diving.wav';
+import spermWhaleSocial from '@/assets/wav/social_exchange_unit_r.wav';
 import vietnamese from '@/assets/wav/vietnamese.wav';
 
 export const homePageData = {
@@ -128,8 +130,7 @@ export const projects: Project[] = [
       src: spermwhalepng,
       alt: 'A sperm whale with its mouth open showing teeth',
     },
-    techStack: [
-      'Audio Signal Processing', 'librosa'],
+    projectCardTechStack: ['librosa', 'matplotlib'],
     project_details: [
       {type: 'h2', text: 'About'},
       {type: 'p', text: 'Sperm whales communicate with each other through making clicks, and combining these into patterns called codas. A sperm whale coda is 3-40 clicks grouped together usually lasting for less than 2 seconds, and separated from the next coda by a silence of at least a second. Different coda\'s differ in the number of clicks, the spacing between the clicks. The sperm whales of the Eastern Caribbean clan have at least 18 codas, but these codas are further modified in various ways such as varying the tempo.'},
@@ -144,20 +145,38 @@ export const projects: Project[] = [
       {type: 'h2', text: 'Demo'},
       {
         type: 'DemoBoard',
+        customSection: {
+          displayText: 'Directions',
+          elements: [
+            {type: 'p', text: 'Select a sample file to see coda\'s highlighted on the wavefrom and metadata below in the results section. You can also upload a sperm whale recording, or record live. Don\'t have a sperm whale friend close by? Try making coda\'s such as 1+1+3 by clapping your hands or tapping on the table.'}
+          ]
+        },
         input: {
           types: ['audio'],
-          audioLengthLimitInSeconds: 60,
+          audioLengthLimitInSeconds: 30,
+          fileSizeLimitInMb: 10,
           audioVisualizerSettings: {
-            regions: 'userToggleStartOn',
+            // regions: 'userToggleStartOn',
+            
             spectrogram: 'userToggleStartOff',
             zoom: true,
           },
           sampleAudio: [
             {
-              displayText: 'Eastern Carribean Sperm Whales',
-              location: spermWhales1,
-              sampleResults: spermWhales1Results,
-            }
+              displayText: '1 - 1-3 Exchange 2 Whales Shallow Diving',
+              location: spermWhale113,
+              sampleResults: spermWhale113Results,
+            },
+            {
+              displayText: '5R Exchange 2 Whales Diving',
+              location: spermWhale5r,
+              sampleResults: spermWhale5rResults,
+            },
+            {
+              displayText: 'Social Exchange Unit R',
+              location: spermWhaleSocial,
+              sampleResults: spermWhaleSocialResults,
+            },
           ],
         },
         requests: [
@@ -169,14 +188,40 @@ export const projects: Project[] = [
           }
         ],
         results: {
-          regionSetup: {
-            path: 'data[0]', // path to the regions array in your data
-            colorMappings: [ // Add as many color mappings as needed
-              {content: '1+1+3', color: 'rgba(0, 123, 255, 0.3)'},
-            ],
-            defaultColor: 'rgba(255, 162, 0, 0.3)', // optional default color
-            useRandomColors: false,
-          },
+          regionSetup: [
+            {
+              displayText: 'Codas',
+              default: 'userToggleStartOn',
+              path: 'data[0].codas',
+              defaultColor: 'rgba(0, 123, 255, 0.3)',
+              /*colorMappings: [
+                {content: '1+1+3', color: 'rgba(0, 123, 255, 0.3)'},
+              ],
+              defaultColor: 'rgba(255, 162, 0, 0.3)', */
+              useRandomColors: false,
+            },
+            {
+              displayText: 'Inter-coda-intervals',
+              default: 'userToggleStartOff',
+              path: 'data[0].inter_coda_intervals',
+              defaultColor: 'rgba(255, 162, 0, 0.3)',
+              useRandomColors: false,
+            },
+            {
+              displayText: 'Clicks',
+              default: 'userToggleStartOff',
+              path: 'data[0].clicks',
+              defaultColor: 'rgba(0, 123, 255, 0.3)',
+              useRandomColors: false,
+            },
+            {
+              displayText: 'Inter-click-intervals',
+              default: 'userToggleStartOff',
+              path: 'data[0].inter_click_intervals',
+              defaultColor: 'rgba(255, 162, 0, 0.3)',
+              useRandomColors: false,
+            },
+          ],
           tabs: [
             {
               type: 'coda_features',
@@ -189,14 +234,14 @@ export const projects: Project[] = [
                     'Coda', 'Start', 'Duration', 'Num of Clicks', 'Inter-Click Intervals'
                   ],
                   className: 'demo-table',
-                  rowDataPath: 'data[0]',
+                  rowDataPath: 'data[0].codas',
                   dynamicRows: 
                     [
                       {propertyName: 'index', type: 'number'},
                       {propertyName: 'start', type: 'number', rounding: 2},
                       {propertyName: 'duration', type: 'number', rounding: 2},
                       {propertyName: 'number_of_clicks', type: 'number', rounding: 0},
-                      {propertyName: 'durations_of_interclick_intervals', type: 'numberArray', rounding: 2},
+                      {propertyName: 'inter_click_interval_durations', type: 'numberArray', rounding: 2},
                     ]
                   
                 }
@@ -205,12 +250,31 @@ export const projects: Project[] = [
           ]
         },
       },
+      {type: 'h2', text: 'Tech Stack'},
+      {type: 'TechStack', techList: ['librosa', 'matplotlib'] },
+      {type: 'h2', text: 'Next Steps'},
+      {type: 'ul', elements: [
+        [{type: 'text', text: 'Separate out the voices of individual sperm whales'}],
+        [{type: 'text', text: 'Transcribe each coda by creating an algorithm that takes the known dialects and matches them to coda metadata like inter-click-intervals'}],
+      ]},
       {type: 'h2', text: 'References'},
+      {type: 'a', text: 'Project CETI', href: 'https://www.projectceti.org/'},
+      {type: 'a', text: 'Dominica Sperm Whale Project', href: 'https://www.thespermwhaleproject.org/'},
+      {type: 'text', text: 'Audio sources '},
       {type: 'ul', elements: [
         [
-          {type: 'text', text: 'Audio from '},
-          {type: 'a', text: 'Dominica Sperm Whale Project', href: 'https://www.thespermwhaleproject.org/'}
+          {type: 'a', text: '1-1-3 exchange 2 whales', href: 'https://soundcloud.com/user-152468598/1-1-3-exchange-2-whales'},
+          {type: 'a', text: '5R Exchange 2 Whales Diving', href: 'https://soundcloud.com/user-152468598/5r-exchange-2-whales-diving'},
+          {type: 'a', text: 'Communication', href: 'https://soundcloud.com/user-152468598/communication'},
+          {type: 'a', text: 'CommunicationSHORT', href: 'https://soundcloud.com/user-152468598/communicationshort?in=user-152468598/sets/sperm-whale-vocalizations'},
+          {type: 'a', text: 'Longer social sequence', href: 'https://soundcloud.com/user-152468598/longer-social-sequence?in=user-152468598/sets/sperm-whale-vocalizations'},
+          {type: 'a', text: 'Social Exchange Unit R', href: 'https://soundcloud.com/user-152468598/social-exchange-unit-r?in=user-152468598/sets/sperm-whale-vocalizations'},
+          {type: 'a', text: 'Talk Codas', href: ''},
+          {type: 'a', text: '', href: 'https://soundcloud.com/user-152468598/talk-codas?in=user-152468598/sets/sperm-whale-vocalizations'},
         ],
+        [
+
+        ]
       ]}
     ],
   },
@@ -278,7 +342,7 @@ export const projects: Project[] = [
     date: '',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
-    featured: false,
+    featured: true,
     desc: 'Fine-tuned an image recognition model to identify species',
     mainImage: {
       type: 'png',
@@ -693,7 +757,8 @@ export const projects: Project[] = [
             waveColor: '',
             progressColor: '',
             barWidth: 2,
-          }
+          },
+          audioLengthLimitInSeconds: 30,
         },
         requests: [
           {
@@ -785,10 +850,6 @@ export const projects: Project[] = [
               ],
             },
           ],
-          regionSetup: {
-            path: 'data[0][5].regions',
-            useRandomColors: true,
-          },
         }
       },
       {type: 'h2', text: 'Tech Stack'},
@@ -1326,7 +1387,7 @@ export const projects: Project[] = [
     date: '',
     topics: [TopicNames.WEBAPPDEVELOPMENT],
     visible: true,
-    featured: true,
+    featured: false,
     desc: 'A tool to input audio and display phonemic transcriptions and data',
     mainImage: {
       type: 'svg',

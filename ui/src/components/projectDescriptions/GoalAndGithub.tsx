@@ -11,7 +11,7 @@ type GoalAndGithubProps = {
 export default function GoalAndGithub({children, className = '', href}: GoalAndGithubProps) {
 
   return (
-    <div className={`align-row ${className}`}>
+    <div className={`align-row goal-and-github ${className}`}>
       <div className='project-details-left-column'>
         {children}
       </div>
