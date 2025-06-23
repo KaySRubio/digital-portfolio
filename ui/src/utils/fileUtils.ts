@@ -79,3 +79,13 @@ export const resizeImage = (
   };
   img.src = base64;
 };
+
+export const applyNormalization = (values: number[], MIN: number = 0, MAX: number, NEW_MIN: number, NEW_MAX: number) => {
+  // Apply min-max normalization to the values so they have a new range
+  const normalizedValues: number[] = [];
+  values.forEach(x => {
+    normalizedValues.push(((x - MIN) / (MAX - MIN)) * (NEW_MAX - NEW_MIN) + NEW_MIN)
+  })
+  return(normalizedValues)
+}
+

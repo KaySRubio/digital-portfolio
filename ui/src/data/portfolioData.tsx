@@ -2,6 +2,7 @@
 import type { Project, Topic, TechStackData, Kaysrubio_speech_transcribe_result } from '../types/portfolioTypes';
 import { TopicNames } from '../types/portfolioTypes';
 import { spermWhale113Results, spermWhale5rResults, spermWhaleSocialResults } from './sampleSpermWhaleCodaResults';
+import { womanSingingResults, chickenResults, elkResults } from './sampleAudioFeatureExtractionResults';
 
 // jpg
 import american_bullfrog from '@/assets/jpg/american_bullfrog1.jpg';
@@ -56,10 +57,13 @@ import webpack from '@/assets/svg/webpack.svg?react';
 import wwwIcon  from '@/assets/svg/www.svg?react';
 
 // wav
+import chicken_audio from '@/assets/wav/chicken.wav';
 import chineseAmerican from '@/assets/wav/chinese-american.wav';
+import elk from '@/assets/wav/elk.wav';
 import indian from '@/assets/wav/indian.wav';
 import mexican from '@/assets/wav/mexican.wav';
 import nigerian from '@/assets/wav/nigerian.wav';
+import singingwoman from '@/assets/wav/singingwoman.wav';
 import spermWhale113 from '@/assets/wav/1_1_3_exchange_2_whales.wav';
 import spermWhale5r from '@/assets/wav/5r_exchange_2_whales_diving.wav';
 import spermWhaleSocial from '@/assets/wav/social_exchange_unit_r.wav';
@@ -96,25 +100,134 @@ export const projects: Project[] = [
   {
     path: 'audio-feature-extraction',
     short_title: 'Audio Feature Extraction',
-    title: '',
-    date: '',
+    title: 'Audio Feature Extraction',
+    date: 'January 2025',
     topics: [TopicNames.BIOACOUSTICS],
     visible: true,
     featured: false,
-    desc: 'Practiced creating spectrograms and extracting features',
+    desc: 'Extract time- and frequency-domain features from audio files',
     mainImage: {
       type: 'png',
       src: spectrogram,
       alt: 'A waveform and spectrogram visually representing sound',
     },
-    techStack: ['Audio Signal Processing', 'librosa'],
+    projectCardTechStack: ['librosa', 'matplotlib'],
     project_details: [
       {
-        type: 'h2',
-        text: ''
+        type: 'GoalAndGithub',
+        elements: [
+          {type: 'h2', text: 'Goal'},
+          {type: 'text', text: 'Extract audio features and map them onto waveforms, spectrograms, and heat maps. Features include:'},
+          {type: 'ul', elements: [
+            [{type: 'text', text: 'Amplitude envelope (AE)'}],
+            [{type: 'text', text: 'Root-mean-square energy (RMS)'}],
+            [{type: 'text', text: 'Zero-crossing rate (ZCR)'}],
+            [{type: 'text', text: 'Mel-Frequency Cepstral Coefficients (MFCCs)'}],
+            [{type: 'text', text: 'Spectral centroid and bandwidth'}],
+            ],
+          },
+        ],
+        href: 'https://github.com/KaySRubio/audio-signal-processing/blob/main/Feature%20Extraction%20Frequency%20Domain.ipynb',
       },
+      {
+        type: 'DemoBoard',
+        customSection: {
+          displayText: 'Directions',
+          size: 'full-screen',
+          elements: [
+            {type: 'p', text: 'Input'},
+            {type: 'ol', elements: [
+              [{type: 'p', text: 'Select a sample file, record, or upload your own to view the audio features.'}],
+              [{type: 'p', text: 'Press Submit and wait a few seconds for the back-end to return the results!'}],
+            ]},
+            {type: 'p', text: 'Output'},
+            {type: 'ul', elements: [
+              [{type: 'text', text: 'Amplitude envelope (AE), Root-mean-square energy (RMS), and Zero-crossing rate (ZCR) are mapped directly on the waveform. Use toggles in the Visualizer section to turn them on/off.'}],
+              [{type: 'text', text: 'A heat map for the first 13 Mel-Frequency Cepstral Coefficients (MFCCs) is found in the Results section.'}],
+              [{type: 'text', text: 'Spectral centroid and bandwidth are mapped onto the spectrogram. Turn on the spectrogram in the Visualizer section to view.'}],
+              [{type: 'text', text: 'All raw values are provided in the JSON tab in the Results section.'}],
+            ]}
+          ]
+        },
+        input: {
+          types: ['audio'],
+          audioVisualizerSettings: {
+            zoom: true,
+            changeSpeed: true,
+          },
+          sampleAudio: [
+            {
+              displayText: 'Woman Singing',
+              location: singingwoman,
+              sampleResults: womanSingingResults,
+            },
+            {
+              displayText: 'Chicken Egg Song',
+              location: chicken_audio,
+              sampleResults: chickenResults,
+            },
+            {
+              displayText: 'Elk Bugling',
+              location: elk,
+              sampleResults: elkResults,
+            },
+          ],
+        },
+        requests: [
+          {
+            type: 'gradio',
+            huggingFaceClient: 'kaysrubio/audio_feature_extraction',
+            huggingFaceApi: '/extract_audio_features',
+            key: '682d2362-894c-800c-af30-a4c56b7f074b'
+          }
+        ],
+        results: {
+          lineOverlaySetup: [
+            {
+              type: 'line-spread-points',
+              overlay: 'waveform',
+              path: 'data[0].amplitude_envelope',
+              values: [],
+              max: 1,
+              min: 0,
+              color: '#ff7975',
+              displayText: 'Amplitude Envelope',
+              default: 'userToggleStartOn',
+            },
+            {
+              type: 'line-spread-points',
+              overlay: 'waveform',
+              path: 'data[0].root_mean_square_energy',
+              values: [],
+              min: 0,
+              max: 1,
+              color: '#00bcee',
+              displayText: 'Root-mean-square Energy',
+              default: 'userToggleStartOn',
+            },
+            {
+              type: 'line-spread-points',
+              overlay: 'waveform',
+              path: 'data[0].zero_crossing_rate',
+              values: [],
+              min: 0,
+              max: 1,
+              color: '#24ee00',
+              displayText: 'Zero-crossing Rate',
+              default: 'userToggleStartOn',
+            }
+          ]
+        }
+      },
+      {type: 'h2', text: 'Tech Stack'},
+      {type: 'TechStack', techList: ['librosa', 'matplotlib'] },
+      {type: 'text', text: 'Audio sources '},
+      {type: 'ul', elements: [
+        [{type: 'a', text: '', href: ''}],
+      ]}
     ],
   },
+
   // sperm-whale-codas
   {
     path: 'sperm-whale-codas',
@@ -192,10 +305,6 @@ export const projects: Project[] = [
               default: 'userToggleStartOn',
               path: 'data[0].codas',
               defaultColor: 'rgba(0, 123, 255, 0.3)',
-              /*colorMappings: [
-                {content: '1+1+3', color: 'rgba(0, 123, 255, 0.3)'},
-              ],
-              defaultColor: 'rgba(255, 162, 0, 0.3)', */
               useRandomColors: false,
             },
             {
@@ -209,14 +318,14 @@ export const projects: Project[] = [
               displayText: 'Clicks',
               default: 'userToggleStartOff',
               path: 'data[0].clicks',
-              defaultColor: 'rgba(0, 123, 255, 0.3)',
+              defaultColor: 'rgba(101, 40, 255, 0.3)',
               useRandomColors: false,
             },
             {
               displayText: 'Inter-click-intervals',
               default: 'userToggleStartOff',
               path: 'data[0].inter_click_intervals',
-              defaultColor: 'rgba(255, 162, 0, 0.3)',
+              defaultColor: 'rgba(255, 247, 0, 0.3)',
               useRandomColors: false,
             },
           ],

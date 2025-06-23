@@ -6,7 +6,13 @@ import RegionsPlugin from 'wavesurfer.js/dist/plugins/regions';
 import TimelinePlugin from 'wavesurfer.js/dist/plugins/timeline';
 import type { Region } from 'wavesurfer.js/dist/plugins/regions';
 import SpectrogramPlugin from 'wavesurfer.js/dist/plugins/spectrogram';
-import type { RegionOnWaveform, MyRegion } from "../types/portfolioTypes";
+import type {
+  RegionOnWaveform,
+  MyRegion,
+  LineSpreadPointsOverlaySetup,
+  TimeStampedLineOverlaySetup,
+  TimeStampedLineOverlaySectionData,
+} from "../types/portfolioTypes";
 
 type DemoContextType = {
   isRecording: boolean;
@@ -26,6 +32,7 @@ type DemoContextType = {
   recordPluginRef: React.RefObject<InstanceType<typeof RecordPlugin> | null>;
   spectrogramContainerRef: RefObject<HTMLDivElement | null>;
   spectrogramRef: React.RefObject<InstanceType<typeof SpectrogramPlugin> | null>;
+  waveformOverlayRefs: RefObject<RefObject<HTMLCanvasElement>[]>;
   showSpectrogram: boolean;
   setShowSpectrogram: React.Dispatch<React.SetStateAction<boolean>>;
   audioPlaying: boolean;
@@ -57,6 +64,12 @@ type DemoContextType = {
   setShowRegionGroups: React.Dispatch<React.SetStateAction<boolean[]>>;
   regionGroups: MyRegion[][];
   setRegionGroups: React.Dispatch<React.SetStateAction<MyRegion[][]>>;
+  waveformOverlays: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[];
+  setWaveformOverlays: React.Dispatch<React.SetStateAction<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[]>>;
+  spectrogramOverlays: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[];
+  setSpectrogramOverlays: React.Dispatch<React.SetStateAction<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[]>>;
+  showWaveformLineOverlays: boolean[];
+  setShowWaveformLineOverlays: React.Dispatch<React.SetStateAction<boolean[]>>;
 };
 
 const DemoContext = createContext<DemoContextType | undefined>(undefined);
@@ -72,6 +85,8 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const spectrogramContainerRef = useRef<HTMLDivElement | null>(null);
   const regionsPluginRef = useRef<InstanceType<typeof RegionsPlugin> | null>(null);
   const spectrogramRef = useRef<InstanceType<typeof SpectrogramPlugin> | null>(null);
+  const waveformOverlayRefs = useRef<React.RefObject<HTMLCanvasElement>[]>([]);
+  const spectrogramOverlayRefs = useRef<HTMLCanvasElement[]>([]);
 
   const [isRecording, setIsRecording] = useState(false);
   const [userInputUrl, setUserInputUrl] = useState<string>('');
@@ -92,6 +107,9 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const [preservePitch, setPreservePitch] = useState(true);
   const [showRegionGroups, setShowRegionGroups] = useState<boolean[]>([]);
   const [regionGroups, setRegionGroups] = useState<Region[][]>([[]]);
+  const [waveformOverlays, setWaveformOverlays] = useState<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[]>([]);
+  const [spectrogramOverlays, setSpectrogramOverlays] = useState<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[]>([]);
+  const [showWaveformLineOverlays, setShowWaveformLineOverlays] = useState<boolean[]>([]);
 
   useEffect(() => {
     if (!waveformRef.current) return;
@@ -118,6 +136,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       waveColor: gradient1,
       progressColor: gradient2,
       plugins: [regionsPlugin],
+      height: 200,
       // barWidth: 2 // optional to look cooler
     });
 
@@ -241,7 +260,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   useEffect(() => {
     if(!wavesurferRef.current || !fileAvailable) return;
     const ws = wavesurferRef.current;
-    ws.zoom(zoomLevel)
+    ws.zoom(zoomLevel);
   }, [zoomLevel])
   
   useEffect(() => {
@@ -264,6 +283,174 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   useEffect(() => {
     updateRegions();
   }, [regionsOnWaveform])
+
+  useEffect(() => {
+    if(!wavesurferRef.current ||
+      !fileAvailable ||
+      waveformOverlays.length < 1
+    ) return;
+    const wavesurfer = wavesurferRef.current;
+
+    // Access the scrolling element inside WaveSurfer's shadow DOM and set up event listener
+    // to move the lines when the user zooms in and scrolls along. 
+    // Note: hard to fix minor visual defect where canvas becomes wider than the waveform
+    // itself appears
+    let scrollEl = null;
+    const waveformEl = document.querySelector('#waveform'); 
+    if(waveformEl) {
+      // Get the child element that hosts the shadow root
+      const shadowHost = waveformEl.querySelector('div');
+      if (shadowHost?.shadowRoot) {
+        scrollEl = shadowHost.shadowRoot.querySelector('.scroll');
+        if (!scrollEl) {
+          console.warn('Scrolling the waveform may not scroll the lines superimposed on top');
+        }
+      }
+    }
+
+    waveformOverlays.forEach((waveformOverlay, i) => {
+      const canvas = waveformOverlayRefs.current[i]?.current;
+      const handleScroll = () => {
+        if(scrollEl) canvas.style.transform = `translateX(-${scrollEl.scrollLeft}px)`;
+      };
+      if(scrollEl) scrollEl.addEventListener('scroll', handleScroll);
+      
+      let draw = () => {};
+      if(waveformOverlay.type === 'line-spread-points') {
+        draw = () => drawLineOverlay(canvas, waveformOverlay.values, waveformOverlay.color);
+      } else if (waveformOverlay.type === 'time-stamped-lines') {
+        draw = () => drawTimeStampedOverlay(canvas, waveformOverlay.sections, waveformOverlay.color, waveformOverlay.interval_ms);
+      }
+
+      if (
+        showWaveformLineOverlays &&
+        showWaveformLineOverlays.length === waveformOverlays.length &&
+        showWaveformLineOverlays[i]
+      ){
+        draw();
+        wavesurfer.on('redraw', () => draw);
+        window.addEventListener('resize', draw);
+
+        return () => {
+          wavesurfer.un('redraw', draw);
+          window.removeEventListener('resize', draw);
+          if(scrollEl) scrollEl.removeEventListener('scroll', handleScroll);
+        };
+      } else {
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+    })
+  }, [waveformOverlays, showWaveformLineOverlays, zoomLevel])
+
+  // Will stop drawing when encounters -1 (for missing data), and restart when encounters a valid value
+  const drawLineOverlay = (
+    canvas: HTMLCanvasElement,
+    values: number[],
+    color = 'rgba(0, 200, 255, 0.8)'
+  ) => {
+    const wavesurfer = wavesurferRef.current;
+    const container = waveformRef.current;
+    if (!wavesurfer || !canvas || !container) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const wrapper = wavesurfer.getWrapper();
+    const width = wrapper.scrollWidth;
+    
+    const height = container.clientHeight;
+    canvas.width = width;
+    canvas.height = height;
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+
+    ctx.clearRect(0, 0, width, height);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+
+    const numValues = values.length;
+    let hasStartedPath = false;
+
+    for (let i = 0; i < numValues; i++) {
+      const val = values[i];
+
+      if (val === -1) {
+        if (hasStartedPath) {
+          ctx.stroke(); // End current path before the gap
+          hasStartedPath = false;
+        }
+        continue;
+      }
+      const x = (i / (numValues - 1)) * width;
+      const y = height - val * height;
+      if (!hasStartedPath) {
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        hasStartedPath = true;
+      } else {
+        ctx.lineTo(x, y);
+      }
+    }
+    if (hasStartedPath) {
+      ctx.stroke();
+    }
+  }
+
+  const drawTimeStampedOverlay = (
+    canvas: HTMLCanvasElement,
+    sections: TimeStampedLineOverlaySectionData[],
+    color = 'rgba(0, 200, 255, 0.8)',
+    interval_ms: number,
+  ) => {
+      const wavesurfer = wavesurferRef.current;
+      const container = waveformRef.current;
+      if (!wavesurfer || !canvas || !container) return;
+
+      const duration = wavesurfer.getDuration();
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      canvas.width = width;
+      canvas.height = height;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+
+      ctx.clearRect(0, 0, width, height);
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2;
+
+      const interval = interval_ms / 1000;
+
+      sections.forEach((section: TimeStampedLineOverlaySectionData) => {
+        let isDrawing = false;
+        const start_sec = section.start_ms / 1000;
+
+        for (let i = 0; i < section.values.length; i++) {
+          let x;
+          if (i === 0) {
+            x = ((start_sec + i * interval) / duration) * width;
+          } else {
+            x = ((start_sec + i * interval) / duration) * width;
+          }
+          const y = height - (section.values[i] * height);
+
+          if (!isDrawing) {
+            ctx.moveTo(x, y);
+            isDrawing = true;
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+      ctx.stroke();
+      })
+    }
+
 
   useEffect(() => {
     const ws = wavesurferRef.current;
@@ -335,8 +522,16 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         showRegionGroups,
         setShowRegionGroups,
         regionGroups,
-        // @ts-expect-error OMG whyyy these types so picky
+        // @ts-expect-error Unconsequential type conflict with Wavesurfer Region
         setRegionGroups,
+        waveformOverlayRefs,
+        spectrogramOverlayRefs,
+        waveformOverlays,
+        setWaveformOverlays,
+        spectrogramOverlays,
+        setSpectrogramOverlays,
+        showWaveformLineOverlays,
+        setShowWaveformLineOverlays,
       }}
     >
       {children}

@@ -103,7 +103,7 @@ project_details: [
   },
   requests: [],
   results: {}
-}
+},
 ```
 
 10.	 Use the requests array to add requests to back ends. For instance, to query HuggingFace, use this:
@@ -152,6 +152,7 @@ results: {
 13. If your result involves highlighting regions on the waveform, follow these steps:
 
   -  Make sure your backend returns results in this format somewhere
+
 ```
 {
   "regions": [
@@ -161,39 +162,114 @@ results: {
 },
 ```
 
-  - In portfolio data, input section, make sure you turn allow regions in the audioVizualizerSettings:
+  - In your portfolio data, add regionSetup information to your results. Example using random colors to create regions on the waveform
 
-```
-input: {
-  audioVisualizerSettings: {
-    regions: 'on' | 'userToggleStartOn' | 'userToggleStartOff',
-  },
-}
-```
-
-  - Then in your portfolio data, add regionSetup information to your results. Example using random colors to create regions on the waveform
-  
 ```
 results: {
-  regionSetup: {
-    path: 'data[0][5].regions', // path to the regions array in your data
-    useRandomColors: true,
-  },
+  regionSetup: [
+    {
+      displayText: 'NameOfGroup',
+      default: 'userToggleStartOn' | 'userToggleStartOff' | 'on' | 'off'
+      path: 'data[0].regions', // path to the object thatholds the regions in your backend result
+      defaultColor: 'rgba(0, 123, 255, 0.3)',
+      useRandomColors: true,
+    },
+  ]
 }
 ```
 
   - Example using color mapping based on content:
+
+```
+results: {
+  regionSetup: [
+    {
+      displayText: 'NameOfGroup',
+      default: 'userToggleStartOn',
+      path: 'data[0].regions',
+      colorMappings: [
+        {content: '1+1+3', color: 'rgba(0, 123, 255, 0.3)'},
+      ],
+      defaultColor: 'rgba(255, 162, 0, 0.3)',
+      useRandomColors: false,
+    },
+  ]
+}
+```
+
+  - Example using a default color for all the whole group of regions
   
 ```
 results: {
-  regionSetup: {
-    path: 'data[0][5].regions',
-    colorMappings: [ // Add as many color mappings as needed
-      {type: 'insertion', color: 'rgba(255, 162, 0, 0.3)'},
-    ],
-    defaultColor: 'rgba(0, 123, 255, 0.3)', // optional default color
-    useRandomColors: false,
-  },
+  regionSetup: [
+    {
+      displayText: 'NameOfGroup',
+      default: 'userToggleStartOn',
+      path: 'data[0].regions',
+      defaultColor: 'rgba(0, 123, 255, 0.3)',
+      useRandomColors: false,
+    },
+  ]
+}
+
+14. If your result involves drawing line graphs on the waveform or spectrogram, follow these steps:
+
+For a single line where the points are spread out evenly across the entire waveform/spectrogram, add this setup:
+
+```
+results: {
+  lineOverlaySetup: [
+    {
+      type: 'line-spread-points',
+      overlay: 'waveform' | 'spectrogram',
+      path: 'data[0].line_name', // example path name to link to data from backend
+      values: [], // leave this empty
+      max: 1, // maximum possible value in your data
+      min: 0, // min possible value in your data
+  normalized_min?: // relates to where you want to draw the line on the waveform for the y-axis. Use 0.5 if you want the line to appear only on the top half (best for waveforms), or 0 if you want the min value of the line to reach the bottom (e.g, best for spectrograms)
+  normalized_max?: // relates to where you want to draw the line on the waveform for the y-axis. Use 1 if you want the max value of the line to appear at the top of the waveform/spectrogram
+      color: '#ff7975',
+      displayText: 'Line Name',
+      default: 'userToggleStartOn' | 'userToggleStartOff' | 'on' | 'off',
+    },
+  ],
 }
 ```
-  
+
+In the results from your backend, make sure you have this:
+
+```
+{ line_name: [2, 3, 6, 100, 133, 0...] }
+```
+
+For a line that's broken into time-stamped sections, add this setup:
+
+```
+results: {
+  lineOverlaySetup: [
+    {
+      type: 'time-stamped-lines',
+      overlay: 'waveform' | 'spectrogram',
+      path: 'data[0].line_name,
+      interval_ms: 1, // The distance between each point in ms
+      min: 0,
+      max: 1,
+      sections: [], // leave as an empty array
+      color: '#00bcee',
+      displayText: 'Line Name',
+      default: 'userToggleStartOn' | 'userToggleStartOff' | 'on' | 'off',
+    },
+  ],
+}
+```
+
+Make sure your results include the results in this format:
+
+```
+line_name: [
+  {
+    start_ms: 500,
+    values: [0.1, 0.2, ...],
+  },
+],
+```

@@ -214,12 +214,14 @@ export type SampleFile = {
   sampleResults?: 
     Kaysrubio_speech_transcribe_result | 
     ClassificationArray | 
-    Kaysrubio_sperm_whalish_results,
+    Kaysrubio_sperm_whalish_results | 
+    AudioFeatureExtractionResult,
 }
 
 export type CustomSection = {
   displayText: string,
-  elements: ProjectDetailComponent[]
+  elements: ProjectDetailComponent[],
+  size?: 'half-screen' | 'full-screen',
 }
 
 export type Request = {
@@ -232,7 +234,8 @@ export type Request = {
 
 export type Result = {
   tabs?: ResultTab[],
-  regionSetup?: RegionSetup[]
+  regionSetup?: RegionSetup[],
+  lineOverlaySetup?: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[];
 }
 
 export type RegionSetup = {
@@ -287,6 +290,42 @@ export type RegionOnWaveform = {
   drag?: boolean;
   resize?: boolean;
 };
+
+export type LineSpreadPointsOverlaySetup = {
+	type: 'line-spread-points',
+  overlay: 'waveform' | 'spectrogram',
+  path: string,
+  default: SettingsOptions,
+	values: number[],
+	max: number,
+	min: number,
+	normalized_min?: number,
+	normalized_max?: number,
+	color: string,
+	displayText: string,
+}
+
+export type TimeStampedLineOverlaySetup = {
+	type: 'time-stamped-lines',
+  overlay: 'waveform' | 'spectrogram',
+  path: string,
+  default: SettingsOptions,
+	sections: TimeStampedLineOverlaySectionData[],
+	color: string,
+	displayText: string,
+  interval_ms: number,
+  max: number,
+  min: number,
+  normalized_min?: number,
+  normalized_max?: number
+}
+
+export type TimeStampedLineOverlaySectionData = {
+  start_ms: number,
+  end_ms?: number,
+  values: number[],
+}
+
 
 export type Kaysrubio_speech_transcribe_result = {
 	data: [
@@ -349,3 +388,18 @@ export type SpermWhaleCodaResult = {
   inter_click_interval_durations: number[],
   content: string,
 }
+
+export type AudioFeatureExtractionResult = {
+	data: [{ 
+		amplitude_envelope: number[],
+		root_mean_square_energy: number[],
+		zero_crossing_rate: number[],
+		mfccs: number[][],
+		delta_mfccs: number[][],
+		spectral_centroid: number[],
+		spectral_bandwidth: number[]
+  }]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+	[key: string]: any;
+}
+

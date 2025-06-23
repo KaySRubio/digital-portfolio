@@ -733,14 +733,25 @@ form button {
   width: 340px;
 }
 
-.demo-directions {
+.half-screen {
   width: 340px;
 }
 
-.demo-directions p {
-  padding: 10px;
+.full-screen {
+  width: 100%;
+}
+
+.demo-custom-section {
+  padding: 0px;
+}
+
+.demo-custom-section p, ol, ul, li {
   font-size: 14px;
-  margin: 0;
+  margin: 0 !important;
+}
+
+.demo-custom-section-content {
+  padding: 10px;
 }
 
 .demo-sample-image {
@@ -1177,15 +1188,24 @@ form button {
 
 .visualizer-body {
   height: 200px;
-  width: 96%;
-  padding: 5px 2%;
+  width: 100%;
+  padding: 0;
+  display: flex;
 }
 
 .waveform-area {
   width: 100%;
   height: 200px;
-  margin: 30px 0 0 0;
+  /*margin: 30px 0 0 0; */
+  margin: 0;
   padding: 0;
+
+}
+
+.waveform-overlay {
+  position: absolute;
+  z-index: 500;
+  pointer-events: none;
 }
 
 .spectrogram-area {

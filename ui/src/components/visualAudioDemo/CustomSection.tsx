@@ -9,13 +9,16 @@ type CustomSectionProps = {
 export type AudioInput = 'Preloaded' | 'Record' | 'Upload';
 
 export default function CustomSection({data}: CustomSectionProps) {
+  if(!data.size) data.size='half-screen';
   
   return (
-    <div className={`interactive-box demo-directions`}>
+    <div className={`interactive-box demo-custom-section ${data.size}`}>
       <div className='interactive-box-header'>
         <h3>{data.displayText}</h3>
       </div>
-      { data.elements.map((el, idx) => renderComponent(el, idx))}
+      <div className='demo-custom-section-content'>
+        {data.elements.map((el, idx) => renderComponent(el, idx))}
+      </div>
     </div>
   );
 }
