@@ -804,6 +804,7 @@ form button {
   height: 50px;
   list-style: none;
   display: flex;
+  border-top: 2px solid var(--Speech_dark_blue_gray);
 }
 
 .interactive-box-menu-item {

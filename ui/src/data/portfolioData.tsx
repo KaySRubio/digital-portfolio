@@ -154,7 +154,7 @@ export const projects: Project[] = [
           audioVisualizerSettings: {
             zoom: true,
             changeSpeed: true,
-            spectrogram: 'on',
+            spectrogram: 'userToggleStartOff',
           },
           sampleAudio: [
             {

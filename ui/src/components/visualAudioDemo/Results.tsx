@@ -97,7 +97,8 @@ export default function Results({ data }: ResultsProps) {
               const values: number[] = get(resultFromBackend, lineOverlaySetup.path, []);
               // Apply min-max normalization to the values so they now range from 0.5 - 1 and 
               // will be drawn in good locations on waveform
-              console.log('for ', lineOverlaySetup.displayText, ' the max is: ', Math.max(...values), ' and min is ', Math.min(...values) )
+              // KEEP this console log which makes it easy to look up min/max of new values
+              // console.log('for ', lineOverlaySetup.displayText, ' the max is: ', Math.max(...values), ' and min is ', Math.min(...values) )
               const normalizedValues: number[] = applyNormalization(
                 values,
                 lineOverlaySetup.min,

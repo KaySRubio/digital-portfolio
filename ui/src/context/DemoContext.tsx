@@ -197,8 +197,19 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     });
 
     return () => {
-      ws.destroy();
-      regionsPlugin.un('region-clicked', handleRegionClick);
+      try {
+        wavesurferRef.current?.destroy();
+      } catch (e) {
+        console.warn('WaveSurfer destroy error:', e);
+      } finally {
+        wavesurferRef.current = null;
+      }
+
+      try {
+        regionsPluginRef.current?.un('region-clicked', handleRegionClick);
+      } catch (e) {
+        console.warn('Region plugin cleanup error:', e);
+      }
     };
   }, []);
 
@@ -230,23 +241,49 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     }
   };
 
-  useEffect(() => {
-    if(!fileAvailable) return;
-    if(showSpectrogram && wavesurferRef.current && spectrogramContainerRef.current) {
-      const spectrogram = SpectrogramPlugin.create({
-        container: spectrogramContainerRef.current,
-        labels: true,
-        fftSamples: 2048, // 2048 use with max of 4000Hz, or increase to 4096 or 8192 for higher frequencies, but will worsen performance
-        frequencyMax: 4000,
-        frequencyMin: 0,
-      });
-      wavesurferRef.current.registerPlugin(spectrogram);
+  const spectrogramInitializedRef = useRef(false);
+
+useEffect(() => {
+  const ws = wavesurferRef.current;
+  const container = spectrogramContainerRef.current;
+
+  if (
+    fileAvailable &&
+    visualizerType === 'Spectrogram' &&
+    ws &&
+    container
+  ) {
+    const spectrogram = SpectrogramPlugin.create({
+      container,
+      labels: true,
+      // 2048 use with max of 4000Hz, or increase to 4096 or 8192 for higher frequencies, but will worsen performance
+      fftSamples: 2048,
+      frequencyMax: 4000,
+      frequencyMin: 0,
+    });
+
+    try {
+      ws.registerPlugin(spectrogram);
       spectrogramRef.current = spectrogram;
-    } else {
-      spectrogramRef.current?.destroy();
-      spectrogramRef.current = null;
+      spectrogramInitializedRef.current = true;
+    } catch (e) {
+      console.warn('Failed to register spectrogram plugin:', e);
     }
-  }, [showSpectrogram, fileAvailable])
+  }
+
+  return () => {
+    if (spectrogramInitializedRef.current && spectrogramRef.current) {
+      try {
+        spectrogramRef.current.destroy();
+      } catch (e) {
+        console.warn('Error destroying spectrogram plugin:', e);
+      } finally {
+        spectrogramRef.current = null;
+        spectrogramInitializedRef.current = false;
+      }
+    }
+  };
+}, [fileAvailable, visualizerType]);
 
   useEffect(() => {
     if(!wavesurferRef.current || !fileAvailable) return;
@@ -374,7 +411,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         window.addEventListener('resize', draw);
 
         return () => {
-          wavesurfer.un('redraw', draw);
+          if (wavesurfer) wavesurfer.un('redraw', draw);
           window.removeEventListener('resize', draw);
           if(scrollEl) scrollEl.removeEventListener('scroll', handleScroll);
         };
@@ -417,7 +454,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         window.addEventListener('resize', draw);
 
         return () => {
-          wavesurfer.un('redraw', draw);
+          if(wavesurfer) wavesurfer.un('redraw', draw);
           window.removeEventListener('resize', draw);
         };
       } else {
