@@ -154,6 +154,7 @@ export const projects: Project[] = [
           audioVisualizerSettings: {
             zoom: true,
             changeSpeed: true,
+            spectrogram: 'on',
           },
           sampleAudio: [
             {
@@ -193,6 +194,7 @@ export const projects: Project[] = [
               color: '#ff7975',
               displayText: 'Amplitude Envelope',
               default: 'userToggleStartOn',
+              moreInfo: 'Amplitude envelope (AE) is a time-domain audio feature where the maximum amplitude of all samples within a frame is extracted. It gives an estimate of loudness, but is sensitive to outliers. Used for detecting sound onset, music genre classification, and speech processing.',
             },
             {
               type: 'line-spread-points',
@@ -204,6 +206,7 @@ export const projects: Project[] = [
               color: '#00bcee',
               displayText: 'Root-mean-square Energy',
               default: 'userToggleStartOn',
+              moreInfo: 'Root-mean-square energy (RMS) is a time-domain audio feature where a root-mean-square of energy of all samples in each frame is taken. It gives an estimate of loudness, and is less sensitive to outliers than amplitude envelope. Used for detecting sound onset, music genre classification, segmenting speech into meaningful units like phonemes, and analyzing speech prosody, emotion, etc.'
             },
             {
               type: 'line-spread-points',
@@ -215,6 +218,19 @@ export const projects: Project[] = [
               color: '#24ee00',
               displayText: 'Zero-crossing Rate',
               default: 'userToggleStartOn',
+              moreInfo: 'Zero-crossing rate (ZCR) is a time-domain audio feature that measures the number of times an audio signal crosses the horizontal axis.  The horizontal axis represents an amplitude of 0. Speech tends to have a higher ZCR than music, singing, or periods of silence, so ZCR can be a rough way to detect different types of sound. Different speech sounds also have different ZCR\'s, so ZCR can help identify different phonemes.'
+            },
+            {
+              type: 'line-spread-points',
+              overlay: 'spectrogram',
+              path: 'data[0].spectral_centroid',
+              values: [],
+              min: 0,
+              max: 4000,
+              color: '#24ee00',
+              displayText: 'Spectral Centroid',
+              default: 'userToggleStartOn',
+              moreInfo: 'Spectral centroid is a frequency domain audio feature that measures the frequency band where most energy is concentrated, analogous to taking the average of all frequencies.',
             }
           ]
         }

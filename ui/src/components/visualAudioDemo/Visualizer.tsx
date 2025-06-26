@@ -7,7 +7,7 @@ import waveIcon  from '@/assets/svg/wave_diagram.svg';
 import spectrogramIcon  from '@/assets/svg/spectrogram.svg';
 import type { DemoBoard } from '../../types/portfolioTypes';
 
-type VisualizerType = 'Waveform' | 'Spectrogram';
+// type VisualizerType = 'Waveform' | 'Spectrogram';
 
 type VizualizerProps = {
   data: DemoBoard,
@@ -15,10 +15,14 @@ type VizualizerProps = {
 
 type ToggleSetup = {
   displayText: string,
-  isOn: boolean,
   onToggle: () => void
   moreInformation: boolean,
-  onMoreInformationClick?: () => void;
+  onMoreInformationClick: () => void;
+}
+
+type HelpInfo = {
+  show: boolean,
+  text: string
 }
 
 export default function Visualizer({data}: VizualizerProps) {
@@ -39,20 +43,31 @@ export default function Visualizer({data}: VizualizerProps) {
     showRegionGroups,
     setShowRegionGroups,
     waveformOverlayRefs,
-    // spectrogramOverlayRefs,
+    spectrogramOverlayRefs,
     waveformOverlays,
     setWaveformOverlays,
-    // spectrogramOverlays,
-    // setSpectrogramOverlays,
+    spectrogramOverlays,
+    setSpectrogramOverlays,
     showWaveformLineOverlays,
     setShowWaveformLineOverlays,
+    showSpectrogramLineOverlays,
+    setShowSpectrogramLineOverlays,
+    visualizerType,
+    setVisualizerType,
   } = useDemoContext();
 
-  const [visualizerType, setVisualizerType] = useState<VisualizerType>('Waveform');
-  const [isSpectrogramPopoverOpen, setIsSpectrogramPopoverOpen] = useState(false);
+  // const [visualizerType, setVisualizerType] = useState<VisualizerType>('Waveform');
   const [showSpectrogramHelp, setShowSpectrogramHelp] = useState(false);
   const [showSpectrogramOffHelp, setShowSpectrogramOffHelp] = useState(false);
+
+  // Set up different types of toggles and associated help text for different state groups
+  // They have to be in separate groups because the 'checked' property can't be passed as a property
+  const [regionToggles, setRegionToggles] = useState<ToggleSetup[]>([]);
+  const [regionHelp, setRegionHelp] = useState<HelpInfo[]>([]);
   const [waveformLineOverlayToggles, setWaveformLineOverlayToggles] = useState<ToggleSetup[]>([]);
+  const [waveformLineOverlayHelp, setWaveformLineOverlayHelp] = useState<HelpInfo[]>([]);
+  const [spectrogramLineOverlayToggles, setSpectrogramLineOverlayToggles] = useState<ToggleSetup[]>([]);
+  const [spectrogramLineOverlayHelp, setSpectrogramLineOverlayHelp] = useState<HelpInfo[]>([]);
 
   const spectrogramHelpText = 'Spectrograms are awesome! ...but they are also large and may slow down the page so turn on with caution.'
   const spectrogramOffHelpText = 'Refresh the browser tab to turn off the spectrogram'
@@ -64,25 +79,18 @@ export default function Visualizer({data}: VizualizerProps) {
   const speedSetting = data.input?.audioVisualizerSettings?.changeSpeed;
   const lineOverlaySetup = data.results?.lineOverlaySetup;
 
-  if (regionGroups && regionGroups.length > 0) {
-    // Set up a variable in a state array
-    regionGroups.forEach((regionGroup, i) => {
-      toggles.push({
-        displayText: regionGroup.displayText,
-        isOn: showRegionGroups[i],
-        onToggle: () => {
-            setShowRegionGroups(prev => {
-              const updated = [...prev];
-                updated[i] = !showRegionGroups[i];
-                return updated;
-            }
-          )
-        },
-      moreInformation: false,
-      })
-    }) 
-  }
 
+  // Set visualizer default settings for spectrogram and zoom
+  useEffect(() => {
+    if (spectrogramSetting === 'on' || spectrogramSetting === 'userToggleStartOn') {
+      setShowSpectrogram(true);
+    }
+    if(zoomSetting) {
+      setShowZoom(true);
+    }
+  }, [data.input?.audioVisualizerSettings?.spectrogram, data.input?.audioVisualizerSettings?.zoom])
+  
+  // Set up basic toggles that don't use a toggle in state
   if (spectrogramSetting === 'userToggleStartOn' || spectrogramSetting === 'userToggleStartOff') {
     toggles.push(
       {
@@ -96,7 +104,6 @@ export default function Visualizer({data}: VizualizerProps) {
           }
         },
         moreInformation: true,
-        onMoreInformationClick: () => setIsSpectrogramPopoverOpen(!isSpectrogramPopoverOpen), // set up react-popover?
       }
     )
   }
@@ -127,29 +134,59 @@ export default function Visualizer({data}: VizualizerProps) {
     </>
   )
 
-  // Set visualizer default settings
+  // Set up toggles for groups of regions and regionHelp
   useEffect(() => {
-    if(regionGroups && regionGroups.length > 0) {
+    if (regionGroups && regionGroups.length > 0) {
+      const newRegionToggles: ToggleSetup[] = [];
+      const helpInfoGroup: HelpInfo[] = []
       regionGroups.forEach((regionGroup, i) => {
-        let toggleShouldStartOn = false;
-        if (regionGroup.default === 'on' || regionGroup.default === 'userToggleStartOn') {
-          toggleShouldStartOn = true;
-        }
-        setShowRegionGroups(prev => {
+
+      // Set up default setting, if toggle starts on or off
+      let toggleShouldStartOn = false;
+      if (regionGroup.default === 'on' || regionGroup.default === 'userToggleStartOn') {
+        toggleShouldStartOn = true;
+      }
+      setShowRegionGroups(prev => {
+        const updated = [...prev];
+        updated[i] = toggleShouldStartOn;
+        return updated;
+      }) 
+
+      newRegionToggles.push({
+        displayText: regionGroup.displayText,
+        onToggle: () => {
+            setShowRegionGroups(prev => {
+              const updated = [...prev];
+                updated[i] = !prev[i];
+                return updated;
+            }
+          )
+        },
+        moreInformation: regionGroup.moreInfo ? true : false,
+        onMoreInformationClick: () => {
+          setRegionHelp((prev) => {
             const updated = [...prev];
-            updated[i] = toggleShouldStartOn;
+            updated[i] = {
+              ...updated[i],
+              show: !updated[i].show,
+            };
             return updated;
-          })
-        
-      })
+            })
+          }
+        })
+      
+        const helpInfo = {
+          show: false,
+          text: regionGroup.moreInfo ? regionGroup.moreInfo : ''
+        }
+        helpInfoGroup.push(helpInfo);
+      
+      }) 
+      setRegionToggles(newRegionToggles);
+      setRegionHelp(helpInfoGroup);
     }
-    if (spectrogramSetting === 'on' || spectrogramSetting === 'userToggleStartOn') {
-      setShowSpectrogram(true);
-    }
-    if(zoomSetting) {
-      setShowZoom(true);
-    }
-  }, [data.results?.regionSetup, data.input?.audioVisualizerSettings?.spectrogram])
+  }, [data.results?.regionSetup])
+
 
   // Set up canvases for drawing on top of the waveform & spectrogram
   useEffect(() => {
@@ -158,7 +195,6 @@ export default function Visualizer({data}: VizualizerProps) {
 
       if(waveformCanvasOverlays.length > 0) {
         setWaveformOverlays(waveformCanvasOverlays);
-        // waveformOverlayRefs.current = waveformCanvasOverlays.map((_, i) => waveformOverlayRefs.current[i] ?? createRef());
         waveformOverlayRefs.current = waveformCanvasOverlays.map((_, i) =>
           waveformOverlayRefs.current[i] ?? createRef<HTMLCanvasElement>()
         );
@@ -175,33 +211,105 @@ export default function Visualizer({data}: VizualizerProps) {
         setShowWaveformLineOverlays(onOffSettings);
       }
       // TODO - add spectrogram canvases
+      const spectrogramCanvasOverlays = lineOverlaySetup.filter(lineOverlay => lineOverlay.overlay === 'spectrogram' && lineOverlay.default !== 'off');
+      if(spectrogramCanvasOverlays.length > 0) {
+        setSpectrogramOverlays(spectrogramCanvasOverlays);
+        spectrogramOverlayRefs.current = spectrogramCanvasOverlays.map((_, i) =>
+          spectrogramOverlayRefs.current[i] ?? createRef<HTMLCanvasElement>()
+        );
+
+        // Set up the state to show/hide the spectrogram overlays
+        const onOffSettings: boolean[] = [];
+         spectrogramCanvasOverlays.forEach((spectrogramCanvasOverlay) => {
+          if(spectrogramCanvasOverlay.default === 'on' || spectrogramCanvasOverlay.default === 'userToggleStartOn') {
+            onOffSettings.push(true);
+          } else {
+            onOffSettings.push(false);
+          }
+        })
+        setShowSpectrogramLineOverlays(onOffSettings);
+      }
     }
   }, [data.results?.lineOverlaySetup])
 
 
-  // Set up toggles for waveforms
+  // Set up toggles for drawing lines on the waveforms
   useEffect(() => {
     const newToggles: ToggleSetup[] = [];
+    const helpInfoGroup: HelpInfo[] = [];
     waveformOverlays.forEach((waveformOverlay, i) => {
       const newToggle = {
         displayText: waveformOverlay.displayText,
-        isOn: showWaveformLineOverlays[i],
-        onToggle: () => {
-            setShowWaveformLineOverlays(prev => {
-              const updated = [...prev];
-                updated[i] = !showWaveformLineOverlays[i];
-                return updated;
-            }
-          )
-        },
-        moreInformation: false, // TODO - set up
-        // onMoreInformationClick?: () => void;
+        moreInformation: waveformOverlay.moreInfo ? true : false,
+        onToggle: () =>
+          setShowWaveformLineOverlays(prev => {
+            const updated = [...prev];
+            updated[i] = !prev[i];
+            return updated;
+          }
+        ),
+        onMoreInformationClick: () => {
+          setWaveformLineOverlayHelp((prev) => {
+            const updated = [...prev];
+            updated[i] = {
+              ...updated[i],
+              show: !updated[i].show,
+            };
+            return updated;
+          })
+        }
       }
+        
       newToggles.push(newToggle);
+
+      const helpInfo = {
+        show: false,
+        text: waveformOverlay.moreInfo ? waveformOverlay.moreInfo : ''
+      }
+      helpInfoGroup.push(helpInfo);
     })
     setWaveformLineOverlayToggles(newToggles);
+    setWaveformLineOverlayHelp(helpInfoGroup);
   }, [waveformOverlays])
 
+  // Set up toggles for drawing lines on the spectrogram
+  useEffect(() => {
+    const newToggles: ToggleSetup[] = [];
+    const helpInfoGroup: HelpInfo[] = [];
+    spectrogramOverlays.forEach((spectrogramOverlay, i) => {
+      const newToggle = {
+        displayText: spectrogramOverlay.displayText,
+        moreInformation: spectrogramOverlay.moreInfo ? true : false,
+        onToggle: () =>
+          setShowSpectrogramLineOverlays(prev => {
+            const updated = [...prev];
+            updated[i] = !prev[i];
+            return updated;
+          }
+        ),
+        onMoreInformationClick: () => {
+          setSpectrogramLineOverlayHelp((prev) => {
+            const updated = [...prev];
+            updated[i] = {
+              ...updated[i],
+              show: !updated[i].show,
+            };
+            return updated;
+          })
+        }
+      }
+        
+      newToggles.push(newToggle);
+
+      const helpInfo = {
+        show: false,
+        text: spectrogramOverlay.moreInfo ? spectrogramOverlay.moreInfo : ''
+      }
+      helpInfoGroup.push(helpInfo);
+    })
+    setSpectrogramLineOverlayToggles(newToggles);
+    setSpectrogramLineOverlayHelp(helpInfoGroup);
+  }, [spectrogramOverlays])
 
   return (
     <div className={`interactive-box visualizer`}>
@@ -225,6 +333,26 @@ export default function Visualizer({data}: VizualizerProps) {
             </div>
           </div>
         ))}
+        {
+          regionToggles.length > 0 &&
+          regionToggles.length === showRegionGroups.length &&
+          regionToggles.map((toggle, i) => (
+            <div className="toggle-option" key={`toggle-option-${i}`}>
+            <label htmlFor={`toggle-${i}`}>{toggle.displayText}</label>
+            <div className="toggle-and-button">
+              <Toggle
+                id={`toggle-${i}`}
+                checked={showRegionGroups[i]}
+                onChange={toggle.onToggle}
+              />
+              {toggle.moreInformation && (
+                <MoreInformation onClick={toggle.onMoreInformationClick} />
+              )}
+            </div>
+          </div>
+          ))
+        }
+
         {waveformLineOverlayToggles.length > 0 &&
           waveformLineOverlayToggles.length === showWaveformLineOverlays.length && 
           waveformLineOverlayToggles.map((toggle, i) => (
@@ -234,21 +362,33 @@ export default function Visualizer({data}: VizualizerProps) {
               <Toggle
                 id={`toggle-${i}`}
                 checked={showWaveformLineOverlays[i]}
-                onChange={ () =>
-                  setShowWaveformLineOverlays(prev => {
-                    const updated = [...prev];
-                      updated[i] = !showWaveformLineOverlays[i];
-                      return updated;
-                  }
-                )
-                }
+                onChange={toggle.onToggle}
               />
               {toggle.moreInformation && (
-                <MoreInformation onClick={() => {setShowSpectrogramHelp((prev) => (!prev))}} />
+                <MoreInformation onClick={toggle.onMoreInformationClick} />
               )}
             </div>
           </div>
         ))}
+
+        {spectrogramLineOverlayToggles.length > 0 &&
+         spectrogramLineOverlayToggles.length === showSpectrogramLineOverlays.length && 
+          spectrogramLineOverlayToggles.map((toggle, i) => (
+          <div className="toggle-option" key={`toggle-option-${i}`}>
+            <label htmlFor={`toggle-${i}`}>{toggle.displayText}</label>
+            <div className="toggle-and-button">
+              <Toggle
+                id={`toggle-${i}`}
+                checked={showSpectrogramLineOverlays[i]}
+                onChange={toggle.onToggle}
+              />
+              {toggle.moreInformation && (
+                <MoreInformation onClick={toggle.onMoreInformationClick} />
+              )}
+            </div>
+          </div>
+        ))}
+
         {showZoom && 
           <div className="toggle-option">
             <label htmlFor="zoom">Zoom</label>
@@ -296,14 +436,30 @@ export default function Visualizer({data}: VizualizerProps) {
       <h4 className='sr-only'>Waveform and Spectrogram</h4>
       {showSpectrogramHelp && <p className='visualizer-help-text'>{spectrogramHelpText}</p>}
       {showSpectrogramOffHelp && <p className='visualizer-help-text'>{spectrogramOffHelpText}</p>}
-      
-      <div className='visualizer-body'>
+      {regionHelp.map((helpInfo, i) => helpInfo.show && <p key={i} className='visualizer-help-text'>{helpInfo.text}</p>)}
+      {waveformLineOverlayHelp.map((helpInfo, i) => helpInfo.show && <p key={i} className='visualizer-help-text'>{helpInfo.text}</p>)}
+      {spectrogramLineOverlayHelp.map((helpInfo, i) => helpInfo.show && <p key={i} className='visualizer-help-text'>{helpInfo.text}</p>)}
+
+      {/* waveform zoom +canvases needs position: relative, but seems to disturb spectrogram from showing up */}
+      <div
+        className={`visualizer-body ${visualizerType === 'Waveform' ? 'visualizer-body-waveform' : 'visualizer-body-spectrogram'}`}
+      >
         {/* To show spectrogram, waveform needs to be rendered, not hidden or opacity: 0 in any way */}
         <div 
           id='waveform'
           ref={waveformRef}
           className={`waveform-area ${visualizerType !== 'Waveform' ? 'offscreen' : ''}`}
         />
+        {showSpectrogram && <>
+          <div className={`spinner-wrapper-absolute ${visualizerType === 'Spectrogram' ? '' : 'hidden'}`}>
+            <div className="spinner" />
+          </div>
+          <div 
+            id='spectrogram'
+            ref={spectrogramContainerRef}
+            className={`spectrogram-area ${visualizerType !== 'Spectrogram' ? 'offscreen' : ''}`}
+          />
+        </>}
         {waveformOverlays.map((_, index) => (
           <canvas
             key={index}
@@ -311,13 +467,14 @@ export default function Visualizer({data}: VizualizerProps) {
             className='waveform-overlay'
           />
         ))}
-        {showSpectrogram && <div 
-          id='spectrogram'
-          ref={spectrogramContainerRef}
-          className={`spectrogram-area ${visualizerType !== 'Spectrogram' ? 'offscreen' : ''}`}
-        />}
+        {spectrogramOverlays.map((_, index) => (
+          <canvas
+            key={index}
+            ref={spectrogramOverlayRefs.current[index]}
+            className='spectrogram-overlay'
+          />
+        ))}
       </div>
-
     </div>
   );
 }

@@ -12,9 +12,20 @@ import type {
   LineSpreadPointsOverlaySetup,
   TimeStampedLineOverlaySetup,
   TimeStampedLineOverlaySectionData,
+  VisualizerType,
 } from "../types/portfolioTypes";
 
+
+
 type DemoContextType = {
+  waveformRef: RefObject<HTMLDivElement | null>;
+  wavesurferRef: React.RefObject<WaveSurfer | null>;
+  recordPluginRef: React.RefObject<InstanceType<typeof RecordPlugin> | null>;
+  spectrogramContainerRef: RefObject<HTMLDivElement | null>;
+  spectrogramRef: React.RefObject<InstanceType<typeof SpectrogramPlugin> | null>;
+  waveformOverlayRefs: RefObject<RefObject<HTMLCanvasElement>[]>;
+  spectrogramOverlayRefs: RefObject<RefObject<HTMLCanvasElement>[]>;
+
   isRecording: boolean;
   setIsRecording: React.Dispatch<React.SetStateAction<boolean>>;
   userInputUrl: string;
@@ -27,12 +38,6 @@ type DemoContextType = {
   setSampleFileUrl: React.Dispatch<React.SetStateAction<string>>;
   uploadedFileError: string;
   setUploadedFileError: React.Dispatch<React.SetStateAction<string>>;
-  waveformRef: RefObject<HTMLDivElement | null>;
-  wavesurferRef: React.RefObject<WaveSurfer | null>;
-  recordPluginRef: React.RefObject<InstanceType<typeof RecordPlugin> | null>;
-  spectrogramContainerRef: RefObject<HTMLDivElement | null>;
-  spectrogramRef: React.RefObject<InstanceType<typeof SpectrogramPlugin> | null>;
-  waveformOverlayRefs: RefObject<RefObject<HTMLCanvasElement>[]>;
   showSpectrogram: boolean;
   setShowSpectrogram: React.Dispatch<React.SetStateAction<boolean>>;
   audioPlaying: boolean;
@@ -70,6 +75,10 @@ type DemoContextType = {
   setSpectrogramOverlays: React.Dispatch<React.SetStateAction<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[]>>;
   showWaveformLineOverlays: boolean[];
   setShowWaveformLineOverlays: React.Dispatch<React.SetStateAction<boolean[]>>;
+  showSpectrogramLineOverlays: boolean[];
+  setShowSpectrogramLineOverlays: React.Dispatch<React.SetStateAction<boolean[]>>;
+  visualizerType: VisualizerType;
+  setVisualizerType: React.Dispatch<React.SetStateAction<VisualizerType>>;
 };
 
 const DemoContext = createContext<DemoContextType | undefined>(undefined);
@@ -86,7 +95,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const regionsPluginRef = useRef<InstanceType<typeof RegionsPlugin> | null>(null);
   const spectrogramRef = useRef<InstanceType<typeof SpectrogramPlugin> | null>(null);
   const waveformOverlayRefs = useRef<React.RefObject<HTMLCanvasElement>[]>([]);
-  const spectrogramOverlayRefs = useRef<HTMLCanvasElement[]>([]);
+  const spectrogramOverlayRefs = useRef<React.RefObject<HTMLCanvasElement>[]>([]);
 
   const [isRecording, setIsRecording] = useState(false);
   const [userInputUrl, setUserInputUrl] = useState<string>('');
@@ -110,6 +119,8 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const [waveformOverlays, setWaveformOverlays] = useState<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[]>([]);
   const [spectrogramOverlays, setSpectrogramOverlays] = useState<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[]>([]);
   const [showWaveformLineOverlays, setShowWaveformLineOverlays] = useState<boolean[]>([]);
+  const [showSpectrogramLineOverlays, setShowSpectrogramLineOverlays] = useState<boolean[]>([]);
+  const [visualizerType, setVisualizerType] = useState<VisualizerType>('Waveform');
 
   useEffect(() => {
     if (!waveformRef.current) return;
@@ -192,11 +203,42 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   }, []);
 
   useEffect(() => {
+    setResultFromBackend(null);
+  }, [userInputUrl, uploadedFileUrl, sampleFileUrl])
+  
+  useEffect(() => {
+    const ws = wavesurferRef.current;
+    if (!ws) return;
+    const urlToLoad = uploadedFileUrl || sampleFileUrl || userInputUrl;
+    if (urlToLoad) {
+      ws.load(urlToLoad);
+    } else {
+      ws.empty();
+    }
+  }, [uploadedFileUrl, userInputUrl, sampleFileUrl]);
+
+  const onPlay = () => {
+    if (wavesurferRef.current) {
+      const isPlaying = wavesurferRef.current.isPlaying();
+      if (isPlaying) {
+        wavesurferRef.current.pause();
+        setAudioPlaying(false);
+      } else {
+        wavesurferRef.current.play();
+        setAudioPlaying(true);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if(!fileAvailable) return;
     if(showSpectrogram && wavesurferRef.current && spectrogramContainerRef.current) {
       const spectrogram = SpectrogramPlugin.create({
         container: spectrogramContainerRef.current,
         labels: true,
-        fftSamples: 2048,
+        fftSamples: 2048, // 2048 use with max of 4000Hz, or increase to 4096 or 8192 for higher frequencies, but will worsen performance
+        frequencyMax: 4000,
+        frequencyMin: 0,
       });
       wavesurferRef.current.registerPlugin(spectrogram);
       spectrogramRef.current = spectrogram;
@@ -204,8 +246,29 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       spectrogramRef.current?.destroy();
       spectrogramRef.current = null;
     }
-  }, [showSpectrogram])
+  }, [showSpectrogram, fileAvailable])
 
+  useEffect(() => {
+    if(!wavesurferRef.current || !fileAvailable) return;
+    const ws = wavesurferRef.current;
+    ws.setPlaybackRate(playbackSpeed, preservePitch)
+  }, [playbackSpeed, preservePitch, fileAvailable])
+
+  useEffect(() => {
+    if(!wavesurferRef.current || !fileAvailable) return;
+    if(showZoom) {
+      const ws = wavesurferRef.current;
+      ws.registerPlugin(
+        TimelinePlugin.create(),
+      )
+    }
+  }, [showZoom])
+
+  useEffect(() => {
+    if(!wavesurferRef.current || !fileAvailable) return;
+    const ws = wavesurferRef.current;
+    ws.zoom(zoomLevel);
+  }, [zoomLevel])
   
   const updateRegions = () => {
     if(wavesurferRef.current && regionsPluginRef.current) {
@@ -241,28 +304,6 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     }
   };
 
-  useEffect(() => {
-    if(!wavesurferRef.current || !fileAvailable) return;
-    const ws = wavesurferRef.current;
-    ws.setPlaybackRate(playbackSpeed, preservePitch)
-  }, [playbackSpeed, preservePitch])
-
-  useEffect(() => {
-    if(!wavesurferRef.current || !fileAvailable) return;
-    if(showZoom) {
-      const ws = wavesurferRef.current;
-      ws.registerPlugin(
-        TimelinePlugin.create(),
-      )
-    }
-  }, [showZoom])
-
-  useEffect(() => {
-    if(!wavesurferRef.current || !fileAvailable) return;
-    const ws = wavesurferRef.current;
-    ws.zoom(zoomLevel);
-  }, [zoomLevel])
-  
   useEffect(() => {
     if(!wavesurferRef.current ||
       !regionsPluginRef.current ||
@@ -325,7 +366,8 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       if (
         showWaveformLineOverlays &&
         showWaveformLineOverlays.length === waveformOverlays.length &&
-        showWaveformLineOverlays[i]
+        showWaveformLineOverlays[i] &&
+        resultFromBackend && visualizerType === 'Waveform'
       ){
         draw();
         wavesurfer.on('redraw', () => draw);
@@ -337,30 +379,88 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
           if(scrollEl) scrollEl.removeEventListener('scroll', handleScroll);
         };
       } else {
-        const ctx = canvas.getContext('2d');
-        if (ctx) {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        if(canvas) {
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          }
         }
       }
     })
-  }, [waveformOverlays, showWaveformLineOverlays, zoomLevel])
+  }, [waveformOverlays, showWaveformLineOverlays, zoomLevel, resultFromBackend, visualizerType])
+
+  useEffect(() => {
+    if(!wavesurferRef.current ||
+      !fileAvailable ||
+      spectrogramOverlays.length < 1
+    ) return;
+    const wavesurfer = wavesurferRef.current;
+
+    spectrogramOverlays.forEach((spectrogramOverlay, i) => {
+      const canvas = spectrogramOverlayRefs.current[i]?.current;
+      
+      let draw = () => {};
+      if(spectrogramOverlay.type === 'line-spread-points') {
+        draw = () => drawLineOverlay(canvas, spectrogramOverlay.values, spectrogramOverlay.color);
+      } else if (spectrogramOverlay.type === 'time-stamped-lines') {
+        draw = () => drawTimeStampedOverlay(canvas, spectrogramOverlay.sections, spectrogramOverlay.color, spectrogramOverlay.interval_ms);
+      }
+      if (
+        showSpectrogramLineOverlays &&
+        showSpectrogramLineOverlays.length === spectrogramOverlays.length &&
+        showSpectrogramLineOverlays[i] &&
+        resultFromBackend && 
+        visualizerType === 'Spectrogram'
+      ){
+        draw();
+        wavesurfer.on('redraw', () => draw);
+        window.addEventListener('resize', draw);
+
+        return () => {
+          wavesurfer.un('redraw', draw);
+          window.removeEventListener('resize', draw);
+        };
+      } else {
+        if(canvas) {
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          }
+        }
+      }
+    })
+  }, [spectrogramOverlays, showSpectrogramLineOverlays, resultFromBackend, visualizerType])
+
 
   // Will stop drawing when encounters -1 (for missing data), and restart when encounters a valid value
   const drawLineOverlay = (
     canvas: HTMLCanvasElement,
     values: number[],
-    color = 'rgba(0, 200, 255, 0.8)'
+    color = 'rgba(0, 200, 255, 0.8)',
   ) => {
     const wavesurfer = wavesurferRef.current;
-    const container = waveformRef.current;
-    if (!wavesurfer || !canvas || !container) return;
+
+    if(!wavesurfer || !canvas) return;
+
+    let container;
+    let width
+    if(visualizerType === 'Waveform') {
+      container = waveformRef.current;
+      // Allow width to be defined by scroll container for waveform where users can zoom in
+      const wrapper = wavesurfer.getWrapper();
+      width = wrapper.scrollWidth;
+    } else {
+      container = spectrogramContainerRef.current;
+      if(container) {
+        width = container.clientWidth;
+      }
+    }
+
+    if (!container || !width) return;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const wrapper = wavesurfer.getWrapper();
-    const width = wrapper.scrollWidth;
-    
     const height = container.clientHeight;
     canvas.width = width;
     canvas.height = height;
@@ -452,33 +552,17 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     }
 
 
-  useEffect(() => {
-    const ws = wavesurferRef.current;
-    if (!ws) return;
-    const urlToLoad = uploadedFileUrl || sampleFileUrl || userInputUrl;
-    if (urlToLoad) {
-      ws.load(urlToLoad);
-    } else {
-      ws.empty();
-    }
-  }, [uploadedFileUrl, userInputUrl, sampleFileUrl]);
-
-  const onPlay = () => {
-    if (wavesurferRef.current) {
-      const isPlaying = wavesurferRef.current.isPlaying();
-      if (isPlaying) {
-        wavesurferRef.current.pause();
-        setAudioPlaying(false);
-      } else {
-        wavesurferRef.current.play();
-        setAudioPlaying(true);
-      }
-    }
-  };
 
   return (
     <DemoContext.Provider
       value={{
+        waveformRef,
+        wavesurferRef,
+        recordPluginRef,
+        spectrogramContainerRef,
+        spectrogramRef,
+        waveformOverlayRefs,
+        spectrogramOverlayRefs,
         isRecording,
         userInputUrl,
         setIsRecording,
@@ -491,11 +575,6 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         setSampleFileUrl,
         uploadedFileError,
         setUploadedFileError,
-        waveformRef,
-        wavesurferRef,
-        recordPluginRef,
-        spectrogramContainerRef,
-        spectrogramRef,
         showSpectrogram,
         setShowSpectrogram,
         audioPlaying,
@@ -524,14 +603,16 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         regionGroups,
         // @ts-expect-error Unconsequential type conflict with Wavesurfer Region
         setRegionGroups,
-        waveformOverlayRefs,
-        spectrogramOverlayRefs,
         waveformOverlays,
         setWaveformOverlays,
         spectrogramOverlays,
         setSpectrogramOverlays,
         showWaveformLineOverlays,
         setShowWaveformLineOverlays,
+        showSpectrogramLineOverlays,
+        setShowSpectrogramLineOverlays,
+        visualizerType,
+        setVisualizerType,
       }}
     >
       {children}

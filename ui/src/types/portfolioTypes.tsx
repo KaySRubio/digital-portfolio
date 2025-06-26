@@ -9,6 +9,8 @@ export type Topic = {
   iconComponent: FunctionComponent<SVGProps<SVGSVGElement>>;
 }
 
+export type VisualizerType = 'Waveform' | 'Spectrogram';
+
 export const TopicNames = {
   BIOACOUSTICS: 'bioacoustics',
   MACHINELEARNING: 'machine-learning',
@@ -245,6 +247,7 @@ export type RegionSetup = {
   useRandomColors: boolean,
   colorMappings?: RegionColorMap[],
   defaultColor?: string,
+  moreInfo?: string,
 }
 
 export type RegionColorMap = {
@@ -291,33 +294,28 @@ export type RegionOnWaveform = {
   resize?: boolean;
 };
 
-export type LineSpreadPointsOverlaySetup = {
-	type: 'line-spread-points',
+export type BaseLineOverlaySetup = {
   overlay: 'waveform' | 'spectrogram',
   path: string,
   default: SettingsOptions,
-	values: number[],
-	max: number,
+  max: number,
 	min: number,
 	normalized_min?: number,
 	normalized_max?: number,
 	color: string,
 	displayText: string,
+  moreInfo?: string,
 }
 
-export type TimeStampedLineOverlaySetup = {
+export type LineSpreadPointsOverlaySetup = BaseLineOverlaySetup & {
+	type: 'line-spread-points',
+	values: number[],
+}
+
+export type TimeStampedLineOverlaySetup = BaseLineOverlaySetup & {
 	type: 'time-stamped-lines',
-  overlay: 'waveform' | 'spectrogram',
-  path: string,
-  default: SettingsOptions,
 	sections: TimeStampedLineOverlaySectionData[],
-	color: string,
-	displayText: string,
   interval_ms: number,
-  max: number,
-  min: number,
-  normalized_min?: number,
-  normalized_max?: number
 }
 
 export type TimeStampedLineOverlaySectionData = {
