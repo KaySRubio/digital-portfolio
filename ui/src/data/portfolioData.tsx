@@ -1,5 +1,11 @@
 
-import type { Project, Topic, TechStackData, Kaysrubio_speech_transcribe_result } from '../types/portfolioTypes';
+import type {
+  Project,
+  Topic,
+  TechStackData,
+  Kaysrubio_speech_transcribe_result,
+  SpectrogramSettings,
+} from '../types/portfolioTypes';
 import { TopicNames } from '../types/portfolioTypes';
 import { spermWhale113Results, spermWhale5rResults, spermWhaleSocialResults } from './sampleSpermWhaleCodaResults';
 import { womanSingingResults, chickenResults, elkResults } from './sampleAudioFeatureExtractionResults';
@@ -63,7 +69,7 @@ import elk from '@/assets/wav/elk.wav';
 import indian from '@/assets/wav/indian.wav';
 import mexican from '@/assets/wav/mexican.wav';
 import nigerian from '@/assets/wav/nigerian.wav';
-import singingwoman from '@/assets/wav/singingwoman.wav';
+import singingwoman2 from '@/assets/wav/singingwoman_16k.wav';
 import spermWhale113 from '@/assets/wav/1_1_3_exchange_2_whales.wav';
 import spermWhale5r from '@/assets/wav/5r_exchange_2_whales_diving.wav';
 import spermWhaleSocial from '@/assets/wav/social_exchange_unit_r.wav';
@@ -154,12 +160,13 @@ export const projects: Project[] = [
           audioVisualizerSettings: {
             zoom: true,
             changeSpeed: true,
-            spectrogram: 'userToggleStartOff',
+            spectrogram: 'on',
+            userAdjustSpectrogram: true,
           },
           sampleAudio: [
             {
               displayText: 'Woman Singing',
-              location: singingwoman,
+              location: singingwoman2,
               sampleResults: womanSingingResults,
             },
             {
@@ -221,17 +228,32 @@ export const projects: Project[] = [
               moreInfo: 'Zero-crossing rate (ZCR) is a time-domain audio feature that measures the number of times an audio signal crosses the horizontal axis.  The horizontal axis represents an amplitude of 0. Speech tends to have a higher ZCR than music, singing, or periods of silence, so ZCR can be a rough way to detect different types of sound. Different speech sounds also have different ZCR\'s, so ZCR can help identify different phonemes.'
             },
             {
+              type: 'band',
+              overlay: 'spectrogram',
+              pathToSpreadValues: 'data[0].spectral_bandwidth',
+              pathToCenterValues: 'data[0].spectral_centroid',
+              proportionToAdd: 0.5,
+              upperValues: [],
+              lowerValues: [],
+              min: 0,
+              max: 4000,
+              color: 'rgba(255, 255, 255, 0.6)',
+              displayText: 'Spectral Bandwidth',
+              default: 'userToggleStartOn',
+              moreInfo: 'Spectral bandwidth, also called spectral spread, tells how energy is spread across the frequency bands above and below the spectral centroid. A small bandwidth indicates tightly grouped frequencies closer to a pure tone, while a larger bandwidth indicates frequencies that are widely distributed like a noisy or complex sound.',
+            },
+            {
               type: 'line-spread-points',
               overlay: 'spectrogram',
               path: 'data[0].spectral_centroid',
               values: [],
               min: 0,
               max: 4000,
-              color: '#24ee00',
+              color: '#fbff00',
               displayText: 'Spectral Centroid',
               default: 'userToggleStartOn',
               moreInfo: 'Spectral centroid is a frequency domain audio feature that measures the frequency band where most energy is concentrated, analogous to taking the average of all frequencies.',
-            }
+            },
           ]
         }
       },
@@ -285,8 +307,9 @@ export const projects: Project[] = [
           audioLengthLimitInSeconds: 30,
           fileSizeLimitInMb: 10,
           audioVisualizerSettings: {
-            spectrogram: 'userToggleStartOff',
+            spectrogram: 'on',
             zoom: true,
+            userAdjustSpectrogram: true,
           },
           sampleAudio: [
             {
@@ -865,7 +888,7 @@ export const projects: Project[] = [
             },
           ],
           audioVisualizerSettings: {
-            spectrogram: 'userToggleStartOff',
+            spectrogram: 'on',
             lineGraphs: [
               {
                 displayText: 'RMS energy',
@@ -1667,3 +1690,12 @@ export const techStackData: TechStackData = [
 ];
 
 export const techStackList = techStackData.map(tech => tech.type);
+
+export const defaultSpectrogramSettings: SpectrogramSettings = {
+  frequencyMinLimit: 0,
+  frequencyMaxLimit: 4000,
+  frequencyMin: 0,
+  frequencyMax: 4000,
+  scale: 'mel',
+  fftSamples: 2048,
+}

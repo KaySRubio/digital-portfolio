@@ -20,7 +20,7 @@ export default function ImageInput({data}: ImageInputProps) {
     const { 
       setUploadedFileUrl,
       setFileAvailable,
-      setUserInputUrl,
+      setUserPhotoUrl,
       setSampleFileUrl,
       setUploadedFileError,
       setResultFromBackend,
@@ -37,7 +37,7 @@ export default function ImageInput({data}: ImageInputProps) {
   useEffect(() => {
     setUploadedFileUrl('');
     setSampleFileUrl('');
-    setUserInputUrl('');
+    setUserPhotoUrl('');
     setFileAvailable(false);
     setResultFromBackend(null);
     setUploadedFileError('');

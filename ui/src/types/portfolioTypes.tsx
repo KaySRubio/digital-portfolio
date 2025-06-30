@@ -191,6 +191,7 @@ export type Input = {
 
 export type AudioVisualizerSettings = {
   spectrogram?: SettingsOptions,
+  userAdjustSpectrogram?: boolean,
   zoom?: boolean,
   changeSpeed?: boolean,
   waveColor?: string,
@@ -237,7 +238,7 @@ export type Request = {
 export type Result = {
   tabs?: ResultTab[],
   regionSetup?: RegionSetup[],
-  lineOverlaySetup?: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[];
+  lineOverlaySetup?: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup | BandLineOverlaySetup)[];
 }
 
 export type RegionSetup = {
@@ -296,7 +297,6 @@ export type RegionOnWaveform = {
 
 export type BaseLineOverlaySetup = {
   overlay: 'waveform' | 'spectrogram',
-  path: string,
   default: SettingsOptions,
   max: number,
 	min: number,
@@ -310,12 +310,14 @@ export type BaseLineOverlaySetup = {
 export type LineSpreadPointsOverlaySetup = BaseLineOverlaySetup & {
 	type: 'line-spread-points',
 	values: number[],
+    path: string,
 }
 
 export type TimeStampedLineOverlaySetup = BaseLineOverlaySetup & {
 	type: 'time-stamped-lines',
 	sections: TimeStampedLineOverlaySectionData[],
   interval_ms: number,
+  path: string,
 }
 
 export type TimeStampedLineOverlaySectionData = {
@@ -324,6 +326,14 @@ export type TimeStampedLineOverlaySectionData = {
   values: number[],
 }
 
+export type BandLineOverlaySetup = BaseLineOverlaySetup & {
+  type: 'band',
+  pathToCenterValues: string,
+  pathToSpreadValues: string,
+  proportionToAdd: number,
+  upperValues: number[],
+  lowerValues: number[],
+}
 
 export type Kaysrubio_speech_transcribe_result = {
 	data: [
@@ -375,6 +385,31 @@ export type Timestamp = {
   end: number;
 }
 
+export type AudioMetadata = {
+  duration: number,
+  numberOfChannels: number,
+  sampleRate: number
+}
+
+// Note: 8192 and higher should be possible, but does not render, or is extremely slow
+// and not helpful since wavesurfer spectrogram won't show above 4,000Hz anyway
+export type FftSamples = 1024 | 2048 | 4096;
+
+export type SpectrogramSettings = {
+  frequencyMinLimit: number,
+  frequencyMaxLimit: number,
+  frequencyMin: number,
+  frequencyMax: number,
+  scale: SpectrogramScale,
+  fftSamples: FftSamples,
+}
+
+export type SpectrogramScale = 'mel' | 'linear';
+// Not using all possible types as the lines drawn on the canvas also need to adjust
+// to these scales
+// export type SpectrogramScale = 'mel' | 'logarithmic' | 'linear' | 'bark' | 'erb';
+
+
 export type SpermWhaleCodaResult = {
   start: number,
   end: number,
@@ -400,4 +435,3 @@ export type AudioFeatureExtractionResult = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 	[key: string]: any;
 }
-

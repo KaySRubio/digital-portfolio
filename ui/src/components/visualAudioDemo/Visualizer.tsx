@@ -1,4 +1,4 @@
-import { useEffect, createRef } from 'react';
+import { useEffect, createRef, useState } from 'react';
 import { useDemoContext } from "../../context/DemoContext";
 import type { DemoBoard } from '../../types/portfolioTypes';
 import VisualizerSettings from './VisualizerSettings';
@@ -23,7 +23,16 @@ export default function Visualizer({data}: VisualizerProps) {
     setShowWaveformLineOverlays,
     setShowSpectrogramLineOverlays,
     visualizerType,
+    fileAvailable,
   } = useDemoContext();
+
+  // Note: spectrogram has a tough bug where is created but doesn't appear on
+  // spectrogramSettings change, unless visualizerType change too or page is resized.
+  // Tried useTimeouts, using separating spectrogramSettings into individual
+  // variables rather than an object, etc. but still not working, so added
+  // message for user to switch tabs to get it to reappear as workaround.
+  const spectrogramRerenderErrorText = 'Please click the waveform tab and then back to the spectrogram tab to help the spectrogram re-render';
+  const [showSpectogramRerenderText, setShowSpectogramRerenderText] = useState<boolean>(false)
 
   // Set up canvases for drawing on top of the waveform & spectrogram
   const lineOverlaySetup = data.results?.lineOverlaySetup;
@@ -86,7 +95,7 @@ export default function Visualizer({data}: VisualizerProps) {
       <div className='interactive-box-header'>
         <h3>Audio Visualizer</h3>
       </div>
-      {showSpectrogram && <VisualizerMenu />}
+      {showSpectrogram && <VisualizerMenu onClick={() => setShowSpectogramRerenderText(false)} />}
       <h4 className='sr-only'>Waveform and Spectrogram</h4>
      
       {/* waveform zoom +canvases needs position: relative, but seems to disturb spectrogram from showing up */}
@@ -99,10 +108,19 @@ export default function Visualizer({data}: VisualizerProps) {
           ref={waveformRef}
           className={`waveform-area ${visualizerType !== 'Waveform' ? 'offscreen' : ''}`}
         />
-        {showSpectrogram && <>
-          <div className={`spinner-wrapper-absolute ${visualizerType === 'Spectrogram' ? '' : 'hidden'}`}>
-            <div className="spinner" />
-          </div>
+        {showSpectrogram && 
+        <>
+          {fileAvailable && !showSpectogramRerenderText &&
+            <div className={`spinner-wrapper-absolute ${visualizerType === 'Spectrogram' ? '' : 'hidden'}`}>
+              <div className="spinner" />
+            </div>
+          }
+          {
+            fileAvailable && showSpectogramRerenderText && 
+            <div className={`spectrogram-rerender-text ${visualizerType === 'Spectrogram' ? '' : 'hidden'}`}>
+              <p>{spectrogramRerenderErrorText}</p>
+            </div>
+          }
           <div 
             id='spectrogram'
             ref={spectrogramContainerRef}
@@ -113,18 +131,23 @@ export default function Visualizer({data}: VisualizerProps) {
           <canvas
             key={index}
             ref={waveformOverlayRefs.current[index]}
-            className='waveform-overlay'
+            className={`waveform-overlay ${visualizerType !== 'Waveform' && 'hidden'}`}
           />
         ))}
         {spectrogramOverlays.map((_, index) => (
           <canvas
             key={index}
             ref={spectrogramOverlayRefs.current[index]}
-            className='spectrogram-overlay'
+            className={`spectrogram-overlay ${visualizerType !== 'Spectrogram' && 'hidden'}`}
           />
         ))}
       </div>
-      <VisualizerSettings data={data} waveformCanvasSetup={waveformCanvasSetup} spectrogramCanvasSetup={spectrogramCanvasSetup} />
+      <VisualizerSettings
+        data={data}
+        waveformCanvasSetup={waveformCanvasSetup}
+        spectrogramCanvasSetup={spectrogramCanvasSetup}
+        onSpectrogramSettingsClick={() => setShowSpectogramRerenderText(true)}
+      />
     </div>
   );
 }

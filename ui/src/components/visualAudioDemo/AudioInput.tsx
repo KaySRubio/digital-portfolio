@@ -20,7 +20,7 @@ export default function AudioInput({data}: AudioInputProps) {
     const { 
       setUploadedFileUrl,
       setFileAvailable,
-      setUserInputUrl,
+      setRecordedUrl,
       setSampleFileUrl,
       setUploadedFileError,
       setResultFromBackend,
@@ -37,7 +37,7 @@ export default function AudioInput({data}: AudioInputProps) {
   useEffect(() => {
     setUploadedFileUrl('');
     setSampleFileUrl('');
-    setUserInputUrl('');
+    setRecordedUrl('');
     setFileAvailable(false);
     setResultFromBackend(null);
     setUploadedFileError('');

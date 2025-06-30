@@ -12,7 +12,7 @@ export const SampleImageSelector = ({ children, sampleFileData }: SampleImageSel
   const {
     setUploadedFileUrl,
     setFileAvailable,
-    setUserInputUrl,
+    setUserPhotoUrl,
     setSampleFileUrl,
     setSelectedFileDetails
   } = useDemoContext();
@@ -25,7 +25,7 @@ export const SampleImageSelector = ({ children, sampleFileData }: SampleImageSel
     setSelectedFileDetails(fileData);
     setFileAvailable(true);
     // clear url's for other inputs
-    setUserInputUrl('');
+    setUserPhotoUrl('');
     setUploadedFileUrl('');
   };
 

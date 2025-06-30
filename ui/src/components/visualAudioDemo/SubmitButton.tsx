@@ -11,7 +11,8 @@ export default function SubmitButton({requests}: SubmitButtonProps) {
     fileAvailable,
     selectedFileDetails,
     setResultFromBackend,
-    userInputUrl,
+    userPhotoUrl,
+    recordedUrl,
     sampleFileUrl,
     uploadedFileUrl,
     setWaitingForResults,
@@ -29,7 +30,7 @@ export default function SubmitButton({requests}: SubmitButtonProps) {
       for (const request of requests) {
         if(request.type === 'gradio') {
           try {
-            const url = userInputUrl || sampleFileUrl || uploadedFileUrl;
+            const url = sampleFileUrl || uploadedFileUrl || userPhotoUrl || recordedUrl;
             const result = await generic_gradio_request(request, url);
             await setResultFromBackend(result);
             await setWaitingForResults(false);

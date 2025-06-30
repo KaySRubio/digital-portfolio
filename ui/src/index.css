@@ -859,6 +859,26 @@ form button {
   gap: 5px;
 }
 
+.multi-slider-and-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  border-right: 1px solid var(--Speech_med_gray);
+  border-bottom: 1px solid var(--Speech_med_gray);
+  padding-right: 5px;
+}
+
+.toggle-option-multi-slider {
+  margin: 0;
+  padding: 0 10px 0 10px;
+  display: flex;
+  min-width: 50px;
+  flex-direction: column;
+  align-items: center;
+  height: 60px;
+}
+
 .toggle-option {
   border-right: 1px solid var(--Speech_med_gray);
   border-bottom: 1px solid var(--Speech_med_gray);
@@ -868,8 +888,16 @@ form button {
   min-width: 50px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 60px;
+  justify-content: center;
+}
+
+.toggle-option p, .toggle-option-multi-slider p {
+  font-weight: normal;
+  margin: 0;
+  line-height: 10px;
+  font-size: 80%;
+  font-weight: bold;
 }
 
 
@@ -1262,6 +1290,12 @@ form button {
   clip-path: inset(0 0 70% 0);
 }
 
+.spectrogram-rerender-text {
+  position: absolute;
+  text-align: center;
+  margin: 10px 70px;
+}
+
 .popover {
   position: absolute;
   border: 1px solid silver;
@@ -1304,6 +1338,13 @@ form button {
   padding: 1px 5px;
   margin: 0;
   border-top: 1px solid var(--Speech_med_gray);
+}
+
+.multi-range-slider .label {
+  font-size: 80%;
+  display: flex;
+  width: 1px;
+  line-height: 10px;
 }
 
 @media (max-width: 600px) {

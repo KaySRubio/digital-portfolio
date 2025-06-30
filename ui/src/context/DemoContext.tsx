@@ -13,9 +13,11 @@ import type {
   TimeStampedLineOverlaySetup,
   TimeStampedLineOverlaySectionData,
   VisualizerType,
+  AudioMetadata,
+  SpectrogramSettings,
+  BandLineOverlaySetup,
 } from "../types/portfolioTypes";
-
-
+import { defaultSpectrogramSettings } from '../data/portfolioData'
 
 type DemoContextType = {
   waveformRef: RefObject<HTMLDivElement | null>;
@@ -28,8 +30,10 @@ type DemoContextType = {
 
   isRecording: boolean;
   setIsRecording: React.Dispatch<React.SetStateAction<boolean>>;
-  userInputUrl: string;
-  setUserInputUrl: React.Dispatch<React.SetStateAction<string>>;
+  recordedUrl: string;
+  setRecordedUrl: React.Dispatch<React.SetStateAction<string>>;
+  userPhotoUrl: string;
+  setUserPhotoUrl: React.Dispatch<React.SetStateAction<string>>;
   fileAvailable: boolean;
   setFileAvailable: React.Dispatch<React.SetStateAction<boolean>>;
   uploadedFileUrl: string;
@@ -69,16 +73,21 @@ type DemoContextType = {
   setShowRegionGroups: React.Dispatch<React.SetStateAction<boolean[]>>;
   regionGroups: MyRegion[][];
   setRegionGroups: React.Dispatch<React.SetStateAction<MyRegion[][]>>;
-  waveformOverlays: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[];
-  setWaveformOverlays: React.Dispatch<React.SetStateAction<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[]>>;
-  spectrogramOverlays: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[];
-  setSpectrogramOverlays: React.Dispatch<React.SetStateAction<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[]>>;
+  waveformOverlays: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup | BandLineOverlaySetup)[];
+  setWaveformOverlays: React.Dispatch<React.SetStateAction<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup | BandLineOverlaySetup)[]>>;
+  spectrogramOverlays: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup | BandLineOverlaySetup)[];
+  setSpectrogramOverlays: React.Dispatch<React.SetStateAction<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup | BandLineOverlaySetup)[]>>;
   showWaveformLineOverlays: boolean[];
   setShowWaveformLineOverlays: React.Dispatch<React.SetStateAction<boolean[]>>;
   showSpectrogramLineOverlays: boolean[];
   setShowSpectrogramLineOverlays: React.Dispatch<React.SetStateAction<boolean[]>>;
   visualizerType: VisualizerType;
   setVisualizerType: React.Dispatch<React.SetStateAction<VisualizerType>>;
+  audioMetadata: AudioMetadata | null;
+  setAudioMetadata: React.Dispatch<React.SetStateAction<AudioMetadata | null>>;
+  spectrogramSettings: SpectrogramSettings;
+  setSpectrogramSettings: React.Dispatch<React.SetStateAction<SpectrogramSettings>>;
+
 };
 
 const DemoContext = createContext<DemoContextType | undefined>(undefined);
@@ -98,7 +107,8 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const spectrogramOverlayRefs = useRef<React.RefObject<HTMLCanvasElement>[]>([]);
 
   const [isRecording, setIsRecording] = useState(false);
-  const [userInputUrl, setUserInputUrl] = useState<string>('');
+  const [userPhotoUrl, setUserPhotoUrl] = useState<string>('');
+  const [recordedUrl, setRecordedUrl] = useState<string>('');
   const [fileAvailable, setFileAvailable] = useState(false);
   const [uploadedFileUrl, setUploadedFileUrl] = useState<string>('');
   const [sampleFileUrl, setSampleFileUrl] = useState<string>('');
@@ -116,12 +126,30 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const [preservePitch, setPreservePitch] = useState(true);
   const [showRegionGroups, setShowRegionGroups] = useState<boolean[]>([]);
   const [regionGroups, setRegionGroups] = useState<Region[][]>([[]]);
-  const [waveformOverlays, setWaveformOverlays] = useState<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[]>([]);
-  const [spectrogramOverlays, setSpectrogramOverlays] = useState<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[]>([]);
+  const [waveformOverlays, setWaveformOverlays] = useState<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup | BandLineOverlaySetup)[]>([]);
+  const [spectrogramOverlays, setSpectrogramOverlays] = useState<(LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup | BandLineOverlaySetup)[]>([]);
   const [showWaveformLineOverlays, setShowWaveformLineOverlays] = useState<boolean[]>([]);
   const [showSpectrogramLineOverlays, setShowSpectrogramLineOverlays] = useState<boolean[]>([]);
   const [visualizerType, setVisualizerType] = useState<VisualizerType>('Waveform');
+  const [audioMetadata, setAudioMetadata] = useState<AudioMetadata | null>(null);
+  const [spectrogramSettings, setSpectrogramSettings] = useState<SpectrogramSettings>(defaultSpectrogramSettings);
 
+  // Results
+  useEffect(() => {
+    setResultFromBackend(null);
+    const urlToLoad = uploadedFileUrl || sampleFileUrl || userPhotoUrl || recordedUrl;
+
+    const ws = wavesurferRef.current;
+    if (!ws) return;
+    
+    if (urlToLoad) {
+      ws.load(urlToLoad);
+    } else {
+      ws.empty();
+    }
+  }, [uploadedFileUrl, userPhotoUrl, recordedUrl, sampleFileUrl]);
+
+  // Waveform & Recording
   useEffect(() => {
     if (!waveformRef.current) return;
 
@@ -192,7 +220,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       // clear previous urls from other inputs
       setUploadedFileUrl('');
       setSampleFileUrl('');
-      setUserInputUrl(url);
+      setRecordedUrl(url);
       setFileAvailable(true);
     });
 
@@ -213,21 +241,6 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     };
   }, []);
 
-  useEffect(() => {
-    setResultFromBackend(null);
-  }, [userInputUrl, uploadedFileUrl, sampleFileUrl])
-  
-  useEffect(() => {
-    const ws = wavesurferRef.current;
-    if (!ws) return;
-    const urlToLoad = uploadedFileUrl || sampleFileUrl || userInputUrl;
-    if (urlToLoad) {
-      ws.load(urlToLoad);
-    } else {
-      ws.empty();
-    }
-  }, [uploadedFileUrl, userInputUrl, sampleFileUrl]);
-
   const onPlay = () => {
     if (wavesurferRef.current) {
       const isPlaying = wavesurferRef.current.isPlaying();
@@ -241,56 +254,63 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     }
   };
 
+  // This ref helps resolve error where website crashes when user has created
+  // spectrogram, then clicked on waveform, then clicked to another page
+  // and wavesurfer still attempts to deconstruct spectogram that no longer
+  // exists
   const spectrogramInitializedRef = useRef(false);
 
-useEffect(() => {
-  const ws = wavesurferRef.current;
-  const container = spectrogramContainerRef.current;
+  // Spectrogram
+  useEffect(() => {
+    const ws = wavesurferRef.current;
+    const container = spectrogramContainerRef.current;
 
-  if (
-    fileAvailable &&
-    visualizerType === 'Spectrogram' &&
-    ws &&
-    container
-  ) {
-    const spectrogram = SpectrogramPlugin.create({
-      container,
-      labels: true,
-      // 2048 use with max of 4000Hz, or increase to 4096 or 8192 for higher frequencies, but will worsen performance
-      fftSamples: 2048,
-      frequencyMax: 4000,
-      frequencyMin: 0,
-    });
+    if (
+      fileAvailable &&
+      visualizerType === 'Spectrogram' &&
+      ws &&
+      container
+    ) {
+      const spectrogram = SpectrogramPlugin.create({
+        container,
+        labels: true,
+        fftSamples: spectrogramSettings.fftSamples,
+        frequencyMax: spectrogramSettings.frequencyMax,
+        frequencyMin: spectrogramSettings.frequencyMin,
+        scale: spectrogramSettings.scale,
+      });
 
-    try {
-      ws.registerPlugin(spectrogram);
-      spectrogramRef.current = spectrogram;
-      spectrogramInitializedRef.current = true;
-    } catch (e) {
-      console.warn('Failed to register spectrogram plugin:', e);
-    }
-  }
-
-  return () => {
-    if (spectrogramInitializedRef.current && spectrogramRef.current) {
       try {
-        spectrogramRef.current.destroy();
+        ws.registerPlugin(spectrogram);
+        spectrogramRef.current = spectrogram;
+        spectrogramInitializedRef.current = true;
       } catch (e) {
-        console.warn('Error destroying spectrogram plugin:', e);
-      } finally {
-        spectrogramRef.current = null;
-        spectrogramInitializedRef.current = false;
+        console.warn('Failed to register spectrogram plugin:', e);
       }
     }
-  };
-}, [fileAvailable, visualizerType]);
 
+    return () => {
+      if (spectrogramInitializedRef.current && spectrogramRef.current) {
+        try {
+          spectrogramRef.current.destroy();
+        } catch (e) {
+          console.warn('Error destroying spectrogram plugin:', e);
+        } finally {
+          spectrogramRef.current = null;
+          spectrogramInitializedRef.current = false;
+        }
+      }
+    };
+  }, [fileAvailable, visualizerType, spectrogramSettings]);
+
+  // Playback speed
   useEffect(() => {
     if(!wavesurferRef.current || !fileAvailable) return;
     const ws = wavesurferRef.current;
     ws.setPlaybackRate(playbackSpeed, preservePitch)
   }, [playbackSpeed, preservePitch, fileAvailable])
 
+  // Zoom on waveform
   useEffect(() => {
     if(!wavesurferRef.current || !fileAvailable) return;
     if(showZoom) {
@@ -307,6 +327,7 @@ useEffect(() => {
     ws.zoom(zoomLevel);
   }, [zoomLevel])
   
+  // Regions on waveform
   const updateRegions = () => {
     if(wavesurferRef.current && regionsPluginRef.current) {
       const regionsPlugin = regionsPluginRef.current;
@@ -348,7 +369,6 @@ useEffect(() => {
       showRegionGroups.length !== regionGroups.length
     ) return;
     
-
     let newRegions: RegionOnWaveform[] = [];
     showRegionGroups.forEach((regionGroup, i) => {
       if(regionGroup) {
@@ -362,6 +382,7 @@ useEffect(() => {
     updateRegions();
   }, [regionsOnWaveform])
 
+  // Canvas drawn over waveform
   useEffect(() => {
     if(!wavesurferRef.current ||
       !fileAvailable ||
@@ -371,8 +392,6 @@ useEffect(() => {
 
     // Access the scrolling element inside WaveSurfer's shadow DOM and set up event listener
     // to move the lines when the user zooms in and scrolls along. 
-    // Note: hard to fix minor visual defect where canvas becomes wider than the waveform
-    // itself appears
     let scrollEl = null;
     const waveformEl = document.querySelector('#waveform'); 
     if(waveformEl) {
@@ -426,6 +445,7 @@ useEffect(() => {
     })
   }, [waveformOverlays, showWaveformLineOverlays, zoomLevel, resultFromBackend, visualizerType])
 
+  // Canvas drawn over spectrogram
   useEffect(() => {
     if(!wavesurferRef.current ||
       !fileAvailable ||
@@ -441,6 +461,8 @@ useEffect(() => {
         draw = () => drawLineOverlay(canvas, spectrogramOverlay.values, spectrogramOverlay.color);
       } else if (spectrogramOverlay.type === 'time-stamped-lines') {
         draw = () => drawTimeStampedOverlay(canvas, spectrogramOverlay.sections, spectrogramOverlay.color, spectrogramOverlay.interval_ms);
+      } else if (spectrogramOverlay.type === 'band') {
+        draw = () => drawBandOverlay(canvas, spectrogramOverlay.upperValues, spectrogramOverlay.lowerValues, spectrogramOverlay.color);
       }
       if (
         showSpectrogramLineOverlays &&
@@ -468,13 +490,9 @@ useEffect(() => {
     })
   }, [spectrogramOverlays, showSpectrogramLineOverlays, resultFromBackend, visualizerType])
 
+  // Canvas draw methods
 
-  // Will stop drawing when encounters -1 (for missing data), and restart when encounters a valid value
-  const drawLineOverlay = (
-    canvas: HTMLCanvasElement,
-    values: number[],
-    color = 'rgba(0, 200, 255, 0.8)',
-  ) => {
+  const setUpOverlay = (canvas: HTMLCanvasElement) => {
     const wavesurfer = wavesurferRef.current;
 
     if(!wavesurfer || !canvas) return;
@@ -505,6 +523,23 @@ useEffect(() => {
     canvas.style.height = `${height}px`;
 
     ctx.clearRect(0, 0, width, height);
+
+    return {
+      ctx,
+      width,
+      height,
+    }
+  }
+  // Will stop drawing when encounters -1 (for missing data), and restart when encounters a valid value
+  const drawLineOverlay = (
+    canvas: HTMLCanvasElement,
+    values: number[],
+    color = 'rgba(255, 255, 255, 0.6)',
+  ) => {
+    const setupInfo = setUpOverlay(canvas);
+    if(!setupInfo) return;
+    const {ctx, width, height } = setupInfo;
+
     ctx.strokeStyle = color;
     ctx.lineWidth = 2;
 
@@ -516,7 +551,7 @@ useEffect(() => {
 
       if (val === -1) {
         if (hasStartedPath) {
-          ctx.stroke(); // End current path before the gap
+          ctx.stroke();
           hasStartedPath = false;
         }
         continue;
@@ -536,59 +571,91 @@ useEffect(() => {
     }
   }
 
+  const drawBandOverlay = (
+    canvas: HTMLCanvasElement,
+    upperValues: number[],
+    lowerValues: number[],
+    color = 'rgba(0, 200, 255, 0.3)',
+  ) => {
+
+    const setupInfo = setUpOverlay(canvas);
+    if(!setupInfo) return;
+    const {ctx, width, height } = setupInfo;
+
+    ctx.fillStyle = color;
+
+    const numValues = Math.min(upperValues.length, lowerValues.length);
+
+    ctx.beginPath();
+
+    // Go along upper edge left to right
+    for (let i = 0; i < numValues; i++) {
+      const upperVal = upperValues[i];
+      if (upperVal === -1) continue;
+
+      const x = (i / (numValues - 1)) * width;
+      const y = height - upperVal * height;
+      if (i === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
+    }
+
+    // Go along lower edge right to left
+    for (let i = numValues - 1; i >= 0; i--) {
+      const lowerVal = lowerValues[i];
+      if (lowerVal === -1) continue;
+
+      const x = (i / (numValues - 1)) * width;
+      const y = height - lowerVal * height;
+      ctx.lineTo(x, y);
+    }
+
+    ctx.closePath();
+    ctx.fill();
+  };
+
   const drawTimeStampedOverlay = (
     canvas: HTMLCanvasElement,
     sections: TimeStampedLineOverlaySectionData[],
     color = 'rgba(0, 200, 255, 0.8)',
     interval_ms: number,
   ) => {
-      const wavesurfer = wavesurferRef.current;
-      const container = waveformRef.current;
-      if (!wavesurfer || !canvas || !container) return;
+    const wavesurfer = wavesurferRef.current;
+    if(!wavesurfer) return;
+    const setupInfo = setUpOverlay(canvas);
+    if(!setupInfo) return;
+    const {ctx, width, height } = setupInfo;
 
-      const duration = wavesurfer.getDuration();
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
+    const duration = wavesurfer.getDuration();
+    const interval = interval_ms / 1000;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
 
-      const width = container.clientWidth;
-      const height = container.clientHeight;
-      canvas.width = width;
-      canvas.height = height;
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
+    sections.forEach((section: TimeStampedLineOverlaySectionData) => {
+      let isDrawing = false;
+      const start_sec = section.start_ms / 1000;
 
-      ctx.clearRect(0, 0, width, height);
-      ctx.beginPath();
-      ctx.strokeStyle = color;
-      ctx.lineWidth = 2;
-
-      const interval = interval_ms / 1000;
-
-      sections.forEach((section: TimeStampedLineOverlaySectionData) => {
-        let isDrawing = false;
-        const start_sec = section.start_ms / 1000;
-
-        for (let i = 0; i < section.values.length; i++) {
-          let x;
-          if (i === 0) {
-            x = ((start_sec + i * interval) / duration) * width;
-          } else {
-            x = ((start_sec + i * interval) / duration) * width;
-          }
-          const y = height - (section.values[i] * height);
-
-          if (!isDrawing) {
-            ctx.moveTo(x, y);
-            isDrawing = true;
-          } else {
-            ctx.lineTo(x, y);
-          }
+      for (let i = 0; i < section.values.length; i++) {
+        let x;
+        if (i === 0) {
+          x = ((start_sec + i * interval) / duration) * width;
+        } else {
+          x = ((start_sec + i * interval) / duration) * width;
         }
-      ctx.stroke();
-      })
-    }
+        const y = height - (section.values[i] * height);
 
-
+        if (!isDrawing) {
+          ctx.moveTo(x, y);
+          isDrawing = true;
+        } else {
+          ctx.lineTo(x, y);
+        }
+      }
+    ctx.stroke();
+    })
+  }
 
   return (
     <DemoContext.Provider
@@ -601,9 +668,11 @@ useEffect(() => {
         waveformOverlayRefs,
         spectrogramOverlayRefs,
         isRecording,
-        userInputUrl,
+        recordedUrl,
+        setRecordedUrl,
+        userPhotoUrl,
+        setUserPhotoUrl,
         setIsRecording,
-        setUserInputUrl,
         fileAvailable,
         setFileAvailable,
         uploadedFileUrl,
@@ -650,6 +719,10 @@ useEffect(() => {
         setShowSpectrogramLineOverlays,
         visualizerType,
         setVisualizerType,
+        audioMetadata,
+        setAudioMetadata,
+        spectrogramSettings,
+        setSpectrogramSettings,
       }}
     >
       {children}

@@ -12,12 +12,13 @@ import type {
   LineSpreadPointsOverlaySetup,
   TimeStampedLineOverlaySetup,
   TimeStampedLineOverlaySectionData,
+  BandLineOverlaySetup,
 } from '../../types/portfolioTypes';
 import { renderComponent } from '../../utils/renderComponent';
 import json from '@/assets/png/json.png';
 import get from 'lodash.get';
 import { randomRegionColors } from '../../data/helperData';
-import { applyNormalization } from '../../utils/fileUtils';
+import { applyNormalization, convertFromHzToMel, applyMelNormalization } from '../../utils/fileUtils';
 
 type ResultsProps = {
   data: DemoBoard;
@@ -32,7 +33,8 @@ export default function Results({ data }: ResultsProps) {
     requestFromBackendError,
     setRegionGroups,
     setWaveformOverlays,
-    // setSpectrogramOverlays,
+    setSpectrogramOverlays,
+    spectrogramSettings,
   } = useDemoContext();
 
   const renderDisclosurePanel = (model: ResultForEachModel, index: number) => {
@@ -75,6 +77,7 @@ export default function Results({ data }: ResultsProps) {
     }
   }
 
+  // Handle region results from backend
   useEffect(() => {
     if (data.results && resultFromBackend) {
       if(data.results.regionSetup && data.results.regionSetup.length > 0) {
@@ -86,56 +89,8 @@ export default function Results({ data }: ResultsProps) {
         })
         setRegionGroups(regionGroups);
       }
-
-      if(data.results.lineOverlaySetup && data.results.lineOverlaySetup.length > 0) {
-        const newWaveformOverlays: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup)[] = [];
-        data.results.lineOverlaySetup.forEach(lineOverlaySetup => {
-          if(lineOverlaySetup.default !== 'off') {
-            const normalized_min = lineOverlaySetup.normalized_min ? lineOverlaySetup.normalized_min : 0.5;
-            const normalized_max = lineOverlaySetup.normalized_max ? lineOverlaySetup.normalized_max : 1;
-            if(lineOverlaySetup.type === 'line-spread-points') {
-              const values: number[] = get(resultFromBackend, lineOverlaySetup.path, []);
-              // Apply min-max normalization to the values so they now range from 0.5 - 1 and 
-              // will be drawn in good locations on waveform
-              // KEEP this console log which makes it easy to look up min/max of new values
-              // console.log('for ', lineOverlaySetup.displayText, ' the max is: ', Math.max(...values), ' and min is ', Math.min(...values) )
-              const normalizedValues: number[] = applyNormalization(
-                values,
-                lineOverlaySetup.min,
-                lineOverlaySetup.max,
-                normalized_min,
-                normalized_max
-              );
-              lineOverlaySetup.values = [...normalizedValues];
-              if(lineOverlaySetup.overlay === 'waveform') {
-                newWaveformOverlays.push(lineOverlaySetup);
-              }
-              
-            } else if (lineOverlaySetup.type === 'time-stamped-lines') {
-
-              const sectionsInResults: TimeStampedLineOverlaySectionData[] = get(resultFromBackend, lineOverlaySetup.path, []);
-              sectionsInResults.forEach(section => {
-                const normalizedValues: number[] = applyNormalization(
-                  section.values,
-                  lineOverlaySetup.min,
-                  lineOverlaySetup.max,
-                  normalized_min,
-                  normalized_max
-                );
-                lineOverlaySetup.sections.push({values: [...normalizedValues], start_ms: section.start_ms})
-              })
-              if(lineOverlaySetup.overlay === 'waveform') {
-                newWaveformOverlays.push(lineOverlaySetup);
-              }
-            }
-          }
-        })
-        
-        setWaveformOverlays(newWaveformOverlays)
-      }
     }
-
-  }, [resultFromBackend])
+  }, [resultFromBackend]);
 
   const giveRegionsColor = (regions: MyRegion[], regionSetup: RegionSetup) => {
     if(!regionSetup) return regions;
@@ -171,6 +126,142 @@ export default function Results({ data }: ResultsProps) {
     }
     return regions;
   }
+
+  // Handle canvas overlay results from backend
+  useEffect(() => {
+    if (
+      data.results && resultFromBackend &&
+      data.results.lineOverlaySetup && 
+      data.results.lineOverlaySetup.length > 0
+    ) {
+
+    const newWaveformOverlays: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup | BandLineOverlaySetup)[] = [];
+    const newSpectrogramOverlays: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup | BandLineOverlaySetup)[] = [];
+    data.results.lineOverlaySetup.forEach(lineOverlaySetup => {
+
+      if(lineOverlaySetup.default !== 'off') {
+        // Set up new min/maxes for normalization based on canvases which range from 0-1
+        let normalized_min = 0.5;
+        const normalized_max = lineOverlaySetup.normalized_max ? lineOverlaySetup.normalized_max : 1;
+        if(lineOverlaySetup.overlay === 'waveform') {
+          normalized_min = lineOverlaySetup.normalized_min ? lineOverlaySetup.normalized_min : 0.5;
+        } if (lineOverlaySetup.overlay === 'spectrogram') {
+          normalized_min = lineOverlaySetup.normalized_min ? lineOverlaySetup.normalized_min : 0;
+        }
+
+        if(lineOverlaySetup.type === 'line-spread-points') {
+          const values: number[] = get(resultFromBackend, lineOverlaySetup.path, []);
+
+          // Apply min-max normalization to the values so they now range from 0.5 - 1 on waveform or
+          // or 0-1 on spectrogram and will be drawn on the right location, taking into account mel scale
+
+          // KEEP this console log which makes it easy to look up min/max of new values
+          // console.log('for ', lineOverlaySetup.displayText, ' the max is: ', Math.max(...values), ' and min is ', Math.min(...values) )
+          let normalizedValues: number[] = [];
+          if(lineOverlaySetup.overlay === 'spectrogram' && spectrogramSettings.scale === 'mel') {
+            const hzMin = spectrogramSettings.frequencyMin;
+            const hzMax = spectrogramSettings.frequencyMax;
+            normalizedValues = applyMelNormalization(values, hzMin, hzMax)
+          } else {
+            normalizedValues = applyNormalization(
+              values,
+              lineOverlaySetup.min,
+              lineOverlaySetup.max,
+              normalized_min,
+              normalized_max
+            );
+          }
+          lineOverlaySetup.values = [...normalizedValues];
+          if(lineOverlaySetup.overlay === 'waveform') {
+            newWaveformOverlays.push(lineOverlaySetup);
+          } else {
+            newSpectrogramOverlays.push(lineOverlaySetup);
+          }
+              
+        } else if (lineOverlaySetup.type === 'time-stamped-lines') {
+          const sectionsInResults: TimeStampedLineOverlaySectionData[] = get(resultFromBackend, lineOverlaySetup.path, []);
+            sectionsInResults.forEach(section => {
+              let values = section.values;
+              if(lineOverlaySetup.overlay === 'spectrogram' && spectrogramSettings.scale === 'mel') {
+                values = convertFromHzToMel(values);
+              }
+              let normalizedValues: number[] = [];
+              if(lineOverlaySetup.overlay === 'spectrogram' && spectrogramSettings.scale === 'mel') {
+                const hzMin = spectrogramSettings.frequencyMin;
+                const hzMax = spectrogramSettings.frequencyMax;
+                normalizedValues = applyMelNormalization(values, hzMin, hzMax)
+              } else {
+                normalizedValues = applyNormalization(
+                  values,
+                  lineOverlaySetup.min,
+                  lineOverlaySetup.max,
+                  normalized_min,
+                  normalized_max
+                );
+              }
+              lineOverlaySetup.sections.push({values: [...normalizedValues], start_ms: section.start_ms})
+            })
+            if(lineOverlaySetup.overlay === 'waveform') {
+              newWaveformOverlays.push(lineOverlaySetup);
+            } else {
+              newSpectrogramOverlays.push(lineOverlaySetup);
+            }
+          } else if (lineOverlaySetup.type === 'band') {
+            const spreadValues: number[] = get(resultFromBackend, lineOverlaySetup.pathToSpreadValues, []);
+            const centerValues: number[] = get(resultFromBackend, lineOverlaySetup.pathToCenterValues, []);
+
+            if(spreadValues.length === centerValues.length) {
+              const upperValues: number[] = [];
+              const lowerValues: number[] = [];
+              centerValues.forEach((centerValue, i) => {
+                upperValues.push(centerValue + (spreadValues[i] * lineOverlaySetup.proportionToAdd))
+                lowerValues.push(centerValue - (spreadValues[i] * lineOverlaySetup.proportionToAdd))
+              });
+
+              let normalizedUpperValues: number[] = [];
+              let normalizedLowerValues: number[] = [];
+
+              if(lineOverlaySetup.overlay === 'spectrogram' && spectrogramSettings.scale === 'mel') {
+                const hzMin = spectrogramSettings.frequencyMin;
+                const hzMax = spectrogramSettings.frequencyMax;
+                normalizedUpperValues = applyMelNormalization(upperValues, hzMin, hzMax);
+                normalizedLowerValues = applyMelNormalization(lowerValues, hzMin, hzMax);
+
+              } else {
+                normalizedUpperValues = applyNormalization(
+                  upperValues,
+                  lineOverlaySetup.min,
+                  lineOverlaySetup.max,
+                  normalized_min,
+                  normalized_max
+                );
+
+                normalizedLowerValues = applyNormalization(
+                  lowerValues,
+                  lineOverlaySetup.min,
+                  lineOverlaySetup.max,
+                  normalized_min,
+                  normalized_max
+                );
+              }
+              lineOverlaySetup.upperValues = [... normalizedUpperValues];
+              lineOverlaySetup.lowerValues = [... normalizedLowerValues];
+              if(lineOverlaySetup.overlay === 'waveform') {
+                newWaveformOverlays.push(lineOverlaySetup);
+              } else {
+                newSpectrogramOverlays.push(lineOverlaySetup);
+              }
+
+            } else {
+              console.warn('Attempting to render a band on the waveform, but the number of center values ', centerValues.length, ' does not match the number of band width values ', spreadValues.length, '. These data are provided from the backend');
+            }
+          }
+        } 
+      })
+      setWaveformOverlays(newWaveformOverlays);
+      setSpectrogramOverlays(newSpectrogramOverlays);
+    }
+  }, [resultFromBackend, spectrogramSettings])
 
   return (
     <div className={`interactive-box interactive-box-results`}>

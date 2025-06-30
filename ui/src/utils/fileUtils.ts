@@ -19,9 +19,27 @@ export const checkImageFile = async (file: File, fileSizeLimitInMb: number = 10)
     error = 'Failed to load file. The file may be corrupt or unsupported.';
   }
   return error;
-  };
+};
 
-export const checkAudioFile = async (file: File, audioLengthLimitInSeconds: number = 31, fileSizeLimitInMb: number = 10) => {
+export const getFileFromUrl = async (url: string): Promise<File> => {
+
+  // Get filename
+  let filename = url.split('/').pop();
+  if (!filename) {
+    filename = 'file';
+  }
+
+  const res = await fetch(url);
+  const blob = await res.blob();
+  return new File([blob], filename, { type: blob.type });
+};
+
+export const checkAudioFile = async (
+  file: File,
+  audioLengthLimitInSeconds: number = 31,
+  fileSizeLimitInMb: number = 10,
+  duration: number
+) => {
   if(!fileSizeLimitInMb) fileSizeLimitInMb = 10;
 
   let error = '';
@@ -32,9 +50,8 @@ export const checkAudioFile = async (file: File, audioLengthLimitInSeconds: numb
         const fileSizeInMb = file.size / 1000000;
         error = `File Size Error: ${fileSizeInMb.toFixed(1)} MB is too large. File should be less than ${fileSizeLimitInMb} MB`;
       } else {
-        const metadata = await getAudioMetadata(file);
-        if (metadata.duration > audioLengthLimitInSeconds) {
-          error = `Duration Error: Audio is ${Math.round(metadata.duration)} seconds long. Audio should be less than ${audioLengthLimitInSeconds} seconds`;
+        if (duration > audioLengthLimitInSeconds) {
+          error = `Duration Error: Audio is ${Math.round(duration)} seconds long. Audio should be less than ${audioLengthLimitInSeconds} seconds`;
         }
       }
     } catch (e) {
@@ -44,13 +61,17 @@ export const checkAudioFile = async (file: File, audioLengthLimitInSeconds: numb
     return error;
 }
 
-const getAudioMetadata = async (file: File) => {
+export const getAudioMetadata = async (file: File) => {
+  console.log('file: ', file);
+  // AudioContext automatically resamples at 48,000 unless given a different sample rate like this: { sampleRate: 16000 }
+  // Does NOT detect the original sample rate of the file
   const audioContext = new AudioContext();
   const arrayBuffer = await file.arrayBuffer();
   const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 
   const duration = audioBuffer.duration; // in seconds
   const sampleRate = audioBuffer.sampleRate; // e.g. 44100 Hz
+  console.log('audioBuffer.sampleRate', audioBuffer.sampleRate);
   const numberOfChannels = audioBuffer.numberOfChannels;
 
   return {
@@ -80,12 +101,39 @@ export const resizeImage = (
   img.src = base64;
 };
 
+export const normalizeValue = (x: number, MIN: number, MAX: number, NEW_MIN: number, NEW_MAX: number) => {
+  return ((x - MIN) / (MAX - MIN)) * (NEW_MAX - NEW_MIN) + NEW_MIN
+}
+
+export const hzToMel = (frequencyHz: number) => {
+  return 2595 * Math.log10(1 + frequencyHz / 700);
+}
+
+// Apply min-max normalization to the values so they have a new range
 export const applyNormalization = (values: number[], MIN: number = 0, MAX: number, NEW_MIN: number, NEW_MAX: number) => {
-  // Apply min-max normalization to the values so they have a new range
   const normalizedValues: number[] = [];
   values.forEach(x => {
-    normalizedValues.push(((x - MIN) / (MAX - MIN)) * (NEW_MAX - NEW_MIN) + NEW_MIN)
+    normalizedValues.push(normalizeValue(x, MIN, MAX, NEW_MIN, NEW_MAX))
   })
   return(normalizedValues)
 }
 
+export const convertFromHzToMel = (values: number[]) => {
+  const melValues: number[] = [];
+    values.forEach(x => {
+     melValues.push(hzToMel(x))
+  })
+  return(melValues)
+}
+
+
+export const applyMelNormalization = (values: number[], hzMin: number, hzMax: number) => {
+  const melMin = hzToMel(hzMin);
+  const melMax = hzToMel(hzMax);
+  const newValues: number[] = [];
+  values.forEach(x => {
+    const mel = hzToMel(x);
+    newValues.push((mel - melMin) / (melMax - melMin))
+  })
+  return newValues;
+}

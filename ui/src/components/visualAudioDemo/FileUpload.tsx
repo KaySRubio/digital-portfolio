@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import upload from '@/assets/svg/upload.svg';
 import { useDemoContext } from "../../context/DemoContext";
-import { checkImageFile, checkAudioFile } from '../../utils/fileUtils';
+import { checkImageFile, checkAudioFile, getAudioMetadata } from '../../utils/fileUtils';
 import type { Input } from '../../types/portfolioTypes'
 
 type FileUploadProps = {
@@ -17,10 +17,10 @@ export const FileUpload = ({ children, type, data }: FileUploadProps) => {
   const { 
     setUploadedFileUrl,
     setFileAvailable,
-    setUserInputUrl,
+    setRecordedUrl,
     setSampleFileUrl,
     uploadedFileError,
-    setUploadedFileError 
+    setUploadedFileError,
   } = useDemoContext();
 
   let accept;
@@ -33,7 +33,7 @@ export const FileUpload = ({ children, type, data }: FileUploadProps) => {
   useEffect(() => {
     if (fileUrl) {
       // clear url's for other inputs
-      setUserInputUrl('');
+      setRecordedUrl('');
       setSampleFileUrl('');
       setUploadedFileUrl(fileUrl);
       setFileAvailable(true);
@@ -65,7 +65,8 @@ export const FileUpload = ({ children, type, data }: FileUploadProps) => {
     if(type === 'image') {
       error = await checkImageFile(file);
     } else {
-      error = await checkAudioFile(file, data.audioLengthLimitInSeconds, data.fileSizeLimitInMb);
+      const audioMetadata = await getAudioMetadata(file);
+      error = await checkAudioFile(file, data.audioLengthLimitInSeconds, data.fileSizeLimitInMb, audioMetadata.duration);
     }
     
     if(error) {

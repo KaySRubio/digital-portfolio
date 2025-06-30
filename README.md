@@ -273,3 +273,30 @@ line_name: [
   },
 ],
 ```
+
+For a band, such as mean/standard deviation or spectral centroid/bandwidth, add this setup:
+
+```
+results: {
+  lineOverlaySetup: [
+    {
+      type: 'band',
+      overlay: 'spectrogram',
+      pathToSpreadValues: 'data[0].spectral_bandwidth',
+      pathToCenterValues: 'data[0].spectral_centroid',
+      proportionToAdd: 0.5, // This defines the upper bound. For instance, use 1 for a standard deviation, so upper bound is mean + 1 SD and lower bound is mean - 1 SD. Spectral bandwidth can be 0.5 or 1.
+      upperValues: [], // leave empty, populated by program
+      lowerValues: [], // leave empty, populated by program
+      min: 0,
+      max: 4000,
+      color: 'rgba(255, 255, 255, 0.6)', // example default color, can leave this off
+      displayText: 'Spectral Bandwidth',
+      default: 'userToggleStartOn',
+      moreInfo: '', // Optional to include more info on this band
+    },
+  ],
+}
+```
+
+Note: When you include a band and a center line, both must be included, and it's helpful for visual layering
+to place the band setup BEFORE the center line setup

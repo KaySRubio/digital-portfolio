@@ -11,7 +11,7 @@ type CameraInputProps = {
 };
 
 const CameraInput: React.FC<CameraInputProps> = ({ children }) => {
-  const { setUserInputUrl, userInputUrl, fileAvailable, setFileAvailable } = useDemoContext();
+  const { setUserPhotoUrl, userPhotoUrl, fileAvailable, setFileAvailable } = useDemoContext();
   const webcamRef = useRef<Webcam>(null);
 
   const capture = useCallback(
@@ -19,7 +19,7 @@ const CameraInput: React.FC<CameraInputProps> = ({ children }) => {
       const screenshot = webcamRef.current?.getScreenshot();
         if(screenshot) {
           resizeImage(screenshot, 224, 224, (resizedImage) => {
-          setUserInputUrl(resizedImage);
+          setUserPhotoUrl(resizedImage);
           setFileAvailable(true);
         });
       }
@@ -38,8 +38,8 @@ const CameraInput: React.FC<CameraInputProps> = ({ children }) => {
       <h4 className='sr-only'>Camera</h4>
       <div className={`input-area-image`}>
         <div className='centered-row'>
-          {userInputUrl ?
-          <img className='demo-user-photo' src={userInputUrl} alt='Photo taken by user' />
+          {userPhotoUrl ?
+          <img className='demo-user-photo' src={userPhotoUrl} alt='Photo taken by user' />
           : <Webcam
             audio={false}
             ref={webcamRef}
@@ -52,17 +52,17 @@ const CameraInput: React.FC<CameraInputProps> = ({ children }) => {
         <div className='column'>
           <div className='button-row'>
             <button 
-              className={`photo-button ${userInputUrl ? 'enabled' : 'disabled'}`}
-              onClick={() => setUserInputUrl('')}
+              className={`photo-button ${userPhotoUrl ? 'enabled' : 'disabled'}`}
+              onClick={() => setUserPhotoUrl('')}
             >
               <img className='icon-40px' src={camera_button} alt='' />
             </button>
-            <button className={`photo-button ${userInputUrl ? 'disabled' : 'enabled'}`} onClick={capture}>
+            <button className={`photo-button ${userPhotoUrl ? 'disabled' : 'enabled'}`} onClick={capture}>
               <img className='icon-40px' src={shutter_button} alt='' />
             </button>
           </div>
           {children}
-          <DownloadButton userInputUrl={userInputUrl} enabled={fileAvailable} label='Download Image' />
+          <DownloadButton userInputUrl={userPhotoUrl} enabled={fileAvailable} label='Download Image' />
         </div>
       </div>
     </div>

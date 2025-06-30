@@ -11,20 +11,22 @@ export const PreloadedAudioSelector = ({ children, sampleFileData }: PreloadedAu
   const {
     setUploadedFileUrl,
     setFileAvailable,
-    setUserInputUrl,
+    setRecordedUrl,
     setSampleFileUrl,
-    setSelectedFileDetails
+    setSelectedFileDetails,
   } = useDemoContext();
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
     const fileData: SampleFile = JSON.parse(e.target.value);
     setSampleFileUrl(fileData.location);
     setSelectedFileDetails(fileData);
     setFileAvailable(true);
     // clear url's for other inputs
-    setUserInputUrl('');
+    setRecordedUrl('');
     setUploadedFileUrl('');
   };
+
+
 
   return (
     <div className='input-area-parent'>
