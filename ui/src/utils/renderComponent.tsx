@@ -6,6 +6,7 @@ import DisclosurePanel from '../components/projectDescriptions/DisclosurePanel';
 import DemoBoard from '../components/visualAudioDemo/DemoBoard';
 import TechStack from '../components/projectDescriptions/TechStack';
 import GoalAndGithub from '../components/projectDescriptions/GoalAndGithub';
+import HeatMap from '../components/visualAudioDemo/HeatMap';
 
 // loops through project_details array and renders each item as a component with that data
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -22,7 +23,7 @@ export const renderComponent = (data: ProjectDetailComponent, key: number | null
       returnComponent = React.createElement(data.type, { key }, data.text);
       break;
     case 'text':
-      returnComponent = <span key={key}>{data.text}</span>
+      returnComponent = <span key={key} className={data.className}>{data.text}</span>
       break;
     case 'p':
       returnComponent = <p key={key} className={data.className}>{data.text}</p>
@@ -91,6 +92,9 @@ export const renderComponent = (data: ProjectDetailComponent, key: number | null
         el = 'Error: Could not find data'
       }
       returnComponent = <span key={key}>{el}</span>
+      break;
+    case 'heatmap':
+      returnComponent = (<HeatMap key={key} data={data} />);
       break;
     default:
       returnComponent = null;

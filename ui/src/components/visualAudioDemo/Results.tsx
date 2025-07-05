@@ -298,25 +298,27 @@ export default function Results({ data }: ResultsProps) {
           </button>
         </li>
       </menu>
-      {resultFromBackend && data.results.tabs && data.results.tabs.map((tab: ResultTab, index: number) => {
-        // Classification results get a specially formatted tab
-        if(resultToShow === tab.type && tab.type === 'classification' && tab.path) {
-          return (<ClassificationResults key={index} data={get(resultFromBackend, tab.path)} />)
-        // Other types of results just get a disclosure panel for each model
-        } else if(resultToShow === tab.type && tab.resultsForEachModel) {
-          return (
-          tab.resultsForEachModel.map((model, index) => (
-            renderDisclosurePanel(model, index)
-          ))
-        )} else if (resultToShow === tab.type && tab.elements) {
-          return (
-          tab.elements.map((el, index) => (
-            renderComponent(el, index, resultFromBackend)
-          ))
-        )}
-      })}
-      {resultFromBackend && resultToShow === 'Json' && <JSONViewer />}
-      {!resultFromBackend && showPlaceholder()}
+      <div className='results-body'>
+        {resultFromBackend && data.results.tabs && data.results.tabs.map((tab: ResultTab, index: number) => {
+          // Classification results get a specially formatted tab
+          if(resultToShow === tab.type && tab.type === 'classification' && tab.path) {
+            return (<ClassificationResults key={index} data={get(resultFromBackend, tab.path)} />)
+          // Other types of results just get a disclosure panel for each model
+          } else if(resultToShow === tab.type && tab.resultsForEachModel) {
+            return (
+            tab.resultsForEachModel.map((model, index) => (
+              renderDisclosurePanel(model, index)
+            ))
+          )} else if (resultToShow === tab.type && tab.elements) {
+            return (
+            tab.elements.map((el, index) => (
+              renderComponent(el, index, resultFromBackend)
+            ))
+          )}
+        })}
+        {resultFromBackend && resultToShow === 'Json' && <JSONViewer />}
+        {!resultFromBackend && showPlaceholder()}
+      </div>
     </div>
   );
 }

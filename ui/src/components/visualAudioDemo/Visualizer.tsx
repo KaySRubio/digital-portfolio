@@ -16,6 +16,7 @@ export default function Visualizer({data}: VisualizerProps) {
     showSpectrogram,
     waveformOverlayRefs,
     spectrogramOverlayRefs,
+    timelineRef,
     waveformOverlays,
     setWaveformOverlays,
     spectrogramOverlays,
@@ -127,6 +128,7 @@ export default function Visualizer({data}: VisualizerProps) {
             className={`spectrogram-area ${visualizerType !== 'Spectrogram' ? 'offscreen' : ''}`}
           />
         </>}
+        <div id="timeline" ref={timelineRef} />
         {waveformOverlays.map((_, index) => (
           <canvas
             key={index}

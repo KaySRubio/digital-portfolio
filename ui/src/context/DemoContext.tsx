@@ -27,6 +27,7 @@ type DemoContextType = {
   spectrogramRef: React.RefObject<InstanceType<typeof SpectrogramPlugin> | null>;
   waveformOverlayRefs: RefObject<RefObject<HTMLCanvasElement>[]>;
   spectrogramOverlayRefs: RefObject<RefObject<HTMLCanvasElement>[]>;
+  timelineRef: RefObject<HTMLDivElement | null>;
 
   isRecording: boolean;
   setIsRecording: React.Dispatch<React.SetStateAction<boolean>>;
@@ -100,6 +101,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const wavesurferRef = useRef<WaveSurfer | null>(null);
   const recordPluginRef = useRef<InstanceType<typeof RecordPlugin> | null>(null);
   const waveformRef = useRef<HTMLDivElement | null>(null);
+  const timelineRef = useRef<HTMLDivElement | null>(null);
   const spectrogramContainerRef = useRef<HTMLDivElement | null>(null);
   const regionsPluginRef = useRef<InstanceType<typeof RegionsPlugin> | null>(null);
   const spectrogramRef = useRef<InstanceType<typeof SpectrogramPlugin> | null>(null);
@@ -151,7 +153,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
 
   // Waveform & Recording
   useEffect(() => {
-    if (!waveformRef.current) return;
+    if (!waveformRef.current || !timelineRef.current) return;
 
     const regionsPlugin = RegionsPlugin.create();
     regionsPluginRef.current = regionsPlugin;
@@ -169,13 +171,25 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     gradient2.addColorStop(0.5, 'rgb(148, 134, 253)')
     gradient2.addColorStop(1, 'rgb(201, 194, 250)')
 
+    const timelinePlugin = TimelinePlugin.create({
+      container: timelineRef.current,
+      height: 25,
+      timeInterval: 0.25,
+      primaryLabelInterval: 1,
+      style: {
+        fontSize: '10px',
+        color: '#A7A7A7',
+      },
+    });
+
     // Create waveform
     const ws = WaveSurfer.create({
       container: waveformRef.current,
       waveColor: gradient1,
       progressColor: gradient2,
-      plugins: [regionsPlugin],
+      plugins: [regionsPlugin, timelinePlugin],
       height: 200,
+      /* mediaControls: true, adds default play/time bar */
       // barWidth: 2 // optional to look cooler
     });
 
@@ -310,23 +324,13 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     ws.setPlaybackRate(playbackSpeed, preservePitch)
   }, [playbackSpeed, preservePitch, fileAvailable])
 
-  // Zoom on waveform
-  useEffect(() => {
-    if(!wavesurferRef.current || !fileAvailable) return;
-    if(showZoom) {
-      const ws = wavesurferRef.current;
-      ws.registerPlugin(
-        TimelinePlugin.create(),
-      )
-    }
-  }, [showZoom])
-
+  // Zoom in on waveform
   useEffect(() => {
     if(!wavesurferRef.current || !fileAvailable) return;
     const ws = wavesurferRef.current;
     ws.zoom(zoomLevel);
   }, [zoomLevel])
-  
+
   // Regions on waveform
   const updateRegions = () => {
     if(wavesurferRef.current && regionsPluginRef.current) {
@@ -530,6 +534,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
       height,
     }
   }
+
   // Will stop drawing when encounters -1 (for missing data), and restart when encounters a valid value
   const drawLineOverlay = (
     canvas: HTMLCanvasElement,
@@ -667,6 +672,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
         spectrogramRef,
         waveformOverlayRefs,
         spectrogramOverlayRefs,
+        timelineRef,
         isRecording,
         recordedUrl,
         setRecordedUrl,

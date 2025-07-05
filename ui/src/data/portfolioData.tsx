@@ -61,6 +61,7 @@ import vite from '@/assets/svg/vite.svg?react';
 import waveIcon  from '@/assets/svg/wave.svg?react';
 import webpack from '@/assets/svg/webpack.svg?react';
 import wwwIcon  from '@/assets/svg/www.svg?react';
+import spectrogramSvg  from '@/assets/svg/spectrogram.svg';
 
 // wav
 import chicken_audio from '@/assets/wav/chicken.wav';
@@ -148,9 +149,23 @@ export const projects: Project[] = [
             ]},
             {type: 'p', text: 'Output'},
             {type: 'ul', elements: [
-              [{type: 'text', text: 'Amplitude envelope (AE), Root-mean-square energy (RMS), and Zero-crossing rate (ZCR) are mapped directly on the waveform. Use toggles in the Visualizer section to turn them on/off.'}],
-              [{type: 'text', text: 'A heat map for the first 13 Mel-Frequency Cepstral Coefficients (MFCCs) is found in the Results section.'}],
-              [{type: 'text', text: 'Spectral centroid and bandwidth are mapped onto the spectrogram. Turn on the spectrogram in the Visualizer section to view.'}],
+              [
+                {type: 'text', className: 'bold', text: 'Amplitude envelope (AE)'},
+                {type: 'text', text: ', '},
+                {type: 'text', className: 'bold', text: 'Root-mean-square energy (RMS)'},
+                {type: 'text', text: ', and '},
+                {type: 'text', className: 'bold', text: 'Zero-crossing rate (ZCR)'},
+                {type: 'text', text: ', '},
+                {type: 'text', text: 'are mapped directly on the waveform. Use toggles in the Visualizer section to turn them on/off.'}],
+              [
+                {type: 'text', text: 'A heat map for the first '},
+                {type: 'text', className: 'bold', text: '13 Mel-Frequency Cepstral Coefficients (MFCCs)'},
+                {type: 'text', text: ' is found in the Results section.'}
+              ],
+              [
+                {type: 'text',  className: 'bold', text: 'Spectral centroid and bandwidth'},
+                {type: 'text', text: ' are mapped onto the spectrogram. Turn on the spectrogram in the Visualizer section to view.'}
+              ],
               [{type: 'text', text: 'All raw values are provided in the JSON tab in the Results section.'}],
             ]}
           ]
@@ -190,6 +205,37 @@ export const projects: Project[] = [
           }
         ],
         results: {
+          tabs: [
+            {
+              type: 'heatMap',
+              displayText: 'MFCCs', // The name of the type of result that will be displayed as a tab name in the Results box
+              icon: spectrogramSvg, // Optional to add a tiny icon, such as a 100x100px png. Make sure to import it.
+              elements: [
+                {type: 'h4', text: 'Mel-Frequency Cepstral Coefficients (MFCCs)'},
+                {type: 'p', text: 'Mel-Frequency Cepstral Coefficients (MFCCs) are frequency-domain audio features and are a mathematical way to represent the speech signal and extract most important sound characteristics for human speech perception, mirroring human hearing. There\'s 39 different coefficients given for each frame.'},
+                {
+                  type: 'heatmap', 
+                  path: 'data[0].mfccs',
+                  title: 'MFCC Heatmap',
+                  xAxisTitle: 'Time (Seconds)',
+                  yAxisTitle: 'MFCC Coefficients',
+                  xAxisLabelMapping: {
+                    type: 'framesToTime',
+                    sampleRate: 22050,
+                    hopLength: 256,
+                  }
+                },
+                {type: 'p', text: 'Key:'},
+                {type: 'ol', elements: [
+                  [{type: 'text', text: 'C0 is called the energy coefficient and gives the overall energy of the signal'}],
+                  [{type: 'text', text: 'C1-C3 are considered lower-order coefficients and provide information about the general shape of the spectral envelope like overall energy distribution, tilt of the spectrum, loudness, and timbre'}],
+                  [{type: 'text', text: 'C4-C13 are considered middle-olrder coefficients and give finer details about the spectral shape such as locations and relationships of formants in the spectrum. These are helpful to distinguish between phonemes.'}],
+                  [{type: 'text', text: 'C14+ are higher order coefficients that provide information about fine-grained variations of the spectrum. They may hold information about speaker identity but are also influenced by background noise and may give more irrelevant information. These are not displayed in these results.'}],
+                ]},
+                {type: 'p', text: 'MFCCs used to be standard features fed into speech and music processing algorithms but more recently have been replaced by deep learning models that take the raw signal as input and come up with their own features. But they can still be helpful for understanding an audio signal and recognizing patterns in less studied sounds such as animal vocalizations.'},
+              ],
+            },
+          ],
           lineOverlaySetup: [
             {
               type: 'line-spread-points',

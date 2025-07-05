@@ -64,7 +64,8 @@ export type ProjectDetailComponent =
   MainImage | 
   GoalAndGithub | 
   DemoBoard | 
-  TextFromPath;
+  TextFromPath |
+  HeatMap;
 
 export type TextType = 
   'h2' |
@@ -79,6 +80,29 @@ export type TextComponent = {
   text: string,
   className?: string,
   key?: number | string;
+}
+
+export type HeatMap = {
+  type: 'heatmap'
+  path: string,
+  title?: string,
+  xAxisTitle?: string,
+  yAxisTitle?: string,
+  xAxisLabelMapping?: NumberToLabelMapping | FramesToTimeMapping,
+  yAxisLabelMapping?: NumberToLabelMapping | FramesToTimeMapping,
+}
+
+export type NumberToLabelMapping = {
+  type: 'numberToLabel',
+  mappings: {
+    [key: number]: string
+  }
+}
+
+export type FramesToTimeMapping = {
+  type: 'framesToTime'
+  sampleRate: number,
+  hopLength: number,
 }
 
 export type TextFromPath = {
