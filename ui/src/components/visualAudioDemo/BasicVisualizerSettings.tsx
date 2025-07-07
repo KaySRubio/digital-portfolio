@@ -199,7 +199,6 @@ export default function BasicVisualizerSettings({
   const spectrogramScales: SpectrogramScale[] = ['mel', 'linear'];
 
   const handleScaleInput = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log('this ran');
     onSpectrogramSettingsClick()
     if (e && e.target && e.target.value !== spectrogramSettings.scale) {
       // @ts-expect-error It's FINE

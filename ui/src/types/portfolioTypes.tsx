@@ -261,6 +261,7 @@ export type Request = {
 
 export type Result = {
   tabs?: ResultTab[],
+  averageTimeToGetResultsInSeconds?: number,
   regionSetup?: RegionSetup[],
   lineOverlaySetup?: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup | BandLineOverlaySetup)[];
 }

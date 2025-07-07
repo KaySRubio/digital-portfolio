@@ -1285,6 +1285,7 @@ form button {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  flex-direction: column;
 }
 
 .spinner-wrapper-absolute {
@@ -1306,6 +1307,18 @@ form button {
   position: absolute;
   text-align: center;
   margin: 10px 70px;
+}
+
+.waiting-time-message {
+  font-weight: bold;
+  color: var(--purple);
+}
+
+.waiting-time-estimate {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--purple);
+  margin: 0;
 }
 
 .popover {

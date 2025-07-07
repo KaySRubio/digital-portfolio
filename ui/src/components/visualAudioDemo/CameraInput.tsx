@@ -18,7 +18,8 @@ const CameraInput: React.FC<CameraInputProps> = ({ children }) => {
     () => {
       const screenshot = webcamRef.current?.getScreenshot();
         if(screenshot) {
-          resizeImage(screenshot, 224, 224, (resizedImage) => {
+          // resizeImage(screenshot, 224, 224, (resizedImage) => {
+          resizeImage(screenshot, 800, 800, (resizedImage) => {
           setUserPhotoUrl(resizedImage);
           setFileAvailable(true);
         });
@@ -44,7 +45,7 @@ const CameraInput: React.FC<CameraInputProps> = ({ children }) => {
             audio={false}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
-            width={200}
+            /*width={200} */
             height={140}
             videoConstraints={videoConstraints}
           />}

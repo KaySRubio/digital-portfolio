@@ -62,7 +62,6 @@ export const checkAudioFile = async (
 }
 
 export const getAudioMetadata = async (file: File) => {
-  console.log('file: ', file);
   // AudioContext automatically resamples at 48,000 unless given a different sample rate like this: { sampleRate: 16000 }
   // Does NOT detect the original sample rate of the file
   const audioContext = new AudioContext();
@@ -71,7 +70,6 @@ export const getAudioMetadata = async (file: File) => {
 
   const duration = audioBuffer.duration; // in seconds
   const sampleRate = audioBuffer.sampleRate; // e.g. 44100 Hz
-  console.log('audioBuffer.sampleRate', audioBuffer.sampleRate);
   const numberOfChannels = audioBuffer.numberOfChannels;
 
   return {

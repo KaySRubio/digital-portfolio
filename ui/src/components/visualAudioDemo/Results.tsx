@@ -26,7 +26,9 @@ type ResultsProps = {
 
 export default function Results({ data }: ResultsProps) {
   const defaultResults = data.results.tabs ? data.results.tabs[0]?.type : 'Json';
+  const averageTimeToGetResultsInSeconds = data.results.averageTimeToGetResultsInSeconds;
   const [resultToShow, setResultToShow] = useState(defaultResults);
+  const [timeRemaining, setTimeRemaining] = useState(averageTimeToGetResultsInSeconds);
   const {
     resultFromBackend,
     waitingForResults,
@@ -63,9 +65,32 @@ export default function Results({ data }: ResultsProps) {
     )
   }
 
+  useEffect(() => {
+    if (!waitingForResults || !timeRemaining) return;
+
+      const interval = setInterval(() => {
+      setTimeRemaining(prev => {
+        if (prev && prev <= 1) {
+          clearInterval(interval);
+          return 0;
+        }
+        if(prev) return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [waitingForResults, averageTimeToGetResultsInSeconds])
+
   const showPlaceholder = () => {
     if(requestFromBackendError) {
       return (<p className='center'>{requestFromBackendError}</p>)
+    } else if (waitingForResults && averageTimeToGetResultsInSeconds && timeRemaining && timeRemaining > 0) {
+      return (
+        <div className="spinner-wrapper">
+          <p className="waiting-time-message">Estimated seconds to results: </p>
+          <p className="waiting-time-estimate">{timeRemaining}</p>
+        </div>
+      )
     } else if (waitingForResults) {
       return (
         <div className="spinner-wrapper">

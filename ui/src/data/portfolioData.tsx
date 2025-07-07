@@ -8,7 +8,14 @@ import type {
 } from '../types/portfolioTypes';
 import { TopicNames } from '../types/portfolioTypes';
 import { spermWhale113Results, spermWhale5rResults, spermWhaleSocialResults } from './sampleSpermWhaleCodaResults';
-import { womanSingingResults, chickenResults, elkResults } from './sampleAudioFeatureExtractionResults';
+import {
+  womanSingingResults,
+  chickenResults,
+  elkResults,
+  alligatorResults,
+  humpbackResults,
+  duckResults,
+} from './sampleAudioFeatureExtractionResults';
 
 // jpg
 import american_bullfrog from '@/assets/jpg/american_bullfrog1.jpg';
@@ -64,13 +71,16 @@ import wwwIcon  from '@/assets/svg/www.svg?react';
 import spectrogramSvg  from '@/assets/svg/spectrogram.svg';
 
 // wav
+import alligator from '@/assets/wav/alligator.wav';
 import chicken_audio from '@/assets/wav/chicken.wav';
 import chineseAmerican from '@/assets/wav/chinese-american.wav';
+import duck from '@/assets/wav/duck.wav';
 import elk from '@/assets/wav/elk.wav';
+import humpbackwhale from '@/assets/wav/humpbackwhale.wav';
 import indian from '@/assets/wav/indian.wav';
 import mexican from '@/assets/wav/mexican.wav';
 import nigerian from '@/assets/wav/nigerian.wav';
-import singingwoman2 from '@/assets/wav/singingwoman_16k.wav';
+import singingwoman from '@/assets/wav/singingwoman_16k.wav';
 import spermWhale113 from '@/assets/wav/1_1_3_exchange_2_whales.wav';
 import spermWhale5r from '@/assets/wav/5r_exchange_2_whales_diving.wav';
 import spermWhaleSocial from '@/assets/wav/social_exchange_unit_r.wav';
@@ -103,7 +113,7 @@ export const topics: Topic[] = [
 ]
 
 export const projects: Project[] = [
-  // audio-feature-extraction
+  // audio-feature-extraction --> DONE!!
   {
     path: 'audio-feature-extraction',
     short_title: 'Audio Feature Extraction',
@@ -111,7 +121,7 @@ export const projects: Project[] = [
     date: 'January 2025',
     topics: [TopicNames.BIOACOUSTICS],
     visible: true,
-    featured: false,
+    featured: true,
     desc: 'Extract time- and frequency-domain features from audio files',
     mainImage: {
       type: 'png',
@@ -124,7 +134,11 @@ export const projects: Project[] = [
         type: 'GoalAndGithub',
         elements: [
           {type: 'h2', text: 'Goal'},
-          {type: 'text', text: 'Extract audio features and map them onto waveforms, spectrograms, and heat maps. Features include:'},
+          {type: 'text', text: 'Apply skills learned in '},
+          {type: 'a', text: 'Audio Signal Processing for Machine Learning by Valerio Velardi', href: 'https://www.youtube.com/watch?v=iCwMQJnKk2c&list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0'},
+          {type: 'text', text: ' to extract features from human and animal vocalizations. Send audio files to a python back end hosted on '},
+          {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/audio_feature_extraction/blob/main/app.py'},
+          {type: 'text', text: ' for analysis and visualize on waveforms and spectrograms. Features include:'},
           {type: 'ul', elements: [
             [{type: 'text', text: 'Amplitude envelope (AE)'}],
             [{type: 'text', text: 'Root-mean-square energy (RMS)'}],
@@ -180,9 +194,9 @@ export const projects: Project[] = [
           },
           sampleAudio: [
             {
-              displayText: 'Woman Singing',
-              location: singingwoman2,
-              sampleResults: womanSingingResults,
+              displayText: 'American Alligator',
+              location: alligator,
+              sampleResults: alligatorResults,
             },
             {
               displayText: 'Chicken Egg Song',
@@ -193,6 +207,21 @@ export const projects: Project[] = [
               displayText: 'Elk Bugling',
               location: elk,
               sampleResults: elkResults,
+            },
+            {
+              displayText: 'Humpback Whale Song',
+              location: humpbackwhale,
+              sampleResults: humpbackResults,
+            },
+            {
+              displayText: 'Mallard Duck Quack',
+              location: duck,
+              sampleResults: duckResults,
+            },          
+            {
+              displayText: 'Woman Singing',
+              location: singingwoman,
+              sampleResults: womanSingingResults,
             },
           ],
         },
@@ -306,13 +335,39 @@ export const projects: Project[] = [
       {type: 'h2', text: 'Tech Stack'},
       {type: 'TechStack', techList: ['librosa', 'matplotlib'] },
       {type: 'text', text: 'Audio sources '},
-      {type: 'ul', elements: [
-        [{type: 'a', text: '', href: ''}],
+      {type: 'ol', elements: [
+        [
+          {type: 'text', text: 'American Alligator in the Everglades National Park in Florida, from the '},
+          {type: 'a', text: 'National Park Service', href: 'https://www.nps.gov/subjects/sound/sounds-alligator.htm '},
+          {type: 'text', text: '.'},
+        ],
+        [
+          {type: 'text', text: 'Chicken egg song (2024) recorded by K Rubio in Massachusetts.'},
+        ],
+        [
+          {type: 'text', text: 'Elk bugle (ID: nri-ElkBuglingGRSA) from Great Sand Dunes National Park and Preserve in Colorado. Recording from '},
+          {type: 'a', text: 'the National Park Service', href: 'https://www.nps.gov/subjects/sound/sounds-elk.htm'},
+          {type: 'text', text: '.'},
+        ],
+        [
+          {type: 'text', text: 'Humpback whale song (1953-04-30) from Bermuda from the New Bedford Whaling Museum and Woods Hole Oceanographic Institution, '},
+          {type: 'a', text: 'Watkins Marine Mammal Sound Database', href: 'https://whoicf2.whoi.edu/science/B/whalesounds/bestOf.cfm?code=AC2A '},
+          {type: 'text', text: '.'},
+        ],
+        [
+          {type: 'text', text: 'Kaira Rae singing acapella cover of Fly Me to the Moon by Frank Sinatra available on '},
+          {type: 'a', text: 'YouTube', href: 'https://www.youtube.com/watch?v=dBEUX9fP584'},
+          {type: 'text', text: '.'},
+        ],
+        [
+          {type: 'text', text: 'Mallard duck in France (2024-03-06, ID: XC881155) from '},
+          {type: 'a', text: 'xeno-canto.org', href: 'https://xeno-canto.org/species/Anas-platyrhynchos '},
+          {type: 'text', text: '.'},
+        ],
       ]}
     ],
   },
-
-  // sperm-whale-codas
+  // sperm-whale-codas --> DONE!!
   {
     path: 'sperm-whale-codas',
     short_title: 'Sperm Whale Codas',
@@ -335,7 +390,9 @@ export const projects: Project[] = [
         type: 'GoalAndGithub',
         elements: [
           {type: 'h2', text: 'Goal'},
-          {type: 'text', text: 'Use Voice Activity Detection (VAD) to separate a recording of sperm whale vocalizations into individual codas, then use VAD to gather metadata on each coda that could be used to transcribe them, including the number of clicks per coda, the total coda duration, and the durations of inter-click intervals. For demonstration purposes a simple formula has been used to highlight the famous 1+1+3 coda, which is the most common coda the Eastern Caribbean clan and thought to be the clan membership name.'},
+          {type: 'text', text: 'Use Voice Activity Detection (VAD) to separate a recording of sperm whale vocalizations into individual codas, then use VAD to gather metadata on each coda that could be used to transcribe them, including the number of clicks per coda, the total coda duration, and the durations of inter-click intervals. For demonstration purposes a simple formula has been used to highlight the famous 1+1+3 coda, which is the most common coda the Eastern Caribbean clan and thought to be the clan membership name. Files are analyzed on a python back end hosted on '},
+          {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/transcribe_sperm_whale_coda/blob/main/app.py'},
+          {type: 'text', text: '.'},
         ],
         href: 'https://github.com/KaySRubio/audio-signal-processing/blob/main/Analyzing%20Sperm%20Whale%20Codas%20with%20VAD.ipynb',
       },
@@ -468,14 +525,14 @@ export const projects: Project[] = [
       ]}
     ],
   },
-  // bat-social-calls
+  // bat-social-calls --> not done
   {
     path: 'bat-social-calls',
     short_title: 'Bat Social Calls',
     title: '',
     date: '',
     topics: [TopicNames.BIOACOUSTICS],
-    visible: true,
+    visible: false,
     featured: false,
     desc: 'Exploring ultrasonic social calls during flight of big brown bats',
     mainImage: {
@@ -486,14 +543,14 @@ export const projects: Project[] = [
     techStack: ['Audio Signal Processing', 'librosa'],
     project_details: [],
   },
-  // chicken-vocalizations
+  // chicken-vocalizations --> not done
   {
     path: 'chicken-vocalizations',
     short_title: 'Chicken Vocalizations',
     title: '',
     date: '',
     topics: [TopicNames.BIOACOUSTICS],
-    visible: true,
+    visible: false,
     featured: false,
     desc: 'Documenting chicken sound patterns',
     mainImage: {
@@ -505,14 +562,14 @@ export const projects: Project[] = [
       'Audio Signal Processing', 'librosa'],
     project_details: [],
   },
-  // plant-sound
+  // plant-sound --> not done
   {
     path: 'plant-sound',
     short_title: 'Plant Sound',
     title: '',
     date: '',
     topics: [TopicNames.BIOACOUSTICS],
-    visible: true,
+    visible: false,
     featured: false,
     desc: 'Exploring ultrasonic \'popping\' of distressed veggies',
     mainImage: {
@@ -524,7 +581,7 @@ export const projects: Project[] = [
       'Audio Signal Processing', 'librosa'],
     project_details: [],
   },
-  // frog-identifier
+  // frog-identifier --> DONE!!
   {
     path: 'frog-identifier',
     short_title: 'Frog Identifier',
@@ -547,7 +604,9 @@ export const projects: Project[] = [
         elements: [
           {type: 'text', text: 'I created an image classifier for frog species in Massachusetts by fine-tuning a pre-trained neural network model, '},
           {type: 'a', text: 'resnet18', href: 'https://huggingface.co/microsoft/resnet-18'},
-          {type: 'text', text: ', on ~200 frog pictures per species collected from a search engine.'},
+          {type: 'text', text: ', on ~200 frog pictures per species collected from a search engine. Model is hosted on '},
+          {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/Identifying_Frogs_in_Massachusetts/tree/main'},
+          {type: 'text', text: '.'},
         ],
         href: 'https://github.com/KaySRubio/deep-learning-projects/blob/main/frog_image_classifier.ipynb',
       },
@@ -618,7 +677,6 @@ export const projects: Project[] = [
           }
         ],
         },
-        
         requests: [
           {
             type: 'gradio',
@@ -628,6 +686,7 @@ export const projects: Project[] = [
           }
         ],
         results: {
+          averageTimeToGetResultsInSeconds: 50,
           tabs: [
             {
               type: 'classification',
@@ -651,14 +710,14 @@ export const projects: Project[] = [
       }
     ],
   },
-  // voice-detection
+  // voice-detection --> not done
   {
     path: 'voice-detection',
     short_title: 'Voice Detection',
     title: '',
     date: '',
     topics: [TopicNames.MACHINELEARNING, TopicNames.WEBAPPDEVELOPMENT],
-    visible: true,
+    visible: false,
     featured: false,
     mainImage: {
       type: 'png',
@@ -672,7 +731,7 @@ export const projects: Project[] = [
     ],
     project_details: [],
   },
-  // speech-recognition
+  // speech-recognition --> DONE!!
   {
     path: 'speech-recognition',
     short_title: 'Speech Recognition',
@@ -701,7 +760,7 @@ export const projects: Project[] = [
             [{type: 'text', text: 'Fine-tune my own ASR model for accent classification'}],
             [
               {type: 'text', text: 'Demo work on '},
-              {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/'},
+              {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/speech_transcribe_phonemes_and_accent/tree/main'},
               {type: 'text', text: ' with '},
               {type: 'a', text: 'Gradio', href: 'https://www.gradio.app/'},
               {type: 'text', text: ' and create an API endpoint that can take in audio and pass ASR output in json format to a front-end application'}
@@ -1136,7 +1195,7 @@ export const projects: Project[] = [
       ]}
     ],
   },
-  // danceability
+  // danceability --> DONE!!
   {
     path: 'danceability',
     short_title: 'Danceability',
@@ -1151,7 +1210,7 @@ export const projects: Project[] = [
       src: dancing,
       alt: 'Three people dancing in colorful clothing',
     },
-    techStack: ['Traditional Machine Learning','scikit-learn'],
+    projectCardTechStack: ['scikitlearn', 'pandas', 'matplotlib'],
     project_details: [
       {
         type: 'GoalAndGithub',
@@ -1204,7 +1263,7 @@ export const projects: Project[] = [
       {type: 'p', text: 'Defferrard, Michael and Benzi, Kirell and Vandergheynst, Pierre and Bresson, Xavier (2017). FMA: A Dataset for Music Analysis. In 18th International Society for Music Information Retrieval Conference (ISMIR). arXiv. 1612.01840. https://arxiv.org/abs/1612.01840'},
     ],
   },
-  // diabetes-classifier
+  // diabetes-classifier --> DONE!!
   {
     path: 'diabetes-classifier',
     short_title: 'Diabetes Classifier',
@@ -1220,7 +1279,6 @@ export const projects: Project[] = [
       alt: 'A patient laying in a hospital bed with a medical professional standing over with a notepad while smiling',
     },
     projectCardTechStack: ['scikitlearn', 'skopt'],
-    // techStack: ['Traditional Machine Learning', 'scikit-learn'],
     project_details: [
       {
         type: 'GoalAndGithub',
@@ -1278,7 +1336,7 @@ export const projects: Project[] = [
       {type: 'p', text: 'Beata Strack, Jonathan P. DeShazo, Chris Gennings, Juan L. Olmo, Sebastian Ventura, Krzysztof J. Cios, and John N. Clore, “Impact of HbA1c Measurement on Hospital Readmission Rates: Analysis of 70,000 Clinical Database Patient Records,” BioMed Research International, vol. 2014, Article ID 781670, 11 pages, 2014.'}
     ],
   },
-  // dear abby topic-modeling
+  // dear abby topic-modeling --> DONE!!
   {
     path: 'topic-modeling',
     short_title: 'Topic Modeling',
@@ -1533,7 +1591,7 @@ export const projects: Project[] = [
       },
     ],
   },
-  // algorithm-ocean
+  // algorithm-ocean --> not done
   {
     path: 'algorithm-ocean',
     short_title: 'Algorithm Ocean',
@@ -1551,14 +1609,14 @@ export const projects: Project[] = [
     techStack: ['React', 'TypeScript'],
     project_details: [],
   },
-  // i-ready
+  // i-ready --> not done
   {
     path: 'i-ready',
     short_title: 'i-Ready',
     title: '',
     date: '',
     topics: [TopicNames.WEBAPPDEVELOPMENT],
-    visible: true,
+    visible: false,
     featured: false,
     desc: 'Math and literacy programs for kids at Curriculum Associates',
     mainImage: {
@@ -1569,14 +1627,14 @@ export const projects: Project[] = [
     techStack: ['React', 'Nodejs'],
     project_details: [],
   },
-  // speech-app
+  // speech-app --> not done
   {
     path: 'speech-app',
     short_title: 'Speech App',
     title: '',
     date: '',
     topics: [TopicNames.WEBAPPDEVELOPMENT],
-    visible: true,
+    visible: false,
     featured: false,
     desc: 'A tool to input audio and display phonemic transcriptions and data',
     mainImage: {

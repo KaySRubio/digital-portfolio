@@ -38,7 +38,7 @@ export default function SubmitButton({requests}: SubmitButtonProps) {
           } catch (error) {
             console.log('Error: ', error);
             await setWaitingForResults(false);
-            await setRequestFromBackendError('Error requesting data');
+            await setRequestFromBackendError('Error requesting data. Sometimes Hugging Face Spaces are down, please try again later.');
           }
         }
         // TODO - if you have other types of requests on the future, add them here
