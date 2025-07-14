@@ -70,7 +70,10 @@ export default function BasicVisualizerSettings({
           }
           disabled={!fileAvailable}
         />
-        <MoreInformation onClick={() => {setShowSpectrogramHelp((prev) => (!prev))}} />
+        <MoreInformation
+          onClick={() => {setShowSpectrogramHelp((prev) => (!prev))}}
+          label='Show more information about the spectrogram'
+        />
                   
       </div>
     </div>
@@ -83,8 +86,9 @@ export default function BasicVisualizerSettings({
           className='slider'
           id="zoom"
           type="range"
-          min="10"
+          min="0"
           max="1000"
+          step="100"
           value={zoomLevel}
           onChange={(e) => setZoomLevel(parseInt(e.target.value, 10))}
           disabled={!fileAvailable}
@@ -191,7 +195,10 @@ export default function BasicVisualizerSettings({
         />
         
       </div>
-      <MoreInformation onClick={() => {setShowHzSettingHelp((prev: boolean) => (!prev))}} />
+      <MoreInformation
+        onClick={() => {setShowHzSettingHelp((prev: boolean) => (!prev))}}
+        label='Show more information about the spectrogram frequency options'
+      />
       </div>
     )
   }

@@ -175,7 +175,8 @@ export type GoalAndGithub = {
 
 export type DisclosurePanel = {
   type: 'DisclosurePanel',
-  title: ProjectDetailComponent,
+  title: string,
+  titleEl?: 'h1' | 'h2' | 'h3' | 'h4' | 'text',
   children: ProjectDetailComponent[],
   key?: number | string;
 }
@@ -249,6 +250,7 @@ export type CustomSection = {
   displayText: string,
   elements: ProjectDetailComponent[],
   size?: 'half-screen' | 'full-screen',
+  className?: string,
 }
 
 export type Request = {
@@ -264,6 +266,13 @@ export type Result = {
   averageTimeToGetResultsInSeconds?: number,
   regionSetup?: RegionSetup[],
   lineOverlaySetup?: (LineSpreadPointsOverlaySetup | TimeStampedLineOverlaySetup | BandLineOverlaySetup)[];
+  slowResultsHandler?: SlowResultsHandler,
+}
+
+export type SlowResultsHandler = {
+	timeBeforeShowMessage: number,
+	message: string,
+	expectedTimeToResults: number,
 }
 
 export type RegionSetup = {
@@ -292,6 +301,7 @@ export type ResultTab = {
 }
 
 export type ResultForEachModel = {
+  title?: string,
   description?: ProjectDetailComponent[],
   results?: ProjectDetailComponent[],
 }

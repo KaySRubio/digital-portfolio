@@ -63,45 +63,47 @@ export default function AudioInput({data}: AudioInputProps) {
       <div className='interactive-box-header'>
         <h3>Audio Input</h3>
       </div>
-
-      <menu className='interactive-box-menu'>
-        <li>
-          <button
-            onClick={() => setAudioInput('Record')}
-            className={`
-              interactive-box-menu-item
-              ${audioInput === 'Record' ? 'active-interactive-box-menu' : ''}
-            `}
-          >
-            <img className='input-icon' alt="" src={microphone} />
-            Record
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => setAudioInput('Samples')}
-            className={`
-              interactive-box-menu-item
-              ${audioInput === 'Samples' ? 'active-interactive-box-menu' : ''}
-            `}
-          >
-            <img className='input-icon' alt="" src={music} />
-            Samples
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => setAudioInput('Upload')}
-            className={`
-              interactive-box-menu-item
-              ${audioInput === 'Upload' ? 'active-interactive-box-menu' : ''}
-            `}
-          >
-            <img className='input-icon' alt="" src={upload} />
-            Upload
-          </button>
-        </li>
-      </menu>
+        <div role="radiogroup" className='interactive-box-menu' aria-label='Select source for audio input'>
+          <li role="presentation">
+            <button
+              onClick={() => setAudioInput('Record')}
+              className={`
+                interactive-box-menu-item
+                ${audioInput === 'Record' ? 'active-interactive-box-menu' : ''}
+              `}
+              role="radio"
+            >
+              <img className='input-icon' alt="" src={microphone} />
+              Record
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              onClick={() => setAudioInput('Samples')}
+              className={`
+                interactive-box-menu-item
+                ${audioInput === 'Samples' ? 'active-interactive-box-menu' : ''}
+              `}
+              role="radio"
+            >
+              <img className='input-icon' alt="" src={music} />
+              Samples
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              onClick={() => setAudioInput('Upload')}
+              className={`
+                interactive-box-menu-item
+                ${audioInput === 'Upload' ? 'active-interactive-box-menu' : ''}
+              `}
+              role="radio"
+            >
+              <img className='input-icon' alt="" src={upload} />
+              Upload
+            </button>
+          </li>
+        </div>
       <div>{InputComponent}</div>
     </div>
   );

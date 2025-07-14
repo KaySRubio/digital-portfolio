@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { topics, base_path, projects } from '../../data/portfolioData';
+import { topics, projects } from '../../data/portfolioData';
 import ProjectCard from './ProjectCard'
 
 const FeaturedProjects = () => {
@@ -22,7 +22,7 @@ const FeaturedProjects = () => {
           {topics.map(topic => {
           const Icon = topic.iconComponent;
           return (
-            <Link to={`${base_path}${topic.path}`} key={topic.title} className={`large-menu-button white`}>
+            <Link to={`${topic.path}`} key={topic.title} className={`large-menu-button white`}>
               <Icon className={`large-menu-icon white`} />
               See all {topic.title}
             </Link>

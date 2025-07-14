@@ -36,18 +36,18 @@ const Contact = () => {
             <div className='form-row'>
               <div className='form-text-area'>
                 <label htmlFor="name">Name</label><br></br>
-                <input type="text" name="name" required />
+                <input type="text" id="name" name="name" required />
               </div>
               <div className='form-text-area'>
                 <label htmlFor="email">Email</label><br></br>
-                <input type="email" name="email" required />
+                <input id="email" type="email" name="email" required />
               </div>
             </div>
             <div className='form-row'>
               <div className='form-text-area'>
                 <label htmlFor="message">Message</label><br></br>
-                <textarea name="message" required></textarea>
-                <input type="checkbox" name="botcheck" className="hidden" />
+                <textarea id="message" name="message" required></textarea>
+                <input type="checkbox" name="botcheck" className="hidden" aria-hidden={true} />
               </div>
             </div>
               <div className='form-row'><button type="submit">Send Message</button>

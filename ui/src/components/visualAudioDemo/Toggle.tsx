@@ -57,7 +57,8 @@ export function ToggleButton({ id, disabled = false, checked, onChange, ariaLabe
     <button
       role="switch"
       className={`toggle-btn ${checked ? 'toggle-btn-on' : 'toggle-btn-off'}`}
-      id={`${id}-btn`}
+      // id={`${id}-btn`}
+      id={id}
       onClick={() => onChange(!checked)}
       disabled={disabled}
       aria-label={ariaLabel}

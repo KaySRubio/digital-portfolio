@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDemoContext } from "../../context/DemoContext";
 import JSONViewer from './JSONViewer';
 import DisclosurePanel from '../projectDescriptions/DisclosurePanel';
@@ -26,6 +26,7 @@ type ResultsProps = {
 
 export default function Results({ data }: ResultsProps) {
   const defaultResults = data.results.tabs ? data.results.tabs[0]?.type : 'Json';
+  const slowResultsHandler = data.results.slowResultsHandler;
   const averageTimeToGetResultsInSeconds = data.results.averageTimeToGetResultsInSeconds;
   const [resultToShow, setResultToShow] = useState(defaultResults);
   const [timeRemaining, setTimeRemaining] = useState(averageTimeToGetResultsInSeconds);
@@ -40,34 +41,34 @@ export default function Results({ data }: ResultsProps) {
   } = useDemoContext();
 
   const renderDisclosurePanel = (model: ResultForEachModel, index: number) => {
-    const title = (
-      <div>
-        {model.description?.map((el, index) => (renderComponent(el, index)))}
-      </div>
-    );
     // portfolioData uses a textFromPath to find the text in the resultFromBackend data using a path
     const resultData = resultFromBackend;
     const children = (
       <div>
-        {model.results?.map((el, index) => (renderComponent(el, index, resultData)))}
+        <div className='disclosure-panel-small-text'>
+          {model.description?.map((el, index) => (renderComponent(el, index)))}
+        </div>
+        <div>
+          {model.results?.map((el, index) => (renderComponent(el, index, resultData)))}
+        </div>
       </div>
     );
 
     return (
       <DisclosurePanel 
         key={index}
-        title={title}
+        title={model.title}
         children={children}
         index={index}
-        className='demo-results-disclosure-panel'
         expandedByDefault={true}
       />
     )
   }
 
+  // Handle slow results in 2 separate patterns
+  // Consistent slow results
   useEffect(() => {
     if (!waitingForResults || !timeRemaining) return;
-
       const interval = setInterval(() => {
       setTimeRemaining(prev => {
         if (prev && prev <= 1) {
@@ -79,21 +80,42 @@ export default function Results({ data }: ResultsProps) {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [waitingForResults, averageTimeToGetResultsInSeconds])
+  }, [waitingForResults])
+
+  // Slow results sometimes (e.g., space was asleep)
+  useEffect(() => {
+    if(!slowResultsHandler) return;
+
+    setTimeout(() => {
+      setTimeRemaining(slowResultsHandler.expectedTimeToResults);
+    }, slowResultsHandler.timeBeforeShowMessage * 1000)
+
+    const interval = setInterval(() => {
+      setTimeRemaining(prev => {
+        if (prev && prev <= 1) {
+          clearInterval(interval);
+          return 0;
+        }
+        if(prev) return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [waitingForResults, slowResultsHandler])
 
   const showPlaceholder = () => {
     if(requestFromBackendError) {
       return (<p className='center'>{requestFromBackendError}</p>)
-    } else if (waitingForResults && averageTimeToGetResultsInSeconds && timeRemaining && timeRemaining > 0) {
+    } else if (waitingForResults && timeRemaining && timeRemaining > 0) {
       return (
         <div className="spinner-wrapper">
-          <p className="waiting-time-message">Estimated seconds to results: </p>
+          <p className="waiting-time-message">{slowResultsHandler ? slowResultsHandler.message : 'Results are coming! Estimated time remaining:'}</p>
           <p className="waiting-time-estimate">{timeRemaining}</p>
         </div>
       )
     } else if (waitingForResults) {
       return (
         <div className="spinner-wrapper">
+          <p className='sr-only'>Results are pending</p>
           <div className="spinner" />
         </div>
       );
@@ -294,15 +316,15 @@ export default function Results({ data }: ResultsProps) {
         <h3>Results</h3>
       </div>
 
-      <menu className='interactive-box-menu'>
+      <div className='interactive-box-menu' role='radiogroup' aria-label='Select type of results to view'>
         {data.results.tabs && data.results.tabs.map((tab: ResultTab, index: number) => (
-          <li key={index}>
+          <li key={index} role="presentation">
             <button
               onClick={() => setResultToShow(tab.type)}
               className={`
               interactive-box-menu-item
-              ${resultToShow === tab.type ? 'active-interactive-box-menu' : ''}
-            `}
+              ${resultToShow === tab.type ? 'active-interactive-box-menu' : ''}`}
+              role='radio'
             >
               <img className='input-icon-large' alt="" src={tab.icon} />
               {tab.displayText}
@@ -310,38 +332,61 @@ export default function Results({ data }: ResultsProps) {
           </li>
         ))
         }
-        <li>
+        <li role="presentation">
           <button
             onClick={() => setResultToShow('Json')}
             className={`
               interactive-box-menu-item
-              ${resultToShow === 'Json' ? 'active-interactive-box-menu' : ''}
-            `}
+              ${resultToShow === 'Json' ? 'active-interactive-box-menu' : ''}`}
+              role='radio'
           >
             <img className='input-icon-large' alt="" src={json} />
             Json
           </button>
         </li>
-      </menu>
+      </div>
       <div className='results-body'>
         {resultFromBackend && data.results.tabs && data.results.tabs.map((tab: ResultTab, index: number) => {
           // Classification results get a specially formatted tab
           if(resultToShow === tab.type && tab.type === 'classification' && tab.path) {
-            return (<ClassificationResults key={index} data={get(resultFromBackend, tab.path)} />)
+            return (
+              <>
+                <h4 className='sr-only'>{tab.displayText}</h4>
+                <ClassificationResults key={index} data={get(resultFromBackend, tab.path)} />
+              </>
+            )
           // Other types of results just get a disclosure panel for each model
           } else if(resultToShow === tab.type && tab.resultsForEachModel) {
             return (
-            tab.resultsForEachModel.map((model, index) => (
-              renderDisclosurePanel(model, index)
-            ))
-          )} else if (resultToShow === tab.type && tab.elements) {
+              <>
+                <h4 className="sr-only">{tab.displayText}</h4>
+                {tab.resultsForEachModel.map((model, index) => (
+                  <React.Fragment key={index}>
+                    {renderDisclosurePanel(model, index)}
+                  </React.Fragment>
+                ))}
+              </>
+            )
+          } else if (resultToShow === tab.type && tab.elements) {
             return (
-            tab.elements.map((el, index) => (
-              renderComponent(el, index, resultFromBackend)
-            ))
-          )}
+              <>
+                <h4 className="sr-only">{tab.displayText}</h4>
+                {tab.elements.map((el, index) => (
+                  <React.Fragment key={index}>
+                    {renderComponent(el, index, resultFromBackend)}
+                  </React.Fragment>
+                  ))
+                }
+              </>
+            )
+          }
         })}
-        {resultFromBackend && resultToShow === 'Json' && <JSONViewer />}
+        {resultFromBackend && resultToShow === 'Json' && 
+          <>
+            <h4 className='sr-only'>JSON</h4>
+            <JSONViewer />
+          </>
+        }
         {!resultFromBackend && showPlaceholder()}
       </div>
     </div>

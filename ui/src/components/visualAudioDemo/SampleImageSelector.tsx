@@ -33,13 +33,14 @@ export const SampleImageSelector = ({ children, sampleFileData }: SampleImageSel
     <div className='input-area-parent-image'>
       <h4 className='sr-only'>Samples</h4>
       <div className='preloaded-input-area'>
-        <div>
+        <div role='radiogroup' aria-label='Select a sample image'>
           {sampleFileData.map((file, index) => (
             <button 
               key={`image-${index}`}
               className='demo-image-button'
               onClick={(e) => handleChange(e, index)}
               data-file={JSON.stringify(file)}
+              role='radio'
             >
               <img className={`demo-sample-image ${activeIndex === index ? 'active' : ''}`} src={file.location} alt={file.alt} />
             </button>

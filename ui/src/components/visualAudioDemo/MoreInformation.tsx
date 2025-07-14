@@ -1,9 +1,10 @@
 type MoreInformationButtonProps = {
   onClick: () => void;
+  label?: string;
 };
-export default function MoreInformationButton({ onClick }: MoreInformationButtonProps) {
+export default function MoreInformationButton({ onClick, label = 'Show more information' }: MoreInformationButtonProps) {
   return (
-    <button aria-label="Show more information" className='more-info-button' onClick={onClick}>
+    <button aria-label={label} className='more-info-button' onClick={onClick}>
       i
     </button>
   );

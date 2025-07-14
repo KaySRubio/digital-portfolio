@@ -12,7 +12,7 @@ export default function Breadcrumbs({className}: BreadcrumbsProps) {
     .filter(crumb => crumb !== '');
 
   return (
-    <nav className={`${className} breadcrumbs`}>
+    <nav className={`${className} breadcrumbs`} aria-label='Breadcrumbs'>
       {location.pathname !== '/' && <div>
         <Link className={className} to={''}>home</Link>
         {crumbs.map((crumb, index) => {

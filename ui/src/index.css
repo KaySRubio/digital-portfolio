@@ -277,6 +277,12 @@ h1, h2, h3 {
   height: 150px; 
 }
 
+.repeat-horiz-background-large-sand-top {
+  background-size: 650px;
+  height: 150px;
+  background-color: var(--sand);
+}
+
 .repeat-horiz-background-sand {
   height: 140px; 
 }
@@ -556,6 +562,11 @@ form button {
   text-align: left;
   color: var(--dark-blue-gray);
   line-height: 1.6em;
+  /*max-width: 900px;
+  margin: 0px auto; */
+}
+
+.project-details-restricted-width {
   max-width: 900px;
   margin: 0px auto;
 }
@@ -582,6 +593,7 @@ form button {
 .project-details h2 {
   text-transform: uppercase;
   font-size: 24px;
+  margin-top: 30px;
 }
 
 .project-details h3 {
@@ -663,11 +675,9 @@ form button {
 }
 
 .disclosure-panel {
-  border: 1px solid gray;
-  margin: 10px 0;
-  padding: 10px 20px;
-  background-color: var(--very-light-gray);
-  border-radius: 5px;
+  border: 2px solid var(--med-blue);
+  margin: 10px 0 20px 0;
+  border-radius: 3px;
 }
 
 .demo-results-disclosure-panel {
@@ -680,24 +690,35 @@ form button {
 }
 
 .disclosure-panel, demo-results-disclosure-panel span {
-  background-color: var(--very-light-gray);
+  background-color: white;
   font-size: 16px;
 }
 
 .disclosure-panel-button {
   border: none;
-  background-color: var(--very-light-gray);
-  padding: 5px;
+  font-weight: bold;
+  color: white;
+  padding: 10px 20px;
+  background-color: var(--med-blue);
   width: 100%;
   text-align: left;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  gap: 1em;
   align-items: center;
-  color: black;
+}
+
+.disclosure-panel-body {
+  padding: 10px 20px;
+}
+
+.disclosure-panel-small-text {
+  font-size: 0.8em;
+  margin-bottom: 10px;
 }
 
 .arrow {
-  color: var(--dark-blue-gray);
+  color: white;
   fill: currentColor;
 }
 
@@ -743,6 +764,11 @@ form button {
 
 .full-screen {
   width: 100%;
+}
+
+.max-width-650 {
+  max-width: 650px;
+  width: 650px;
 }
 
 .demo-custom-section {
@@ -792,7 +818,7 @@ form button {
 
 .interactive-box-header {
   border-bottom: 1px solid var(--Speech_light_gray);
-  padding: 0 10px;
+  padding: 2px 10px 0 10px;
 }
 
 .interactive-box-header h3 {
@@ -808,7 +834,6 @@ form button {
   height: 50px;
   list-style: none;
   display: flex;
-  border-top: 2px solid var(--Speech_dark_blue_gray);
 }
 
 .interactive-box-menu-item {
@@ -1102,7 +1127,7 @@ form button {
 }
 
 .demo-user-photo {
-  width: 200px;
+  /*width: 200px;*/
   height: 140px;
 }
 
@@ -1312,6 +1337,7 @@ form button {
 .waiting-time-message {
   font-weight: bold;
   color: var(--purple);
+  text-align: center;
 }
 
 .waiting-time-estimate {

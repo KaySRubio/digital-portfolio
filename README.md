@@ -300,3 +300,26 @@ results: {
 
 Note: When you include a band and a center line, both must be included, and it's helpful for visual layering
 to place the band setup BEFORE the center line setup
+
+
+15. How to handle results that may take a while
+
+Case 1: results take a consistent amount of time (e.g., space doesn't sleep)
+
+```
+results: {
+  averageTimeToGetResultsInSeconds: 50,
+}
+```
+
+Case 2: results take a while when space is waking up, but requests thereafter are fast:
+
+```
+results: {
+  slowResultsHandler: {
+    timeBeforeShowMessage: 10,
+    message: 'It seems the Hugging Face Space is just waking up. This may take a minute, but your next requests today will be much faster. Estimated time remaining:',
+    expectedTimeToResults: 60,
+  },
+}
+```

@@ -38,7 +38,7 @@ const Menu = () => {
   
   return (
     <div>
-    <nav className={`large-menu ${backgroundColor}`}>
+    <nav className={`large-menu ${backgroundColor}`} aria-label='Main'>
       <div>
         <Link className={`large-menu-home-button ${color}`} to={''}>Kay Rubio</Link>
         <Breadcrumbs className={color} />

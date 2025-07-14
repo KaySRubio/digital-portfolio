@@ -13,7 +13,6 @@ const ClassificationResults: React.FC<ClassificationResultsProps> = ({ data }) =
 
   return (
     <div className='classification-results-area'>
-      <h4 className='sr-only'>Classification</h4>
       <div>
         {likelyCategories.length > 0 && (
           <div>

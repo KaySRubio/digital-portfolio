@@ -97,11 +97,11 @@ export default function Visualizer({data}: VisualizerProps) {
         <h3>Audio Visualizer</h3>
       </div>
       {showSpectrogram && <VisualizerMenu onClick={() => setShowSpectogramRerenderText(false)} />}
-      <h4 className='sr-only'>Waveform and Spectrogram</h4>
-     
+
       {/* waveform zoom +canvases needs position: relative, but seems to disturb spectrogram from showing up */}
       <div
         className={`visualizer-body ${visualizerType === 'Waveform' ? 'visualizer-body-waveform' : 'visualizer-body-spectrogram'}`}
+        aria-hidden={true}
       >
         {/* To show spectrogram, waveform needs to be rendered, not hidden or opacity: 0 in any way */}
         <div 
@@ -144,6 +144,20 @@ export default function Visualizer({data}: VisualizerProps) {
           />
         ))}
       </div>
+
+      {/* Waveforms, spectrograms and line graphs on canvas don't work well with SR so show messages describing everything instead */}
+      {fileAvailable && visualizerType === 'Waveform' &&
+        <div className='sr-only'>
+          <h4 className='sr-only'>Waveform</h4>
+          <p className='sr-only'>An waveform image with time on the x-axis and amplitude on the y-axis. Over time, the waveform shows taller lines where audio is louder and shorter lines where audio is quieter.</p>
+        </div>
+      }
+      {fileAvailable && visualizerType === 'Spectrogram' &&
+        <div>
+          <h4 className='sr-only'>Spectrogram</h4>
+          <p className='sr-only'>An spectrogram image with time on the x-axis, frequency on the y-axis, and colors showing what time and frequencies the energy of the sound is strongest.</p>
+        </div>
+      }
       <VisualizerSettings
         data={data}
         waveformCanvasSetup={waveformCanvasSetup}

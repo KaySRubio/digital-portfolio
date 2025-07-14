@@ -98,7 +98,10 @@ export default function VisualizerCanvasToggles({setHelp, type}: Props) {
                 disabled={!resultFromBackend}
               />
               {toggle.moreInformation && (
-                <MoreInformation onClick={toggle.onMoreInformationClick} />
+                <MoreInformation
+                  onClick={toggle.onMoreInformationClick}
+                  label={`Show more information about ${toggle.displayText}`}
+                />
               )}
             </div>
           </div>

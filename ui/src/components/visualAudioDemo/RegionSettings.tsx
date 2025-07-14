@@ -80,6 +80,7 @@ export default function RegionSettings({data, setRegionHelp}: Props) {
                       return updated;
                       })
                   }}
+                  label={`Show more information about ${toggle.displayText}`}
                 />
               )}
             </div>

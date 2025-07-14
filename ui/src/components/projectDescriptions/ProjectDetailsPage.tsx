@@ -8,11 +8,15 @@ type ProjectDetailsPageProps = {
 }
 
 const ProjectDetailsPage = ({project}: ProjectDetailsPageProps) => {
-  // TODO if project_details is empty, displays the Coming Soon page
   return (
     <div className='project-details'>
-      <h1>{project.title}</h1>
-      <p className='project-date'>{project.date}</p>
+      <div className='project-details-restricted-width'>
+        <h1>{project.title}</h1>
+        <p className='project-date'>{project.date}</p>
+      </div>
+      {project.project_details.length === 0 && 
+      <h1>{project.title} Coming Soon!</h1>
+      }
       {project.project_details.map((componentData, index) => (
         renderComponent(componentData, index)
       ))}

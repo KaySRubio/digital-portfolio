@@ -64,44 +64,47 @@ export default function ImageInput({data}: ImageInputProps) {
         <h3>Image Input</h3>
       </div>
 
-      <menu className='interactive-box-menu'>
-        <li>
+      <div role="radiogroup" className='interactive-box-menu' aria-label='Select source for image input'>
+        <li role="presentation">
           <button
             onClick={() => setImageInput('Camera')}
             className={`
               interactive-box-menu-item
               ${imageInput === 'Camera' ? 'active-interactive-box-menu' : ''}
             `}
+            role="radio"
           >
             <img className='input-icon' alt="" src={camera} />
             Camera
           </button>
         </li>
-        <li>
+        <li role="presentation">
           <button
             onClick={() => setImageInput('Samples')}
             className={`
               interactive-box-menu-item
               ${imageInput === 'Samples' ? 'active-interactive-box-menu' : ''}
             `}
+            role="radio"
           >
             <img className='input-icon' alt="" src={photo} />
             Samples
           </button>
         </li>
-        <li>
+        <li role="presentation">
           <button
             onClick={() => setImageInput('Upload')}
             className={`
               interactive-box-menu-item
               ${imageInput === 'Upload' ? 'active-interactive-box-menu' : ''}
             `}
+            role="radio"
           >
             <img className='input-icon' alt="" src={upload} />
             Upload
           </button>
         </li>
-      </menu>
+      </div>
       <div>{InputComponent}</div>
     </div>
   );

@@ -28,14 +28,14 @@ export default function TechStack({techList, className}: TechStackProps) {
         // project-card is already a Link so it can't hold <a>
         if(className==='project-card-tech-stack-row') {
           return (
-            <div key={index}>
+            <div key={index} aria-label={tech.name}>
               {Icon && <Icon />}
               {imgSrc && <img className='footer-icon' src={imgSrc} alt='' />}
             </div>
           )
         } else {
           return (
-            <a href={tech.href} key={index}>
+            <a href={tech.href} key={index} aria-label={tech.name}>
               {Icon && <Icon />}
               {imgSrc && <img src={imgSrc} alt='' />}
             </a>

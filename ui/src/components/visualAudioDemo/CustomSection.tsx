@@ -12,7 +12,7 @@ export default function CustomSection({data}: CustomSectionProps) {
   if(!data.size) data.size='half-screen';
   
   return (
-    <div className={`interactive-box demo-custom-section ${data.size}`}>
+    <div className={`interactive-box demo-custom-section ${data.size} ${data.className}`}>
       <div className='interactive-box-header'>
         <h3>{data.displayText}</h3>
       </div>

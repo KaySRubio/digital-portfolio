@@ -9,7 +9,8 @@ const Footer = () => {
   
   const location = useLocation();
   const isHomePage = () => {
-    if(location.pathname === base_path) {
+    
+    if(location.pathname === '/') {
       return true 
     } else {
       return false;

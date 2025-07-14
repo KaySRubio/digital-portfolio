@@ -38,7 +38,14 @@ export const renderComponent = (data: ProjectDetailComponent, key: number | null
       }
       break;
     case 'img':
-      returnComponent = (<img key={key} src={data.src} className={data.className ? data.className : 'default-img'} />);
+      returnComponent = (
+        <img
+          key={key}
+          src={data.src}
+          className={data.className ? data.className : 'default-img'}
+          alt={data.alt}
+        />
+      );
       break;
     case 'table':
       returnComponent = <Table key={key} data={data} dynamicData={resultData} />
@@ -62,11 +69,12 @@ export const renderComponent = (data: ProjectDetailComponent, key: number | null
       returnComponent = (<GoalAndGithub key={key} className={data.className} href={data.href}>{children}</GoalAndGithub>)
       break;
     case 'DisclosurePanel':
-      el = renderComponent(data.title, key);
+      // el = renderComponent(data.title, key);
       returnComponent = (
-        <DisclosurePanel key={key} title={el} index={key} >
+        <DisclosurePanel key={key}  index={key} title={data.title} titleEl={data.titleEl}>
           { data.children.map((el, idx) => renderComponent(el, idx))}
         </DisclosurePanel>
+        // title={data.title}
       )
       break;
     case 'TechStack':

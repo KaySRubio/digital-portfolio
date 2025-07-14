@@ -18,6 +18,7 @@ import type {
   BandLineOverlaySetup,
 } from "../types/portfolioTypes";
 import { defaultSpectrogramSettings } from '../data/portfolioData'
+import { getFileFromUrl, getAudioMetadata } from '../utils/fileUtils';
 
 type DemoContextType = {
   waveformRef: RefObject<HTMLDivElement | null>;
@@ -28,6 +29,7 @@ type DemoContextType = {
   waveformOverlayRefs: RefObject<RefObject<HTMLCanvasElement>[]>;
   spectrogramOverlayRefs: RefObject<RefObject<HTMLCanvasElement>[]>;
   timelineRef: RefObject<HTMLDivElement | null>;
+  timelinePluginRef: React.RefObject<InstanceType<typeof TimelinePlugin> | null>;
 
   isRecording: boolean;
   setIsRecording: React.Dispatch<React.SetStateAction<boolean>>;
@@ -101,12 +103,13 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   const wavesurferRef = useRef<WaveSurfer | null>(null);
   const recordPluginRef = useRef<InstanceType<typeof RecordPlugin> | null>(null);
   const waveformRef = useRef<HTMLDivElement | null>(null);
-  const timelineRef = useRef<HTMLDivElement | null>(null);
   const spectrogramContainerRef = useRef<HTMLDivElement | null>(null);
   const regionsPluginRef = useRef<InstanceType<typeof RegionsPlugin> | null>(null);
   const spectrogramRef = useRef<InstanceType<typeof SpectrogramPlugin> | null>(null);
   const waveformOverlayRefs = useRef<React.RefObject<HTMLCanvasElement>[]>([]);
   const spectrogramOverlayRefs = useRef<React.RefObject<HTMLCanvasElement>[]>([]);
+  const timelineRef = useRef<HTMLDivElement | null>(null);
+  const timelinePluginRef = useRef<InstanceType<typeof TimelinePlugin> | null>(null);
 
   const [isRecording, setIsRecording] = useState(false);
   const [userPhotoUrl, setUserPhotoUrl] = useState<string>('');
@@ -151,7 +154,7 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     }
   }, [uploadedFileUrl, userPhotoUrl, recordedUrl, sampleFileUrl]);
 
-  // Waveform & Recording
+  // Waveform & Recording & Regions Plugins
   useEffect(() => {
     if (!waveformRef.current || !timelineRef.current) return;
 
@@ -171,23 +174,12 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     gradient2.addColorStop(0.5, 'rgb(148, 134, 253)')
     gradient2.addColorStop(1, 'rgb(201, 194, 250)')
 
-    const timelinePlugin = TimelinePlugin.create({
-      container: timelineRef.current,
-      height: 25,
-      timeInterval: 0.25,
-      primaryLabelInterval: 1,
-      style: {
-        fontSize: '10px',
-        color: '#A7A7A7',
-      },
-    });
-
     // Create waveform
     const ws = WaveSurfer.create({
       container: waveformRef.current,
       waveColor: gradient1,
       progressColor: gradient2,
-      plugins: [regionsPlugin, timelinePlugin],
+      plugins: [regionsPlugin],
       height: 200,
       /* mediaControls: true, adds default play/time bar */
       // barWidth: 2 // optional to look cooler
@@ -324,6 +316,71 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
     ws.setPlaybackRate(playbackSpeed, preservePitch)
   }, [playbackSpeed, preservePitch, fileAvailable])
 
+
+  // Timeline plugin
+  useEffect(() => {
+    const url = uploadedFileUrl || sampleFileUrl || recordedUrl;
+    setUpTimelineUsingMetadata(url);
+
+    // Cleanup previous timeline plugin
+    if (wavesurferRef.current && timelinePluginRef.current) {
+      timelinePluginRef.current.destroy();
+    }
+  }, [uploadedFileUrl, recordedUrl, sampleFileUrl]);
+
+  const setUpTimelineUsingMetadata = async (url: string) => {
+    const audiodata = await setFileMetadata(url);
+    if(!audiodata) return;
+    const timelinePlugin = createTimelinePlugin(audiodata.duration);
+    
+    const ws = wavesurferRef.current;
+    if (!timelinePlugin || !ws) return;
+    ws?.registerPlugin(timelinePlugin);
+    timelinePluginRef.current = timelinePlugin;
+
+  }
+
+  const setFileMetadata = async (fileUrl: string) => {
+    const file = await getFileFromUrl(fileUrl)
+    if (file.type.includes('audio')) {
+      const audiodata = await getAudioMetadata(file);
+      setAudioMetadata(audiodata);
+      return audiodata;
+    }
+  }
+
+  const createTimelinePlugin = (duration: number) => {
+    if(!timelineRef.current) return;
+    let primaryLabelInterval = 1;
+    let timeInterval = 0.25;
+
+    if(duration) {
+      if(duration < 30) {
+        primaryLabelInterval = 1;
+        timeInterval = 0.25;
+      } else if (duration < 60) {
+        primaryLabelInterval = 5;
+        timeInterval = 1;
+      } else if (duration < 120) {
+        primaryLabelInterval = 60;
+        timeInterval = 15;
+      } 
+    }
+
+    const timelinePlugin = TimelinePlugin.create({
+      container: timelineRef.current,
+      height: 25,
+      timeInterval: timeInterval,
+      primaryLabelInterval: primaryLabelInterval,
+      style: {
+        fontSize: '10px',
+        color: '#A7A7A7',
+      },
+    });
+
+    return timelinePlugin;
+  }
+
   // Zoom in on waveform
   useEffect(() => {
     if(!wavesurferRef.current || !fileAvailable) return;
@@ -388,10 +445,8 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
 
   // Canvas drawn over waveform
   useEffect(() => {
-    if(!wavesurferRef.current ||
-      !fileAvailable ||
-      waveformOverlays.length < 1
-    ) return;
+    if(!wavesurferRef.current || waveformOverlays.length < 1) return;
+
     const wavesurfer = wavesurferRef.current;
 
     // Access the scrolling element inside WaveSurfer's shadow DOM and set up event listener
@@ -411,40 +466,50 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
 
     waveformOverlays.forEach((waveformOverlay, i) => {
       const canvas = waveformOverlayRefs.current[i]?.current;
-      const handleScroll = () => {
-        if(scrollEl) canvas.style.transform = `translateX(-${scrollEl.scrollLeft}px)`;
-      };
-      if(scrollEl) scrollEl.addEventListener('scroll', handleScroll);
-      
-      let draw = () => {};
-      if(waveformOverlay.type === 'line-spread-points') {
-        draw = () => drawLineOverlay(canvas, waveformOverlay.values, waveformOverlay.color);
-      } else if (waveformOverlay.type === 'time-stamped-lines') {
-        draw = () => drawTimeStampedOverlay(canvas, waveformOverlay.sections, waveformOverlay.color, waveformOverlay.interval_ms);
-      }
 
-      if (
-        showWaveformLineOverlays &&
-        showWaveformLineOverlays.length === waveformOverlays.length &&
-        showWaveformLineOverlays[i] &&
-        resultFromBackend && visualizerType === 'Waveform'
-      ){
-        draw();
-        wavesurfer.on('redraw', () => draw);
-        window.addEventListener('resize', draw);
-
-        return () => {
-          if (wavesurfer) wavesurfer.un('redraw', draw);
-          window.removeEventListener('resize', draw);
-          if(scrollEl) scrollEl.removeEventListener('scroll', handleScroll);
-        };
+      // Clear canvas if no file available
+      if(!fileAvailable && canvas) {
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
       } else {
-        if(canvas) {
-          const ctx = canvas.getContext('2d');
-          if (ctx) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const handleScroll = () => {
+          if(scrollEl) canvas.style.transform = `translateX(-${scrollEl.scrollLeft}px)`;
+        };
+        if(scrollEl) scrollEl.addEventListener('scroll', handleScroll);
+        
+        let draw = () => {};
+        if(waveformOverlay.type === 'line-spread-points') {
+          draw = () => drawLineOverlay(canvas, waveformOverlay.values, waveformOverlay.color);
+        } else if (waveformOverlay.type === 'time-stamped-lines') {
+          draw = () => drawTimeStampedOverlay(canvas, waveformOverlay.sections, waveformOverlay.color, waveformOverlay.interval_ms);
+        }
+
+        if (
+          showWaveformLineOverlays &&
+          showWaveformLineOverlays.length === waveformOverlays.length &&
+          showWaveformLineOverlays[i] &&
+          resultFromBackend && visualizerType === 'Waveform'
+        ){
+          draw();
+          wavesurfer.on('redraw', () => draw);
+          window.addEventListener('resize', draw);
+
+          return () => {
+            if (wavesurfer) wavesurfer.un('redraw', draw);
+            window.removeEventListener('resize', draw);
+            if(scrollEl) scrollEl.removeEventListener('scroll', handleScroll);
+          };
+        } else {
+          if(canvas) {
+            const ctx = canvas.getContext('2d');
+            if (ctx) {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
           }
         }
+
       }
     })
   }, [waveformOverlays, showWaveformLineOverlays, zoomLevel, resultFromBackend, visualizerType])
@@ -452,42 +517,49 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
   // Canvas drawn over spectrogram
   useEffect(() => {
     if(!wavesurferRef.current ||
-      !fileAvailable ||
       spectrogramOverlays.length < 1
     ) return;
     const wavesurfer = wavesurferRef.current;
 
     spectrogramOverlays.forEach((spectrogramOverlay, i) => {
       const canvas = spectrogramOverlayRefs.current[i]?.current;
-      
-      let draw = () => {};
-      if(spectrogramOverlay.type === 'line-spread-points') {
-        draw = () => drawLineOverlay(canvas, spectrogramOverlay.values, spectrogramOverlay.color);
-      } else if (spectrogramOverlay.type === 'time-stamped-lines') {
-        draw = () => drawTimeStampedOverlay(canvas, spectrogramOverlay.sections, spectrogramOverlay.color, spectrogramOverlay.interval_ms);
-      } else if (spectrogramOverlay.type === 'band') {
-        draw = () => drawBandOverlay(canvas, spectrogramOverlay.upperValues, spectrogramOverlay.lowerValues, spectrogramOverlay.color);
-      }
-      if (
-        showSpectrogramLineOverlays &&
-        showSpectrogramLineOverlays.length === spectrogramOverlays.length &&
-        showSpectrogramLineOverlays[i] &&
-        resultFromBackend && 
-        visualizerType === 'Spectrogram'
-      ){
-        draw();
-        wavesurfer.on('redraw', () => draw);
-        window.addEventListener('resize', draw);
 
-        return () => {
-          if(wavesurfer) wavesurfer.un('redraw', draw);
-          window.removeEventListener('resize', draw);
-        };
+      // Clear canvas if no file available
+      if(!fileAvailable && canvas) {
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
       } else {
-        if(canvas) {
-          const ctx = canvas.getContext('2d');
-          if (ctx) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let draw = () => {};
+        if(spectrogramOverlay.type === 'line-spread-points') {
+          draw = () => drawLineOverlay(canvas, spectrogramOverlay.values, spectrogramOverlay.color);
+        } else if (spectrogramOverlay.type === 'time-stamped-lines') {
+          draw = () => drawTimeStampedOverlay(canvas, spectrogramOverlay.sections, spectrogramOverlay.color, spectrogramOverlay.interval_ms);
+        } else if (spectrogramOverlay.type === 'band') {
+          draw = () => drawBandOverlay(canvas, spectrogramOverlay.upperValues, spectrogramOverlay.lowerValues, spectrogramOverlay.color);
+        }
+        if (
+          showSpectrogramLineOverlays &&
+          showSpectrogramLineOverlays.length === spectrogramOverlays.length &&
+          showSpectrogramLineOverlays[i] &&
+          resultFromBackend && 
+          visualizerType === 'Spectrogram'
+        ){
+          draw();
+          wavesurfer.on('redraw', () => draw);
+          window.addEventListener('resize', draw);
+
+          return () => {
+            if(wavesurfer) wavesurfer.un('redraw', draw);
+            window.removeEventListener('resize', draw);
+          };
+        } else {
+          if(canvas) {
+            const ctx = canvas.getContext('2d');
+            if (ctx) {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
           }
         }
       }
