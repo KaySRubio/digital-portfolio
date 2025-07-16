@@ -30,7 +30,7 @@ export const renderComponent = (data: ProjectDetailComponent, key: number | null
       break;
     case 'a':
       if(data.text) {
-        returnComponent = (<a key={key} href={data.href}>{data.text}</a>);
+        returnComponent = (<a key={key} href={data.href} className={data.className}>{data.text}</a>);
       } else if (data.children) {
         children = data.children.map((element, index) => {
           return (renderComponent(element, index))})
@@ -103,6 +103,16 @@ export const renderComponent = (data: ProjectDetailComponent, key: number | null
       break;
     case 'heatmap':
       returnComponent = (<HeatMap key={key} data={data} />);
+      break;
+    case 'iframe':
+      returnComponent = (
+        <iframe 
+          key={key}
+          src={data.src}
+          title={data.title}
+          className={data.className}
+        ></iframe>
+      )
       break;
     default:
       returnComponent = null;

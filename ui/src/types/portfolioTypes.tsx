@@ -65,7 +65,8 @@ export type ProjectDetailComponent =
   GoalAndGithub | 
   DemoBoard | 
   TextFromPath |
-  HeatMap;
+  HeatMap | 
+  Iframe;
 
 export type TextType = 
   'h2' |
@@ -74,6 +75,12 @@ export type TextType =
   'text' |
   'p'
 
+export type Iframe = {
+  type: 'iframe',
+  src: string,
+  title: string,
+  className?: string
+}
 
 export type TextComponent = {
   type: TextType,
@@ -114,6 +121,7 @@ export type TextFromPath = {
 
 export type LinkType = {
   type: 'a',
+  className?: string,
   href: string,
   text?: string,
   children?: ProjectDetailComponent[];

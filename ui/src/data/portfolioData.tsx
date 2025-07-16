@@ -1687,8 +1687,8 @@ export const projects: Project[] = [
   {
     path: 'algorithm-ocean',
     short_title: 'Algorithm Ocean',
-    title: '',
-    date: '',
+    title: 'Algorithm Ocean: Practice sorting algorithms live!',
+    date: 'Summer 2022',
     topics: [TopicNames.WEBAPPDEVELOPMENT],
     visible: true,
     featured: false,
@@ -1698,8 +1698,44 @@ export const projects: Project[] = [
       src: anemone,
       alt: 'A cartoon anemone with a green body and pink tentacles and eyes looking up',
     },
-    techStack: ['React', 'TypeScript'],
-    project_details: [],
+    projectCardTechStack: ['react', 'typescript', 'vite', 'nodejs'],
+    project_details: [
+      {
+        type: 'div',
+        className: 'project-details-restricted-width',
+        elements: [
+          {
+            type: 'GoalAndGithub',
+            elements: [
+              {type: 'h2', text: 'Goal'},
+              {type: 'ul', elements: [
+                [{type: 'text', text: 'AlgorithmOcean is an app I created for an independent study course at Framingham State University from April - July 2022. In 2025 I updated to work with modern React/TypeScript and hosted it on github pages. It\'s the first free, online, interactive algorithm-learning resource.'},],
+                [{type: 'text', text: 'During some preliminary research on online resources to learn algorithms, I discovered that there are only 3 types of resources available: non-interactive videos, costly university courses, or coding IDE websites.'}],
+                [{type: 'text', text: 'For students new to learning computer science, there\'s a need for a free, interactive, non-coding website that allows students to perform algorithms live on screen and get immediate feedback on their performance, as well as directly access educational videos. AlgorithmOcean begins to fill this gap with lessons on the first 3 sorting algorithms computer science students learn: bubble sort, insertion sort, and selection sort.'}]
+              ]}
+              
+            ],
+            href: 'https://github.com/KaySRubio/algorithm-ocean-2',
+          },
+          {type: 'h2', text: 'Demo'},
+        ]
+      },
+
+      {type: 'iframe', title: 'Algorithm Ocean lesson page showing bubble sort', src: 'https://kaysrubio.github.io/algorithm-ocean-2/#/lesson/bubble'},
+      {
+        type: 'div',
+        className: 'project-details-restricted-width',
+        elements: [    
+          {type: 'a', className: 'centerWidth100', text: 'Go to AlgorithmOcean site', href: 'https://kaysrubio.github.io/algorithm-ocean-2/#/'},
+          {type: 'h2', text: 'Tech Stack'},
+          {
+            type: 'TechStack',
+            techList: ['react', 'typescript', 'nodejs', 'vite'],
+          },
+        ]
+      },
+
+    ],
   },
   // i-ready --> not done
   {

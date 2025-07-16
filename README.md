@@ -4,8 +4,9 @@
 To run locally:
 1. `cd ui`
 2. `nvm use`
-3. `npm run dev`
-4. Go to http://localhost:5173/digital-portfolio/
+3. `npm run build`
+4. `npm run dev`
+5. Go to http://localhost:5173/digital-portfolio/
 
 To update:
 1. `git status`
