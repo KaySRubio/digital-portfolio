@@ -1,6 +1,5 @@
 /* Global styles for entire digital portfolio */
 :root {
-
   --dark-blue: #035085;
   --med-blue: #0378ab;
   --light-teal: #56afcc;
@@ -138,7 +137,7 @@ h1, h2, h3 {
   margin: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* vertically centers if needed */
+  align-items: center;
   padding: 10px 1rem;
   flex-direction: row;
 }
@@ -1184,6 +1183,7 @@ form button {
   left: -9999px;
   top: 0;
 }
+
 .hidden {
   /* visibility: hidden; */
   opacity: 0;

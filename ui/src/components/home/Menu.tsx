@@ -33,6 +33,7 @@ const Menu = () => {
   }
 
   const onClick = () => {
+    console.log('onclick ran')
     setMenuOpen(prev => !prev);
   }
   
@@ -55,11 +56,9 @@ const Menu = () => {
           );
         })}
       </div>
-      <button className='hamburger-button'>
+      <button className='hamburger-button' onClick={onClick} >
         <Hamburger 
           className={`${color} ${backgroundColor} hamburger-icon`}
-          onClick={onClick}
-          onKeyDown={onClick}
         />
       </button>
       { menuOpen &&
@@ -72,7 +71,7 @@ const Menu = () => {
             const Icon = topic.iconComponent;
             return (
               <li key={topic.title}>
-                <Link to={topic.path} className={`dropdown-menu-button dark-blue`}>
+                <Link onClick={() => setMenuOpen(false)} to={topic.path} className={`dropdown-menu-button dark-blue`}>
                   <Icon className={`dropdown-menu-icon white`} />
                   {topic.title}
                 </Link>

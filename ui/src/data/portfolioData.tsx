@@ -86,6 +86,8 @@ import spermWhale5r from '@/assets/wav/5r_exchange_2_whales_diving.wav';
 import spermWhaleSocial from '@/assets/wav/social_exchange_unit_r.wav';
 import vietnamese from '@/assets/wav/vietnamese.wav';
 
+const timeItTakesAHuggingFaceSpaceToWakeUp = 180;
+
 export const homePageData = {
   headline: 'Listener, Developer, Explorer',
   desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics',
@@ -336,7 +338,7 @@ export const projects: Project[] = [
           slowResultsHandler: {
 	          timeBeforeShowMessage: 10,
 	          message: 'It seems the Hugging Face Space is just waking up. This may take a minute, but your next requests today will be much faster. Estimated time remaining:',
-	          expectedTimeToResults: 60,
+	          expectedTimeToResults: timeItTakesAHuggingFaceSpaceToWakeUp,
           },
         }
       },
@@ -521,7 +523,7 @@ export const projects: Project[] = [
           slowResultsHandler: {
             timeBeforeShowMessage: 10,
             message: 'It seems the Hugging Face Space is just waking up. This may take a minute, but your next requests today will be much faster. Estimated time remaining:',
-            expectedTimeToResults: 60,
+            expectedTimeToResults: timeItTakesAHuggingFaceSpaceToWakeUp,
           },
 
         },
@@ -736,7 +738,7 @@ export const projects: Project[] = [
           slowResultsHandler: {
             timeBeforeShowMessage: 10,
             message: 'It seems the Hugging Face Space is just waking up. This may take a minute, but your next requests today will be much faster. Estimated time remaining:',
-            expectedTimeToResults: 60,
+            expectedTimeToResults: timeItTakesAHuggingFaceSpaceToWakeUp,
           },
 
         }
@@ -1163,7 +1165,7 @@ export const projects: Project[] = [
           slowResultsHandler: {
             timeBeforeShowMessage: 10,
             message: 'It seems the Hugging Face Space is just waking up. This may take a minute, but your next requests today will be much faster. Estimated time remaining:',
-            expectedTimeToResults: 60,
+            expectedTimeToResults: timeItTakesAHuggingFaceSpaceToWakeUp,
           },
         }
       },
@@ -1320,7 +1322,7 @@ export const projects: Project[] = [
           {type: 'p', className: 'note', text: '*Mean accuracy score is how far off the model\'s predictions of danceability was from the actual danceability score in the test data. Danceability ranged from 0-1, so the best model was able to predict danceability of songs very close to the actual scores, only an average of 0.06 points off!'},
           {type: 'p', className: 'note', text: '**I used a restricted set of predictors were used based on what I found to be linearly related to the outcome during data cleaning'},
           {type: 'h2', text: 'Putting the strongest model to the test'},
-          {type: 'p', text: 'The gradient boosting model with max-depth of 3 and number of estimators of 100 was used on 3 new songs'},
+          {type: 'p', text: 'The gradient boosting model with max-depth of 3 and number of estimators of 100 was used on 3 new songs.'},
           {
             type: 'table',
             headers: ['Song name', 'Artist', 'Predicted Danceability', 'Actual Danceability'],
@@ -1379,8 +1381,8 @@ export const projects: Project[] = [
             techList: ['scikitlearn', 'skopt', 'joblib', 'pandas', 'matplotlib', 'numpy', 'seaborn'],
           },
           {type: 'h3', text: 'Data'},
-          {type: 'p', text: 'I picked an open-source dataset from the UC Irvine Machine Learning Repository containing hospital records on 101,766 hospitalizations among patients with diabetes from 1999-2008 at 130 US hospitals. Predictors include some demographics (race, gender, age), admission type, discharge type, time in hospital, number of lab procedures and medications given during hospitalization, number of prior visits (outpatient, emergency, inpatient) in the last year, a number of lab values, etc. I split data into 75% training and 25% test.'},
-          {type: 'p', text: 'I cleaned the data, checking values and imputing missing data (where variables had a relatively small percent of missing data). I dropped variables with very high amounts of missing data, as well as variables unlikely to be related to the outcome like insurance payer code. I also collapsed some categories where variables had a lot of categories, and checked linear relationships with outcome. Variables without a linear relationship with the outcome were left out of the logitsic regression model.'},
+          {type: 'p', text: 'I picked an open-source dataset from the UC Irvine Machine Learning Repository containing hospital records on 101,766 hospitalizations among patients with diabetes from 1999-2008 at 130 US hospitals. Predictors include some demographics (race, gender, age), admission type, discharge type, time in hospital, number of lab procedures and medications given during hospitalization, number of prior visits (outpatient, emergency, inpatient) in the last year, some lab values, etc. I split data into 75% training and 25% test.'},
+          {type: 'p', text: 'I cleaned the data, checking values and imputing missing data (where variables had a relatively small percent of missing data). I dropped variables with very high amounts of missing data, as well as variables unlikely to be related to the outcome like insurance payer code. I also collapsed some categories where variables had a lot of categories and checked linear relationships with outcome. Variables without a linear relationship with the outcome were left out of the logistic regression model.'},
           {type: 'h2', text: 'Results'},
           {
             type: 'table',
@@ -1396,7 +1398,7 @@ export const projects: Project[] = [
           {type: 'p', className: 'note', text: '*Hyperparameter combinations were examined using Bayes Search CV from scikit-optimize with 3-fold cross-validation on the training data'},
           {type: 'p', className: 'note', text: '*Accuracy, Precision, and Recall were calculated on the test data'},
           {type: 'h3', text: 'Random Forest Classifier Results after Tuning for Precision'},
-          {type: 'p', text: 'Since users of this type of medical model would likely want to prioritize identifying as many people who are going to be rehospitalized and keep a low false-negative rate, I tuned the best model, Random Forest Classifier, to reduce precision'},
+          {type: 'p', text: 'Since users of this type of medical model would likely want to prioritize identifying as many people as possible who are going to be re-hospitalized and keep a low false-negative rate, I tuned the best model, Random Forest Classifier, to reduce precision'},
           {type: 'ul', elements: [
             [{type: 'text', text: 'At threshold: 0.07, predicted readmitted: 19882, predicted not readmitted: 19558, accuracy: 29.737%, precision: 12.916%, recall: 91.323%'}],
             [{type: 'text', text: 'At threshold: 0.05, predicted readmitted: 24129, predicted not readmitted: 19558, accuracy: 14.414%, precision: 11.509%, recall: 98.755%'}],
@@ -1414,7 +1416,7 @@ export const projects: Project[] = [
             [{type: 'text', text: 'All models struggled to differentiate between patients destined to be readmitted in 30 days from those who weren\'t based on predictors available, but Random Forest Classifier came out the strongest.'}],
             [{type: 'text', text: 'When tuned by default to prioritize accuracy, the highest accuracy rate of 88.8% is little better than a prediction that 0 patients would be re-hospitalized in 30 days, which would be correct 88.7% of the time.'}],
             [{type: 'text', text: 'When the best model was tuned to prioritize precision, I\'d have to assume that just over half of all patients are at risk of being re-hospitalized in order to capture almost all of the 11% who will be re-hospitalized.'}],
-            [{type: 'text', text: 'more data exploration/preparation could be conducted to reduce skew, bring back categorical diversity among some variables, and work with a medical expert to deturmine what comorbid diagnoses are relevant and create categories around that. This could improve the relationships in the data for future models.'}],
+            [{type: 'text', text: 'more data exploration/preparation could be conducted to reduce skew, bring back categorical diversity among some variables, and work with a medical expert to determine what comorbid diagnoses are relevant and create categories around that. This could improve the relationships in the data for future models.'}],
           ]},
           {type: 'h2', text: 'Dataset Citation'},
           {type: 'p', text: 'Beata Strack, Jonathan P. DeShazo, Chris Gennings, Juan L. Olmo, Sebastian Ventura, Krzysztof J. Cios, and John N. Clore, “Impact of HbA1c Measurement on Hospital Readmission Rates: Analysis of 70,000 Clinical Database Patient Records,” BioMed Research International, vol. 2014, Article ID 781670, 11 pages, 2014.'}
@@ -1683,7 +1685,7 @@ export const projects: Project[] = [
       },
     ],
   },
-  // algorithm-ocean --> not done
+  // algorithm-ocean --> DONE!!
   {
     path: 'algorithm-ocean',
     short_title: 'Algorithm Ocean',
@@ -1709,11 +1711,11 @@ export const projects: Project[] = [
             elements: [
               {type: 'h2', text: 'Goal'},
               {type: 'ul', elements: [
-                [{type: 'text', text: 'AlgorithmOcean is an app I created for an independent study course at Framingham State University from April - July 2022. In 2025 I updated to work with modern React/TypeScript and hosted it on github pages. It\'s the first free, online, interactive algorithm-learning resource.'},],
-                [{type: 'text', text: 'During some preliminary research on online resources to learn algorithms, I discovered that there are only 3 types of resources available: non-interactive videos, costly university courses, or coding IDE websites.'}],
-                [{type: 'text', text: 'For students new to learning computer science, there\'s a need for a free, interactive, non-coding website that allows students to perform algorithms live on screen and get immediate feedback on their performance, as well as directly access educational videos. AlgorithmOcean begins to fill this gap with lessons on the first 3 sorting algorithms computer science students learn: bubble sort, insertion sort, and selection sort.'}]
+                [{type: 'text', text: 'I created AlgorithmOcean as a school project to teach my classmates sorting algorithms!'},],
+                [{type: 'text', text: 'The program randomly generates an array of numbers. Users sort the numbers using bubble, selection, or insertion sort.'}],
+                [{type: 'text', text: 'Once sorted, the user presses "Submit" and the program tells them if they used the correct steps according to the algorithm.'}],
+                [{type: 'text', text: 'For fun, the program also provides interesting facts about how algorithms relate to ocean science.'}]
               ]}
-              
             ],
             href: 'https://github.com/KaySRubio/algorithm-ocean-2',
           },
@@ -1726,12 +1728,14 @@ export const projects: Project[] = [
         type: 'div',
         className: 'project-details-restricted-width',
         elements: [    
-          {type: 'a', className: 'centerWidth100', text: 'Go to AlgorithmOcean site', href: 'https://kaysrubio.github.io/algorithm-ocean-2/#/'},
           {type: 'h2', text: 'Tech Stack'},
           {
             type: 'TechStack',
             techList: ['react', 'typescript', 'nodejs', 'vite'],
           },
+          {type: 'h2', text: 'More Information'},
+          {type: 'p', text: 'I created this app for an independent study course at Framingham State University from April - July 2022. In 2025, I updated it to work with modern React, TypeScript, and Vite.'},
+          {type: 'a', className: 'centerWidth100', text: 'Go to AlgorithmOcean site', href: 'https://kaysrubio.github.io/algorithm-ocean-2/#/'},
         ]
       },
 
