@@ -13,7 +13,7 @@
   --sand: #fef3e0;
   --Speech_red_error: #990D36;
   --Speech_red: #DA534F;
-  --Speech_light_red: #F3DEDE;
+  --Speech_light_red: #fc8888;
   --Speech_orange: #F8A503;
   --Speech_light_orange: #FCF8E3;
   --Speech_light_green: #D9F2D0;
@@ -46,6 +46,17 @@ button {
   font-size: 20px;
   margin: 20px 0
 }
+
+.width100 {
+  width: 100%;
+  margin: 0;
+  display: block;
+}
+
+.max-width310 {
+  max-width: 310px;
+}
+
 
 .bold {
   font-weight: bold;
@@ -83,6 +94,14 @@ html, body, #root {
 
 .content {
   flex: 1;
+}
+
+.small-text {
+  font-size: 10px;
+}
+
+.med-text {
+  font-size: 14px;
 }
 
 .sr-only {
@@ -222,6 +241,13 @@ h1, h2, h3 {
 .column {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.two-column {
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.2em;
@@ -443,6 +469,12 @@ form button {
 .project-card-tech-stack-row svg {
   width: 40px;
   height: 40px;
+}
+
+@media (max-width: 899px) {
+  .two-column {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 600px) {
@@ -705,14 +737,20 @@ form button {
   border: none;
   font-weight: bold;
   color: white;
-  padding: 10px 20px;
+  padding: 10px;
   background-color: var(--med-blue);
   width: 100%;
-  text-align: left;
   display: flex;
-  justify-content: left;
-  gap: 1em;
   align-items: center;
+  gap: 1em;
+  text-align: left;
+}
+
+.disclosure-panel-click-to-open {
+  margin: 0;
+  text-align: right;
+  margin-left: auto;
+  font-weight: normal;
 }
 
 .disclosure-panel-body {
@@ -1198,6 +1236,10 @@ form button {
   text-align: left;
   line-height: 1em;
   font-size: 12px;
+}
+
+.red {
+  color: var(--Speech_light_red);
 }
 
 .upload-button-row {

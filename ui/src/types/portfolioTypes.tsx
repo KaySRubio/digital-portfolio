@@ -186,6 +186,8 @@ export type DisclosurePanel = {
   title: string,
   titleEl?: 'h1' | 'h2' | 'h3' | 'h4' | 'text',
   children: ProjectDetailComponent[],
+  expandedByDefault?: boolean,
+  className?: string,
   key?: number | string;
 }
 

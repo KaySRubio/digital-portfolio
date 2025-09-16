@@ -48,6 +48,9 @@ export default function DisclosurePanel({
         >
           <DownArrow className={`arrow ${expanded ? 'upside-down' : ''}`} />
           { renderTitle() }
+          <p className={`disclosure-panel-click-to-open ${!expanded && 'red'}`}>
+            (click to {expanded ? 'close' : 'open'})
+          </p>
         </button>
       </div>
       {expanded && (

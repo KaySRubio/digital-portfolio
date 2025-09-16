@@ -71,7 +71,14 @@ export const renderComponent = (data: ProjectDetailComponent, key: number | null
     case 'DisclosurePanel':
       // el = renderComponent(data.title, key);
       returnComponent = (
-        <DisclosurePanel key={key}  index={key} title={data.title} titleEl={data.titleEl}>
+        <DisclosurePanel 
+          key={key} 
+          index={key}
+          title={data.title}
+          titleEl={data.titleEl}
+          className={data.className}
+          expandedByDefault={data.expandedByDefault}
+        >
           { data.children.map((el, idx) => renderComponent(el, idx))}
         </DisclosurePanel>
         // title={data.title}
