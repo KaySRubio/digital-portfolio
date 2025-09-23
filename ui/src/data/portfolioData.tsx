@@ -577,7 +577,7 @@ export const projects: Project[] = [
   {
     path: 'bat-echolocation',
     short_title: 'Bat Echolocation Audio Feature Extraction',
-    title: 'Bat Echolocation',
+    title: 'Analyzing Bat Echolocation Calls',
     date: 'September 2025',
     topics: [TopicNames.BIOACOUSTICS],
     visible: true,
@@ -597,19 +597,25 @@ export const projects: Project[] = [
           {type: 'img', src: big_brown_bat_flying_long, className: 'width100', alt: 'A big brown bat flying through the blue sky'},
           {type: 'img', src: bat_calls1, className: 'width100', alt: 'A spectrogram showing a series of bat calls'},
           {type: 'a', href: 'ttps://commons.wikimedia.org/w/index.php?curid=163925545', text: 'Bat photo by Rhododendrites - Own work, CC BY-SA 4.0', className: 'small-text'},
-          {type: 'text', text: '. Spectrogram photo from bat recorded by K. Rubio', className: 'small-text'},
+          {type: 'text', text: ', Spectrogram photo from bat recorded by K. Rubio', className: 'small-text'},
           {type: 'h2', text: 'About'},
-          {type: 'p', text: 'Bats are critical to ecosystem health as insect-eaters, pollinators, and seed dispersers. However, nearly half of all bat species worldwide are threatened with extinction, and 90% of bats in North America are facing drastic population declines.  Monitoring bat populations is an important way to monitor conservation efforts.'},
-          {type: 'p', text: 'Since most bats echolocate, passive recording their echolocation calls can help. At present, there\'s no easy way to identify species from echolocation calls alone, as many different species have similar calls, but they can be grouped into phonic groups based on auditory features and matched to potential species whose calls are typically consistent to that phonic group.'},
+          {type: 'p', text: 'Bats are critical to ecosystem health as insect-eaters, pollinators, and seed dispersers. However, nearly half of all bat species worldwide are threatened with extinction, and 90% of bats in North America are facing drastic population declines.  Monitoring bat populations is an important way to support conservation efforts.'},
+          {type: 'p', text: 'Since most bats echolocate, passive recording their echolocation calls can help. At present, there\'s no easy way to identify species from echolocation calls alone, but they can be grouped into phonic groups based on auditory features and matched to potential species whose calls are typically consistent to that phonic group.'},
+          {type: 'p', text: ''},
+          {type: 'text', text: 'There are professional equipment and software that analyze bat calls from companies like '},
+          {type: 'a', href: 'https://sonobat.com/purchase/', text: 'Sonobat'},
+          {type: 'text', text: ' and '},
+          {type: 'a', href: 'https://www.wildlifeacoustics.com/products/echo-meter-touch-2', text: 'Wildlife Acoustics'},
+          {type: 'text', text: '.  However, it is quite costly, so I created this personal project to explore bat calls on my own and practice audio signal processing.'},
           {
             type: 'GoalAndGithub',
             elements: [
               {type: 'h2', text: 'Goal'},
               {type: 'ol', elements: [
-                [{type: 'text', text: 'Record bats in different locations using an ultrasonic mic'}],
+                [{type: 'text', text: 'Record bats in Massachusetts using an ultrasonic mic'}],
                 [{type: 'text', text: 'Create a python program using audio signal processing to extract features from bat passes'}],
                 [{type: 'text', text: 'Use features to explore different phonic groups'}],
-                [{type: 'text', text: 'Compare findings with information about known bat species'}],
+                [{type: 'text', text: 'Compare findings with information about known local bat species'}],
               ]},
             ],
             href: 'https://github.com/KaySRubio/audio-signal-processing/blob/main/bat_echolocation_feature_extraction.ipynb',
@@ -620,11 +626,12 @@ export const projects: Project[] = [
             title: 'Recording Details',
             titleEl: 'h3',
             children: [
-              {type: 'h4', text: 'Device: '},
+              {type: 'h4', text: 'Devices: '},
               {type: 'a', href: 'https://www.dodotronic.com/product/ultramic-384k-evo/', text: 'Dodotronic 384k EVO'},
-              {type: 'text', text: ' with '},
+              {type: 'text', text: ' microphone with '},
               {type: 'a', href: 'https://www.audacityteam.org/download/', text: 'Audacity'},
-              {type: 'h4', text: 'Dates/locations of recording'},
+              {type: 'text', text: ' running on a MacBook Pro'},
+              {type: 'text', text: ' microphone with '},
               {type: 'table',
                 headers: ['Date', 'City/State', 'Environment', 'Num of good bat passes'],
                 rows: [
@@ -633,18 +640,6 @@ export const projects: Project[] = [
                     'Melrose, MA',
                     'Suburbs',
                     '9'
-                  ],
-                  [
-                    '5/27/2025',
-                    'Albany, OR',
-                    'Open field',
-                    '3'
-                  ],
-                  [
-                    '5/28/2025',
-                    'Albany, OR',
-                    'Clearing in woods',
-                    '10'
                   ],
                   [
                     '6/30/2025',
@@ -661,15 +656,94 @@ export const projects: Project[] = [
                   [
                     '9/1/25',
                     'Melrose, MA',
-                    'Pond in woods',
+                    'Pine Banks Pond',
                     '15'
                   ],
+                  [
+                    '9/9/2025',
+                    'Stoneham, MA',
+                    'Quarter Mile Pond',
+                    '19'
+                  ],
+                  [
+                    '9/11/2025',
+                    'Andover, MA',
+                    'Phillips Academy',
+                    '11'
+                  ],
+                  [
+                    '9/12/2025',
+                    'Saugus, MA',
+                    'Rumney Marsh Reservation',
+                    '1'
+                  ],
+                  [
+                    '9/13/2025',
+                    'Malden, MA',
+                    'Forestdale Cemetary Pond',
+                    '3',
+                  ],
+                  [
+                    '9/13/2025',
+                    'Melrose, MA',
+                    'Wyoming Cemetary',
+                    '1'
+                  ],
+                  [
+                    '9/13/2025',
+                    'Melrose, MA',
+                    'Swain\'s Pond',
+                    '8'
+                  ],
+                  [
+                    '9/13/2025',
+                    'Melrose, MA',
+                    'Towner\'s Pond',
+                    '5'
+                  ],
+                  [
+                    '9/14/2025',
+                    'Medford, MA',
+                    'Bellevue Pond',
+                    '2',
+                  ],
+                  [
+                    '9/14/2025',
+                    'Medford, MA',
+                    'Upper Mystic Lake',
+                    '10',
+                  ],
+                  [],
+                  [
+                    '9/14/2025',
+                    'Stoneham, MA',
+                    'Sheepfold dog park',
+                    '1'
+                  ],
+                  [
+                    '9/14/2025',
+                    'Stoneham, MA',
+                    'Spot Pond',
+                    '3'
+                  ],
+                  [
+
+                  ]
                 ]
               },
-              {type: 'h4', text: 'File preparation'},
+              {type: 'text', text: 'Total bat passes recorded: over 115'},
+              {type: 'h4', text: 'Methods'},
               {type: 'ul', elements: [
                 [{type: 'text', text: 'Checked each recording and trimmed/split to only include 1 bat pass per file'}],
-                [{type: 'text', text: 'Mark files as "good" if they are reasonably clear/loud, and don\'t obviously have more than 1 bat overlapping in time/frequency'}]
+                [{type: 'text', text: 'Mark files as "good" if they are reasonably clear/loud, and don\'t obviously have more than 1 bat overlapping in time/frequency'}],
+                [{type: 'text', text: 'Ran python program on each bat pass to extract features, adjusting energy thresholds and high/low pass filter cutoffs as needed'}],
+                [{type: 'text', text: 'Collected all data in Excel and analyzed to identify different phonic groups using peak frequency, min/max frequency and call shape'}],
+                [
+                  {type: 'text', text: 'Compared phonic groups with known information about bat species in Massachusetts using call features from '},
+                  {type: 'a', text: 'Cal Poly Humboldt Bat Lab', href: 'https://sonobat.com/download/Eastern_NA_Acoustic_Table.pdf'},  
+                  {type: 'text', text: ' and known-species recordings from '},
+                  {type: 'a', text: 'Xeno-canto', href: 'https://xeno-canto.org/explore/taxonomy?ord=CHIROPTERA'},
+                ], 
               ]},
             ]
           },
@@ -700,157 +774,155 @@ export const projects: Project[] = [
               {type: 'a', text: 'Program 2: Semi-automated bat pass feature extraction', href: 'https://github.com/KaySRubio/audio-signal-processing/blob/main/bat_echolocation_feature_extraction_semi_automated.ipynb'},
             ]
           },
+          {
+            type: 'DisclosurePanel',
+            title: 'Helpful Definitions',
+            titleEl: 'h3',
+            children: [
+              {type: 'text', className: 'bold', text: 'Bat Pass: '},
+              {type: 'text', text: 'A sequence of echolocation calls that typically increase in energy as a bat gets closer, then fade out completely as the bat flies away.'},
+              {type: 'p', text: ''},
+              {type: 'text', className: 'bold', text: 'FM: '},
+              {type: 'text', text: 'Frequency modulated call shape, which looks like a steep continuous slope on a spectrogram.'},
+              {type: 'p', text: ''},
+              {type: 'text', className: 'bold', text: 'FM-QCF: '},
+              {type: 'text', text: 'Frequency-modulated with quasi-constant frequency call shape that typically has a steep downward slope, that bends into a flatter, nearly horizontal shape on a spectrogram. These calls can also be described as a hockey stick or backwards J shape.'},
+              {type: 'p', text: ''},
+              {type: 'text', className: 'bold', text: 'Peak Frequency: '},
+              {type: 'text', text: 'The frequency in hz or kHz with the highest energy (amplitude) of a sound. A helpful feature of a bat call, but never perfect as higher frequencies attenuate more over distance.'},
+            ]
+          },
           {type: 'h2', text: 'Results'},
-          {
-            type: 'DisclosurePanel',
-            title: 'Massachusetts Results',
-            titleEl: 'h3',
-            expandedByDefault: true,
-            children: [
-              {type: 'h4', text: 'Peak frequencies of bat passes recorded in Massachusetts'},
-              {type: 'img', src: melrose_bat_histogram, className: 'width100', alt: 'A histogram titled Peak Frequencies of 40 Bat Passes Recorded in MA showing 3 groups of bats, the most calls clustered around 26-32 kHz, some calls between 34-38 kHz, and a few calls 43-45 kHz'},
-              {type: 'h4', text: 'Phonic groups'},
-              {type: 'table',
-                headers: [
-                  'Phonic group',
-                  'Peak frequency (kHz)',
-                  'Avg min frequency (kHz)',
-                  'Avg max frequency (kHz)',
-                  'Avg call duration (ms)',
-                  'Typical call shape (s)',
-                ],
-                rows: [
-                  ['1', '19-20', '18', '23', '30', 'FM-QCF'],
-                  ['2a', '25-32', '25', '60', '28', 'FM-QCF'],
-                  ['2b', '32-38', '32', '45', '17', 'FM-QCF & CF'],
-                  ['2c', '32-36', '32', '35', '20', 'CF / squiggle'],
-                  ['3', '41-45', '39', '70', '15', 'FM & FM-QCF'],
-                  ['4', '53', '48', '85', '9', 'FM'],
-                ]
-              },
-              {type: 'h4', text: 'Example of phonic group 1'},
-              {type: 'img', src: bat_19, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 26 kHz'},
-              {type: 'text', className: 'small-text', text: 'Bat recorded 9/14/2025 in Medford, MA over Upper Mystic Lake'},
-              {type: 'p', text: 'Lower frequency loud hockey stick shaped calls recorded at 2 locations. Similar to phonic group 2a except for frequency.'},
-              
-              {type: 'h4', text: 'Example of phonic group 2a'},
-              {type: 'img', src: bat_25, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 36 kHz'},
-              {type: 'text', className: 'small-text', text: 'Bat recorded 6/30/3035 in Melrose, MA on Naples Rd'},
-              {type: 'p', text: 'Loud hockey-stick shaped calls with harmonics at approx. 55, 90, and 150 kHz. 50+ bat passes in 11 locations.'},
-              
-              {type: 'h4', text: 'Example of phonic group 2b'},
-              {type: 'img', src: bat_32, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
-              {type: 'text', className: 'small-text', text: 'Bat recorded 9/1/2025 in Melrose, MA over Pine Banks Pond'},
-              {type: 'p', text: 'Some hockey stick calls with max energy 33-45 kHz, some flatter calls with max energy 32-35 kHz, some have upturn at end. Quiet to moderate energy, no visible harmonics. 21 bat passes from 5 locations.'},
-
-              {type: 'h4', text: 'Example of phonic group 2c'},
-              {type: 'img', src: bat_32_squiggle, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
-              {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Melrose, MA over Swain\'s Pond'},
-              {type: 'p', text: 'Flatter calls with upturn at beginning, slope down, then upturn at end. May be same group as 2b, but calls of type 2b and 2c were not mixed in same bat passes. Recorded 7 at 3 locations.'},
-
-              {type: 'h4', text: 'Example of phonic group 3'},
-              {type: 'img', src: bat_41, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
-              {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Melrose, MA over Towner\'s Pond'},
-              {type: 'p', text: 'Loud hockey stick shaped calls, some show upturn or downturn at end of call, others look more FM. Closer/louder calls show harmonic at 78 kHz. 15 recordings from 7 locations'},
-
-              {type: 'h4', text: 'Example of phonic group 4'},
-              {type: 'img', src: bat_53, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
-              {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Malden, MA over Forestdale Cemetery Pond'},
-              {type: 'p', text: 'One higher pitched call recorded, no visible harmonics, moderate energy, steep hockey-stick shape closer to FM.'},
-              
-              {type: 'h4', text: 'Qualitative Findings'},
-              {type: 'p', text: 'In my recordings, I found lots of other interesting things that my program doesn\'t capture but are interesting qualitative data:'},
-              {type: 'p', text: '1. Bats making social calls in between their echolocation calls'},
-              {type: 'img', src: bat_social, className: 'width100', alt: 'A spectrogram showing bat echolocation with squiggly lines showing social calls made in between the echolocation calls'},
-              {type: 'text', className: 'small-text', text: 'Bat recorded 10/20/2024 in Melrose, MA on Naples Rd.'},
-              {type: 'p', text: '2. Bats using strobe groups (an echolocation call consisting of more than 2+ rapid pulses)'},
-              {type: 'img', src: bat_strobe, className: 'width100', alt: 'A spectrogram showing bat echolocation calls where some calls involve 2+ rapid pulses'},
-              {type: 'text', className: 'small-text', text: 'Bat recorded 6/30/2025 in Melrose, MA on Naples Rd. '},
-              {type: 'p', text: '3. Search, Approach, and Terminal Phases (Feeding buzz) where calls change in shape and frequency as bat approaches a tasty insect'},
-              {type: 'img', src: bat_feed, className: 'width100', alt: 'A spectrogram showing bat echolocation calls which grow closer together and drop in frequency for a feeding buzz'},
-              {type: 'text', className: 'small-text', text: 'Bat recorded 9/11/2025 in Andover, MA over a field'},
-            ]
-          },
-          {
-            type: 'DisclosurePanel',
-            title: 'Oregon Results',
-            titleEl: 'h3',
-            children: [
-              {type: 'p', text: 'Coming soon!'},
-            ]
-          },
-          {type: 'h2', text: 'Discussion'},
-          {
-            type: 'DisclosurePanel',
-            title: 'Species in Massachusetts I might have recorded',
-            expandedByDefault: true,
-            titleEl: 'h3',
-            children: [
-              {type: 'h4', text: 'Species and their echolocation characteristics in Massachusetts'},
-              {type: 'div', className: 'two-column', elements: [
-                {type: 'table', className: 'med-text',
-                  headers: [
-                    'Name',
-                    'Status',
-                    'Typical peak freq',
-                    'Typical volume'
-                  ],
-                  rows: [
-                    ['Hoary bat (Lasiurus cinereus)', 'concern', '18-23 kHz', 'shouting, quiet, or silent'],
-                    ['Silver-haired bat (Lasionycteris noctivagans)', 'concern', '27-31 kHz', 'moderate'],
-                    ['Big brown bat (Eptesicus fuscus)', 'common', '28-32 kHz', 'shouting'],
-                    ['Eastern red bat (Lasiurus borealis)', 'concern', '39-49 kHz', 'shouting'],
-                    ['Little brown bat (Myotis lucifugus)', 'endangered', '40-47 kHz', 'shouting'],
-                    ['Indiana bat (Myotis sodalist)', 'endangered', '41-47 kHz', 'moderate'],
-                    ['Tricolored bat (Perimyotis subflavus)', 'endangered', '42-46 kHz', 'whispering'],
-                    ['Eastern small-footed bat (Myotis leibii)', 'endangered', '46-52 kHz', 'whispering'],
-                    ['Northern long-eared bat (Myotis septentrionalis)', 'endangered', '41-62 kHz', 'whispering'],
-                  ]
-                },
-                 {type: 'img', src: bats_in_mass, className: 'max-width310', alt: 'Labelled images of multiple types of bats that live in Massachusetts'},
-              ]},
-              {type: 'text', text: 'Sources: ', className: 'small-text'},
-              {type: 'a', text: 'MassAudubon', className: 'small-text', href: 'https://www.massaudubon.org/nature-wildlife/mammals-in-massachusetts/bats'},
-              {type: 'text', text: ', ', className: 'small-text'},
-              {type: 'a', text: 'AnimalSpot.net Bats in Massachusetts', className: 'small-text', href: 'https://www.animalspot.net/bats-in-us/bats-in-massachusetts'},
-              {type: 'text', text: ', ', className: 'small-text'},
-              {type: 'a', className: 'small-text', text: 'Joe Szewczak, Cal Poly Humboldt Bat Lab, 2006, 2011, 2018, 2022, 2024', href: 'https://sonobat.com/download/Eastern_NA_Acoustic_Table.pdf'},              
-              {type: 'p', text: ''},
-              {type: 'text', className: 'bold', text: 'Phonic Group 1: Peak 19-20 kHz flatter FM-QCF'},
-              {type: 'text', text: 'Mostly likely a hoary bat (Lasiurus cinereus). While uncommon, are the only known bat species in MA to echolocate with peak frequencies 18-23 kHz.'},
-              {type: 'p', text: ''},
-              {type: 'text', className: 'bold', text: 'Phonic Group 2a: Peak 25-32 kHz loud FM-QCF'},
-              {type: 'text', text: 'Most likely big brown bat (Eptesicus fuscus) who are very common throughout the state and comprise of a large portion of my recordings.'},
-              {type: 'p', text: ''},
-              {type: 'text', className: 'bold', text: 'Phonic group 2b: Peak 32-38 kHz FM-QCF & flatter'},
-              {type: 'text', text: 'I have 20+ recordings from this group, but they\'re a little mysterious as the peak frequencies 32-38 are atypical for bats in Massachusetts. Could be from the common Big brown bat (Eptesicus fuscus), but it\'s a little high for this species. Could be from the uncommon Eastern red bat (Lasiurus borealis) or the endangered Tri-colored bat (Perimyotis subflavus) although the peak frequencies are a little low for these species.'},
-              {type: 'p', text: ''},
-              {type: 'text', className: 'bold', text: 'Phonic group 2c: Peak 32-36 kHz Flat/Squiggles'},
-              {type: 'text', text: 'I have a few recordings from this group, and they\'re also a little mysterious. Same frequency range as group 2b, but the shape is quite different, and I didn\'t see both types of calls in the same bat passes so they could be separate groups. Could be an endangered Tri-colored bat (Perimyotis subflavus), which is known to make "squiggles" but whose peak frequencies are typically higher.'},
-              {type: 'p', text: ''},
-              {type: 'text', className: 'bold', text: 'Phonic Group 3: Peak 41-45 kHz FM & FM-QCF'},
-              {type: 'text', text: 'This handful of 15 recordings are possibly the Eastern red bat (Lasiurus borealis) or the endangered Little brown bat (Myotis lucifugus) whose calls are consistent with these frequencies and shapes.'},
-              {type: 'p', text: ''},
-              {type: 'text', className: 'bold', text: 'Phonic Group 4: Peak 53 kHz FM'},
-              {type: 'text', text: 'This single recording with high pitched calls is possibly the Eastern small-footed bat (Myotis leibii) or Northern long-eared bat (Myotis septentrionalis), both endangered in MA, and whose whispering calls are consistent with this frequency.'},
-              {type: 'p', text: ''},
-            ]
-          },
-          {type: 'h3', text: 'Challenges / Things I Learned'},
-          {type: 'p', text: 'I would like to fully automate my bat call feature extractor program but found that depending on bat call energy vs. wind energy, there needs to be some manual visual checking to ensure the calls are correctly highlighted on the waveform and adjust the energy threshold as needed. For instance, if the energy threshold is too low, the entire recording will be considered 1 call, and I would be analyzing a pile of wind. But if the energy threshold is too high, the end of loud calls will be cut off and quieter calls will be missed entirely. Thus the program is semi-automated as the user needs to check how well the calls are highlighted on the waveform and adjust the energy threshold as needed.'},
-          {type: 'p', text: 'I found that needing to adjust the energy threshold to handle wind, bat volume/distance, and other factors can bias call features extracted, particularly call duration, slope, and max frequency. For instance, if it\'s very windy or the bat is farther away or quieter, the energy threshold needs to be higher to separate the bat sounds, but the call duration will be shorter and the max frequency lower as the higher frequencies and sustain/release portion of the sound envelope gets lost in the wind. '},
-          {type: 'text', text: 'Individual bats also use different call durations, frequencies, and inter-call interval\'s depending on their environment, if they\'re scanning their surroundings or approaching an insect, and many other reasons. So, as well described in '},
-          {type: 'a', text: 'Bat Conservation International (BATCON) 2020 Handbook', href: 'https://www.batcon.org/wp-content/uploads/2020/09/Bat_Echolocation_Research_2nd_Ed_20200918.pdf'},
-          {type: 'text', text: ' species identification is challenging.'},
           
+          {type: 'h3', text: 'Peak frequencies of bat passes recorded in Massachusetts'},
+          {type: 'img', src: melrose_bat_histogram, className: 'width100', alt: 'A histogram titled Peak Frequencies of 40 Bat Passes Recorded in MA showing 3 groups of bats, the most calls clustered around 26-32 kHz, some calls between 34-38 kHz, and a few calls 43-45 kHz'},
+          {type: 'h3', text: 'Phonic groups'},
+          {type: 'table',
+            headers: [
+              'Phonic group',
+              'Peak frequency (kHz)',
+              'Avg min frequency (kHz)',
+              'Avg max frequency (kHz)',
+              'Avg call duration (ms)',
+              'Call shape(s)',
+              'Number of recordings',
+              'Number of locations'
+            ],
+            rows: [
+              ['1', '19-20', '18', '23', '30', 'FM-QCF', '3', '2'],
+              ['2a', '25-32', '25', '60', '28', 'FM-QCF', '50+', '11'],
+              ['2b', '32-38', '32', '45', '17', 'FM-QCF', '21', '5'],
+              ['2c', '32-36', '32', '35', '20', 'squiggle', '7', '3'],
+              ['3', '41-45', '39', '70', '15', 'FM & FM-QCF', '15', '7'],
+              ['4', '53', '48', '85', '9', 'FM', '1', '1'],
+            ]
+          },
+          {type: 'h3', text: 'Example recordings from the phonic groups'},
+          {type: 'text', className: 'small-text', text: 'Note: Each spectrogram screenshot uses similar time/frequency scale for ease of visual comparison'},
+          {type: 'h4', text: 'Group 1 (Peak 19-20 kHz flatter FM-QCF)'},
+          {type: 'img', src: bat_19, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 26 kHz'},
+          {type: 'text', className: 'small-text', text: 'Bat recorded 9/14/2025 in Medford, MA over Upper Mystic Lake'},
+          {type: 'p', text: 'Loud hockey stick shaped calls that are flatter and lower frequency from group 2a.'},
+          {type: 'h4', text: 'Group 2a (Peak 25-32 kHz loud FM-QCF)'},
+          {type: 'img', src: bat_25, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 36 kHz'},
+          {type: 'text', className: 'small-text', text: 'Bat recorded 6/30/3035 in Melrose, MA on Naples Rd'},
+          {type: 'p', text: 'Loud hockey stick shaped calls with harmonics at approx. 55, 90, and 150 kHz.'},
+          
+          {type: 'h4', text: 'Group 2b (Peak 32-38 kHz flatter FM-QCF)'},
+          {type: 'img', src: bat_32, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
+          {type: 'text', className: 'small-text', text: 'Bat recorded 9/1/2025 in Melrose, MA over Pine Banks Pond'},
+          {type: 'p', text: 'Hockey stick shaped calls with max energy 33-45 kHz, some flatter calls with max energy 32-35 kHz, some have upturn at end. Quiet to moderate energy, no visible harmonics..'},
+
+          {type: 'h4', text: 'Group 2c (Peak 32-36 kHz Flat/Squiggles)'},
+          {type: 'img', src: bat_32_squiggle, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
+          {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Melrose, MA over Swain\'s Pond'},
+          {type: 'p', text: 'Flatter calls with upturn at beginning, slope down, then upturn at end. May be same group as 2b as they share a similar frequency range, but calls of type 2b and 2c were not mixed in same bat passes.'},
+
+          {type: 'h4', text: 'Group 3 (Peak 41-45 kHz FM & FM-QCF)'},
+          {type: 'img', src: bat_41, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
+          {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Melrose, MA over Towner\'s Pond'},
+          {type: 'p', text: 'Loud hockey stick shaped calls, some show upturn or downturn at end of call, others look more FM. Closer/louder calls show harmonic at 78 kHz.'},
+
+          {type: 'h4', text: 'Group 4 (Peak 53 kHz FM)'},
+          {type: 'img', src: bat_53, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
+          {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Malden, MA over Forestdale Cemetery Pond'},
+          {type: 'p', text: 'Higher pitched call, no visible harmonics, moderate energy, steep hockey-stick shape closer to FM.'},
+          
+          {type: 'h3', text: 'Other Findings'},
+          {type: 'p', text: '1. Bats making social calls in between their echolocation calls'},
+          {type: 'img', src: bat_social, className: 'width100', alt: 'A spectrogram showing bat echolocation with squiggly lines showing social calls made in between the echolocation calls'},
+          {type: 'text', className: 'small-text', text: 'Bat recorded 10/20/2024 in Melrose, MA on Naples Rd.'},
+          {type: 'p', text: '2. Bats using strobe groups (an echolocation call consisting of more than 2+ rapid pulses)'},
+          {type: 'img', src: bat_strobe, className: 'width100', alt: 'A spectrogram showing bat echolocation calls where some calls involve 2+ rapid pulses'},
+          {type: 'text', className: 'small-text', text: 'Bat recorded 6/30/2025 in Melrose, MA on Naples Rd. '},
+          {type: 'p', text: '3. Search, approach, and terminal Phases (feeding buzz) where calls change in shape and frequency as bat approaches a tasty insect'},
+          {type: 'img', src: bat_feed, className: 'width100', alt: 'A spectrogram showing bat echolocation calls which grow closer together and drop in frequency for a feeding buzz'},
+          {type: 'text', className: 'small-text', text: 'Bat recorded 9/11/2025 in Andover, MA over a field'},
+          {type: 'h2', text: 'Discussion'},
+          
+          {type: 'img', src: bats_in_mass, className: 'width-limit-500', alt: 'Labelled images of multiple types of bats that live in Massachusetts'},
+          {type: 'text', text: 'Source: ', className: 'small-text'},
+          {type: 'a', text: 'AnimalSpot.net Bats in Massachusetts', className: 'small-text', href: 'https://www.animalspot.net/bats-in-us/bats-in-massachusetts'},
+          {type: 'h3', text: 'Echolocation characteristics of species in Massachusetts'},
+          {type: 'table', className: 'med-text',
+            headers: [
+              'Name',
+              'Status',
+              'Typical peak freq',
+              'Typical volume'
+            ],
+            rows: [
+              ['Hoary bat (Lasiurus cinereus)', 'concern', '18-23 kHz', 'variable'],
+              ['Silver-haired bat (Lasionycteris noctivagans)', 'concern', '27-31 kHz', 'moderate'],
+              ['Big brown bat (Eptesicus fuscus)', 'common', '28-32 kHz', 'shouting'],
+              ['Eastern red bat (Lasiurus borealis)', 'concern', '39-49 kHz', 'shouting'],
+              ['Little brown bat (Myotis lucifugus)', 'endangered', '40-47 kHz', 'shouting'],
+              ['Indiana bat (Myotis sodalist)', 'endangered', '41-47 kHz', 'moderate'],
+              ['Tricolored bat (Perimyotis subflavus)', 'endangered', '42-46 kHz', 'whispering'],
+              ['Eastern small-footed bat (Myotis leibii)', 'endangered', '46-52 kHz', 'whispering'],
+              ['Northern long-eared bat (Myotis septentrionalis)', 'endangered', '41-62 kHz', 'whispering'],
+            ]
+          },
+          {type: 'text', text: 'Sources: ', className: 'small-text'},
+          {type: 'a', text: 'MassAudubon', className: 'small-text', href: 'https://www.massaudubon.org/nature-wildlife/mammals-in-massachusetts/bats'},
+          {type: 'text', text: ', ', className: 'small-text'},
+          {type: 'a', className: 'small-text', text: 'Joe Szewczak, Cal Poly Humboldt Bat Lab, 2006, 2011, 2018, 2022, 2024', href: 'https://sonobat.com/download/Eastern_NA_Acoustic_Table.pdf'},              
+          {type: 'h3', text: 'What species might I have recorded?'},
+          {type: 'text', className: 'bold', text: 'Phonic Group 1 (Peak 19-20 kHz flatter FM-QCF) '},
+          {type: 'text', text: 'recordings are mostly likely of hoary bats (Lasiurus cinereus). While uncommon, they are the only known bat species in MA to echolocate at these lower frequencies.'},
+          {type: 'p', text: ''},
+          {type: 'text', className: 'bold', text: 'Phonic Group 2a (Peak 25-32 kHz loud FM-QCF) '},
+          {type: 'text', text: 'recordings are most likely of big brown bats (Eptesicus fuscus) who are very common throughout the state. More than half of my recordings were in this phonic group.'},
+          {type: 'p', text: ''},
+          {type: 'text', className: 'bold', text: 'Phonic group 2b (Peak 32-38 kHz FM-QCF & flatter) '},
+          {type: 'text', text: 'is a little mysterious. I have 20+ recordings from this group, but the peak frequencies of 32-38 kHz are atypical for bats in Massachusetts. Perhaps they are from the common Big brown bat (Eptesicus fuscus), but it\'s a little high for this species and these calls have a consistent different shape from my recordings in phonic group 2a. Could be from the uncommon Eastern red bat (Lasiurus borealis) or the endangered Tri-colored bat (Perimyotis subflavus) although the peak frequencies are a little low for these species according to the Cal Poly Humboldt Bat Lab data.'},
+          {type: 'p', text: ''},
+          {type: 'text', className: 'bold', text: 'Phonic group 2c (Peak 32-36 kHz Flat/Squiggles) '},
+          {type: 'text', text: 'is also a little mysterious and less common. These recordings fall in the same frequency range as group 2b, but the shape is quite different, and I didn\'t see both types of calls in the same bat passes suggesting they may be separate groups. Could be an endangered Tri-colored bat (Perimyotis subflavus), which is known to make "squiggles" but whose peak frequencies are typically higher.'},
+          {type: 'p', text: ''},
+          {type: 'text', className: 'bold', text: 'Phonic Group 3 (Peak 41-45 kHz FM & FM-QCF) '},
+          {type: 'text', text: 'comprised of about 15 recordings that are possibly from the uncommon Eastern red bat (Lasiurus borealis) or the endangered Little brown bat (Myotis lucifugus) whose calls are consistent with these frequencies and shapes. More expertise and investigation would be helpful to differentiate the two.'},
+          {type: 'p', text: ''},
+          {type: 'text', className: 'bold', text: 'Phonic Group 4 (Peak 53 kHz FM) '},
+          {type: 'text', text: 'consisted of a single recording with higher-pitched FM calls that could possibly come from the Eastern small-footed bat (Myotis leibii) or Northern long-eared bat (Myotis septentrionalis). Both are endangered in MA, but their whispering calls are consistent with this frequency.'},
+          {type: 'p', text: ''},
+          {type: 'h3', text: 'Challenges / Things I Learned'},
+          {type: 'p', text: 'I had originally hoped to fully automate my program but found that it was challenging to choose the right energy threshold and filter cutoffs that best highlight the bat calls given variable factors in the recordings like bat call energy vs. wind energy.  Manual checking the calls highlighted on the waveform and spectrogram and adjusting parameters as needed seemed to work best.'},
+          {type: 'p', text: 'I also found that energy threshold can bias the call duration, slope, and max frequency. For instance, if it\'s very windy or the bat is farther away or quieter, the energy threshold needs to be higher to separate the bat calls from wind, but this artificially shortens call duration and reduces max frequency as the higher frequencies and sustain/release portion of the sound envelope get cutoff, or \'lost in the wind.\''},
+          {type: 'text', text: 'High- and low-pass filter cutoffs also needed to be manually adjusted to account for bats of very different frequencies who were sometimes present in the same recording, as well as cut out loud high-pitched insects like katydids who were sometimes present.'},
+          {type: 'h3', text: 'Next Steps'},
+          {type: 'p', text: 'It would be great to compare my results with results from professional software, and learn about the methods other researchers use to adjust energy thresholds and high- and low-pass filter cutoffs. I would also like to learn more advanced methods of capturing call shape such as multiple slopes, or using machine learning methods like image recognition for spectrograms to classify calls.'},
+          {type: 'text', text: 'As described in '},
+          {type: 'a', text: 'Bat Conservation International (BATCON) 2020 Handbook', href: 'https://www.batcon.org/wp-content/uploads/2020/09/Bat_Echolocation_Research_2nd_Ed_20200918.pdf'},
+          {type: 'text', text: ', identifying species from recordings alone is challenging, as individual bats can vary their calls dramatically, and many species can sound similar. But I was pleased to significant differences between groups in my recordings, suggesting grouping into phonic groups that fit certain species is possible.'},
+  
           {type: 'h2', text: 'References'},
           {type: 'ul', elements: [
             [{type: 'a', text: 'Bat Conservation International (BATCON) 2020 Handbook', href: 'https://www.batcon.org/wp-content/uploads/2020/09/Bat_Echolocation_Research_2nd_Ed_20200918.pdf'}],
             [{type: 'a', text: 'Bats of Massachusetts', href: 'https://www.mass.gov/info-details/bats-of-massachusetts'}],
             [{type: 'a', text: 'MassAudubon', href: 'https://www.massaudubon.org/nature-wildlife/mammals-in-massachusetts/bats'}],
-            [{type: 'a', text: 'Oregon Dept of Fish and Wildlife', href: 'https://myodfw.com/wildlife-viewing/species/bats'}],
             [{type: 'a', text: 'Echolocation Call Characteristics of Eastern North American Bats, Joe Szewczak, Cal Poly Humboldt Bat Lab, 2006, 2011, 2018, 2022, 2024', href: 'https://sonobat.com/download/Eastern_NA_Acoustic_Table.pdf'}],
-            [{type: 'a', text: 'Echolocation Call Characteristics of Western North American Bats, Joe Szewczak, Cal Poly Humboldt Bat Lab, 2006, 2011, 2018, 2022, 2024', href: 'https://sonobat.com/download/Western_NA_Bat_Acoustic_Table.pdf'}]
+            [{type: 'a', text: 'Xeno-canto', href: 'https://xeno-canto.org/explore/taxonomy?ord=CHIROPTERA'}],
           ]}
         ]
       },

@@ -53,6 +53,15 @@ button {
   display: block;
 }
 
+.width-limit-500 {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  
+}
+
 .max-width310 {
   max-width: 310px;
 }
@@ -698,7 +707,7 @@ form button {
 .align-row {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
