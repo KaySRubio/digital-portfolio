@@ -577,13 +577,13 @@ export const projects: Project[] = [
   // bat-calls --> not done
   {
     path: 'bat-echolocation',
-    short_title: 'Bat Echolocation Audio Feature Extraction',
+    short_title: 'Bat Echolocation Calls',
     title: 'Analyzing Bat Echolocation Calls',
     date: 'September 2025',
     topics: [TopicNames.BIOACOUSTICS],
     visible: true,
     featured: true,
-    desc: 'Exploring audio features of ultrasonic bat echolocation calls',
+    desc: 'Recording and analyzing bat calls using audio signal processing & machine learning',
     mainImage: {
       type: 'png',
       src: batPng,
@@ -815,7 +815,7 @@ export const projects: Project[] = [
           {type: 'img', src: bat_pass_clusters, className: 'width-limit-500', alt: 'A scatterplot showing 103 data points representing bat passes with duration on the x-axis, peak frequency on the y-axis, dot size representing slope and dot color representing cluster'},
 
           {type: 'h3', text: 'Phonic Group Summary'},
-          {type: 'p', text: 'For simplicity, clusters were renamed Group 1, 2, and 3 in order from lowest to highest peak frequency.Groups were further split into \'A\' and \'B\' sections when there is a large gap in peak frequency within the group.'},
+          {type: 'p', text: 'For simplicity, clusters were renamed Group 1, 2, and 3 in order from lowest to highest peak frequency. Groups were further split into \'A\' and \'B\' sections when there is a large gap in peak frequency within the group.'},
           {type: 'table',
             headers: [
               'Phonic group',
@@ -920,7 +920,7 @@ export const projects: Project[] = [
           {type: 'text', text: 'Eptesicus fuscus', className: 'italic'},
           {type: 'text', text: ') but many calls are somewhat high pitched for this species. Some could be from the uncommon Eastern red bat ('},
           {type: 'text', text: 'Lasiurus borealis', className: 'italic'},
-          {type: 'text', text: ')or the endangered Tri-colored bat ('},
+          {type: 'text', text: ') or the endangered Tri-colored bat ('},
           {type: 'text', text: 'Perimyotis subflavus', className: 'italic'},
           {type: 'text', text: '). The latter are known to make "squiggles" but the peak frequencies of these species are typically higher.'},
           {type: 'p', text: ''},
