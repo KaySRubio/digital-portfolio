@@ -71,6 +71,10 @@ button {
   font-weight: bold;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .github-icon {
   width: 80px;
   height: 80px;
