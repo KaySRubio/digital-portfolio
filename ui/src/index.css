@@ -192,7 +192,7 @@ h1, h2, h3 {
 .large-menu-project-button-group {
   display: flex;
   margin: 0;
-  gap: 2rem; /* spacing between the project buttons */
+  gap: 16px;
   text-align: center;
   font-size: 0.7em;
 }
@@ -203,6 +203,13 @@ h1, h2, h3 {
   align-items: center;
   text-decoration: none;
   width: 90px;
+  padding: 5px;
+  margin: 2px;
+}
+
+.large-menu-button:hover {
+  border: 2px solid var(--dark-blue);
+  margin: 0;
 }
 
 .large-menu-icon {
@@ -345,12 +352,13 @@ h1, h2, h3 {
   padding: 20px;
 }
 
-.featured-projects-section h2 {
-  margin-bottom: 40px;
+.topic-page-title {
+  margin: 40px 0 10px 0;
+  color: var(--dark-blue);
 }
 
-.topic-page-title {
-  margin: 40px 0;
+.topic-page-directions {
+  text-align: center;
   color: var(--dark-blue);
 }
 
@@ -359,8 +367,8 @@ h1, h2, h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
-  padding: 10px; /* optional, for spacing around the group */
+  gap: 30px;
+  padding: 10px;
 }
 
 .project-card {
@@ -368,9 +376,15 @@ h1, h2, h3 {
   width: 220px;
   border-radius: 5px;
   padding: 10px;
+  margin: 8px;
   text-decoration: none;
   flex: 0 0 auto;
   text-align: center;
+}
+
+.project-card:hover {
+  padding: 14px;
+  margin: 4px;
 }
 
 .project-card h3 {

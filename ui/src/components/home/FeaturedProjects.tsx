@@ -12,6 +12,7 @@ const FeaturedProjects = () => {
     <div>
       <div className="featured-projects-section">
         <h2>Featured Projects</h2>
+        <p className='center'>Click on a card to view a project</p>
         <div className='project-card-container'>
           {featured_projects.map(project => ( <ProjectCard key={project.path} project={project} theme='light' />))}
         </div>

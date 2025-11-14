@@ -16,6 +16,7 @@ const TopicPage = ({topic}: ProjectListPageProps) => {
   return (
     <div>
       <h1 className='topic-page-title'>{topic.title}</h1>
+      <p className='topic-page-directions'>Click on a project below to view</p>
       <div className='project-card-container'>
       {visibleProjectsOnTopic.map(project => ( <ProjectCard key={project.path} project={project} theme='dark' />))}
       </div>
