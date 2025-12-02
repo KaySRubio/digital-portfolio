@@ -139,6 +139,7 @@ export const projects: Project[] = [
     visible: true,
     featured: true,
     desc: 'Extract time- and frequency-domain features from audio files',
+    long_desc: 'Uses audio feature extraction to show amplitude envelope, MFCCs, and other features. Shows waveform and spectrogram. Live demo available.',
     mainImage: {
       type: 'png',
       src: spectrogram,
@@ -408,6 +409,7 @@ export const projects: Project[] = [
     visible: true,
     featured: true,
     desc: 'Created algorithm that extracts features like number of clicks and inter-click-intervals',
+    long_desc: 'Uses voice activity detection to analyze sperm whale vocalization codas. Shows waveform and spectrogram. Links to GitHub and Hugging Face.',
     mainImage: {
       type: 'png',
       src: spermwhalepng,
@@ -584,6 +586,7 @@ export const projects: Project[] = [
     visible: true,
     featured: true,
     desc: 'Recording and analyzing bat calls using audio signal processing & machine learning',
+    long_desc: 'Recorded 100+ bats in Massachusetts. Extracted audio features and explored phonic groups using K-Means clustering. Identified possible species.',
     mainImage: {
       type: 'png',
       src: batPng,
@@ -972,6 +975,7 @@ export const projects: Project[] = [
     visible: false,
     featured: false,
     desc: 'Documenting chicken sound patterns',
+    long_desc: '',
     mainImage: {
       type: 'png',
       src: chicken,
@@ -991,6 +995,7 @@ export const projects: Project[] = [
     visible: false,
     featured: false,
     desc: 'Exploring ultrasonic \'popping\' of distressed veggies',
+    long_desc: '',
     mainImage: {
       type: 'png',
       src: plantPng,
@@ -1010,6 +1015,7 @@ export const projects: Project[] = [
     visible: true,
     featured: true,
     desc: 'Fine-tuned an image recognition model to identify species',
+    long_desc: 'Trained an image classifier to identify frog species in Massachusetts. Live demo with camera. Model hosted in Hugging Face.',
     mainImage: {
       type: 'png',
       src: frog,
@@ -1161,6 +1167,7 @@ export const projects: Project[] = [
       alt: 'A cartoon of multiple people talking',
     },
     desc: 'Comparing algorithms that detect speech',
+    long_desc: '',
     techStack: [
       'Voice Activity Detection (VAD)',
       'Neural networks',
@@ -1177,6 +1184,7 @@ export const projects: Project[] = [
     visible: true,
     featured: true,
     desc: 'Fine-tuned a neural network for accent classification and explored existing ASR models',
+    long_desc: 'Fine-tuned an accent classification model using hugging face transformers. Live demo features audio recording.',
     mainImage: {
       type: 'png',
       src: asrPng,
@@ -1665,6 +1673,7 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Trained models to predict the danceability of songs',
+    long_desc: 'Trained machine learning model for regression to predict danceability scores from the temporal features of songs using scikit-learn.',
     mainImage: {
       type: 'png',
       src: dancing,
@@ -1739,6 +1748,7 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Trained traditional machine learning models to predict hospital readmission',
+    long_desc: 'Trained machine learning classification models to predict hospital readmission in patients with diabetes using scikit-learn.',
     mainImage: {
       type: 'png',
       src: hospitalization,
@@ -1818,6 +1828,7 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Explored underlying topics in 20,000 Dear Abby questions to practice Natural Language Processing (NLP)',
+    long_desc: 'Used unsupervised machine learning and natural language processing to explore underlying topics in 20,000 Dear Abby questions.',
     mainImage: {
       type: 'png',
       src: dearabby,
@@ -2079,6 +2090,7 @@ export const projects: Project[] = [
     visible: true,
     featured: false,
     desc: 'Web app to teach students sorting algorithms with an under-the-sea theme',
+    long_desc: 'Created a React and TypeScript website to teach users sorting algorithms that they can perform live on screen and get instant feedback about their steps.',
     mainImage: {
       type: 'png',
       src: anemone,
@@ -2135,6 +2147,7 @@ export const projects: Project[] = [
     visible: false,
     featured: false,
     desc: 'Math and literacy programs for kids at Curriculum Associates',
+    long_desc: '',
     mainImage: {
       type: 'png',
       src: iready,
@@ -2153,6 +2166,7 @@ export const projects: Project[] = [
     visible: false,
     featured: false,
     desc: 'A tool to input audio and display phonemic transcriptions and data',
+    long_desc: '',
     mainImage: {
       type: 'svg',
       src: mic,

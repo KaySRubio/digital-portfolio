@@ -31,6 +31,7 @@ export type Project = {
   visible: boolean;
   featured: boolean;
   desc: string;
+  long_desc: string;
   mainImage?: MainImage;
   techStack?: string[]; // older list version
   projectCardTechStack?: string[]; // better icon version

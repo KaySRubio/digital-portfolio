@@ -29,6 +29,7 @@ All the content in this portfolio is added to a data file and then dynamically r
     visible: true, // update to true when your done so it shows up in the list of projects by topic
     featured: false, // update to true if you want it to be listed on the home page
     desc: 'Fine-tuned an image recognition model to identify species', // Longer description for the projectCard. Try to keep under 12 words.
+    long_desc: 'Page description for SEO, keep to 120-155 characters'
     mainImage: {
       type: '',
       src: '',
@@ -55,8 +56,9 @@ All the content in this portfolio is added to a data file and then dynamically r
     },
 ```
 
+6. Add to the sitemap.xml
 
-6.	In your projectsList object, fill out the projectCardTechStack array which will make the applicable icons appear on the projectCard. For a list of all possible techStack items, see `ui/src/data/portfolioData`: `const techStackData` and use the `type` property
+7.	In your projectsList object, fill out the projectCardTechStack array which will make the applicable icons appear on the projectCard. For a list of all possible techStack items, see `ui/src/data/portfolioData`: `const techStackData` and use the `type` property
 projectCardTechStack: ['fastai']
   - Note: to add new technologies to the techStackData, download logo's with a large name for the tech and save as 100x100px png or svg file in `ui/src/assets/[file_type]/` and add a new object to the techStackData array in this format:
 ```
@@ -69,7 +71,7 @@ import typescript from '@/assets/svg/typescript.svg?react';
   }
 ```
 
-7.	In your projectsList object, start adding ProjectDetailComponents to the projectDetails array which will be displayed and automatically formatted on the projectDetails page.  Simple ProjectDetailComponents to add include things like:
+8.	In your projectsList object, start adding ProjectDetailComponents to the projectDetails array which will be displayed and automatically formatted on the projectDetails page.  Simple ProjectDetailComponents to add include things like:
 ```
 project_details: [
   {type: 'h2', text: 'Goals'},
@@ -87,7 +89,7 @@ project_details: [
   },
 ],
 ```
-8.	Composite ProjectDetailComponents that are pre-formatted include things like:
+9.	Composite ProjectDetailComponents that are pre-formatted include things like:
     - `type="GoalAndGithub"` has a nice 2-column format which displays text about the project on the left wider column, and a thinner column with a github icon/button. It has a elements property for the text elements on the right, and an href property for a github link.
     - `type="TechStack"` takes in a techList and displays the relevant icons. Make sure the listed tech is in the techStackData object with the saved icon, name, and href so that it shows up correctly
     - `type="table"` has a property for headers (one-dimensional array of strings), and a property for rows (two-dimensional array of strings, where first dimension is for each row, and second dimension is for each column)
@@ -95,7 +97,8 @@ project_details: [
     - `type="div"` creates a div that holds child components and takes in a className so you can style it. Make sure to add the css in `ui/src/index.css`
     - `type="img"` shows an image and requires a src, alt, and className
     - See more types in `ui/src/types/portfolioTypes`: `ProjectDetailComponent`
-9.	To add a demonstration that takes in visual or audio input, queries a backend API, and returns a results object, add a ProjectDetailComponent of `type="DemoBoard"`:
+
+10.	To add a demonstration that takes in visual or audio input, queries a backend API, and returns a results object, add a ProjectDetailComponent of `type="DemoBoard"`:
 ```
 {
   type: 'DemoBoard',
@@ -107,7 +110,7 @@ project_details: [
 },
 ```
 
-10.	 Use the requests array to add requests to back ends. For instance, to query HuggingFace, use this:
+11.	 Use the requests array to add requests to back ends. For instance, to query HuggingFace, use this:
 
 ```
         requests: [
@@ -122,7 +125,7 @@ project_details: [
 
   - Note: The hugging face client and api_name can be found by going to the hugging face space and scrolling to the bottom, and click on 'Use via API', e.g., https://huggingface.co/spaces/kaysrubio/transcribe_sperm_whale_coda
 
-11.	The results has a tabs property that provides a list of results to show, descriptions of what these results mean (such as what ML models provided them) and the exact path to find the result in the data provided from the back end. A single tab can show results from more than 1 model. 
+12.	The results has a tabs property that provides a list of results to show, descriptions of what these results mean (such as what ML models provided them) and the exact path to find the result in the data provided from the back end. A single tab can show results from more than 1 model. 
 
 ```
 results: {
@@ -148,9 +151,9 @@ results: {
 }
 ```
 
-12.	Inside the DemoBoard object, you can also add a sampleAudio or sampleImages property for preloaded input, which should have the location to a .wav, .png, or .jpg file, some displayText for the dropdown, and you can include sampleResults which should be an exactly copy of what your back end returns, formatted exactly the same way. If you include sample results, the app won't query the backend, but will instead display the sampleResults (saves on time and repetitive requests). Make sure to test that the results display correctly.  
+13.	Inside the DemoBoard object, you can also add a sampleAudio or sampleImages property for preloaded input, which should have the location to a .wav, .png, or .jpg file, some displayText for the dropdown, and you can include sampleResults which should be an exactly copy of what your back end returns, formatted exactly the same way. If you include sample results, the app won't query the backend, but will instead display the sampleResults (saves on time and repetitive requests). Make sure to test that the results display correctly.  
 
-13. If your result involves highlighting regions on the waveform, follow these steps:
+14. If your result involves highlighting regions on the waveform, follow these steps:
 
   -  Make sure your backend returns results in this format somewhere
 
@@ -213,7 +216,7 @@ results: {
   ]
 }
 
-14. If your result involves drawing line graphs on the waveform or spectrogram, follow these steps:
+15. If your result involves drawing line graphs on the waveform or spectrogram, follow these steps:
 
 For a single line where the points are spread out evenly across the entire waveform/spectrogram, add this setup:
 
@@ -303,7 +306,7 @@ Note: When you include a band and a center line, both must be included, and it's
 to place the band setup BEFORE the center line setup
 
 
-15. How to handle results that may take a while
+16. How to handle results that may take a while
 
 Case 1: results take a consistent amount of time (e.g., space doesn't sleep)
 

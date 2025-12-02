@@ -1,4 +1,3 @@
-
 import FeaturedProjects from './FeaturedProjects';
 import Contact from './Contact';
 import { homePageData } from '../../data/portfolioData';
@@ -7,9 +6,10 @@ import whale_music from '@/assets/png/whale_music.png';
 import sand from '@/assets/png/sand.png';
 
 const Home = () => {
-
   return (
     <div>
+      <title>Kay Rubio Software Engineering and Bioacoustics Portfolio</title>
+      <meta name="description" content="Software engineering portfolio showing projects in bioacoustics, machine learning, and web development. Includes live demos and GitHub links." />
       <div className='about'>
         <div className='centered-row'>
           <h1 className='sr-only'>Home</h1>

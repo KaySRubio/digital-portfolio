@@ -10,6 +10,8 @@ type ProjectDetailsPageProps = {
 const ProjectDetailsPage = ({project}: ProjectDetailsPageProps) => {
   return (
     <div className='project-details'>
+      <title>{project.title}</title>
+      <meta name="description" content={project.long_desc} />
       <div className='project-details-restricted-width'>
         <h1>{project.title}</h1>
         <p className='project-date'>{project.date}</p>
