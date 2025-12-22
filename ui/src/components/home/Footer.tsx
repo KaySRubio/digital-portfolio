@@ -42,7 +42,7 @@ const Footer = () => {
         <a aria-label='download resume' href={pathToResume} download='resume.pdf'>
         <DocumentIcon className={`footer-icon ${iconClass}`} />
         </a>
-        <a aria-label='linkedIn' href='https://www.linkedin.com/in/kay-sweeney-rubio-731abb114/'>
+        <a aria-label='linkedIn' href='https://www.linkedin.com/in/kay-rubio-731abb114/'>
           <LinkedInIcon className={`footer-icon ${iconClass}`} />
         </a>
         <a aria-label='github' href='https://github.com/KaySRubio'>
