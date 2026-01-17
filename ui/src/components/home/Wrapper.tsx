@@ -45,9 +45,8 @@ const Wrapper = () => {
                 element={<ProjectDetailsPage project={project} />} 
               />
           ))}
-          
-          <Route path="*" element={<h1>Page Not Found</h1>} />
           <Route path={'notecards'} element={<Notecards />} />
+          <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
       </div>
       <Footer />
