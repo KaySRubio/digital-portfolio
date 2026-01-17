@@ -18,26 +18,13 @@ const Wrapper = () => {
         <Routes>
           <Route index element={<Home />} />
           <Route path={'notecards'} element={<Notecards />} />
-          
-          <Route path="*" element={<h1>Page Not Found</h1>} />
-        </Routes>
-      </div>
-      <Footer />
-    </div>
-  )
-}
-
-export default Wrapper;
-
-/*
-{topics.map(topic => (
+          {topics.map(topic => (
             <React.Fragment key={topic.path}>
               <Route 
                 path={topic.path}
                 element={<ProjectListPage topic={topic} />} 
               />
-              {/* nested routes within topics for individual projects */
-            /*}
+              {/* nested routes within topics for individual projects */}
               {projects
                 .filter(project => project.topics.includes(topic.path))
                 .map(project => (
@@ -50,8 +37,7 @@ export default Wrapper;
             </React.Fragment>
           ))}
           
-          {/* individual projects can also be accessed without being underneath a topic */
-        /*}
+          {/* individual projects can also be accessed without being underneath a topic */}
           {projects.map(project => (
               <Route 
                 key={project.path}
@@ -59,5 +45,13 @@ export default Wrapper;
                 element={<ProjectDetailsPage project={project} />} 
               />
           ))}
-*/
+          <Route path="*" element={<h1>Page Not Found</h1>} />
+        </Routes>
+      </div>
+      <Footer />
+    </div>
+  )
+}
+
+export default Wrapper;
 
