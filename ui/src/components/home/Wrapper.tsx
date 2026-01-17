@@ -17,7 +17,8 @@ const Wrapper = () => {
         <Menu />
         <ScrollToTop />
         <Routes>
-          <Route path={''} element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path={'notecards'} element={<Notecards />} />
           {topics.map(topic => (
             <React.Fragment key={topic.path}>
               <Route 
@@ -45,7 +46,6 @@ const Wrapper = () => {
                 element={<ProjectDetailsPage project={project} />} 
               />
           ))}
-          <Route path={'notecards'} element={<Notecards />} />
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
       </div>
