@@ -7,6 +7,7 @@ import Home from './Home';
 import ProjectListPage from './TopicPage';
 import ScrollToTop from './ScrollToTop';
 import ProjectDetailsPage from '../projectDescriptions/ProjectDetailsPage';
+import Notecards from '../vocab/Notecards';
 import { topics, projects } from '../../data/portfolioData';
 
 const Wrapper = () => {
@@ -35,6 +36,7 @@ const Wrapper = () => {
               ))}
             </React.Fragment>
           ))}
+          
           {/* individual projects can also be accessed without being underneath a topic */}
           {projects.map(project => (
               <Route 
@@ -45,6 +47,7 @@ const Wrapper = () => {
           ))}
           
           <Route path="*" element={<h1>Page Not Found</h1>} />
+          <Route path={'notecards'} element={<Notecards />} />
         </Routes>
       </div>
       <Footer />
