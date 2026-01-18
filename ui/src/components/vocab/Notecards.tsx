@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
-// import type { FirebaseApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
-// import type { FirebaseFirestore } from 'firebase/firestore';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import Login from './Login';
-
+import AddWord from './AddWord';
+import DisplayCategories from './DisplayCategories';
+import DisplayWordsInCategories from './DisplayWordsInCategories';
+import type { WordData } from '../../types/vocabTypes';
 
 
 const firebaseConfig = {
@@ -19,53 +20,47 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
-// Define an interface for your word data for better type safety
-interface WordData {
-  category: string;
-  english: string;
-  spanish: string;
-  known: boolean;
-}
+
 
 const Notecards = () => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
   const [userEmail, setUserEmail] = useState<string | null>(null);
-  const [words, setWords] = useState<WordData[]>([])
-
-  /*
-  let db: FirebaseFirestore;
-  let app: FirebaseApp;
-  useEffect(() => {
-    app = initializeApp(firebaseConfig);
-    db = getFirestore(app)
-  }, [])
-  */
+  const [words, setWords] = useState<WordData[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
 
   useEffect(() => {
     if(loggedIn) {
-      getWordsByCategory('body parts');
+      getWords();
     }
   }, [loggedIn])
 
-  async function getWordsByCategory(categoryName: string) {
-    // 1. Get a reference to your 'word' collection
-    const wordsCollectionRef = collection(db, 'word');
-
-    // 2. Create a query that filters by the 'category' field
-    const q = query(wordsCollectionRef, where('category', '==', categoryName));
-
-    // 3. Execute the query
-    const querySnapshot = await getDocs(q);
+  // Get a reference to your 'word' collection
+  const wordsCollectionRef = collection(db, 'spanish_vocab');
+  // Fetch all documents from the collection
+  async function getWords() {
+    const querySnapshot = await getDocs(wordsCollectionRef);
 
     // 4. Map the snapshot documents to an array of your WordData
     const wordsArray: WordData[] = querySnapshot.docs.map(doc => {
-      // You can also include the document ID if needed:
-      // return { id: doc.id, ...doc.data() as WordData };
-      return doc.data() as WordData;
+      return { id: doc.id, ...doc.data() as WordData };
     });
-    setWords(wordsArray)
-    // return wordsArray;
+
+    const wordsArrayWithSideToShow = wordsArray.map(word => {
+      return { 
+        ...word,
+        showSpanish: word.knowledgeLevel === 1 ? false : true,
+      };
+    });
+    setWords(wordsArrayWithSideToShow);
   }
+
+  useEffect(() => {
+    console.log('words: ', words);
+    const allCategories = words.map(word => word.category);
+    const uniqueCategories = [...new Set(allCategories)];
+    setCategories(uniqueCategories);
+  }, [words])
 
 
   return (
@@ -75,14 +70,21 @@ const Notecards = () => {
         ?
         <div>
           <p>Logged in with { userEmail }</p>
+          <DisplayCategories categories={categories} setSelectedCategory={setSelectedCategory} />
+          <DisplayWordsInCategories selectedCategory={selectedCategory} words={words} db={db} setWords={setWords} />
+         
+
+          <h2>All Words</h2>
           {words.map((word: WordData, index) => {
             return (
               <div key={index}>
-                  <span>English: {word.english} | </span>
-                  <span>Spanish: {word.spanish}</span>
-                </div>
+                <span>English: {word.english} | </span>
+                <span>Spanish: {word.spanish}</span>
+              </div>
             );
           })}
+          <AddWord db={db} categories={categories} setWords={setWords} />
+
         </div>
         :
         <Login setLoggedIn={setLoggedIn} app={app} setUserEmail={setUserEmail} />
@@ -113,4 +115,27 @@ export default Notecards;
   const words = getWords();
   console.log(words);
 
+  */
+
+  /*
+// Function to get only words in a specific category
+async function getWordsByCategory(categoryName: string) {
+    // 1. Get a reference to your 'word' collection
+    const wordsCollectionRef = collection(db, 'spanish_vocab');
+
+    // 2. Create a query that filters by the 'category' field
+    const q = query(wordsCollectionRef, where('category', '==', categoryName));
+
+    // 3. Execute the query
+    const querySnapshot = await getDocs(q);
+
+    // 4. Map the snapshot documents to an array of your WordData
+    const wordsArray: WordData[] = querySnapshot.docs.map(doc => {
+      // You can also include the document ID if needed:
+      // return { id: doc.id, ...doc.data() as WordData };
+      return doc.data() as WordData;
+    });
+    setWords(wordsArray)
+    // return wordsArray;
+  }
   */
