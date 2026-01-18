@@ -1,18 +1,17 @@
 import { useState } from 'react';
 import type { WordData } from '../../types/vocabTypes';
-import { addData } from '../../utils/firebaseRequests';
-import type { Firestore } from 'firebase/firestore';
+import { addData } from '../../utils/supabaseRequests';
 
 type AddWordProps = {
-  db: Firestore;
+  supabase: any;
   categories: string[];
   setWords: React.Dispatch<React.SetStateAction<WordData[]>>;
 }
 
-const AddWord = ({ db, categories, setWords }: AddWordProps) => {
+const AddWord = ({ supabase, categories, setWords }: AddWordProps) => {
   const [english, setEnglish] = useState<string>('');
   const [spanish, setSpanish] = useState<string>('');
-  const [knowledgeLevel, setKnowledgeLevel] = useState<number>(0);
+  const [knowledgelevel, setKnowledgelevel] = useState<number>(0);
   const [category, setCategory] = useState<string>('');
   const [newCategory, setNewCategory] = useState<string>('');
   const [statusMsg, setStatusMsg] = useState<string>('');
@@ -44,37 +43,39 @@ const AddWord = ({ db, categories, setWords }: AddWordProps) => {
       categoryToUse = category
     }
     const newWordData: WordData = {
+      id: customWordId,
       category: categoryToUse,
-      english: english,
       spanish: spanish,
-      knowledgeLevel: knowledgeLevel,
+      english: english,
+      knowledgelevel: knowledgelevel,
     };
 
     try {
-      const addedDocId = await addData(db, targetCollection, customWordId, newWordData);
-      if (addedDocId) {
-        setStatusMsg(`Successfully added ${addedDocId}`)
-        setEnglish('');
-        setSpanish('');
-        setCategory('');
-        setNewCategory('');
-        setKnowledgeLevel(0);
+      await addData(supabase, targetCollection, newWordData);
+      setStatusMsg(`Successfully added ${customWordId}`)
+      setEnglish('');
+      setSpanish('');
+      setCategory('');
+      setNewCategory('');
+      setKnowledgelevel(0);
 
-        // Update local copy to keep it in sync with database since only query upon login
-        const showSpanish = knowledgeLevel === 1 ? false : true;
-        const newWordWithId: WordData = {
-          ...newWordData,
-          id: customWordId,
-          showSpanish: showSpanish,
-        };
-        setWords((prevWords) => [...prevWords, newWordWithId]);
-      } else {
-        setStatusMsg(`${addedDocId} already exists`)
-      }
+      // Update local copy to keep it in sync with database since only query upon login
+      const showSpanish = knowledgelevel === 1 ? false : true;
+      const newWordWithId: WordData = {
+        ...newWordData,
+        id: customWordId,
+        showSpanish: showSpanish,
+      };
+      setWords((prevWords) => [...prevWords, newWordWithId]);
+      
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
-      setStatusMsg(`Failed to add data`)
-      console.warn(error);
+      if(error.message.includes('duplicate')) {
+        setStatusMsg(`${customWordId} already exists in the database`)
+      } else {
+        setStatusMsg(`Unable to add data`)
+        console.warn(error);
+      }
     }
   }
 
@@ -143,7 +144,7 @@ const AddWord = ({ db, categories, setWords }: AddWordProps) => {
                   borderRadius: "5px",
                   cursor: "pointer",
                   border:
-                    knowledgeLevel === option.value
+                    knowledgelevel === option.value
                       ? "3px solid black"
                       : "1px solid gray",
                   userSelect: "none",
@@ -153,8 +154,8 @@ const AddWord = ({ db, categories, setWords }: AddWordProps) => {
                   type="radio"
                   name="knowledge"
                   value={option.value}
-                  checked={knowledgeLevel === option.value}
-                  onChange={() => setKnowledgeLevel(option.value)}
+                  checked={knowledgelevel === option.value}
+                  onChange={() => setKnowledgelevel(option.value)}
                   style={{ display: "none" }} // hide the radio circle
                 />
               </label>

@@ -2,7 +2,7 @@ export interface WordData {
   category: string;
   english: string;
   spanish: string;
-  knowledgeLevel: number;
+  knowledgelevel: number;
   id?: string;
   showSpanish?: boolean;
 }

@@ -1,23 +1,38 @@
+
 import { useState, useEffect } from 'react';
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
 import Login from './Login';
 import AddWord from './AddWord';
 import DisplayCategories from './DisplayCategories';
 import DisplayWordsInCategories from './DisplayWordsInCategories';
 import type { WordData } from '../../types/vocabTypes';
-import { config, fetchData } from '../../utils/firebaseRequests';
+import { createClient } from "@supabase/supabase-js";
+import { fetchData } from '../../utils/supabaseRequests';
+
 
 // Initialize database here works best
-const app = initializeApp(config);
-const db = getFirestore(app)
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY
+);
 
 const Notecards = () => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
-  const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [email, setEmail] = useState<string | null>(null);
   const [words, setWords] = useState<WordData[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const [loading, setLoading] = useState(false);
+  const [session, setSession] = useState(null);
+
+  // Check URL params on initial render
+  const params = new URLSearchParams(window.location.search);
+  const hasTokenHash = params.get("token_hash");
+
+  const [verifying, setVerifying] = useState(!!hasTokenHash);
+  const [authError, setAuthError] = useState(null);
+  const [authSuccess, setAuthSuccess] = useState(false);
+
+  
 
   useEffect(() => {
     if(loggedIn) {
@@ -28,12 +43,12 @@ const Notecards = () => {
 
 
   async function getAndFormatWords() {
-    const wordsArray: WordData[] = await fetchData(db, 'spanish_vocab')
+    const wordsArray: WordData[] = await fetchData(supabase, 'spanish_vocab');
 
     const wordsArrayWithSideToShow = wordsArray.map(word => {
       return { 
         ...word,
-        showSpanish: word.knowledgeLevel === 1 ? false : true,
+        showSpanish: word.knowledgelevel === 1 ? false : true,
       };
     });
     setWords(wordsArrayWithSideToShow);
@@ -51,9 +66,10 @@ const Notecards = () => {
       { loggedIn 
         ?
         <div>
-          <p>Logged in with { userEmail }</p>
+          <p>Logged in with { email }</p>
+          <button onClick={getAndFormatWords}>Request Data</button>
           <DisplayCategories categories={categories} setSelectedCategory={setSelectedCategory} />
-          <DisplayWordsInCategories selectedCategory={selectedCategory} words={words} db={db} setWords={setWords} />
+          <DisplayWordsInCategories selectedCategory={selectedCategory} words={words} supabase={supabase} setWords={setWords} />
           <h2>All Words</h2>
           {words.map((word: WordData, index) => {
             return (
@@ -63,10 +79,10 @@ const Notecards = () => {
               </div>
             );
           })}
-          <AddWord db={db} categories={categories} setWords={setWords} />
+          <AddWord supabase={supabase} categories={categories} setWords={setWords} />
         </div>
         :
-        <Login setLoggedIn={setLoggedIn} app={app} setUserEmail={setUserEmail} />
+        <Login setLoggedIn={setLoggedIn} supabase={supabase} setEmail={setEmail} email={email} />
       }
     </div>
   ) 

@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import type { WordData } from '../../types/vocabTypes';
-import { updateData } from '../../utils/firebaseRequests';
-import type { Firestore } from 'firebase/firestore';
+import { updateData } from '../../utils/supabaseRequests';
 
 type DisplayWordsInCategoriesProps = {
   selectedCategory: string;
   words: WordData[];
-  db: Firestore;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  supabase: any;
   setWords: React.Dispatch<React.SetStateAction<WordData[]>>;
 }
 
-const DisplayWordsInCategories = ({selectedCategory, words, db, setWords}: DisplayWordsInCategoriesProps) => {
+const DisplayWordsInCategories = ({selectedCategory, words, supabase, setWords}: DisplayWordsInCategoriesProps) => {
   const [selectedWordId, setSelectedWordId] = useState<string | undefined>(undefined);
   const wordsInCategory = words.filter((word: WordData) => word.category === selectedCategory)
-  const [newKnowledgeLevel, setNewKnowledgeLevel] = useState<number | null>(null);
+  const [newKnowledgelevel, setNewKnowledgelevel] = useState<number | null>(null);
   const [statusMsg, setStatusMsg] = useState<string>('');
   const [correct, setCorrect] = useState<number | null>(null);
 
@@ -21,7 +21,7 @@ const DisplayWordsInCategories = ({selectedCategory, words, db, setWords}: Displ
   const [filter, setFilter] = useState<number>(-1);
   const [filteredWords, setFilteredWords] = useState<WordData[] | null>(null);
 
-  const knowledgeLevels = [
+  const knowledgelevels = [
     { value: -1, color: "white"},
     { value: 0, color: "red"},
     { value: 1, color: "yellow"},
@@ -36,63 +36,62 @@ const DisplayWordsInCategories = ({selectedCategory, words, db, setWords}: Displ
   useEffect(() => {
     const word = wordsInCategory.filter((word: WordData) => word.id === selectedWordId);
     if(!word[0]) return;
-    const currentKnowledgeLevel = word[0].knowledgeLevel;
-    let newKnowledgeLevel = currentKnowledgeLevel;
+    const currentKnowledgelevel = word[0].knowledgelevel;
+    let newKnowledgelevel = currentKnowledgelevel;
 
     if(correct === 1) {
-      newKnowledgeLevel += 1;
-      if (newKnowledgeLevel > 2) {
-        newKnowledgeLevel = 2;
+      newKnowledgelevel += 1;
+      if (newKnowledgelevel > 2) {
+        newKnowledgelevel = 2;
       }
     } else {
-      newKnowledgeLevel -= 1;
-      if (newKnowledgeLevel < 0) {
-        newKnowledgeLevel = 0;
+      newKnowledgelevel -= 1;
+      if (newKnowledgelevel < 0) {
+        newKnowledgelevel = 0;
       }
     }
-    if(currentKnowledgeLevel !== newKnowledgeLevel) {
-      console.log('updating newKnowledgeLevel')
-      setNewKnowledgeLevel(newKnowledgeLevel)
+    if(currentKnowledgelevel !== newKnowledgelevel) {
+      console.log('updating newKnowledgelevel')
+      setNewKnowledgelevel(newKnowledgelevel)
     }
   }, [correct])
 
   useEffect(() => {
-    console.log('newKnowledgeLevel was updated to newKnowledgeLevel');
-    updateKnowledgeLevel(newKnowledgeLevel)
-  }, [newKnowledgeLevel, selectedWordId])
+    console.log('newKnowledgelevel was updated to newKnowledgelevel');
+    updateKnowledgelevel(newKnowledgelevel)
+  }, [newKnowledgelevel, selectedWordId])
 
   useEffect(() => {
     if(filter < 0) {
       setFilteredWords(wordsInCategory);
     } else {
-      const filteredWordsInCategory = wordsInCategory.filter((word: WordData) => word.knowledgeLevel === filter);
+      const filteredWordsInCategory = wordsInCategory.filter((word: WordData) => word.knowledgelevel === filter);
       setFilteredWords(filteredWordsInCategory);
     }
   }, [filter, words, selectedCategory])
 
-  async function updateKnowledgeLevel(newValue: number | null): Promise<void> {
-    console.log('function called');
-    if(selectedWordId && newKnowledgeLevel !== null) {
-
+  async function updateKnowledgelevel(newValue: number | null): Promise<void> {
+    if(selectedWordId && newKnowledgelevel !== null && newValue !== null) {
       try {
-        await updateData(db, 'spanish_vocab', selectedWordId, 'knowledgeLevel', newValue);
+        updateData(supabase, 'spanish_vocab', selectedWordId, 'knowledgelevel', newValue);
+
         // Update the local version too since only query database upon login
         setWords((prevWords) =>
           prevWords.map((word) =>
             word.id === selectedWordId
-              ? { ...word, knowledgeLevel: newKnowledgeLevel }
+              ? { ...word, knowledgelevel: newKnowledgelevel }
               : word
           )
         );
 
-        setStatusMsg(`Updated '${selectedWordId}' knowledgeLevel to ${newValue}.`);
+        setStatusMsg(`Updated '${selectedWordId}' knowledgelevel to ${newValue}.`);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
         setStatusMsg(`Failed to update data`);
         console.warn(error);
       }
       setSelectedWordId(undefined);
-      setNewKnowledgeLevel(null);
+      setNewKnowledgelevel(null);
       setCorrect(null);
     }
   }
@@ -100,12 +99,13 @@ const DisplayWordsInCategories = ({selectedCategory, words, db, setWords}: Displ
   return (
     <div>
       <h2>{selectedCategory}</h2>
+      <button onClick={() => updateKnowledgelevel(0)}>Update data</button>
 
       <form>
         <fieldset style={{ border: "none", padding: 0 }}>
           <legend>Knowledge Level</legend>
           <div style={{ display: "flex", gap: "10px" }}>
-            {knowledgeLevels.map((level) => (
+            {knowledgelevels.map((level) => (
               <label
                 key={level.value}
                 style={{
@@ -144,7 +144,7 @@ const DisplayWordsInCategories = ({selectedCategory, words, db, setWords}: Displ
             onClick={() => {
               setSelectedWordId(word.id);
               setCorrect(null);
-              setNewKnowledgeLevel(null);
+              setNewKnowledgelevel(null);
 
               setWords((prevWords) =>
                 prevWords.map((word1) =>
