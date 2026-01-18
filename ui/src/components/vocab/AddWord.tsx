@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
 import type { WordData } from '../../types/vocabTypes';
-
-
+import { addData } from '../../utils/firebaseRequests';
+import type { Firestore } from 'firebase/firestore';
 
 type AddWordProps = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  db: any;
+  db: Firestore;
   categories: string[];
   setWords: React.Dispatch<React.SetStateAction<WordData[]>>;
 }
@@ -38,7 +36,7 @@ const AddWord = ({ db, categories, setWords }: AddWordProps) => {
     e.preventDefault();
     setStatusMsg('');
     const targetCollection = 'spanish_vocab';
-    const customWordId = createDocumentId(spanish); // The ID you want to give the document
+    const customWordId = createDocumentId(spanish);
     let categoryToUse = ''
     if(newCategory) {
       categoryToUse = newCategory
@@ -53,7 +51,7 @@ const AddWord = ({ db, categories, setWords }: AddWordProps) => {
     };
 
     try {
-      const addedDocId = await addWordToFirebase(targetCollection, customWordId, newWordData);
+      const addedDocId = await addData(db, targetCollection, customWordId, newWordData);
       if (addedDocId) {
         setStatusMsg(`Successfully added ${addedDocId}`)
         setEnglish('');
@@ -75,31 +73,8 @@ const AddWord = ({ db, categories, setWords }: AddWordProps) => {
       }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
-      setStatusMsg(`Failed to add document: ${error.message}`)
-    }
-  }
-
-  async function addWordToFirebase(
-    collectionName: string,
-    documentId: string,
-    data: WordData
-  ): Promise<string | null> {
-    try {
-      // 1. Get a reference to the specific document with the custom ID
-      const docRef = doc(db, collectionName, documentId);
-
-      // 2. Check if a document with this ID already exists
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        return null;
-      } else {
-        await setDoc(docRef, data);
-        return documentId;
-      }
-    } catch (e) {
-      console.error("Error adding document: ", e);
-      throw e; // Re-throw the error for the calling component to handle
+      setStatusMsg(`Failed to add data`)
+      console.warn(error);
     }
   }
 
@@ -180,7 +155,7 @@ const AddWord = ({ db, categories, setWords }: AddWordProps) => {
                   value={option.value}
                   checked={knowledgeLevel === option.value}
                   onChange={() => setKnowledgeLevel(option.value)}
-                  style={{ display: "none" }} // hide the native radio circle
+                  style={{ display: "none" }} // hide the radio circle
                 />
               </label>
             ))}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import type { FirebaseApp } from 'firebase/app';
+import { authenticate } from '../../utils/firebaseRequests';
 
 type LoginProps = {
   app: FirebaseApp;
@@ -9,25 +9,20 @@ type LoginProps = {
 }
 
 const Login = ({app, setLoggedIn, setUserEmail}: LoginProps) => {
-  const auth = getAuth(app);
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
 
   const handleLogin = async (event: React.FormEvent) => {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
 
     try {
-      setError(null); // Clear previous errors
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      setError(null);
+      const userCredential = await authenticate(app, email, password);
       setLoggedIn(true);
       setUserEmail(userCredential.user.email)
-    // Note: can't find the type in the documentation
-    // https://firebase.google.com/docs/reference/node/firebase.auth.Auth#signinwithemailandpassword
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (firebaseError: any) {
-      // Handle errors here
       console.error('Login error:', firebaseError.code, firebaseError.message);
       setError(firebaseError.message);
     }
