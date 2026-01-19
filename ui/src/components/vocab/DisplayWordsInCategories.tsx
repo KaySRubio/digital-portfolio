@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import type { WordData } from '../../types/vocabTypes';
 import { updateData } from '../../utils/supabaseRequests';
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 type DisplayWordsInCategoriesProps = {
   selectedCategory: string;
   words: WordData[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  supabase: any;
+  supabase: SupabaseClient;
   setWords: React.Dispatch<React.SetStateAction<WordData[]>>;
 }
 

@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import type { WordData } from '../../types/vocabTypes';
 import { addData } from '../../utils/supabaseRequests';
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 type AddWordProps = {
-  supabase: any;
+  supabase: SupabaseClient;
   categories: string[];
   setWords: React.Dispatch<React.SetStateAction<WordData[]>>;
 }

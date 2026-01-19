@@ -6,52 +6,40 @@ import DisplayCategories from './DisplayCategories';
 import DisplayWordsInCategories from './DisplayWordsInCategories';
 import type { WordData } from '../../types/vocabTypes';
 import { createClient } from "@supabase/supabase-js";
-import { fetchData } from '../../utils/supabaseRequests';
-
+import { fetchData, logout } from '../../utils/supabaseRequests';
+import type { Database } from '../../../database.types.ts';
+import type { Session } from "@supabase/supabase-js";
 
 // Initialize database here works best
-const supabase = createClient(
+const supabase = createClient<Database>(
   import.meta.env.VITE_SUPABASE_URL,
   import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY
 );
 
 const Notecards = () => {
-  const [loggedIn, setLoggedIn] = useState<boolean>(false);
-  const [email, setEmail] = useState<string | null>(null);
+  const [email, setEmail] = useState<string>('');
   const [words, setWords] = useState<WordData[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('');
-  const [loading, setLoading] = useState(false);
-  const [session, setSession] = useState(null);
-
-  // Check URL params on initial render
-  const params = new URLSearchParams(window.location.search);
-  const hasTokenHash = params.get("token_hash");
-
-  const [verifying, setVerifying] = useState(!!hasTokenHash);
-  const [authError, setAuthError] = useState(null);
-  const [authSuccess, setAuthSuccess] = useState(false);
-
-  
+  const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
-    if(loggedIn) {
+    if(session) {
       getAndFormatWords();
     }
-  }, [loggedIn])
-
-
+  }, [session])
 
   async function getAndFormatWords() {
-    const wordsArray: WordData[] = await fetchData(supabase, 'spanish_vocab');
-
-    const wordsArrayWithSideToShow = wordsArray.map(word => {
-      return { 
-        ...word,
-        showSpanish: word.knowledgelevel === 1 ? false : true,
-      };
-    });
-    setWords(wordsArrayWithSideToShow);
+    const wordsArray: WordData[] | undefined = await fetchData(supabase, 'spanish_vocab');
+    if(wordsArray) {
+      const wordsArrayWithSideToShow = wordsArray.map(word => {
+        return { 
+          ...word,
+          showSpanish: word.knowledgelevel === 1 ? false : true,
+        };
+      });
+      setWords(wordsArrayWithSideToShow);
+    }
   }
 
   useEffect(() => {
@@ -60,13 +48,19 @@ const Notecards = () => {
     setCategories(uniqueCategories);
   }, [words])
 
+  const handleLogout = () => {
+    logout(supabase);
+    setSession(null);
+  }
+
   return (
     <div>
       <h1>Notecards</h1>
-      { loggedIn 
+      { session
         ?
         <div>
           <p>Logged in with { email }</p>
+          <button onClick={handleLogout}>Logout</button>
           <button onClick={getAndFormatWords}>Request Data</button>
           <DisplayCategories categories={categories} setSelectedCategory={setSelectedCategory} />
           <DisplayWordsInCategories selectedCategory={selectedCategory} words={words} supabase={supabase} setWords={setWords} />
@@ -82,7 +76,7 @@ const Notecards = () => {
           <AddWord supabase={supabase} categories={categories} setWords={setWords} />
         </div>
         :
-        <Login setLoggedIn={setLoggedIn} supabase={supabase} setEmail={setEmail} email={email} />
+        <Login supabase={supabase} setEmail={setEmail} email={email} setSession={setSession} />
       }
     </div>
   ) 
