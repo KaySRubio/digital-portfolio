@@ -11,24 +11,24 @@ import type { Database } from '../../../database.types.ts';
 import type { Session } from "@supabase/supabase-js";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
+/*
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
   throw new Error("Supabase env vars missing");
-}
+} */
 
-let supabaseAvailable = false;
 let supabase: SupabaseClient | null = null;
 // Initialize database here works best
 try {
-  supabase = createClient<Database>(
-    import.meta.env.VITE_SUPABASE_URL,
-    import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY
-  );
-  supabaseAvailable = true;
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY;
+  if (!supabaseUrl || !supabaseKey) {
+    console.warn("Supabase env vars missing, notecards program will not run");
+  } 
+  supabase = createClient<Database>(supabaseUrl, supabaseKey);
 } catch (error) {
-  supabaseAvailable = false;
   console.warn(error);
 }
 
@@ -76,7 +76,7 @@ const Notecards = () => {
     <div>
       <h1>Notecards</h1>
       {
-        supabaseAvailable && supabase &&
+        supabase &&
         
         (session
         ?
