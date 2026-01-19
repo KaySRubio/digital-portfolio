@@ -72,9 +72,8 @@ const DisplayWordsInCategories = ({selectedCategory, words, supabase, setWords}:
 
   async function updateKnowledgelevel(newValue: number | null): Promise<void> {
     if(selectedWordId && newKnowledgelevel !== null && newValue !== null) {
-      try {
-        updateData(supabase, 'spanish_vocab', selectedWordId, 'knowledgelevel', newValue);
-
+      const [ result ] = await updateData(supabase, 'spanish_vocab', selectedWordId, 'knowledgelevel', newValue);
+      if(result) {
         // Update the local version too since only query database upon login
         setWords((prevWords) =>
           prevWords.map((word) =>
@@ -83,12 +82,9 @@ const DisplayWordsInCategories = ({selectedCategory, words, supabase, setWords}:
               : word
           )
         );
-
         setStatusMsg(`Updated '${selectedWordId}' knowledgelevel to ${newValue}.`);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } catch (error: any) {
+      } else {
         setStatusMsg(`Failed to update data`);
-        console.warn(error);
       }
       setSelectedWordId(undefined);
       setNewKnowledgelevel(null);

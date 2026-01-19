@@ -1,6 +1,6 @@
 import type { WordData } from '../types/vocabTypes';
 import type { SupabaseClient, AuthError } from "@supabase/supabase-js";
-
+import type { BoolAndError } from '../types/vocabTypes';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const verifyOptToken = async (supabase: SupabaseClient, token_hash: any, type: any): Promise<boolean> => {
@@ -38,8 +38,7 @@ export const sendLoginEmail = async (supabase: SupabaseClient, email: string): P
 }
 
 export const signInWithPassword = async (supabase: SupabaseClient, email: string, password: string): Promise<boolean> => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { data, error } = await supabase.auth.signInWithPassword({
+  const { error } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
@@ -50,12 +49,11 @@ export const signInWithPassword = async (supabase: SupabaseClient, email: string
   return true;
 }
 
-
 export const logout = async (supabase: SupabaseClient) => {
     await supabase.auth.signOut();
 };
 
-export async function fetchData(supabase: SupabaseClient, databaseName: string): Promise<WordData[] | undefined > {
+export async function fetchData(supabase: SupabaseClient, databaseName: string): Promise<WordData[] > {
 
   /* DEBUGGING: Find out number of rows in query
   const { count, error } = await supabase
@@ -68,15 +66,14 @@ export async function fetchData(supabase: SupabaseClient, databaseName: string):
     .from(databaseName)
     .select("*")
 
-    if(data) {
-      console.log("ROWS:", data?.length);
-      return data;
-    } else if (error) {
-      console.warn(error);
-      return [];
-    }
+  if(data) {
+    console.log("ROWS:", data?.length);
+    return data;
+  } else if (error) {
+    console.warn(error);
+  }
+  return [];
 }
-
 
 export async function updateData(
   supabase: SupabaseClient,
@@ -84,30 +81,50 @@ export async function updateData(
   id: string | number,
   columnName: string,
   newValue: string | number
-) {
+): Promise<BoolAndError> {
 
-  const { data, error } = await supabase
-    .from(databaseName)
-    .update({ [columnName]: newValue })
-    .eq("id", id)
-    .select()
-    .single();
-  
-  if (data) console.log('updated data: ', data);
-  if (error) throw error;
+  try {
+    const { data, error } = await supabase
+      .from(databaseName)
+      .update({ [columnName]: newValue })
+      .eq("id", id)
+      .select()
+      .single();
+    
+    if (data) {
+      console.log('updated data: ', data);
+      return [true, null];
+    } else {
+      console.warn(error);
+      return [false, error];
+    }
+  } catch (error) {
+    console.warn(error);
+  }
+  return [false, null];
 };
 
 export async function addData(
   supabase: SupabaseClient,
   databaseName: string, 
   newWordData: WordData,
-) {
-  const { data, error } = await supabase
-    .from(databaseName)
-    .insert(newWordData)
-    .select()
-    .single();
+): Promise<BoolAndError> {
+  try {
+    const { data, error } = await supabase
+      .from(databaseName)
+      .insert(newWordData)
+      .select()
+      .single();
 
-  if (error) throw error;
-  return data as WordData;
+    if (data) {
+      console.log('updated data: ', data);
+      return [true, null];
+    } else {
+      console.warn(error);
+      return [false, error];
+    }
+  } catch (error) {
+    console.warn(error);
+  }
+  return [false, null];
 }

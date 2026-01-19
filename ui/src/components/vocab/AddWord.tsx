@@ -51,8 +51,8 @@ const AddWord = ({ supabase, categories, setWords }: AddWordProps) => {
       knowledgelevel: knowledgelevel,
     };
 
-    try {
-      await addData(supabase, targetCollection, newWordData);
+    const [result, error] = await addData(supabase, targetCollection, newWordData);
+    if(result) {
       setStatusMsg(`Successfully added ${customWordId}`)
       setEnglish('');
       setSpanish('');
@@ -68,15 +68,10 @@ const AddWord = ({ supabase, categories, setWords }: AddWordProps) => {
         showSpanish: showSpanish,
       };
       setWords((prevWords) => [...prevWords, newWordWithId]);
-      
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
-      if(error.message.includes('duplicate')) {
-        setStatusMsg(`${customWordId} already exists in the database`)
-      } else {
-        setStatusMsg(`Unable to add data`)
-        console.warn(error);
-      }
+    } else if (error && error.message.includes('duplicate')) {
+      setStatusMsg(`${customWordId} already exists in the database`)
+    } else {
+      setStatusMsg(`Error adding ${customWordId} to the database`)
     }
   }
 

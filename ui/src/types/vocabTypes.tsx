@@ -1,3 +1,5 @@
+import type { PostgrestError } from "@supabase/supabase-js";
+
 export interface WordData {
   category: string;
   english: string;
@@ -7,3 +9,4 @@ export interface WordData {
   showSpanish?: boolean;
 }
 
+export type BoolAndError = [boolean, PostgrestError | null];
