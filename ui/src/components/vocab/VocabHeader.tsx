@@ -1,14 +1,45 @@
-import { useState, useEffect } from 'react';
+import VocabMenu from './VocabMenu';
+
+import type { Topic, CurrentPage } from '../../types/vocabTypes';
 
 type VocabHeaderProps = {
+  loggedIn: boolean;
   // categories: string[];
-  // setWords: React.Dispatch<React.SetStateAction<WordData[]>>;
+  setSelectedTopic: React.Dispatch<React.SetStateAction<Topic>>;
+  currentPage: CurrentPage;
+  setCurrentPage: React.Dispatch<React.SetStateAction<CurrentPage>>;
+  getAndFormatWords: () => void;
+  email: string;
+  handleLogout: () => void;
 }
 
-const VocabHeader = ({  }: VocabHeaderProps) => {
+const VocabHeader = ({
+  loggedIn,
+  setSelectedTopic,
+  currentPage, 
+  setCurrentPage,
+  getAndFormatWords,
+  email, 
+  handleLogout
+}: VocabHeaderProps) => {
 
   return (
-    <h1>Notecards</h1>
+    <div>
+      <h1>Vocab</h1>
+      { loggedIn && <div>
+        <VocabMenu setSelectedTopic={setSelectedTopic} />
+
+        <div>
+          {currentPage !== 'Categories' && <button onClick={() => {setCurrentPage('Categories')}}>Home</button>}
+          <button onClick={() => {setCurrentPage('Update')}}>?</button>
+          <button onClick={getAndFormatWords}>Refresh</button>
+          <p>Logged in as {email}</p>
+          <button onClick={handleLogout}>Logout</button>
+
+        </div>
+
+      </div> }
+    </div>
   )
 }
   

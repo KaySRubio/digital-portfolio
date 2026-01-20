@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import type { Topic } from '../../types/vocabTypes';
 
 type VocabMenuProps = {
-  // categories: string[];
-  // setWords: React.Dispatch<React.SetStateAction<WordData[]>>;
+  setSelectedTopic: React.Dispatch<React.SetStateAction<Topic>>;
 }
 
-const VocabMenu = ({  }: VocabMenuProps) => {
+// todo - set up menu
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const VocabMenu = ({ setSelectedTopic }: VocabMenuProps) => {
 
   return (
     <p>Menu</p>

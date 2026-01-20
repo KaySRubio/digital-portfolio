@@ -1,15 +1,19 @@
 
 import { useState, useEffect } from 'react';
-import VocabLogin from './VocabLogin.tsx';
-import AddWord from './AddWord.tsx';
-import DisplayCategories from './DisplayCategories.tsx';
-import DisplayWordsInCategories from './DisplayWordsInCategories.tsx';
-import type { WordData } from '../../types/vocabTypes.tsx';
 import { createClient } from "@supabase/supabase-js";
-import { fetchData, logout } from '../../utils/supabaseRequests.ts';
+import { logout, fetchData } from '../../utils/supabaseRequests.ts';
+
+import VocabHeader from './VocabHeader';
+import VocabLogin from './VocabLogin';
+import VocabCategories from './VocabCategories';
+import VocabTerms from './VocabTerms';
+import VocabUpdateTerm from './VocabUpdateTerm';
+
+// import { sampleVocabData } from '../../data/SampleVocabData.ts';
+
 import type { Database } from '../../../database.types.ts';
-import type { Session } from "@supabase/supabase-js";
-import type { SupabaseClient } from "@supabase/supabase-js";
+import type { SupabaseClient, Session } from "@supabase/supabase-js";
+import type { WordData, Topic, CurrentPage } from '../../types/vocabTypes.tsx';
 
 // Initialize database here works best, catch errors
 let supabase: SupabaseClient | null = null;
@@ -31,6 +35,9 @@ const Notecards = () => {
   const [categories, setCategories] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [session, setSession] = useState<Session | null>(null);
+  const [selectedTopic, setSelectedTopic] = useState<Topic>('Spanish');
+  const [currentPage, setCurrentPage] = useState<CurrentPage>('Categories');
+  const [selectedWord, setSelectedWord] = useState<WordData | null>(null);
 
   useEffect(() => {
     if(session) {
@@ -41,6 +48,10 @@ const Notecards = () => {
   async function getAndFormatWords() {
     if(supabase) {
       const wordsArray: WordData[] | undefined = await fetchData(supabase, 'spanish_vocab');
+      // DEBUG - use sample data rather than query database over and over during development
+      // const wordsArray: WordData[] = sampleVocabData;
+        
+      
       if(wordsArray) {
         const wordsArrayWithSideToShow = wordsArray.map(word => {
           return { 
@@ -64,31 +75,61 @@ const Notecards = () => {
     logout(supabase);
   }
 
+  useEffect(() => {
+    setSelectedWord(null);
+  }, [currentPage])
+
   return (
     <div>
       
-      <h1>Notecards</h1>
+      <VocabHeader
+        loggedIn={session ? true : false}
+        setSelectedTopic={setSelectedTopic} 
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        getAndFormatWords={getAndFormatWords}
+        email={email}
+        handleLogout={handleLogout}
+      />
       {
         supabase &&
         
         (session
         ?
         <div>
-          <p>Logged in with { email }</p>
-          <button onClick={handleLogout}>Logout</button>
-          <button onClick={getAndFormatWords}>Request Data</button>
-          <DisplayCategories categories={categories} setSelectedCategory={setSelectedCategory} />
-          <DisplayWordsInCategories selectedCategory={selectedCategory} words={words} supabase={supabase} setWords={setWords} />
-          <h2>All Words</h2>
-          {words.map((word: WordData, index) => {
+          {currentPage === 'Categories' && <VocabCategories
+            categories={categories}
+            setSelectedCategory={setSelectedCategory}
+            setCurrentPage={setCurrentPage}
+            selectedTopic={selectedTopic}
+          />}
+
+          {currentPage === 'Terms' && <VocabTerms 
+            selectedCategory={selectedCategory}
+            words={words}
+            supabase={supabase}
+            setWords={setWords}
+            setCurrentPage={setCurrentPage}
+            setSelectedWord={setSelectedWord}
+          />}
+          {currentPage === 'Update' && <VocabUpdateTerm 
+            supabase={supabase}
+            categories={categories}
+            setWords={setWords}
+            selectedWord={selectedWord}
+          />}
+          
+          
+
+          {/*DEBUGGING: words.map((word: WordData, index) => {
             return (
               <div key={index}>
                 <span>English: {word.english} | </span>
                 <span>Spanish: {word.spanish}</span>
               </div>
             );
-          })}
-          <AddWord supabase={supabase} categories={categories} setWords={setWords} />
+          })*/}
+          
         </div>
         :
         <VocabLogin supabase={supabase} setEmail={setEmail} email={email} setSession={setSession} />

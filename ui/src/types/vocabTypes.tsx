@@ -10,3 +10,7 @@ export interface WordData {
 }
 
 export type BoolAndError = [boolean, PostgrestError | null];
+
+export type Topic = 'Spanish' | 'Science';
+
+export type CurrentPage = 'Categories' | 'Terms' | 'Update';
