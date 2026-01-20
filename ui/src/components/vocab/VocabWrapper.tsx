@@ -1,26 +1,18 @@
 
 import { useState, useEffect } from 'react';
-import Login from './Login';
-import AddWord from './AddWord';
-import DisplayCategories from './DisplayCategories';
-import DisplayWordsInCategories from './DisplayWordsInCategories';
-import type { WordData } from '../../types/vocabTypes';
+import VocabLogin from './VocabLogin.tsx';
+import AddWord from './AddWord.tsx';
+import DisplayCategories from './DisplayCategories.tsx';
+import DisplayWordsInCategories from './DisplayWordsInCategories.tsx';
+import type { WordData } from '../../types/vocabTypes.tsx';
 import { createClient } from "@supabase/supabase-js";
-import { fetchData, logout } from '../../utils/supabaseRequests';
+import { fetchData, logout } from '../../utils/supabaseRequests.ts';
 import type { Database } from '../../../database.types.ts';
 import type { Session } from "@supabase/supabase-js";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
-/*
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY;
-
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error("Supabase env vars missing");
-} */
-
+// Initialize database here works best, catch errors
 let supabase: SupabaseClient | null = null;
-// Initialize database here works best
 try {
   const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
   const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY;
@@ -68,12 +60,13 @@ const Notecards = () => {
   }, [words])
 
   const handleLogout = () => {
-    if(supabase) logout(supabase);
     setSession(null);
+    logout(supabase);
   }
 
   return (
     <div>
+      
       <h1>Notecards</h1>
       {
         supabase &&
@@ -98,7 +91,7 @@ const Notecards = () => {
           <AddWord supabase={supabase} categories={categories} setWords={setWords} />
         </div>
         :
-        <Login supabase={supabase} setEmail={setEmail} email={email} setSession={setSession} />
+        <VocabLogin supabase={supabase} setEmail={setEmail} email={email} setSession={setSession} />
         )
       }
       

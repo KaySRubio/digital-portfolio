@@ -2,33 +2,34 @@ import { useState, useEffect } from "react";
 import type { SupabaseClient, Session, AuthChangeEvent } from "@supabase/supabase-js";
 import { verifyOptToken, sendLoginEmail, signInWithPassword } from '../../utils/supabaseRequests';
 
-
-type LoginProps = {
+type VocabLoginProps = {
   supabase: SupabaseClient;
   setEmail: React.Dispatch<React.SetStateAction<string>>;
   email: string;
   setSession: React.Dispatch<React.SetStateAction<Session | null>>;
 }
 
-const Login = ({supabase, setEmail, email, setSession}: LoginProps) => {
+const VocabLogin = ({supabase, setEmail, email, setSession}: VocabLoginProps) => {
   const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
-
-    // Check URL params on initial render
-  const params = new URLSearchParams(window.location.search);
-  const hasTokenHash = params.get("token_hash");
-
-  const [verifying, setVerifying] = useState(!!hasTokenHash);
+  const [verifying, setVerifying] = useState(false);
   const [statusMsg, setStatusMsg] = useState<string | null>(null);
 
   useEffect(() => {
-    verifyOptTokenLocally();
+    // Check if we have token_hash in URL (magic link callback)
+    const params = new URLSearchParams(window.location.search);
+    const tokenHash = params.get("token_hash");
+    const type = params.get("type");
+
+    if (tokenHash) {
+      verifyOptTokenLocally(tokenHash, type);
+    }
 
     // Check for existing session
     supabase.auth.getSession().then(
-        ({ data }: { data: { session: Session | null } }) => {
-            setSession(data.session);
-        }
+      ({ data }: { data: { session: Session | null } }) => {
+          setSession(data.session);
+      }
     );
 
     // Listen for auth changes
@@ -43,7 +44,6 @@ const Login = ({supabase, setEmail, email, setSession}: LoginProps) => {
   useEffect(() => {
     if(verifying) {
       setStatusMsg("Confirming your link and verifying...");
-
     }
   }, [verifying])
 
@@ -53,19 +53,15 @@ const Login = ({supabase, setEmail, email, setSession}: LoginProps) => {
     }
   }, [loading])
 
-  const verifyOptTokenLocally = async () => {
-    // Check if we have token_hash in URL (magic link callback)
-    const params = new URLSearchParams(window.location.search);
-    const token_hash = params.get("token_hash");
-    const type = params.get("type");
-    
-    if (token_hash) {
-      const verified = await verifyOptToken(supabase, token_hash, type)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const verifyOptTokenLocally = async (tokenHash: any, type: any) => {
+    if (tokenHash) {
+      const verified = await verifyOptToken(supabase, tokenHash, type)
       if(!verified) {
         setStatusMsg('Error verifying opt token');
       }
       setVerifying(false);
-    }
+    } 
   }
 
   const loginByEmailLink = async (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -113,4 +109,4 @@ const Login = ({supabase, setEmail, email, setSession}: LoginProps) => {
     </div>
   );
 }
-export default Login;
+export default VocabLogin;

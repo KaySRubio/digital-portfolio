@@ -49,8 +49,13 @@ export const signInWithPassword = async (supabase: SupabaseClient, email: string
   return true;
 }
 
-export const logout = async (supabase: SupabaseClient) => {
+export const logout = async (supabase: SupabaseClient | null) => {
+  if(supabase) {
     await supabase.auth.signOut();
+    // const { session } = await supabase.auth.getSession();
+    // console.log('session: ', session);
+  }
+  
 };
 
 export async function fetchData(supabase: SupabaseClient, databaseName: string): Promise<WordData[] > {

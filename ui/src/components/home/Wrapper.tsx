@@ -6,7 +6,7 @@ import Home from './Home';
 import ProjectListPage from './TopicPage';
 import ScrollToTop from './ScrollToTop';
 import ProjectDetailsPage from '../projectDescriptions/ProjectDetailsPage';
-import Notecards from '../vocab/Notecards';
+import VocabWrapper from '../vocab/VocabWrapper';
 import { topics, projects } from '../../data/portfolioData';
 
 const Wrapper = () => {
@@ -17,7 +17,7 @@ const Wrapper = () => {
         <ScrollToTop />
         <Routes>
           <Route index element={<Home />} />
-          <Route path={'notecards'} element={<Notecards />} />
+          <Route path={'vocab'} element={<VocabWrapper />} />
           {topics.map(topic => (
             <React.Fragment key={topic.path}>
               <Route 
