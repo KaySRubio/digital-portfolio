@@ -102,7 +102,6 @@ const VocabTerms = ({
       setSelectedWord(null);
       setCorrect(null);
   }
-
   
   function _shuffleArray<T>(array: T[]): T[] {
     const result = [...array];

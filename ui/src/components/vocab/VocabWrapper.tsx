@@ -144,6 +144,7 @@ const Notecards = () => {
           {currentPage === 'Update' && <VocabUpdateTerm 
             supabase={supabase}
             categories={categories}
+            words={words}
             setWords={setWords}
             selectedWord={selectedWord}
           />}
@@ -164,7 +165,6 @@ const Notecards = () => {
         <VocabLogin supabase={supabase} setEmail={setEmail} email={email} setSession={setSession} />
         )
       }
-      
     </div>
   ) 
 }

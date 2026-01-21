@@ -17,7 +17,7 @@ const VocabCategories = ({ categories, setSelectedCategory, setCurrentPage }: Vo
   }
 
   return (
-    <div>
+    <div className='vocab-category-page'>
       <h2>Categories</h2>
       <div className='vocab-category-area'>
         {categories.map((category: string, index) => {

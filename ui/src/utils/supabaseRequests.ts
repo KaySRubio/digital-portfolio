@@ -183,7 +183,6 @@ export async function addData(
   databaseName: string, 
   newWordData: WordData,
 ): Promise<BoolAndError> {
-  console.log('addData running');
   if(!supabase) return [false, null];
   try {
     const { data, error } = await supabase
@@ -203,4 +202,24 @@ export async function addData(
     console.warn(error);
   }
   return [false, null];
+}
+
+export async function deleteById(
+  supabase: SupabaseClient | null,
+  databaseName: string, 
+  id: string,
+): Promise<BoolAndError> {
+  console.log('addData running');
+  if(!supabase) return [false, null];
+  try {
+    await supabase
+      .from(databaseName)
+      .delete()
+      .eq('id', id);
+
+  } catch (error) {
+    console.warn(error);
+    return [false, null];
+  }
+  return [true, null];
 }

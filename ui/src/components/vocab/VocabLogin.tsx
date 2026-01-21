@@ -75,7 +75,7 @@ const VocabLogin = ({supabase, setEmail, email, setSession}: VocabLoginProps) =>
     setLoading(false);
   };
 
-  const loginByEmailAndPassword = async () => {
+  const handleLogin = async () => {
     setLoading(true);
     const signedIn = await signInWithPassword(supabase, email, password);
     if(!signedIn) {
@@ -87,14 +87,14 @@ const VocabLogin = ({supabase, setEmail, email, setSession}: VocabLoginProps) =>
   return (
     <div className='vocab-login-page'>
       <h2>Sign in</h2>
-      <form className='vocab-login-form' onSubmit={loginByEmailAndPassword}>
+      <form className='vocab-login-form' onSubmit={handleLogin}>
         <input
           type="email"
           name="email"
           autoComplete="username"
           placeholder="Email"
           value={email}
-          required={true}
+          required
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
@@ -103,11 +103,11 @@ const VocabLogin = ({supabase, setEmail, email, setSession}: VocabLoginProps) =>
           autoComplete="current-password"
           placeholder="Password"
           value={password}
-          required={true}
+          required
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className='vocab-text-button' disabled={loading} type='submit'>Log In</button>
-        <button className='vocab-text-button' disabled={loading} onClick={loginByEmailLink}>Send me link</button>
+        <button type='button' className='vocab-text-button' disabled={loading} onClick={loginByEmailLink}>Send me link</button>
       </form>
       <p>{statusMsg}</p>
     </div>
