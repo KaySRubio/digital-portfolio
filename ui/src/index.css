@@ -1713,6 +1713,11 @@ iframe {
   font-size: 12px;
 }
 
+.vocab-terms-page-status-msg {
+  text-align: center;
+  font-size: 12px;
+}
+
 .vocab-knowledgelevel-button {
   padding: 10px 10px;
   border-radius: 5px;
@@ -1956,5 +1961,10 @@ iframe {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+  }
+
+  .vocab-terms-page-status-msg {
+
+    font-size: 10px;
   }
 }

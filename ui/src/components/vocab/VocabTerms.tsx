@@ -14,6 +14,7 @@ type VocabTermsProps = {
   supabase: SupabaseClient | null;
   setWords: React.Dispatch<React.SetStateAction<WordData[]>>;
   setCurrentPage: React.Dispatch<React.SetStateAction<CurrentPage>>;
+  selectedWord: WordData | null;
   setSelectedWord: React.Dispatch<React.SetStateAction<WordData | null>>;
   selectedTopic: Topic;
 }
@@ -24,13 +25,13 @@ const VocabTerms = ({
   supabase, 
   setWords,
   setCurrentPage,
+  selectedWord,
   setSelectedWord,
   selectedTopic,
 }: VocabTermsProps) => {
-  const [selectedWordId, setSelectedWordId] = useState<string | undefined>(undefined);
+  const defaultStatusMsg = 'Click on a word!';
   const wordsInCategory = words.filter((word: WordData) => word.category === selectedCategory)
-  const [newKnowledgelevel, setNewKnowledgelevel] = useState<number | null>(null);
-  const [statusMsg, setStatusMsg] = useState<string>('');
+  const [statusMsg, setStatusMsg] = useState<string>(defaultStatusMsg);
   const [correct, setCorrect] = useState<number | null>(null);
   const [filter, setFilter] = useState<number>(-1);
   const [filteredWords, setFilteredWords] = useState<WordData[] | null>(null);
@@ -45,9 +46,8 @@ const VocabTerms = ({
   ];
 
   useEffect(() => {
-    const word = wordsInCategory.filter((word: WordData) => word.id === selectedWordId);
-    if(!word[0]) return;
-    const currentKnowledgelevel = word[0].knowledgelevel;
+    if(!selectedWord) return;
+    const currentKnowledgelevel = selectedWord.knowledgelevel;
     let newKnowledgelevel = currentKnowledgelevel;
 
     if(correct === 1) {
@@ -63,14 +63,15 @@ const VocabTerms = ({
     }
     if(currentKnowledgelevel !== newKnowledgelevel) {
       console.log('updating newKnowledgelevel')
-      setNewKnowledgelevel(newKnowledgelevel)
+      const newWordData = {
+        ...selectedWord,
+        knowledgelevel: newKnowledgelevel,
+      }
+      setSelectedWord(newWordData);
+      _updateData(newWordData);
     }
-  }, [correct])
 
-  useEffect(() => {
-    console.log('newKnowledgelevel was updated to newKnowledgelevel');
-    updateKnowledgelevel(newKnowledgelevel)
-  }, [newKnowledgelevel, selectedWordId])
+  }, [correct])
 
   useEffect(() => {
     if(filter < 0) {
@@ -81,29 +82,43 @@ const VocabTerms = ({
     }
   }, [filter, words, selectedCategory])
 
-  async function updateKnowledgelevel(newValue: number | null): Promise<void> {
-    if(selectedWordId && newKnowledgelevel !== null && newValue !== null) {
-      const [ result ] = await updateData(supabase, 'spanish_vocab', selectedWordId, 'knowledgelevel', newValue);
-      if(result) {
+  
+  async function _updateData(newWordData: WordData): Promise<void> {
+    if(!newWordData) return;
+    const [ result ] = await updateData(supabase, 'spanish_vocab', newWordData);
+    if(result) {
         // Update the local version too since only query database upon login
         setWords((prevWords) =>
           prevWords.map((word) =>
-            word.id === selectedWordId
-              ? { ...word, knowledgelevel: newKnowledgelevel }
+            word.id === newWordData.id
+              ? { ...word, knowledgelevel: newWordData.knowledgelevel }
               : word
           )
         );
-        setStatusMsg(`Updated '${selectedWordId}' knowledgelevel to ${newValue}.`);
+        setStatusMsg(`Updated '${newWordData.id}' knowledgelevel to ${newWordData.knowledgelevel}.`);
       } else {
         setStatusMsg(`Failed to update data`);
       }
-      setSelectedWordId(undefined);
-      setNewKnowledgelevel(null);
+      setSelectedWord(null);
       setCorrect(null);
-    }
   }
 
-return (
+  
+  function _shuffleArray<T>(array: T[]): T[] {
+    const result = [...array];
+    for (let i = result.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [result[i], result[j]] = [result[j], result[i]];
+    }
+    return result;
+  } 
+
+  const shuffleArray = () => {
+    const newWords = _shuffleArray(words);
+    setWords(newWords);
+  }
+
+  return (
     <div className='vocab-terms-page'>
       <div className='vocab-terms-settings-section'>
         <div className='vocab-terms-settings-section-row'>
@@ -132,7 +147,7 @@ return (
                           const value = level.value;
                           setFilter(value);
                         }}
-                        style={{ display: "none" }} // hide the native radio circle
+                        style={{ display: "none" }}
                       />
                     </label>
                   ))}
@@ -160,9 +175,8 @@ return (
                         checked={correct === option.value}
                         onChange={() => {
                           setCorrect(option.value);
-                          setSelectedWord(null);
                         }}
-                        style={{ display: "none" }} // hide the radio circle
+                        style={{ display: "none" }}
                       />
                       {option.label}
                     </label>
@@ -173,7 +187,7 @@ return (
           </div>
 
           <div className='vocab-terms-buttons-section'>
-            <button className='vocab-menu-circle-button'>
+            <button className='vocab-menu-circle-button' onClick={shuffleArray}>
               <Shuffle className='header-icon' />
             </button>
             <button 
@@ -185,10 +199,7 @@ return (
           </div>
         </div>
       </div>
-
-
-      
-      
+      <p className='vocab-terms-page-status-msg'>{statusMsg}</p>
       <div className='vocab-terms-section'>
         {filteredWords && filteredWords.map((word: WordData, index: number) => {
           return (
@@ -200,9 +211,8 @@ return (
               `}
               key={index}
               onClick={() => {
-                setSelectedWordId(word.id);
+                setSelectedWord(word);
                 setCorrect(null);
-                setNewKnowledgelevel(null);
                 setSelectedWord(word);
 
                 setWords((prevWords) =>
@@ -221,9 +231,6 @@ return (
           );
         })}
       </div>
-
-
-      <p>{statusMsg}</p>
     </div>
   ) 
 }

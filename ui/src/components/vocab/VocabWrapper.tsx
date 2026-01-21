@@ -51,10 +51,11 @@ const Notecards = () => {
     }
   }, [session])
 
-    useEffect(() => {
+  useEffect(() => {
     console.log('words: ', words);
   }, [words])
 
+  
 
   async function getAndFormatWords() {
     let wordsArray: WordData[] | undefined;
@@ -136,6 +137,7 @@ const Notecards = () => {
             supabase={supabase}
             setWords={setWords}
             setCurrentPage={setCurrentPage}
+            selectedWord={selectedWord}
             setSelectedWord={setSelectedWord}
             selectedTopic={selectedTopic}
           />}

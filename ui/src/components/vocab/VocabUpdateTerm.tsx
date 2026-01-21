@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { WordData } from '../../types/vocabTypes';
-import { addData } from '../../utils/supabaseRequests';
+import { addData, fetchOneWord, updateData } from '../../utils/supabaseRequests';
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { knowledgelevels } from '../../data/SampleVocabData';
 
@@ -18,8 +18,10 @@ const VocabUpdateTerm = ({ supabase, categories, setWords, selectedWord }: Vocab
   const [category, setCategory] = useState<string>(selectedWord ? selectedWord.category : '');
   const [newCategory, setNewCategory] = useState<string>('');
   const [statusMsg, setStatusMsg] = useState<string>('');
+  const targetCollection = 'spanish_vocab';
 
   const specialChars = ['\u00E1', '\u00E9', '\u00ED', '\u00F3', '\u00FA', '\u00F1', '\u00FC', '\u00A1', '\u00BF'];
+  type UpdateGoal = 'add new word' | 'correct word info';
 
   const createDocumentId = (input: string) => {
     return input
@@ -30,16 +32,18 @@ const VocabUpdateTerm = ({ supabase, categories, setWords, selectedWord }: Vocab
       .replace(/\s+/g, '_');
   }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const update = async (updateGoal: UpdateGoal) => {
     setStatusMsg('');
-    const targetCollection = 'spanish_vocab';
     const customWordId = createDocumentId(spanish);
     let categoryToUse = ''
     if(newCategory) {
       categoryToUse = newCategory
     } else {
       categoryToUse = category
+    }
+    if(!categoryToUse || categoryToUse === 'uncategorized') {
+      setStatusMsg('Please enter or select a category!');
+      return;
     }
     const newWordData: WordData = {
       id: customWordId,
@@ -49,7 +53,12 @@ const VocabUpdateTerm = ({ supabase, categories, setWords, selectedWord }: Vocab
       knowledgelevel: knowledgelevel,
     };
 
-    const [result, error] = await addData(supabase, targetCollection, newWordData);
+    const [result, error] = await (
+      updateGoal === 'add new word'
+        ? addData(supabase, targetCollection, newWordData)
+        : updateData(supabase, targetCollection, newWordData)
+    );
+
     if(result) {
       setStatusMsg(`Successfully added ${customWordId}`)
       setEnglish('');
@@ -68,13 +77,24 @@ const VocabUpdateTerm = ({ supabase, categories, setWords, selectedWord }: Vocab
       setWords((prevWords) => [...prevWords, newWordWithId]);
     } else if (error && error.message.includes('duplicate')) {
       setStatusMsg(`${customWordId} already exists in the database`)
-    } else {
+    } else if(updateGoal === 'add new word') {
       setStatusMsg(`Error adding ${customWordId} to the database`)
+    } else {
+      setStatusMsg(`Error updating ${customWordId} in the database`)
     }
   }
 
-  const lookup = () => {
-    console.log('need to look up word ind database and populate english');
+  const lookup = async () => {
+    const id = createDocumentId(spanish);
+    const word: WordData | null = await fetchOneWord(supabase, 'spanish_vocab', id);
+    if(word) {
+      setEnglish(word.english);
+      setCategory(word.category);
+      setKnowledgelevel(word.knowledgelevel);
+      setStatusMsg('Word found!');
+    } else {
+      setStatusMsg('Word not found!');
+    }
   }
 
   return (
@@ -171,8 +191,9 @@ const VocabUpdateTerm = ({ supabase, categories, setWords, selectedWord }: Vocab
           </div>
         </fieldset>
         <div className='vocab-update-form-button-row'>
-          <button type="button" className='vocab-text-button' onClick={() => handleSubmit}>Update</button>
+          <button type="button" className='vocab-text-button' onClick={() => update('add new word')}>Add new word</button>
           <button type="button" className='vocab-text-button' onClick={lookup}>Lookup</button>
+          <button type="button" className='vocab-text-button' onClick={() => update('correct word info')}>Correct Word Info</button>
         </div>
 
         <p>{statusMsg}</p>
