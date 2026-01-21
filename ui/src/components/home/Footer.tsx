@@ -9,13 +9,13 @@ const Footer = () => {
   
   const location = useLocation();
   const isHomePage = () => {
-    
     if(location.pathname === '/') {
       return true 
     } else {
       return false;
     } 
   }
+  const isVocab = location.pathname.includes('vocab');
 
   // Check which color scheme to use based on page
   let footerClass;
@@ -35,21 +35,23 @@ const Footer = () => {
 
   return (
     <div>
-    {!isHomePage() && <WaveBackground />}
-    <footer className={`footer ${footerClass}`}>
-      <p>&copy; 2025 Kay Rubio</p>
-      <div className={`footer-button-group`}>
-        <a aria-label='download resume' href={pathToResume} download='resume.pdf'>
-        <DocumentIcon className={`footer-icon ${iconClass}`} />
-        </a>
-        <a aria-label='linkedIn' href='https://www.linkedin.com/in/kay-rubio-731abb114/'>
-          <LinkedInIcon className={`footer-icon ${iconClass}`} />
-        </a>
-        <a aria-label='github' href='https://github.com/KaySRubio'>
-          <GithubIcon className={`footer-icon ${iconClass}`} />
-        </a>
-      </div>
-    </footer>
+      {!isVocab && <div>
+      {!isHomePage() && <WaveBackground />}
+      <footer className={`footer ${footerClass}`}>
+        <p>&copy; 2025 Kay Rubio</p>
+        <div className={`footer-button-group`}>
+          <a aria-label='download resume' href={pathToResume} download='resume.pdf'>
+          <DocumentIcon className={`footer-icon ${iconClass}`} />
+          </a>
+          <a aria-label='linkedIn' href='https://www.linkedin.com/in/kay-rubio-731abb114/'>
+            <LinkedInIcon className={`footer-icon ${iconClass}`} />
+          </a>
+          <a aria-label='github' href='https://github.com/KaySRubio'>
+            <GithubIcon className={`footer-icon ${iconClass}`} />
+          </a>
+        </div>
+      </footer>
+      </div>}
     </div>
   )
 }

@@ -3,7 +3,7 @@ import type { SupabaseClient, Session, AuthChangeEvent } from "@supabase/supabas
 import { verifyOptToken, sendLoginEmail, signInWithPassword } from '../../utils/supabaseRequests';
 
 type VocabLoginProps = {
-  supabase: SupabaseClient;
+  supabase: SupabaseClient | null;
   setEmail: React.Dispatch<React.SetStateAction<string>>;
   email: string;
   setSession: React.Dispatch<React.SetStateAction<Session | null>>;
@@ -26,6 +26,7 @@ const VocabLogin = ({supabase, setEmail, email, setSession}: VocabLoginProps) =>
     }
 
     // Check for existing session
+    if(!supabase) return;
     supabase.auth.getSession().then(
       ({ data }: { data: { session: Session | null } }) => {
           setSession(data.session);
@@ -84,26 +85,29 @@ const VocabLogin = ({supabase, setEmail, email, setSession}: VocabLoginProps) =>
   };
 
   return (
-    <div>
+    <div className='vocab-login-page'>
       <h2>Sign in</h2>
-      <form>
+      <form className='vocab-login-form' onSubmit={loginByEmailAndPassword}>
         <input
           type="email"
-          placeholder="Your email"
+          name="email"
+          autoComplete="username"
+          placeholder="Email"
           value={email}
           required={true}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button disabled={loading} onClick={loginByEmailLink}>Send login link</button>
-        <p>Or enter password: </p>
         <input
-          type="text"
-          placeholder="password"
+          type="password"
+          name="password"
+          autoComplete="current-password"
+          placeholder="Password"
           value={password}
           required={true}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button disabled={loading} onClick={loginByEmailAndPassword}>Sign In</button>
+        <button className='vocab-text-button' disabled={loading} type='submit'>Log In</button>
+        <button className='vocab-text-button' disabled={loading} onClick={loginByEmailLink}>Send me link</button>
       </form>
       <p>{statusMsg}</p>
     </div>

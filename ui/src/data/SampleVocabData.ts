@@ -1,3 +1,60 @@
+export const knowledgelevels = [
+    { value: -1, color: "white"},
+    { value: 0, color: "red"},
+    { value: 1, color: "yellow"},
+    { value: 2, color: "green"},
+];
+
+
+export const defaultScienceCategories = [
+    'sound',
+    'audio signal processing',
+    'python',
+    'natural language processing',
+    'statistics',
+    'data science and traditional machine learning',
+    'linguistics',
+    'machine learning',
+    'ai and neural networks'
+]
+
+export const defaultSpanishCategories = [
+    'uncategorized',
+    'animals',
+    'household',
+    'manmade stuff outside the home',
+    'feelings',
+    'people\'s personality',
+    'nature',
+    'talking about location',
+    'connecty words',
+    'adjectives to describe things',
+    'physical descriptions of people',
+    'talking about location',
+    'talking about time',
+    'religion',
+    'travel',
+    'food',
+    'activities',
+    'careers',
+    'family',
+    'science',
+    'school and education',
+    'nationalities and countries',
+    'numbers',
+    'colors',
+    'medical and health',
+    'verb phrases',
+    'music',
+    'office, work, business',
+    'government and political topics',
+    'body parts',
+    'shapes',
+    'alphabet',
+    'art',
+    'clothes and accessories',
+]
+
 export const sampleVocabData = 
   [
     {

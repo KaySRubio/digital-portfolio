@@ -3,7 +3,8 @@ import type { SupabaseClient, AuthError } from "@supabase/supabase-js";
 import type { BoolAndError } from '../types/vocabTypes';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const verifyOptToken = async (supabase: SupabaseClient, token_hash: any, type: any): Promise<boolean> => {
+export const verifyOptToken = async (supabase: SupabaseClient | null, token_hash: any, type: any): Promise<boolean> => {
+  if(!supabase) return false;
   supabase.auth.verifyOtp({
     token_hash,
     type: type || "email",
@@ -22,7 +23,8 @@ export const verifyOptToken = async (supabase: SupabaseClient, token_hash: any, 
   return true;
 };
 
-export const sendLoginEmail = async (supabase: SupabaseClient, email: string): Promise<boolean> => {
+export const sendLoginEmail = async (supabase: SupabaseClient | null, email: string): Promise<boolean> => {
+  if(!supabase) return false;
   const { error } = await supabase.auth.signInWithOtp({
     email,
     options: {
@@ -37,7 +39,8 @@ export const sendLoginEmail = async (supabase: SupabaseClient, email: string): P
   }
 }
 
-export const signInWithPassword = async (supabase: SupabaseClient, email: string, password: string): Promise<boolean> => {
+export const signInWithPassword = async (supabase: SupabaseClient | null, email: string, password: string): Promise<boolean> => {
+  if(!supabase) return false;
   const { error } = await supabase.auth.signInWithPassword({
     email,
     password,
@@ -50,15 +53,11 @@ export const signInWithPassword = async (supabase: SupabaseClient, email: string
 }
 
 export const logout = async (supabase: SupabaseClient | null) => {
-  if(supabase) {
-    await supabase.auth.signOut();
-    // const { session } = await supabase.auth.getSession();
-    // console.log('session: ', session);
-  }
-  
+  if(!supabase) return false;
+  await supabase.auth.signOut();
 };
 
-export async function fetchData(supabase: SupabaseClient, databaseName: string): Promise<WordData[] > {
+export async function fetchData(supabase: SupabaseClient | null, databaseName: string): Promise<WordData[] > {
 
   /* DEBUGGING: Find out number of rows in query
   const { count, error } = await supabase
@@ -66,7 +65,7 @@ export async function fetchData(supabase: SupabaseClient, databaseName: string):
     .select("*", { count: "exact" });
     console.log('count: ', count); // showing 2238
   */
-
+  if(!supabase) return [];
   const { data, error } = await supabase
     .from(databaseName)
     .select("*")
@@ -81,13 +80,13 @@ export async function fetchData(supabase: SupabaseClient, databaseName: string):
 }
 
 export async function updateData(
-  supabase: SupabaseClient,
+  supabase: SupabaseClient | null,
   databaseName: string,
   id: string | number,
   columnName: string,
   newValue: string | number
 ): Promise<BoolAndError> {
-
+  if(!supabase) return [false, null];
   try {
     const { data, error } = await supabase
       .from(databaseName)
@@ -110,10 +109,11 @@ export async function updateData(
 };
 
 export async function addData(
-  supabase: SupabaseClient,
+  supabase: SupabaseClient | null,
   databaseName: string, 
   newWordData: WordData,
 ): Promise<BoolAndError> {
+  if(!supabase) return [false, null];
   try {
     const { data, error } = await supabase
       .from(databaseName)

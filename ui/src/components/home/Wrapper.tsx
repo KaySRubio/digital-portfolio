@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Menu from './Menu';
 import Footer from './Footer';
 import Home from './Home';
@@ -10,10 +10,13 @@ import VocabWrapper from '../vocab/VocabWrapper';
 import { topics, projects } from '../../data/portfolioData';
 
 const Wrapper = () => {
+  const location = useLocation();
+  const isVocab = location.pathname.includes('vocab');
+
   return (
     <div className='page-wrapper'>
       <div className='content'>
-        <Menu />
+        {!isVocab && <Menu />}
         <ScrollToTop />
         <Routes>
           <Route index element={<Home />} />

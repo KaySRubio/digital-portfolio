@@ -1,40 +1,47 @@
 import { useState, useEffect } from 'react';
 import { updateData } from '../../utils/supabaseRequests';
 import type { SupabaseClient } from "@supabase/supabase-js";
+import shuffle from '@/assets/svg/shuffle.svg?react';
+import edit from '@/assets/svg/edit.svg?react';
+import { knowledgelevels } from '../../data/SampleVocabData';
 
-import type { WordData, CurrentPage } from '../../types/vocabTypes';
+import type { WordData, CurrentPage, Topic } from '../../types/vocabTypes';
 
 
 type VocabTermsProps = {
   selectedCategory: string;
   words: WordData[];
-  supabase: SupabaseClient;
+  supabase: SupabaseClient | null;
   setWords: React.Dispatch<React.SetStateAction<WordData[]>>;
   setCurrentPage: React.Dispatch<React.SetStateAction<CurrentPage>>;
   setSelectedWord: React.Dispatch<React.SetStateAction<WordData | null>>;
+  selectedTopic: Topic;
 }
 
-const VocabTerms = ({ selectedCategory, words, supabase, setWords, setCurrentPage, setSelectedWord }: VocabTermsProps) => {
+const VocabTerms = ({
+  selectedCategory,
+  words,
+  supabase, 
+  setWords,
+  setCurrentPage,
+  setSelectedWord,
+  selectedTopic,
+}: VocabTermsProps) => {
   const [selectedWordId, setSelectedWordId] = useState<string | undefined>(undefined);
   const wordsInCategory = words.filter((word: WordData) => word.category === selectedCategory)
   const [newKnowledgelevel, setNewKnowledgelevel] = useState<number | null>(null);
   const [statusMsg, setStatusMsg] = useState<string>('');
   const [correct, setCorrect] = useState<number | null>(null);
-
-
   const [filter, setFilter] = useState<number>(-1);
   const [filteredWords, setFilteredWords] = useState<WordData[] | null>(null);
 
-  const knowledgelevels = [
-    { value: -1, color: "white"},
-    { value: 0, color: "red"},
-    { value: 1, color: "yellow"},
-    { value: 2, color: "green"},
-  ];
+  const Shuffle = shuffle;
+  const Edit = edit;
+
 
   const options = [
-    { label: "I got it!", value: 1, color: "green", textColor: "white" },
-    { label: "I missed this one", value: 0, color: "red", textColor: "white" },
+    { label: "Got it!", value: 1, color: "green", textColor: "white" },
+    { label: "Missed it", value: 0, color: "red", textColor: "white" },
   ];
 
   useEffect(() => {
@@ -97,91 +104,100 @@ const VocabTerms = ({ selectedCategory, words, supabase, setWords, setCurrentPag
   }
 
 return (
-    <div>
-      <h2>{selectedCategory}</h2>
+    <div className='vocab-terms-page'>
+      <div className='vocab-terms-settings-section'>
+        <div className='vocab-terms-settings-section-row'>
+          <h2>{selectedCategory}</h2>
+            <div className='vocab-terms-filter-section'>
+            <p>Filter:</p>
+            <form>
+              <fieldset style={{ border: "none", padding: 0 }}>
+                <div style={{ display: "flex", gap: "10px" }}>
+                  {knowledgelevels.map((level) => (
+                    <label
+                      key={level.value}
+                      className={`
+                        vocab-knowledgelevel-button
+                        vocab-knowledgelevel-button-${level.value}
+                        ${filter === level.value ? 'selected' : ''}
+                      `}
+
+                    >
+                      <input
+                        type="radio"
+                        name="knowledge"
+                        value={level.value}
+                        checked={filter === level.value}
+                        onChange={() => {
+                          const value = level.value;
+                          setFilter(value);
+                        }}
+                        style={{ display: "none" }} // hide the native radio circle
+                      />
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+        </div>
+        <div className='vocab-terms-settings-section-row'>
+          <div className='vocab-terms-answer-section'>
+            <p>Answer:</p>
+            <form>
+              <fieldset style={{ border: "none", padding: 0 }}>
+                <div style={{ display: "flex", gap: "10px" }}>
+                  {options.map((option) => (
+                    <label
+                      key={option.value}
+                      className={`vocab-answer-button vocab-answer-button-${option.value}`}
+                    >
+                      <input
+                        type="radio"
+                        name="knowledge"
+                        value={option.value}
+                        checked={correct === option.value}
+                        onChange={() => {
+                          setCorrect(option.value);
+                          setSelectedWord(null);
+                        }}
+                        style={{ display: "none" }} // hide the radio circle
+                      />
+                      {option.label}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <div className='vocab-terms-buttons-section'>
+            <button className='vocab-menu-circle-button'>
+              <Shuffle className='header-icon' />
+            </button>
+            <button 
+              className='vocab-menu-circle-button'
+              onClick={() => setCurrentPage('Update') }
+            >
+              <Edit className='header-icon' />
+            </button>
+          </div>
+        </div>
+      </div>
+
 
       
-      <form>
-        <fieldset style={{ border: "none", padding: 0 }}>
-          <legend>Filter</legend>
-          <div style={{ display: "flex", gap: "10px" }}>
-            {knowledgelevels.map((level) => (
-              <label
-                key={level.value}
-                style={{
-                  backgroundColor: level.color,
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                  cursor: "pointer",
-                  border:
-                    filter === level.value
-                      ? "3px solid black"
-                      : "1px solid gray",
-                  userSelect: "none",
-                }}
-              >
-                <input
-                  type="radio"
-                  name="knowledge"
-                  value={level.value}
-                  checked={filter === level.value}
-                  onChange={() => {
-                    const value = level.value;
-                    setFilter(value);
-                  }}
-                  style={{ display: "none" }} // hide the native radio circle
-                />
-              </label>
-            ))}
-          </div>
-        </fieldset>
-      </form>
-
-      <h3>Answer:</h3>
-      <form>
-        <fieldset style={{ border: "none", padding: 0 }}>
-          <div style={{ display: "flex", gap: "10px" }}>
-            {options.map((option) => (
-              <label
-                key={option.value}
-                style={{
-                  backgroundColor: option.color,
-                  color: option.textColor,
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                  cursor: "pointer",
-                  border:
-                    correct === option.value
-                      ? "3px solid black"
-                      : "1px solid gray",
-                  userSelect: "none",
-                }}
-              >
-                <input
-                  type="radio"
-                  name="knowledge"
-                  value={option.value}
-                  checked={correct === option.value}
-                  onChange={() => {
-                    setCorrect(option.value);
-                    setSelectedWord(null);
-                  }}
-                  style={{ display: "none" }} // hide the radio circle
-                />
-                {option.label}
-              </label>
-            ))}
-          </div>
-        </fieldset>
-      </form>
-
-      <button>Shuffle</button>
-      <button onClick={() => setCurrentPage('Update')}>Fix</button>
       
-      <div>
+      <div className='vocab-terms-section'>
         {filteredWords && filteredWords.map((word: WordData, index: number) => {
           return (
             <button
+              className={
+                `vocab-term
+                ${selectedTopic === 'Spanish' ? 'vocab-term-spanish' : 'vocab-term-science'}
+                ${word.showSpanish ? 'vocab-term-es' : 'vocab-term-en'}
+              `}
               key={index}
               onClick={() => {
                 setSelectedWordId(word.id);

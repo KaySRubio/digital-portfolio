@@ -19,13 +19,15 @@ const VocabCategories = ({ categories, setSelectedCategory, setCurrentPage }: Vo
   return (
     <div>
       <h2>Categories</h2>
-       {categories.map((category: string, index) => {
+      <div className='vocab-category-area'>
+        {categories.map((category: string, index) => {
           return (
-            <button key={index} onClick={() => onClick(category)}>
+            <button className='vocab-category-button' key={index} onClick={() => onClick(category)}>
               {category}
             </button>
           );
       })}
+      </div>
     </div>
   )
 }

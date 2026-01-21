@@ -9,23 +9,29 @@ import VocabCategories from './VocabCategories';
 import VocabTerms from './VocabTerms';
 import VocabUpdateTerm from './VocabUpdateTerm';
 
-// import { sampleVocabData } from '../../data/SampleVocabData.ts';
+import { sampleVocabData, defaultSpanishCategories, defaultScienceCategories } from '../../data/SampleVocabData.ts';
 
 import type { Database } from '../../../database.types.ts';
 import type { SupabaseClient, Session } from "@supabase/supabase-js";
 import type { WordData, Topic, CurrentPage } from '../../types/vocabTypes.tsx';
 
+// Turn off database during some parts of development
+const useSupabase = true;
+
+
 // Initialize database here works best, catch errors
 let supabase: SupabaseClient | null = null;
-try {
-  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-  const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY;
-  if (!supabaseUrl || !supabaseKey) {
-    console.warn("Supabase env vars missing, notecards program will not run");
-  } 
-  supabase = createClient<Database>(supabaseUrl, supabaseKey);
-} catch (error) {
-  console.warn(error);
+if(useSupabase) {
+  try {
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+    const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY;
+    if (!supabaseUrl || !supabaseKey) {
+      console.warn("Supabase env vars missing, notecards program will not run");
+    } 
+    supabase = createClient<Database>(supabaseUrl, supabaseKey);
+  } catch (error) {
+    console.warn(error);
+  }
 }
 
 
@@ -45,30 +51,48 @@ const Notecards = () => {
     }
   }, [session])
 
+    useEffect(() => {
+    console.log('words: ', words);
+  }, [words])
+
+
   async function getAndFormatWords() {
-    if(supabase) {
-      const wordsArray: WordData[] | undefined = await fetchData(supabase, 'spanish_vocab');
-      // DEBUG - use sample data rather than query database over and over during development
-      // const wordsArray: WordData[] = sampleVocabData;
-        
-      
-      if(wordsArray) {
-        const wordsArrayWithSideToShow = wordsArray.map(word => {
-          return { 
-            ...word,
-            showSpanish: word.knowledgelevel === 1 ? false : true,
-          };
-        });
-        setWords(wordsArrayWithSideToShow);
-      }
+    let wordsArray: WordData[] | undefined;
+
+    if(useSupabase && supabase) {
+      wordsArray = await fetchData(supabase, 'spanish_vocab');
+    
+    } else {
+      wordsArray = sampleVocabData;
     }
+    if(wordsArray) {
+      const wordsArrayWithSideToShow = wordsArray.map(word => {
+        return { 
+          ...word,
+          showSpanish: word.knowledgelevel === 1 ? false : true,
+        };
+      });
+      setWords(wordsArrayWithSideToShow);
+    }
+    
   }
 
   useEffect(() => {
-    const allCategories = words.map(word => word.category);
-    const uniqueCategories = [...new Set(allCategories)];
-    setCategories(uniqueCategories);
-  }, [words])
+    if(selectedTopic === 'Spanish') {
+      const dbCategories = words.map(word => word.category);
+      const allCategories = [...dbCategories, ...defaultSpanishCategories]
+      const uniqueCategories = [...new Set(allCategories)];
+      const spanishCategories = uniqueCategories.filter(category => !defaultScienceCategories.includes(category));
+      spanishCategories.sort();
+      setCategories(spanishCategories);
+    } else {
+      setCategories(defaultScienceCategories);
+    }
+  }, [words, selectedTopic])
+
+  useEffect(() => {
+    setCurrentPage('Categories')
+  }, [selectedTopic])
 
   const handleLogout = () => {
     setSession(null);
@@ -80,21 +104,23 @@ const Notecards = () => {
   }, [currentPage])
 
   return (
-    <div>
+    <div className='vocab-wrapper'>
       
       <VocabHeader
         loggedIn={session ? true : false}
+        selectedTopic={selectedTopic}
         setSelectedTopic={setSelectedTopic} 
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
         getAndFormatWords={getAndFormatWords}
         email={email}
         handleLogout={handleLogout}
+        useSupabase={useSupabase}
       />
       {
-        supabase &&
+        (!useSupabase || supabase) &&
         
-        (session
+        ((!useSupabase || session)
         ?
         <div>
           {currentPage === 'Categories' && <VocabCategories
@@ -111,6 +137,7 @@ const Notecards = () => {
             setWords={setWords}
             setCurrentPage={setCurrentPage}
             setSelectedWord={setSelectedWord}
+            selectedTopic={selectedTopic}
           />}
           {currentPage === 'Update' && <VocabUpdateTerm 
             supabase={supabase}

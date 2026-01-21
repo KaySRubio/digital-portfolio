@@ -2,9 +2,10 @@ import { useState } from 'react';
 import type { WordData } from '../../types/vocabTypes';
 import { addData } from '../../utils/supabaseRequests';
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { knowledgelevels } from '../../data/SampleVocabData';
 
 type VocabUpdateTermProps = {
-  supabase: SupabaseClient;
+  supabase: SupabaseClient | null;
   categories: string[];
   setWords: React.Dispatch<React.SetStateAction<WordData[]>>;
   selectedWord: WordData | null;
@@ -18,11 +19,7 @@ const VocabUpdateTerm = ({ supabase, categories, setWords, selectedWord }: Vocab
   const [newCategory, setNewCategory] = useState<string>('');
   const [statusMsg, setStatusMsg] = useState<string>('');
 
-  const options = [
-    { value: 0, color: "red"},
-    { value: 1, color: "yellow"},
-    { value: 2, color: "green"},
-  ];
+  const specialChars = ['\u00E1', '\u00E9', '\u00ED', '\u00F3', '\u00FA', '\u00F1', '\u00FC', '\u00A1', '\u00BF'];
 
   const createDocumentId = (input: string) => {
     return input
@@ -81,90 +78,103 @@ const VocabUpdateTerm = ({ supabase, categories, setWords, selectedWord }: Vocab
   }
 
   return (
-    <div>
+    <div className='vocab-form-page'>
       <h2>Update</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-          Category:
-          <select value={category} onChange={(e) => setCategory(e.target.value)}>
-            <option value="" disabled>
-              -- Choose a category --
-            </option>
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
+      <form className='vocab-update-form'>
+        <p>Category:</p>
+        <div className='vocab-update-category-buttons-row'>
+          <div>
+            <select value={category} onChange={(e) => setCategory(e.target.value)}>
+              <option value="" disabled>
+                -- Choose a category --
               </option>
-            ))}
-          </select>
-        </label>
-        </div>
-        <div>
-          <label>
-            <input
-              type="text"
-              value={newCategory}
-              onChange={(e) => setNewCategory(e.target.value)}
-              required={false}
-            />
-          </label>
-        </div>
-        <div>
-        <div>
-          <label>
-            Spanish:
-            <input
-              type="text"
-              value={spanish}
-              onChange={(e) => setSpanish(e.target.value)}
-              required={true}
-            />
-          </label>
-        </div>
-          <label>
-            English:
-            <input
-              type="text"
-              value={english}
-              onChange={(e) => setEnglish(e.target.value)}
-              required={true}
-            />
-          </label>
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label>
+              <input
+                type="text"
+                value={newCategory}
+                onChange={(e) => setNewCategory(e.target.value)}
+                required={false}
+                placeholder='New category'
+              />
+            </label>
+          </div>
         </div>
 
+        <div className='vocab-update-form-languages-row'>
+          <div>
+            <p>Spanish:</p>
+            <div>
+              <input
+                type="text"
+                value={spanish}
+                onChange={(e) => setSpanish(e.target.value)}
+                required={true}
+              />
+            </div>
+            <div className='vocab-special-char-row'>
+              {specialChars.map((char, index) => (
+                <button 
+                  className='vocab-special-char-button'
+                  type="button"
+                  key={index}
+                  onClick={() => setSpanish(prev => prev+=char)}
+                >
+                  {char}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          <div>
+            <p>English:</p>
+              <input
+                type="text"
+                value={english}
+                onChange={(e) => setEnglish(e.target.value)}
+                required={true}
+              />
+          </div>
+        </div>
+
+        <p>Knowledge Level</p>
         <fieldset style={{ border: "none", padding: 0 }}>
-          <legend>Knowledge Level</legend>
+          
           <div style={{ display: "flex", gap: "10px" }}>
-            {options.map((option) => (
+            {knowledgelevels.map((level) => (
               <label
-                key={option.value}
-                style={{
-                  backgroundColor: option.color,
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                  cursor: "pointer",
-                  border:
-                    knowledgelevel === option.value
-                      ? "3px solid black"
-                      : "1px solid gray",
-                  userSelect: "none",
-                }}
+                key={level.value}
+                className={`
+                  vocab-knowledgelevel-button
+                  vocab-knowledgelevel-button-${level.value}
+                  ${knowledgelevel === level.value ? 'selected' : ''}
+                `}
               >
                 <input
                   type="radio"
                   name="knowledge"
-                  value={option.value}
-                  checked={knowledgelevel === option.value}
-                  onChange={() => setKnowledgelevel(option.value)}
+                  value={level.value}
+                  checked={knowledgelevel === level.value}
+                  onChange={() => setKnowledgelevel(level.value)}
                   style={{ display: "none" }} // hide the radio circle
                 />
               </label>
             ))}
           </div>
         </fieldset>
-        <button type="submit">Update</button>
-        <button onClick={lookup}>Lookup</button>
-        
+        <div className='vocab-update-form-button-row'>
+          <button type="button" className='vocab-text-button' onClick={() => handleSubmit}>Update</button>
+          <button type="button" className='vocab-text-button' onClick={lookup}>Lookup</button>
+        </div>
+
         <p>{statusMsg}</p>
       </form>
     </div>
