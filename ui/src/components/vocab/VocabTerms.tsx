@@ -5,7 +5,7 @@ import shuffle from '@/assets/svg/shuffle.svg?react';
 import edit from '@/assets/svg/edit.svg?react';
 import { knowledgelevels } from '../../data/SampleVocabData';
 
-import type { WordData, CurrentPage, Topic } from '../../types/vocabTypes';
+import type { WordData, CurrentPage, Topic, TableName } from '../../types/vocabTypes';
 
 
 type VocabTermsProps = {
@@ -17,6 +17,8 @@ type VocabTermsProps = {
   selectedWord: WordData | null;
   setSelectedWord: React.Dispatch<React.SetStateAction<WordData | null>>;
   selectedTopic: Topic;
+  selectedTable: TableName;
+  categories: string[];
 }
 
 const VocabTerms = ({
@@ -28,13 +30,16 @@ const VocabTerms = ({
   selectedWord,
   setSelectedWord,
   selectedTopic,
+  selectedTable,
+  categories,
 }: VocabTermsProps) => {
   const defaultStatusMsg = 'Click on a word!';
   const wordsInCategory = words.filter((word: WordData) => word.category === selectedCategory)
   const [statusMsg, setStatusMsg] = useState<string>(defaultStatusMsg);
   const [correct, setCorrect] = useState<number | null>(null);
-  const [filter, setFilter] = useState<number>(-1);
+  const [filter, setFilter] = useState<number>(0);
   const [filteredWords, setFilteredWords] = useState<WordData[] | null>(null);
+  const [newSelectedCategory, setNewSelectedCategory]= useState<string>(selectedCategory)
 
   const Shuffle = shuffle;
   const Edit = edit;
@@ -61,10 +66,11 @@ const VocabTerms = ({
         newKnowledgelevel = 0;
       }
     }
-    if(currentKnowledgelevel !== newKnowledgelevel) {
-      console.log('updating newKnowledgelevel')
+    if(currentKnowledgelevel !== newKnowledgelevel || selectedCategory !== newSelectedCategory) {
+      console.log('updating newKnowledgelevel and/or selected category')
       const newWordData = {
         ...selectedWord,
+        category: newSelectedCategory,
         knowledgelevel: newKnowledgelevel,
       }
       setSelectedWord(newWordData);
@@ -85,17 +91,22 @@ const VocabTerms = ({
   
   async function _updateData(newWordData: WordData): Promise<void> {
     if(!newWordData) return;
-    const [ result ] = await updateData(supabase, 'spanish_vocab', newWordData);
+    const [ result ] = await updateData(supabase, selectedTable, newWordData);
     if(result) {
         // Update the local version too since only query database upon login
         setWords((prevWords) =>
           prevWords.map((word) =>
             word.id === newWordData.id
-              ? { ...word, knowledgelevel: newWordData.knowledgelevel }
+              ? { 
+                ...word,
+                knowledgelevel: newWordData.knowledgelevel,
+                category: newWordData.category,
+                showSpanish: newWordData.knowledgelevel === 1 ? false : true
+              }
               : word
           )
         );
-        setStatusMsg(`Updated '${newWordData.id}' knowledgelevel to ${newWordData.knowledgelevel}.`);
+        setStatusMsg(`Updated '${newWordData.id}' knowledgelevel to ${newWordData.knowledgelevel} and category ${newSelectedCategory}.`);
       } else {
         setStatusMsg(`Failed to update data`);
       }
@@ -199,37 +210,59 @@ const VocabTerms = ({
         </div>
       </div>
       <p className='vocab-terms-page-status-msg'>{statusMsg}</p>
-      <div className='vocab-terms-section'>
-        {filteredWords && filteredWords.map((word: WordData, index: number) => {
-          return (
-            <button
-              className={
-                `vocab-term
-                ${selectedTopic === 'Spanish' ? 'vocab-term-spanish' : 'vocab-term-science'}
-                ${word.showSpanish ? 'vocab-term-es' : 'vocab-term-en'}
+      <div className='vocab-terms-section-and-categories'>
+        
+        {selectedCategory === 'uncategorized' && <div className='vocab-terms-section-categories'>
+          <p>Pick a category:</p>
+          {categories.map((category, index) => (
+            
+            <button 
+              className={`
+                vocab-terms-section-category-button 
+                ${newSelectedCategory === category ? 'vocab-terms-section-category-button-selected' : ''}
               `}
               key={index}
-              onClick={() => {
-                setSelectedWord(word);
-                setCorrect(null);
-                setSelectedWord(word);
-
-                setWords((prevWords) =>
-                  prevWords.map((word1) =>
-                    word1.id === word.id
-                      ? { ...word1, showSpanish: !word1.showSpanish }
-                      : word1
-                  )
-                );
-              }}
+              onClick={() => setNewSelectedCategory(category)}
             >
-              <span>
-                {word.showSpanish ? word.spanish : word.english}
-              </span>
+            {category}
             </button>
-          );
-        })}
+           
+          ))}
+        </div>}
+        <div className='vocab-terms-section-terms'>
+          {filteredWords && filteredWords.map((word: WordData, index: number) => {
+            return (
+              <button
+                className={
+                  `vocab-term
+                  ${selectedTopic === 'Spanish' ? 'vocab-term-spanish' : 'vocab-term-science'}
+                  ${word.showSpanish ? 'vocab-term-es' : 'vocab-term-en'}
+                `}
+                key={index}
+                onClick={() => {
+                  setSelectedWord(word);
+                  setCorrect(null);
+                  setSelectedWord(word);
+
+                  setWords((prevWords) =>
+                    prevWords.map((word1) =>
+                      word1.id === word.id
+                        ? { ...word1, showSpanish: !word1.showSpanish }
+                        : word1
+                    )
+                  );
+                }}
+              >
+                <span>
+                  {word.showSpanish ? word.spanish : word.english}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
       </div>
+      
     </div>
   ) 
 }

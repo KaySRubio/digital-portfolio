@@ -1801,14 +1801,42 @@ iframe {
   flex-direction: row;
   gap: 5px;
 }
-.vocab-terms-section {
+
+.vocab-terms-section-and-categories {
+  display: flex;
+  flex-direction: row;
+  max-height: calc(100vh - var(--vocab-header-height) - var(--vocab-terms-setting-section-height) - 55px);
+  overflow-x: auto;
+}
+
+.vocab-terms-section-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+}
+
+.vocab-terms-section-category-button {
+  background-color: white;
+  color: var(--sport-black);
+  border: 2px solid var(--sport-black);
+  padding: 7px 3px;
+}
+
+.vocab-terms-section-category-button:hover {
+  border: 2px solid var(--purple2);
+}
+
+.vocab-terms-section-category-button-selected {
+  border: 2px solid var(--purple2);
+}
+
+.vocab-terms-section-terms {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   padding: 15px;
   justify-content: center;
-  max-height: calc(100vh - var(--vocab-header-height) - var(--vocab-terms-setting-section-height) - 55px);
-  overflow-x: auto;
 }
 
 .vocab-term {

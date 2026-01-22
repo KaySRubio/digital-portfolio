@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import type { WordData } from '../../types/vocabTypes';
+import type { WordData, TableName } from '../../types/vocabTypes';
 import { addData, fetchOneWord, updateData, deleteById } from '../../utils/supabaseRequests';
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { knowledgelevels } from '../../data/SampleVocabData';
@@ -11,9 +11,17 @@ type VocabUpdateTermProps = {
   words: WordData[];
   setWords: React.Dispatch<React.SetStateAction<WordData[]>>;
   selectedWord: WordData | null;
+  selectedTable: TableName;
 }
 
-const VocabUpdateTerm = ({ supabase, categories, words, setWords, selectedWord }: VocabUpdateTermProps) => {
+const VocabUpdateTerm = ({
+  supabase,
+  selectedTable,
+  categories,
+  words,
+  setWords,
+  selectedWord
+}: VocabUpdateTermProps) => {
   const [id, setId] = useState<string | undefined>(selectedWord ? selectedWord.id : '');
   const [idToDelete, setIdToDelete] = useState<string | undefined>(selectedWord ? selectedWord.id : '');
   const [english, setEnglish] = useState<string>(selectedWord ? selectedWord.english : '');
@@ -22,7 +30,6 @@ const VocabUpdateTerm = ({ supabase, categories, words, setWords, selectedWord }
   const [category, setCategory] = useState<string>(selectedWord ? selectedWord.category : '');
   const [newCategory, setNewCategory] = useState<string>('');
   const [statusMsg, setStatusMsg] = useState<string>('');
-  const targetCollection = 'spanish_vocab';
   const [spanishAlternatives, setSpanishAlternatives] = useState<string[]>([]);
   const [englishAlternatives, setEnglishAlternatives] = useState<string[]>([]);
 
@@ -69,8 +76,8 @@ const VocabUpdateTerm = ({ supabase, categories, words, setWords, selectedWord }
 
     const [result, error] = await (
       updateGoal === 'add new word'
-        ? addData(supabase, targetCollection, newWordData)
-        : updateData(supabase, targetCollection, newWordData)
+        ? addData(supabase, selectedTable, newWordData)
+        : updateData(supabase, selectedTable, newWordData)
     );
 
     if(result) {
@@ -105,7 +112,7 @@ const VocabUpdateTerm = ({ supabase, categories, words, setWords, selectedWord }
       setStatusMsg('Enter an id to delete');
       return;
     }
-    const [result] = await deleteById(supabase, targetCollection, idToDelete);
+    const [result] = await deleteById(supabase, selectedTable, idToDelete);
 
     if(result) {
       setStatusMsg(`Successfully deleted ${idToDelete}`)
@@ -127,7 +134,7 @@ const VocabUpdateTerm = ({ supabase, categories, words, setWords, selectedWord }
       setStatusMsg('Put text in only 1 box (Spanish or English) and try again');
     } else if (spanish) {
       const id = createDocumentId(spanish);
-      const word: WordData | null = await fetchOneWord(supabase, 'spanish_vocab', id);
+      const word: WordData | null = await fetchOneWord(supabase, selectedTable, id);
       if(word) {
         setEnglish(word.english);
         setCategory(word.category);

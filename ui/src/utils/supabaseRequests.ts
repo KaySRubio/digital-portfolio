@@ -59,12 +59,12 @@ export const logout = async (supabase: SupabaseClient | null) => {
 
 export async function fetchOneWord(
   supabase: SupabaseClient | null,
-  databaseName: string,
+  tableName: string,
   id: string,
 ): Promise<WordData | null> {
   if(!supabase) return null;
   const { data, error } = await supabase
-    .from(databaseName)
+    .from(tableName)
     .select("*")
     .eq("id", id)
     .single()
@@ -80,7 +80,7 @@ export async function fetchOneWord(
 
 export async function fetchData(
   supabase: SupabaseClient | null,
-  databaseName: string
+  tableName: string
 ): Promise<WordData[] > {
 
   /* DEBUGGING: Find out number of rows in query
@@ -91,7 +91,7 @@ export async function fetchData(
   */
   if(!supabase) return [];
   const { data, error } = await supabase
-    .from(databaseName)
+    .from(tableName)
     .select("*")
 
   if(data) {
@@ -105,7 +105,7 @@ export async function fetchData(
 
 export async function updateData(
   supabase: SupabaseClient | null,
-  databaseName: string,
+  tableName: string,
   newWordData: WordData,
 
 ): Promise<BoolAndError> {
@@ -113,15 +113,15 @@ export async function updateData(
   try {
     // see if it's not yet in there and add it if needed
     if(!newWordData.id) return [false, null];
-    const word = await fetchOneWord(supabase, 'spanish_vocab', newWordData.id)
+    const word = await fetchOneWord(supabase, tableName, newWordData.id)
     if(!word) {
       // Add it if its not in there already
-      const result = await addData(supabase, 'spanish_vocab', newWordData);
+      const result = await addData(supabase, tableName, newWordData);
       return result;
     } else {
       // if in there already, update the data
       const { data, error } = await supabase
-        .from(databaseName)
+        .from(tableName)
         .update({
           category: newWordData.category,
           spanish: newWordData.spanish,
@@ -140,53 +140,21 @@ export async function updateData(
         return [false, error];
       }
     }
-
-
-    
   } catch (error) {
     console.warn(error);
   }
   return [false, null];
 };
-/*
-export async function updateData(
-  supabase: SupabaseClient | null,
-  databaseName: string,
-  id: string | number,
-  columnName: string,
-  newValue: string | number
-): Promise<BoolAndError> {
-  if(!supabase) return [false, null];
-  try {
-    const { data, error } = await supabase
-      .from(databaseName)
-      .update({ [columnName]: newValue })
-      .eq("id", id)
-      .select()
-      .single();
-    
-    if (data) {
-      console.log('updated data: ', data);
-      return [true, null];
-    } else {
-      console.warn(error);
-      return [false, error];
-    }
-  } catch (error) {
-    console.warn(error);
-  }
-  return [false, null];
-};*/
 
 export async function addData(
   supabase: SupabaseClient | null,
-  databaseName: string, 
+  tableName: string, 
   newWordData: WordData,
 ): Promise<BoolAndError> {
   if(!supabase) return [false, null];
   try {
     const { data, error } = await supabase
-      .from(databaseName)
+      .from(tableName)
       .insert(newWordData)
       .select()
       .single();
@@ -206,14 +174,14 @@ export async function addData(
 
 export async function deleteById(
   supabase: SupabaseClient | null,
-  databaseName: string, 
+  tableName: string, 
   id: string,
 ): Promise<BoolAndError> {
   console.log('addData running');
   if(!supabase) return [false, null];
   try {
     await supabase
-      .from(databaseName)
+      .from(tableName)
       .delete()
       .eq('id', id);
 

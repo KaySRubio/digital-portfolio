@@ -13,7 +13,7 @@ import { sampleVocabData, defaultSpanishCategories, defaultScienceCategories } f
 
 import type { Database } from '../../../database.types.ts';
 import type { SupabaseClient, Session } from "@supabase/supabase-js";
-import type { WordData, Topic, CurrentPage } from '../../types/vocabTypes.tsx';
+import type { WordData, Topic, CurrentPage, TableName } from '../../types/vocabTypes.tsx';
 
 // Turn off database during some parts of development
 const useSupabase = true;
@@ -42,6 +42,7 @@ const Notecards = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [session, setSession] = useState<Session | null>(null);
   const [selectedTopic, setSelectedTopic] = useState<Topic>('Spanish');
+  const [selectedTable, setSelectedTable] = useState<TableName>('spanish_vocab');
   const [currentPage, setCurrentPage] = useState<CurrentPage>('Categories');
   const [selectedWord, setSelectedWord] = useState<WordData | null>(null);
 
@@ -55,7 +56,34 @@ const Notecards = () => {
     console.log('words: ', words);
   }, [words])
 
-  
+  useEffect(() => {
+    if(selectedTopic === 'Spanish') {
+      setSelectedTable('spanish_vocab');
+    } else {
+      setSelectedTable('science');
+    }
+  }, [selectedTopic])
+
+  useEffect(() => {
+    if(selectedTopic === 'Spanish') {
+      const dbCategories = words.map(word => word.category);
+      const allCategories = [...dbCategories, ...defaultSpanishCategories]
+      const uniqueCategories = [...new Set(allCategories)];
+      const spanishCategories = uniqueCategories.filter(category => !defaultScienceCategories.includes(category));
+      spanishCategories.sort();
+      setCategories(spanishCategories);
+    } else {
+      setCategories(defaultScienceCategories);
+    }
+  }, [words, selectedTopic])
+
+  useEffect(() => {
+    setCurrentPage('Categories')
+  }, [selectedTopic])
+
+  useEffect(() => {
+    setSelectedWord(null);
+  }, [currentPage])
 
   async function getAndFormatWords() {
     let wordsArray: WordData[] | undefined;
@@ -75,34 +103,12 @@ const Notecards = () => {
       });
       setWords(wordsArrayWithSideToShow);
     }
-    
   }
-
-  useEffect(() => {
-    if(selectedTopic === 'Spanish') {
-      const dbCategories = words.map(word => word.category);
-      const allCategories = [...dbCategories, ...defaultSpanishCategories]
-      const uniqueCategories = [...new Set(allCategories)];
-      const spanishCategories = uniqueCategories.filter(category => !defaultScienceCategories.includes(category));
-      spanishCategories.sort();
-      setCategories(spanishCategories);
-    } else {
-      setCategories(defaultScienceCategories);
-    }
-  }, [words, selectedTopic])
-
-  useEffect(() => {
-    setCurrentPage('Categories')
-  }, [selectedTopic])
 
   const handleLogout = () => {
     setSession(null);
     logout(supabase);
   }
-
-  useEffect(() => {
-    setSelectedWord(null);
-  }, [currentPage])
 
   return (
     <div className='vocab-wrapper'>
@@ -131,10 +137,12 @@ const Notecards = () => {
             selectedTopic={selectedTopic}
           />}
 
-          {currentPage === 'Terms' && <VocabTerms 
+          {currentPage === 'Terms' && <VocabTerms
+            categories={categories}
             selectedCategory={selectedCategory}
             words={words}
             supabase={supabase}
+            selectedTable={selectedTable}
             setWords={setWords}
             setCurrentPage={setCurrentPage}
             selectedWord={selectedWord}
@@ -143,6 +151,7 @@ const Notecards = () => {
           />}
           {currentPage === 'Update' && <VocabUpdateTerm 
             supabase={supabase}
+            selectedTable={selectedTable}
             categories={categories}
             words={words}
             setWords={setWords}

@@ -14,3 +14,5 @@ export type BoolAndError = [boolean, PostgrestError | null];
 export type Topic = 'Spanish' | 'Science';
 
 export type CurrentPage = 'Categories' | 'Terms' | 'Update';
+
+export type TableName = 'spanish_vocab' | 'science';
