@@ -24,8 +24,20 @@ const VocabUpdateTerm = ({
 }: VocabUpdateTermProps) => {
   const [id, setId] = useState<string | undefined>(selectedWord ? selectedWord.id : '');
   const [idToDelete, setIdToDelete] = useState<string | undefined>(selectedWord ? selectedWord.id : '');
-  const [english, setEnglish] = useState<string>(selectedWord ? selectedWord.english : '');
-  const [spanish, setSpanish] = useState<string>(selectedWord ? selectedWord.spanish : '');
+  let term = '';
+  if(selectedWord && selectedWord.english) {
+    term = selectedWord.english;
+  } else if (selectedWord && selectedWord.term) {
+    term = selectedWord.term;
+  }
+  const [english, setEnglish] = useState<string>(term);
+  let definition = '';
+  if(selectedWord && selectedWord.spanish) {
+    definition = selectedWord.spanish;
+  } else if (selectedWord && selectedWord.definition) {
+    definition = selectedWord.definition;
+  }
+  const [spanish, setSpanish] = useState<string>(definition);
   const [knowledgelevel, setKnowledgelevel] = useState<number>(selectedWord ? selectedWord.knowledgelevel : 0);
   const [category, setCategory] = useState<string>(selectedWord ? selectedWord.category : '');
   const [newCategory, setNewCategory] = useState<string>('');
@@ -136,7 +148,13 @@ const VocabUpdateTerm = ({
       const id = createDocumentId(spanish);
       const word: WordData | null = await fetchOneWord(supabase, selectedTable, id);
       if(word) {
-        setEnglish(word.english);
+        let _term = '';
+        if(word.english) {
+          _term = word.english
+        } else if(word.term) {
+          _term = word.term
+        }
+        setEnglish(_term);
         setCategory(word.category);
         setKnowledgelevel(word.knowledgelevel);
         setStatusMsg(`${spanish} is already in the database!`);

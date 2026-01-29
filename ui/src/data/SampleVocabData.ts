@@ -46,13 +46,14 @@ export const defaultSpanishCategories = [
     'medical and health',
     'verb phrases',
     'music',
-    'office, work, business',
-    'government and political topics',
+    'work, office, business',
+    'politics and government',
     'body parts',
     'shapes',
     'alphabet',
     'art',
     'clothes and accessories',
+    'expressions',
 ]
 
 export const sampleVocabData = 

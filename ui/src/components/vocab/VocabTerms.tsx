@@ -254,7 +254,8 @@ const VocabTerms = ({
                 }}
               >
                 <span>
-                  {word.showSpanish ? word.spanish : word.english}
+                  {selectedTable === 'spanish_vocab' && word.showSpanish ? word.spanish : word.english}
+                  {selectedTable === 'science' && word.showSpanish ? word.term : word.definition}
                 </span>
               </button>
             );

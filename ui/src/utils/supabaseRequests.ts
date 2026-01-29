@@ -57,6 +57,28 @@ export const logout = async (supabase: SupabaseClient | null) => {
   await supabase.auth.signOut();
 };
 
+export async function fetchValuesInCol(
+  supabase: SupabaseClient | null,
+  tableName: string,
+  colName: string,
+): Promise<string[] | null> {
+  if(!supabase) return null;
+  const { data, error } = await supabase
+    .from(tableName)
+    // .select(colName, { distinct: true })
+    // .filter('id', 'isDistinct', '(5,6,7)') 
+    .select(colName)
+
+  if(data) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const stringArrayData = (data as any[]).map(obj => obj[colName]);
+    return stringArrayData;
+  } else if (error) {
+    console.warn(error);
+  }
+  return null;
+}
+
 export async function fetchOneWord(
   supabase: SupabaseClient | null,
   tableName: string,
@@ -102,6 +124,36 @@ export async function fetchData(
   }
   return [];
 }
+
+// https://supabase.com/docs/reference/javascript/using-filters
+export async function fetchFilteredData(
+  supabase: SupabaseClient | null,
+  tableName: string,
+  colName: string,
+  colValue: string,
+): Promise<WordData[] > {
+
+  /* DEBUGGING: Find out number of rows in query
+  const { count, error } = await supabase
+    .from(databaseName)
+    .select("*", { count: "exact" });
+    console.log('count: ', count); // showing 2238
+  */
+  if(!supabase) return [];
+  const { data, error } = await supabase
+    .from(tableName)
+    .select("*")
+    .eq(colName, colValue)
+
+  if(data) {
+    console.log("ROWS:", data?.length);
+    return data;
+  } else if (error) {
+    console.warn(error);
+  }
+  return [];
+}
+
 
 export async function updateData(
   supabase: SupabaseClient | null,
