@@ -2,13 +2,11 @@ import type { PostgrestError } from "@supabase/supabase-js";
 
 export interface WordData {
   category: string;
-  english?: string;
-  spanish?: string;
-  term?: string;
-  definition?: string;
+  term: string;
+  definition: string;
   knowledgelevel: number;
   id?: string;
-  showSpanish?: boolean;
+  showTerm?: boolean;
   tags?: string[];
 }
 

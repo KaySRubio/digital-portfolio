@@ -123,7 +123,7 @@ const Notecards = () => {
       const wordsArrayWithSideToShow = wordsArray.map(word => {
         return { 
           ...word,
-          showSpanish: word.knowledgelevel === 1 ? false : true,
+          showTerm: word.knowledgelevel === 1 ? false : true,
         };
       });
       setWords(wordsArrayWithSideToShow);

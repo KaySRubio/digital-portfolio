@@ -24,28 +24,17 @@ const VocabUpdateTerm = ({
 }: VocabUpdateTermProps) => {
   const [id, setId] = useState<string | undefined>(selectedWord ? selectedWord.id : '');
   const [idToDelete, setIdToDelete] = useState<string | undefined>(selectedWord ? selectedWord.id : '');
-  let term = '';
-  if(selectedWord && selectedWord.english) {
-    term = selectedWord.english;
-  } else if (selectedWord && selectedWord.term) {
-    term = selectedWord.term;
-  }
-  const [english, setEnglish] = useState<string>(term);
-  let definition = '';
-  if(selectedWord && selectedWord.spanish) {
-    definition = selectedWord.spanish;
-  } else if (selectedWord && selectedWord.definition) {
-    definition = selectedWord.definition;
-  }
-  const [spanish, setSpanish] = useState<string>(definition);
+  const [definition, setDefinition] = useState<string>(selectedWord ? selectedWord.definition : '');
+  const [term, setTerm] = useState<string>(selectedWord ? selectedWord.term : '');
   const [knowledgelevel, setKnowledgelevel] = useState<number>(selectedWord ? selectedWord.knowledgelevel : 0);
   const [category, setCategory] = useState<string>(selectedWord ? selectedWord.category : '');
   const [newCategory, setNewCategory] = useState<string>('');
   const [statusMsg, setStatusMsg] = useState<string>('');
   const [spanishAlternatives, setSpanishAlternatives] = useState<string[]>([]);
   const [englishAlternatives, setEnglishAlternatives] = useState<string[]>([]);
+  const [tags, setTags] = useState<string>(selectedWord && selectedWord.tags ? selectedWord.tags.join(',') : '');
 
-  const spanishInputRef = useRef<HTMLInputElement>(null);
+  const spanishInputRef = useRef<HTMLTextAreaElement>(null);
   const idToDeleteInputRef = useRef<HTMLInputElement>(null);
 
   const specialChars = ['\u00E1', '\u00E9', '\u00ED', '\u00F3', '\u00FA', '\u00F1', '\u00FC', '\u00A1', '\u00BF'];
@@ -61,13 +50,13 @@ const VocabUpdateTerm = ({
   }
 
   useEffect(() => {
-    const newId = createDocumentId(spanish);
+    const newId = createDocumentId(term);
     setId(newId);
-  }, [spanish])
+  }, [term])
 
   const update = async (updateGoal: UpdateGoal) => {
     setStatusMsg('');
-    const customWordId = createDocumentId(spanish);
+    const customWordId = createDocumentId(term);
     let categoryToUse = ''
     if(newCategory) {
       categoryToUse = newCategory.toLowerCase()
@@ -78,13 +67,28 @@ const VocabUpdateTerm = ({
       setStatusMsg('Please enter or select a category!');
       return;
     }
-    const newWordData: WordData = {
+
+    let newWordData: WordData = {
       id: customWordId,
       category: categoryToUse,
-      spanish: spanish,
-      english: english,
+      term: term,
+      definition: definition,
       knowledgelevel: knowledgelevel,
     };
+
+    if(selectedTable === 'science') {
+      // Process the tags to turn into array,
+      // remove leading/trailing spaces, and
+      // replace inner spaces with underscores
+      const newTags = tags.split(',').map(s =>
+        s.trim().replace(/\s+/g, '_')
+      );
+
+      newWordData = {
+        ...newWordData,
+        tags: newTags,
+      }
+    }
 
     const [result, error] = await (
       updateGoal === 'add new word'
@@ -105,7 +109,7 @@ const VocabUpdateTerm = ({
       const newWordWithId: WordData = {
         ...newWordData,
         id: customWordId,
-        showSpanish: showSpanish,
+        showTerm: showSpanish,
       };
       setWords((prevWords) => [...prevWords, newWordWithId]);
     } else if (error && error.message.includes('duplicate')) {
@@ -140,28 +144,22 @@ const VocabUpdateTerm = ({
   }
 
   const lookup = async () => {
-    if(!spanish && !english) {
-      setStatusMsg('Enter text in the Spanish or English box and try again');
-    } else if (spanish && english) {
-      setStatusMsg('Put text in only 1 box (Spanish or English) and try again');
-    } else if (spanish) {
-      const id = createDocumentId(spanish);
+    if(!term && !definition) {
+      setStatusMsg('Enter text in the Term or Definition box and try again');
+    } else if (term && definition) {
+      setStatusMsg('Put text in only 1 box (Term or Definition) and try again');
+    } else if (term) {
+      const id = createDocumentId(term);
       const word: WordData | null = await fetchOneWord(supabase, selectedTable, id);
       if(word) {
-        let _term = '';
-        if(word.english) {
-          _term = word.english
-        } else if(word.term) {
-          _term = word.term
-        }
-        setEnglish(_term);
+        setDefinition(word.term);
         setCategory(word.category);
         setKnowledgelevel(word.knowledgelevel);
-        setStatusMsg(`${spanish} is already in the database!`);
+        setStatusMsg(`${term} is already in the database!`);
       } else {
         translate();
       }
-    } else if (english) {
+    } else if (definition) {
       translate();
     } else {
       setStatusMsg('Other lookup error');
@@ -169,9 +167,9 @@ const VocabUpdateTerm = ({
   }
 
   const translate = async () => {
-    if(english) {
-      const {result, alternatives, translatedText} = await libretranslate(english, 'en', 'es');
-      setSpanish(translatedText);
+    if(definition) {
+      const {result, alternatives, translatedText} = await libretranslate(definition, 'en', 'es');
+      setTerm(translatedText);
       setSpanishAlternatives(alternatives);
       setEnglishAlternatives([]);
       if(result) {
@@ -179,9 +177,9 @@ const VocabUpdateTerm = ({
       } else {
         setStatusMsg('Something didn\'t work right with libretranslate');
       }
-    } else if (spanish) {
-      const {result, alternatives, translatedText} = await libretranslate(spanish, 'es', 'en');
-      setEnglish(translatedText);
+    } else if (term) {
+      const {result, alternatives, translatedText} = await libretranslate(term, 'es', 'en');
+      setDefinition(translatedText);
       setEnglishAlternatives(alternatives);
       setSpanishAlternatives([]);
       if(result) {
@@ -193,13 +191,14 @@ const VocabUpdateTerm = ({
   }
 
   const clear = () => {
-    setEnglish('');
-    setSpanish('');
+    setTerm('');
+    setDefinition('');
     setCategory('');
     setNewCategory('');
     setKnowledgelevel(0);
     setEnglishAlternatives([]);
     setSpanishAlternatives([]);
+    setTags('');
   }
 
   return (
@@ -224,6 +223,7 @@ const VocabUpdateTerm = ({
           <div>
             <label>
               <input
+                className='vocab-update-form-input'
                 type="text"
                 value={newCategory}
                 onChange={(e) => setNewCategory(e.target.value)}
@@ -236,24 +236,24 @@ const VocabUpdateTerm = ({
 
         <div className='vocab-update-form-languages-row'>
           <div className='vocab-update-form-languages-col'>
-            <p>Spanish:</p>
+            <p>{selectedTable === 'spanish_vocab' ? 'Spanish' : 'Term'}:</p>
             <div>
-              <input
+              <textarea
+                className={`${selectedTable === 'spanish_vocab' ? 'vocab-update-form-input-spanish' : 'vocab-update-form-input-science-term'} `}
                 ref={spanishInputRef}
-                type="text"
-                value={spanish}
-                onChange={(e) => setSpanish(e.target.value)}
+                value={term}
+                onChange={(e) => setTerm(e.target.value)}
                 required={true}
               />
             </div>
-            <div className='vocab-special-char-row'>
+            {selectedTable === 'spanish_vocab' && <div className='vocab-special-char-row'>
               {specialChars.map((char, index) => (
                 <button 
                   className='vocab-special-char-button'
                   type="button"
                   key={index}
                   onClick={() => {
-                    setSpanish(prev => prev+=char);
+                    setTerm(prev => prev+=char);
                     requestAnimationFrame(() => {
                       spanishInputRef.current?.focus();
                       const len = spanishInputRef.current?.value.length ?? 0;
@@ -264,21 +264,31 @@ const VocabUpdateTerm = ({
                   {char}
                 </button>
               ))}
-            </div>
+            </div>}
             <p className='vocab-alt'>{spanishAlternatives.map((alt, index) => <span key={index}> {alt} </span>) }</p>
           </div>
           
           <div className='vocab-update-form-languages-col'>
-            <p>English:</p>
-            <input
-              type="text"
-              value={english}
-              onChange={(e) => setEnglish(e.target.value)}
+            <p>{selectedTable === 'spanish_vocab' ? 'English' : 'Definition'}:</p>
+            <textarea
+              className={`${selectedTable === 'spanish_vocab' ? 'vocab-update-form-input-spanish' : 'vocab-update-form-input-science-def'} `}
+              value={definition}
+              onChange={(e) => setDefinition(e.target.value)}
               required={true}
             />
             <p className='vocab-alt'>{englishAlternatives.map((alt, index) => <span key={index}> {alt} </span>) }</p>
           </div>
         </div>
+
+        {selectedTable === 'science' && <div>
+          <p>Tags (enter comma-separated)</p>
+          <textarea
+              className='vocab-update-form-input-science-tags'
+              value={tags}
+              onChange={(e) => setTags(e.target.value)}
+              required={true}
+            />
+        </div>}
 
         <p>Knowledge Level</p>
         <fieldset style={{ border: "none", padding: 0 }}>
@@ -312,7 +322,9 @@ const VocabUpdateTerm = ({
             <button type="button" className='vocab-text-button-update' onClick={() => update('correct word info')}>Correct Word Info</button>
           </div>
           <div className='vocab-update-form-button-row2'>
-            <button type="button" className='vocab-text-button-update' onClick={lookup}>Translate</button>
+            {selectedTable=== 'spanish_vocab' && 
+              <button type="button" className='vocab-text-button-update' onClick={lookup}>Translate</button>
+            }
             <button type="button" className='vocab-text-button-update' onClick={clear}>Clear</button>
           </div>
         </div>

@@ -1837,6 +1837,7 @@ iframe {
   gap: 15px;
   padding: 15px;
   justify-content: center;
+  width: 100%;
 }
 
 .vocab-term {
@@ -1880,6 +1881,12 @@ iframe {
   overflow: auto;
 }
 
+.vocab-term-science {
+  width: 48%;
+  height: 300px;
+  overflow: auto;
+}
+
 .vocab-update-form {
   display: flex;
   flex-direction: column;
@@ -1892,13 +1899,39 @@ iframe {
   margin: 20px 0 0 0;
 }
 
-.vocab-form-page input {
+.vocab-update-form-input {
   width: 265px;
   height: 30px;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
   font-size: 20px;
+}
+
+.vocab-update-form-input-spanish {
+  width: 265px;
+  height: 60px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.vocab-update-form-input-science-term, .vocab-update-form-input-science-def {
+  width: 265px;
+  height: 300px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.vocab-update-form-input-science-tags {
+  width: 580px;
+  border-radius: 5px;
+  height: 30px;
+  font-size: 20px;
+  padding: 5px 10px;
 }
 
 .vocab-form-page select {
@@ -2014,6 +2047,11 @@ iframe {
     margin: 0;
   }
 
+  .vocab-terms-section-terms {
+    gap: 5px;
+    padding: 5px;
+  }
+
   .vocab-term {
     font-size: 12px;
   }
@@ -2021,6 +2059,11 @@ iframe {
   .vocab-term-spanish {
     width: 110px;
     height: 70px;
+  }
+
+  .vocab-term-science {
+    width: 100%;
+    height: 150px;
   }
 
   .vocab-update-form {
@@ -2033,8 +2076,24 @@ iframe {
     gap: 15px;
   }
 
+  .vocab-update-form-input-spanish {
+    height: 30px;
+  }
+
   .vocab-update-form-languages-row {
     gap: 0px;
+  }
+
+  .vocab-update-form-input-science-def {
+    width: calc(100vw - 80px);
+  }
+
+  .vocab-update-form-input-science-term {
+    width: calc(100vw - 80px);
+  }
+
+  .vocab-update-form-input-science-tags {
+    width: calc(100vw - 80px);
   }
 
   .vocab-update-form-button-row {

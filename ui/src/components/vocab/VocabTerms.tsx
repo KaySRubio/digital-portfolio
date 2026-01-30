@@ -101,7 +101,7 @@ const VocabTerms = ({
                 ...word,
                 knowledgelevel: newWordData.knowledgelevel,
                 category: newWordData.category,
-                showSpanish: newWordData.knowledgelevel === 1 ? false : true
+                showTerm: newWordData.knowledgelevel === 1 ? false : true
               }
               : word
           )
@@ -236,7 +236,7 @@ const VocabTerms = ({
                 className={
                   `vocab-term
                   ${selectedTopic === 'Spanish' ? 'vocab-term-spanish' : 'vocab-term-science'}
-                  ${word.showSpanish ? 'vocab-term-es' : 'vocab-term-en'}
+                  ${word.showTerm ? 'vocab-term-es' : 'vocab-term-en'}
                 `}
                 key={index}
                 onClick={() => {
@@ -247,15 +247,14 @@ const VocabTerms = ({
                   setWords((prevWords) =>
                     prevWords.map((word1) =>
                       word1.id === word.id
-                        ? { ...word1, showSpanish: !word1.showSpanish }
+                        ? { ...word1, showTerm: !word1.showTerm }
                         : word1
                     )
                   );
                 }}
               >
                 <span>
-                  {selectedTable === 'spanish_vocab' && word.showSpanish ? word.spanish : word.english}
-                  {selectedTable === 'science' && word.showSpanish ? word.term : word.definition}
+                  {word.showTerm ? word.term : word.definition}
                 </span>
               </button>
             );

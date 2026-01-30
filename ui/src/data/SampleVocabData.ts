@@ -61,15674 +61,15674 @@ export const sampleVocabData =
     {
         id: "perro",
         category: "animals",
-        spanish: "el perro",
-        english: "dog",
+        term: "el perro",
+        definition: "dog",
         knowledgelevel: 0
     },
     {
         id: "vaca",
         category: "animals",
-        spanish: "una vaca",
-        english: "cow",
+        term: "una vaca",
+        definition: "cow",
         knowledgelevel: 1
     },
     {
         id: "león",
         category: "animals",
-        spanish: "un león",
-        english: "lion",
+        term: "un león",
+        definition: "lion",
         knowledgelevel: 2
     },
     {
         id: "actualidad",
         category: "uncategorized",
-        spanish: "la actualidad",
-        english: " the present",
+        term: "la actualidad",
+        definition: " the present",
         knowledgelevel: 0
     },
     {
         id: "carnívoros",
         category: "uncategorized",
-        spanish: "carnívoros",
-        english: "carnivores",
+        term: "carnívoros",
+        definition: "carnivores",
         knowledgelevel: 0
     },
     {
         id: "estructura",
         category: "uncategorized",
-        spanish: "la estructura",
-        english: " the structure",
+        term: "la estructura",
+        definition: " the structure",
         knowledgelevel: 0
     },
     {
         id: "caballo",
         category: "animals",
-        spanish: "un caballo",
-        english: "horse",
+        term: "un caballo",
+        definition: "horse",
         knowledgelevel: 3
     },
     {
         id: "cachorrito",
         category: "animals",
-        spanish: "un cachorrito",
-        english: "puppy",
+        term: "un cachorrito",
+        definition: "puppy",
         knowledgelevel: 1
     },
     {
         id: "cama",
         category: "household",
-        spanish: "la cama",
-        english: "the bed",
+        term: "la cama",
+        definition: "the bed",
         knowledgelevel: 2
     },
     {
         id: "géiser",
         category: "uncategorized",
-        spanish: "géiser- (hay-ser)",
-        english: "  géiser",
+        term: "géiser- (hay-ser)",
+        definition: "  géiser",
         knowledgelevel: 0
     },
     {
         id: "herradura",
         category: "uncategorized",
-        spanish: "herradura",
-        english: "a horsehoe",
+        term: "herradura",
+        definition: "a horsehoe",
         knowledgelevel: 0
     },
     {
         id: "hámster",
         category: "animals",
-        spanish: "el hámster",
-        english: "hamster",
+        term: "el hámster",
+        definition: "hamster",
         knowledgelevel: 1
     },
     {
         id: "honrado",
         category: "uncategorized",
-        spanish: "honrado",
-        english: "honored",
+        term: "honrado",
+        definition: "honored",
         knowledgelevel: 0
     },
     {
         id: "jaque_mate",
         category: "uncategorized",
-        spanish: "el jaque mate",
-        english: "check mate",
+        term: "el jaque mate",
+        definition: "check mate",
         knowledgelevel: 0
     },
     {
         id: "metódica",
         category: "uncategorized",
-        spanish: "metódica",
-        english: "methodical",
+        term: "metódica",
+        definition: "methodical",
         knowledgelevel: 0
     },
     {
         id: "profesiones",
         category: "uncategorized",
-        spanish: "los profesiones",
-        english: " the professions",
+        term: "los profesiones",
+        definition: " the professions",
         knowledgelevel: 0
     },
     {
         id: "puerco",
         category: "uncategorized",
-        spanish: "un puerco",
-        english: "a pig",
+        term: "un puerco",
+        definition: "a pig",
         knowledgelevel: 0
     },
     {
         id: "pulso",
         category: "uncategorized",
-        spanish: "el pulso",
-        english: "the pulse",
+        term: "el pulso",
+        definition: "the pulse",
         knowledgelevel: 0
     },
     {
         id: "reflexiones",
         category: "uncategorized",
-        spanish: "los reflexiones",
-        english: "the reflextions",
+        term: "los reflexiones",
+        definition: "the reflextions",
         knowledgelevel: 0
     },
     {
         id: "resumen",
         category: "uncategorized",
-        spanish: "un resumen",
-        english: "  a summary",
+        term: "un resumen",
+        definition: "  a summary",
         knowledgelevel: 0
     },
     {
         id: "trago",
         category: "uncategorized",
-        spanish: "un trago",
-        english: "a drink, a swallow",
+        term: "un trago",
+        definition: "a drink, a swallow",
         knowledgelevel: 0
     },
     {
         id: "a_base",
         category: "uncategorized",
-        spanish: "a base (hecho a base de…)",
-        english: "based on or made from",
+        term: "a base (hecho a base de…)",
+        definition: "based on or made from",
         knowledgelevel: 0
     },
     {
         id: "a_cambio_de_esto",
         category: "uncategorized",
-        spanish: "a cambio de esto",
-        english: "  in exchange for this",
+        term: "a cambio de esto",
+        definition: "  in exchange for this",
         knowledgelevel: 0
     },
     {
         id: "a_cargo",
         category: "uncategorized",
-        spanish: "a cargo",
-        english: "  in charge",
+        term: "a cargo",
+        definition: "  in charge",
         knowledgelevel: 0
     },
     {
         id: "a_fin_de",
         category: "uncategorized",
-        spanish: "a fin de",
-        english: "in order to, for the purpose of",
+        term: "a fin de",
+        definition: "in order to, for the purpose of",
         knowledgelevel: 0
     },
     {
         id: "a_gusto",
         category: "uncategorized",
-        spanish: "a gusto vs. con gusto",
-        english: "  at ease vs. with pleasure",
+        term: "a gusto vs. con gusto",
+        definition: "  at ease vs. with pleasure",
         knowledgelevel: 0
     },
     {
         id: "a_la_moda",
         category: "uncategorized",
-        spanish: "a la moda",
-        english: "fashionable",
+        term: "a la moda",
+        definition: "fashionable",
         knowledgelevel: 0
     },
     {
         id: "a_largo_plazo",
         category: "uncategorized",
-        spanish: "a largo plazo",
-        english: "long-term",
+        term: "a largo plazo",
+        definition: "long-term",
         knowledgelevel: 0
     },
     {
         id: "a_mediados_del_siglo_diecinueve",
         category: "uncategorized",
-        spanish: "a mediados del siglo diecinueve",
-        english: "  mid 19th century",
+        term: "a mediados del siglo diecinueve",
+        definition: "  mid 19th century",
         knowledgelevel: 0
     },
     {
         id: "a_si_mismo",
         category: "uncategorized",
-        spanish: "a si mismo",
-        english: "in addition",
+        term: "a si mismo",
+        definition: "in addition",
         knowledgelevel: 0
     },
     {
         id: "a_tener_en_cuenta",
         category: "uncategorized",
-        spanish: "a tener en cuenta",
-        english: "to take into account",
+        term: "a tener en cuenta",
+        definition: "to take into account",
         knowledgelevel: 0
     },
     {
         id: "a_tiempo_completo",
         category: "uncategorized",
-        spanish: "a tiempo completo",
-        english: "full time",
+        term: "a tiempo completo",
+        definition: "full time",
         knowledgelevel: 0
     },
     {
         id: "abecedario",
         category: "uncategorized",
-        spanish: "el abecedario",
-        english: "the alphabet",
+        term: "el abecedario",
+        definition: "the alphabet",
         knowledgelevel: 0
     },
     {
         id: "abertura",
         category: "uncategorized",
-        spanish: "una abertura",
-        english: "an opening",
+        term: "una abertura",
+        definition: "an opening",
         knowledgelevel: 0
     },
     {
         id: "abreviatura",
         category: "uncategorized",
-        spanish: "la abreviatura",
-        english: "the abreviation ",
+        term: "la abreviatura",
+        definition: "the abreviation ",
         knowledgelevel: 0
     },
     {
         id: "acalorado",
         category: "uncategorized",
-        spanish: "acalorado",
-        english: "heated",
+        term: "acalorado",
+        definition: "heated",
         knowledgelevel: 0
     },
     {
         id: "ácaro",
         category: "uncategorized",
-        spanish: "un ácaro",
-        english: "a mite (insect)",
+        term: "un ácaro",
+        definition: "a mite (insect)",
         knowledgelevel: 0
     },
     {
         id: "acceso",
         category: "uncategorized",
-        spanish: "un acceso",
-        english: "an access, an entry",
+        term: "un acceso",
+        definition: "an access, an entry",
         knowledgelevel: 0
     },
     {
         id: "acogedora",
         category: "uncategorized",
-        spanish: "acogedora (adj)",
-        english: "cozy",
+        term: "acogedora (adj)",
+        definition: "cozy",
         knowledgelevel: 0
     },
     {
         id: "acompañante",
         category: "uncategorized",
-        spanish: "un acompañante",
-        english: "a companion",
+        term: "un acompañante",
+        definition: "a companion",
         knowledgelevel: 0
     },
     {
         id: "acorde",
         category: "uncategorized",
-        spanish: "un acorde",
-        english: "  a cord like on a guitar",
+        term: "un acorde",
+        definition: "  a cord like on a guitar",
         knowledgelevel: 0
     },
     {
         id: "acostada",
         category: "uncategorized",
-        spanish: "acostada",
-        english: "  lying down",
+        term: "acostada",
+        definition: "  lying down",
         knowledgelevel: 0
     },
     {
         id: "activo",
         category: "uncategorized",
-        spanish: "activo (adj)",
-        english: "active",
+        term: "activo (adj)",
+        definition: "active",
         knowledgelevel: 0
     },
     {
         id: "actual",
         category: "uncategorized",
-        spanish: "actual (adj)",
-        english: "real and from the present time",
+        term: "actual (adj)",
+        definition: "real and from the present time",
         knowledgelevel: 0
     },
     {
         id: "acústico",
         category: "uncategorized",
-        spanish: "acústico",
-        english: "acoustic",
+        term: "acústico",
+        definition: "acoustic",
         knowledgelevel: 0
     },
     {
         id: "ademán",
         category: "uncategorized",
-        spanish: "un ademán",
-        english: "a gesture",
+        term: "un ademán",
+        definition: "a gesture",
         knowledgelevel: 0
     },
     {
         id: "adiestrador",
         category: "uncategorized",
-        spanish: "un adiestrador",
-        english: "a trainer",
+        term: "un adiestrador",
+        definition: "a trainer",
         knowledgelevel: 0
     },
     {
         id: "adolorido",
         category: "uncategorized",
-        spanish: "adolorido (adj)",
-        english: "sore",
+        term: "adolorido (adj)",
+        definition: "sore",
         knowledgelevel: 0
     },
     {
         id: "adormilamiento",
         category: "uncategorized",
-        spanish: "adormilamiento",
-        english: "drowsiness",
+        term: "adormilamiento",
+        definition: "drowsiness",
         knowledgelevel: 0
     },
     {
         id: "adversidad",
         category: "uncategorized",
-        spanish: "una adversidad",
-        english: "an adversity",
+        term: "una adversidad",
+        definition: "an adversity",
         knowledgelevel: 0
     },
     {
         id: "afán",
         category: "uncategorized",
-        spanish: "el afán",
-        english: "the eagerness",
+        term: "el afán",
+        definition: "the eagerness",
         knowledgelevel: 0
     },
     {
         id: "afanosa",
         category: "uncategorized",
-        spanish: "afanosa (adj)",
-        english: "eager",
+        term: "afanosa (adj)",
+        definition: "eager",
         knowledgelevel: 0
     },
     {
         id: "afectuosamente",
         category: "uncategorized",
-        spanish: "afectuosamente (adj)",
-        english: "affectionately",
+        term: "afectuosamente (adj)",
+        definition: "affectionately",
         knowledgelevel: 0
     },
     {
         id: "afición",
         category: "uncategorized",
-        spanish: "una afición",
-        english: "a hobby",
+        term: "una afición",
+        definition: "a hobby",
         knowledgelevel: 0
     },
     {
         id: "afluentes",
         category: "uncategorized",
-        spanish: "los afluentes",
-        english: "the tributaries off a main river",
+        term: "los afluentes",
+        definition: "the tributaries off a main river",
         knowledgelevel: 0
     },
     {
         id: "agentes_de_bienes_raíces",
         category: "uncategorized",
-        spanish: "agentes de bienes raíces",
-        english: "real estate agents",
+        term: "agentes de bienes raíces",
+        definition: "real estate agents",
         knowledgelevel: 0
     },
     {
         id: "agotador",
         category: "uncategorized",
-        spanish: "agotador (adj)",
-        english: "exhausting",
+        term: "agotador (adj)",
+        definition: "exhausting",
         knowledgelevel: 0
     },
     {
         id: "agua_potable",
         category: "uncategorized",
-        spanish: "agua potable",
-        english: "drinking water",
+        term: "agua potable",
+        definition: "drinking water",
         knowledgelevel: 0
     },
     {
         id: "agujero",
         category: "uncategorized",
-        spanish: "agujero vs oyó",
-        english: "  pinhole vs bigger holes",
+        term: "agujero vs oyó",
+        definition: "  pinhole vs bigger holes",
         knowledgelevel: 0
     },
     {
         id: "aislante",
         category: "uncategorized",
-        spanish: "aislante (adj)",
-        english: "insulating",
+        term: "aislante (adj)",
+        definition: "insulating",
         knowledgelevel: 0
     },
     {
         id: "al_azar",
         category: "uncategorized",
-        spanish: "al azar",
-        english: "at random",
+        term: "al azar",
+        definition: "at random",
         knowledgelevel: 0
     },
     {
         id: "al_día_de_hoy",
         category: "uncategorized",
-        spanish: "al día de hoy",
-        english: "to this day",
+        term: "al día de hoy",
+        definition: "to this day",
         knowledgelevel: 0
     },
     {
         id: "al_fin_y_al_cabo",
         category: "uncategorized",
-        spanish: "al fin y al cabo",
-        english: "  in the end",
+        term: "al fin y al cabo",
+        definition: "  in the end",
         knowledgelevel: 0
     },
     {
         id: "al_unísono",
         category: "uncategorized",
-        spanish: "al unísono",
-        english: "  in unison",
+        term: "al unísono",
+        definition: "  in unison",
         knowledgelevel: 0
     },
     {
         id: "alacena",
         category: "uncategorized",
-        spanish: "una alacena",
-        english: "a cupboard",
+        term: "una alacena",
+        definition: "a cupboard",
         knowledgelevel: 0
     },
     {
         id: "albañil",
         category: "uncategorized",
-        spanish: "albañil",
-        english: "  bricklayer or mason",
+        term: "albañil",
+        definition: "  bricklayer or mason",
         knowledgelevel: 0
     },
     {
         id: "alcantarilla",
         category: "uncategorized",
-        spanish: "la alcantarilla",
-        english: "the sewer",
+        term: "la alcantarilla",
+        definition: "the sewer",
         knowledgelevel: 0
     },
     {
         id: "alfil",
         category: "uncategorized",
-        spanish: "un alfil",
-        english: "a bishop",
+        term: "un alfil",
+        definition: "a bishop",
         knowledgelevel: 0
     },
     {
         id: "alineación",
         category: "uncategorized",
-        spanish: "alineación",
-        english: "alignment",
+        term: "alineación",
+        definition: "alignment",
         knowledgelevel: 0
     },
     {
         id: "almacén",
         category: "uncategorized",
-        spanish: "un almacén",
-        english: "a store, warehouse",
+        term: "un almacén",
+        definition: "a store, warehouse",
         knowledgelevel: 0
     },
     {
         id: "almacenes",
         category: "uncategorized",
-        spanish: "almacenes",
-        english: "warehouses",
+        term: "almacenes",
+        definition: "warehouses",
         knowledgelevel: 0
     },
     {
         id: "alta_frecuencia",
         category: "uncategorized",
-        spanish: "alta frecuencia",
-        english: "high frequency",
+        term: "alta frecuencia",
+        definition: "high frequency",
         knowledgelevel: 0
     },
     {
         id: "alta_tecnológia",
         category: "uncategorized",
-        spanish: "alta tecnológia",
-        english: "high tech",
+        term: "alta tecnológia",
+        definition: "high tech",
         knowledgelevel: 0
     },
     {
         id: "altamar",
         category: "uncategorized",
-        spanish: "altamar",
-        english: "high seas",
+        term: "altamar",
+        definition: "high seas",
         knowledgelevel: 0
     },
     {
         id: "alterada",
         category: "uncategorized",
-        spanish: "alterada (adj)",
-        english: " altered,  disturbed",
+        term: "alterada (adj)",
+        definition: " altered,  disturbed",
         knowledgelevel: 0
     },
     {
         id: "altoparlante",
         category: "uncategorized",
-        spanish: "un altoparlante",
-        english: "a loudspeaker",
+        term: "un altoparlante",
+        definition: "a loudspeaker",
         knowledgelevel: 0
     },
     {
         id: "alumno",
         category: "uncategorized",
-        spanish: "un alumno",
-        english: "a student, pupil",
+        term: "un alumno",
+        definition: "a student, pupil",
         knowledgelevel: 0
     },
     {
         id: "ambientalista",
         category: "uncategorized",
-        spanish: "una ambientalista",
-        english: "  an environmentalist",
+        term: "una ambientalista",
+        definition: "  an environmentalist",
         knowledgelevel: 0
     },
     {
         id: "amenazador",
         category: "uncategorized",
-        spanish: "amenazador (adj)",
-        english: "threatening",
+        term: "amenazador (adj)",
+        definition: "threatening",
         knowledgelevel: 0
     },
     {
         id: "amplia",
         category: "uncategorized",
-        spanish: "amplia",
-        english: "wide",
+        term: "amplia",
+        definition: "wide",
         knowledgelevel: 0
     },
     {
         id: "ampolla",
         category: "uncategorized",
-        spanish: "una ampolla",
-        english: "a blister",
+        term: "una ampolla",
+        definition: "a blister",
         knowledgelevel: 0
     },
     {
         id: "andanzas",
         category: "uncategorized",
-        spanish: "las andanzas",
-        english: "the wanderings",
+        term: "las andanzas",
+        definition: "the wanderings",
         knowledgelevel: 0
     },
     {
         id: "andar_suelto",
         category: "uncategorized",
-        spanish: "andar suelto",
-        english: "to be loose like a dog of leash running around",
+        term: "andar suelto",
+        definition: "to be loose like a dog of leash running around",
         knowledgelevel: 0
     },
     {
         id: "anfibios",
         category: "uncategorized",
-        spanish: "anfibios",
-        english: "amphibians",
+        term: "anfibios",
+        definition: "amphibians",
         knowledgelevel: 0
     },
     {
         id: "anotar_un_gol",
         category: "uncategorized",
-        spanish: "anotar un gol",
-        english: "to score a goal",
+        term: "anotar un gol",
+        definition: "to score a goal",
         knowledgelevel: 0
     },
     {
         id: "ante",
         category: "uncategorized",
-        spanish: "ante (2)",
-        english: "in view of, OR before",
+        term: "ante (2)",
+        definition: "in view of, OR before",
         knowledgelevel: 0
     },
     {
         id: "ante_todo",
         category: "uncategorized",
-        spanish: "ante todo",
-        english: "first of all",
+        term: "ante todo",
+        definition: "first of all",
         knowledgelevel: 0
     },
     {
         id: "antes_de_la",
         category: "uncategorized",
-        spanish: "antes de la",
-        english: " era común (a.e.c.)",
+        term: "antes de la",
+        definition: " era común (a.e.c.)",
         knowledgelevel: 0
     },
     {
         id: "antifaz",
         category: "uncategorized",
-        spanish: "antifaz",
-        english: "mask that’s just over the eyes",
+        term: "antifaz",
+        definition: "mask that’s just over the eyes",
         knowledgelevel: 0
     },
     {
         id: "antigüedad",
         category: "uncategorized",
-        spanish: "la antigüedad",
-        english: "the antique",
+        term: "la antigüedad",
+        definition: "the antique",
         knowledgelevel: 0
     },
     {
         id: "antorcha",
         category: "uncategorized",
-        spanish: "una antorcha",
-        english: "a torch",
+        term: "una antorcha",
+        definition: "a torch",
         knowledgelevel: 0
     },
     {
         id: "aparente",
         category: "uncategorized",
-        spanish: "aparente",
-        english: "apparent",
+        term: "aparente",
+        definition: "apparent",
         knowledgelevel: 0
     },
     {
         id: "aparición",
         category: "uncategorized",
-        spanish: "la aparición",
-        english: "the appearance",
+        term: "la aparición",
+        definition: "the appearance",
         knowledgelevel: 0
     },
     {
         id: "apenado",
         category: "uncategorized",
-        spanish: "apenado (adj)",
-        english: "sorry",
+        term: "apenado (adj)",
+        definition: "sorry",
         knowledgelevel: 0
     },
     {
         id: "gato",
         category: "animals",
-        spanish: "el gato",
-        english: "cat",
+        term: "el gato",
+        definition: "cat",
         knowledgelevel: 1
     },
     {
         id: "apicultora",
         category: "uncategorized",
-        spanish: "una apicultora",
-        english: "a beekeeper",
+        term: "una apicultora",
+        definition: "a beekeeper",
         knowledgelevel: 0
     },
     {
         id: "aplicada",
         category: "uncategorized",
-        spanish: "aplicada",
-        english: "  applied like a person who applied themself well to a task",
+        term: "aplicada",
+        definition: "  applied like a person who applied themself well to a task",
         knowledgelevel: 0
     },
     {
         id: "aporte",
         category: "uncategorized",
-        spanish: "un aporte",
-        english: "an input",
+        term: "un aporte",
+        definition: "an input",
         knowledgelevel: 0
     },
     {
         id: "aprendizaje",
         category: "uncategorized",
-        spanish: "el aprendizaje",
-        english: " the learning",
+        term: "el aprendizaje",
+        definition: " the learning",
         knowledgelevel: 0
     },
     {
         id: "aprobación",
         category: "uncategorized",
-        spanish: "la aprobación",
-        english: "the approval",
+        term: "la aprobación",
+        definition: "the approval",
         knowledgelevel: 0
     },
     {
         id: "apúrate",
         category: "uncategorized",
-        spanish: "apúrate",
-        english: " hurry up",
+        term: "apúrate",
+        definition: " hurry up",
         knowledgelevel: 0
     },
     {
         id: "árbitro",
         category: "uncategorized",
-        spanish: "el árbitro",
-        english: "  the referree",
+        term: "el árbitro",
+        definition: "  the referree",
         knowledgelevel: 0
     },
     {
         id: "arce",
         category: "uncategorized",
-        spanish: "un arce",
-        english: "a maple",
+        term: "un arce",
+        definition: "a maple",
         knowledgelevel: 0
     },
     {
         id: "arcos",
         category: "uncategorized",
-        spanish: "los arcos",
-        english: "  the arches  or the bow ties?",
+        term: "los arcos",
+        definition: "  the arches  or the bow ties?",
         knowledgelevel: 0
     },
     {
         id: "arduamente",
         category: "uncategorized",
-        spanish: "arduamente",
-        english: "  hardly",
+        term: "arduamente",
+        definition: "  hardly",
         knowledgelevel: 0
     },
     {
         id: "arduo",
         category: "uncategorized",
-        spanish: "arduo (adj)",
-        english: "hard",
+        term: "arduo (adj)",
+        definition: "hard",
         knowledgelevel: 0
     },
     {
         id: "arenosa",
         category: "uncategorized",
-        spanish: "arenosa (adj)",
-        english: "sandy",
+        term: "arenosa (adj)",
+        definition: "sandy",
         knowledgelevel: 0
     },
     {
         id: "arpones",
         category: "uncategorized",
-        spanish: "los arpones",
-        english: "the harpoons",
+        term: "los arpones",
+        definition: "the harpoons",
         knowledgelevel: 0
     },
     {
         id: "arrancado",
         category: "uncategorized",
-        spanish: "arrancado",
-        english: "torn off",
+        term: "arrancado",
+        definition: "torn off",
         knowledgelevel: 0
     },
     {
         id: "arribo",
         category: "uncategorized",
-        spanish: "un arribo",
-        english: "an arrival",
+        term: "un arribo",
+        definition: "an arrival",
         knowledgelevel: 0
     },
     {
         id: "artesanía",
         category: "uncategorized",
-        spanish: "la artesanía",
-        english: "the craft, craftmanship",
+        term: "la artesanía",
+        definition: "the craft, craftmanship",
         knowledgelevel: 0
     },
     {
         id: "articulación",
         category: "uncategorized",
-        spanish: "una articulación",
-        english: "a joint",
+        term: "una articulación",
+        definition: "a joint",
         knowledgelevel: 0
     },
     {
         id: "asco",
         category: "uncategorized",
-        spanish: "un asco",
-        english: "  a disgust,  a repulsive thing",
+        term: "un asco",
+        definition: "  a disgust,  a repulsive thing",
         knowledgelevel: 0
     },
     {
         id: "asiento_delantero",
         category: "uncategorized",
-        spanish: "el asiento delantero",
-        english: "  the front seat",
+        term: "el asiento delantero",
+        definition: "  the front seat",
         knowledgelevel: 0
     },
     {
         id: "asimismo",
         category: "uncategorized",
-        spanish: "asimismo",
-        english: "in addition",
+        term: "asimismo",
+        definition: "in addition",
         knowledgelevel: 0
     },
     {
         id: "asistente_de_vuelo",
         category: "uncategorized",
-        spanish: "un asistente de vuelo",
-        english: "a flight attendant",
+        term: "un asistente de vuelo",
+        definition: "a flight attendant",
         knowledgelevel: 0
     },
     {
         id: "aspecto",
         category: "uncategorized",
-        spanish: "aspecto",
-        english: "aspect or appearance",
+        term: "aspecto",
+        definition: "aspect or appearance",
         knowledgelevel: 0
     },
     {
         id: "aspirante",
         category: "uncategorized",
-        spanish: "un aspirante",
-        english: "an applicant",
+        term: "un aspirante",
+        definition: "an applicant",
         knowledgelevel: 0
     },
     {
         id: "astucia",
         category: "uncategorized",
-        spanish: "astucia",
-        english: "cunning",
+        term: "astucia",
+        definition: "cunning",
         knowledgelevel: 0
     },
     {
         id: "asunto_es_que",
         category: "uncategorized",
-        spanish: "el asunto es que",
-        english: "  the thing is that (expression)",
+        term: "el asunto es que",
+        definition: "  the thing is that (expression)",
         knowledgelevel: 0
     },
     {
         id: "ataque",
         category: "uncategorized",
-        spanish: "un ataque (2)",
-        english: "attack, stroke",
+        term: "un ataque (2)",
+        definition: "attack, stroke",
         knowledgelevel: 0
     },
     {
         id: "atareado",
         category: "uncategorized",
-        spanish: "atareado",
-        english: "  busy",
+        term: "atareado",
+        definition: "  busy",
         knowledgelevel: 0
     },
     {
         id: "atemorizada",
         category: "uncategorized",
-        spanish: "atemorizada (adj)",
-        english: "scared",
+        term: "atemorizada (adj)",
+        definition: "scared",
         knowledgelevel: 0
     },
     {
         id: "atentamente",
         category: "uncategorized",
-        spanish: "atentamente",
-        english: "sincerely, attentively",
+        term: "atentamente",
+        definition: "sincerely, attentively",
         knowledgelevel: 0
     },
     {
         id: "aterrizaje",
         category: "uncategorized",
-        spanish: "un aterrizaje",
-        english: "a landing",
+        term: "un aterrizaje",
+        definition: "a landing",
         knowledgelevel: 0
     },
     {
         id: "atleta",
         category: "uncategorized",
-        spanish: "una atleta",
-        english: "An athlete",
+        term: "una atleta",
+        definition: "An athlete",
         knowledgelevel: 0
     },
     {
         id: "atónito",
         category: "uncategorized",
-        spanish: "atónito (adj)",
-        english: "amazed",
+        term: "atónito (adj)",
+        definition: "amazed",
         knowledgelevel: 0
     },
     {
         id: "atrevida",
         category: "uncategorized",
-        spanish: "atrevida (adj)",
-        english: "daring",
+        term: "atrevida (adj)",
+        definition: "daring",
         knowledgelevel: 0
     },
     {
         id: "audífono",
         category: "uncategorized",
-        spanish: "un audífono",
-        english: "  a hearing aid",
+        term: "un audífono",
+        definition: "  a hearing aid",
         knowledgelevel: 0
     },
     {
         id: "auge",
         category: "uncategorized",
-        spanish: "el auge (au-he)",
-        english: "the boom, the peak",
+        term: "el auge (au-he)",
+        definition: "the boom, the peak",
         knowledgelevel: 0
     },
     {
         id: "aún_así",
         category: "uncategorized",
-        spanish: "aún así",
-        english: "even so",
+        term: "aún así",
+        definition: "even so",
         knowledgelevel: 0
     },
     {
         id: "aún_hay",
         category: "uncategorized",
-        spanish: "aún hay",
-        english: "there is still",
+        term: "aún hay",
+        definition: "there is still",
         knowledgelevel: 0
     },
     {
         id: "aunque_fuera",
         category: "uncategorized",
-        spanish: "aunque fuera",
-        english: "even if it was",
+        term: "aunque fuera",
+        definition: "even if it was",
         knowledgelevel: 0
     },
     {
         id: "ausencia",
         category: "uncategorized",
-        spanish: "la ausencia",
-        english: "the absence",
+        term: "la ausencia",
+        definition: "the absence",
         knowledgelevel: 0
     },
     {
         id: "austral",
         category: "uncategorized",
-        spanish: "austral (adj)",
-        english: "southern",
+        term: "austral (adj)",
+        definition: "southern",
         knowledgelevel: 0
     },
     {
         id: "autopista",
         category: "uncategorized",
-        spanish: "la autopista",
-        english: "the highway",
+        term: "la autopista",
+        definition: "the highway",
         knowledgelevel: 0
     },
     {
         id: "avance",
         category: "uncategorized",
-        spanish: "un avance",
-        english: "an advance, a progress",
+        term: "un avance",
+        definition: "an advance, a progress",
         knowledgelevel: 0
     },
     {
         id: "avena",
         category: "uncategorized",
-        spanish: "avena",
-        english: "oatmeal",
+        term: "avena",
+        definition: "oatmeal",
         knowledgelevel: 0
     },
     {
         id: "azadón",
         category: "uncategorized",
-        spanish: "un azadón",
-        english: "a hoe (gardening)",
+        term: "un azadón",
+        definition: "a hoe (gardening)",
         knowledgelevel: 0
     },
     {
         id: "baba",
         category: "uncategorized",
-        spanish: "la baba",
-        english: "the drool/saliva",
+        term: "la baba",
+        definition: "the drool/saliva",
         knowledgelevel: 0
     },
     {
         id: "bailarín",
         category: "uncategorized",
-        spanish: "un bailarín",
-        english: "a dancer",
+        term: "un bailarín",
+        definition: "a dancer",
         knowledgelevel: 0
     },
     {
         id: "baldío",
         category: "uncategorized",
-        spanish: "un baldío",
-        english: "a wasteland",
+        term: "un baldío",
+        definition: "a wasteland",
         knowledgelevel: 0
     },
     {
         id: "baloncesto",
         category: "uncategorized",
-        spanish: "baloncesto",
-        english: "basketball",
+        term: "baloncesto",
+        definition: "basketball",
         knowledgelevel: 0
     },
     {
         id: "bandeja",
         category: "uncategorized",
-        spanish: "una bandeja",
-        english: "  a tray like for cooking",
+        term: "una bandeja",
+        definition: "  a tray like for cooking",
         knowledgelevel: 0
     },
     {
         id: "bandido",
         category: "uncategorized",
-        spanish: "un bandido",
-        english: "a bandit",
+        term: "un bandido",
+        definition: "a bandit",
         knowledgelevel: 0
     },
     {
         id: "bando",
         category: "uncategorized",
-        spanish: "el bando",
-        english: "  the side of a group like 1 side ina war",
+        term: "el bando",
+        definition: "  the side of a group like 1 side ina war",
         knowledgelevel: 0
     },
     {
         id: "barbilla",
         category: "uncategorized",
-        spanish: "una barbilla",
-        english: " a chin (de una cara)",
+        term: "una barbilla",
+        definition: " a chin (de una cara)",
         knowledgelevel: 0
     },
     {
         id: "barda",
         category: "uncategorized",
-        spanish: "una barda",
-        english: "A fence",
+        term: "una barda",
+        definition: "A fence",
         knowledgelevel: 0
     },
     {
         id: "barrigón",
         category: "uncategorized",
-        spanish: "barrigón / barrigona",
-        english: "potbellied like pregnant or fat",
+        term: "barrigón / barrigona",
+        definition: "potbellied like pregnant or fat",
         knowledgelevel: 0
     },
     {
         id: "basta_con_salir",
         category: "uncategorized",
-        spanish: "basta con salir",
-        english: "just go out",
+        term: "basta con salir",
+        definition: "just go out",
         knowledgelevel: 0
     },
     {
         id: "bastante",
         category: "uncategorized",
-        spanish: "bastante",
-        english: "  quite",
+        term: "bastante",
+        definition: "  quite",
         knowledgelevel: 0
     },
     {
         id: "bastón",
         category: "uncategorized",
-        spanish: "un bastón",
-        english: "  a cane",
+        term: "un bastón",
+        definition: "  a cane",
         knowledgelevel: 0
     },
     {
         id: "bata",
         category: "uncategorized",
-        spanish: "una bata",
-        english: "a coat",
+        term: "una bata",
+        definition: "a coat",
         knowledgelevel: 0
     },
     {
         id: "batazo",
         category: "uncategorized",
-        spanish: "un batazo",
-        english: " a hit like in beisbol",
+        term: "un batazo",
+        definition: " a hit like in beisbol",
         knowledgelevel: 0
     },
     {
         id: "batido",
         category: "uncategorized",
-        spanish: "el batido",
-        english: " a shake or smoothie",
+        term: "el batido",
+        definition: " a shake or smoothie",
         knowledgelevel: 0
     },
     {
         id: "berenjena",
         category: "uncategorized",
-        spanish: "una berenjena",
-        english: "an eggplant",
+        term: "una berenjena",
+        definition: "an eggplant",
         knowledgelevel: 0
     },
     {
         id: "biberón",
         category: "uncategorized",
-        spanish: "un biberón",
-        english: "A feeding bottle",
+        term: "un biberón",
+        definition: "A feeding bottle",
         knowledgelevel: 0
     },
     {
         id: "bibliotecario",
         category: "uncategorized",
-        spanish: "el bibliotecario",
-        english: "The librarian",
+        term: "el bibliotecario",
+        definition: "The librarian",
         knowledgelevel: 0
     },
     {
         id: "blanco_fácil",
         category: "uncategorized",
-        spanish: "un blanco fácil",
-        english: "An easy target",
+        term: "un blanco fácil",
+        definition: "An easy target",
         knowledgelevel: 0
     },
     {
         id: "bloqueador_solar",
         category: "uncategorized",
-        spanish: "el bloqueador solar",
-        english: "sun block",
+        term: "el bloqueador solar",
+        definition: "sun block",
         knowledgelevel: 0
     },
     {
         id: "bohío",
         category: "uncategorized",
-        spanish: "un bohío",
-        english: "a hut",
+        term: "un bohío",
+        definition: "a hut",
         knowledgelevel: 0
     },
     {
         id: "bola",
         category: "uncategorized",
-        spanish: "una bola",
-        english: " a ball",
+        term: "una bola",
+        definition: " a ball",
         knowledgelevel: 0
     },
     {
         id: "bolita",
         category: "uncategorized",
-        spanish: "una bolita",
-        english: " a pellet ",
+        term: "una bolita",
+        definition: " a pellet ",
         knowledgelevel: 0
     },
     {
         id: "bonachón",
         category: "uncategorized",
-        spanish: "bonachón / bonachona (adj)",
-        english: "good-natured",
+        term: "bonachón / bonachona (adj)",
+        definition: "good-natured",
         knowledgelevel: 0
     },
     {
         id: "bote_de_basura",
         category: "uncategorized",
-        spanish: "un bote de basura",
-        english: "a trash can",
+        term: "un bote de basura",
+        definition: "a trash can",
         knowledgelevel: 0
     },
     {
         id: "botín",
         category: "uncategorized",
-        spanish: "botín",
-        english: " swag, loot, cool stuff",
+        term: "botín",
+        definition: " swag, loot, cool stuff",
         knowledgelevel: 0
     },
     {
         id: "botón",
         category: "uncategorized",
-        spanish: "un botón",
-        english: "a button",
+        term: "un botón",
+        definition: "a button",
         knowledgelevel: 0
     },
     {
         id: "brasa",
         category: "uncategorized",
-        spanish: "una brasa",
-        english: "  an ember",
+        term: "una brasa",
+        definition: "  an ember",
         knowledgelevel: 0
     },
     {
         id: "brocha",
         category: "uncategorized",
-        spanish: "una brocha",
-        english: "a brush",
+        term: "una brocha",
+        definition: "a brush",
         knowledgelevel: 0
     },
     {
         id: "budín",
         category: "uncategorized",
-        spanish: "un budín",
-        english: "a pudding",
+        term: "un budín",
+        definition: "a pudding",
         knowledgelevel: 0
     },
     {
         id: "bujía",
         category: "uncategorized",
-        spanish: "una bujía",
-        english: "  a spark plug",
+        term: "una bujía",
+        definition: "  a spark plug",
         knowledgelevel: 0
     },
     {
         id: "buril",
         category: "uncategorized",
-        spanish: "buril",
-        english: "  a chisel",
+        term: "buril",
+        definition: "  a chisel",
         knowledgelevel: 0
     },
     {
         id: "burla",
         category: "uncategorized",
-        spanish: "burla",
-        english: "a joke",
+        term: "burla",
+        definition: "a joke",
         knowledgelevel: 0
     },
     {
         id: "burra",
         category: "uncategorized",
-        spanish: "una burra / un burro",
-        english: " burro",
+        term: "una burra / un burro",
+        definition: " burro",
         knowledgelevel: 0
     },
     {
         id: "buzo",
         category: "uncategorized",
-        spanish: "un buzo",
-        english: "a diver",
+        term: "un buzo",
+        definition: "a diver",
         knowledgelevel: 0
     },
     {
         id: "cabellera_afro",
         category: "uncategorized",
-        spanish: "cabellera afro",
-        english: "African hair",
+        term: "cabellera afro",
+        definition: "African hair",
         knowledgelevel: 0
     },
     {
         id: "caballito_de_mar",
         category: "uncategorized",
-        spanish: "un caballito de mar",
-        english: "sea horse",
+        term: "un caballito de mar",
+        definition: "sea horse",
         knowledgelevel: 0
     },
     {
         id: "cabecirrojo",
         category: "uncategorized",
-        spanish: "cabecirrojo/cabecirroja (adj)",
-        english: "  redhead",
+        term: "cabecirrojo/cabecirroja (adj)",
+        definition: "  redhead",
         knowledgelevel: 0
     },
     {
         id: "cabo",
         category: "uncategorized",
-        spanish: "el cabo",
-        english: "the cape",
+        term: "el cabo",
+        definition: "the cape",
         knowledgelevel: 0
     },
     {
         id: "cacareo_de_una",
         category: "uncategorized",
-        spanish: "un cacareo de una",
-        english: " gallina",
+        term: "un cacareo de una",
+        definition: " gallina",
         knowledgelevel: 0
     },
     {
         id: "cacerola",
         category: "uncategorized",
-        spanish: "una cacerola",
-        english: "a pan",
+        term: "una cacerola",
+        definition: "a pan",
         knowledgelevel: 0
     },
     {
         id: "cadencia",
         category: "uncategorized",
-        spanish: "una cadencia",
-        english: "a cadence, rhythm",
+        term: "una cadencia",
+        definition: "a cadence, rhythm",
         knowledgelevel: 0
     },
     {
         id: "caer_en_la",
         category: "uncategorized",
-        spanish: "caer en la",
-        english: " cuenta",
+        term: "caer en la",
+        definition: " cuenta",
         knowledgelevel: 0
     },
     {
         id: "calentamiento_global",
         category: "uncategorized",
-        spanish: "calentamiento global",
-        english: "global warming",
+        term: "calentamiento global",
+        definition: "global warming",
         knowledgelevel: 0
     },
     {
         id: "calidad",
         category: "uncategorized",
-        spanish: "la calidad",
-        english: " the quality, grade, rank",
+        term: "la calidad",
+        definition: " the quality, grade, rank",
         knowledgelevel: 0
     },
     {
         id: "calmado",
         category: "uncategorized",
-        spanish: "calmado (adj)",
-        english: "calm (adj)",
+        term: "calmado (adj)",
+        definition: "calm (adj)",
         knowledgelevel: 0
     },
     {
         id: "camaleón",
         category: "uncategorized",
-        spanish: "un camaleón",
-        english: "chameleon",
+        term: "un camaleón",
+        definition: "chameleon",
         knowledgelevel: 0
     },
     {
         id: "camiones_repartidores",
         category: "uncategorized",
-        spanish: "los camiones repartidores",
-        english: "the delivery trucks",
+        term: "los camiones repartidores",
+        definition: "the delivery trucks",
         knowledgelevel: 0
     },
     {
         id: "campamento",
         category: "uncategorized",
-        spanish: "un campamento",
-        english: "a camp",
+        term: "un campamento",
+        definition: "a camp",
         knowledgelevel: 0
     },
     {
         id: "campaña",
         category: "uncategorized",
-        spanish: "una campaña",
-        english: "a campaign",
+        term: "una campaña",
+        definition: "a campaign",
         knowledgelevel: 0
     },
     {
         id: "canica",
         category: "uncategorized",
-        spanish: "una canica",
-        english: "  a marble",
+        term: "una canica",
+        definition: "  a marble",
         knowledgelevel: 0
     },
     {
         id: "cansador",
         category: "uncategorized",
-        spanish: "cansador (adj)",
-        english: "tiring",
+        term: "cansador (adj)",
+        definition: "tiring",
         knowledgelevel: 0
     },
     {
         id: "cantaleta",
         category: "uncategorized",
-        spanish: "una cantaleta",
-        english: "a song",
+        term: "una cantaleta",
+        definition: "a song",
         knowledgelevel: 0
     },
     {
         id: "cántaro",
         category: "uncategorized",
-        spanish: "un cántaro",
-        english: "  a pitcher",
+        term: "un cántaro",
+        definition: "  a pitcher",
         knowledgelevel: 0
     },
     {
         id: "caótica",
         category: "uncategorized",
-        spanish: "caótica",
-        english: "  chaotic",
+        term: "caótica",
+        definition: "  chaotic",
         knowledgelevel: 0
     },
     {
         id: "capa",
         category: "uncategorized",
-        spanish: "una capa",
-        english: "  a cape like clothing",
+        term: "una capa",
+        definition: "  a cape like clothing",
         knowledgelevel: 0
     },
     {
         id: "capacidades",
         category: "uncategorized",
-        spanish: "capacidades",
-        english: "  abilities?",
+        term: "capacidades",
+        definition: "  abilities?",
         knowledgelevel: 0
     },
     {
         id: "capacitación",
         category: "uncategorized",
-        spanish: "la capacitación",
-        english: "the training",
+        term: "la capacitación",
+        definition: "the training",
         knowledgelevel: 0
     },
     {
         id: "capaz",
         category: "uncategorized",
-        spanish: "capaz, capaces (adj)",
-        english: "  capable",
+        term: "capaz, capaces (adj)",
+        definition: "  capable",
         knowledgelevel: 0
     },
     {
         id: "caprichoso",
         category: "uncategorized",
-        spanish: "caprichoso",
-        english: "whimsical",
+        term: "caprichoso",
+        definition: "whimsical",
         knowledgelevel: 0
     },
     {
         id: "cara_de_creído",
         category: "uncategorized",
-        spanish: "la cara de creído",
-        english: "  cocky face",
+        term: "la cara de creído",
+        definition: "  cocky face",
         knowledgelevel: 0
     },
     {
         id: "cara_de_pocos_amigos",
         category: "uncategorized",
-        spanish: "una cara de pocos amigos",
-        english: "  angry or serious face",
+        term: "una cara de pocos amigos",
+        definition: "  angry or serious face",
         knowledgelevel: 0
     },
     {
         id: "caramba",
         category: "uncategorized",
-        spanish: "caramba!",
-        english: "  Jeez!",
+        term: "caramba!",
+        definition: "  Jeez!",
         knowledgelevel: 0
     },
     {
         id: "carne_podrida",
         category: "uncategorized",
-        spanish: "la carne podrida",
-        english: "the rotten meat",
+        term: "la carne podrida",
+        definition: "the rotten meat",
         knowledgelevel: 0
     },
     {
         id: "carrasperas",
         category: "uncategorized",
-        spanish: "carrasperas",
-        english: "  throat clearings",
+        term: "carrasperas",
+        definition: "  throat clearings",
         knowledgelevel: 0
     },
     {
         id: "carrete",
         category: "uncategorized",
-        spanish: "un carrete",
-        english: " a reel, spool",
+        term: "un carrete",
+        definition: " a reel, spool",
         knowledgelevel: 0
     },
     {
         id: "carritos_de_comida_ambulante",
         category: "uncategorized",
-        spanish: "los carritos de comida ambulante",
-        english: "the mobile food carts",
+        term: "los carritos de comida ambulante",
+        definition: "the mobile food carts",
         knowledgelevel: 0
     },
     {
         id: "carro_de_carreras",
         category: "uncategorized",
-        spanish: "un carro de carreras",
-        english: "a race car",
+        term: "un carro de carreras",
+        definition: "a race car",
         knowledgelevel: 0
     },
     {
         id: "carrocería",
         category: "uncategorized",
-        spanish: "una carrocería",
-        english: "  an auto body",
+        term: "una carrocería",
+        definition: "  an auto body",
         knowledgelevel: 0
     },
     {
         id: "carruaje",
         category: "uncategorized",
-        spanish: "un carruaje",
-        english: "a carriage",
+        term: "un carruaje",
+        definition: "a carriage",
         knowledgelevel: 0
     },
     {
         id: "carta",
         category: "uncategorized",
-        spanish: "la carta en un restaurante",
-        english: "restaurant menu",
+        term: "la carta en un restaurante",
+        definition: "restaurant menu",
         knowledgelevel: 0
     },
     {
         id: "casero",
         category: "uncategorized",
-        spanish: "casero (adj)",
-        english: " homemade",
+        term: "casero (adj)",
+        definition: " homemade",
         knowledgelevel: 0
     },
     {
         id: "caso_judicial",
         category: "uncategorized",
-        spanish: "la caso judicial",
-        english: "the court case",
+        term: "la caso judicial",
+        definition: "the court case",
         knowledgelevel: 0
     },
     {
         id: "caucho",
         category: "uncategorized",
-        spanish: "el caucho",
-        english: "the rubber",
+        term: "el caucho",
+        definition: "the rubber",
         knowledgelevel: 0
     },
     {
         id: "ceguera",
         category: "uncategorized",
-        spanish: "ceguera",
-        english: "blindness",
+        term: "ceguera",
+        definition: "blindness",
         knowledgelevel: 0
     },
     {
         id: "célebre",
         category: "uncategorized",
-        spanish: "célebre (adj)",
-        english: "famouse",
+        term: "célebre (adj)",
+        definition: "famouse",
         knowledgelevel: 0
     },
     {
         id: "centenar",
         category: "uncategorized",
-        spanish: "un centenar",
-        english: "a hundred",
+        term: "un centenar",
+        definition: "a hundred",
         knowledgelevel: 0
     },
     {
         id: "céntrico",
         category: "uncategorized",
-        spanish: "céntrico",
-        english: " central",
+        term: "céntrico",
+        definition: " central",
         knowledgelevel: 0
     },
     {
         id: "cera",
         category: "uncategorized",
-        spanish: "la cera",
-        english: "the wax",
+        term: "la cera",
+        definition: "the wax",
         knowledgelevel: 0
     },
     {
         id: "cerámica",
         category: "uncategorized",
-        spanish: "la cerámica",
-        english: " the pottery",
+        term: "la cerámica",
+        definition: " the pottery",
         knowledgelevel: 0
     },
     {
         id: "cerca",
         category: "uncategorized",
-        spanish: "una cerca",
-        english: "a fence",
+        term: "una cerca",
+        definition: "a fence",
         knowledgelevel: 0
     },
     {
         id: "cerdas",
         category: "uncategorized",
-        spanish: "las cerdas",
-        english: "the bristles, like bristles on a cerdo (pig)",
+        term: "las cerdas",
+        definition: "the bristles, like bristles on a cerdo (pig)",
         knowledgelevel: 0
     },
     {
         id: "cero",
         category: "uncategorized",
-        spanish: "un cero",
-        english: "a zero",
+        term: "un cero",
+        definition: "a zero",
         knowledgelevel: 0
     },
     {
         id: "certeza",
         category: "uncategorized",
-        spanish: "certeza",
-        english: "certainty",
+        term: "certeza",
+        definition: "certainty",
         knowledgelevel: 0
     },
     {
         id: "chapulín",
         category: "uncategorized",
-        spanish: "un chapulín",
-        english: " saltamontes (grasshoppers)",
+        term: "un chapulín",
+        definition: " saltamontes (grasshoppers)",
         knowledgelevel: 0
     },
     {
         id: "chicharra",
         category: "uncategorized",
-        spanish: "la chicharra",
-        english: "  the cicada or the buzzer/siren/alarm",
+        term: "la chicharra",
+        definition: "  the cicada or the buzzer/siren/alarm",
         knowledgelevel: 0
     },
     {
         id: "chico",
         category: "uncategorized",
-        spanish: "chico (adj)",
-        english: "  small",
+        term: "chico (adj)",
+        definition: "  small",
         knowledgelevel: 0
     },
     {
         id: "chillido",
         category: "uncategorized",
-        spanish: "un chillido",
-        english: "a shriek, squeal",
+        term: "un chillido",
+        definition: "a shriek, squeal",
         knowledgelevel: 0
     },
     {
         id: "chiquero",
         category: "uncategorized",
-        spanish: "un chiquero",
-        english: "a pigsty",
+        term: "un chiquero",
+        definition: "a pigsty",
         knowledgelevel: 0
     },
     {
         id: "chupasangre",
         category: "uncategorized",
-        spanish: "chupasangre",
-        english: "  a blood sucking insect or parasite",
+        term: "chupasangre",
+        definition: "  a blood sucking insect or parasite",
         knowledgelevel: 0
     },
     {
         id: "ciempiés",
         category: "uncategorized",
-        spanish: "los ciempiés",
-        english: "the centipedes",
+        term: "los ciempiés",
+        definition: "the centipedes",
         knowledgelevel: 0
     },
     {
         id: "ciento_diez",
         category: "uncategorized",
-        spanish: "ciento diez",
-        english: "110",
+        term: "ciento diez",
+        definition: "110",
         knowledgelevel: 0
     },
     {
         id: "cigüeña",
         category: "uncategorized",
-        spanish: "una cigüeña",
-        english: "  a stork (bird)",
+        term: "una cigüeña",
+        definition: "  a stork (bird)",
         knowledgelevel: 0
     },
     {
         id: "cincel",
         category: "uncategorized",
-        spanish: "un cincel",
-        english: "a chisel",
+        term: "un cincel",
+        definition: "a chisel",
         knowledgelevel: 0
     },
     {
         id: "cincuenta_mil",
         category: "uncategorized",
-        spanish: "cincuenta mil",
-        english: "50000",
+        term: "cincuenta mil",
+        definition: "50000",
         knowledgelevel: 0
     },
     {
         id: "clientes",
         category: "uncategorized",
-        spanish: "los clientes",
-        english: "  clients like customers in a restaurant",
+        term: "los clientes",
+        definition: "  clients like customers in a restaurant",
         knowledgelevel: 0
     },
     {
         id: "cobrar_vida",
         category: "uncategorized",
-        spanish: "cobrar vida",
-        english: "to come alive",
+        term: "cobrar vida",
+        definition: "to come alive",
         knowledgelevel: 0
     },
     {
         id: "cocción",
         category: "uncategorized",
-        spanish: "la cocción",
-        english: "the cooking",
+        term: "la cocción",
+        definition: "the cooking",
         knowledgelevel: 0
     },
     {
         id: "cocinero",
         category: "uncategorized",
-        spanish: "un cocinero / cocinera",
-        english: "  a chef or cook",
+        term: "un cocinero / cocinera",
+        definition: "  a chef or cook",
         knowledgelevel: 0
     },
     {
         id: "código",
         category: "uncategorized",
-        spanish: "el código",
-        english: " the code",
+        term: "el código",
+        definition: " the code",
         knowledgelevel: 0
     },
     {
         id: "cohete",
         category: "uncategorized",
-        spanish: "un cohete",
-        english: "the rocket",
+        term: "un cohete",
+        definition: "the rocket",
         knowledgelevel: 0
     },
     {
         id: "cojín",
         category: "uncategorized",
-        spanish: "un  cojín",
-        english: "a cushion",
+        term: "un  cojín",
+        definition: "a cushion",
         knowledgelevel: 0
     },
     {
         id: "colador",
         category: "uncategorized",
-        spanish: "un colador",
-        english: "a strainer (cooking)",
+        term: "un colador",
+        definition: "a strainer (cooking)",
         knowledgelevel: 0
     },
     {
         id: "colega",
         category: "uncategorized",
-        spanish: "una colega",
-        english: " a colleague",
+        term: "una colega",
+        definition: " a colleague",
         knowledgelevel: 0
     },
     {
         id: "colegio",
         category: "uncategorized",
-        spanish: "un colegio",
-        english: "a school",
+        term: "un colegio",
+        definition: "a school",
         knowledgelevel: 0
     },
     {
         id: "colmena",
         category: "uncategorized",
-        spanish: "una colmena",
-        english: "a hive (like beehive)",
+        term: "una colmena",
+        definition: "a hive (like beehive)",
         knowledgelevel: 0
     },
     {
         id: "colonia",
         category: "uncategorized",
-        spanish: "una colonia",
-        english: "  a colony",
+        term: "una colonia",
+        definition: "  a colony",
         knowledgelevel: 0
     },
     {
         id: "columpio",
         category: "uncategorized",
-        spanish: "un columpio",
-        english: "  a swing (like in a kids playground)",
+        term: "un columpio",
+        definition: "  a swing (like in a kids playground)",
         knowledgelevel: 0
     },
     {
         id: "comensales",
         category: "uncategorized",
-        spanish: "los comensales",
-        english: "  the diners,  the people eating in a restaurant",
+        term: "los comensales",
+        definition: "  the diners,  the people eating in a restaurant",
         knowledgelevel: 0
     },
     {
         id: "comerciante",
         category: "uncategorized",
-        spanish: "un comerciante",
-        english: "a businessman",
+        term: "un comerciante",
+        definition: "a businessman",
         knowledgelevel: 0
     },
     {
         id: "comercio",
         category: "uncategorized",
-        spanish: "el comercio",
-        english: "the trade, commerce",
+        term: "el comercio",
+        definition: "the trade, commerce",
         knowledgelevel: 0
     },
     {
         id: "comezón",
         category: "uncategorized",
-        spanish: "un comezón",
-        english: "an itch",
+        term: "un comezón",
+        definition: "an itch",
         knowledgelevel: 0
     },
     {
         id: "comisionado",
         category: "uncategorized",
-        spanish: "el comisionado",
-        english: "the commissioner",
+        term: "el comisionado",
+        definition: "the commissioner",
         knowledgelevel: 0
     },
     {
         id: "como_acabas_de_leer",
         category: "uncategorized",
-        spanish: "como acabas de leer",
-        english: "as you just read",
+        term: "como acabas de leer",
+        definition: "as you just read",
         knowledgelevel: 0
     },
     {
         id: "como_de_lejos",
         category: "uncategorized",
-        spanish: "como de lejos",
-        english: "as far away",
+        term: "como de lejos",
+        definition: "as far away",
         knowledgelevel: 0
     },
     {
         id: "como_recuerdo",
         category: "uncategorized",
-        spanish: "como recuerdo",
-        english: "  as a memory",
+        term: "como recuerdo",
+        definition: "  as a memory",
         knowledgelevel: 0
     },
     {
         id: "como_resultado",
         category: "uncategorized",
-        spanish: "como resultado",
-        english: "  as a result",
+        term: "como resultado",
+        definition: "  as a result",
         knowledgelevel: 0
     },
     {
         id: "como_si_fuera",
         category: "uncategorized",
-        spanish: "como si fuera",
-        english: "  as if it were",
+        term: "como si fuera",
+        definition: "  as if it were",
         knowledgelevel: 0
     },
     {
         id: "comodidad",
         category: "uncategorized",
-        spanish: "comodidad",
-        english: "comfort",
+        term: "comodidad",
+        definition: "comfort",
         knowledgelevel: 0
     },
     {
         id: "compañero",
         category: "uncategorized",
-        spanish: "un compañero",
-        english: "a partner, companion",
+        term: "un compañero",
+        definition: "a partner, companion",
         knowledgelevel: 0
     },
     {
         id: "compañía_petrolera",
         category: "uncategorized",
-        spanish: "una compañía petrolera",
-        english: "an oil company",
+        term: "una compañía petrolera",
+        definition: "an oil company",
         knowledgelevel: 0
     },
     {
         id: "compartimiento",
         category: "uncategorized",
-        spanish: "un compartimiento",
-        english: "a compartment, a bin",
+        term: "un compartimiento",
+        definition: "a compartment, a bin",
         knowledgelevel: 0
     },
     {
         id: "competencia",
         category: "uncategorized",
-        spanish: "competencia",
-        english: "competition, or competence",
+        term: "competencia",
+        definition: "competition, or competence",
         knowledgelevel: 0
     },
     {
         id: "complejo",
         category: "uncategorized",
-        spanish: "complejo (adj)",
-        english: "complex",
+        term: "complejo (adj)",
+        definition: "complex",
         knowledgelevel: 0
     },
     {
         id: "con_ansias",
         category: "uncategorized",
-        spanish: "con ansias",
-        english: "eagerly",
+        term: "con ansias",
+        definition: "eagerly",
         knowledgelevel: 0
     },
     {
         id: "con_antelación",
         category: "uncategorized",
-        spanish: "con antelación",
-        english: "  in advance",
+        term: "con antelación",
+        definition: "  in advance",
         knowledgelevel: 0
     },
     {
         id: "con_detenimiento",
         category: "uncategorized",
-        spanish: "con detenimiento",
-        english: "  carefully",
+        term: "con detenimiento",
+        definition: "  carefully",
         knowledgelevel: 0
     },
     {
         id: "con_fluidez",
         category: "uncategorized",
-        spanish: "con fluidez",
-        english: "fluently",
+        term: "con fluidez",
+        definition: "fluently",
         knowledgelevel: 0
     },
     {
         id: "conducta",
         category: "uncategorized",
-        spanish: "una conducta",
-        english: "  a behavior or conduct",
+        term: "una conducta",
+        definition: "  a behavior or conduct",
         knowledgelevel: 0
     },
     {
         id: "conductor",
         category: "uncategorized",
-        spanish: "el conductor",
-        english: "  the driver",
+        term: "el conductor",
+        definition: "  the driver",
         knowledgelevel: 0
     },
     {
         id: "conmovido",
         category: "uncategorized",
-        spanish: "conmovido",
-        english: "  moved, touched, positive feeling",
+        term: "conmovido",
+        definition: "  moved, touched, positive feeling",
         knowledgelevel: 0
     },
     {
         id: "conocimiento",
         category: "uncategorized",
-        spanish: "el conocimiento",
-        english: "the knowledge",
+        term: "el conocimiento",
+        definition: "the knowledge",
         knowledgelevel: 0
     },
     {
         id: "consciente",
         category: "uncategorized",
-        spanish: "consciente (adj)",
-        english: "aware",
+        term: "consciente (adj)",
+        definition: "aware",
         knowledgelevel: 0
     },
     {
         id: "conseguir_ponerse_de_acuerdo",
         category: "uncategorized",
-        spanish: "conseguir ponerse de acuerdo",
-        english: "to get an agreement",
+        term: "conseguir ponerse de acuerdo",
+        definition: "to get an agreement",
         knowledgelevel: 0
     },
     {
         id: "consigo",
         category: "uncategorized",
-        spanish: "consigo",
-        english: "with him/her",
+        term: "consigo",
+        definition: "with him/her",
         knowledgelevel: 0
     },
     {
         id: "contar_con_un",
         category: "uncategorized",
-        spanish: "contar con un",
-        english: " medio",
+        term: "contar con un",
+        definition: " medio",
         knowledgelevel: 0
     },
     {
         id: "continuo",
         category: "uncategorized",
-        spanish: "continuo (adj)",
-        english: "continuous",
+        term: "continuo (adj)",
+        definition: "continuous",
         knowledgelevel: 0
     },
     {
         id: "contrincante",
         category: "uncategorized",
-        spanish: "un contrincante",
-        english: "  an opponent",
+        term: "un contrincante",
+        definition: "  an opponent",
         knowledgelevel: 0
     },
     {
         id: "copa_de_árbol",
         category: "uncategorized",
-        spanish: "la copa de árbol",
-        english: "a tree top",
+        term: "la copa de árbol",
+        definition: "a tree top",
         knowledgelevel: 0
     },
     {
         id: "copa_de_trofeo",
         category: "uncategorized",
-        spanish: "la copa de trofeo",
-        english: "a tropy cup",
+        term: "la copa de trofeo",
+        definition: "a tropy cup",
         knowledgelevel: 0
     },
     {
         id: "corcho",
         category: "uncategorized",
-        spanish: "un corcho",
-        english: "a cork",
+        term: "un corcho",
+        definition: "a cork",
         knowledgelevel: 0
     },
     {
         id: "cordillera",
         category: "uncategorized",
-        spanish: "una cordillera",
-        english: "  range like a mountain range",
+        term: "una cordillera",
+        definition: "  range like a mountain range",
         knowledgelevel: 0
     },
     {
         id: "corea",
         category: "uncategorized",
-        spanish: "corea",
-        english: "Korea",
+        term: "corea",
+        definition: "Korea",
         knowledgelevel: 0
     },
     {
         id: "correr_la_voz",
         category: "uncategorized",
-        spanish: "correr la voz",
-        english: "  to spread the word",
+        term: "correr la voz",
+        definition: "  to spread the word",
         knowledgelevel: 0
     },
     {
         id: "fangoso",
         category: "uncategorized",
-        spanish: "fangoso",
-        english: "muddy",
+        term: "fangoso",
+        definition: "muddy",
         knowledgelevel: 0
     },
     {
         id: "corro",
         category: "uncategorized",
-        spanish: "un corro",
-        english: "  a circle or huddle of people talking",
+        term: "un corro",
+        definition: "  a circle or huddle of people talking",
         knowledgelevel: 0
     },
     {
         id: "cortadora_de_grama",
         category: "uncategorized",
-        spanish: "una cortadora de grama",
-        english: "  lawn mower",
+        term: "una cortadora de grama",
+        definition: "  lawn mower",
         knowledgelevel: 0
     },
     {
         id: "corteza_de_los",
         category: "uncategorized",
-        spanish: "corteza de los",
-        english: " árboles",
+        term: "corteza de los",
+        definition: " árboles",
         knowledgelevel: 0
     },
     {
         id: "costados",
         category: "uncategorized",
-        spanish: "los costados",
-        english: "the sides",
+        term: "los costados",
+        definition: "the sides",
         knowledgelevel: 0
     },
     {
         id: "costosa",
         category: "uncategorized",
-        spanish: "costosa",
-        english: " expensive",
+        term: "costosa",
+        definition: " expensive",
         knowledgelevel: 0
     },
     {
         id: "costumbre",
         category: "uncategorized",
-        spanish: "un costumbre",
-        english: " a custom or habit",
+        term: "un costumbre",
+        definition: " a custom or habit",
         knowledgelevel: 0
     },
     {
         id: "cotidiano",
         category: "uncategorized",
-        spanish: "cotidiano (adj)",
-        english: "daily",
+        term: "cotidiano (adj)",
+        definition: "daily",
         knowledgelevel: 0
     },
     {
         id: "craneana",
         category: "uncategorized",
-        spanish: "craneana (adj)",
-        english: "cranial",
+        term: "craneana (adj)",
+        definition: "cranial",
         knowledgelevel: 0
     },
     {
         id: "cráneo",
         category: "uncategorized",
-        spanish: "el cráneo",
-        english: "the skull",
+        term: "el cráneo",
+        definition: "the skull",
         knowledgelevel: 0
     },
     {
         id: "cría_de_ganado",
         category: "uncategorized",
-        spanish: "la cría de ganado",
-        english: "the cattle breeding",
+        term: "la cría de ganado",
+        definition: "the cattle breeding",
         knowledgelevel: 0
     },
     {
         id: "criterio",
         category: "uncategorized",
-        spanish: "un criterio",
-        english: "criterion",
+        term: "un criterio",
+        definition: "criterion",
         knowledgelevel: 0
     },
     {
         id: "crucigrama",
         category: "uncategorized",
-        spanish: "una crucigrama",
-        english: "a crossword",
+        term: "una crucigrama",
+        definition: "a crossword",
         knowledgelevel: 0
     },
     {
         id: "cualidad",
         category: "uncategorized",
-        spanish: "cualidad",
-        english: "quality",
+        term: "cualidad",
+        definition: "quality",
         knowledgelevel: 0
     },
     {
         id: "cucaracha",
         category: "uncategorized",
-        spanish: "una cucaracha",
-        english: "a cockroach",
+        term: "una cucaracha",
+        definition: "a cockroach",
         knowledgelevel: 0
     },
     {
         id: "cuerda",
         category: "uncategorized",
-        spanish: "cuerda",
-        english: "  rope",
+        term: "cuerda",
+        definition: "  rope",
         knowledgelevel: 0
     },
     {
         id: "cultura_materna",
         category: "uncategorized",
-        spanish: "la cultura materna",
-        english: "  home/mother culture",
+        term: "la cultura materna",
+        definition: "  home/mother culture",
         knowledgelevel: 0
     },
     {
         id: "cumbre",
         category: "uncategorized",
-        spanish: "un cumbre",
-        english: "a summit, or a top like a shirt",
+        term: "un cumbre",
+        definition: "a summit, or a top like a shirt",
         knowledgelevel: 0
     },
     {
         id: "cumpleaños",
         category: "uncategorized",
-        spanish: "el cumpleaños",
-        english: " the birthday",
+        term: "el cumpleaños",
+        definition: " the birthday",
         knowledgelevel: 0
     },
     {
         id: "curación",
         category: "uncategorized",
-        spanish: "la curación",
-        english: "the healing",
+        term: "la curación",
+        definition: "the healing",
         knowledgelevel: 0
     },
     {
         id: "cuyo_/_cuya",
         category: "uncategorized",
-        spanish: "cuyo / cuya",
-        english: "  whose",
+        term: "cuyo / cuya",
+        definition: "  whose",
         knowledgelevel: 0
     },
     {
         id: "da_picazón",
         category: "uncategorized",
-        spanish: "da picazón",
-        english: "to itch",
+        term: "da picazón",
+        definition: "to itch",
         knowledgelevel: 0
     },
     {
         id: "dar_el_patio",
         category: "uncategorized",
-        spanish: "dar el patio",
-        english: "to lead to the patio",
+        term: "dar el patio",
+        definition: "to lead to the patio",
         knowledgelevel: 0
     },
     {
         id: "datacion",
         category: "uncategorized",
-        spanish: "datacion",
-        english: " dating like determining how long a fossil is",
+        term: "datacion",
+        definition: " dating like determining how long a fossil is",
         knowledgelevel: 0
     },
     {
         id: "dato,_los_datos",
         category: "uncategorized",
-        spanish: "un dato, los datos",
-        english: " a fact, the data",
+        term: "un dato, los datos",
+        definition: " a fact, the data",
         knowledgelevel: 0
     },
     {
         id: "de_aspecto_gracioso",
         category: "uncategorized",
-        spanish: "de aspecto gracioso (adj)",
-        english: "funny looking",
+        term: "de aspecto gracioso (adj)",
+        definition: "funny looking",
         knowledgelevel: 0
     },
     {
         id: "de_buen_ánimo",
         category: "uncategorized",
-        spanish: "de buen ánimo",
-        english: "in good spirits",
+        term: "de buen ánimo",
+        definition: "in good spirits",
         knowledgelevel: 0
     },
     {
         id: "de_forma_personal",
         category: "uncategorized",
-        spanish: "de forma personal",
-        english: " personally",
+        term: "de forma personal",
+        definition: " personally",
         knowledgelevel: 0
     },
     {
         id: "de_golpe",
         category: "uncategorized",
-        spanish: "de golpe",
-        english: "  suddenly or banging (like slamming a door)",
+        term: "de golpe",
+        definition: "  suddenly or banging (like slamming a door)",
         knowledgelevel: 0
     },
     {
         id: "de_lata",
         category: "uncategorized",
-        spanish: "de lata",
-        english: "  of tin",
+        term: "de lata",
+        definition: "  of tin",
         knowledgelevel: 0
     },
     {
         id: "de_mala_educación",
         category: "uncategorized",
-        spanish: "de mala educación",
-        english: "  rude",
+        term: "de mala educación",
+        definition: "  rude",
         knowledgelevel: 0
     },
     {
         id: "de_nacida",
         category: "uncategorized",
-        spanish: "de nacida",
-        english: "from birth",
+        term: "de nacida",
+        definition: "from birth",
         knowledgelevel: 0
     },
     {
         id: "de_otra_forma",
         category: "uncategorized",
-        spanish: "de otra forma",
-        english: "  otherwise",
+        term: "de otra forma",
+        definition: "  otherwise",
         knowledgelevel: 0
     },
     {
         id: "de_par_en_par",
         category: "uncategorized",
-        spanish: "de par en par",
-        english: "  wide open (como ojos)",
+        term: "de par en par",
+        definition: "  wide open (como ojos)",
         knowledgelevel: 0
     },
     {
         id: "de_partida",
         category: "uncategorized",
-        spanish: "de partida",
-        english: "  starting",
+        term: "de partida",
+        definition: "  starting",
         knowledgelevel: 0
     },
     {
         id: "de_tal_palo_tal_astilla",
         category: "uncategorized",
-        spanish: "de tal palo tal astilla",
-        english: "a chip off the old block",
+        term: "de tal palo tal astilla",
+        definition: "a chip off the old block",
         knowledgelevel: 0
     },
     {
         id: "de_una",
         category: "uncategorized",
-        spanish: "de una",
-        english: " buena vez",
+        term: "de una",
+        definition: " buena vez",
         knowledgelevel: 0
     },
     {
         id: "debe_de_haber",
         category: "uncategorized",
-        spanish: "debe de haber",
-        english: "there must be",
+        term: "debe de haber",
+        definition: "there must be",
         knowledgelevel: 0
     },
     {
         id: "decoloración",
         category: "uncategorized",
-        spanish: "la decoloración",
-        english: "the discoloration",
+        term: "la decoloración",
+        definition: "the discoloration",
         knowledgelevel: 0
     },
     {
         id: "dedo_gordo",
         category: "uncategorized",
-        spanish: "un dedo gordo",
-        english: "big toe",
+        term: "un dedo gordo",
+        definition: "big toe",
         knowledgelevel: 0
     },
     {
         id: "dedo_índice",
         category: "uncategorized",
-        spanish: "el dedo índice",
-        english: "index finger",
+        term: "el dedo índice",
+        definition: "index finger",
         knowledgelevel: 0
     },
     {
         id: "dejar_de_hacer",
         category: "uncategorized",
-        spanish: "dejar de hacer",
-        english: "to stop doing",
+        term: "dejar de hacer",
+        definition: "to stop doing",
         knowledgelevel: 0
     },
     {
         id: "dejar_tras_de_sí",
         category: "uncategorized",
-        spanish: "dejar tras de sí",
-        english: "to leave behind",
+        term: "dejar tras de sí",
+        definition: "to leave behind",
         knowledgelevel: 0
     },
     {
         id: "delicia",
         category: "uncategorized",
-        spanish: "una delicia",
-        english: "a delight",
+        term: "una delicia",
+        definition: "a delight",
         knowledgelevel: 0
     },
     {
         id: "demanda_legal",
         category: "uncategorized",
-        spanish: "la demanda legal",
-        english: "  a lawsuit",
+        term: "la demanda legal",
+        definition: "  a lawsuit",
         knowledgelevel: 0
     },
     {
         id: "demos",
         category: "uncategorized",
-        spanish: "demos",
-        english: "  let’s give",
+        term: "demos",
+        definition: "  let’s give",
         knowledgelevel: 0
     },
     {
         id: "denso",
         category: "uncategorized",
-        spanish: "denso",
-        english: "dense",
+        term: "denso",
+        definition: "dense",
         knowledgelevel: 0
     },
     {
         id: "denuncia",
         category: "uncategorized",
-        spanish: "una denuncia",
-        english: "a complaint",
+        term: "una denuncia",
+        definition: "a complaint",
         knowledgelevel: 0
     },
     {
         id: "depredador",
         category: "uncategorized",
-        spanish: "un depredador",
-        english: " a predator",
+        term: "un depredador",
+        definition: " a predator",
         knowledgelevel: 0
     },
     {
         id: "derrame",
         category: "uncategorized",
-        spanish: "un derrame",
-        english: "  a spill",
+        term: "un derrame",
+        definition: "  a spill",
         knowledgelevel: 0
     },
     {
         id: "derrumbe",
         category: "uncategorized",
-        spanish: "un derrumbe",
-        english: "a collapse",
+        term: "un derrumbe",
+        definition: "a collapse",
         knowledgelevel: 0
     },
     {
         id: "desanimado",
         category: "uncategorized",
-        spanish: "desanimado",
-        english: "discouraged",
+        term: "desanimado",
+        definition: "discouraged",
         knowledgelevel: 0
     },
     {
         id: "desapercibido",
         category: "uncategorized",
-        spanish: "desapercibido",
-        english: "  unnoticed",
+        term: "desapercibido",
+        definition: "  unnoticed",
         knowledgelevel: 0
     },
     {
         id: "desaprobación",
         category: "uncategorized",
-        spanish: "desaprobación",
-        english: "  disaproval ",
+        term: "desaprobación",
+        definition: "  disaproval ",
         knowledgelevel: 0
     },
     {
         id: "descenso",
         category: "uncategorized",
-        spanish: "un descenso",
-        english: "a decline",
+        term: "un descenso",
+        definition: "a decline",
         knowledgelevel: 0
     },
     {
         id: "descomunal",
         category: "uncategorized",
-        spanish: "descomunal (adj)",
-        english: "huge",
+        term: "descomunal (adj)",
+        definition: "huge",
         knowledgelevel: 0
     },
     {
         id: "desconcertado",
         category: "uncategorized",
-        spanish: "desconcertado (adj)",
-        english: "embarrassed",
+        term: "desconcertado (adj)",
+        definition: "embarrassed",
         knowledgelevel: 0
     },
     {
         id: "desconocimiento",
         category: "uncategorized",
-        spanish: "el desconocimiento",
-        english: "the ignorance",
+        term: "el desconocimiento",
+        definition: "the ignorance",
         knowledgelevel: 0
     },
     {
         id: "descontrol",
         category: "uncategorized",
-        spanish: "descontrol",
-        english: "lack of control",
+        term: "descontrol",
+        definition: "lack of control",
         knowledgelevel: 0
     },
     {
         id: "descosido",
         category: "uncategorized",
-        spanish: "descosido (adj)",
-        english: "disjointed",
+        term: "descosido (adj)",
+        definition: "disjointed",
         knowledgelevel: 0
     },
     {
         id: "descuento",
         category: "uncategorized",
-        spanish: "un descuento",
-        english: "a discount",
+        term: "un descuento",
+        definition: "a discount",
         knowledgelevel: 0
     },
     {
         id: "descuido",
         category: "uncategorized",
-        spanish: "un descuido",
-        english: "a neglect, carelessness",
+        term: "un descuido",
+        definition: "a neglect, carelessness",
         knowledgelevel: 0
     },
     {
         id: "desechos",
         category: "uncategorized",
-        spanish: "los desechos",
-        english: "  the waste",
+        term: "los desechos",
+        definition: "  the waste",
         knowledgelevel: 0
     },
     {
         id: "desgaste",
         category: "uncategorized",
-        spanish: "el desgaste",
-        english: "the wear and tear",
+        term: "el desgaste",
+        definition: "the wear and tear",
         knowledgelevel: 0
     },
     {
         id: "desgreñado",
         category: "uncategorized",
-        spanish: "desgreñado (adj)",
-        english: "disheveled",
+        term: "desgreñado (adj)",
+        definition: "disheveled",
         knowledgelevel: 0
     },
     {
         id: "desierto",
         category: "uncategorized",
-        spanish: "desierto (adj)",
-        english: "  deserted",
+        term: "desierto (adj)",
+        definition: "  deserted",
         knowledgelevel: 0
     },
     {
         id: "despegue",
         category: "uncategorized",
-        spanish: "un despegue",
-        english: "a takeoff, a blast off",
+        term: "un despegue",
+        definition: "a takeoff, a blast off",
         knowledgelevel: 0
     },
     {
         id: "despensa",
         category: "uncategorized",
-        spanish: "una despensa",
-        english: "a pantry",
+        term: "una despensa",
+        definition: "a pantry",
         knowledgelevel: 0
     },
     {
         id: "desperdicio",
         category: "uncategorized",
-        spanish: "el desperdicio",
-        english: "the waste",
+        term: "el desperdicio",
+        definition: "the waste",
         knowledgelevel: 0
     },
     {
         id: "desplazamiento",
         category: "uncategorized",
-        spanish: "desplazamiento",
-        english: "displacement",
+        term: "desplazamiento",
+        definition: "displacement",
         knowledgelevel: 0
     },
     {
         id: "desprotegida",
         category: "uncategorized",
-        spanish: "desprotegida",
-        english: "unprotected",
+        term: "desprotegida",
+        definition: "unprotected",
         knowledgelevel: 0
     },
     {
         id: "destrozo",
         category: "uncategorized",
-        spanish: "un destrozo",
-        english: "a destruction",
+        term: "un destrozo",
+        definition: "a destruction",
         knowledgelevel: 0
     },
     {
         id: "detective",
         category: "uncategorized",
-        spanish: "un detective",
-        english: "a detective (career)",
+        term: "un detective",
+        definition: "a detective (career)",
         knowledgelevel: 0
     },
     {
         id: "deterioro",
         category: "uncategorized",
-        spanish: "deterioro",
-        english: "deterioration",
+        term: "deterioro",
+        definition: "deterioration",
         knowledgelevel: 0
     },
     {
         id: "detonante",
         category: "uncategorized",
-        spanish: "un detonante",
-        english: "  a trigger",
+        term: "un detonante",
+        definition: "  a trigger",
         knowledgelevel: 0
     },
     {
         id: "día_tras_día",
         category: "uncategorized",
-        spanish: "día tras día",
-        english: "day after day",
+        term: "día tras día",
+        definition: "day after day",
         knowledgelevel: 0
     },
     {
         id: "diamante",
         category: "uncategorized",
-        spanish: "un diamante",
-        english: "a diamond",
+        term: "un diamante",
+        definition: "a diamond",
         knowledgelevel: 0
     },
     {
         id: "diámetro",
         category: "uncategorized",
-        spanish: "un diámetro",
-        english: "a diameter",
+        term: "un diámetro",
+        definition: "a diameter",
         knowledgelevel: 0
     },
     {
         id: "dichas",
         category: "uncategorized",
-        spanish: "dichas",
-        english: "  can mean these or the things spoken about",
+        term: "dichas",
+        definition: "  can mean these or the things spoken about",
         knowledgelevel: 0
     },
     {
         id: "diminutivo",
         category: "uncategorized",
-        spanish: "un diminutivo",
-        english: "  a nickname",
+        term: "un diminutivo",
+        definition: "  a nickname",
         knowledgelevel: 0
     },
     {
         id: "directorio",
         category: "uncategorized",
-        spanish: "un directorio",
-        english: "a directory",
+        term: "un directorio",
+        definition: "a directory",
         knowledgelevel: 0
     },
     {
         id: "discapacidad_auditiva",
         category: "uncategorized",
-        spanish: "una discapacidad auditiva",
-        english: "  a hearing impairment",
+        term: "una discapacidad auditiva",
+        definition: "  a hearing impairment",
         knowledgelevel: 0
     },
     {
         id: "discurso",
         category: "uncategorized",
-        spanish: "un discurso",
-        english: "a speech",
+        term: "un discurso",
+        definition: "a speech",
         knowledgelevel: 0
     },
     {
         id: "disponible",
         category: "uncategorized",
-        spanish: "disponible",
-        english: " available",
+        term: "disponible",
+        definition: " available",
         knowledgelevel: 0
     },
     {
         id: "dispositivo",
         category: "uncategorized",
-        spanish: "un dispositivo",
-        english: " a device",
+        term: "un dispositivo",
+        definition: " a device",
         knowledgelevel: 0
     },
     {
         id: "dispuesto",
         category: "uncategorized",
-        spanish: "dispuesto (adj)",
-        english: "willing, ready",
+        term: "dispuesto (adj)",
+        definition: "willing, ready",
         knowledgelevel: 0
     },
     {
         id: "doctorado",
         category: "uncategorized",
-        spanish: "un doctorado",
-        english: "a doctorate",
+        term: "un doctorado",
+        definition: "a doctorate",
         knowledgelevel: 0
     },
     {
         id: "dolencia",
         category: "uncategorized",
-        spanish: "una dolencia",
-        english: "a disease",
+        term: "una dolencia",
+        definition: "a disease",
         knowledgelevel: 0
     },
     {
         id: "doloroso",
         category: "uncategorized",
-        spanish: "doloroso",
-        english: "painful",
+        term: "doloroso",
+        definition: "painful",
         knowledgelevel: 0
     },
     {
         id: "don",
         category: "uncategorized",
-        spanish: "un don",
-        english: " a gift",
+        term: "un don",
+        definition: " a gift",
         knowledgelevel: 0
     },
     {
         id: "dona",
         category: "uncategorized",
-        spanish: "una dona",
-        english: "a donut",
+        term: "una dona",
+        definition: "a donut",
         knowledgelevel: 0
     },
     {
         id: "doña",
         category: "uncategorized",
-        spanish: "doña",
-        english: "  Spanish title of respect for a woman",
+        term: "doña",
+        definition: "  Spanish title of respect for a woman",
         knowledgelevel: 0
     },
     {
         id: "duradero",
         category: "uncategorized",
-        spanish: "duradero",
-        english: "durable",
+        term: "duradero",
+        definition: "durable",
         knowledgelevel: 0
     },
     {
         id: "echar_a_reír",
         category: "uncategorized",
-        spanish: "echar a reír",
-        english: "  to be laughing",
+        term: "echar a reír",
+        definition: "  to be laughing",
         knowledgelevel: 0
     },
     {
         id: "fase",
         category: "uncategorized",
-        spanish: "una fase",
-        english: "a phase",
+        term: "una fase",
+        definition: "a phase",
         knowledgelevel: 0
     },
     {
         id: "echar_de_menos_a_alguien",
         category: "uncategorized",
-        spanish: "echar de menos a alguien",
-        english: "  to miss someone a lot",
+        term: "echar de menos a alguien",
+        definition: "  to miss someone a lot",
         knowledgelevel: 0
     },
     {
         id: "ecuador",
         category: "uncategorized",
-        spanish: "el ecuador",
-        english: "  equator",
+        term: "el ecuador",
+        definition: "  equator",
         knowledgelevel: 0
     },
     {
         id: "eficaz",
         category: "uncategorized",
-        spanish: "eficaz (adj)",
-        english: "effective",
+        term: "eficaz (adj)",
+        definition: "effective",
         knowledgelevel: 0
     },
     {
         id: "ejemplares",
         category: "uncategorized",
-        spanish: "los ejemplares",
-        english: "the specimens",
+        term: "los ejemplares",
+        definition: "the specimens",
         knowledgelevel: 0
     },
     {
         id: "elogio",
         category: "uncategorized",
-        spanish: "un elogio",
-        english: "a praise",
+        term: "un elogio",
+        definition: "a praise",
         knowledgelevel: 0
     },
     {
         id: "embajada",
         category: "uncategorized",
-        spanish: "una embajada",
-        english: "an embassy",
+        term: "una embajada",
+        definition: "an embassy",
         knowledgelevel: 0
     },
     {
         id: "embarcación",
         category: "uncategorized",
-        spanish: "la embarcación",
-        english: "the boat",
+        term: "la embarcación",
+        definition: "the boat",
         knowledgelevel: 0
     },
     {
         id: "embarrado",
         category: "uncategorized",
-        spanish: "embarrado(adj)",
-        english: "muddy",
+        term: "embarrado(adj)",
+        definition: "muddy",
         knowledgelevel: 0
     },
     {
         id: "emparentado",
         category: "uncategorized",
-        spanish: "emparentado (adj)",
-        english: "  related",
+        term: "emparentado (adj)",
+        definition: "  related",
         knowledgelevel: 0
     },
     {
         id: "empleado",
         category: "uncategorized",
-        spanish: "un empleado",
-        english: " an employee",
+        term: "un empleado",
+        definition: " an employee",
         knowledgelevel: 0
     },
     {
         id: "empleo",
         category: "uncategorized",
-        spanish: "un empleo",
-        english: " employment",
+        term: "un empleo",
+        definition: " employment",
         knowledgelevel: 0
     },
     {
         id: "empozado",
         category: "uncategorized",
-        spanish: "empozado (adj)",
-        english: "embedded",
+        term: "empozado (adj)",
+        definition: "embedded",
         knowledgelevel: 0
     },
     {
         id: "empresa",
         category: "uncategorized",
-        spanish: "una empresa",
-        english: " a company",
+        term: "una empresa",
+        definition: " a company",
         knowledgelevel: 0
     },
     {
         id: "en_aquel",
         category: "uncategorized",
-        spanish: "en aquel",
-        english: " entonces",
+        term: "en aquel",
+        definition: " entonces",
         knowledgelevel: 0
     },
     {
         id: "en_efecto",
         category: "uncategorized",
-        spanish: "en efecto",
-        english: "indeed",
+        term: "en efecto",
+        definition: "indeed",
         knowledgelevel: 0
     },
     {
         id: "en_forma",
         category: "uncategorized",
-        spanish: "en forma",
-        english: "  in shape, fit",
+        term: "en forma",
+        definition: "  in shape, fit",
         knowledgelevel: 0
     },
     {
         id: "en_forma_de_sierra",
         category: "uncategorized",
-        spanish: "en forma de sierra",
-        english: "  saw-shaped like a leaf",
+        term: "en forma de sierra",
+        definition: "  saw-shaped like a leaf",
         knowledgelevel: 0
     },
     {
         id: "en_huelga",
         category: "uncategorized",
-        spanish: "en huelga",
-        english: "  on strike",
+        term: "en huelga",
+        definition: "  on strike",
         knowledgelevel: 0
     },
     {
         id: "en_reversa",
         category: "uncategorized",
-        spanish: "en reversa",
-        english: "in reverse",
+        term: "en reversa",
+        definition: "in reverse",
         knowledgelevel: 0
     },
     {
         id: "en_si_debes",
         category: "uncategorized",
-        spanish: "en si debes",
-        english: "if you must",
+        term: "en si debes",
+        definition: "if you must",
         knowledgelevel: 0
     },
     {
         id: "en_sincronía",
         category: "uncategorized",
-        spanish: "en sincronía",
-        english: "  in synch",
+        term: "en sincronía",
+        definition: "  in synch",
         knowledgelevel: 0
     },
     {
         id: "en_son_de_paz",
         category: "uncategorized",
-        spanish: "en son de paz",
-        english: "in peace",
+        term: "en son de paz",
+        definition: "in peace",
         knowledgelevel: 0
     },
     {
         id: "en_torno",
         category: "uncategorized",
-        spanish: "en torno",
-        english: " around",
+        term: "en torno",
+        definition: " around",
         knowledgelevel: 0
     },
     {
         id: "en_vigencia",
         category: "uncategorized",
-        spanish: "en vigencia",
-        english: "  in force like a law is enforced",
+        term: "en vigencia",
+        definition: "  in force like a law is enforced",
         knowledgelevel: 0
     },
     {
         id: "enana",
         category: "uncategorized",
-        spanish: "una enana",
-        english: "a dwarf",
+        term: "una enana",
+        definition: "a dwarf",
         knowledgelevel: 0
     },
     {
         id: "encuentro",
         category: "uncategorized",
-        spanish: "un encuentro",
-        english: "  a meeting",
+        term: "un encuentro",
+        definition: "  a meeting",
         knowledgelevel: 0
     },
     {
         id: "enfermería",
         category: "uncategorized",
-        spanish: "la enfermería",
-        english: "the nursing",
+        term: "la enfermería",
+        definition: "the nursing",
         knowledgelevel: 0
     },
     {
         id: "enfermero",
         category: "uncategorized",
-        spanish: "un enfermero",
-        english: "a nurse",
+        term: "un enfermero",
+        definition: "a nurse",
         knowledgelevel: 0
     },
     {
         id: "enfoque",
         category: "uncategorized",
-        spanish: "un enfoque",
-        english: "an approach",
+        term: "un enfoque",
+        definition: "an approach",
         knowledgelevel: 0
     },
     {
         id: "engañoso",
         category: "uncategorized",
-        spanish: "engañoso (adj)",
-        english: "misleading",
+        term: "engañoso (adj)",
+        definition: "misleading",
         knowledgelevel: 0
     },
     {
         id: "enojo",
         category: "uncategorized",
-        spanish: "enojo",
-        english: "anger",
+        term: "enojo",
+        definition: "anger",
         knowledgelevel: 0
     },
     {
         id: "enredo",
         category: "uncategorized",
-        spanish: "un enredo",
-        english: "a tangle",
+        term: "un enredo",
+        definition: "a tangle",
         knowledgelevel: 0
     },
     {
         id: "enrojecimiento",
         category: "uncategorized",
-        spanish: "enrojecimiento",
-        english: "redness",
+        term: "enrojecimiento",
+        definition: "redness",
         knowledgelevel: 0
     },
     {
         id: "ensayo",
         category: "uncategorized",
-        spanish: "un ensayo",
-        english: "  rehearsal",
+        term: "un ensayo",
+        definition: "  rehearsal",
         knowledgelevel: 0
     },
     {
         id: "ensoñación",
         category: "uncategorized",
-        spanish: "la ensoñación",
-        english: "a daydream",
+        term: "la ensoñación",
+        definition: "a daydream",
         knowledgelevel: 0
     },
     {
         id: "ensordecedor",
         category: "uncategorized",
-        spanish: "ensordecedor (adj)",
-        english: "deafening",
+        term: "ensordecedor (adj)",
+        definition: "deafening",
         knowledgelevel: 0
     },
     {
         id: "ensueño",
         category: "uncategorized",
-        spanish: "un ensueño",
-        english: "  a dream",
+        term: "un ensueño",
+        definition: "  a dream",
         knowledgelevel: 0
     },
     {
         id: "ente",
         category: "uncategorized",
-        spanish: "un ente",
-        english: "an entity",
+        term: "un ente",
+        definition: "an entity",
         knowledgelevel: 0
     },
     {
         id: "entornado",
         category: "uncategorized",
-        spanish: "entornado (adj)",
-        english: "ajar",
+        term: "entornado (adj)",
+        definition: "ajar",
         knowledgelevel: 0
     },
     {
         id: "entorno",
         category: "uncategorized",
-        spanish: "un entorno",
-        english: " an environment or around",
+        term: "un entorno",
+        definition: " an environment or around",
         knowledgelevel: 0
     },
     {
         id: "entrante",
         category: "uncategorized",
-        spanish: "entrante (adj)",
-        english: "  next,  incoming",
+        term: "entrante (adj)",
+        definition: "  next,  incoming",
         knowledgelevel: 0
     },
     {
         id: "entrega",
         category: "uncategorized",
-        spanish: "la entrega",
-        english: "the delivery",
+        term: "la entrega",
+        definition: "the delivery",
         knowledgelevel: 0
     },
     {
         id: "entrenadora",
         category: "uncategorized",
-        spanish: "la entrenadora",
-        english: "  the coach",
+        term: "la entrenadora",
+        definition: "  the coach",
         knowledgelevel: 0
     },
     {
         id: "entretenimiento",
         category: "uncategorized",
-        spanish: "el entretenimiento",
-        english: "the entertainment",
+        term: "el entretenimiento",
+        definition: "the entertainment",
         knowledgelevel: 0
     },
     {
         id: "entrevistado_&_un_entrevistador",
         category: "uncategorized",
-        spanish: "un entrevistado & un entrevistador",
-        english: "the interviewee & the interviewer",
+        term: "un entrevistado & un entrevistador",
+        definition: "the interviewee & the interviewer",
         knowledgelevel: 0
     },
     {
         id: "enunciado",
         category: "uncategorized",
-        spanish: "un enunciado",
-        english: "a statement",
+        term: "un enunciado",
+        definition: "a statement",
         knowledgelevel: 0
     },
     {
         id: "envase",
         category: "uncategorized",
-        spanish: "un envase",
-        english: "the container",
+        term: "un envase",
+        definition: "the container",
         knowledgelevel: 0
     },
     {
         id: "envergadura",
         category: "uncategorized",
-        spanish: "la envergadura",
-        english: "  the wingspan",
+        term: "la envergadura",
+        definition: "  the wingspan",
         knowledgelevel: 0
     },
     {
         id: "equipamientos",
         category: "uncategorized",
-        spanish: "los equipamientos",
-        english: "the equiptment",
+        term: "los equipamientos",
+        definition: "the equiptment",
         knowledgelevel: 0
     },
     {
         id: "es_el_colmo",
         category: "uncategorized",
-        spanish: "es el colmo",
-        english: "it’s the last straw",
+        term: "es el colmo",
+        definition: "it’s the last straw",
         knowledgelevel: 0
     },
     {
         id: "escalofrío",
         category: "uncategorized",
-        spanish: "un escalofrío",
-        english: "a chill",
+        term: "un escalofrío",
+        definition: "a chill",
         knowledgelevel: 0
     },
     {
         id: "escaso",
         category: "uncategorized",
-        spanish: "escasa / escaso",
-        english: "scarce",
+        term: "escasa / escaso",
+        definition: "scarce",
         knowledgelevel: 0
     },
     {
         id: "escasez",
         category: "uncategorized",
-        spanish: "una escasez",
-        english: "a shortage",
+        term: "una escasez",
+        definition: "a shortage",
         knowledgelevel: 0
     },
     {
         id: "escenario",
         category: "uncategorized",
-        spanish: "el escenario",
-        english: "the scenery",
+        term: "el escenario",
+        definition: "the scenery",
         knowledgelevel: 0
     },
     {
         id: "escéptico",
         category: "uncategorized",
-        spanish: "escéptico (es-séptico) (adj)",
-        english: "skeptical",
+        term: "escéptico (es-séptico) (adj)",
+        definition: "skeptical",
         knowledgelevel: 0
     },
     {
         id: "escombro",
         category: "uncategorized",
-        spanish: "el escombro",
-        english: "the rubbish",
+        term: "el escombro",
+        definition: "the rubbish",
         knowledgelevel: 0
     },
     {
         id: "escozor",
         category: "uncategorized",
-        spanish: "un escozor",
-        english: "a sting",
+        term: "un escozor",
+        definition: "a sting",
         knowledgelevel: 0
     },
     {
         id: "escrito",
         category: "uncategorized",
-        spanish: "un escrito",
-        english: "a writing",
+        term: "un escrito",
+        definition: "a writing",
         knowledgelevel: 0
     },
     {
         id: "escritura",
         category: "uncategorized",
-        spanish: "la escritura",
-        english: " the writing",
+        term: "la escritura",
+        definition: " the writing",
         knowledgelevel: 0
     },
     {
         id: "escudo",
         category: "uncategorized",
-        spanish: "un escudo",
-        english: "a shield",
+        term: "un escudo",
+        definition: "a shield",
         knowledgelevel: 0
     },
     {
         id: "escultor",
         category: "uncategorized",
-        spanish: "un escultor",
-        english: "a sculptor",
+        term: "un escultor",
+        definition: "a sculptor",
         knowledgelevel: 0
     },
     {
         id: "esencia",
         category: "uncategorized",
-        spanish: "una esencia",
-        english: "an essence",
+        term: "una esencia",
+        definition: "an essence",
         knowledgelevel: 0
     },
     {
         id: "esencial",
         category: "uncategorized",
-        spanish: "esencial (adj)",
-        english: "essential",
+        term: "esencial (adj)",
+        definition: "essential",
         knowledgelevel: 0
     },
     {
         id: "eslabón",
         category: "uncategorized",
-        spanish: "el eslabón",
-        english: "the link",
+        term: "el eslabón",
+        definition: "the link",
         knowledgelevel: 0
     },
     {
         id: "eslóganes",
         category: "uncategorized",
-        spanish: "los eslóganes",
-        english: "the slogans",
+        term: "los eslóganes",
+        definition: "the slogans",
         knowledgelevel: 0
     },
     {
         id: "esmero",
         category: "uncategorized",
-        spanish: "esmero",
-        english: "care",
+        term: "esmero",
+        definition: "care",
         knowledgelevel: 0
     },
     {
         id: "espantoso",
         category: "uncategorized",
-        spanish: "espantoso",
-        english: "  scary",
+        term: "espantoso",
+        definition: "  scary",
         knowledgelevel: 0
     },
     {
         id: "espeluznante",
         category: "uncategorized",
-        spanish: "espeluznante",
-        english: "  terrifying",
+        term: "espeluznante",
+        definition: "  terrifying",
         knowledgelevel: 0
     },
     {
         id: "esperada",
         category: "uncategorized",
-        spanish: "esperada (adj)",
-        english: "expected",
+        term: "esperada (adj)",
+        definition: "expected",
         knowledgelevel: 0
     },
     {
         id: "espesa",
         category: "uncategorized",
-        spanish: "espesa",
-        english: "thick,  dense like an ointment or soup",
+        term: "espesa",
+        definition: "thick,  dense like an ointment or soup",
         knowledgelevel: 0
     },
     {
         id: "espinas",
         category: "uncategorized",
-        spanish: "las espinas",
-        english: "the thorns",
+        term: "las espinas",
+        definition: "the thorns",
         knowledgelevel: 0
     },
     {
         id: "espinosa",
         category: "uncategorized",
-        spanish: "espinosa",
-        english: "prickly",
+        term: "espinosa",
+        definition: "prickly",
         knowledgelevel: 0
     },
     {
         id: "esporas",
         category: "uncategorized",
-        spanish: "los esporas",
-        english: "  the spores",
+        term: "los esporas",
+        definition: "  the spores",
         knowledgelevel: 0
     },
     {
         id: "esqueje",
         category: "uncategorized",
-        spanish: "un esqueje",
-        english: "a cutting",
+        term: "un esqueje",
+        definition: "a cutting",
         knowledgelevel: 0
     },
     {
         id: "está_a_pocos_pasos",
         category: "uncategorized",
-        spanish: "está a pocos pasos",
-        english: "it's a few steps away",
+        term: "está a pocos pasos",
+        definition: "it's a few steps away",
         knowledgelevel: 0
     },
     {
         id: "el_está_jubilado",
         category: "uncategorized",
-        spanish: "el está jubilado",
-        english: "he's retired",
+        term: "el está jubilado",
+        definition: "he's retired",
         knowledgelevel: 0
     },
     {
         id: "esta_por_llegar",
         category: "uncategorized",
-        spanish: "esta por llegar",
-        english: "it/he/she is about to arrive",
+        term: "esta por llegar",
+        definition: "it/he/she is about to arrive",
         knowledgelevel: 0
     },
     {
         id: "estacional",
         category: "uncategorized",
-        spanish: "estacional",
-        english: "seasonal",
+        term: "estacional",
+        definition: "seasonal",
         knowledgelevel: 0
     },
     {
         id: "estacionamientos",
         category: "uncategorized",
-        spanish: "los estacionamientos",
-        english: "the parking lots",
+        term: "los estacionamientos",
+        definition: "the parking lots",
         knowledgelevel: 0
     },
     {
         id: "estadía",
         category: "uncategorized",
-        spanish: "una estadía",
-        english: "A stay",
+        term: "una estadía",
+        definition: "A stay",
         knowledgelevel: 0
     },
     {
         id: "estanque",
         category: "uncategorized",
-        spanish: "un estanque",
-        english: "  a pond",
+        term: "un estanque",
+        definition: "  a pond",
         knowledgelevel: 0
     },
     {
         id: "estar_de_cabeza",
         category: "uncategorized",
-        spanish: "estar de cabeza",
-        english: "to be upside down",
+        term: "estar de cabeza",
+        definition: "to be upside down",
         knowledgelevel: 0
     },
     {
         id: "estar_distribuido",
         category: "uncategorized",
-        spanish: "estar distribuido",
-        english: "to be distributed",
+        term: "estar distribuido",
+        definition: "to be distributed",
         knowledgelevel: 0
     },
     {
         id: "estera",
         category: "uncategorized",
-        spanish: "una estera",
-        english: "a mat",
+        term: "una estera",
+        definition: "a mat",
         knowledgelevel: 0
     },
     {
         id: "estofado",
         category: "uncategorized",
-        spanish: "un estofado",
-        english: "a stew",
+        term: "un estofado",
+        definition: "a stew",
         knowledgelevel: 0
     },
     {
         id: "estrambótico",
         category: "uncategorized",
-        spanish: "estrambótico",
-        english: "  bizarre",
+        term: "estrambótico",
+        definition: "  bizarre",
         knowledgelevel: 0
     },
     {
         id: "estruendoso",
         category: "uncategorized",
-        spanish: "estruendoso (adj)",
-        english: "  thunderous",
+        term: "estruendoso (adj)",
+        definition: "  thunderous",
         knowledgelevel: 0
     },
     {
         id: "etapa",
         category: "uncategorized",
-        spanish: "una etapa",
-        english: "  stage,  phase (like a prehistoric period)",
+        term: "una etapa",
+        definition: "  stage,  phase (like a prehistoric period)",
         knowledgelevel: 0
     },
     {
         id: "etnia",
         category: "uncategorized",
-        spanish: "una etnia",
-        english: "an ethnicity",
+        term: "una etnia",
+        definition: "an ethnicity",
         knowledgelevel: 0
     },
     {
         id: "exportación",
         category: "uncategorized",
-        spanish: "la exportación",
-        english: "the export",
+        term: "la exportación",
+        definition: "the export",
         knowledgelevel: 0
     },
     {
         id: "expuesto",
         category: "uncategorized",
-        spanish: "expuesto (adj)",
-        english: "exposed",
+        term: "expuesto (adj)",
+        definition: "exposed",
         knowledgelevel: 0
     },
     {
         id: "fabricante",
         category: "uncategorized",
-        spanish: "un fabricante",
-        english: "  a manufacturer ",
+        term: "un fabricante",
+        definition: "  a manufacturer ",
         knowledgelevel: 0
     },
     {
         id: "fachada",
         category: "uncategorized",
-        spanish: "una fachada",
-        english: "a façade",
+        term: "una fachada",
+        definition: "a façade",
         knowledgelevel: 0
     },
     {
         id: "facultad",
         category: "uncategorized",
-        spanish: "facultad",
-        english: "  faculty or power",
+        term: "facultad",
+        definition: "  faculty or power",
         knowledgelevel: 0
     },
     {
         id: "falla",
         category: "uncategorized",
-        spanish: "la falla",
-        english: "  the fault line (tectonic plates)",
+        term: "la falla",
+        definition: "  the fault line (tectonic plates)",
         knowledgelevel: 0
     },
     {
         id: "falta",
         category: "uncategorized",
-        spanish: "la falta",
-        english: "  the lack?",
+        term: "la falta",
+        definition: "  the lack?",
         knowledgelevel: 0
     },
     {
         id: "fango",
         category: "uncategorized",
-        spanish: "fango",
-        english: "mud",
+        term: "fango",
+        definition: "mud",
         knowledgelevel: 0
     },
     {
         id: "fastidio",
         category: "uncategorized",
-        spanish: "un fastidio",
-        english: "a nuisance",
+        term: "un fastidio",
+        definition: "a nuisance",
         knowledgelevel: 0
     },
     {
         id: "ferrocarril",
         category: "uncategorized",
-        spanish: "un ferrocarril",
-        english: "a railway",
+        term: "un ferrocarril",
+        definition: "a railway",
         knowledgelevel: 0
     },
     {
         id: "fertilizante",
         category: "uncategorized",
-        spanish: "fertilizante",
-        english: "fertilizer",
+        term: "fertilizante",
+        definition: "fertilizer",
         knowledgelevel: 0
     },
     {
         id: "fiel",
         category: "uncategorized",
-        spanish: "fiel",
-        english: " (adj)",
+        term: "fiel",
+        definition: " (adj)",
         knowledgelevel: 0
     },
     {
         id: "fíjate",
         category: "uncategorized",
-        spanish: "fíjate",
-        english: "  imagine,  look!",
+        term: "fíjate",
+        definition: "  imagine,  look!",
         knowledgelevel: 0
     },
     {
         id: "filuda",
         category: "uncategorized",
-        spanish: "filuda (adj)",
-        english: "sharp",
+        term: "filuda (adj)",
+        definition: "sharp",
         knowledgelevel: 0
     },
     {
         id: "financiera",
         category: "uncategorized",
-        spanish: "financiera (adj)",
-        english: "financial",
+        term: "financiera (adj)",
+        definition: "financial",
         knowledgelevel: 0
     },
     {
         id: "firmeza",
         category: "uncategorized",
-        spanish: "la firmeza",
-        english: "firmness",
+        term: "la firmeza",
+        definition: "firmness",
         knowledgelevel: 0
     },
     {
         id: "flaco",
         category: "uncategorized",
-        spanish: "flaco (adj)",
-        english: "  skinny",
+        term: "flaco (adj)",
+        definition: "  skinny",
         knowledgelevel: 0
     },
     {
         id: "flamante",
         category: "uncategorized",
-        spanish: "flamante",
-        english: "  brand new",
+        term: "flamante",
+        definition: "  brand new",
         knowledgelevel: 0
     },
     {
         id: "flauta",
         category: "uncategorized",
-        spanish: "una flauta",
-        english: "a flute",
+        term: "una flauta",
+        definition: "a flute",
         knowledgelevel: 0
     },
     {
         id: "flecos",
         category: "uncategorized",
-        spanish: "los flecos",
-        english: "the fringes",
+        term: "los flecos",
+        definition: "the fringes",
         knowledgelevel: 0
     },
     {
         id: "formato",
         category: "uncategorized",
-        spanish: "un formato",
-        english: "a format",
+        term: "un formato",
+        definition: "a format",
         knowledgelevel: 0
     },
     {
         id: "forzudo",
         category: "uncategorized",
-        spanish: "forzudo",
-        english: "  strong",
+        term: "forzudo",
+        definition: "  strong",
         knowledgelevel: 0
     },
     {
         id: "fosa_nasal",
         category: "uncategorized",
-        spanish: "una fosa nasal",
-        english: "  a nostril",
+        term: "una fosa nasal",
+        definition: "  a nostril",
         knowledgelevel: 0
     },
     {
         id: "frasco",
         category: "uncategorized",
-        spanish: "una frasco",
-        english: "  a bottle or jar",
+        term: "una frasco",
+        definition: "  a bottle or jar",
         knowledgelevel: 0
     },
     {
         id: "frescor",
         category: "uncategorized",
-        spanish: "el frescor",
-        english: "the freshness",
+        term: "el frescor",
+        definition: "the freshness",
         knowledgelevel: 0
     },
     {
         id: "fuera_de_lugar",
         category: "uncategorized",
-        spanish: "fuera de lugar",
-        english: "out of place",
+        term: "fuera de lugar",
+        definition: "out of place",
         knowledgelevel: 0
     },
     {
         id: "funcionamiento",
         category: "uncategorized",
-        spanish: "la funcionamiento",
-        english: "the operation",
+        term: "la funcionamiento",
+        definition: "the operation",
         knowledgelevel: 0
     },
     {
         id: "fundador",
         category: "uncategorized",
-        spanish: "una fundador",
-        english: "a founder",
+        term: "una fundador",
+        definition: "a founder",
         knowledgelevel: 0
     },
     {
         id: "furia",
         category: "uncategorized",
-        spanish: "una furia",
-        english: "a rage",
+        term: "una furia",
+        definition: "a rage",
         knowledgelevel: 0
     },
     {
         id: "ganado",
         category: "uncategorized",
-        spanish: "ganado",
-        english: "cattle",
+        term: "ganado",
+        definition: "cattle",
         knowledgelevel: 0
     },
     {
         id: "garabato",
         category: "uncategorized",
-        spanish: "un garabato",
-        english: "a scribble",
+        term: "un garabato",
+        definition: "a scribble",
         knowledgelevel: 0
     },
     {
         id: "garantía",
         category: "uncategorized",
-        spanish: "una garantía",
-        english: "a warranty",
+        term: "una garantía",
+        definition: "a warranty",
         knowledgelevel: 0
     },
     {
         id: "garrapata",
         category: "uncategorized",
-        spanish: "una garrapata",
-        english: "a tick (insect)",
+        term: "una garrapata",
+        definition: "a tick (insect)",
         knowledgelevel: 0
     },
     {
         id: "garza",
         category: "uncategorized",
-        spanish: "una garza",
-        english: "  a heron (bird)",
+        term: "una garza",
+        definition: "  a heron (bird)",
         knowledgelevel: 0
     },
     {
         id: "gasto",
         category: "uncategorized",
-        spanish: "un gasto",
-        english: "an expense",
+        term: "un gasto",
+        definition: "an expense",
         knowledgelevel: 0
     },
     {
         id: "gemas",
         category: "uncategorized",
-        spanish: "las gemas",
-        english: "the gems",
+        term: "las gemas",
+        definition: "the gems",
         knowledgelevel: 0
     },
     {
         id: "germen",
         category: "uncategorized",
-        spanish: "un germen",
-        english: "a germ",
+        term: "un germen",
+        definition: "a germ",
         knowledgelevel: 0
     },
     {
         id: "gimnasta",
         category: "uncategorized",
-        spanish: "una gimnasta",
-        english: "a gymnast",
+        term: "una gimnasta",
+        definition: "a gymnast",
         knowledgelevel: 0
     },
     {
         id: "giratoria",
         category: "uncategorized",
-        spanish: "giratoria",
-        english: "  rotating (adj)",
+        term: "giratoria",
+        definition: "  rotating (adj)",
         knowledgelevel: 0
     },
     {
         id: "glotón",
         category: "uncategorized",
-        spanish: "glotón (adj)",
-        english: "glutton (eats, drinks, or consumes excessively)",
+        term: "glotón (adj)",
+        definition: "glutton (eats, drinks, or consumes excessively)",
         knowledgelevel: 0
     },
     {
         id: "gobernante",
         category: "uncategorized",
-        spanish: "un  gobernante",
-        english: "a ruler",
+        term: "un  gobernante",
+        definition: "a ruler",
         knowledgelevel: 0
     },
     {
         id: "golosina",
         category: "uncategorized",
-        spanish: "golosina",
-        english: "candy",
+        term: "golosina",
+        definition: "candy",
         knowledgelevel: 0
     },
     {
         id: "golpe_de_suerte",
         category: "uncategorized",
-        spanish: "un golpe de suerte",
-        english: "a lucky break",
+        term: "un golpe de suerte",
+        definition: "a lucky break",
         knowledgelevel: 0
     },
     {
         id: "gorjeo",
         category: "uncategorized",
-        spanish: "un gorjeo",
-        english: "  a twitter like from a bird",
+        term: "un gorjeo",
+        definition: "  a twitter like from a bird",
         knowledgelevel: 0
     },
     {
         id: "gráfica",
         category: "uncategorized",
-        spanish: "una gráfica",
-        english: "a graph",
+        term: "una gráfica",
+        definition: "a graph",
         knowledgelevel: 0
     },
     {
         id: "grasa",
         category: "uncategorized",
-        spanish: "la grasa",
-        english: "the fat",
+        term: "la grasa",
+        definition: "the fat",
         knowledgelevel: 0
     },
     {
         id: "grave",
         category: "uncategorized",
-        spanish: "grave, graves (adj)",
-        english: "serious",
+        term: "grave, graves (adj)",
+        definition: "serious",
         knowledgelevel: 0
     },
     {
         id: "graznido",
         category: "uncategorized",
-        spanish: "el graznido",
-        english: "the squawk",
+        term: "el graznido",
+        definition: "the squawk",
         knowledgelevel: 0
     },
     {
         id: "grillo",
         category: "uncategorized",
-        spanish: "un grillo",
-        english: "a cricket",
+        term: "un grillo",
+        definition: "a cricket",
         knowledgelevel: 0
     },
     {
         id: "guarida",
         category: "uncategorized",
-        spanish: "una guarida",
-        english: "a den",
+        term: "una guarida",
+        definition: "a den",
         knowledgelevel: 0
     },
     {
         id: "guata",
         category: "uncategorized",
-        spanish: "guata",
-        english: " tummy in chile",
+        term: "guata",
+        definition: " tummy in chile",
         knowledgelevel: 0
     },
     {
         id: "guepardo",
         category: "uncategorized",
-        spanish: "un guepardo (gay-par-do)",
-        english: "cheetah",
+        term: "un guepardo (gay-par-do)",
+        definition: "cheetah",
         knowledgelevel: 0
     },
     {
         id: "guiño_el_ojo",
         category: "uncategorized",
-        spanish: "un guiño el ojo",
-        english: "a wink of an eye",
+        term: "un guiño el ojo",
+        definition: "a wink of an eye",
         knowledgelevel: 0
     },
     {
         id: "hacedor",
         category: "uncategorized",
-        spanish: "el hacedor",
-        english: "a maker",
+        term: "el hacedor",
+        definition: "a maker",
         knowledgelevel: 0
     },
     {
         id: "mandado",
         category: "uncategorized",
-        spanish: "un mandado",
-        english: "A chore, an errand",
+        term: "un mandado",
+        definition: "A chore, an errand",
         knowledgelevel: 0
     },
     {
         id: "hacerse_duelo",
         category: "uncategorized",
-        spanish: "hacerse duelo",
-        english: "  to mourn",
+        term: "hacerse duelo",
+        definition: "  to mourn",
         knowledgelevel: 0
     },
     {
         id: "hacha",
         category: "uncategorized",
-        spanish: "una hacha",
-        english: "an axe",
+        term: "una hacha",
+        definition: "an axe",
         knowledgelevel: 0
     },
     {
         id: "hada",
         category: "uncategorized",
-        spanish: "una hada",
-        english: " a fairy",
+        term: "una hada",
+        definition: " a fairy",
         knowledgelevel: 0
     },
     {
         id: "hallazgo",
         category: "uncategorized",
-        spanish: "el hallazgo",
-        english: "a find",
+        term: "el hallazgo",
+        definition: "a find",
         knowledgelevel: 0
     },
     {
         id: "harto",
         category: "uncategorized",
-        spanish: "harto",
-        english: "  fed up",
+        term: "harto",
+        definition: "  fed up",
         knowledgelevel: 0
     },
     {
         id: "hazaña",
         category: "uncategorized",
-        spanish: "una hazaña",
-        english: "a feat",
+        term: "una hazaña",
+        definition: "a feat",
         knowledgelevel: 0
     },
     {
         id: "hebras",
         category: "uncategorized",
-        spanish: "las hebras",
-        english: "the strands",
+        term: "las hebras",
+        definition: "the strands",
         knowledgelevel: 0
     },
     {
         id: "hélice",
         category: "uncategorized",
-        spanish: "un hélice",
-        english: "  a propeller",
+        term: "un hélice",
+        definition: "  a propeller",
         knowledgelevel: 0
     },
     {
         id: "heno",
         category: "uncategorized",
-        spanish: "el heno",
-        english: "the hay",
+        term: "el heno",
+        definition: "the hay",
         knowledgelevel: 0
     },
     {
         id: "hierro_derretido",
         category: "uncategorized",
-        spanish: "hierro derretido",
-        english: "  cast iron",
+        term: "hierro derretido",
+        definition: "  cast iron",
         knowledgelevel: 0
     },
     {
         id: "historiador",
         category: "uncategorized",
-        spanish: "un historiador",
-        english: "A historian",
+        term: "un historiador",
+        definition: "A historian",
         knowledgelevel: 0
     },
     {
         id: "hito",
         category: "uncategorized",
-        spanish: "un hito",
-        english: "a milestone",
+        term: "un hito",
+        definition: "a milestone",
         knowledgelevel: 0
     },
     {
         id: "hizo_que_fuera",
         category: "uncategorized",
-        spanish: "hizo que fuera",
-        english: "made it out",
+        term: "hizo que fuera",
+        definition: "made it out",
         knowledgelevel: 0
     },
     {
         id: "hogar_familiar",
         category: "uncategorized",
-        spanish: "el hogar familiar",
-        english: "a family home",
+        term: "el hogar familiar",
+        definition: "a family home",
         knowledgelevel: 0
     },
     {
         id: "hogaza",
         category: "uncategorized",
-        spanish: "una hogaza",
-        english: "a loaf",
+        term: "una hogaza",
+        definition: "a loaf",
         knowledgelevel: 0
     },
     {
         id: "hoguera",
         category: "uncategorized",
-        spanish: "una hoguera",
-        english: "a bonfire, campfire",
+        term: "una hoguera",
+        definition: "a bonfire, campfire",
         knowledgelevel: 0
     },
     {
         id: "homenaje",
         category: "uncategorized",
-        spanish: "un homenaje",
-        english: "a tribute",
+        term: "un homenaje",
+        definition: "a tribute",
         knowledgelevel: 0
     },
     {
         id: "hondo_",
         category: "uncategorized",
-        spanish: "hondo (adj)",
-        english: "deep",
+        term: "hondo (adj)",
+        definition: "deep",
         knowledgelevel: 0
     },
     {
         id: "horroroso",
         category: "uncategorized",
-        spanish: "horroroso",
-        english: "  terrible",
+        term: "horroroso",
+        definition: "  terrible",
         knowledgelevel: 0
     },
     {
         id: "hortaliza",
         category: "uncategorized",
-        spanish: "una hortaliza",
-        english: "a vegetable",
+        term: "una hortaliza",
+        definition: "a vegetable",
         knowledgelevel: 0
     },
     {
         id: "huésped",
         category: "uncategorized",
-        spanish: "el huésped",
-        english: "  guest in hotel,  or host animal of a smaller animal like a parasite",
+        term: "el huésped",
+        definition: "  guest in hotel,  or host animal of a smaller animal like a parasite",
         knowledgelevel: 0
     },
     {
         id: "humedad",
         category: "uncategorized",
-        spanish: "la humedad",
-        english: "  the humidity",
+        term: "la humedad",
+        definition: "  the humidity",
         knowledgelevel: 0
     },
     {
         id: "un_viaje_de_ida_y_vuelta",
         category: "uncategorized",
-        spanish: "un viaje de ida y vuelta",
-        english: "a round trip",
+        term: "un viaje de ida y vuelta",
+        definition: "a round trip",
         knowledgelevel: 0
     },
     {
         id: "ilusionada",
         category: "uncategorized",
-        spanish: "ilusionada",
-        english: "excited, hopeful",
+        term: "ilusionada",
+        definition: "excited, hopeful",
         knowledgelevel: 0
     },
     {
         id: "imprimible",
         category: "uncategorized",
-        spanish: "imprimible",
-        english: " printable",
+        term: "imprimible",
+        definition: " printable",
         knowledgelevel: 0
     },
     {
         id: "impuesto",
         category: "uncategorized",
-        spanish: "un impuesto",
-        english: "a tax",
+        term: "un impuesto",
+        definition: "a tax",
         knowledgelevel: 0
     },
     {
         id: "impulso",
         category: "uncategorized",
-        spanish: "impulso",
-        english: "  impulse or momentum",
+        term: "impulso",
+        definition: "  impulse or momentum",
         knowledgelevel: 0
     },
     {
         id: "inadvertido",
         category: "uncategorized",
-        spanish: "inadvertido",
-        english: "  unnoticed",
+        term: "inadvertido",
+        definition: "  unnoticed",
         knowledgelevel: 0
     },
     {
         id: "inanimado",
         category: "uncategorized",
-        spanish: "inanimado",
-        english: "inanimate",
+        term: "inanimado",
+        definition: "inanimate",
         knowledgelevel: 0
     },
     {
         id: "incontable",
         category: "uncategorized",
-        spanish: "incontable (adj)",
-        english: "countless",
+        term: "incontable (adj)",
+        definition: "countless",
         knowledgelevel: 0
     },
     {
         id: "incredulidad",
         category: "uncategorized",
-        spanish: "la incredulidad",
-        english: "the disbelief",
+        term: "la incredulidad",
+        definition: "the disbelief",
         knowledgelevel: 0
     },
     {
         id: "influjo",
         category: "uncategorized",
-        spanish: "un influjo",
-        english: "an influence",
+        term: "un influjo",
+        definition: "an influence",
         knowledgelevel: 0
     },
     {
         id: "inform",
         category: "uncategorized",
-        spanish: "un inform",
-        english: "a report",
+        term: "un inform",
+        definition: "a report",
         knowledgelevel: 0
     },
     {
         id: "informativo",
         category: "uncategorized",
-        spanish: "informativo (adj)",
-        english: "informative",
+        term: "informativo (adj)",
+        definition: "informative",
         knowledgelevel: 0
     },
     {
         id: "ingeniosa",
         category: "uncategorized",
-        spanish: "ingeniosa",
-        english: "ingenious",
+        term: "ingeniosa",
+        definition: "ingenious",
         knowledgelevel: 0
     },
     {
         id: "iniciativa",
         category: "uncategorized",
-        spanish: "una iniciativa",
-        english: "an initiative",
+        term: "una iniciativa",
+        definition: "an initiative",
         knowledgelevel: 0
     },
     {
         id: "inmóvil",
         category: "uncategorized",
-        spanish: "inmóvil",
-        english: "still",
+        term: "inmóvil",
+        definition: "still",
         knowledgelevel: 0
     },
     {
         id: "innovadora",
         category: "uncategorized",
-        spanish: "innovadora (adj)",
-        english: "innovative",
+        term: "innovadora (adj)",
+        definition: "innovative",
         knowledgelevel: 0
     },
     {
         id: "insecticida",
         category: "uncategorized",
-        spanish: "una insecticida",
-        english: "an insecticide",
+        term: "una insecticida",
+        definition: "an insecticide",
         knowledgelevel: 0
     },
     {
         id: "insólito",
         category: "uncategorized",
-        spanish: "insólito (adj)",
-        english: "unusual",
+        term: "insólito (adj)",
+        definition: "unusual",
         knowledgelevel: 0
     },
     {
         id: "instantáneo",
         category: "uncategorized",
-        spanish: "instantáneo (adj)",
-        english: "instant",
+        term: "instantáneo (adj)",
+        definition: "instant",
         knowledgelevel: 0
     },
     {
         id: "intempestivamente",
         category: "uncategorized",
-        spanish: "intempestivamente",
-        english: "unexpectedly",
+        term: "intempestivamente",
+        definition: "unexpectedly",
         knowledgelevel: 0
     },
     {
         id: "intercambio",
         category: "uncategorized",
-        spanish: "el intercambio",
-        english: "an exchange",
+        term: "el intercambio",
+        definition: "an exchange",
         knowledgelevel: 0
     },
     {
         id: "interminable",
         category: "uncategorized",
-        spanish: "interminable (adj)",
-        english: "endless",
+        term: "interminable (adj)",
+        definition: "endless",
         knowledgelevel: 0
     },
     {
         id: "internado",
         category: "uncategorized",
-        spanish: "un internado",
-        english: "  a boarding school",
+        term: "un internado",
+        definition: "  a boarding school",
         knowledgelevel: 0
     },
     {
         id: "invasora",
         category: "uncategorized",
-        spanish: "invasora (adj)",
-        english: "invasive",
+        term: "invasora (adj)",
+        definition: "invasive",
         knowledgelevel: 0
     },
     {
         id: "invitado",
         category: "uncategorized",
-        spanish: "un invitado",
-        english: "a guest",
+        term: "un invitado",
+        definition: "a guest",
         knowledgelevel: 0
     },
     {
         id: "jaque",
         category: "uncategorized",
-        spanish: "jaque",
-        english: " check",
+        term: "jaque",
+        definition: " check",
         knowledgelevel: 0
     },
     {
         id: "jardín_infantil",
         category: "uncategorized",
-        spanish: "jardín infantil",
-        english: "kindergarten",
+        term: "jardín infantil",
+        definition: "kindergarten",
         knowledgelevel: 0
     },
     {
         id: "jitomate",
         category: "uncategorized",
-        spanish: "jitomate",
-        english: "  tomato en México",
+        term: "jitomate",
+        definition: "  tomato en México",
         knowledgelevel: 0
     },
     {
         id: "jolgorio",
         category: "uncategorized",
-        spanish: "el jolgorio",
-        english: "  the revelry (noisy partying)",
+        term: "el jolgorio",
+        definition: "  the revelry (noisy partying)",
         knowledgelevel: 0
     },
     {
         id: "jonrón",
         category: "uncategorized",
-        spanish: "un jonrón",
-        english: "  home run, like in baseball",
+        term: "un jonrón",
+        definition: "  home run, like in baseball",
         knowledgelevel: 0
     },
     {
         id: "joya",
         category: "uncategorized",
-        spanish: "una joya",
-        english: "a jewel",
+        term: "una joya",
+        definition: "a jewel",
         knowledgelevel: 0
     },
     {
         id: "juez",
         category: "uncategorized",
-        spanish: "un juez",
-        english: "a judge",
+        term: "un juez",
+        definition: "a judge",
         knowledgelevel: 0
     },
     {
         id: "jugarreta",
         category: "uncategorized",
-        spanish: "una jugarreta",
-        english: "  a dirty trick",
+        term: "una jugarreta",
+        definition: "  a dirty trick",
         knowledgelevel: 0
     },
     {
         id: "juvenil",
         category: "uncategorized",
-        spanish: "juvenil (adj)",
-        english: "youth",
+        term: "juvenil (adj)",
+        definition: "youth",
         knowledgelevel: 0
     },
     {
         id: "laboral",
         category: "uncategorized",
-        spanish: "laboral",
-        english: " labor-related",
+        term: "laboral",
+        definition: " labor-related",
         knowledgelevel: 0
     },
     {
         id: "lado_estribor_de_un",
         category: "uncategorized",
-        spanish: "el lado estribor de un",
-        english: " barco",
+        term: "el lado estribor de un",
+        definition: " barco",
         knowledgelevel: 0
     },
     {
         id: "ladrido",
         category: "uncategorized",
-        spanish: "un ladrido",
-        english: "a bark (dog barking)",
+        term: "un ladrido",
+        definition: "a bark (dog barking)",
         knowledgelevel: 0
     },
     {
         id: "lamentablemente",
         category: "uncategorized",
-        spanish: "lamentablemente",
-        english: "unfortunetely",
+        term: "lamentablemente",
+        definition: "unfortunetely",
         knowledgelevel: 0
     },
     {
         id: "lámina",
         category: "uncategorized",
-        spanish: "una lámina",
-        english: "a leaf, sheet",
+        term: "una lámina",
+        definition: "a leaf, sheet",
         knowledgelevel: 0
     },
     {
         id: "lancha",
         category: "uncategorized",
-        spanish: "una lancha",
-        english: "a boat",
+        term: "una lancha",
+        definition: "a boat",
         knowledgelevel: 0
     },
     {
         id: "lanzamiento",
         category: "uncategorized",
-        spanish: "un lanzamiento",
-        english: "a launch",
+        term: "un lanzamiento",
+        definition: "a launch",
         knowledgelevel: 0
     },
     {
         id: "lapicero",
         category: "uncategorized",
-        spanish: "un lapicero",
-        english: "a pencil",
+        term: "un lapicero",
+        definition: "a pencil",
         knowledgelevel: 0
     },
     {
         id: "larguísimo",
         category: "uncategorized",
-        spanish: "larguísimo (adj)",
-        english: "  lengthy",
+        term: "larguísimo (adj)",
+        definition: "  lengthy",
         knowledgelevel: 0
     },
     {
         id: "lata",
         category: "uncategorized",
-        spanish: "lata",
-        english: " can (like a tin can)",
+        term: "lata",
+        definition: " can (like a tin can)",
         knowledgelevel: 0
     },
     {
         id: "le_haya_arrancado",
         category: "uncategorized",
-        spanish: "le haya arrancado",
-        english: "  was torn from him/her",
+        term: "le haya arrancado",
+        definition: "  was torn from him/her",
         knowledgelevel: 0
     },
     {
         id: "lesión",
         category: "uncategorized",
-        spanish: "un lesión",
-        english: "an injury",
+        term: "un lesión",
+        definition: "an injury",
         knowledgelevel: 0
     },
     {
         id: "letal",
         category: "uncategorized",
-        spanish: "letal",
-        english: "letal",
+        term: "letal",
+        definition: "letal",
         knowledgelevel: 0
     },
     {
         id: "letargo",
         category: "uncategorized",
-        spanish: "el letargo",
-        english: "the lethargy",
+        term: "el letargo",
+        definition: "the lethargy",
         knowledgelevel: 0
     },
     {
         id: "levadura",
         category: "uncategorized",
-        spanish: "levadura",
-        english: "yeast",
+        term: "levadura",
+        definition: "yeast",
         knowledgelevel: 0
     },
     {
         id: "libia",
         category: "uncategorized",
-        spanish: "libia",
-        english: "Libya",
+        term: "libia",
+        definition: "Libya",
         knowledgelevel: 0
     },
     {
         id: "liderazgo",
         category: "uncategorized",
-        spanish: "liderazgo",
-        english: "leadership",
+        term: "liderazgo",
+        definition: "leadership",
         knowledgelevel: 0
     },
     {
         id: "lienzo",
         category: "uncategorized",
-        spanish: "un lienzo",
-        english: "a canvas",
+        term: "un lienzo",
+        definition: "a canvas",
         knowledgelevel: 0
     },
     {
         id: "ligeramente",
         category: "uncategorized",
-        spanish: "ligeramente",
-        english: "slightly",
+        term: "ligeramente",
+        definition: "slightly",
         knowledgelevel: 0
     },
     {
         id: "límite",
         category: "uncategorized",
-        spanish: "límite",
-        english: "  limit or boundary",
+        term: "límite",
+        definition: "  limit or boundary",
         knowledgelevel: 0
     },
     {
         id: "lío",
         category: "uncategorized",
-        spanish: "un lío",
-        english: "a mess",
+        term: "un lío",
+        definition: "a mess",
         knowledgelevel: 0
     },
     {
         id: "líquido",
         category: "uncategorized",
-        spanish: "un líquido",
-        english: " a liquid ",
+        term: "un líquido",
+        definition: " a liquid ",
         knowledgelevel: 0
     },
     {
         id: "llama",
         category: "uncategorized",
-        spanish: "la llama",
-        english: "  the flame",
+        term: "la llama",
+        definition: "  the flame",
         knowledgelevel: 0
     },
     {
         id: "llamaradas",
         category: "uncategorized",
-        spanish: "las llamaradas",
-        english: "  the flares",
+        term: "las llamaradas",
+        definition: "  the flares",
         knowledgelevel: 0
     },
     {
         id: "llamas",
         category: "uncategorized",
-        spanish: "las llamas (not animal)",
-        english: "the flames",
+        term: "las llamas (not animal)",
+        definition: "the flames",
         knowledgelevel: 0
     },
     {
         id: "llanta",
         category: "uncategorized",
-        spanish: "una llanta",
-        english: "a tire",
+        term: "una llanta",
+        definition: "a tire",
         knowledgelevel: 0
     },
     {
         id: "llevar_a_cabo",
         category: "uncategorized",
-        spanish: "llevar a cabo",
-        english: "  to carry out",
+        term: "llevar a cabo",
+        definition: "  to carry out",
         knowledgelevel: 0
     },
     {
         id: "lluvia_de_ideas",
         category: "uncategorized",
-        spanish: "una lluvia de ideas",
-        english: "  a brainstorm",
+        term: "una lluvia de ideas",
+        definition: "  a brainstorm",
         knowledgelevel: 0
     },
     {
         id: "lo_pasé_muy_bien",
         category: "uncategorized",
-        spanish: "lo pasé muy bien",
-        english: "  I had a great time",
+        term: "lo pasé muy bien",
+        definition: "  I had a great time",
         knowledgelevel: 0
     },
     {
         id: "lomo",
         category: "uncategorized",
-        spanish: "lomo",
-        english: "  back (like back of an animal or person )",
+        term: "lomo",
+        definition: "  back (like back of an animal or person )",
         knowledgelevel: 0
     },
     {
         id: "longitud",
         category: "uncategorized",
-        spanish: "la longitud",
-        english: "  the length",
+        term: "la longitud",
+        definition: "  the length",
         knowledgelevel: 0
     },
     {
         id: "losa",
         category: "uncategorized",
-        spanish: "un losa",
-        english: "a slab, a paving stone",
+        term: "un losa",
+        definition: "a slab, a paving stone",
         knowledgelevel: 0
     },
     {
         id: "lujo",
         category: "uncategorized",
-        spanish: "el lujo",
-        english: "a luxury",
+        term: "el lujo",
+        definition: "a luxury",
         knowledgelevel: 0
     },
     {
         id: "macuto",
         category: "uncategorized",
-        spanish: "un macuto",
-        english: "  a backpack",
+        term: "un macuto",
+        definition: "  a backpack",
         knowledgelevel: 0
     },
     {
         id: "madrugador",
         category: "uncategorized",
-        spanish: "un madrugador",
-        english: "an early bird",
+        term: "un madrugador",
+        definition: "an early bird",
         knowledgelevel: 0
     },
     {
         id: "maestría",
         category: "uncategorized",
-        spanish: "una maestría",
-        english: "a mastery",
+        term: "una maestría",
+        definition: "a mastery",
         knowledgelevel: 0
     },
     {
         id: "maestría_en_psicología",
         category: "uncategorized",
-        spanish: "una maestría en psicología",
-        english: "a masters in psychology",
+        term: "una maestría en psicología",
+        definition: "a masters in psychology",
         knowledgelevel: 0
     },
     {
         id: "magulladura",
         category: "uncategorized",
-        spanish: "una magulladura",
-        english: "a bruise",
+        term: "una magulladura",
+        definition: "a bruise",
         knowledgelevel: 0
     },
     {
         id: "males",
         category: "uncategorized",
-        spanish: "los males",
-        english: "  the evils or sicknesses",
+        term: "los males",
+        definition: "  the evils or sicknesses",
         knowledgelevel: 0
     },
     {
         id: "malestar",
         category: "uncategorized",
-        spanish: "un malestar",
-        english: "a discomfort",
+        term: "un malestar",
+        definition: "a discomfort",
         knowledgelevel: 0
     },
     {
         id: "maletín",
         category: "uncategorized",
-        spanish: "un maletín",
-        english: "a briefcase",
+        term: "un maletín",
+        definition: "a briefcase",
         knowledgelevel: 0
     },
     {
         id: "manada",
         category: "uncategorized",
-        spanish: "la manada",
-        english: "the herd",
+        term: "la manada",
+        definition: "the herd",
         knowledgelevel: 0
     },
     {
         id: "mañanero",
         category: "uncategorized",
-        spanish: "mañanero (adj)",
-        english: "  morning adj como café mañanero",
+        term: "mañanero (adj)",
+        definition: "  morning adj como café mañanero",
         knowledgelevel: 0
     },
     {
         id: "manchado",
         category: "uncategorized",
-        spanish: "manchado",
-        english: "stained",
+        term: "manchado",
+        definition: "stained",
         knowledgelevel: 0
     },
     {
         id: "manejo",
         category: "uncategorized",
-        spanish: "el manejo",
-        english: "the management, handling, driving",
+        term: "el manejo",
+        definition: "the management, handling, driving",
         knowledgelevel: 0
     },
     {
         id: "manglar",
         category: "uncategorized",
-        spanish: "un manglar",
-        english: "a mangrove swamp",
+        term: "un manglar",
+        definition: "a mangrove swamp",
         knowledgelevel: 0
     },
     {
         id: "manjar",
         category: "uncategorized",
-        spanish: "un manjar",
-        english: "a delicacy",
+        term: "un manjar",
+        definition: "a delicacy",
         knowledgelevel: 0
     },
     {
         id: "mantos",
         category: "uncategorized",
-        spanish: "los mantos",
-        english: "the cloaks, robes",
+        term: "los mantos",
+        definition: "the cloaks, robes",
         knowledgelevel: 0
     },
     {
         id: "marchaba_según_lo_esperaba",
         category: "uncategorized",
-        spanish: "marchaba según lo esperaba",
-        english: "  it was going as expected",
+        term: "marchaba según lo esperaba",
+        definition: "  it was going as expected",
         knowledgelevel: 0
     },
     {
         id: "marrana",
         category: "uncategorized",
-        spanish: "una marrana",
-        english: "a sow (female pig) or a slang bad word for women",
+        term: "una marrana",
+        definition: "a sow (female pig) or a slang bad word for women",
         knowledgelevel: 0
     },
     {
         id: "más_a_menudo",
         category: "uncategorized",
-        spanish: "más a menudo",
-        english: "more often",
+        term: "más a menudo",
+        definition: "more often",
         knowledgelevel: 0
     },
     {
         id: "más_allá",
         category: "uncategorized",
-        spanish: "más allá",
-        english: "  beyond, further",
+        term: "más allá",
+        definition: "  beyond, further",
         knowledgelevel: 0
     },
     {
         id: "materia",
         category: "uncategorized",
-        spanish: "una materia",
-        english: "  a subject, like in school",
+        term: "una materia",
+        definition: "  a subject, like in school",
         knowledgelevel: 0
     },
     {
         id: "matorral",
         category: "uncategorized",
-        spanish: "matorral",
-        english: "a scrub, bush, thicket",
+        term: "matorral",
+        definition: "a scrub, bush, thicket",
         knowledgelevel: 0
     },
     {
         id: "mayúscula",
         category: "uncategorized",
-        spanish: "mayúscula",
-        english: "  capital like capital letter in text",
+        term: "mayúscula",
+        definition: "  capital like capital letter in text",
         knowledgelevel: 0
     },
     {
         id: "me_doy_a_la_tarea",
         category: "uncategorized",
-        spanish: "me doy a la tarea",
-        english: "I get onto the work, start working",
+        term: "me doy a la tarea",
+        definition: "I get onto the work, start working",
         knowledgelevel: 0
     },
     {
         id: "mechón",
         category: "uncategorized",
-        spanish: "un mechón",
-        english: "  a lock, like a lock of hair",
+        term: "un mechón",
+        definition: "  a lock, like a lock of hair",
         knowledgelevel: 0
     },
     {
         id: "mediante",
         category: "uncategorized",
-        spanish: "mediante",
-        english: "through",
+        term: "mediante",
+        definition: "through",
         knowledgelevel: 0
     },
     {
         id: "medicamentos",
         category: "uncategorized",
-        spanish: "los medicamentos",
-        english: "  medications",
+        term: "los medicamentos",
+        definition: "  medications",
         knowledgelevel: 0
     },
     {
         id: "medida_preventiva",
         category: "uncategorized",
-        spanish: "una medida preventiva",
-        english: "preventative measure",
+        term: "una medida preventiva",
+        definition: "preventative measure",
         knowledgelevel: 0
     },
     {
         id: "medio_ambiente",
         category: "uncategorized",
-        spanish: "un medio ambiente",
-        english: " an environment ",
+        term: "un medio ambiente",
+        definition: " an environment ",
         knowledgelevel: 0
     },
     {
         id: "medio_de_transporte",
         category: "uncategorized",
-        spanish: "medio de transporte",
-        english: "means of transportation",
+        term: "medio de transporte",
+        definition: "means of transportation",
         knowledgelevel: 0
     },
     {
         id: "medio_oriente",
         category: "uncategorized",
-        spanish: "el medio oriente",
-        english: "The Middle East",
+        term: "el medio oriente",
+        definition: "The Middle East",
         knowledgelevel: 0
     },
     {
         id: "meñique",
         category: "uncategorized",
-        spanish: "meñique",
-        english: "pinky finger",
+        term: "meñique",
+        definition: "pinky finger",
         knowledgelevel: 0
     },
     {
         id: "menso",
         category: "uncategorized",
-        spanish: "menso",
-        english: "less",
+        term: "menso",
+        definition: "less",
         knowledgelevel: 0
     },
     {
         id: "menta",
         category: "uncategorized",
-        spanish: "la menta",
-        english: "  the mint",
+        term: "la menta",
+        definition: "  the mint",
         knowledgelevel: 0
     },
     {
         id: "mercadeo",
         category: "uncategorized",
-        spanish: "mercadeo",
-        english: "marketing",
+        term: "mercadeo",
+        definition: "marketing",
         knowledgelevel: 0
     },
     {
         id: "mercancías",
         category: "uncategorized",
-        spanish: "mercancías",
-        english: "  goods,  merchandise",
+        term: "mercancías",
+        definition: "  goods,  merchandise",
         knowledgelevel: 0
     },
     {
         id: "merienda",
         category: "uncategorized",
-        spanish: "una merienda",
-        english: "a snack",
+        term: "una merienda",
+        definition: "a snack",
         knowledgelevel: 0
     },
     {
         id: "meter_la_pata",
         category: "uncategorized",
-        spanish: "meter la pata",
-        english: "to screw up, to blunder",
+        term: "meter la pata",
+        definition: "to screw up, to blunder",
         knowledgelevel: 0
     },
     {
         id: "método",
         category: "uncategorized",
-        spanish: "un método",
-        english: "  a method",
+        term: "un método",
+        definition: "  a method",
         knowledgelevel: 0
     },
     {
         id: "mija",
         category: "uncategorized",
-        spanish: "mija",
-        english: "  darling",
+        term: "mija",
+        definition: "  darling",
         knowledgelevel: 0
     },
     {
         id: "milagro",
         category: "uncategorized",
-        spanish: "un milagro",
-        english: "a miracle",
+        term: "un milagro",
+        definition: "a miracle",
         knowledgelevel: 0
     },
     {
         id: "mismísima",
         category: "uncategorized",
-        spanish: "mismísima",
-        english: "  same,  same self",
+        term: "mismísima",
+        definition: "  same,  same self",
         knowledgelevel: 0
     },
     {
         id: "moderada",
         category: "uncategorized",
-        spanish: "moderada",
-        english: "moderate",
+        term: "moderada",
+        definition: "moderate",
         knowledgelevel: 0
     },
     {
         id: "moho",
         category: "uncategorized",
-        spanish: "el moho",
-        english: "the mold",
+        term: "el moho",
+        definition: "the mold",
         knowledgelevel: 0
     },
     {
         id: "molesta/molesto",
         category: "uncategorized",
-        spanish: "molesta/molesto (adj)",
-        english: "annoying",
+        term: "molesta/molesto (adj)",
+        definition: "annoying",
         knowledgelevel: 0
     },
     {
         id: "momentáneamente",
         category: "uncategorized",
-        spanish: "momentáneamente",
-        english: "momentarily",
+        term: "momentáneamente",
+        definition: "momentarily",
         knowledgelevel: 0
     },
     {
         id: "montículo",
         category: "uncategorized",
-        spanish: "un montículo",
-        english: "a mound",
+        term: "un montículo",
+        definition: "a mound",
         knowledgelevel: 0
     },
     {
         id: "mortal",
         category: "uncategorized",
-        spanish: "mortal",
-        english: "  mortal or deadly, fatal",
+        term: "mortal",
+        definition: "  mortal or deadly, fatal",
         knowledgelevel: 0
     },
     {
         id: "motocicleta",
         category: "uncategorized",
-        spanish: "una motocicleta",
-        english: "a motorcycle",
+        term: "una motocicleta",
+        definition: "a motorcycle",
         knowledgelevel: 0
     },
     {
         id: "movible",
         category: "uncategorized",
-        spanish: "movible",
-        english: " moveable",
+        term: "movible",
+        definition: " moveable",
         knowledgelevel: 0
     },
     {
         id: "mozos",
         category: "uncategorized",
-        spanish: "los mozos",
-        english: "the waiters",
+        term: "los mozos",
+        definition: "the waiters",
         knowledgelevel: 0
     },
     {
         id: "muchísimo_de_menos",
         category: "uncategorized",
-        spanish: "muchísimo de menos",
-        english: " I miss it a lot",
+        term: "muchísimo de menos",
+        definition: " I miss it a lot",
         knowledgelevel: 0
     },
     {
         id: "mucosidad",
         category: "uncategorized",
-        spanish: "la mucosidad",
-        english: "the mucus",
+        term: "la mucosidad",
+        definition: "the mucus",
         knowledgelevel: 0
     },
     {
         id: "mudanza",
         category: "uncategorized",
-        spanish: "una mudanza",
-        english: "  a move (like to a new city)",
+        term: "una mudanza",
+        definition: "  a move (like to a new city)",
         knowledgelevel: 0
     },
     {
         id: "mueca",
         category: "uncategorized",
-        spanish: "una mueca",
-        english: "a grin",
+        term: "una mueca",
+        definition: "a grin",
         knowledgelevel: 0
     },
     {
         id: "muelle",
         category: "uncategorized",
-        spanish: "un muelle",
-        english: "  a dock (at a port)",
+        term: "un muelle",
+        definition: "  a dock (at a port)",
         knowledgelevel: 0
     },
     {
         id: "muerto_de_susto",
         category: "uncategorized",
-        spanish: "muerto de susto",
-        english: "  scared to death",
+        term: "muerto de susto",
+        definition: "  scared to death",
         knowledgelevel: 0
     },
     {
         id: "muestra",
         category: "uncategorized",
-        spanish: "una muestra",
-        english: "a sample",
+        term: "una muestra",
+        definition: "a sample",
         knowledgelevel: 0
     },
     {
         id: "multa",
         category: "uncategorized",
-        spanish: "una multa",
-        english: "a fine, penalty",
+        term: "una multa",
+        definition: "a fine, penalty",
         knowledgelevel: 0
     },
     {
         id: "muñeca",
         category: "uncategorized",
-        spanish: "muñeca",
-        english: " can mean wrist or doll",
+        term: "muñeca",
+        definition: " can mean wrist or doll",
         knowledgelevel: 0
     },
     {
         id: "mutuo_",
         category: "uncategorized",
-        spanish: "mutuo (adj)",
-        english: "mutual",
+        term: "mutuo (adj)",
+        definition: "mutual",
         knowledgelevel: 0
     },
     {
         id: "nadador",
         category: "uncategorized",
-        spanish: "un nadador",
-        english: "a swimmer",
+        term: "un nadador",
+        definition: "a swimmer",
         knowledgelevel: 0
     },
     {
         id: "neoyorquino",
         category: "uncategorized",
-        spanish: "neoyorquina / neoyorquino",
-        english: "New Yorker",
+        term: "neoyorquina / neoyorquino",
+        definition: "New Yorker",
         knowledgelevel: 0
     },
     {
         id: "nervio",
         category: "uncategorized",
-        spanish: "un nervio",
-        english: "a nerve",
+        term: "un nervio",
+        definition: "a nerve",
         knowledgelevel: 0
     },
     {
         id: "nerviosismo",
         category: "uncategorized",
-        spanish: "el nerviosismo",
-        english: "nervousness",
+        term: "el nerviosismo",
+        definition: "nervousness",
         knowledgelevel: 0
     },
     {
         id: "neumático",
         category: "uncategorized",
-        spanish: "un neumático",
-        english: "a tire",
+        term: "un neumático",
+        definition: "a tire",
         knowledgelevel: 0
     },
     {
         id: "no_obstante",
         category: "uncategorized",
-        spanish: "no obstante",
-        english: "nevertheless",
+        term: "no obstante",
+        definition: "nevertheless",
         knowledgelevel: 0
     },
     {
         id: "no_sorprende",
         category: "uncategorized",
-        spanish: "no sorprende",
-        english: "not surprising",
+        term: "no sorprende",
+        definition: "not surprising",
         knowledgelevel: 0
     },
     {
         id: "nocivo",
         category: "uncategorized",
-        spanish: "nociva / nocivo (adj)",
-        english: "  harmful",
+        term: "nociva / nocivo (adj)",
+        definition: "  harmful",
         knowledgelevel: 0
     },
     {
         id: "normalidad",
         category: "uncategorized",
-        spanish: "la normalidad",
-        english: "the normal",
+        term: "la normalidad",
+        definition: "the normal",
         knowledgelevel: 0
     },
     {
         id: "normas",
         category: "uncategorized",
-        spanish: "las normas",
-        english: "the standards",
+        term: "las normas",
+        definition: "the standards",
         knowledgelevel: 0
     },
     {
         id: "novedad",
         category: "uncategorized",
-        spanish: "una novedad",
-        english: "a novelty",
+        term: "una novedad",
+        definition: "a novelty",
         knowledgelevel: 0
     },
     {
         id: "novedosa",
         category: "uncategorized",
-        spanish: "novedosa (adj)",
-        english: "novel",
+        term: "novedosa (adj)",
+        definition: "novel",
         knowledgelevel: 0
     },
     {
         id: "núcleo",
         category: "uncategorized",
-        spanish: "un núcleo",
-        english: "a core",
+        term: "un núcleo",
+        definition: "a core",
         knowledgelevel: 0
     },
     {
         id: "nuevamente",
         category: "uncategorized",
-        spanish: "nuevamente",
-        english: "  again,  newly",
+        term: "nuevamente",
+        definition: "  again,  newly",
         knowledgelevel: 0
     },
     {
         id: "obstáculo",
         category: "uncategorized",
-        spanish: "un obstáculo",
-        english: "an obstacle",
+        term: "un obstáculo",
+        definition: "an obstacle",
         knowledgelevel: 0
     },
     {
         id: "obstante",
         category: "uncategorized",
-        spanish: "obstante",
-        english: "however",
+        term: "obstante",
+        definition: "however",
         knowledgelevel: 0
     },
     {
         id: "occidental",
         category: "uncategorized",
-        spanish: "occidental (adj)",
-        english: "Western",
+        term: "occidental (adj)",
+        definition: "Western",
         knowledgelevel: 0
     },
     {
         id: "odioso",
         category: "uncategorized",
-        spanish: "odioso",
-        english: "hateful",
+        term: "odioso",
+        definition: "hateful",
         knowledgelevel: 0
     },
     {
         id: "oficial_público",
         category: "uncategorized",
-        spanish: "un oficial público",
-        english: "a public official",
+        term: "un oficial público",
+        definition: "a public official",
         knowledgelevel: 0
     },
     {
         id: "oficios",
         category: "uncategorized",
-        spanish: "los oficios",
-        english: "the trades, the jobs,the offices",
+        term: "los oficios",
+        definition: "the trades, the jobs,the offices",
         knowledgelevel: 0
     },
     {
         id: "oído",
         category: "uncategorized",
-        spanish: "un oído",
-        english: "an ear",
+        term: "un oído",
+        definition: "an ear",
         knowledgelevel: 0
     },
     {
         id: "oleada",
         category: "uncategorized",
-        spanish: "una oleada",
-        english: "  a wave, a surge",
+        term: "una oleada",
+        definition: "  a wave, a surge",
         knowledgelevel: 0
     },
     {
         id: "olfato",
         category: "uncategorized",
-        spanish: "un olfato",
-        english: "  a smell",
+        term: "un olfato",
+        definition: "  a smell",
         knowledgelevel: 0
     },
     {
         id: "olla_de_presión",
         category: "uncategorized",
-        spanish: "una olla de presión",
-        english: "  pressure cooker",
+        term: "una olla de presión",
+        definition: "  pressure cooker",
         knowledgelevel: 0
     },
     {
         id: "olor_fétido",
         category: "uncategorized",
-        spanish: "un olor fétido",
-        english: "a foul smell",
+        term: "un olor fétido",
+        definition: "a foul smell",
         knowledgelevel: 0
     },
     {
         id: "ombligo",
         category: "uncategorized",
-        spanish: "un ombligo",
-        english: "a belly button, navel",
+        term: "un ombligo",
+        definition: "a belly button, navel",
         knowledgelevel: 0
     },
     {
         id: "ondas_sonoras",
         category: "uncategorized",
-        spanish: "las ondas sonoras",
-        english: "the sound waves",
+        term: "las ondas sonoras",
+        definition: "the sound waves",
         knowledgelevel: 0
     },
     {
         id: "opaco",
         category: "uncategorized",
-        spanish: "opaco",
-        english: "opaque",
+        term: "opaco",
+        definition: "opaque",
         knowledgelevel: 0
     },
     {
         id: "opuesto",
         category: "uncategorized",
-        spanish: "opuesto (adj)",
-        english: "opposite",
+        term: "opuesto (adj)",
+        definition: "opposite",
         knowledgelevel: 0
     },
     {
         id: "orden",
         category: "uncategorized",
-        spanish: "el orden",
-        english: "the order, command",
+        term: "el orden",
+        definition: "the order, command",
         knowledgelevel: 0
     },
     {
         id: "ortiga",
         category: "uncategorized",
-        spanish: "una ortiga",
-        english: "a nettle",
+        term: "una ortiga",
+        definition: "a nettle",
         knowledgelevel: 0
     },
     {
         id: "osezno",
         category: "uncategorized",
-        spanish: "un osezno",
-        english: "a bear cub",
+        term: "un osezno",
+        definition: "a bear cub",
         knowledgelevel: 0
     },
     {
         id: "ostra",
         category: "uncategorized",
-        spanish: "una ostra",
-        english: "  an oyster",
+        term: "una ostra",
+        definition: "  an oyster",
         knowledgelevel: 0
     },
     {
         id: "oxidada",
         category: "uncategorized",
-        spanish: "oxidada (adj)",
-        english: "  rusty",
+        term: "oxidada (adj)",
+        definition: "  rusty",
         knowledgelevel: 0
     },
     {
         id: "oyentes",
         category: "uncategorized",
-        spanish: "los oyentes",
-        english: "the listeners",
+        term: "los oyentes",
+        definition: "the listeners",
         knowledgelevel: 0
     },
     {
         id: "paciencia",
         category: "uncategorized",
-        spanish: "la paciencia",
-        english: "the patience",
+        term: "la paciencia",
+        definition: "the patience",
         knowledgelevel: 0
     },
     {
         id: "paciente",
         category: "uncategorized",
-        spanish: "un paciente",
-        english: "the patient",
+        term: "un paciente",
+        definition: "the patient",
         knowledgelevel: 0
     },
     {
         id: "pacifico",
         category: "uncategorized",
-        spanish: "pacifico (adj)",
-        english: "peaceful",
+        term: "pacifico (adj)",
+        definition: "peaceful",
         knowledgelevel: 0
     },
     {
         id: "pago",
         category: "uncategorized",
-        spanish: "un pago",
-        english: "a payment",
+        term: "un pago",
+        definition: "a payment",
         knowledgelevel: 0
     },
     {
         id: "pajarraco",
         category: "uncategorized",
-        spanish: "un pajarraco",
-        english: "a bird",
+        term: "un pajarraco",
+        definition: "a bird",
         knowledgelevel: 0
     },
     {
         id: "palco",
         category: "uncategorized",
-        spanish: "un palco",
-        english: "a box",
+        term: "un palco",
+        definition: "a box",
         knowledgelevel: 0
     },
     {
         id: "paloma",
         category: "uncategorized",
-        spanish: "una paloma",
-        english: "a pigeon",
+        term: "una paloma",
+        definition: "a pigeon",
         knowledgelevel: 0
     },
     {
         id: "palomitas",
         category: "uncategorized",
-        spanish: "las palomitas",
-        english: "  popcorn",
+        term: "las palomitas",
+        definition: "  popcorn",
         knowledgelevel: 0
     },
     {
         id: "pan_comido",
         category: "uncategorized",
-        spanish: "un pan comido",
-        english: "  a piece of cake",
+        term: "un pan comido",
+        definition: "  a piece of cake",
         knowledgelevel: 0
     },
     {
         id: "pandero",
         category: "uncategorized",
-        spanish: "un pandero",
-        english: "  a tamborine ",
+        term: "un pandero",
+        definition: "  a tamborine ",
         knowledgelevel: 0
     },
     {
         id: "para_ya!",
         category: "uncategorized",
-        spanish: "para ya!",
-        english: "stop now!",
+        term: "para ya!",
+        definition: "stop now!",
         knowledgelevel: 0
     },
     {
         id: "parabrisa",
         category: "uncategorized",
-        spanish: "una parabrisa",
-        english: "a windshield",
+        term: "una parabrisa",
+        definition: "a windshield",
         knowledgelevel: 0
     },
     {
         id: "paracaída",
         category: "uncategorized",
-        spanish: "una paracaída",
-        english: "a parachute",
+        term: "una paracaída",
+        definition: "a parachute",
         knowledgelevel: 0
     },
     {
         id: "paradisíaco",
         category: "uncategorized",
-        spanish: "paradisíaco (adj)",
-        english: "heavenly",
+        term: "paradisíaco (adj)",
+        definition: "heavenly",
         knowledgelevel: 0
     },
     {
         id: "paraje",
         category: "uncategorized",
-        spanish: "un paraje",
-        english: "a place",
+        term: "un paraje",
+        definition: "a place",
         knowledgelevel: 0
     },
     {
         id: "paralelo",
         category: "uncategorized",
-        spanish: "paralelo (adj)",
-        english: "parallel",
+        term: "paralelo (adj)",
+        definition: "parallel",
         knowledgelevel: 0
     },
     {
         id: "pararse_de_manos",
         category: "uncategorized",
-        spanish: "una pararse de manos",
-        english: " a handstand",
+        term: "una pararse de manos",
+        definition: " a handstand",
         knowledgelevel: 0
     },
     {
         id: "parásito",
         category: "uncategorized",
-        spanish: "un parásito",
-        english: "a parasite",
+        term: "un parásito",
+        definition: "a parasite",
         knowledgelevel: 0
     },
     {
         id: "parcela",
         category: "uncategorized",
-        spanish: "una parcela",
-        english: "a parcel, plot, patch",
+        term: "una parcela",
+        definition: "a parcel, plot, patch",
         knowledgelevel: 0
     },
     {
         id: "parduzco",
         category: "uncategorized",
-        spanish: "parduzco (adj)",
-        english: "brownish",
+        term: "parduzco (adj)",
+        definition: "brownish",
         knowledgelevel: 0
     },
     {
         id: "parecido",
         category: "uncategorized",
-        spanish: "un parecido",
-        english: "a similarity",
+        term: "un parecido",
+        definition: "a similarity",
         knowledgelevel: 0
     },
     {
         id: "párrafo",
         category: "uncategorized",
-        spanish: "un párrafo",
-        english: " a paragraph",
+        term: "un párrafo",
+        definition: " a paragraph",
         knowledgelevel: 0
     },
     {
         id: "pasajero",
         category: "uncategorized",
-        spanish: "un pasajero",
-        english: "a passenger",
+        term: "un pasajero",
+        definition: "a passenger",
         knowledgelevel: 0
     },
     {
         id: "pasas",
         category: "uncategorized",
-        spanish: "las pasas",
-        english: "the raisins",
+        term: "las pasas",
+        definition: "the raisins",
         knowledgelevel: 0
     },
     {
         id: "pastar",
         category: "uncategorized",
-        spanish: "un pastar",
-        english: " a pasture",
+        term: "un pastar",
+        definition: " a pasture",
         knowledgelevel: 0
     },
     {
         id: "patrimonio",
         category: "uncategorized",
-        spanish: "el patrimonio",
-        english: "the heritage",
+        term: "el patrimonio",
+        definition: "the heritage",
         knowledgelevel: 0
     },
     {
         id: "patrón",
         category: "uncategorized",
-        spanish: "un patrón",
-        english: "a pattern",
+        term: "un patrón",
+        definition: "a pattern",
         knowledgelevel: 0
     },
     {
         id: "patrulla",
         category: "uncategorized",
-        spanish: "una patrulla",
-        english: "a patrol",
+        term: "una patrulla",
+        definition: "a patrol",
         knowledgelevel: 0
     },
     {
         id: "payaso",
         category: "uncategorized",
-        spanish: "un payaso",
-        english: "a clown",
+        term: "un payaso",
+        definition: "a clown",
         knowledgelevel: 0
     },
     {
         id: "pedido",
         category: "uncategorized",
-        spanish: "el pedido",
-        english: "the order, the wish",
+        term: "el pedido",
+        definition: "the order, the wish",
         knowledgelevel: 0
     },
     {
         id: "pegadizo",
         category: "uncategorized",
-        spanish: "pegadizo (adj)",
-        english: "  catchy,  like a song",
+        term: "pegadizo (adj)",
+        definition: "  catchy,  like a song",
         knowledgelevel: 0
     },
     {
         id: "pegar_cachetadas",
         category: "uncategorized",
-        spanish: "pegar cachetadas",
-        english: "  to slap something",
+        term: "pegar cachetadas",
+        definition: "  to slap something",
         knowledgelevel: 0
     },
     {
         id: "pegar_codazos_y_rodillos",
         category: "uncategorized",
-        spanish: "pegar codazos y rodillos",
-        english: "  to elbow or knee something or something",
+        term: "pegar codazos y rodillos",
+        definition: "  to elbow or knee something or something",
         knowledgelevel: 0
     },
     {
         id: "peñasco",
         category: "uncategorized",
-        spanish: "un peñasco",
-        english: "a boulder (rock)",
+        term: "un peñasco",
+        definition: "a boulder (rock)",
         knowledgelevel: 0
     },
     {
         id: "penetrante",
         category: "uncategorized",
-        spanish: "penetrante (adj)",
-        english: "penetrating",
+        term: "penetrante (adj)",
+        definition: "penetrating",
         knowledgelevel: 0
     },
     {
         id: "pepita",
         category: "uncategorized",
-        spanish: "una pepita",
-        english: "a nugget, seed",
+        term: "una pepita",
+        definition: "a nugget, seed",
         knowledgelevel: 0
     },
     {
         id: "pequeñísima",
         category: "uncategorized",
-        spanish: "pequeñísima",
-        english: "  tiny",
+        term: "pequeñísima",
+        definition: "  tiny",
         knowledgelevel: 0
     },
     {
         id: "perno",
         category: "uncategorized",
-        spanish: "un perno",
-        english: "a pin",
+        term: "un perno",
+        definition: "a pin",
         knowledgelevel: 0
     },
     {
         id: "perro_adiestrado",
         category: "uncategorized",
-        spanish: "un perro adiestrado",
-        english: "a trained dog",
+        term: "un perro adiestrado",
+        definition: "a trained dog",
         knowledgelevel: 0
     },
     {
         id: "perseverancia",
         category: "uncategorized",
-        spanish: "la perseverancia",
-        english: "The perseverence",
+        term: "la perseverancia",
+        definition: "The perseverence",
         knowledgelevel: 0
     },
     {
         id: "personas_de_discapacidades",
         category: "uncategorized",
-        spanish: "las personas de discapacidades",
-        english: "People with disabilities",
+        term: "las personas de discapacidades",
+        definition: "People with disabilities",
         knowledgelevel: 0
     },
     {
         id: "pesadilla",
         category: "uncategorized",
-        spanish: "una pesadilla",
-        english: "  a nightmare",
+        term: "una pesadilla",
+        definition: "  a nightmare",
         knowledgelevel: 0
     },
     {
         id: "pesca",
         category: "uncategorized",
-        spanish: "la pesca",
-        english: "the fishing, the catch",
+        term: "la pesca",
+        definition: "the fishing, the catch",
         knowledgelevel: 0
     },
     {
         id: "pese_a_que",
         category: "uncategorized",
-        spanish: "pese a que",
-        english: "even though",
+        term: "pese a que",
+        definition: "even though",
         knowledgelevel: 0
     },
     {
         id: "peso",
         category: "uncategorized",
-        spanish: "peso",
-        english: "  weight",
+        term: "peso",
+        definition: "  weight",
         knowledgelevel: 0
     },
     {
         id: "pestaña",
         category: "uncategorized",
-        spanish: "una pestaña",
-        english: "an eyelash",
+        term: "una pestaña",
+        definition: "an eyelash",
         knowledgelevel: 0
     },
     {
         id: "pesticida",
         category: "uncategorized",
-        spanish: "una pesticida",
-        english: "a pesticide",
+        term: "una pesticida",
+        definition: "a pesticide",
         knowledgelevel: 0
     },
     {
         id: "petición",
         category: "uncategorized",
-        spanish: "una petición",
-        english: "a request, demand",
+        term: "una petición",
+        definition: "a request, demand",
         knowledgelevel: 0
     },
     {
         id: "petrolero",
         category: "uncategorized",
-        spanish: "petrolero (adj)",
-        english: "  oil",
+        term: "petrolero (adj)",
+        definition: "  oil",
         knowledgelevel: 0
     },
     {
         id: "picada",
         category: "uncategorized",
-        spanish: "una picada",
-        english: "  a dive? A bite?",
+        term: "una picada",
+        definition: "  a dive? A bite?",
         knowledgelevel: 0
     },
     {
         id: "picazón",
         category: "uncategorized",
-        spanish: "picazón",
-        english: "an itch",
+        term: "picazón",
+        definition: "an itch",
         knowledgelevel: 0
     },
     {
         id: "picor",
         category: "uncategorized",
-        spanish: "un picor",
-        english: "itching",
+        term: "un picor",
+        definition: "itching",
         knowledgelevel: 0
     },
     {
         id: "pila",
         category: "uncategorized",
-        spanish: "una pila",
-        english: "  a pile, stack, cell (e.g., battery)",
+        term: "una pila",
+        definition: "  a pile, stack, cell (e.g., battery)",
         knowledgelevel: 0
     },
     {
         id: "pinzones",
         category: "uncategorized",
-        spanish: "los pinzones",
-        english: "the finches (birds)",
+        term: "los pinzones",
+        definition: "the finches (birds)",
         knowledgelevel: 0
     },
     {
         id: "piojos",
         category: "uncategorized",
-        spanish: "los piojos",
-        english: "the lice",
+        term: "los piojos",
+        definition: "the lice",
         knowledgelevel: 0
     },
     {
         id: "pionero",
         category: "uncategorized",
-        spanish: "un pionero",
-        english: "a pioneer",
+        term: "un pionero",
+        definition: "a pioneer",
         knowledgelevel: 0
     },
     {
         id: "piqueta",
         category: "uncategorized",
-        spanish: "un piqueta",
-        english: "  a tiny sting like from an insect",
+        term: "un piqueta",
+        definition: "  a tiny sting like from an insect",
         knowledgelevel: 0
     },
     {
         id: "pista",
         category: "uncategorized",
-        spanish: "pista",
-        english: "  clue,  or runway or track",
+        term: "pista",
+        definition: "  clue,  or runway or track",
         knowledgelevel: 0
     },
     {
         id: "pista_con_obstáculos",
         category: "uncategorized",
-        spanish: "una pista con obstáculos",
-        english: "an obstacle course",
+        term: "una pista con obstáculos",
+        definition: "an obstacle course",
         knowledgelevel: 0
     },
     {
         id: "pito",
         category: "uncategorized",
-        spanish: "un pito",
-        english: "a whistle (un silbido)",
+        term: "un pito",
+        definition: "a whistle (un silbido)",
         knowledgelevel: 0
     },
     {
         id: "plata_",
         category: "uncategorized",
-        spanish: "plata (adj)",
-        english: "  silver",
+        term: "plata (adj)",
+        definition: "  silver",
         knowledgelevel: 0
     },
     {
         id: "plataforma",
         category: "uncategorized",
-        spanish: "una plataforma",
-        english: "a platform",
+        term: "una plataforma",
+        definition: "a platform",
         knowledgelevel: 0
     },
     {
         id: "plática",
         category: "uncategorized",
-        spanish: "una plática",
-        english: " a talk, chat",
+        term: "una plática",
+        definition: " a talk, chat",
         knowledgelevel: 0
     },
     {
         id: "platillo",
         category: "uncategorized",
-        spanish: "un platillo",
-        english: "a saucer",
+        term: "un platillo",
+        definition: "a saucer",
         knowledgelevel: 0
     },
     {
         id: "plazo",
         category: "uncategorized",
-        spanish: "un plazo (como a largo plazo)",
-        english: "a term, like long term",
+        term: "un plazo (como a largo plazo)",
+        definition: "a term, like long term",
         knowledgelevel: 0
     },
     {
         id: "plazo_límite",
         category: "uncategorized",
-        spanish: "un plazo límite",
-        english: "  a deadline",
+        term: "un plazo límite",
+        definition: "  a deadline",
         knowledgelevel: 0
     },
     {
         id: "pleno",
         category: "uncategorized",
-        spanish: "pleno (adj)",
-        english: "full",
+        term: "pleno (adj)",
+        definition: "full",
         knowledgelevel: 0
     },
     {
         id: "poblado",
         category: "uncategorized",
-        spanish: "un poblado",
-        english: "a town",
+        term: "un poblado",
+        definition: "a town",
         knowledgelevel: 0
     },
     {
         id: "poblador",
         category: "uncategorized",
-        spanish: "un poblador",
-        english: "  a settler or inhabitant",
+        term: "un poblador",
+        definition: "  a settler or inhabitant",
         knowledgelevel: 0
     },
     {
         id: "poco_comunes",
         category: "uncategorized",
-        spanish: "poco comunes (adj)",
-        english: "uncommon",
+        term: "poco comunes (adj)",
+        definition: "uncommon",
         knowledgelevel: 0
     },
     {
         id: "poco_de_pena",
         category: "uncategorized",
-        spanish: "un poco de pena",
-        english: "  a little sorry",
+        term: "un poco de pena",
+        definition: "  a little sorry",
         knowledgelevel: 0
     },
     {
         id: "poco_natural",
         category: "uncategorized",
-        spanish: "poco natural",
-        english: "unnatural",
+        term: "poco natural",
+        definition: "unnatural",
         knowledgelevel: 0
     },
     {
         id: "poemario",
         category: "uncategorized",
-        spanish: "un poemario",
-        english: "a collection of poems",
+        term: "un poemario",
+        definition: "a collection of poems",
         knowledgelevel: 0
     },
     {
         id: "polinizador",
         category: "uncategorized",
-        spanish: "un polinizador",
-        english: "a pollenator",
+        term: "un polinizador",
+        definition: "a pollenator",
         knowledgelevel: 0
     },
     {
         id: "pomada",
         category: "uncategorized",
-        spanish: "una pomada",
-        english: "an ointment",
+        term: "una pomada",
+        definition: "an ointment",
         knowledgelevel: 0
     },
     {
         id: "ponerse_de_pie",
         category: "uncategorized",
-        spanish: "ponerse de pie",
-        english: "to stand up",
+        term: "ponerse de pie",
+        definition: "to stand up",
         knowledgelevel: 0
     },
     {
         id: "ponerse_las_pilas",
         category: "uncategorized",
-        spanish: "ponerse las pilas",
-        english: "  to get your act together, to start working on something",
+        term: "ponerse las pilas",
+        definition: "  to get your act together, to start working on something",
         knowledgelevel: 0
     },
     {
         id: "ponte_cómodo",
         category: "uncategorized",
-        spanish: "ponte cómodo",
-        english: "get comfortable",
+        term: "ponte cómodo",
+        definition: "get comfortable",
         knowledgelevel: 0
     },
     {
         id: "por_completo",
         category: "uncategorized",
-        spanish: "por completo",
-        english: "full, fully",
+        term: "por completo",
+        definition: "full, fully",
         knowledgelevel: 0
     },
     {
         id: "por_delante",
         category: "uncategorized",
-        spanish: "por delante",
-        english: "  past",
+        term: "por delante",
+        definition: "  past",
         knowledgelevel: 0
     },
     {
         id: "por_dentro",
         category: "uncategorized",
-        spanish: "por dentro",
-        english: "inside",
+        term: "por dentro",
+        definition: "inside",
         knowledgelevel: 0
     },
     {
         id: "por_ello",
         category: "uncategorized",
-        spanish: "por ello",
-        english: "  for this reason",
+        term: "por ello",
+        definition: "  for this reason",
         knowledgelevel: 0
     },
     {
         id: "por_fuera",
         category: "uncategorized",
-        spanish: "por fuera",
-        english: "outside",
+        term: "por fuera",
+        definition: "outside",
         knowledgelevel: 0
     },
     {
         id: "por_otro_lado",
         category: "uncategorized",
-        spanish: "por otro lado",
-        english: "  on the other hand",
+        term: "por otro lado",
+        definition: "  on the other hand",
         knowledgelevel: 0
     },
     {
         id: "por_si_mismos",
         category: "uncategorized",
-        spanish: "por si mismos",
-        english: "  by themselves",
+        term: "por si mismos",
+        definition: "  by themselves",
         knowledgelevel: 0
     },
     {
         id: "por_suerte",
         category: "uncategorized",
-        spanish: "por suerte",
-        english: "luckily",
+        term: "por suerte",
+        definition: "luckily",
         knowledgelevel: 0
     },
     {
         id: "porcentaje",
         category: "uncategorized",
-        spanish: "porcentaje",
-        english: "percentage",
+        term: "porcentaje",
+        definition: "percentage",
         knowledgelevel: 0
     },
     {
         id: "porque",
         category: "uncategorized",
-        spanish: "el porque",
-        english: "  the why, the reason",
+        term: "el porque",
+        definition: "  the why, the reason",
         knowledgelevel: 0
     },
     {
         id: "porqueriza",
         category: "uncategorized",
-        spanish: "la porqueriza",
-        english: "the pigsty",
+        term: "la porqueriza",
+        definition: "the pigsty",
         knowledgelevel: 0
     },
     {
         id: "portátil",
         category: "uncategorized",
-        spanish: "portátil (adj)",
-        english: " portable",
+        term: "portátil (adj)",
+        definition: " portable",
         knowledgelevel: 0
     },
     {
         id: "posteriormente",
         category: "uncategorized",
-        spanish: "posteriormente",
-        english: "subsequently",
+        term: "posteriormente",
+        definition: "subsequently",
         knowledgelevel: 0
     },
     {
         id: "precisa",
         category: "uncategorized",
-        spanish: "precisa (adj)",
-        english: "precise",
+        term: "precisa (adj)",
+        definition: "precise",
         knowledgelevel: 0
     },
     {
         id: "precisamente",
         category: "uncategorized",
-        spanish: "precisamente",
-        english: "precisely",
+        term: "precisamente",
+        definition: "precisely",
         knowledgelevel: 0
     },
     {
         id: "predilecto",
         category: "uncategorized",
-        spanish: "predilecto (adj)",
-        english: "favorite, chosen",
+        term: "predilecto (adj)",
+        definition: "favorite, chosen",
         knowledgelevel: 0
     },
     {
         id: "premiada",
         category: "uncategorized",
-        spanish: "premiada",
-        english: "awarded",
+        term: "premiada",
+        definition: "awarded",
         knowledgelevel: 0
     },
     {
         id: "prenda",
         category: "uncategorized",
-        spanish: "una prenda",
-        english: "  a garmet",
+        term: "una prenda",
+        definition: "  a garmet",
         knowledgelevel: 0
     },
     {
         id: "prenda_de_vestir",
         category: "uncategorized",
-        spanish: "una prenda de vestir",
-        english: "  a garmet or piece of clothing",
+        term: "una prenda de vestir",
+        definition: "  a garmet or piece of clothing",
         knowledgelevel: 0
     },
     {
         id: "prensa",
         category: "uncategorized",
-        spanish: "la prensa",
-        english: "the press, the printing press",
+        term: "la prensa",
+        definition: "the press, the printing press",
         knowledgelevel: 0
     },
     {
         id: "presa",
         category: "uncategorized",
-        spanish: "una presa",
-        english: "  a dam",
+        term: "una presa",
+        definition: "  a dam",
         knowledgelevel: 0
     },
     {
         id: "presión",
         category: "uncategorized",
-        spanish: "la presión",
-        english: "the pressure",
+        term: "la presión",
+        definition: "the pressure",
         knowledgelevel: 0
     },
     {
         id: "presupuesto",
         category: "uncategorized",
-        spanish: "un presupuesto",
-        english: "  a budget",
+        term: "un presupuesto",
+        definition: "  a budget",
         knowledgelevel: 0
     },
     {
         id: "primeros_auxilios",
         category: "uncategorized",
-        spanish: "primeros auxilios",
-        english: "first aid",
+        term: "primeros auxilios",
+        definition: "first aid",
         knowledgelevel: 0
     },
     {
         id: "primoroso",
         category: "uncategorized",
-        spanish: "primoroso",
-        english: "exquisite",
+        term: "primoroso",
+        definition: "exquisite",
         knowledgelevel: 0
     },
     {
         id: "principiantes",
         category: "uncategorized",
-        spanish: "los principiantes",
-        english: "the beginners",
+        term: "los principiantes",
+        definition: "the beginners",
         knowledgelevel: 0
     },
     {
         id: "principios_de_vida",
         category: "uncategorized",
-        spanish: "los principios de vida",
-        english: "the life principles",
+        term: "los principios de vida",
+        definition: "the life principles",
         knowledgelevel: 0
     },
     {
         id: "procesador",
         category: "uncategorized",
-        spanish: "un procesador",
-        english: "the processor",
+        term: "un procesador",
+        definition: "the processor",
         knowledgelevel: 0
     },
     {
         id: "prodigio",
         category: "uncategorized",
-        spanish: "un prodigio",
-        english: "a prodigy",
+        term: "un prodigio",
+        definition: "a prodigy",
         knowledgelevel: 0
     },
     {
         id: "prodigioso",
         category: "uncategorized",
-        spanish: "prodigioso",
-        english: "prodigious",
+        term: "prodigioso",
+        definition: "prodigious",
         knowledgelevel: 0
     },
     {
         id: "productores",
         category: "uncategorized",
-        spanish: "los productores",
-        english: "  the producers",
+        term: "los productores",
+        definition: "  the producers",
         knowledgelevel: 0
     },
     {
         id: "promedio",
         category: "uncategorized",
-        spanish: "un promedio",
-        english: "an average",
+        term: "un promedio",
+        definition: "an average",
         knowledgelevel: 0
     },
     {
         id: "propietario",
         category: "uncategorized",
-        spanish: "un propietario",
-        english: "An owner",
+        term: "un propietario",
+        definition: "An owner",
         knowledgelevel: 0
     },
     {
         id: "propio_de_determinados_lugares",
         category: "uncategorized",
-        spanish: "propio de determinados lugares",
-        english: "  typical of certain places",
+        term: "propio de determinados lugares",
+        definition: "  typical of certain places",
         knowledgelevel: 0
     },
     {
         id: "prosa",
         category: "uncategorized",
-        spanish: "la prosa",
-        english: "the prose",
+        term: "la prosa",
+        definition: "the prose",
         knowledgelevel: 0
     },
     {
         id: "protuberancia",
         category: "uncategorized",
-        spanish: "la protuberancia",
-        english: "the boss, jefe",
+        term: "la protuberancia",
+        definition: "the boss, jefe",
         knowledgelevel: 0
     },
     {
         id: "provecho",
         category: "uncategorized",
-        spanish: "provecho",
-        english: "  advantage,  benefit",
+        term: "provecho",
+        definition: "  advantage,  benefit",
         knowledgelevel: 0
     },
     {
         id: "proveedor",
         category: "uncategorized",
-        spanish: "un proveedor",
-        english: "  provider, supplier",
+        term: "un proveedor",
+        definition: "  provider, supplier",
         knowledgelevel: 0
     },
     {
         id: "pruebas",
         category: "uncategorized",
-        spanish: "las pruebas",
-        english: "the tests, the studies, the proof",
+        term: "las pruebas",
+        definition: "the tests, the studies, the proof",
         knowledgelevel: 0
     },
     {
         id: "psicólogo",
         category: "uncategorized",
-        spanish: "un psicólogo",
-        english: "a psychologist",
+        term: "un psicólogo",
+        definition: "a psychologist",
         knowledgelevel: 0
     },
     {
         id: "pueblo_alejado",
         category: "uncategorized",
-        spanish: "un pueblo alejado",
-        english: "a remote town",
+        term: "un pueblo alejado",
+        definition: "a remote town",
         knowledgelevel: 0
     },
     {
         id: "puerta_corredizo",
         category: "uncategorized",
-        spanish: "una puerta corredizo",
-        english: "A sliding door",
+        term: "una puerta corredizo",
+        definition: "A sliding door",
         knowledgelevel: 0
     },
     {
         id: "puesta_de_sol",
         category: "uncategorized",
-        spanish: "la puesta de sol",
-        english: "the sunset",
+        term: "la puesta de sol",
+        definition: "the sunset",
         knowledgelevel: 0
     },
     {
         id: "pulga",
         category: "uncategorized",
-        spanish: "una pulga",
-        english: "A flea",
+        term: "una pulga",
+        definition: "A flea",
         knowledgelevel: 0
     },
     {
         id: "pulgón",
         category: "uncategorized",
-        spanish: "un pulgón",
-        english: "  an aphid",
+        term: "un pulgón",
+        definition: "  an aphid",
         knowledgelevel: 0
     },
     {
         id: "puñado",
         category: "uncategorized",
-        spanish: "un puñado",
-        english: "a handful",
+        term: "un puñado",
+        definition: "a handful",
         knowledgelevel: 0
     },
     {
         id: "puntaje",
         category: "uncategorized",
-        spanish: "puntaje",
-        english: "a score",
+        term: "puntaje",
+        definition: "a score",
         knowledgelevel: 0
     },
     {
         id: "puntiaguda_",
         category: "uncategorized",
-        spanish: "puntiaguda (adj)",
-        english: "pointed",
+        term: "puntiaguda (adj)",
+        definition: "pointed",
         knowledgelevel: 0
     },
     {
         id: "puntos_de_sutura",
         category: "uncategorized",
-        spanish: "unos puntos de sutura",
-        english: "some stitches",
+        term: "unos puntos de sutura",
+        definition: "some stitches",
         knowledgelevel: 0
     },
     {
         id: "pupitre",
         category: "uncategorized",
-        spanish: "un pupitre",
-        english: "a desk",
+        term: "un pupitre",
+        definition: "a desk",
         knowledgelevel: 0
     },
     {
         id: "puré",
         category: "uncategorized",
-        spanish: "un puré",
-        english: "a puree",
+        term: "un puré",
+        definition: "a puree",
         knowledgelevel: 0
     },
     {
         id: "purificador",
         category: "uncategorized",
-        spanish: "una purificador",
-        english: "a purifier",
+        term: "una purificador",
+        definition: "a purifier",
         knowledgelevel: 0
     },
     {
         id: "que_asco!",
         category: "uncategorized",
-        spanish: "que asco!",
-        english: "  how disgusting!",
+        term: "que asco!",
+        definition: "  how disgusting!",
         knowledgelevel: 0
     },
     {
         id: "que_emocionante!",
         category: "uncategorized",
-        spanish: "que emocionante!",
-        english: "how exciting!",
+        term: "que emocionante!",
+        definition: "how exciting!",
         knowledgelevel: 0
     },
     {
         id: "que_lata!",
         category: "uncategorized",
-        spanish: "que lata!",
-        english: "what a drag!",
+        term: "que lata!",
+        definition: "what a drag!",
         knowledgelevel: 0
     },
     {
         id: "que_peste!",
         category: "uncategorized",
-        spanish: "que peste!",
-        english: "what a pest!",
+        term: "que peste!",
+        definition: "what a pest!",
         knowledgelevel: 0
     },
     {
         id: "quedar_dormido",
         category: "uncategorized",
-        spanish: "quedar dormido",
-        english: "to fall asleep",
+        term: "quedar dormido",
+        definition: "to fall asleep",
         knowledgelevel: 0
     },
     {
         id: "quedarse_hecho_polvo",
         category: "uncategorized",
-        spanish: "quedarse hecho polvo",
-        english: "  to be ruined or really tired",
+        term: "quedarse hecho polvo",
+        definition: "  to be ruined or really tired",
         knowledgelevel: 0
     },
     {
         id: "queja",
         category: "uncategorized",
-        spanish: "una queja",
-        english: "a complaint",
+        term: "una queja",
+        definition: "a complaint",
         knowledgelevel: 0
     },
     {
         id: "quemadura",
         category: "uncategorized",
-        spanish: "una quemadura",
-        english: "a burn",
+        term: "una quemadura",
+        definition: "a burn",
         knowledgelevel: 0
     },
     {
         id: "racismo",
         category: "uncategorized",
-        spanish: "el racismo",
-        english: "the racism",
+        term: "el racismo",
+        definition: "the racism",
         knowledgelevel: 0
     },
     {
         id: "ráfaga",
         category: "uncategorized",
-        spanish: "una ráfaga",
-        english: "a burst",
+        term: "una ráfaga",
+        definition: "a burst",
         knowledgelevel: 0
     },
     {
         id: "rampa",
         category: "uncategorized",
-        spanish: "una rampa",
-        english: "a ramp",
+        term: "una rampa",
+        definition: "a ramp",
         knowledgelevel: 0
     },
     {
         id: "ranura",
         category: "uncategorized",
-        spanish: "una ranura",
-        english: "a slot",
+        term: "una ranura",
+        definition: "a slot",
         knowledgelevel: 0
     },
     {
         id: "rara_vez",
         category: "uncategorized",
-        spanish: "rara vez",
-        english: "seldom",
+        term: "rara vez",
+        definition: "seldom",
         knowledgelevel: 0
     },
     {
         id: "rasgado",
         category: "uncategorized",
-        spanish: "rasgado (adj)",
-        english: "torn, ripped",
+        term: "rasgado (adj)",
+        definition: "torn, ripped",
         knowledgelevel: 0
     },
     {
         id: "rasgo",
         category: "uncategorized",
-        spanish: "un rasgo",
-        english: "a feature, a trait",
+        term: "un rasgo",
+        definition: "a feature, a trait",
         knowledgelevel: 0
     },
     {
         id: "raspadura",
         category: "uncategorized",
-        spanish: "una raspadura",
-        english: "an abrasion",
+        term: "una raspadura",
+        definition: "an abrasion",
         knowledgelevel: 0
     },
     {
         id: "raspón",
         category: "uncategorized",
-        spanish: "un raspón",
-        english: "a scrape",
+        term: "un raspón",
+        definition: "a scrape",
         knowledgelevel: 0
     },
     {
         id: "raya",
         category: "uncategorized",
-        spanish: "una raya",
-        english: "  a stripe",
+        term: "una raya",
+        definition: "  a stripe",
         knowledgelevel: 0
     },
     {
         id: "realizada_por",
         category: "uncategorized",
-        spanish: "la realizada por",
-        english: "  the one made by",
+        term: "la realizada por",
+        definition: "  the one made by",
         knowledgelevel: 0
     },
     {
         id: "rebanada",
         category: "uncategorized",
-        spanish: "una rebanada",
-        english: " a slice",
+        term: "una rebanada",
+        definition: " a slice",
         knowledgelevel: 0
     },
     {
         id: "recámara",
         category: "uncategorized",
-        spanish: "una recámara",
-        english: "  a bedroom",
+        term: "una recámara",
+        definition: "  a bedroom",
         knowledgelevel: 0
     },
     {
         id: "rechazo",
         category: "uncategorized",
-        spanish: "un rechazo",
-        english: "  a rejection",
+        term: "un rechazo",
+        definition: "  a rejection",
         knowledgelevel: 0
     },
     {
         id: "recién_hoy",
         category: "uncategorized",
-        spanish: "recién hoy",
-        english: "  just today",
+        term: "recién hoy",
+        definition: "  just today",
         knowledgelevel: 0
     },
     {
         id: "recio_",
         category: "uncategorized",
-        spanish: "recio (adj)",
-        english: "tough",
+        term: "recio (adj)",
+        definition: "tough",
         knowledgelevel: 0
     },
     {
         id: "recogida",
         category: "uncategorized",
-        spanish: "la recogida",
-        english: "the collection",
+        term: "la recogida",
+        definition: "the collection",
         knowledgelevel: 0
     },
     {
         id: "recompensa",
         category: "uncategorized",
-        spanish: "una recompensa",
-        english: "a reward",
+        term: "una recompensa",
+        definition: "a reward",
         knowledgelevel: 0
     },
     {
         id: "reconocimiento",
         category: "uncategorized",
-        spanish: "un reconocimiento",
-        english: "a recognition",
+        term: "un reconocimiento",
+        definition: "a recognition",
         knowledgelevel: 0
     },
     {
         id: "recorrido",
         category: "uncategorized",
-        spanish: "el recorrido",
-        english: "the route",
+        term: "el recorrido",
+        definition: "the route",
         knowledgelevel: 0
     },
     {
         id: "recreativa",
         category: "uncategorized",
-        spanish: "recreativa (adj)",
-        english: "recreational",
+        term: "recreativa (adj)",
+        definition: "recreational",
         knowledgelevel: 0
     },
     {
         id: "recreo",
         category: "uncategorized",
-        spanish: "el recreo",
-        english: "the recreation",
+        term: "el recreo",
+        definition: "the recreation",
         knowledgelevel: 0
     },
     {
         id: "redil",
         category: "uncategorized",
-        spanish: "el redil",
-        english: " the fold, or the sheep or donkey house",
+        term: "el redil",
+        definition: " the fold, or the sheep or donkey house",
         knowledgelevel: 0
     },
     {
         id: "regadera",
         category: "uncategorized",
-        spanish: "una regadera",
-        english: "A watering can",
+        term: "una regadera",
+        definition: "A watering can",
         knowledgelevel: 0
     },
     {
         id: "regaño",
         category: "uncategorized",
-        spanish: "un regaño",
-        english: "  a scolding",
+        term: "un regaño",
+        definition: "  a scolding",
         knowledgelevel: 0
     },
     {
         id: "regazo",
         category: "uncategorized",
-        spanish: "un regazo",
-        english: "a lap",
+        term: "un regazo",
+        definition: "a lap",
         knowledgelevel: 0
     },
     {
         id: "reglamento",
         category: "uncategorized",
-        spanish: "un reglamento",
-        english: "a regulation",
+        term: "un reglamento",
+        definition: "a regulation",
         knowledgelevel: 0
     },
     {
         id: "regocijo",
         category: "uncategorized",
-        spanish: "el regocijo",
-        english: "the joy",
+        term: "el regocijo",
+        definition: "the joy",
         knowledgelevel: 0
     },
     {
         id: "rejilla",
         category: "uncategorized",
-        spanish: "una rejilla",
-        english: "  a grate or vent",
+        term: "una rejilla",
+        definition: "  a grate or vent",
         knowledgelevel: 0
     },
     {
         id: "relacionado",
         category: "uncategorized",
-        spanish: "relacionado",
-        english: " related ",
+        term: "relacionado",
+        definition: " related ",
         knowledgelevel: 0
     },
     {
         id: "relacionar_entre_sí",
         category: "uncategorized",
-        spanish: "relacionar entre sí",
-        english: "  to relate to each other",
+        term: "relacionar entre sí",
+        definition: "  to relate to each other",
         knowledgelevel: 0
     },
     {
         id: "relato",
         category: "uncategorized",
-        spanish: "un relato",
-        english: "  a retelling",
+        term: "un relato",
+        definition: "  a retelling",
         knowledgelevel: 0
     },
     {
         id: "relieve",
         category: "uncategorized",
-        spanish: "el relieve",
-        english: "  the relief, the surface",
+        term: "el relieve",
+        definition: "  the relief, the surface",
         knowledgelevel: 0
     },
     {
         id: "reluciente",
         category: "uncategorized",
-        spanish: "reluciente (adj)",
-        english: "shimmering",
+        term: "reluciente (adj)",
+        definition: "shimmering",
         knowledgelevel: 0
     },
     {
         id: "renovable",
         category: "uncategorized",
-        spanish: "renovable (adj)",
-        english: "renwable",
+        term: "renovable (adj)",
+        definition: "renwable",
         knowledgelevel: 0
     },
     {
         id: "repentino",
         category: "uncategorized",
-        spanish: "repentino",
-        english: "sudden",
+        term: "repentino",
+        definition: "sudden",
         knowledgelevel: 0
     },
     {
         id: "repleto",
         category: "uncategorized",
-        spanish: "repleto",
-        english: "  full",
+        term: "repleto",
+        definition: "  full",
         knowledgelevel: 0
     },
     {
         id: "requisito",
         category: "uncategorized",
-        spanish: "un requisito",
-        english: "  a requirement",
+        term: "un requisito",
+        definition: "  a requirement",
         knowledgelevel: 0
     },
     {
         id: "reseco",
         category: "uncategorized",
-        spanish: "reseco",
-        english: "  parched",
+        term: "reseco",
+        definition: "  parched",
         knowledgelevel: 0
     },
     {
         id: "reservas",
         category: "uncategorized",
-        spanish: "las reservas",
-        english: "the reservations",
+        term: "las reservas",
+        definition: "the reservations",
         knowledgelevel: 0
     },
     {
         id: "residuo",
         category: "uncategorized",
-        spanish: "el residuo",
-        english: "the residue",
+        term: "el residuo",
+        definition: "the residue",
         knowledgelevel: 0
     },
     {
         id: "respectivo",
         category: "uncategorized",
-        spanish: "respectivo",
-        english: "respective",
+        term: "respectivo",
+        definition: "respective",
         knowledgelevel: 0
     },
     {
         id: "restos",
         category: "uncategorized",
-        spanish: "los restos",
-        english: "  remains, leftovers",
+        term: "los restos",
+        definition: "  remains, leftovers",
         knowledgelevel: 0
     },
     {
         id: "resuelto",
         category: "uncategorized",
-        spanish: "resuelto (adj)",
-        english: "  deturmined,  resolved",
+        term: "resuelto (adj)",
+        definition: "  deturmined,  resolved",
         knowledgelevel: 0
     },
     {
         id: "resultar_herido",
         category: "uncategorized",
-        spanish: "resultar herido",
-        english: "  to get hurt",
+        term: "resultar herido",
+        definition: "  to get hurt",
         knowledgelevel: 0
     },
     {
         id: "retorcido",
         category: "uncategorized",
-        spanish: "retorcido (adj)",
-        english: "twisted",
+        term: "retorcido (adj)",
+        definition: "twisted",
         knowledgelevel: 0
     },
     {
         id: "retrato",
         category: "uncategorized",
-        spanish: "un retrato",
-        english: "a portrait",
+        term: "un retrato",
+        definition: "a portrait",
         knowledgelevel: 0
     },
     {
         id: "revelación",
         category: "uncategorized",
-        spanish: "una revelación",
-        english: "a revelation",
+        term: "una revelación",
+        definition: "a revelation",
         knowledgelevel: 0
     },
     {
         id: "revista_de_moda",
         category: "uncategorized",
-        spanish: "una revista de moda",
-        english: "  a fashion magazine",
+        term: "una revista de moda",
+        definition: "  a fashion magazine",
         knowledgelevel: 0
     },
     {
         id: "revoltijo",
         category: "uncategorized",
-        spanish: "un revoltijo",
-        english: "a jumble",
+        term: "un revoltijo",
+        definition: "a jumble",
         knowledgelevel: 0
     },
     {
         id: "rico",
         category: "uncategorized",
-        spanish: "rico",
-        english: "  rich, wealthy, delicious",
+        term: "rico",
+        definition: "  rich, wealthy, delicious",
         knowledgelevel: 0
     },
     {
         id: "rifle",
         category: "uncategorized",
-        spanish: "rifle",
-        english: "rifle",
+        term: "rifle",
+        definition: "rifle",
         knowledgelevel: 0
     },
     {
         id: "rígido",
         category: "uncategorized",
-        spanish: "rígido",
-        english: "rigid",
+        term: "rígido",
+        definition: "rigid",
         knowledgelevel: 0
     },
     {
         id: "ristra",
         category: "uncategorized",
-        spanish: "una ristra",
-        english: "a string, a rope",
+        term: "una ristra",
+        definition: "a string, a rope",
         knowledgelevel: 0
     },
     {
         id: "impactante",
         category: "uncategorized",
-        spanish: "impactante (adj)",
-        english: "shocking",
+        term: "impactante (adj)",
+        definition: "shocking",
         knowledgelevel: 0
     },
     {
         id: "roble",
         category: "uncategorized",
-        spanish: "un roble",
-        english: "an oak, oak tree",
+        term: "un roble",
+        definition: "an oak, oak tree",
         knowledgelevel: 0
     },
     {
         id: "roce",
         category: "uncategorized",
-        spanish: "el roce",
-        english: "the touch",
+        term: "el roce",
+        definition: "the touch",
         knowledgelevel: 0
     },
     {
         id: "rodaje",
         category: "uncategorized",
-        spanish: "el rodaje",
-        english: "the filming",
+        term: "el rodaje",
+        definition: "the filming",
         knowledgelevel: 0
     },
     {
         id: "rodillera",
         category: "uncategorized",
-        spanish: "una rodillera",
-        english: "a knee pad",
+        term: "una rodillera",
+        definition: "a knee pad",
         knowledgelevel: 0
     },
     {
         id: "roma",
         category: "uncategorized",
-        spanish: "roma",
-        english: "Rome",
+        term: "roma",
+        definition: "Rome",
         knowledgelevel: 0
     },
     {
         id: "rosca",
         category: "uncategorized",
-        spanish: "una rosca",
-        english: "  a thread or bagel",
+        term: "una rosca",
+        definition: "  a thread or bagel",
         knowledgelevel: 0
     },
     {
         id: "rubíes",
         category: "uncategorized",
-        spanish: "los rubíes",
-        english: "the rubies",
+        term: "los rubíes",
+        definition: "the rubies",
         knowledgelevel: 0
     },
     {
         id: "rugoso",
         category: "uncategorized",
-        spanish: "rugosa /rugoso",
-        english: "rough",
+        term: "rugosa /rugoso",
+        definition: "rough",
         knowledgelevel: 0
     },
     {
         id: "rumbo",
         category: "uncategorized",
-        spanish: "un rumbo",
-        english: "  a course, route",
+        term: "un rumbo",
+        definition: "  a course, route",
         knowledgelevel: 0
     },
     {
         id: "sabana",
         category: "uncategorized",
-        spanish: "la sabana",
-        english: "the sheet (like paper) or the savannah (like Africa)",
+        term: "la sabana",
+        definition: "the sheet (like paper) or the savannah (like Africa)",
         knowledgelevel: 0
     },
     {
         id: "sabiduría",
         category: "uncategorized",
-        spanish: "la sabiduría",
-        english: "the wisdom",
+        term: "la sabiduría",
+        definition: "the wisdom",
         knowledgelevel: 0
     },
     {
         id: "sabroso",
         category: "uncategorized",
-        spanish: "sabroso (adj)",
-        english: "tasty",
+        term: "sabroso (adj)",
+        definition: "tasty",
         knowledgelevel: 0
     },
     {
         id: "sagrada",
         category: "uncategorized",
-        spanish: "sagrada (adj)",
-        english: "sacred",
+        term: "sagrada (adj)",
+        definition: "sacred",
         knowledgelevel: 0
     },
     {
         id: "sala",
         category: "uncategorized",
-        spanish: "la sala",
-        english: " de emergencia",
+        term: "la sala",
+        definition: " de emergencia",
         knowledgelevel: 0
     },
     {
         id: "saltón",
         category: "uncategorized",
-        spanish: "saltón (adj)",
-        english: "  protruding,  jumping out",
+        term: "saltón (adj)",
+        definition: "  protruding,  jumping out",
         knowledgelevel: 0
     },
     {
         id: "sanción",
         category: "uncategorized",
-        spanish: "la sanción",
-        english: "the sanction",
+        term: "la sanción",
+        definition: "the sanction",
         knowledgelevel: 0
     },
     {
         id: "saneamiento",
         category: "uncategorized",
-        spanish: "saneamiento",
-        english: "sanitation",
+        term: "saneamiento",
+        definition: "sanitation",
         knowledgelevel: 0
     },
     {
         id: "sargento",
         category: "uncategorized",
-        spanish: "el sargento",
-        english: "the sergent",
+        term: "el sargento",
+        definition: "the sergent",
         knowledgelevel: 0
     },
     {
         id: "savia",
         category: "uncategorized",
-        spanish: "la savia",
-        english: "the sap",
+        term: "la savia",
+        definition: "the sap",
         knowledgelevel: 0
     },
     {
         id: "sazón",
         category: "uncategorized",
-        spanish: "el sazón",
-        english: "the seasoning",
+        term: "el sazón",
+        definition: "the seasoning",
         knowledgelevel: 0
     },
     {
         id: "se_hace_de_pronto",
         category: "uncategorized",
-        spanish: "se hace de pronto",
-        english: "it happens suddenly",
+        term: "se hace de pronto",
+        definition: "it happens suddenly",
         knowledgelevel: 0
     },
     {
         id: "seda",
         category: "uncategorized",
-        spanish: "la seda",
-        english: " the silk",
+        term: "la seda",
+        definition: " the silk",
         knowledgelevel: 0
     },
     {
         id: "sediento",
         category: "uncategorized",
-        spanish: "sediento (adj)",
-        english: "thirsty",
+        term: "sediento (adj)",
+        definition: "thirsty",
         knowledgelevel: 0
     },
     {
         id: "seguimiento",
         category: "uncategorized",
-        spanish: "un seguimiento",
-        english: "a follow-up",
+        term: "un seguimiento",
+        definition: "a follow-up",
         knowledgelevel: 0
     },
     {
         id: "según_parece",
         category: "uncategorized",
-        spanish: "según parece",
-        english: "as it seems",
+        term: "según parece",
+        definition: "as it seems",
         knowledgelevel: 0
     },
     {
         id: "sembradíos",
         category: "uncategorized",
-        spanish: "los sembradíos",
-        english: "the crops",
+        term: "los sembradíos",
+        definition: "the crops",
         knowledgelevel: 0
     },
     {
         id: "semejante",
         category: "uncategorized",
-        spanish: "semejante (adj)",
-        english: "such, similar, like",
+        term: "semejante (adj)",
+        definition: "such, similar, like",
         knowledgelevel: 0
     },
     {
         id: "semejanza",
         category: "uncategorized",
-        spanish: "una semejanza",
-        english: "a likeness, similarity",
+        term: "una semejanza",
+        definition: "a likeness, similarity",
         knowledgelevel: 0
     },
     {
         id: "sentarse_más_derecha",
         category: "uncategorized",
-        spanish: "sentarse más derecha",
-        english: "to sit straighter",
+        term: "sentarse más derecha",
+        definition: "to sit straighter",
         knowledgelevel: 0
     },
     {
         id: "sentido_común",
         category: "uncategorized",
-        spanish: "el sentido común",
-        english: "the common sense",
+        term: "el sentido común",
+        definition: "the common sense",
         knowledgelevel: 0
     },
     {
         id: "sepamos",
         category: "uncategorized",
-        spanish: "sepamos",
-        english: "  let us know",
+        term: "sepamos",
+        definition: "  let us know",
         knowledgelevel: 0
     },
     {
         id: "sereno",
         category: "uncategorized",
-        spanish: "serena / sereno (adj)",
-        english: "serene",
+        term: "serena / sereno (adj)",
+        definition: "serene",
         knowledgelevel: 0
     },
     {
         id: "serie",
         category: "uncategorized",
-        spanish: "una serie",
-        english: "A series",
+        term: "una serie",
+        definition: "A series",
         knowledgelevel: 0
     },
     {
         id: "serrucho",
         category: "uncategorized",
-        spanish: "un serrucho",
-        english: "a saw",
+        term: "un serrucho",
+        definition: "a saw",
         knowledgelevel: 0
     },
     {
         id: "seta",
         category: "uncategorized",
-        spanish: "una seta",
-        english: "  a mushroom",
+        term: "una seta",
+        definition: "  a mushroom",
         knowledgelevel: 0
     },
     {
         id: "si_que_los",
         category: "uncategorized",
-        spanish: "si que los",
-        english: " hay",
+        term: "si que los",
+        definition: " hay",
         knowledgelevel: 0
     },
     {
         id: "si_usar",
         category: "uncategorized",
-        spanish: "si usar",
-        english: "whether to use",
+        term: "si usar",
+        definition: "whether to use",
         knowledgelevel: 0
     },
     {
         id: "siembras",
         category: "uncategorized",
-        spanish: "las siembras",
-        english: "the sowing",
+        term: "las siembras",
+        definition: "the sowing",
         knowledgelevel: 0
     },
     {
         id: "sigiloso",
         category: "uncategorized",
-        spanish: "sigiloso (adj)",
-        english: "secretive",
+        term: "sigiloso (adj)",
+        definition: "secretive",
         knowledgelevel: 0
     },
     {
         id: "siglas",
         category: "uncategorized",
-        spanish: "las siglas",
-        english: "the acronym",
+        term: "las siglas",
+        definition: "the acronym",
         knowledgelevel: 0
     },
     {
         id: "silla",
         category: "uncategorized",
-        spanish: "silla",
-        english: " de ruedas",
+        term: "silla",
+        definition: " de ruedas",
         knowledgelevel: 0
     },
     {
         id: "simulacros",
         category: "uncategorized",
-        spanish: "los simulacros",
-        english: "The drills or simulations",
+        term: "los simulacros",
+        definition: "The drills or simulations",
         knowledgelevel: 0
     },
     {
         id: "sin_cambio_aparente",
         category: "uncategorized",
-        spanish: "sin cambio aparente",
-        english: "no apparent change",
+        term: "sin cambio aparente",
+        definition: "no apparent change",
         knowledgelevel: 0
     },
     {
         id: "sinfonía",
         category: "uncategorized",
-        spanish: "un sinfonía",
-        english: "a symphony",
+        term: "un sinfonía",
+        definition: "a symphony",
         knowledgelevel: 0
     },
     {
         id: "sino_que_además",
         category: "uncategorized",
-        spanish: "sino que además",
-        english: " but also",
+        term: "sino que además",
+        definition: " but also",
         knowledgelevel: 0
     },
     {
         id: "síntomas",
         category: "uncategorized",
-        spanish: "los síntomas",
-        english: "the symptoms",
+        term: "los síntomas",
+        definition: "the symptoms",
         knowledgelevel: 0
     },
     {
         id: "sismos",
         category: "uncategorized",
-        spanish: "los sismos",
-        english: "the earthquakes",
+        term: "los sismos",
+        definition: "the earthquakes",
         knowledgelevel: 0
     },
     {
         id: "sistema_digestivo",
         category: "uncategorized",
-        spanish: "un sistema digestivo",
-        english: "  digestive system",
+        term: "un sistema digestivo",
+        definition: "  digestive system",
         knowledgelevel: 0
     },
     {
         id: "sobra",
         category: "uncategorized",
-        spanish: "una sobra",
-        english: "a surplus",
+        term: "una sobra",
+        definition: "a surplus",
         knowledgelevel: 0
     },
     {
         id: "sobre",
         category: "uncategorized",
-        spanish: "el sobre",
-        english: "the envelope",
+        term: "el sobre",
+        definition: "the envelope",
         knowledgelevel: 0
     },
     {
         id: "sobrenatural",
         category: "uncategorized",
-        spanish: "sobrenatural",
-        english: "supernatural",
+        term: "sobrenatural",
+        definition: "supernatural",
         knowledgelevel: 0
     },
     {
         id: "sobreexplotación",
         category: "uncategorized",
-        spanish: "sobreexplotación",
-        english: "overexploitation",
+        term: "sobreexplotación",
+        definition: "overexploitation",
         knowledgelevel: 0
     },
     {
         id: "sol_poner",
         category: "uncategorized",
-        spanish: "el sol poner",
-        english: "the sunset",
+        term: "el sol poner",
+        definition: "the sunset",
         knowledgelevel: 0
     },
     {
         id: "solo_faltan_dos_semanas",
         category: "uncategorized",
-        spanish: "solo faltan dos semanas",
-        english: "  only 2 weeks left",
+        term: "solo faltan dos semanas",
+        definition: "  only 2 weeks left",
         knowledgelevel: 0
     },
     {
         id: "sopetón",
         category: "uncategorized",
-        spanish: "sopetón (adj)",
-        english: "suddenly",
+        term: "sopetón (adj)",
+        definition: "suddenly",
         knowledgelevel: 0
     },
     {
         id: "soplo",
         category: "uncategorized",
-        spanish: "un soplo",
-        english: "a breath, puff, blow",
+        term: "un soplo",
+        definition: "a breath, puff, blow",
         knowledgelevel: 0
     },
     {
         id: "sordo/sorda",
         category: "uncategorized",
-        spanish: "sordo/sorda (adj)",
-        english: "  deaf",
+        term: "sordo/sorda (adj)",
+        definition: "  deaf",
         knowledgelevel: 0
     },
     {
         id: "sucesivamente",
         category: "uncategorized",
-        spanish: "sucesivamente",
-        english: "  successively ",
+        term: "sucesivamente",
+        definition: "  successively ",
         knowledgelevel: 0
     },
     {
         id: "sucesos",
         category: "uncategorized",
-        spanish: "los sucesos",
-        english: "the events",
+        term: "los sucesos",
+        definition: "the events",
         knowledgelevel: 0
     },
     {
         id: "sudor",
         category: "uncategorized",
-        spanish: "sudor",
-        english: "  sweat",
+        term: "sudor",
+        definition: "  sweat",
         knowledgelevel: 0
     },
     {
         id: "sueldo",
         category: "uncategorized",
-        spanish: "un sueldo",
-        english: "a salary",
+        term: "un sueldo",
+        definition: "a salary",
         knowledgelevel: 0
     },
     {
         id: "suelto",
         category: "uncategorized",
-        spanish: "suelta / suelto",
-        english: " loose (como ropa)",
+        term: "suelta / suelto",
+        definition: " loose (como ropa)",
         knowledgelevel: 0
     },
     {
         id: "suelta_eso!",
         category: "uncategorized",
-        spanish: "suelta eso!",
-        english: "drop that!",
+        term: "suelta eso!",
+        definition: "drop that!",
         knowledgelevel: 0
     },
     {
         id: "sujeto",
         category: "uncategorized",
-        spanish: "un sujeto",
-        english: "  a subject",
+        term: "un sujeto",
+        definition: "  a subject",
         knowledgelevel: 0
     },
     {
         id: "suma",
         category: "uncategorized",
-        spanish: "una suma",
-        english: "  an amount",
+        term: "una suma",
+        definition: "  an amount",
         knowledgelevel: 0
     },
     {
         id: "sumamente",
         category: "uncategorized",
-        spanish: "sumamente (adj)",
-        english: "extremely",
+        term: "sumamente (adj)",
+        definition: "extremely",
         knowledgelevel: 0
     },
     {
         id: "suministro",
         category: "uncategorized",
-        spanish: "un suministro",
-        english: "a supply",
+        term: "un suministro",
+        definition: "a supply",
         knowledgelevel: 0
     },
     {
         id: "supervivencia",
         category: "uncategorized",
-        spanish: "la supervivencia",
-        english: "the survival",
+        term: "la supervivencia",
+        definition: "the survival",
         knowledgelevel: 0
     },
     {
         id: "superviviente",
         category: "uncategorized",
-        spanish: "un superviviente",
-        english: " a survivor",
+        term: "un superviviente",
+        definition: " a survivor",
         knowledgelevel: 0
     },
     {
         id: "suposición",
         category: "uncategorized",
-        spanish: "una suposición",
-        english: "an assumption",
+        term: "una suposición",
+        definition: "an assumption",
         knowledgelevel: 0
     },
     {
         id: "surtidor",
         category: "uncategorized",
-        spanish: "un surtidor",
-        english: "a pump, a jet",
+        term: "un surtidor",
+        definition: "a pump, a jet",
         knowledgelevel: 0
     },
     {
         id: "sustentable",
         category: "uncategorized",
-        spanish: "sustentable",
-        english: "sustainable",
+        term: "sustentable",
+        definition: "sustainable",
         knowledgelevel: 0
     },
     {
         id: "suyo",
         category: "uncategorized",
-        spanish: "suyo",
-        english: "his",
+        term: "suyo",
+        definition: "his",
         knowledgelevel: 0
     },
     {
         id: "tableta",
         category: "uncategorized",
-        spanish: "una tableta",
-        english: "  tablet like iPad",
+        term: "una tableta",
+        definition: "  tablet like iPad",
         knowledgelevel: 0
     },
     {
         id: "tala",
         category: "uncategorized",
-        spanish: "la tala",
-        english: " ilegal",
+        term: "la tala",
+        definition: " ilegal",
         knowledgelevel: 0
     },
     {
         id: "tales_",
         category: "uncategorized",
-        spanish: "tales (adj)",
-        english: "such, suchlike",
+        term: "tales (adj)",
+        definition: "such, suchlike",
         knowledgelevel: 0
     },
     {
         id: "tamaño_mediano",
         category: "uncategorized",
-        spanish: "tamaño mediano",
-        english: "medium size",
+        term: "tamaño mediano",
+        definition: "medium size",
         knowledgelevel: 0
     },
     {
         id: "te_echo",
         category: "uncategorized",
-        spanish: "te echo",
-        english: " I miss you",
+        term: "te echo",
+        definition: " I miss you",
         knowledgelevel: 0
     },
     {
         id: "tejado",
         category: "uncategorized",
-        spanish: "un tejado",
-        english: "  a roof",
+        term: "un tejado",
+        definition: "  a roof",
         knowledgelevel: 0
     },
     {
         id: "tejido",
         category: "uncategorized",
-        spanish: "un tejido",
-        english: " a tissue or cloth",
+        term: "un tejido",
+        definition: " a tissue or cloth",
         knowledgelevel: 0
     },
     {
         id: "telar",
         category: "uncategorized",
-        spanish: "un telar",
-        english: "a loom",
+        term: "un telar",
+        definition: "a loom",
         knowledgelevel: 0
     },
     {
         id: "telón",
         category: "uncategorized",
-        spanish: "el telón",
-        english: "  the curtain like in a play",
+        term: "el telón",
+        definition: "  the curtain like in a play",
         knowledgelevel: 0
     },
     {
         id: "temblores",
         category: "uncategorized",
-        spanish: "los temblores",
-        english: "the tremors",
+        term: "los temblores",
+        definition: "the tremors",
         knowledgelevel: 0
     },
     {
         id: "tembloroso",
         category: "uncategorized",
-        spanish: "tembloroso (adj)",
-        english: "trembling, shaky",
+        term: "tembloroso (adj)",
+        definition: "trembling, shaky",
         knowledgelevel: 0
     },
     {
         id: "temor",
         category: "uncategorized",
-        spanish: "un temor",
-        english: "a fear",
+        term: "un temor",
+        definition: "a fear",
         knowledgelevel: 0
     },
     {
         id: "témpano",
         category: "uncategorized",
-        spanish: "un témpano",
-        english: "an iceberg",
+        term: "un témpano",
+        definition: "an iceberg",
         knowledgelevel: 0
     },
     {
         id: "temperatura_media",
         category: "uncategorized",
-        spanish: "la temperatura media",
-        english: "  the average temperature",
+        term: "la temperatura media",
+        definition: "  the average temperature",
         knowledgelevel: 0
     },
     {
         id: "tener_en_cuenta",
         category: "uncategorized",
-        spanish: "tener en cuenta",
-        english: "  to take into account",
+        term: "tener en cuenta",
+        definition: "  to take into account",
         knowledgelevel: 0
     },
     {
         id: "tengo_montado_una_cosa",
         category: "uncategorized",
-        spanish: "tengo montado una cosa",
-        english: "  i have set up",
+        term: "tengo montado una cosa",
+        definition: "  i have set up",
         knowledgelevel: 0
     },
     {
         id: "teoría",
         category: "uncategorized",
-        spanish: "la teoría",
-        english: " the theory",
+        term: "la teoría",
+        definition: " the theory",
         knowledgelevel: 0
     },
     {
         id: "térmico",
         category: "uncategorized",
-        spanish: "térmico (adj)",
-        english: "thermal",
+        term: "térmico (adj)",
+        definition: "thermal",
         knowledgelevel: 0
     },
     {
         id: "término",
         category: "uncategorized",
-        spanish: "el término",
-        english: "the term, the end",
+        term: "el término",
+        definition: "the term, the end",
         knowledgelevel: 0
     },
     {
         id: "tianguis",
         category: "uncategorized",
-        spanish: "los tianguis",
-        english: "the market",
+        term: "los tianguis",
+        definition: "the market",
         knowledgelevel: 0
     },
     {
         id: "tienda_de_comestible",
         category: "uncategorized",
-        spanish: "una tienda de comestible",
-        english: "  a grocery store",
+        term: "una tienda de comestible",
+        definition: "  a grocery store",
         knowledgelevel: 0
     },
     {
         id: "tieso_",
         category: "uncategorized",
-        spanish: "tieso (adj)",
-        english: "stiff",
+        term: "tieso (adj)",
+        definition: "stiff",
         knowledgelevel: 0
     },
     {
         id: "tipo",
         category: "uncategorized",
-        spanish: "tipo",
-        english: "  type  or guy",
+        term: "tipo",
+        definition: "  type  or guy",
         knowledgelevel: 0
     },
     {
         id: "títere",
         category: "uncategorized",
-        spanish: "un títere",
-        english: "a puppet",
+        term: "un títere",
+        definition: "a puppet",
         knowledgelevel: 0
     },
     {
         id: "titular",
         category: "uncategorized",
-        spanish: "un titular",
-        english: "A holder, or a headline",
+        term: "un titular",
+        definition: "A holder, or a headline",
         knowledgelevel: 0
     },
     {
         id: "tobogán",
         category: "uncategorized",
-        spanish: "un tobogán",
-        english: "  a slide (like in a kids playground)",
+        term: "un tobogán",
+        definition: "  a slide (like in a kids playground)",
         knowledgelevel: 0
     },
     {
         id: "toditos",
         category: "uncategorized",
-        spanish: "toditos",
-        english: "  everyone",
+        term: "toditos",
+        definition: "  everyone",
         knowledgelevel: 0
     },
     {
         id: "tomar_a_broma",
         category: "uncategorized",
-        spanish: "tomar a broma",
-        english: "  to take something as a joke",
+        term: "tomar a broma",
+        definition: "  to take something as a joke",
         knowledgelevel: 0
     },
     {
         id: "tomar_la_palabra",
         category: "uncategorized",
-        spanish: "tomar la palabra",
-        english: "  take the floor (expression)",
+        term: "tomar la palabra",
+        definition: "  take the floor (expression)",
         knowledgelevel: 0
     },
     {
         id: "tonada",
         category: "uncategorized",
-        spanish: "una tonada",
-        english: "  a tune",
+        term: "una tonada",
+        definition: "  a tune",
         knowledgelevel: 0
     },
     {
         id: "tono",
         category: "uncategorized",
-        spanish: "un tono",
-        english: "a tone",
+        term: "un tono",
+        definition: "a tone",
         knowledgelevel: 0
     },
     {
         id: "torbellino",
         category: "uncategorized",
-        spanish: "un torbellino",
-        english: "a whirlwind",
+        term: "un torbellino",
+        definition: "a whirlwind",
         knowledgelevel: 0
     },
     {
         id: "torrente",
         category: "uncategorized",
-        spanish: "un torrente",
-        english: "a torrent, a stream",
+        term: "un torrente",
+        definition: "a torrent, a stream",
         knowledgelevel: 0
     },
     {
         id: "tostadas_francesas",
         category: "uncategorized",
-        spanish: "las tostadas francesas",
-        english: "the french toast",
+        term: "las tostadas francesas",
+        definition: "the french toast",
         knowledgelevel: 0
     },
     {
         id: "transitada",
         category: "uncategorized",
-        spanish: "transitada (adj)",
-        english: "busy",
+        term: "transitada (adj)",
+        definition: "busy",
         knowledgelevel: 0
     },
     {
         id: "trapo",
         category: "uncategorized",
-        spanish: "un trapo",
-        english: "a rag, a cloth",
+        term: "un trapo",
+        definition: "a rag, a cloth",
         knowledgelevel: 0
     },
     {
         id: "tratamiento",
         category: "uncategorized",
-        spanish: "tratamiento",
-        english: "  treatment (como un grupo en una estudia medical)",
+        term: "tratamiento",
+        definition: "  treatment (como un grupo en una estudia medical)",
         knowledgelevel: 0
     },
     {
         id: "trato",
         category: "uncategorized",
-        spanish: "el trato",
-        english: "  the deal or the treatment",
+        term: "el trato",
+        definition: "  the deal or the treatment",
         knowledgelevel: 0
     },
     {
         id: "trato_injusto",
         category: "uncategorized",
-        spanish: "el trato injusto",
-        english: "the unfair treatment",
+        term: "el trato injusto",
+        definition: "the unfair treatment",
         knowledgelevel: 0
     },
     {
         id: "travesía",
         category: "uncategorized",
-        spanish: "una travesía",
-        english: "a passage, crossing, sailing",
+        term: "una travesía",
+        definition: "a passage, crossing, sailing",
         knowledgelevel: 0
     },
     {
         id: "travesura",
         category: "uncategorized",
-        spanish: "la travesura",
-        english: "the mischief",
+        term: "la travesura",
+        definition: "the mischief",
         knowledgelevel: 0
     },
     {
         id: "trazo",
         category: "uncategorized",
-        spanish: "el trazo",
-        english: "the streak, stroke",
+        term: "el trazo",
+        definition: "the streak, stroke",
         knowledgelevel: 0
     },
     {
         id: "tribunal",
         category: "uncategorized",
-        spanish: "un tribunal",
-        english: "  the court of law",
+        term: "un tribunal",
+        definition: "  the court of law",
         knowledgelevel: 0
     },
     {
         id: "tripas",
         category: "uncategorized",
-        spanish: "las tripas",
-        english: "the guts, the innards",
+        term: "las tripas",
+        definition: "the guts, the innards",
         knowledgelevel: 0
     },
     {
         id: "triunfo",
         category: "uncategorized",
-        spanish: "el triunfo",
-        english: "  the triumph",
+        term: "el triunfo",
+        definition: "  the triumph",
         knowledgelevel: 0
     },
     {
         id: "trompa",
         category: "uncategorized",
-        spanish: "la trompa",
-        english: "  the trunk like of an elephant",
+        term: "la trompa",
+        definition: "  the trunk like of an elephant",
         knowledgelevel: 0
     },
     {
         id: "trueque",
         category: "uncategorized",
-        spanish: "trueque",
-        english: "barter",
+        term: "trueque",
+        definition: "barter",
         knowledgelevel: 0
     },
     {
         id: "tubérculo",
         category: "uncategorized",
-        spanish: "un tubérculo",
-        english: " root vegetable, tuber",
+        term: "un tubérculo",
+        definition: " root vegetable, tuber",
         knowledgelevel: 0
     },
     {
         id: "tumba",
         category: "uncategorized",
-        spanish: "una tumba",
-        english: "a grave, a tomb",
+        term: "una tumba",
+        definition: "a grave, a tomb",
         knowledgelevel: 0
     },
     {
         id: "túnez",
         category: "uncategorized",
-        spanish: "túnez",
-        english: "  Tunisia",
+        term: "túnez",
+        definition: "  Tunisia",
         knowledgelevel: 0
     },
     {
         id: "túnica",
         category: "uncategorized",
-        spanish: "una túnica",
-        english: "  a robe",
+        term: "una túnica",
+        definition: "  a robe",
         knowledgelevel: 0
     },
     {
         id: "tupido",
         category: "uncategorized",
-        spanish: "tupido",
-        english: "  dense like a dense jungle",
+        term: "tupido",
+        definition: "  dense like a dense jungle",
         knowledgelevel: 0
     },
     {
         id: "tener_lugar",
         category: "uncategorized",
-        spanish: "tener lugar",
-        english: "to take place",
+        term: "tener lugar",
+        definition: "to take place",
         knowledgelevel: 0
     },
     {
         id: "tuvo_presente",
         category: "uncategorized",
-        spanish: "tuvo presente",
-        english: "had in mind",
+        term: "tuvo presente",
+        definition: "had in mind",
         knowledgelevel: 0
     },
     {
         id: "unidad",
         category: "uncategorized",
-        spanish: "una unidad",
-        english: "a unit, or unity, or oneness",
+        term: "una unidad",
+        definition: "a unit, or unity, or oneness",
         knowledgelevel: 0
     },
     {
         id: "unos_a_otros",
         category: "uncategorized",
-        spanish: "unos a otros",
-        english: "each other",
+        term: "unos a otros",
+        definition: "each other",
         knowledgelevel: 0
     },
     {
         id: "unos_flamencos",
         category: "uncategorized",
-        spanish: "unos flamencos",
-        english: "  some flamingos",
+        term: "unos flamencos",
+        definition: "  some flamingos",
         knowledgelevel: 0
     },
     {
         id: "unos_utensilios",
         category: "uncategorized",
-        spanish: "unos utensilios",
-        english: "  some tools or utensils",
+        term: "unos utensilios",
+        definition: "  some tools or utensils",
         knowledgelevel: 0
     },
     {
         id: "urticante",
         category: "uncategorized",
-        spanish: "urticante (-adj)",
-        english: "  stinging",
+        term: "urticante (-adj)",
+        definition: "  stinging",
         knowledgelevel: 0
     },
     {
         id: "vago",
         category: "uncategorized",
-        spanish: "vago (adj)",
-        english: "lazy",
+        term: "vago (adj)",
+        definition: "lazy",
         knowledgelevel: 0
     },
     {
         id: "vale",
         category: "uncategorized",
-        spanish: "vale",
-        english: "Okay",
+        term: "vale",
+        definition: "Okay",
         knowledgelevel: 0
     },
     {
         id: "vale_la_pena",
         category: "uncategorized",
-        spanish: "vale la pena",
-        english: "it's worth it",
+        term: "vale la pena",
+        definition: "it's worth it",
         knowledgelevel: 0
     },
     {
         id: "valla",
         category: "uncategorized",
-        spanish: "una valla",
-        english: "a fence",
+        term: "una valla",
+        definition: "a fence",
         knowledgelevel: 0
     },
     {
         id: "vara",
         category: "uncategorized",
-        spanish: "una vara",
-        english: "a stick, rod, cane",
+        term: "una vara",
+        definition: "a stick, rod, cane",
         knowledgelevel: 0
     },
     {
         id: "varón",
         category: "uncategorized",
-        spanish: "un varón",
-        english: "a male, a man",
+        term: "un varón",
+        definition: "a male, a man",
         knowledgelevel: 0
     },
     {
         id: "vasija",
         category: "uncategorized",
-        spanish: "una vasija",
-        english: "a vessel",
+        term: "una vasija",
+        definition: "a vessel",
         knowledgelevel: 0
     },
     {
         id: "vasto",
         category: "uncategorized",
-        spanish: "vasto",
-        english: "vast",
+        term: "vasto",
+        definition: "vast",
         knowledgelevel: 0
     },
     {
         id: "vello",
         category: "uncategorized",
-        spanish: "un vello",
-        english: "a hair, fuzz",
+        term: "un vello",
+        definition: "a hair, fuzz",
         knowledgelevel: 0
     },
     {
         id: "vendaje",
         category: "uncategorized",
-        spanish: "un vendaje",
-        english: "a bandage",
+        term: "un vendaje",
+        definition: "a bandage",
         knowledgelevel: 0
     },
     {
         id: "venida_a_menos",
         category: "uncategorized",
-        spanish: "una venida a menos",
-        english: " a downfall",
+        term: "una venida a menos",
+        definition: " a downfall",
         knowledgelevel: 0
     },
     {
         id: "venta",
         category: "uncategorized",
-        spanish: "la venta",
-        english: "the sale",
+        term: "la venta",
+        definition: "the sale",
         knowledgelevel: 0
     },
     {
         id: "ventanilla",
         category: "uncategorized",
-        spanish: "la ventanilla",
-        english: "the window",
+        term: "la ventanilla",
+        definition: "the window",
         knowledgelevel: 0
     },
     {
         id: "vereda",
         category: "uncategorized",
-        spanish: "una vereda",
-        english: "a sidewalk",
+        term: "una vereda",
+        definition: "a sidewalk",
         knowledgelevel: 0
     },
     {
         id: "vergonzoso",
         category: "uncategorized",
-        spanish: "vergonzoso (adj)",
-        english: "shameful",
+        term: "vergonzoso (adj)",
+        definition: "shameful",
         knowledgelevel: 0
     },
     {
         id: "verja",
         category: "uncategorized",
-        spanish: "una verja",
-        english: "a gate",
+        term: "una verja",
+        definition: "a gate",
         knowledgelevel: 0
     },
     {
         id: "vertedero",
         category: "uncategorized",
-        spanish: "un vertedero",
-        english: "  a landfill",
+        term: "un vertedero",
+        definition: "  a landfill",
         knowledgelevel: 0
     },
     {
         id: "vertiente",
         category: "uncategorized",
-        spanish: "un vertiente",
-        english: "a slope",
+        term: "un vertiente",
+        definition: "a slope",
         knowledgelevel: 0
     },
     {
         id: "vestimenta",
         category: "uncategorized",
-        spanish: "una vestimenta",
-        english: "an outfit",
+        term: "una vestimenta",
+        definition: "an outfit",
         knowledgelevel: 0
     },
     {
         id: "vestuario_teatral",
         category: "uncategorized",
-        spanish: "un vestuario teatral",
-        english: "a  theatrical costume",
+        term: "un vestuario teatral",
+        definition: "a  theatrical costume",
         knowledgelevel: 0
     },
     {
         id: "victim",
         category: "uncategorized",
-        spanish: "un/una victim, víctima",
-        english: "a victim",
+        term: "un/una victim, víctima",
+        definition: "a victim",
         knowledgelevel: 0
     },
     {
         id: "viga",
         category: "uncategorized",
-        spanish: "una viga",
-        english: "a  beam,  like holding up the ceiling",
+        term: "una viga",
+        definition: "a  beam,  like holding up the ceiling",
         knowledgelevel: 0
     },
     {
         id: "vínculo",
         category: "uncategorized",
-        spanish: "un vínculo",
-        english: "a bond, a link",
+        term: "un vínculo",
+        definition: "a bond, a link",
         knowledgelevel: 0
     },
     {
         id: "violento",
         category: "uncategorized",
-        spanish: "violenta / violento (adj)",
-        english: "violent",
+        term: "violenta / violento (adj)",
+        definition: "violent",
         knowledgelevel: 0
     },
     {
         id: "vista_aérea",
         category: "uncategorized",
-        spanish: "una vista aérea",
-        english: "  a arial view",
+        term: "una vista aérea",
+        definition: "  a arial view",
         knowledgelevel: 0
     },
     {
         id: "vivaz",
         category: "uncategorized",
-        spanish: "vivaz",
-        english: "vivacious, breezy, happy",
+        term: "vivaz",
+        definition: "vivacious, breezy, happy",
         knowledgelevel: 0
     },
     {
         id: "vivero",
         category: "uncategorized",
-        spanish: "un vivero",
-        english: "a nursery like for plants",
+        term: "un vivero",
+        definition: "a nursery like for plants",
         knowledgelevel: 0
     },
     {
         id: "volantines",
         category: "uncategorized",
-        spanish: "unos volantines",
-        english: " some kites",
+        term: "unos volantines",
+        definition: " some kites",
         knowledgelevel: 0
     },
     {
         id: "volumen",
         category: "uncategorized",
-        spanish: "el volumen",
-        english: "the volume, the bulk, the loudness",
+        term: "el volumen",
+        definition: "the volume, the bulk, the loudness",
         knowledgelevel: 0
     },
     {
         id: "volverse_a_poner",
         category: "uncategorized",
-        spanish: "volverse a poner",
-        english: "to put back on",
+        term: "volverse a poner",
+        definition: "to put back on",
         knowledgelevel: 0
     },
     {
         id: "yacimiento_de_un_mineral",
         category: "uncategorized",
-        spanish: "un yacimiento de un mineral",
-        english: "a deposit of a mineral",
+        term: "un yacimiento de un mineral",
+        definition: "a deposit of a mineral",
         knowledgelevel: 0
     },
     {
         id: "zacate",
         category: "uncategorized",
-        spanish: "zacate",
-        english: "grass",
+        term: "zacate",
+        definition: "grass",
         knowledgelevel: 0
     },
     {
         id: "zanja",
         category: "uncategorized",
-        spanish: "una zanja",
-        english: "a ditch",
+        term: "una zanja",
+        definition: "a ditch",
         knowledgelevel: 0
     },
     {
         id: "zapallo",
         category: "uncategorized",
-        spanish: "un zapallo",
-        english: "a pumpkin",
+        term: "un zapallo",
+        definition: "a pumpkin",
         knowledgelevel: 0
     },
     {
         id: "zar",
         category: "uncategorized",
-        spanish: "un zar",
-        english: "a tsar (russia)",
+        term: "un zar",
+        definition: "a tsar (russia)",
         knowledgelevel: 0
     },
     {
         id: "zumbido",
         category: "uncategorized",
-        spanish: "un zumbido",
-        english: "  a buzzing sound",
+        term: "un zumbido",
+        definition: "  a buzzing sound",
         knowledgelevel: 0
     },
     {
         id: "carraspear",
         category: "verbs",
-        spanish: "carraspear",
-        english: " to clear your throat",
+        term: "carraspear",
+        definition: " to clear your throat",
         knowledgelevel: 0
     },
     {
         id: "conducir",
         category: "verbs",
-        spanish: "conducir",
-        english: "to drive",
+        term: "conducir",
+        definition: "to drive",
         knowledgelevel: 0
     },
     {
         id: "despedir",
         category: "verbs",
-        spanish: "despedir vs despedirse",
-        english: "to dismiss / reflexive = say good bye ",
+        term: "despedir vs despedirse",
+        definition: "to dismiss / reflexive = say good bye ",
         knowledgelevel: 0
     },
     {
         id: "juntarse",
         category: "verbs",
-        spanish: "juntarse",
-        english: " come together",
+        term: "juntarse",
+        definition: " come together",
         knowledgelevel: 0
     },
     {
         id: "abalanzar",
         category: "verbs",
-        spanish: "abalanzar, abalanzarse",
-        english: "to pounce, or lunge",
+        term: "abalanzar, abalanzarse",
+        definition: "to pounce, or lunge",
         knowledgelevel: 0
     },
     {
         id: "abarcar",
         category: "verbs",
-        spanish: "abarcar",
-        english: " to encompass include",
+        term: "abarcar",
+        definition: " to encompass include",
         knowledgelevel: 0
     },
     {
         id: "ablandarse",
         category: "verbs",
-        spanish: "ablandarse",
-        english: "to soften",
+        term: "ablandarse",
+        definition: "to soften",
         knowledgelevel: 0
     },
     {
         id: "abrocharse",
         category: "verbs",
-        spanish: "abrocharse",
-        english: "to fasten, to button",
+        term: "abrocharse",
+        definition: "to fasten, to button",
         knowledgelevel: 0
     },
     {
         id: "acalorar",
         category: "verbs",
-        spanish: "acalorar",
-        english: "to heat",
+        term: "acalorar",
+        definition: "to heat",
         knowledgelevel: 0
     },
     {
         id: "acarrear",
         category: "verbs",
-        spanish: "acarrear",
-        english: "to carry, or to cause",
+        term: "acarrear",
+        definition: "to carry, or to cause",
         knowledgelevel: 0
     },
     {
         id: "acceder",
         category: "verbs",
-        spanish: "acceder (ack sed der)",
-        english: " access, log on, or agree",
+        term: "acceder (ack sed der)",
+        definition: " access, log on, or agree",
         knowledgelevel: 0
     },
     {
         id: "accidentar",
         category: "verbs",
-        spanish: "accidentar",
-        english: "to produce accident",
+        term: "accidentar",
+        definition: "to produce accident",
         knowledgelevel: 0
     },
     {
         id: "accionar",
         category: "verbs",
-        spanish: "accionar",
-        english: "to act, to work",
+        term: "accionar",
+        definition: "to act, to work",
         knowledgelevel: 0
     },
     {
         id: "acelerar",
         category: "verbs",
-        spanish: "acelerar",
-        english: "to accelerate, to speed up",
+        term: "acelerar",
+        definition: "to accelerate, to speed up",
         knowledgelevel: 0
     },
     {
         id: "achicar",
         category: "verbs",
-        spanish: "achicar",
-        english: "to reduce",
+        term: "achicar",
+        definition: "to reduce",
         knowledgelevel: 0
     },
     {
         id: "acicalar",
         category: "verbs",
-        spanish: "acicalar",
-        english: "to groom",
+        term: "acicalar",
+        definition: "to groom",
         knowledgelevel: 0
     },
     {
         id: "acoger",
         category: "verbs",
-        spanish: "acoger",
-        english: "to welcome, to receive",
+        term: "acoger",
+        definition: "to welcome, to receive",
         knowledgelevel: 0
     },
     {
         id: "acorralar",
         category: "verbs",
-        spanish: "acorralar",
-        english: "to corral, to corner",
+        term: "acorralar",
+        definition: "to corral, to corner",
         knowledgelevel: 0
     },
     {
         id: "acudir",
         category: "verbs",
-        spanish: "acudir",
-        english: " go like go to court",
+        term: "acudir",
+        definition: " go like go to court",
         knowledgelevel: 0
     },
     {
         id: "acumular",
         category: "verbs",
-        spanish: "acumular / acumularse",
-        english: "to accumulate, to gather",
+        term: "acumular / acumularse",
+        definition: "to accumulate, to gather",
         knowledgelevel: 0
     },
     {
         id: "acurrucar",
         category: "verbs",
-        spanish: "acurrucar / acurrarse",
-        english: "to snuggle, to cuddle",
+        term: "acurrucar / acurrarse",
+        definition: "to snuggle, to cuddle",
         knowledgelevel: 0
     },
     {
         id: "adiestrar",
         category: "verbs",
-        spanish: "adiestrar",
-        english: " train like train a dog",
+        term: "adiestrar",
+        definition: " train like train a dog",
         knowledgelevel: 0
     },
     {
         id: "afectar",
         category: "verbs",
-        spanish: "afectar",
-        english: "to affect, to impact",
+        term: "afectar",
+        definition: "to affect, to impact",
         knowledgelevel: 0
     },
     {
         id: "aferrarse",
         category: "verbs",
-        spanish: "aferrarse",
-        english: "to hang on, to grapple",
+        term: "aferrarse",
+        definition: "to hang on, to grapple",
         knowledgelevel: 0
     },
     {
         id: "afinar",
         category: "verbs",
-        spanish: "afinar",
-        english: "to tune",
+        term: "afinar",
+        definition: "to tune",
         knowledgelevel: 0
     },
     {
         id: "agilizarse",
         category: "verbs",
-        spanish: "agilizarse",
-        english: "to speed up",
+        term: "agilizarse",
+        definition: "to speed up",
         knowledgelevel: 0
     },
     {
         id: "agobiar",
         category: "verbs",
-        spanish: "agobiar",
-        english: "to overwhelm",
+        term: "agobiar",
+        definition: "to overwhelm",
         knowledgelevel: 0
     },
     {
         id: "aguantarse",
         category: "verbs",
-        spanish: "aguantarse",
-        english: " to endure, hold on, put up work",
+        term: "aguantarse",
+        definition: " to endure, hold on, put up work",
         knowledgelevel: 0
     },
     {
         id: "agudizar",
         category: "verbs",
-        spanish: "agudizar",
-        english: "to sharpen",
+        term: "agudizar",
+        definition: "to sharpen",
         knowledgelevel: 0
     },
     {
         id: "ahuyentar",
         category: "verbs",
-        spanish: "ahuyentar",
-        english: "to chase away, or drive away",
+        term: "ahuyentar",
+        definition: "to chase away, or drive away",
         knowledgelevel: 0
     },
     {
         id: "ajustar",
         category: "verbs",
-        spanish: "ajustar",
-        english: "to adjust",
+        term: "ajustar",
+        definition: "to adjust",
         knowledgelevel: 0
     },
     {
         id: "alardear",
         category: "verbs",
-        spanish: "alardear",
-        english: "to boast",
+        term: "alardear",
+        definition: "to boast",
         knowledgelevel: 0
     },
     {
         id: "alistar",
         category: "verbs",
-        spanish: "alistar",
-        english: " to get ready, enlist, enroll",
+        term: "alistar",
+        definition: " to get ready, enlist, enroll",
         knowledgelevel: 0
     },
     {
         id: "alojarse",
         category: "verbs",
-        spanish: "alojarse",
-        english: " stay like in a hotel",
+        term: "alojarse",
+        definition: " stay like in a hotel",
         knowledgelevel: 0
     },
     {
         id: "amasar",
         category: "verbs",
-        spanish: "amasar",
-        english: "to knead, to mash",
+        term: "amasar",
+        definition: "to knead, to mash",
         knowledgelevel: 0
     },
     {
         id: "amontonar",
         category: "verbs",
-        spanish: "amontonar",
-        english: "to pile up, to amass",
+        term: "amontonar",
+        definition: "to pile up, to amass",
         knowledgelevel: 0
     },
     {
         id: "analizar",
         category: "verbs",
-        spanish: "analizar",
-        english: "to analyze",
+        term: "analizar",
+        definition: "to analyze",
         knowledgelevel: 0
     },
     {
         id: "apartar",
         category: "verbs",
-        spanish: "apartar",
-        english: "to set aside",
+        term: "apartar",
+        definition: "to set aside",
         knowledgelevel: 0
     },
     {
         id: "apestar",
         category: "verbs",
-        spanish: "apestar",
-        english: "to reek, to stink",
+        term: "apestar",
+        definition: "to reek, to stink",
         knowledgelevel: 0
     },
     {
         id: "apilar",
         category: "verbs",
-        spanish: "apilar",
-        english: "to stack, to pile up",
+        term: "apilar",
+        definition: "to stack, to pile up",
         knowledgelevel: 0
     },
     {
         id: "aprobar",
         category: "verbs",
-        spanish: "aprobar / aprobarse",
-        english: "to approve, or to be approved (reflexive)",
+        term: "aprobar / aprobarse",
+        definition: "to approve, or to be approved (reflexive)",
         knowledgelevel: 0
     },
     {
         id: "apuntar",
         category: "verbs",
-        spanish: "apuntar",
-        english: " point, aim, or record (write down),  aim",
+        term: "apuntar",
+        definition: " point, aim, or record (write down),  aim",
         knowledgelevel: 0
     },
     {
         id: "arder",
         category: "verbs",
-        spanish: "arder",
-        english: "to burn",
+        term: "arder",
+        definition: "to burn",
         knowledgelevel: 0
     },
     {
         id: "arponear",
         category: "verbs",
-        spanish: "arponear",
-        english: "to harpoon",
+        term: "arponear",
+        definition: "to harpoon",
         knowledgelevel: 0
     },
     {
         id: "arredrar",
         category: "verbs",
-        spanish: "arredrar",
-        english: " to daunt,  to be daunting and hard, or to remove",
+        term: "arredrar",
+        definition: " to daunt,  to be daunting and hard, or to remove",
         knowledgelevel: 0
     },
     {
         id: "arrimar",
         category: "verbs",
-        spanish: "arrimar",
-        english: "to bring up, to move close",
+        term: "arrimar",
+        definition: "to bring up, to move close",
         knowledgelevel: 0
     },
     {
         id: "arrojar",
         category: "verbs",
-        spanish: "arrojar",
-        english: "to throw",
+        term: "arrojar",
+        definition: "to throw",
         knowledgelevel: 0
     },
     {
         id: "aserrar",
         category: "verbs",
-        spanish: "aserrar",
-        english: "to saw (e.g., lumber)",
+        term: "aserrar",
+        definition: "to saw (e.g., lumber)",
         knowledgelevel: 0
     },
     {
         id: "asignar",
         category: "verbs",
-        spanish: "asignar",
-        english: "to assign, allocate",
+        term: "asignar",
+        definition: "to assign, allocate",
         knowledgelevel: 0
     },
     {
         id: "asir",
         category: "verbs",
-        spanish: "asir / asirse",
-        english: "to grab, to hold on",
+        term: "asir / asirse",
+        definition: "to grab, to hold on",
         knowledgelevel: 0
     },
     {
         id: "asolearse",
         category: "verbs",
-        spanish: "asolearse",
-        english: "to sun bathe",
+        term: "asolearse",
+        definition: "to sun bathe",
         knowledgelevel: 0
     },
     {
         id: "astillar",
         category: "verbs",
-        spanish: "astillar",
-        english: " splinter, shatter",
+        term: "astillar",
+        definition: " splinter, shatter",
         knowledgelevel: 0
     },
     {
         id: "aterrizar",
         category: "verbs",
-        spanish: "aterrizar",
-        english: " to land (como un avión)",
+        term: "aterrizar",
+        definition: " to land (como un avión)",
         knowledgelevel: 0
     },
     {
         id: "atesorar",
         category: "verbs",
-        spanish: "atesorar",
-        english: "to treasure, to haard",
+        term: "atesorar",
+        definition: "to treasure, to haard",
         knowledgelevel: 0
     },
     {
         id: "atorarse",
         category: "verbs",
-        spanish: "atorarse",
-        english: "to get stuck",
+        term: "atorarse",
+        definition: "to get stuck",
         knowledgelevel: 0
     },
     {
         id: "atrasar",
         category: "verbs",
-        spanish: "atrasar",
-        english: "to delay",
+        term: "atrasar",
+        definition: "to delay",
         knowledgelevel: 0
     },
     {
         id: "aullar",
         category: "verbs",
-        spanish: "aullar",
-        english: "to howl",
+        term: "aullar",
+        definition: "to howl",
         knowledgelevel: 0
     },
     {
         id: "automatizar",
         category: "verbs",
-        spanish: "automatizar",
-        english: "to automate",
+        term: "automatizar",
+        definition: "to automate",
         knowledgelevel: 0
     },
     {
         id: "aventarse",
         category: "verbs",
-        spanish: "aventarse",
-        english: "to throw",
+        term: "aventarse",
+        definition: "to throw",
         knowledgelevel: 0
     },
     {
         id: "azorar",
         category: "verbs",
-        spanish: "azorar",
-        english: " ro whip, lash,  como un huracán",
+        term: "azorar",
+        definition: " ro whip, lash,  como un huracán",
         knowledgelevel: 0
     },
     {
         id: "balancear",
         category: "verbs",
-        spanish: "balancear",
-        english: "to swing, to sway",
+        term: "balancear",
+        definition: "to swing, to sway",
         knowledgelevel: 0
     },
     {
         id: "barritar",
         category: "verbs",
-        spanish: "barritar",
-        english: "to trumpet",
+        term: "barritar",
+        definition: "to trumpet",
         knowledgelevel: 0
     },
     {
         id: "batir",
         category: "verbs",
-        spanish: "batir",
-        english: "to break, to churn",
+        term: "batir",
+        definition: "to break, to churn",
         knowledgelevel: 0
     },
     {
         id: "beneficiarse",
         category: "verbs",
-        spanish: "beneficiarse",
-        english: "to profit",
+        term: "beneficiarse",
+        definition: "to profit",
         knowledgelevel: 0
     },
     {
         id: "borrar",
         category: "verbs",
-        spanish: "borrar",
-        english: "to delete",
+        term: "borrar",
+        definition: "to delete",
         knowledgelevel: 0
     },
     {
         id: "bostezar",
         category: "verbs",
-        spanish: "bostezar",
-        english: "to yawn",
+        term: "bostezar",
+        definition: "to yawn",
         knowledgelevel: 0
     },
     {
         id: "brindar",
         category: "verbs",
-        spanish: "brindar",
-        english: " to toast or offer",
+        term: "brindar",
+        definition: " to toast or offer",
         knowledgelevel: 0
     },
     {
         id: "cabecear",
         category: "verbs",
-        spanish: "cabecear",
-        english: " to nod off to sleep",
+        term: "cabecear",
+        definition: " to nod off to sleep",
         knowledgelevel: 0
     },
     {
         id: "calcular",
         category: "verbs",
-        spanish: "calcular",
-        english: "to calculate",
+        term: "calcular",
+        definition: "to calculate",
         knowledgelevel: 0
     },
     {
         id: "camuflarse",
         category: "verbs",
-        spanish: "camuflarse",
-        english: "to camaflouge",
+        term: "camuflarse",
+        definition: "to camaflouge",
         knowledgelevel: 0
     },
     {
         id: "captar",
         category: "verbs",
-        spanish: "captar",
-        english: "to capture",
+        term: "captar",
+        definition: "to capture",
         knowledgelevel: 0
     },
     {
         id: "ceder",
         category: "verbs",
-        spanish: "ceder",
-        english: "to give, yield, cede",
+        term: "ceder",
+        definition: "to give, yield, cede",
         knowledgelevel: 0
     },
     {
         id: "cernir",
         category: "verbs",
-        spanish: "cernir",
-        english: "to sift",
+        term: "cernir",
+        definition: "to sift",
         knowledgelevel: 0
     },
     {
         id: "chasquear",
         category: "verbs",
-        spanish: "chasquear",
-        english: "to snap, to click",
+        term: "chasquear",
+        definition: "to snap, to click",
         knowledgelevel: 0
     },
     {
         id: "chillar",
         category: "verbs",
-        spanish: "chillar",
-        english: " to scream",
+        term: "chillar",
+        definition: " to scream",
         knowledgelevel: 0
     },
     {
         id: "cimbrarse",
         category: "verbs",
-        spanish: "cimbrarse",
-        english: "to shake",
+        term: "cimbrarse",
+        definition: "to shake",
         knowledgelevel: 0
     },
     {
         id: "clavar",
         category: "verbs",
-        spanish: "clavar",
-        english: "to nail",
+        term: "clavar",
+        definition: "to nail",
         knowledgelevel: 0
     },
     {
         id: "cobijar",
         category: "verbs",
-        spanish: "cobijar",
-        english: "to shelter",
+        term: "cobijar",
+        definition: "to shelter",
         knowledgelevel: 0
     },
     {
         id: "cobrar",
         category: "verbs",
-        spanish: "cobrar",
-        english: " to charge collect",
+        term: "cobrar",
+        definition: " to charge collect",
         knowledgelevel: 0
     },
     {
         id: "cocer",
         category: "verbs",
-        spanish: "cocer",
-        english: "to cook",
+        term: "cocer",
+        definition: "to cook",
         knowledgelevel: 0
     },
     {
         id: "codificar",
         category: "verbs",
-        spanish: "codificar",
-        english: "to encode",
+        term: "codificar",
+        definition: "to encode",
         knowledgelevel: 0
     },
     {
         id: "coincidir",
         category: "verbs",
-        spanish: "coincidir",
-        english: "to coincide",
+        term: "coincidir",
+        definition: "to coincide",
         knowledgelevel: 0
     },
     {
         id: "colar",
         category: "verbs",
-        spanish: "colar",
-        english: " strain but can also mean pass like person passing for something they’re not",
+        term: "colar",
+        definition: " strain but can also mean pass like person passing for something they’re not",
         knowledgelevel: 0
     },
     {
         id: "colonizar",
         category: "verbs",
-        spanish: "colonizar",
-        english: "to colonize",
+        term: "colonizar",
+        definition: "to colonize",
         knowledgelevel: 0
     },
     {
         id: "columpiar",
         category: "verbs",
-        spanish: "columpiar",
-        english: " to swing",
+        term: "columpiar",
+        definition: " to swing",
         knowledgelevel: 0
     },
     {
         id: "comandar",
         category: "verbs",
-        spanish: "comandar",
-        english: "to command",
+        term: "comandar",
+        definition: "to command",
         knowledgelevel: 0
     },
     {
         id: "compactar",
         category: "verbs",
-        spanish: "compactar",
-        english: "to compact",
+        term: "compactar",
+        definition: "to compact",
         knowledgelevel: 0
     },
     {
         id: "comprimir",
         category: "verbs",
-        spanish: "comprimir",
-        english: "to compress",
+        term: "comprimir",
+        definition: "to compress",
         knowledgelevel: 0
     },
     {
         id: "conceder",
         category: "verbs",
-        spanish: "conceder / concederse",
-        english: "to grant, to give / to be granted",
+        term: "conceder / concederse",
+        definition: "to grant, to give / to be granted",
         knowledgelevel: 0
     },
     {
         id: "congregar",
         category: "verbs",
-        spanish: "congregar",
-        english: "to congrate",
+        term: "congregar",
+        definition: "to congrate",
         knowledgelevel: 0
     },
     {
         id: "conjurar",
         category: "verbs",
-        spanish: "conjurar",
-        english: "to conjure",
+        term: "conjurar",
+        definition: "to conjure",
         knowledgelevel: 0
     },
     {
         id: "contratar",
         category: "verbs",
-        spanish: "contratar",
-        english: "to hire, to contract",
+        term: "contratar",
+        definition: "to hire, to contract",
         knowledgelevel: 0
     },
     {
         id: "convergir",
         category: "verbs",
-        spanish: "convergir",
-        english: "to converge",
+        term: "convergir",
+        definition: "to converge",
         knowledgelevel: 0
     },
     {
         id: "convocar",
         category: "verbs",
-        spanish: "convocar",
-        english: "to convene",
+        term: "convocar",
+        definition: "to convene",
         knowledgelevel: 0
     },
     {
         id: "curvarse",
         category: "verbs",
-        spanish: "curvarse",
-        english: "to bend",
+        term: "curvarse",
+        definition: "to bend",
         knowledgelevel: 0
     },
     {
         id: "custodiar",
         category: "verbs",
-        spanish: "custodiar",
-        english: "to guard, to keep",
+        term: "custodiar",
+        definition: "to guard, to keep",
         knowledgelevel: 0
     },
     {
         id: "decaer",
         category: "verbs",
-        spanish: "decaer",
-        english: "to decay, decline",
+        term: "decaer",
+        definition: "to decay, decline",
         knowledgelevel: 0
     },
     {
         id: "defraudar",
         category: "verbs",
-        spanish: "defraudar",
-        english: "to defraud",
+        term: "defraudar",
+        definition: "to defraud",
         knowledgelevel: 0
     },
     {
         id: "delatar",
         category: "verbs",
-        spanish: "delatar",
-        english: "to betray",
+        term: "delatar",
+        definition: "to betray",
         knowledgelevel: 0
     },
     {
         id: "deletrear",
         category: "verbs",
-        spanish: "deletrear",
-        english: "to spell, to spell out a word",
+        term: "deletrear",
+        definition: "to spell, to spell out a word",
         knowledgelevel: 0
     },
     {
         id: "denominar",
         category: "verbs",
-        spanish: "denominar / denominarse",
-        english: "to name or give a name / to be given a name",
+        term: "denominar / denominarse",
+        definition: "to name or give a name / to be given a name",
         knowledgelevel: 0
     },
     {
         id: "derramar",
         category: "verbs",
-        spanish: "derramar",
-        english: " to shed, spill (como un derrame de petróleo)",
+        term: "derramar",
+        definition: " to shed, spill (como un derrame de petróleo)",
         knowledgelevel: 0
     },
     {
         id: "desafinar",
         category: "verbs",
-        spanish: "desafinar",
-        english: "to detune, sing out of tune",
+        term: "desafinar",
+        definition: "to detune, sing out of tune",
         knowledgelevel: 0
     },
     {
         id: "desanimar",
         category: "verbs",
-        spanish: "desanimar",
-        english: "to discourage",
+        term: "desanimar",
+        definition: "to discourage",
         knowledgelevel: 0
     },
     {
         id: "desbordar",
         category: "verbs",
-        spanish: "desbordar",
-        english: "to overflow, to flood",
+        term: "desbordar",
+        definition: "to overflow, to flood",
         knowledgelevel: 0
     },
     {
         id: "descifrar",
         category: "verbs",
-        spanish: "descifrar",
-        english: "to decipher",
+        term: "descifrar",
+        definition: "to decipher",
         knowledgelevel: 0
     },
     {
         id: "descolgar",
         category: "verbs",
-        spanish: "descolgar",
-        english: "to pick up, unhang, take down",
+        term: "descolgar",
+        definition: "to pick up, unhang, take down",
         knowledgelevel: 0
     },
     {
         id: "desempaquetar",
         category: "verbs",
-        spanish: "desempaquetar",
-        english: "to unpack",
+        term: "desempaquetar",
+        definition: "to unpack",
         knowledgelevel: 0
     },
     {
         id: "desempeñar",
         category: "verbs",
-        spanish: "desempeñar (como desempeñar un papel)",
-        english: "to play, like playing a role",
+        term: "desempeñar (como desempeñar un papel)",
+        definition: "to play, like playing a role",
         knowledgelevel: 0
     },
     {
         id: "desencadenar",
         category: "verbs",
-        spanish: "desencadenar",
-        english: "to trigger, to unchain",
+        term: "desencadenar",
+        definition: "to trigger, to unchain",
         knowledgelevel: 0
     },
     {
         id: "desenterrar",
         category: "verbs",
-        spanish: "desenterrar",
-        english: "to unearth, to dig up",
+        term: "desenterrar",
+        definition: "to unearth, to dig up",
         knowledgelevel: 0
     },
     {
         id: "deshacer",
         category: "verbs",
-        spanish: "deshacerse vs deshacer",
-        english: " undo vs get rid of",
+        term: "deshacerse vs deshacer",
+        definition: " undo vs get rid of",
         knowledgelevel: 0
     },
     {
         id: "desmayarse",
         category: "verbs",
-        spanish: "desmayarse",
-        english: "to faint, pass out",
+        term: "desmayarse",
+        definition: "to faint, pass out",
         knowledgelevel: 0
     },
     {
         id: "desmontar",
         category: "verbs",
-        spanish: "desmontar",
-        english: "dissassemble, or dismout",
+        term: "desmontar",
+        definition: "dissassemble, or dismout",
         knowledgelevel: 0
     },
     {
         id: "desparramar",
         category: "verbs",
-        spanish: "desparramar",
-        english: "to spread",
+        term: "desparramar",
+        definition: "to spread",
         knowledgelevel: 0
     },
     {
         id: "despegar",
         category: "verbs",
-        spanish: "despegar",
-        english: "to detach, take a thing off",
+        term: "despegar",
+        definition: "to detach, take a thing off",
         knowledgelevel: 0
     },
     {
         id: "desperdiciar",
         category: "verbs",
-        spanish: "desperdiciar",
-        english: "to waste, throw away, dissapate",
+        term: "desperdiciar",
+        definition: "to waste, throw away, dissapate",
         knowledgelevel: 0
     },
     {
         id: "desplazar",
         category: "verbs",
-        spanish: "desplazar",
-        english: "to displace",
+        term: "desplazar",
+        definition: "to displace",
         knowledgelevel: 0
     },
     {
         id: "desplegar",
         category: "verbs",
-        spanish: "desplegar",
-        english: "to deploy",
+        term: "desplegar",
+        definition: "to deploy",
         knowledgelevel: 0
     },
     {
         id: "desprender",
         category: "verbs",
-        spanish: "desprender",
-        english: "to detach, unpin",
+        term: "desprender",
+        definition: "to detach, unpin",
         knowledgelevel: 0
     },
     {
         id: "desterrar",
         category: "verbs",
-        spanish: "desterrar",
-        english: "to banish, exile",
+        term: "desterrar",
+        definition: "to banish, exile",
         knowledgelevel: 0
     },
     {
         id: "destinar",
         category: "verbs",
-        spanish: "destinar",
-        english: "to allocate, to destine, ",
+        term: "destinar",
+        definition: "to allocate, to destine, ",
         knowledgelevel: 0
     },
     {
         id: "desvanecerse",
         category: "verbs",
-        spanish: "desvanecerse",
-        english: "to vanish",
+        term: "desvanecerse",
+        definition: "to vanish",
         knowledgelevel: 0
     },
     {
         id: "desvelar",
         category: "verbs",
-        spanish: "desvelar",
-        english: "to reveal",
+        term: "desvelar",
+        definition: "to reveal",
         knowledgelevel: 0
     },
     {
         id: "desviar",
         category: "verbs",
-        spanish: "desviar",
-        english: "to divert",
+        term: "desviar",
+        definition: "to divert",
         knowledgelevel: 0
     },
     {
         id: "diagnosticar",
         category: "verbs",
-        spanish: "diagnosticar",
-        english: "to diagnose",
+        term: "diagnosticar",
+        definition: "to diagnose",
         knowledgelevel: 0
     },
     {
         id: "difundir",
         category: "verbs",
-        spanish: "difundir",
-        english: "to spread, diffuse",
+        term: "difundir",
+        definition: "to spread, diffuse",
         knowledgelevel: 0
     },
     {
         id: "dirigir",
         category: "verbs",
-        spanish: "dirigir / digerirse",
-        english: "to digest",
+        term: "dirigir / digerirse",
+        definition: "to digest",
         knowledgelevel: 0
     },
     {
         id: "disipar",
         category: "verbs",
-        spanish: "disipar",
-        english: "to dispel",
+        term: "disipar",
+        definition: "to dispel",
         knowledgelevel: 0
     },
     {
         id: "disminuir",
         category: "verbs",
-        spanish: "disminuir",
-        english: "to decrease",
+        term: "disminuir",
+        definition: "to decrease",
         knowledgelevel: 0
     },
     {
         id: "disputar",
         category: "verbs",
-        spanish: "disputar",
-        english: "to dispute",
+        term: "disputar",
+        definition: "to dispute",
         knowledgelevel: 0
     },
     {
         id: "distanciar",
         category: "verbs",
-        spanish: "distanciar",
-        english: "to distance",
+        term: "distanciar",
+        definition: "to distance",
         knowledgelevel: 0
     },
     {
         id: "divisar",
         category: "verbs",
-        spanish: "divisar",
-        english: " to spot to catch sight of something",
+        term: "divisar",
+        definition: " to spot to catch sight of something",
         knowledgelevel: 0
     },
     {
         id: "dorarse",
         category: "verbs",
-        spanish: "dorarse",
-        english: " to brown (like a cooked bagel)",
+        term: "dorarse",
+        definition: " to brown (like a cooked bagel)",
         knowledgelevel: 0
     },
     {
         id: "embelesar",
         category: "verbs",
-        spanish: "embelesar",
-        english: "to enchant",
+        term: "embelesar",
+        definition: "to enchant",
         knowledgelevel: 0
     },
     {
         id: "embrutecer",
         category: "verbs",
-        spanish: "embrutecer",
-        english: "to brutalize",
+        term: "embrutecer",
+        definition: "to brutalize",
         knowledgelevel: 0
     },
     {
         id: "emitir",
         category: "verbs",
-        spanish: "emitir",
-        english: "to issue, to emit",
+        term: "emitir",
+        definition: "to issue, to emit",
         knowledgelevel: 0
     },
     {
         id: "empeñar",
         category: "verbs",
-        spanish: "empeñar",
-        english: " to commit, to pledge, engage",
+        term: "empeñar",
+        definition: " to commit, to pledge, engage",
         knowledgelevel: 0
     },
     {
         id: "emprender",
         category: "verbs",
-        spanish: "emprender",
-        english: "to understake, to start",
+        term: "emprender",
+        definition: "to understake, to start",
         knowledgelevel: 0
     },
     {
         id: "encajar",
         category: "verbs",
-        spanish: "encajar",
-        english: "to fit, to insert",
+        term: "encajar",
+        definition: "to fit, to insert",
         knowledgelevel: 0
     },
     {
         id: "encerrarse",
         category: "verbs",
-        spanish: "encerrarse",
-        english: "to lock up, lock oneself up",
+        term: "encerrarse",
+        definition: "to lock up, lock oneself up",
         knowledgelevel: 0
     },
     {
         id: "endurecerse",
         category: "verbs",
-        spanish: "endurecerse",
-        english: "to harden, to stiffen",
+        term: "endurecerse",
+        definition: "to harden, to stiffen",
         knowledgelevel: 0
     },
     {
         id: "enfatizar",
         category: "verbs",
-        spanish: "enfatizar",
-        english: "to emphasize",
+        term: "enfatizar",
+        definition: "to emphasize",
         knowledgelevel: 0
     },
     {
         id: "enfocar",
         category: "verbs",
-        spanish: "enfocar",
-        english: "to focus",
+        term: "enfocar",
+        definition: "to focus",
         knowledgelevel: 0
     },
     {
         id: "enfrentar",
         category: "verbs",
-        spanish: "enfrentar",
-        english: "to face",
+        term: "enfrentar",
+        definition: "to face",
         knowledgelevel: 0
     },
     {
         id: "enfurecer",
         category: "verbs",
-        spanish: "enfurecer",
-        english: "to infuriate",
+        term: "enfurecer",
+        definition: "to infuriate",
         knowledgelevel: 0
     },
     {
         id: "enganchar",
         category: "verbs",
-        spanish: "enganchar",
-        english: "to hook, attach, ",
+        term: "enganchar",
+        definition: "to hook, attach, ",
         knowledgelevel: 0
     },
     {
         id: "enmascarar",
         category: "verbs",
-        spanish: "enmascarar",
-        english: "to mask",
+        term: "enmascarar",
+        definition: "to mask",
         knowledgelevel: 0
     },
     {
         id: "enriquecerse",
         category: "verbs",
-        spanish: "enriquecerse",
-        english: "to get rich",
+        term: "enriquecerse",
+        definition: "to get rich",
         knowledgelevel: 0
     },
     {
         id: "ensayar",
         category: "verbs",
-        spanish: "ensayar",
-        english: "to test, to rehearse",
+        term: "ensayar",
+        definition: "to test, to rehearse",
         knowledgelevel: 0
     },
     {
         id: "ensimismarse",
         category: "verbs",
-        spanish: "ensimismarse",
-        english: " to be absorbed lost in thought",
+        term: "ensimismarse",
+        definition: " to be absorbed lost in thought",
         knowledgelevel: 0
     },
     {
         id: "ensordecer",
         category: "verbs",
-        spanish: "ensordecer",
-        english: "to deafen",
+        term: "ensordecer",
+        definition: "to deafen",
         knowledgelevel: 0
     },
     {
         id: "enterarse",
         category: "verbs",
-        spanish: "enterarse",
-        english: " to find out",
+        term: "enterarse",
+        definition: " to find out",
         knowledgelevel: 0
     },
     {
         id: "entrelazar",
         category: "verbs",
-        spanish: "entrelazar",
-        english: "to weave",
+        term: "entrelazar",
+        definition: "to weave",
         knowledgelevel: 0
     },
     {
         id: "equipar",
         category: "verbs",
-        spanish: "equipar",
-        english: "to equip",
+        term: "equipar",
+        definition: "to equip",
         knowledgelevel: 0
     },
     {
         id: "erizar",
         category: "verbs",
-        spanish: "erizar",
-        english: "to bristle (like a hedgehog's bristles)",
+        term: "erizar",
+        definition: "to bristle (like a hedgehog's bristles)",
         knowledgelevel: 0
     },
     {
         id: "escarapelarse",
         category: "verbs",
-        spanish: "escarapelarse",
-        english: " to get goose bumps",
+        term: "escarapelarse",
+        definition: " to get goose bumps",
         knowledgelevel: 0
     },
     {
         id: "esculpir",
         category: "verbs",
-        spanish: "esculpir",
-        english: "to sculpt, to carve",
+        term: "esculpir",
+        definition: "to sculpt, to carve",
         knowledgelevel: 0
     },
     {
         id: "escurrirse",
         category: "verbs",
-        spanish: "escurrirse",
-        english: "to drain, slip away",
+        term: "escurrirse",
+        definition: "to drain, slip away",
         knowledgelevel: 0
     },
     {
         id: "esfumarse",
         category: "verbs",
-        spanish: "esfumarse",
-        english: "to vanish, to fade",
+        term: "esfumarse",
+        definition: "to vanish, to fade",
         knowledgelevel: 0
     },
     {
         id: "especializarse",
         category: "verbs",
-        spanish: "especializarse",
-        english: "to specialize",
+        term: "especializarse",
+        definition: "to specialize",
         knowledgelevel: 0
     },
     {
         id: "espesar",
         category: "verbs",
-        spanish: "espesar",
-        english: "to thicken",
+        term: "espesar",
+        definition: "to thicken",
         knowledgelevel: 0
     },
     {
         id: "espolvorear",
         category: "verbs",
-        spanish: "espolvorear",
-        english: "to sprinkle",
+        term: "espolvorear",
+        definition: "to sprinkle",
         knowledgelevel: 0
     },
     {
         id: "estabilizar",
         category: "verbs",
-        spanish: "estabilizar",
-        english: "to stabilize",
+        term: "estabilizar",
+        definition: "to stabilize",
         knowledgelevel: 0
     },
     {
         id: "estallar",
         category: "verbs",
-        spanish: "estallar",
-        english: "to burst, to explode",
+        term: "estallar",
+        definition: "to burst, to explode",
         knowledgelevel: 0
     },
     {
         id: "estrechar",
         category: "verbs",
-        spanish: "estrechar",
-        english: " to narrow tighten or grasp",
+        term: "estrechar",
+        definition: " to narrow tighten or grasp",
         knowledgelevel: 0
     },
     {
         id: "estrellar",
         category: "verbs",
-        spanish: "estrellar",
-        english: " to star like the sky has stars?",
+        term: "estrellar",
+        definition: " to star like the sky has stars?",
         knowledgelevel: 0
     },
     {
         id: "estremecerse",
         category: "verbs",
-        spanish: "estremecerse",
-        english: "to shudder",
+        term: "estremecerse",
+        definition: "to shudder",
         knowledgelevel: 0
     },
     {
         id: "expandir",
         category: "verbs",
-        spanish: "expandir",
-        english: " to expand",
+        term: "expandir",
+        definition: " to expand",
         knowledgelevel: 0
     },
     {
         id: "exponer",
         category: "verbs",
-        spanish: "exponer",
-        english: " to expose or put on an exhibit",
+        term: "exponer",
+        definition: " to expose or put on an exhibit",
         knowledgelevel: 0
     },
     {
         id: "exprimir",
         category: "verbs",
-        spanish: "exprimir",
-        english: "to squeeze, to squeeze out",
+        term: "exprimir",
+        definition: "to squeeze, to squeeze out",
         knowledgelevel: 0
     },
     {
         id: "extinguir",
         category: "verbs",
-        spanish: "extinguir / extinguirse",
-        english: "to extinguish / reflexive = to become extinct",
+        term: "extinguir / extinguirse",
+        definition: "to extinguish / reflexive = to become extinct",
         knowledgelevel: 0
     },
     {
         id: "extraviar",
         category: "verbs",
-        spanish: "extraviar",
-        english: "to mislead",
+        term: "extraviar",
+        definition: "to mislead",
         knowledgelevel: 0
     },
     {
         id: "fantasear",
         category: "verbs",
-        spanish: "fantasear",
-        english: "to fantasize",
+        term: "fantasear",
+        definition: "to fantasize",
         knowledgelevel: 0
     },
     {
         id: "fastidiar",
         category: "verbs",
-        spanish: "fastidiar",
-        english: "to annoy",
+        term: "fastidiar",
+        definition: "to annoy",
         knowledgelevel: 0
     },
     {
         id: "filmar",
         category: "verbs",
-        spanish: "filmar",
-        english: "to film",
+        term: "filmar",
+        definition: "to film",
         knowledgelevel: 0
     },
     {
         id: "filtrar",
         category: "verbs",
-        spanish: "filtrar / filtrarse",
-        english: "to filter / reflexive = to leak or seep",
+        term: "filtrar / filtrarse",
+        definition: "to filter / reflexive = to leak or seep",
         knowledgelevel: 0
     },
     {
         id: "flanquear",
         category: "verbs",
-        spanish: "flanquear",
-        english: "to flank",
+        term: "flanquear",
+        definition: "to flank",
         knowledgelevel: 0
     },
     {
         id: "fomentar",
         category: "verbs",
-        spanish: "fomentar",
-        english: "to promote, encourage",
+        term: "fomentar",
+        definition: "to promote, encourage",
         knowledgelevel: 0
     },
     {
         id: "forjar",
         category: "verbs",
-        spanish: "forjar",
-        english: "to forge",
+        term: "forjar",
+        definition: "to forge",
         knowledgelevel: 0
     },
     {
         id: "forrar",
         category: "verbs",
-        spanish: "forrar",
-        english: " to line, cover, like line a box with aluminum foil",
+        term: "forrar",
+        definition: " to line, cover, like line a box with aluminum foil",
         knowledgelevel: 0
     },
     {
         id: "fracasar",
         category: "verbs",
-        spanish: "fracasar",
-        english: "to fail, to break down",
+        term: "fracasar",
+        definition: "to fail, to break down",
         knowledgelevel: 0
     },
     {
         id: "graznar",
         category: "verbs",
-        spanish: "graznar",
-        english: "to squawk",
+        term: "graznar",
+        definition: "to squawk",
         knowledgelevel: 0
     },
     {
         id: "heder",
         category: "verbs",
-        spanish: "heder",
-        english: "to stink, to smell",
+        term: "heder",
+        definition: "to stink, to smell",
         knowledgelevel: 0
     },
     {
         id: "heredar",
         category: "verbs",
-        spanish: "heredar",
-        english: "to inherit",
+        term: "heredar",
+        definition: "to inherit",
         knowledgelevel: 0
     },
     {
         id: "hinchar",
         category: "verbs",
-        spanish: "hinchar",
-        english: "to swell, to inflate",
+        term: "hinchar",
+        definition: "to swell, to inflate",
         knowledgelevel: 0
     },
     {
         id: "hogar",
         category: "verbs",
-        spanish: "hogar (verb)",
-        english: " to house or be a home to",
+        term: "hogar (verb)",
+        definition: " to house or be a home to",
         knowledgelevel: 0
     },
     {
         id: "hojear",
         category: "verbs",
-        spanish: "hojear",
-        english: " to lead through something like a books pages",
+        term: "hojear",
+        definition: " to lead through something like a books pages",
         knowledgelevel: 0
     },
     {
         id: "humedecer",
         category: "verbs",
-        spanish: "humedecer / humedecerse",
-        english: "to moisten",
+        term: "humedecer / humedecerse",
+        definition: "to moisten",
         knowledgelevel: 0
     },
     {
         id: "hurgar",
         category: "verbs",
-        spanish: "hurgar",
-        english: "to rummage, poke around",
+        term: "hurgar",
+        definition: "to rummage, poke around",
         knowledgelevel: 0
     },
     {
         id: "idear",
         category: "verbs",
-        spanish: "idear",
-        english: " to think of something like come up sith an idea",
+        term: "idear",
+        definition: " to think of something like come up sith an idea",
         knowledgelevel: 0
     },
     {
         id: "impulsar",
         category: "verbs",
-        spanish: "impulsar",
-        english: "to boost, to propel",
+        term: "impulsar",
+        definition: "to boost, to propel",
         knowledgelevel: 0
     },
     {
         id: "inaugurar",
         category: "verbs",
-        spanish: "inaugurar",
-        english: "to inaugurate",
+        term: "inaugurar",
+        definition: "to inaugurate",
         knowledgelevel: 0
     },
     {
         id: "incumplir",
         category: "verbs",
-        spanish: "incumplir",
-        english: " to breach, break, like not comply with a law",
+        term: "incumplir",
+        definition: " to breach, break, like not comply with a law",
         knowledgelevel: 0
     },
     {
         id: "independizar",
         category: "verbs",
-        spanish: "independizar / independizarse",
-        english: "to make independent / to become independent",
+        term: "independizar / independizarse",
+        definition: "to make independent / to become independent",
         knowledgelevel: 0
     },
     {
         id: "inferir",
         category: "verbs",
-        spanish: "inferir",
-        english: "to infer",
+        term: "inferir",
+        definition: "to infer",
         knowledgelevel: 0
     },
     {
         id: "influir",
         category: "verbs",
-        spanish: "influir",
-        english: "to influence",
+        term: "influir",
+        definition: "to influence",
         knowledgelevel: 0
     },
     {
         id: "ingerir",
         category: "verbs",
-        spanish: "ingerir",
-        english: "to ingest",
+        term: "ingerir",
+        definition: "to ingest",
         knowledgelevel: 0
     },
     {
         id: "instalar",
         category: "verbs",
-        spanish: "instalar / instalarse",
-        english: "to install, set up",
+        term: "instalar / instalarse",
+        definition: "to install, set up",
         knowledgelevel: 0
     },
     {
         id: "interactuar",
         category: "verbs",
-        spanish: "interactuar",
-        english: "to interact",
+        term: "interactuar",
+        definition: "to interact",
         knowledgelevel: 0
     },
     {
         id: "interpretar",
         category: "verbs",
-        spanish: "interpretar",
-        english: "to interpret",
+        term: "interpretar",
+        definition: "to interpret",
         knowledgelevel: 0
     },
     {
         id: "intervenir",
         category: "verbs",
-        spanish: "intervenir",
-        english: "to intervene",
+        term: "intervenir",
+        definition: "to intervene",
         knowledgelevel: 0
     },
     {
         id: "involucrar",
         category: "verbs",
-        spanish: "involucrar / involucrarse",
-        english: "to involve / to get involved",
+        term: "involucrar / involucrarse",
+        definition: "to involve / to get involved",
         knowledgelevel: 0
     },
     {
         id: "jubilar",
         category: "verbs",
-        spanish: "jubilar",
-        english: "to retire",
+        term: "jubilar",
+        definition: "to retire",
         knowledgelevel: 0
     },
     {
         id: "laborar",
         category: "verbs",
-        spanish: "laborar",
-        english: "to labor",
+        term: "laborar",
+        definition: "to labor",
         knowledgelevel: 0
     },
     {
         id: "labrar",
         category: "verbs",
-        spanish: "labrar (la tierra)",
-        english: "to till, work the soil",
+        term: "labrar (la tierra)",
+        definition: "to till, work the soil",
         knowledgelevel: 0
     },
     {
         id: "lamer",
         category: "verbs",
-        spanish: "lamer",
-        english: "to lick",
+        term: "lamer",
+        definition: "to lick",
         knowledgelevel: 0
     },
     {
         id: "largar",
         category: "verbs",
-        spanish: "largar",
-        english: "to release, launch, unfurl",
+        term: "largar",
+        definition: "to release, launch, unfurl",
         knowledgelevel: 0
     },
     {
         id: "lesionar",
         category: "verbs",
-        spanish: "lesionar",
-        english: "to injure",
+        term: "lesionar",
+        definition: "to injure",
         knowledgelevel: 0
     },
     {
         id: "licuar",
         category: "verbs",
-        spanish: "licuar",
-        english: "to liquefy",
+        term: "licuar",
+        definition: "to liquefy",
         knowledgelevel: 0
     },
     {
         id: "lidiar",
         category: "verbs",
-        spanish: "lidiar",
-        english: "to cope or to fight",
+        term: "lidiar",
+        definition: "to cope or to fight",
         knowledgelevel: 0
     },
     {
         id: "ligar",
         category: "verbs",
-        spanish: "ligar",
-        english: "to bind, tie",
+        term: "ligar",
+        definition: "to bind, tie",
         knowledgelevel: 0
     },
     {
         id: "lucir",
         category: "verbs",
-        spanish: "lucir",
-        english: " can me to show off like wearing a nice sombrero",
+        term: "lucir",
+        definition: " can me to show off like wearing a nice sombrero",
         knowledgelevel: 0
     },
     {
         id: "machacar",
         category: "verbs",
-        spanish: "machacar",
-        english: "to crush, pound",
+        term: "machacar",
+        definition: "to crush, pound",
         knowledgelevel: 0
     },
     {
         id: "magullar",
         category: "verbs",
-        spanish: "magullar",
-        english: "to bruise",
+        term: "magullar",
+        definition: "to bruise",
         knowledgelevel: 0
     },
     {
         id: "marchitar",
         category: "verbs",
-        spanish: "marchitar",
-        english: "to wither, to wilt",
+        term: "marchitar",
+        definition: "to wither, to wilt",
         knowledgelevel: 0
     },
     {
         id: "maullar",
         category: "verbs",
-        spanish: "maullar",
-        english: "to meow",
+        term: "maullar",
+        definition: "to meow",
         knowledgelevel: 0
     },
     {
         id: "mecerse",
         category: "verbs",
-        spanish: "mecerse",
-        english: "to rock or sway, like to music",
+        term: "mecerse",
+        definition: "to rock or sway, like to music",
         knowledgelevel: 0
     },
     {
         id: "medicar",
         category: "verbs",
-        spanish: "medicar",
-        english: "to medicate",
+        term: "medicar",
+        definition: "to medicate",
         knowledgelevel: 0
     },
     {
         id: "merendar",
         category: "verbs",
-        spanish: "merendar",
-        english: "to snack",
+        term: "merendar",
+        definition: "to snack",
         knowledgelevel: 0
     },
     {
         id: "meterse",
         category: "verbs",
-        spanish: "meterse",
-        english: " get into, like get into trouble",
+        term: "meterse",
+        definition: " get into, like get into trouble",
         knowledgelevel: 0
     },
     {
         id: "movilizar",
         category: "verbs",
-        spanish: "movilizar",
-        english: "to mobilize",
+        term: "movilizar",
+        definition: "to mobilize",
         knowledgelevel: 0
     },
     {
         id: "olfatear",
         category: "verbs",
-        spanish: "olfatear",
-        english: " to sniff ",
+        term: "olfatear",
+        definition: " to sniff ",
         knowledgelevel: 0
     },
     {
         id: "oprimir",
         category: "verbs",
-        spanish: "oprimir / oprimirse",
-        english: " to press,  to opress",
+        term: "oprimir / oprimirse",
+        definition: " to press,  to opress",
         knowledgelevel: 0
     },
     {
         id: "optar",
         category: "verbs",
-        spanish: "optar",
-        english: "to opt",
+        term: "optar",
+        definition: "to opt",
         knowledgelevel: 0
     },
     {
         id: "otorgar",
         category: "verbs",
-        spanish: "otorgar",
-        english: "to grant, to give",
+        term: "otorgar",
+        definition: "to grant, to give",
         knowledgelevel: 0
     },
     {
         id: "padecer",
         category: "verbs",
-        spanish: "padecer",
-        english: "to suffer",
+        term: "padecer",
+        definition: "to suffer",
         knowledgelevel: 0
     },
     {
         id: "palpar",
         category: "verbs",
-        spanish: "palpar",
-        english: "to feel, palpate",
+        term: "palpar",
+        definition: "to feel, palpate",
         knowledgelevel: 0
     },
     {
         id: "paralizar",
         category: "verbs",
-        spanish: "paralizar",
-        english: "to paralyze",
+        term: "paralizar",
+        definition: "to paralyze",
         knowledgelevel: 0
     },
     {
         id: "pasear",
         category: "verbs",
-        spanish: "pasear",
-        english: " to go sightseeing",
+        term: "pasear",
+        definition: " to go sightseeing",
         knowledgelevel: 0
     },
     {
         id: "payasear",
         category: "verbs",
-        spanish: "payasear",
-        english: "to clown",
+        term: "payasear",
+        definition: "to clown",
         knowledgelevel: 0
     },
     {
         id: "percatarse",
         category: "verbs",
-        spanish: "percatarse",
-        english: "to notice",
+        term: "percatarse",
+        definition: "to notice",
         knowledgelevel: 0
     },
     {
         id: "perdurar",
         category: "verbs",
-        spanish: "perdurar",
-        english: "to endure, to outlast",
+        term: "perdurar",
+        definition: "to endure, to outlast",
         knowledgelevel: 0
     },
     {
         id: "perjudicar",
         category: "verbs",
-        spanish: "perjudicar",
-        english: "to harm, to damage",
+        term: "perjudicar",
+        definition: "to harm, to damage",
         knowledgelevel: 0
     },
     {
         id: "permanecer",
         category: "verbs",
-        spanish: "permanecer",
-        english: "to stay, remain",
+        term: "permanecer",
+        definition: "to stay, remain",
         knowledgelevel: 0
     },
     {
         id: "pescar",
         category: "verbs",
-        spanish: "pescar (but not for fishing )",
-        english: " to catch",
+        term: "pescar (but not for fishing )",
+        definition: " to catch",
         knowledgelevel: 0
     },
     {
         id: "pestañear",
         category: "verbs",
-        spanish: "pestañear",
-        english: "to blink, wink",
+        term: "pestañear",
+        definition: "to blink, wink",
         knowledgelevel: 0
     },
     {
         id: "planear",
         category: "verbs",
-        spanish: "planear",
-        english: " to plan or glide like a hawk",
+        term: "planear",
+        definition: " to plan or glide like a hawk",
         knowledgelevel: 0
     },
     {
         id: "podar_una_planta",
         category: "verbs",
-        spanish: "podar una planta",
-        english: "to prune a plant",
+        term: "podar una planta",
+        definition: "to prune a plant",
         knowledgelevel: 0
     },
     {
         id: "posar",
         category: "verbs",
-        spanish: "posar",
-        english: " to pose, or perch for a bird",
+        term: "posar",
+        definition: " to pose, or perch for a bird",
         knowledgelevel: 0
     },
     {
         id: "poseer",
         category: "verbs",
-        spanish: "poseer",
-        english: "to possess, to have",
+        term: "poseer",
+        definition: "to possess, to have",
         knowledgelevel: 0
     },
     {
         id: "predecir",
         category: "verbs",
-        spanish: "predecir",
-        english: "to predict",
+        term: "predecir",
+        definition: "to predict",
         knowledgelevel: 0
     },
     {
         id: "privilegiar",
         category: "verbs",
-        spanish: "privilegiar",
-        english: "to privledge",
+        term: "privilegiar",
+        definition: "to privledge",
         knowledgelevel: 0
     },
     {
         id: "procesar",
         category: "verbs",
-        spanish: "procesar",
-        english: "to process, to prosecute",
+        term: "procesar",
+        definition: "to process, to prosecute",
         knowledgelevel: 0
     },
     {
         id: "programar",
         category: "verbs",
-        spanish: "programar",
-        english: "to schedule,  program",
+        term: "programar",
+        definition: "to schedule,  program",
         knowledgelevel: 0
     },
     {
         id: "promocionar",
         category: "verbs",
-        spanish: "promocionar",
-        english: "to promote,push",
+        term: "promocionar",
+        definition: "to promote,push",
         knowledgelevel: 0
     },
     {
         id: "propagar",
         category: "verbs",
-        spanish: "propagar",
-        english: "to spread, propagate ",
+        term: "propagar",
+        definition: "to spread, propagate ",
         knowledgelevel: 0
     },
     {
         id: "protagonizar",
         category: "verbs",
-        spanish: "protagonizar",
-        english: "to star",
+        term: "protagonizar",
+        definition: "to star",
         knowledgelevel: 0
     },
     {
         id: "proveer",
         category: "verbs",
-        spanish: "proveer",
-        english: "to provide",
+        term: "proveer",
+        definition: "to provide",
         knowledgelevel: 0
     },
     {
         id: "provenir",
         category: "verbs",
-        spanish: "provenir",
-        english: " to come from, stem from, or proceed",
+        term: "provenir",
+        definition: " to come from, stem from, or proceed",
         knowledgelevel: 0
     },
     {
         id: "provocar",
         category: "verbs",
-        spanish: "provocar",
-        english: "to provoke",
+        term: "provocar",
+        definition: "to provoke",
         knowledgelevel: 0
     },
     {
         id: "publicitar",
         category: "verbs",
-        spanish: "publicitar",
-        english: "to advertise",
+        term: "publicitar",
+        definition: "to advertise",
         knowledgelevel: 0
     },
     {
         id: "pulir",
         category: "verbs",
-        spanish: "pulir",
-        english: "to polish",
+        term: "pulir",
+        definition: "to polish",
         knowledgelevel: 0
     },
     {
         id: "purificar",
         category: "verbs",
-        spanish: "purificar",
-        english: "to purify",
+        term: "purificar",
+        definition: "to purify",
         knowledgelevel: 0
     },
     {
         id: "quepar",
         category: "verbs",
-        spanish: "quepar",
-        english: " to fit",
+        term: "quepar",
+        definition: " to fit",
         knowledgelevel: 0
     },
     {
         id: "rasgar",
         category: "verbs",
-        spanish: "rasgar",
-        english: "to rip",
+        term: "rasgar",
+        definition: "to rip",
         knowledgelevel: 0
     },
     {
         id: "raspar",
         category: "verbs",
-        spanish: "raspar",
-        english: "to scrape",
+        term: "raspar",
+        definition: "to scrape",
         knowledgelevel: 0
     },
     {
         id: "reavivar",
         category: "verbs",
-        spanish: "reavivar",
-        english: "to revive",
+        term: "reavivar",
+        definition: "to revive",
         knowledgelevel: 0
     },
     {
         id: "recetar",
         category: "verbs",
-        spanish: "recetar",
-        english: "to prescribe",
+        term: "recetar",
+        definition: "to prescribe",
         knowledgelevel: 0
     },
     {
         id: "rechazar",
         category: "verbs",
-        spanish: "rechazar",
-        english: "to reject, refuse",
+        term: "rechazar",
+        definition: "to reject, refuse",
         knowledgelevel: 0
     },
     {
         id: "reclamar",
         category: "verbs",
-        spanish: "reclamar",
-        english: " to claim or demand",
+        term: "reclamar",
+        definition: " to claim or demand",
         knowledgelevel: 0
     },
     {
         id: "recobrar",
         category: "verbs",
-        spanish: "recobrar",
-        english: "to recover",
+        term: "recobrar",
+        definition: "to recover",
         knowledgelevel: 0
     },
     {
         id: "reencontrarse",
         category: "verbs",
-        spanish: "reencontrarse",
-        english: "to meet again",
+        term: "reencontrarse",
+        definition: "to meet again",
         knowledgelevel: 0
     },
     {
         id: "reflejar",
         category: "verbs",
-        spanish: "reflejar",
-        english: "to reflect",
+        term: "reflejar",
+        definition: "to reflect",
         knowledgelevel: 0
     },
     {
         id: "reforzar",
         category: "verbs",
-        spanish: "reforzar",
-        english: "reinforce",
+        term: "reforzar",
+        definition: "reinforce",
         knowledgelevel: 0
     },
     {
         id: "refrenar",
         category: "verbs",
-        spanish: "refrenar",
-        english: "to restrain",
+        term: "refrenar",
+        definition: "to restrain",
         knowledgelevel: 0
     },
     {
         id: "refugiar",
         category: "verbs",
-        spanish: "refugiar",
-        english: "to shelter",
+        term: "refugiar",
+        definition: "to shelter",
         knowledgelevel: 0
     },
     {
         id: "regularse",
         category: "verbs",
-        spanish: "regularse",
-        english: "to regulate",
+        term: "regularse",
+        definition: "to regulate",
         knowledgelevel: 0
     },
     {
         id: "rehusar",
         category: "verbs",
-        spanish: "rehusar",
-        english: " to decline refuse",
+        term: "rehusar",
+        definition: " to decline refuse",
         knowledgelevel: 0
     },
     {
         id: "reiniciar",
         category: "verbs",
-        spanish: "reiniciar",
-        english: "to reboot",
+        term: "reiniciar",
+        definition: "to reboot",
         knowledgelevel: 0
     },
     {
         id: "reinventar",
         category: "verbs",
-        spanish: "reinventar",
-        english: "to reinvent / to reinvent yourself",
+        term: "reinventar",
+        definition: "to reinvent / to reinvent yourself",
         knowledgelevel: 0
     },
     {
         id: "remendar",
         category: "verbs",
-        spanish: "remendar",
-        english: "to patch, to repair",
+        term: "remendar",
+        definition: "to patch, to repair",
         knowledgelevel: 0
     },
     {
         id: "remontar",
         category: "verbs",
-        spanish: "remontar",
-        english: "to go back, to ascend / to soar",
+        term: "remontar",
+        definition: "to go back, to ascend / to soar",
         knowledgelevel: 0
     },
     {
         id: "remover",
         category: "verbs",
-        spanish: "remover",
-        english: " remove or stir",
+        term: "remover",
+        definition: " remove or stir",
         knowledgelevel: 0
     },
     {
         id: "rendir",
         category: "verbs",
-        spanish: "rendir",
-        english: " surrender or pay like pay tribute?",
+        term: "rendir",
+        definition: " surrender or pay like pay tribute?",
         knowledgelevel: 0
     },
     {
         id: "repasar",
         category: "verbs",
-        spanish: "repasar",
-        english: "to review, go over",
+        term: "repasar",
+        definition: "to review, go over",
         knowledgelevel: 0
     },
     {
         id: "replegar",
         category: "verbs",
-        spanish: "replegar",
-        english: "to retract",
+        term: "replegar",
+        definition: "to retract",
         knowledgelevel: 0
     },
     {
         id: "reponer",
         category: "verbs",
-        spanish: "reponer",
-        english: "to replenish / to recover (replenish oneself)",
+        term: "reponer",
+        definition: "to replenish / to recover (replenish oneself)",
         knowledgelevel: 0
     },
     {
         id: "reportear",
         category: "verbs",
-        spanish: "reportear",
-        english: "to report",
+        term: "reportear",
+        definition: "to report",
         knowledgelevel: 0
     },
     {
         id: "reproducir",
         category: "verbs",
-        spanish: "reproducir",
-        english: "to reproduce / to breed",
+        term: "reproducir",
+        definition: "to reproduce / to breed",
         knowledgelevel: 0
     },
     {
         id: "reptar",
         category: "verbs",
-        spanish: "reptar",
-        english: "to creep",
+        term: "reptar",
+        definition: "to creep",
         knowledgelevel: 0
     },
     {
         id: "resguardar",
         category: "verbs",
-        spanish: "resguardar",
-        english: "to guard / to shelter",
+        term: "resguardar",
+        definition: "to guard / to shelter",
         knowledgelevel: 0
     },
     {
         id: "resoplar",
         category: "verbs",
-        spanish: "resoplar",
-        english: "to blow, to pant",
+        term: "resoplar",
+        definition: "to blow, to pant",
         knowledgelevel: 0
     },
     {
         id: "respaldar",
         category: "verbs",
-        spanish: "respaldar",
-        english: "to support, to back",
+        term: "respaldar",
+        definition: "to support, to back",
         knowledgelevel: 0
     },
     {
         id: "restablecer",
         category: "verbs",
-        spanish: "restablecer",
-        english: "to restore, re-establish",
+        term: "restablecer",
+        definition: "to restore, re-establish",
         knowledgelevel: 0
     },
     {
         id: "restaurar",
         category: "verbs",
-        spanish: "restaurar",
-        english: "to restore, refurbish",
+        term: "restaurar",
+        definition: "to restore, refurbish",
         knowledgelevel: 0
     },
     {
         id: "retirar",
         category: "verbs",
-        spanish: "retirar",
-        english: "to withdraw",
+        term: "retirar",
+        definition: "to withdraw",
         knowledgelevel: 0
     },
     {
         id: "retorcer",
         category: "verbs",
-        spanish: "retorcer",
-        english: "to twist",
+        term: "retorcer",
+        definition: "to twist",
         knowledgelevel: 0
     },
     {
         id: "revelar",
         category: "verbs",
-        spanish: "revelar",
-        english: "to reveal",
+        term: "revelar",
+        definition: "to reveal",
         knowledgelevel: 0
     },
     {
         id: "reventarse",
         category: "verbs",
-        spanish: "reventarse",
-        english: "to break",
+        term: "reventarse",
+        definition: "to break",
         knowledgelevel: 0
     },
     {
         id: "revolcarse",
         category: "verbs",
-        spanish: "revolcarse",
-        english: " thrash about like agitated water in a river",
+        term: "revolcarse",
+        definition: " thrash about like agitated water in a river",
         knowledgelevel: 0
     },
     {
         id: "revolver",
         category: "verbs",
-        spanish: "revolver",
-        english: "to stir, to turn",
+        term: "revolver",
+        definition: "to stir, to turn",
         knowledgelevel: 0
     },
     {
         id: "rociar",
         category: "verbs",
-        spanish: "rociar",
-        english: "to spray, sprinkle",
+        term: "rociar",
+        definition: "to spray, sprinkle",
         knowledgelevel: 0
     },
     {
         id: "roer",
         category: "verbs",
-        spanish: "roer",
-        english: "to gnaw, nibble",
+        term: "roer",
+        definition: "to gnaw, nibble",
         knowledgelevel: 0
     },
     {
         id: "rogar",
         category: "verbs",
-        spanish: "rogar",
-        english: "to pray",
+        term: "rogar",
+        definition: "to pray",
         knowledgelevel: 0
     },
     {
         id: "rozar",
         category: "verbs",
-        spanish: "rozar",
-        english: "to touch, to rub",
+        term: "rozar",
+        definition: "to touch, to rub",
         knowledgelevel: 0
     },
     {
         id: "saborear",
         category: "verbs",
-        spanish: "saborear",
-        english: "to savor, to relish",
+        term: "saborear",
+        definition: "to savor, to relish",
         knowledgelevel: 0
     },
     {
         id: "saciar",
         category: "verbs",
-        spanish: "saciar",
-        english: "to satiate",
+        term: "saciar",
+        definition: "to satiate",
         knowledgelevel: 0
     },
     {
         id: "saltear",
         category: "verbs",
-        spanish: "saltear",
-        english: " to skip or sauté (cooking)",
+        term: "saltear",
+        definition: " to skip or sauté (cooking)",
         knowledgelevel: 0
     },
     {
         id: "saludar",
         category: "verbs",
-        spanish: "saludar",
-        english: " can mean salute for a soldier",
+        term: "saludar",
+        definition: " can mean salute for a soldier",
         knowledgelevel: 0
     },
     {
         id: "sangrar",
         category: "verbs",
-        spanish: "sangrar",
-        english: "to bleed",
+        term: "sangrar",
+        definition: "to bleed",
         knowledgelevel: 0
     },
     {
         id: "satisfacer",
         category: "verbs",
-        spanish: "satisfacer",
-        english: "to satisfy",
+        term: "satisfacer",
+        definition: "to satisfy",
         knowledgelevel: 0
     },
     {
         id: "segar",
         category: "verbs",
-        spanish: "segar",
-        english: "to reap (harvest), to mow / cut (like grass)",
+        term: "segar",
+        definition: "to reap (harvest), to mow / cut (like grass)",
         knowledgelevel: 0
     },
     {
         id: "sisear",
         category: "verbs",
-        spanish: "sisear",
-        english: "to hiss",
+        term: "sisear",
+        definition: "to hiss",
         knowledgelevel: 0
     },
     {
         id: "situar",
         category: "verbs",
-        spanish: "situar",
-        english: "to place, to position",
+        term: "situar",
+        definition: "to place, to position",
         knowledgelevel: 0
     },
     {
         id: "sobreponerse",
         category: "verbs",
-        spanish: "sobreponerse",
-        english: "to overcome, to get over",
+        term: "sobreponerse",
+        definition: "to overcome, to get over",
         knowledgelevel: 0
     },
     {
         id: "sobrevolar",
         category: "verbs",
-        spanish: "sobrevolar",
-        english: " to fly over",
+        term: "sobrevolar",
+        definition: " to fly over",
         knowledgelevel: 0
     },
     {
         id: "solidificarse",
         category: "verbs",
-        spanish: "solidificarse",
-        english: "to solidify, to harden",
+        term: "solidificarse",
+        definition: "to solidify, to harden",
         knowledgelevel: 0
     },
     {
         id: "soltar",
         category: "verbs",
-        spanish: "soltar",
-        english: "to drop, release",
+        term: "soltar",
+        definition: "to drop, release",
         knowledgelevel: 0
     },
     {
         id: "suavizar",
         category: "verbs",
-        spanish: "suavizar",
-        english: "to soften",
+        term: "suavizar",
+        definition: "to soften",
         knowledgelevel: 0
     },
     {
         id: "sumar",
         category: "verbs",
-        spanish: "sumar",
-        english: "to add",
+        term: "sumar",
+        definition: "to add",
         knowledgelevel: 0
     },
     {
         id: "sumergir",
         category: "verbs",
-        spanish: "sumergir",
-        english: "to immerse, submerge",
+        term: "sumergir",
+        definition: "to immerse, submerge",
         knowledgelevel: 0
     },
     {
         id: "sumir",
         category: "verbs",
-        spanish: "sumir",
-        english: "to plunge, sink",
+        term: "sumir",
+        definition: "to plunge, sink",
         knowledgelevel: 0
     },
     {
         id: "suplicar",
         category: "verbs",
-        spanish: "suplicar",
-        english: " supplicate, pray, appeal",
+        term: "suplicar",
+        definition: " supplicate, pray, appeal",
         knowledgelevel: 0
     },
     {
         id: "tararear",
         category: "verbs",
-        spanish: "tararear",
-        english: "to hum",
+        term: "tararear",
+        definition: "to hum",
         knowledgelevel: 0
     },
     {
         id: "teclear",
         category: "verbs",
-        spanish: "teclear",
-        english: "to type, key in",
+        term: "teclear",
+        definition: "to type, key in",
         knowledgelevel: 0
     },
     {
         id: "tender",
         category: "verbs",
-        spanish: "tender",
-        english: "to tend",
+        term: "tender",
+        definition: "to tend",
         knowledgelevel: 0
     },
     {
         id: "titilar",
         category: "verbs",
-        spanish: "titilar",
-        english: "to twinkle",
+        term: "titilar",
+        definition: "to twinkle",
         knowledgelevel: 0
     },
     {
         id: "topar",
         category: "verbs",
-        spanish: "topar",
-        english: " to bump into something / to uncover or find by chance",
+        term: "topar",
+        definition: " to bump into something / to uncover or find by chance",
         knowledgelevel: 0
     },
     {
         id: "tramar",
         category: "verbs",
-        spanish: "tramar",
-        english: "to hatch, eingineer, concoct",
+        term: "tramar",
+        definition: "to hatch, eingineer, concoct",
         knowledgelevel: 0
     },
     {
         id: "transcurrir",
         category: "verbs",
-        spanish: "transcurrir",
-        english: "to elapse, lapse",
+        term: "transcurrir",
+        definition: "to elapse, lapse",
         knowledgelevel: 0
     },
     {
         id: "trastabillar",
         category: "verbs",
-        spanish: "trastabillar",
-        english: "to stumble",
+        term: "trastabillar",
+        definition: "to stumble",
         knowledgelevel: 0
     },
     {
         id: "trazar",
         category: "verbs",
-        spanish: "trazar",
-        english: "to draw, trace",
+        term: "trazar",
+        definition: "to draw, trace",
         knowledgelevel: 0
     },
     {
         id: "tropezar",
         category: "verbs",
-        spanish: "tropezar",
-        english: " to encounter or trip over something",
+        term: "tropezar",
+        definition: " to encounter or trip over something",
         knowledgelevel: 0
     },
     {
         id: "ubicar",
         category: "verbs",
-        spanish: "ubicar",
-        english: " to locate",
+        term: "ubicar",
+        definition: " to locate",
         knowledgelevel: 0
     },
     {
         id: "untar",
         category: "verbs",
-        spanish: "untar",
-        english: "to spread",
+        term: "untar",
+        definition: "to spread",
         knowledgelevel: 0
     },
     {
         id: "vendar",
         category: "verbs",
-        spanish: "vendar",
-        english: "to bandage",
+        term: "vendar",
+        definition: "to bandage",
         knowledgelevel: 0
     },
     {
         id: "ventilar",
         category: "verbs",
-        spanish: "ventilar",
-        english: "to ventilate, to air out",
+        term: "ventilar",
+        definition: "to ventilate, to air out",
         knowledgelevel: 0
     },
     {
         id: "verse",
         category: "verbs",
-        spanish: "verse",
-        english: " see one another, meet, get together",
+        term: "verse",
+        definition: " see one another, meet, get together",
         knowledgelevel: 0
     },
     {
         id: "visualizar",
         category: "verbs",
-        spanish: "visualizar",
-        english: "to visualize",
+        term: "visualizar",
+        definition: "to visualize",
         knowledgelevel: 0
     },
     {
         id: "vociferar",
         category: "verbs",
-        spanish: "vociferar",
-        english: "to shout, rant",
+        term: "vociferar",
+        definition: "to shout, rant",
         knowledgelevel: 0
     },
     {
         id: "volcar",
         category: "verbs",
-        spanish: "volcar",
-        english: "to overturn",
+        term: "volcar",
+        definition: "to overturn",
         knowledgelevel: 0
     },
     {
         id: "zafarse",
         category: "verbs",
-        spanish: "zafarse",
-        english: " to slip away",
+        term: "zafarse",
+        definition: " to slip away",
         knowledgelevel: 0
     },
     {
         id: "zambullir",
         category: "verbs",
-        spanish: "zambullir",
-        english: "to drive",
+        term: "zambullir",
+        definition: "to drive",
         knowledgelevel: 0
     },
     {
         id: "ofuscar",
         category: "verbs",
-        spanish: "ofuscar",
-        english: "to obfuscate, dim, fog",
+        term: "ofuscar",
+        definition: "to obfuscate, dim, fog",
         knowledgelevel: 0
     },
     {
         id: "100_pies_de_largo",
         category: "uncategorized",
-        spanish: "100 pies de largo ",
-        english: " 100 feet long",
+        term: "100 pies de largo ",
+        definition: " 100 feet long",
         knowledgelevel: 0
     },
     {
         id: "a_escondidas",
         category: "uncategorized",
-        spanish: "A las escondidas ",
-        english: " hide and seek",
+        term: "A las escondidas ",
+        definition: " hide and seek",
         knowledgelevel: 0
     },
     {
         id: "a_lo_largo",
         category: "uncategorized",
-        spanish: "A lo largo ",
-        english: " along",
+        term: "A lo largo ",
+        definition: " along",
         knowledgelevel: 0
     },
     {
         id: "a_medida_que",
         category: "uncategorized",
-        spanish: "A medida que ",
-        english: " as,  according to",
+        term: "A medida que ",
+        definition: " as,  according to",
         knowledgelevel: 0
     },
     {
         id: "a_partir_de",
         category: "uncategorized",
-        spanish: "A partir de ",
-        english: " from",
+        term: "A partir de ",
+        definition: " from",
         knowledgelevel: 0
     },
     {
         id: "a_partir_de_ahora",
         category: "uncategorized",
-        spanish: "A partir de ahora ",
-        english: " hereinafter",
+        term: "A partir de ahora ",
+        definition: " hereinafter",
         knowledgelevel: 0
     },
     {
         id: "a_partir_de_hoy",
         category: "uncategorized",
-        spanish: "A partir de hoy ",
-        english: " from today forwards",
+        term: "A partir de hoy ",
+        definition: " from today forwards",
         knowledgelevel: 0
     },
     {
         id: "a_pesar_vs_pesar",
         category: "uncategorized",
-        spanish: "A pesar vs pesar ",
-        english: " a pesar = despite,  pesar = to weigh",
+        term: "A pesar vs pesar ",
+        definition: " a pesar = despite,  pesar = to weigh",
         knowledgelevel: 0
     },
     {
         id: "a_propósito",
         category: "uncategorized",
-        spanish: "A propósito ",
-        english: " by the way",
+        term: "A propósito ",
+        definition: " by the way",
         knowledgelevel: 0
     },
     {
         id: "a_su_paso",
         category: "uncategorized",
-        spanish: "A su paso ",
-        english: " in your/his/her path",
+        term: "A su paso ",
+        definition: " in your/his/her path",
         knowledgelevel: 0
     },
     {
         id: "abrigado",
         category: "uncategorized",
-        spanish: "Abrigado ",
-        english: " sheltered",
+        term: "Abrigado ",
+        definition: " sheltered",
         knowledgelevel: 0
     },
     {
         id: "acaso",
         category: "uncategorized",
-        spanish: "Acaso ",
-        english: " perhaps",
+        term: "Acaso ",
+        definition: " perhaps",
         knowledgelevel: 0
     },
     {
         id: "acento",
         category: "uncategorized",
-        spanish: "Acento ",
-        english: " accent",
+        term: "Acento ",
+        definition: " accent",
         knowledgelevel: 0
     },
     {
         id: "acero",
         category: "uncategorized",
-        spanish: "Acero ",
-        english: " steel",
+        term: "Acero ",
+        definition: " steel",
         knowledgelevel: 0
     },
     {
         id: "adelantado",
         category: "uncategorized",
-        spanish: "Adelantado (adj) ",
-        english: " advanced",
+        term: "Adelantado (adj) ",
+        definition: " advanced",
         knowledgelevel: 0
     },
     {
         id: "ahora_mismo",
         category: "uncategorized",
-        spanish: "Ahora mismo ",
-        english: " right now",
+        term: "Ahora mismo ",
+        definition: " right now",
         knowledgelevel: 0
     },
     {
         id: "ajedrez",
         category: "uncategorized",
-        spanish: "Ajedrez ",
-        english: " chess",
+        term: "Ajedrez ",
+        definition: " chess",
         knowledgelevel: 0
     },
     {
         id: "al_cabo",
         category: "uncategorized",
-        spanish: "Al cabo ",
-        english: " after",
+        term: "Al cabo ",
+        definition: " after",
         knowledgelevel: 0
     },
     {
         id: "al_parecer",
         category: "uncategorized",
-        spanish: "Al parecer ",
-        english: " apparently",
+        term: "Al parecer ",
+        definition: " apparently",
         knowledgelevel: 0
     },
     {
         id: "al_revés",
         category: "uncategorized",
-        spanish: "Al revés ",
-        english: " the other way around,  like backwards or upside down",
+        term: "Al revés ",
+        definition: " the other way around,  like backwards or upside down",
         knowledgelevel: 0
     },
     {
         id: "aluminio",
         category: "uncategorized",
-        spanish: "Aluminio ",
-        english: " aluminum",
+        term: "Aluminio ",
+        definition: " aluminum",
         knowledgelevel: 0
     },
     {
         id: "amarga",
         category: "uncategorized",
-        spanish: "Amarga (adj) ",
-        english: " bitter",
+        term: "Amarga (adj) ",
+        definition: " bitter",
         knowledgelevel: 0
     },
     {
         id: "anterior",
         category: "uncategorized",
-        spanish: "Anterior ",
-        english: " former,  previous",
+        term: "Anterior ",
+        definition: " former,  previous",
         knowledgelevel: 0
     },
     {
         id: "apreciada",
         category: "uncategorized",
-        spanish: "Apreciada (adj) ",
-        english: " appreciated (adj)",
+        term: "Apreciada (adj) ",
+        definition: " appreciated (adj)",
         knowledgelevel: 0
     },
     {
         id: "apretar_paso",
         category: "uncategorized",
-        spanish: "Apretar el paso ",
-        english: " to step out",
+        term: "Apretar el paso ",
+        definition: " to step out",
         knowledgelevel: 0
     },
     {
         id: "arcil",
         category: "uncategorized",
-        spanish: "Arcilla ",
-        english: " clay",
+        term: "Arcilla ",
+        definition: " clay",
         knowledgelevel: 0
     },
     {
         id: "arrasado",
         category: "uncategorized",
-        spanish: "Arrasado (adj) ",
-        english: " devastated",
+        term: "Arrasado (adj) ",
+        definition: " devastated",
         knowledgelevel: 0
     },
     {
         id: "arrodillado",
         category: "uncategorized",
-        spanish: "Arrodillado ",
-        english: " on vended knee",
+        term: "Arrodillado ",
+        definition: " on vended knee",
         knowledgelevel: 0
     },
     {
         id: "atorado",
         category: "uncategorized",
-        spanish: "Atorado ",
-        english: " stuck",
+        term: "Atorado ",
+        definition: " stuck",
         knowledgelevel: 0
     },
     {
         id: "ballena_jorobada",
         category: "uncategorized",
-        spanish: "Ballena jorobada ",
-        english: " humpback whale",
+        term: "Ballena jorobada ",
+        definition: " humpback whale",
         knowledgelevel: 0
     },
     {
         id: "botiquín",
         category: "uncategorized",
-        spanish: "Botiquín ",
-        english: " a first aid kit",
+        term: "Botiquín ",
+        definition: " a first aid kit",
         knowledgelevel: 0
     },
     {
         id: "breve",
         category: "uncategorized",
-        spanish: "Breve ",
-        english: " brief",
+        term: "Breve ",
+        definition: " brief",
         knowledgelevel: 0
     },
     {
         id: "burbujeante",
         category: "uncategorized",
-        spanish: "Burbujeante (adj) ",
-        english: " bubbly",
+        term: "Burbujeante (adj) ",
+        definition: " bubbly",
         knowledgelevel: 0
     },
     {
         id: "busquémos",
         category: "uncategorized",
-        spanish: "Busquémosla ",
-        english: " lets look for it",
+        term: "Busquémosla ",
+        definition: " lets look for it",
         knowledgelevel: 0
     },
     {
         id: "cabizbajo",
         category: "uncategorized",
-        spanish: "Cabizbajo ",
-        english: " crestfallen,  head bowed",
+        term: "Cabizbajo ",
+        definition: " crestfallen,  head bowed",
         knowledgelevel: 0
     },
     {
         id: "callejero",
         category: "uncategorized",
-        spanish: "Callejero ",
-        english: " stray",
+        term: "Callejero ",
+        definition: " stray",
         knowledgelevel: 0
     },
     {
         id: "caro",
         category: "uncategorized",
-        spanish: "Caro (adj) ",
-        english: " expensive",
+        term: "Caro (adj) ",
+        definition: " expensive",
         knowledgelevel: 0
     },
     {
         id: "cautelosamente",
         category: "uncategorized",
-        spanish: "Cautelosamente ",
-        english: " cautiously",
+        term: "Cautelosamente ",
+        definition: " cautiously",
         knowledgelevel: 0
     },
     {
         id: "chiquitita",
         category: "uncategorized",
-        spanish: "Chiquitita ",
-        english: " little girl",
+        term: "Chiquitita ",
+        definition: " little girl",
         knowledgelevel: 0
     },
     {
         id: "chistosisimo",
         category: "uncategorized",
-        spanish: "Chistosisimo ",
-        english: " hilarious",
+        term: "Chistosisimo ",
+        definition: " hilarious",
         knowledgelevel: 0
     },
     {
         id: "chucheria",
         category: "uncategorized",
-        spanish: "Chucheria ",
-        english: " trinket",
+        term: "Chucheria ",
+        definition: " trinket",
         knowledgelevel: 0
     },
     {
         id: "chueca",
         category: "uncategorized",
-        spanish: "Chueca (adj) ",
-        english: " crooked or curved",
+        term: "Chueca (adj) ",
+        definition: " crooked or curved",
         knowledgelevel: 0
     },
     {
         id: "ciego",
         category: "uncategorized",
-        spanish: "Ciego (adj) ",
-        english: " blind",
+        term: "Ciego (adj) ",
+        definition: " blind",
         knowledgelevel: 0
     },
     {
         id: "cobertores",
         category: "uncategorized",
-        spanish: "Cobertores ",
-        english: " covers (como una cama)",
+        term: "Cobertores ",
+        definition: " covers (como una cama)",
         knowledgelevel: 0
     },
     {
         id: "cobre",
         category: "uncategorized",
-        spanish: "Cobre",
-        english: " cobrizo ,  copper",
+        term: "Cobre",
+        definition: " cobrizo ,  copper",
         knowledgelevel: 0
     },
     {
         id: "combate",
         category: "uncategorized",
-        spanish: "Combate ",
-        english: " combat",
+        term: "Combate ",
+        definition: " combat",
         knowledgelevel: 0
     },
     {
         id: "comestible",
         category: "uncategorized",
-        spanish: "Comestible (adj) ",
-        english: " edible",
+        term: "Comestible (adj) ",
+        definition: " edible",
         knowledgelevel: 0
     },
     {
         id: "comiquísima",
         category: "uncategorized",
-        spanish: "Comiquísima ",
-        english: " very funny",
+        term: "Comiquísima ",
+        definition: " very funny",
         knowledgelevel: 0
     },
     {
         id: "como",
         category: "uncategorized",
-        spanish: "Como ",
-        english: " how or since",
+        term: "Como ",
+        definition: " how or since",
         knowledgelevel: 0
     },
     {
         id: "como_si_ésta_fuera_poco",
         category: "uncategorized",
-        spanish: "como si ésta fuera poco ",
-        english: " as if this were not enough",
+        term: "como si ésta fuera poco ",
+        definition: " as if this were not enough",
         knowledgelevel: 0
     },
     {
         id: "como_rayo",
         category: "uncategorized",
-        spanish: "Como un rayo ",
-        english: " like lightning",
+        term: "Como un rayo ",
+        definition: " like lightning",
         knowledgelevel: 0
     },
     {
         id: "como_ves",
         category: "uncategorized",
-        spanish: "Como ves ",
-        english: " as you see,  you see",
+        term: "Como ves ",
+        definition: " as you see,  you see",
         knowledgelevel: 0
     },
     {
         id: "comportamiento",
         category: "uncategorized",
-        spanish: "Comportamiento ",
-        english: " behavior",
+        term: "Comportamiento ",
+        definition: " behavior",
         knowledgelevel: 0
     },
     {
         id: "con_tiempo",
         category: "uncategorized",
-        spanish: "Con el tiempo ",
-        english: " over time",
+        term: "Con el tiempo ",
+        definition: " over time",
         knowledgelevel: 0
     },
     {
         id: "con_exactitud",
         category: "uncategorized",
-        spanish: "Con exactitud ",
-        english: " with precision",
+        term: "Con exactitud ",
+        definition: " with precision",
         knowledgelevel: 0
     },
     {
         id: "concentrado",
         category: "uncategorized",
-        spanish: "Concentrado (adj) ",
-        english: " concentrated",
+        term: "Concentrado (adj) ",
+        definition: " concentrated",
         knowledgelevel: 0
     },
     {
         id: "confianza",
         category: "uncategorized",
-        spanish: "Confianza ",
-        english: " confidence",
+        term: "Confianza ",
+        definition: " confidence",
         knowledgelevel: 0
     },
     {
         id: "constante",
         category: "uncategorized",
-        spanish: "Constante (adj) ",
-        english: " constant",
+        term: "Constante (adj) ",
+        definition: " constant",
         knowledgelevel: 0
     },
     {
         id: "contrario",
         category: "uncategorized",
-        spanish: "Contrario (adj) ",
-        english: " contrary",
+        term: "Contrario (adj) ",
+        definition: " contrary",
         knowledgelevel: 0
     },
     {
         id: "crucero",
         category: "uncategorized",
-        spanish: "Crucero ",
-        english: " cruise",
+        term: "Crucero ",
+        definition: " cruise",
         knowledgelevel: 0
     },
     {
         id: "cubierto",
         category: "uncategorized",
-        spanish: "Cubierto (adj) ",
-        english: " covered",
+        term: "Cubierto (adj) ",
+        definition: " covered",
         knowledgelevel: 0
     },
     {
         id: "cuero",
         category: "uncategorized",
-        spanish: "Cuero ",
-        english: " leather",
+        term: "Cuero ",
+        definition: " leather",
         knowledgelevel: 0
     },
     {
         id: "dale",
         category: "uncategorized",
-        spanish: "Dale ",
-        english: " go ahead",
+        term: "Dale ",
+        definition: " go ahead",
         knowledgelevel: 0
     },
     {
         id: "dañino",
         category: "uncategorized",
-        spanish: "Dañino (adj) ",
-        english: " harmful",
+        term: "Dañino (adj) ",
+        definition: " harmful",
         knowledgelevel: 0
     },
     {
         id: "dar_vuelta",
         category: "uncategorized",
-        spanish: "Dar una vuelta ",
-        english: " to take a walk",
+        term: "Dar una vuelta ",
+        definition: " to take a walk",
         knowledgelevel: 0
     },
     {
         id: "de_camino",
         category: "uncategorized",
-        spanish: "De Camino ",
-        english: " on the way",
+        term: "De Camino ",
+        definition: " on the way",
         knowledgelevel: 0
     },
     {
         id: "de_inmediato",
         category: "uncategorized",
-        spanish: "De inmediato ",
-        english: " immediately",
+        term: "De inmediato ",
+        definition: " immediately",
         knowledgelevel: 0
     },
     {
         id: "de_lo_que_no_cabe_duda",
         category: "uncategorized",
-        spanish: "de lo que no cabe duda ",
-        english: " of that there is no doubt (doubt doesn’t fit)",
+        term: "de lo que no cabe duda ",
+        definition: " of that there is no doubt (doubt doesn’t fit)",
         knowledgelevel: 0
     },
     {
         id: "de_ningmanera",
         category: "uncategorized",
-        spanish: "De ninguna manera ",
-        english: " no way",
+        term: "De ninguna manera ",
+        definition: " no way",
         knowledgelevel: 0
     },
     {
         id: "de_partir",
         category: "uncategorized",
-        spanish: "De partir ",
-        english: " to leave",
+        term: "De partir ",
+        definition: " to leave",
         knowledgelevel: 0
     },
     {
         id: "de_paso",
         category: "uncategorized",
-        spanish: "De paso ",
-        english: " by the way",
+        term: "De paso ",
+        definition: " by the way",
         knowledgelevel: 0
     },
     {
         id: "de_vez",
         category: "uncategorized",
-        spanish: "De una vez ",
-        english: " (of one time) can mean at this moment, now",
+        term: "De una vez ",
+        definition: " (of one time) can mean at this moment, now",
         knowledgelevel: 0
     },
     {
         id: "debido_a_que",
         category: "uncategorized",
-        spanish: "Debido a que ",
-        english: " because",
+        term: "Debido a que ",
+        definition: " because",
         knowledgelevel: 0
     },
     {
         id: "desafiante",
         category: "uncategorized",
-        spanish: "Desafiante (adj) ",
-        english: " challenging",
+        term: "Desafiante (adj) ",
+        definition: " challenging",
         knowledgelevel: 0
     },
     {
         id: "desafortunadamente",
         category: "uncategorized",
-        spanish: "Desafortunadamente ",
-        english: " unfortunately",
+        term: "Desafortunadamente ",
+        definition: " unfortunately",
         knowledgelevel: 0
     },
     {
         id: "desechable",
         category: "uncategorized",
-        spanish: "Desechable ",
-        english: " disposable (como bolsas de plástico)",
+        term: "Desechable ",
+        definition: " disposable (como bolsas de plástico)",
         knowledgelevel: 0
     },
     {
         id: "deslumbrante",
         category: "uncategorized",
-        spanish: "Deslumbrante (adj) ",
-        english: " dazzling",
+        term: "Deslumbrante (adj) ",
+        definition: " dazzling",
         knowledgelevel: 0
     },
     {
         id: "despistada",
         category: "uncategorized",
-        spanish: "Despistada (adj) ",
-        english: " clueless",
+        term: "Despistada (adj) ",
+        definition: " clueless",
         knowledgelevel: 0
     },
     {
         id: "después_de_todo",
         category: "uncategorized",
-        spanish: "Después de todo ",
-        english: " after all",
+        term: "Después de todo ",
+        definition: " after all",
         knowledgelevel: 0
     },
     {
         id: "destel",
         category: "uncategorized",
-        spanish: "Destellos ",
-        english: " sparkles",
+        term: "Destellos ",
+        definition: " sparkles",
         knowledgelevel: 0
     },
     {
         id: "dibujos_animados",
         category: "uncategorized",
-        spanish: "Dibujos animados ",
-        english: " cartoons",
+        term: "Dibujos animados ",
+        definition: " cartoons",
         knowledgelevel: 0
     },
     {
         id: "diminuto",
         category: "uncategorized",
-        spanish: "Diminuto (adj) ",
-        english: " tiny",
+        term: "Diminuto (adj) ",
+        definition: " tiny",
         knowledgelevel: 0
     },
     {
         id: "dinamarca",
         category: "uncategorized",
-        spanish: "Dinamarca ",
-        english: " Denmark",
+        term: "Dinamarca ",
+        definition: " Denmark",
         knowledgelevel: 0
     },
     {
         id: "disculpa",
         category: "uncategorized",
-        spanish: "Disculpa ",
-        english: " sorry",
+        term: "Disculpa ",
+        definition: " sorry",
         knowledgelevel: 0
     },
     {
         id: "disgusto",
         category: "uncategorized",
-        spanish: "Disgusto ",
-        english: " dislike",
+        term: "Disgusto ",
+        definition: " dislike",
         knowledgelevel: 0
     },
     {
         id: "echado",
         category: "uncategorized",
-        spanish: "Echado ",
-        english: " lying down",
+        term: "Echado ",
+        definition: " lying down",
         knowledgelevel: 0
     },
     {
         id: "echar_a_perder",
         category: "uncategorized",
-        spanish: "Echar a perder ",
-        english: " to spoil",
+        term: "Echar a perder ",
+        definition: " to spoil",
         knowledgelevel: 0
     },
     {
         id: "echar_porras",
         category: "uncategorized",
-        spanish: "Echar porras ",
-        english: " to cheer (throw cheers)",
+        term: "Echar porras ",
+        definition: " to cheer (throw cheers)",
         knowledgelevel: 0
     },
     {
         id: "asunto",
         category: "uncategorized",
-        spanish: "El asunto ",
-        english: " the case",
+        term: "El asunto ",
+        definition: " the case",
         knowledgelevel: 0
     },
     {
         id: "bulto",
         category: "uncategorized",
-        spanish: "El bulto ",
-        english: " the lump",
+        term: "El bulto ",
+        definition: " the lump",
         knowledgelevel: 0
     },
     {
         id: "cansancio",
         category: "uncategorized",
-        spanish: "El cansancio ",
-        english: " the fatigue",
+        term: "El cansancio ",
+        definition: " the fatigue",
         knowledgelevel: 0
     },
     {
         id: "contenedor",
         category: "uncategorized",
-        spanish: "El contenedor ",
-        english: " the container",
+        term: "El contenedor ",
+        definition: " the container",
         knowledgelevel: 0
     },
     {
         id: "coro",
         category: "uncategorized",
-        spanish: "El coro ",
-        english: " the chorus",
+        term: "El coro ",
+        definition: " the chorus",
         knowledgelevel: 0
     },
     {
         id: "gol",
         category: "uncategorized",
-        spanish: "el gol ",
-        english: " a goal",
+        term: "el gol ",
+        definition: " a goal",
         knowledgelevel: 0
     },
     {
         id: "ingreso",
         category: "uncategorized",
-        spanish: "El ingreso ",
-        english: " income or entry",
+        term: "El ingreso ",
+        definition: " income or entry",
         knowledgelevel: 0
     },
     {
         id: "mito",
         category: "uncategorized",
-        spanish: "El mito ",
-        english: " the myth",
+        term: "El mito ",
+        definition: " the myth",
         knowledgelevel: 0
     },
     {
         id: "remo",
         category: "uncategorized",
-        spanish: "El remo ",
-        english: " the row,  the paddle (de una canoa)",
+        term: "El remo ",
+        definition: " the row,  the paddle (de una canoa)",
         knowledgelevel: 0
     },
     {
         id: "emotivo",
         category: "uncategorized",
-        spanish: "Emotivo ",
-        english: " emotional",
+        term: "Emotivo ",
+        definition: " emotional",
         knowledgelevel: 0
     },
     {
         id: "en_cambio",
         category: "uncategorized",
-        spanish: "En cambio ",
-        english: " instead",
+        term: "En cambio ",
+        definition: " instead",
         knowledgelevel: 0
     },
     {
         id: "en_cuanto",
         category: "uncategorized",
-        spanish: "En cuanto ",
-        english: " as soon as",
+        term: "En cuanto ",
+        definition: " as soon as",
         knowledgelevel: 0
     },
     {
         id: "en_ese_entonces",
         category: "uncategorized",
-        spanish: "En ese entonces ",
-        english: " at that time",
+        term: "En ese entonces ",
+        definition: " at that time",
         knowledgelevel: 0
     },
     {
         id: "en_actualidad",
         category: "uncategorized",
-        spanish: "En la actualidad ",
-        english: " currently",
+        term: "En la actualidad ",
+        definition: " currently",
         knowledgelevel: 0
     },
     {
         id: "en_línea",
         category: "uncategorized",
-        spanish: "En línea ",
-        english: " online",
+        term: "En línea ",
+        definition: " online",
         knowledgelevel: 0
     },
     {
         id: "enjaulado",
         category: "uncategorized",
-        spanish: "Enjaulado ",
-        english: " caged",
+        term: "Enjaulado ",
+        definition: " caged",
         knowledgelevel: 0
     },
     {
         id: "enmarcar",
         category: "uncategorized",
-        spanish: "Enmarcar ",
-        english: " to frame (como un photo en un marco)",
+        term: "Enmarcar ",
+        definition: " to frame (como un photo en un marco)",
         knowledgelevel: 0
     },
     {
         id: "enseguida",
         category: "uncategorized",
-        spanish: "Enseguida ",
-        english: " right away,  immediately",
+        term: "Enseguida ",
+        definition: " right away,  immediately",
         knowledgelevel: 0
     },
     {
         id: "entre_muchos",
         category: "uncategorized",
-        spanish: "Entre muchos ",
-        english: " among many",
+        term: "Entre muchos ",
+        definition: " among many",
         knowledgelevel: 0
     },
     {
         id: "entreabierto",
         category: "uncategorized",
-        spanish: "Entreabierta/entreabieto (adj) ",
-        english: " ajar",
+        term: "Entreabierta/entreabieto (adj) ",
+        definition: " ajar",
         knowledgelevel: 0
     },
     {
         id: "entretenido",
         category: "uncategorized",
-        spanish: "Entretenido ",
-        english: " amusing",
+        term: "Entretenido ",
+        definition: " amusing",
         knowledgelevel: 0
     },
     {
         id: "entristeció",
         category: "uncategorized",
-        spanish: "Entristeció (adj) ",
-        english: " saddened",
+        term: "Entristeció (adj) ",
+        definition: " saddened",
         knowledgelevel: 0
     },
     {
         id: "escondiéndose",
         category: "uncategorized",
-        spanish: "Escondiéndose ",
-        english: " hiding",
+        term: "Escondiéndose ",
+        definition: " hiding",
         knowledgelevel: 0
     },
     {
         id: "esto_lo_llevo_a",
         category: "uncategorized",
-        spanish: "esto lo llevo a ",
-        english: " this led him to",
+        term: "esto lo llevo a ",
+        definition: " this led him to",
         knowledgelevel: 0
     },
     {
         id: "estrecho",
         category: "uncategorized",
-        spanish: "Estrecha/o (adj) ",
-        english: " narrow",
+        term: "Estrecha/o (adj) ",
+        definition: " narrow",
         knowledgelevel: 0
     },
     {
         id: "estropeado",
         category: "uncategorized",
-        spanish: "Estropeado (adj) ",
-        english: " spoiled",
+        term: "Estropeado (adj) ",
+        definition: " spoiled",
         knowledgelevel: 0
     },
     {
         id: "exhausta",
         category: "uncategorized",
-        spanish: "Exhausta (adj) ",
-        english: " exhausted",
+        term: "Exhausta (adj) ",
+        definition: " exhausted",
         knowledgelevel: 0
     },
     {
         id: "extensa",
         category: "uncategorized",
-        spanish: "Extensa (adj) ",
-        english: " extensive",
+        term: "Extensa (adj) ",
+        definition: " extensive",
         knowledgelevel: 0
     },
     {
         id: "extrañado",
         category: "uncategorized",
-        spanish: "Extrañado (adj) ",
-        english: " missed",
+        term: "Extrañado (adj) ",
+        definition: " missed",
         knowledgelevel: 0
     },
     {
         id: "extremadamente",
         category: "uncategorized",
-        spanish: "Extremadamente ",
-        english: " extremely",
+        term: "Extremadamente ",
+        definition: " extremely",
         knowledgelevel: 0
     },
     {
         id: "fama",
         category: "uncategorized",
-        spanish: "Fama ",
-        english: " fame",
+        term: "Fama ",
+        definition: " fame",
         knowledgelevel: 0
     },
     {
         id: "fiable",
         category: "uncategorized",
-        spanish: "Fiable ",
-        english: " reliable",
+        term: "Fiable ",
+        definition: " reliable",
         knowledgelevel: 0
     },
     {
         id: "fiera",
         category: "uncategorized",
-        spanish: "Fiera (adj or noun)",
-        english: " fierce  or wild beast",
+        term: "Fiera (adj or noun)",
+        definition: " fierce  or wild beast",
         knowledgelevel: 0
     },
     {
         id: "figurado",
         category: "uncategorized",
-        spanish: "Figurado (adj) ",
-        english: " figurative",
+        term: "Figurado (adj) ",
+        definition: " figurative",
         knowledgelevel: 0
     },
     {
         id: "fija",
         category: "uncategorized",
-        spanish: "Fija (rutas fijas) ",
-        english: " fixed (fixed routes)",
+        term: "Fija (rutas fijas) ",
+        definition: " fixed (fixed routes)",
         knowledgelevel: 0
     },
     {
         id: "fue_tal",
         category: "uncategorized",
-        spanish: "Fue tal ",
-        english: " it was such",
+        term: "Fue tal ",
+        definition: " it was such",
         knowledgelevel: 0
     },
     {
         id: "fuentes",
         category: "uncategorized",
-        spanish: "Fuentes ",
-        english: " sources",
+        term: "Fuentes ",
+        definition: " sources",
         knowledgelevel: 0
     },
     {
         id: "fuerza_aérea",
         category: "uncategorized",
-        spanish: "Fuerza aérea ",
-        english: " air force",
+        term: "Fuerza aérea ",
+        definition: " air force",
         knowledgelevel: 0
     },
     {
         id: "ganarse_vida",
         category: "uncategorized",
-        spanish: "Ganarse la vida ",
-        english: " earn a living",
+        term: "Ganarse la vida ",
+        definition: " earn a living",
         knowledgelevel: 0
     },
     {
         id: "grandote",
         category: "uncategorized",
-        spanish: "Grandote (adj) ",
-        english: " huge",
+        term: "Grandote (adj) ",
+        definition: " huge",
         knowledgelevel: 0
     },
     {
         id: "había_vez",
         category: "uncategorized",
-        spanish: "Había una vez ",
-        english: " once upon a time",
+        term: "Había una vez ",
+        definition: " once upon a time",
         knowledgelevel: 0
     },
     {
         id: "hace_algún_tiempo",
         category: "uncategorized",
-        spanish: "Hace algún tiempo ",
-        english: " some time ago",
+        term: "Hace algún tiempo ",
+        definition: " some time ago",
         knowledgelevel: 0
     },
     {
         id: "hace_algunos_años",
         category: "uncategorized",
-        spanish: "Hace algunos años ",
-        english: " some years ago",
+        term: "Hace algunos años ",
+        definition: " some years ago",
         knowledgelevel: 0
     },
     {
         id: "hace_apenas_unos_días",
         category: "uncategorized",
-        spanish: "Hace apenas unos días ",
-        english: " just a few days ago",
+        term: "Hace apenas unos días ",
+        definition: " just a few days ago",
         knowledgelevel: 0
     },
     {
         id: "hacer_caso",
         category: "uncategorized",
-        spanish: "Hacer caso ",
-        english: " to heed,  to follow a direction",
+        term: "Hacer caso ",
+        definition: " to heed,  to follow a direction",
         knowledgelevel: 0
     },
     {
         id: "hasta_hace_poco",
         category: "uncategorized",
-        spanish: "Hasta hace poco ",
-        english: " until very recently",
+        term: "Hasta hace poco ",
+        definition: " until very recently",
         knowledgelevel: 0
     },
     {
         id: "hasta_no_hace_mucho_tiempo",
         category: "uncategorized",
-        spanish: "Hasta no hace mucho tiempo ",
-        english: " until not long ago",
+        term: "Hasta no hace mucho tiempo ",
+        definition: " until not long ago",
         knowledgelevel: 0
     },
     {
         id: "hay_que",
         category: "uncategorized",
-        spanish: "Hay que ",
-        english: " one has to, must",
+        term: "Hay que ",
+        definition: " one has to, must",
         knowledgelevel: 0
     },
     {
         id: "hierro",
         category: "uncategorized",
-        spanish: "Hierro ",
-        english: " iron",
+        term: "Hierro ",
+        definition: " iron",
         knowledgelevel: 0
     },
     {
         id: "hule",
         category: "uncategorized",
-        spanish: "Hule ",
-        english: " rubber",
+        term: "Hule ",
+        definition: " rubber",
         knowledgelevel: 0
     },
     {
         id: "humilde",
         category: "uncategorized",
-        spanish: "Humilde ",
-        english: " humble",
+        term: "Humilde ",
+        definition: " humble",
         knowledgelevel: 0
     },
     {
         id: "imponente",
         category: "uncategorized",
-        spanish: "Imponente ",
-        english: " imposing",
+        term: "Imponente ",
+        definition: " imposing",
         knowledgelevel: 0
     },
     {
         id: "impredecible",
         category: "uncategorized",
-        spanish: "Impredecible ",
-        english: " unpredictable",
+        term: "Impredecible ",
+        definition: " unpredictable",
         knowledgelevel: 0
     },
     {
         id: "inalámbrico",
         category: "uncategorized",
-        spanish: "Inalámbrico ",
-        english: " wireless",
+        term: "Inalámbrico ",
+        definition: " wireless",
         knowledgelevel: 0
     },
     {
         id: "incluso",
         category: "uncategorized",
-        spanish: "Incluso ",
-        english: " even",
+        term: "Incluso ",
+        definition: " even",
         knowledgelevel: 0
     },
     {
         id: "ingeniería",
         category: "uncategorized",
-        spanish: "Ingeniería ",
-        english: " Engineering",
+        term: "Ingeniería ",
+        definition: " Engineering",
         knowledgelevel: 0
     },
     {
         id: "injusto",
         category: "uncategorized",
-        spanish: "Injusto ",
-        english: " unfair",
+        term: "Injusto ",
+        definition: " unfair",
         knowledgelevel: 0
     },
     {
         id: "instantáneamente",
         category: "uncategorized",
-        spanish: "Instantáneamente ",
-        english: " instantly",
+        term: "Instantáneamente ",
+        definition: " instantly",
         knowledgelevel: 0
     },
     {
         id: "interesantísimo",
         category: "uncategorized",
-        spanish: "Interesantísimo (adj) ",
-        english: " very interesting",
+        term: "Interesantísimo (adj) ",
+        definition: " very interesting",
         knowledgelevel: 0
     },
     {
         id: "inusual",
         category: "uncategorized",
-        spanish: "Inusual ",
-        english: " unusual",
+        term: "Inusual ",
+        definition: " unusual",
         knowledgelevel: 0
     },
     {
         id: "aldea",
         category: "uncategorized",
-        spanish: "La aldea ",
-        english: " the village",
+        term: "La aldea ",
+        definition: " the village",
         knowledgelevel: 0
     },
     {
         id: "armada",
         category: "uncategorized",
-        spanish: "La armada ",
-        english: " the army",
+        term: "La armada ",
+        definition: " the army",
         knowledgelevel: 0
     },
     {
         id: "armonía",
         category: "uncategorized",
-        spanish: "La armonía ",
-        english: " the harmony",
+        term: "La armonía ",
+        definition: " the harmony",
         knowledgelevel: 0
     },
     {
         id: "búsqueda",
         category: "uncategorized",
-        spanish: "La búsqueda ",
-        english: " the search",
+        term: "La búsqueda ",
+        definition: " the search",
         knowledgelevel: 0
     },
     {
         id: "cantidad",
         category: "uncategorized",
-        spanish: "La cantidad ",
-        english: " the amount",
+        term: "La cantidad ",
+        definition: " the amount",
         knowledgelevel: 0
     },
     {
         id: "cartulina",
         category: "uncategorized",
-        spanish: "la Cartulina ",
-        english: " the cardboard",
+        term: "la Cartulina ",
+        definition: " the cardboard",
         knowledgelevel: 0
     },
     {
         id: "celda",
         category: "uncategorized",
-        spanish: "La celda ",
-        english: " the cell",
+        term: "La celda ",
+        definition: " the cell",
         knowledgelevel: 0
     },
     {
         id: "conexión",
         category: "uncategorized",
-        spanish: "la conexión ",
-        english: " the connection",
+        term: "la conexión ",
+        definition: " the connection",
         knowledgelevel: 0
     },
     {
         id: "leña",
         category: "uncategorized",
-        spanish: "La leña ",
-        english: " the firewood",
+        term: "La leña ",
+        definition: " the firewood",
         knowledgelevel: 0
     },
     {
         id: "marea",
         category: "uncategorized",
-        spanish: "La Marea ",
-        english: " the tide",
+        term: "La Marea ",
+        definition: " the tide",
         knowledgelevel: 0
     },
     {
         id: "matrícu",
         category: "uncategorized",
-        spanish: "La matrícula ",
-        english: " the enrollment or tuition",
+        term: "La matrícula ",
+        definition: " the enrollment or tuition",
         knowledgelevel: 0
     },
     {
         id: "nevada",
         category: "uncategorized",
-        spanish: "la nevada ",
-        english: " the snowfall",
+        term: "la nevada ",
+        definition: " the snowfall",
         knowledgelevel: 0
     },
     {
         id: "palma",
         category: "uncategorized",
-        spanish: "La Palma ",
-        english: " the palm",
+        term: "La Palma ",
+        definition: " the palm",
         knowledgelevel: 0
     },
     {
         id: "poza",
         category: "uncategorized",
-        spanish: "La poza ",
-        english: " the pool",
+        term: "La poza ",
+        definition: " the pool",
         knowledgelevel: 0
     },
     {
         id: "traductora",
         category: "uncategorized",
-        spanish: "La traductora ",
-        english: " the translator",
+        term: "La traductora ",
+        definition: " the translator",
         knowledgelevel: 0
     },
     {
         id: "ubicación",
         category: "uncategorized",
-        spanish: "La ubicación ",
-        english: " the location",
+        term: "La ubicación ",
+        definition: " the location",
         knowledgelevel: 0
     },
     {
         id: "vitrina",
         category: "uncategorized",
-        spanish: "La vitrina ",
-        english: " a showcase",
+        term: "La vitrina ",
+        definition: " a showcase",
         knowledgelevel: 0
     },
     {
         id: "lanudo",
         category: "uncategorized",
-        spanish: "Lanudo ",
-        english: " woolly",
+        term: "Lanudo ",
+        definition: " woolly",
         knowledgelevel: 0
     },
     {
         id: "aletas",
         category: "uncategorized",
-        spanish: "Las aletas ",
-        english: " the fins",
+        term: "Las aletas ",
+        definition: " the fins",
         knowledgelevel: 0
     },
     {
         id: "bayas",
         category: "uncategorized",
-        spanish: "las bayas ",
-        english: " the berries",
+        term: "las bayas ",
+        definition: " the berries",
         knowledgelevel: 0
     },
     {
         id: "branquias",
         category: "uncategorized",
-        spanish: "Las branquias ",
-        english: " the gills",
+        term: "Las branquias ",
+        definition: " the gills",
         knowledgelevel: 0
     },
     {
         id: "escamas",
         category: "uncategorized",
-        spanish: "Las escamas ",
-        english: " the scales",
+        term: "Las escamas ",
+        definition: " the scales",
         knowledgelevel: 0
     },
     {
         id: "fichas",
         category: "uncategorized",
-        spanish: "Las fichas ",
-        english: " the chips",
+        term: "Las fichas ",
+        definition: " the chips",
         knowledgelevel: 0
     },
     {
         id: "ganas",
         category: "uncategorized",
-        spanish: "Las ganas ",
-        english: " the desire",
+        term: "Las ganas ",
+        definition: " the desire",
         knowledgelevel: 0
     },
     {
         id: "heridas",
         category: "uncategorized",
-        spanish: "Las Heridas ",
-        english: " the wounds",
+        term: "Las Heridas ",
+        definition: " the wounds",
         knowledgelevel: 0
     },
     {
         id: "largas",
         category: "uncategorized",
-        spanish: "Las largas ",
-        english: "the long ones",
+        term: "Las largas ",
+        definition: "the long ones",
         knowledgelevel: 0
     },
     {
         id: "migajas",
         category: "uncategorized",
-        spanish: "las Migajas ",
-        english: " crumbs",
+        term: "las Migajas ",
+        definition: " crumbs",
         knowledgelevel: 0
     },
     {
         id: "per",
         category: "uncategorized",
-        spanish: "Las perlas ",
-        english: " the pearls",
+        term: "Las perlas ",
+        definition: " the pearls",
         knowledgelevel: 0
     },
     {
         id: "pide_repuesto",
         category: "uncategorized",
-        spanish: "Las pilas de repuesto ",
-        english: " spare batteries",
+        term: "Las pilas de repuesto ",
+        definition: " spare batteries",
         knowledgelevel: 0
     },
     {
         id: "tenaza",
         category: "uncategorized",
-        spanish: "Las tenaza ",
-        english: " the pincers",
+        term: "Las tenaza ",
+        definition: " the pincers",
         knowledgelevel: 0
     },
     {
         id: "lastimado",
         category: "uncategorized",
-        spanish: "Lastimado (ajd) ",
-        english: " hurt",
+        term: "Lastimado (ajd) ",
+        definition: " hurt",
         knowledgelevel: 0
     },
     {
         id: "lejísimo",
         category: "uncategorized",
-        spanish: "Lejísimo (adj) ",
-        english: " very far away",
+        term: "Lejísimo (adj) ",
+        definition: " very far away",
         knowledgelevel: 0
     },
     {
         id: "liso",
         category: "uncategorized",
-        spanish: "Liso ",
-        english: " smooth",
+        term: "Liso ",
+        definition: " smooth",
         knowledgelevel: 0
     },
     {
         id: "liviano",
         category: "uncategorized",
-        spanish: "Liviano (adj) ",
-        english: " lightweight",
+        term: "Liviano (adj) ",
+        definition: " lightweight",
         knowledgelevel: 0
     },
     {
         id: "llevaba_muchas_horas",
         category: "uncategorized",
-        spanish: "Llevaba muchas horas ",
-        english: " it took many hours",
+        term: "Llevaba muchas horas ",
+        definition: " it took many hours",
         knowledgelevel: 0
     },
     {
         id: "llevar_puesto",
         category: "uncategorized",
-        spanish: "Llevar puesto ",
-        english: " to wear",
+        term: "Llevar puesto ",
+        definition: " to wear",
         knowledgelevel: 0
     },
     {
         id: "lo_echas_a_perder",
         category: "uncategorized",
-        spanish: "Lo echas a perder ",
-        english: " you ruin it",
+        term: "Lo echas a perder ",
+        definition: " you ruin it",
         knowledgelevel: 0
     },
     {
         id: "lodosa",
         category: "uncategorized",
-        spanish: "Lodosa (adj) ",
-        english: " muddy",
+        term: "Lodosa (adj) ",
+        definition: " muddy",
         knowledgelevel: 0
     },
     {
         id: "archivos",
         category: "uncategorized",
-        spanish: "Los archivos ",
-        english: " the files,  records",
+        term: "Los archivos ",
+        definition: " the files,  records",
         knowledgelevel: 0
     },
     {
         id: "colonizadores",
         category: "uncategorized",
-        spanish: "Los colonizadores ",
-        english: " the colonizers",
+        term: "Los colonizadores ",
+        definition: " the colonizers",
         knowledgelevel: 0
     },
     {
         id: "cuadros",
         category: "uncategorized",
-        spanish: "Los cuadros ",
-        english: " the paintings",
+        term: "Los cuadros ",
+        definition: " the paintings",
         knowledgelevel: 0
     },
     {
         id: "espectácu",
         category: "uncategorized",
-        spanish: "Los espectáculos ",
-        english: " the shows",
+        term: "Los espectáculos ",
+        definition: " the shows",
         knowledgelevel: 0
     },
     {
         id: "espectadores",
         category: "uncategorized",
-        spanish: "Los espectadores ",
-        english: " the spectators",
+        term: "Los espectadores ",
+        definition: " the spectators",
         knowledgelevel: 0
     },
     {
         id: "factores",
         category: "uncategorized",
-        spanish: "Los factores ",
-        english: " the facts",
+        term: "Los factores ",
+        definition: " the facts",
         knowledgelevel: 0
     },
     {
         id: "habitantes",
         category: "uncategorized",
-        spanish: "Los Habitantes ",
-        english: " the population",
+        term: "Los Habitantes ",
+        definition: " the population",
         knowledgelevel: 0
     },
     {
         id: "huéspedes",
         category: "uncategorized",
-        spanish: "los huéspedes ",
-        english: " the guests",
+        term: "los huéspedes ",
+        definition: " the guests",
         knowledgelevel: 0
     },
     {
         id: "logros",
         category: "uncategorized",
-        spanish: "Los logros ",
-        english: " the achievements",
+        term: "Los logros ",
+        definition: " the achievements",
         knowledgelevel: 0
     },
     {
         id: "malvavisvos",
         category: "uncategorized",
-        spanish: "Los malvavisvos ",
-        english: " the marshmallows",
+        term: "Los malvavisvos ",
+        definition: " the marshmallows",
         knowledgelevel: 0
     },
     {
         id: "nietos",
         category: "uncategorized",
-        spanish: "los nietos ",
-        english: " the grandchildren",
+        term: "los nietos ",
+        definition: " the grandchildren",
         knowledgelevel: 0
     },
     {
         id: "precios",
         category: "uncategorized",
-        spanish: "Los precios ",
-        english: " the prices",
+        term: "Los precios ",
+        definition: " the prices",
         knowledgelevel: 0
     },
     {
         id: "preparativos",
         category: "uncategorized",
-        spanish: "Los Preparativos ",
-        english: " the preparations",
+        term: "Los Preparativos ",
+        definition: " the preparations",
         knowledgelevel: 0
     },
     {
         id: "sorbetos",
         category: "uncategorized",
-        spanish: "Los sorbetos ",
-        english: " the straws",
+        term: "Los sorbetos ",
+        definition: " the straws",
         knowledgelevel: 0
     },
     {
         id: "majestuoso",
         category: "uncategorized",
-        spanish: "Majestuoso (adj) ",
-        english: " magestic",
+        term: "Majestuoso (adj) ",
+        definition: " magestic",
         knowledgelevel: 0
     },
     {
         id: "maldita",
         category: "uncategorized",
-        spanish: "Maldita (adj) ",
-        english: " damned,  cursed",
+        term: "Maldita (adj) ",
+        definition: " damned,  cursed",
         knowledgelevel: 0
     },
     {
         id: "malencarado",
         category: "uncategorized",
-        spanish: "Malencarado",
-        english: " mean",
+        term: "Malencarado",
+        definition: " mean",
         knowledgelevel: 0
     },
     {
         id: "malvada",
         category: "uncategorized",
-        spanish: "Malvada (adj) ",
-        english: " evil",
+        term: "Malvada (adj) ",
+        definition: " evil",
         knowledgelevel: 0
     },
     {
         id: "manso",
         category: "uncategorized",
-        spanish: "Manso ",
-        english: " meek,  tame",
+        term: "Manso ",
+        definition: " meek,  tame",
         knowledgelevel: 0
     },
     {
         id: "marítimos",
         category: "uncategorized",
-        spanish: "Marítimos ",
-        english: " maritime",
+        term: "Marítimos ",
+        definition: " maritime",
         knowledgelevel: 0
     },
     {
         id: "me_muero_por…",
         category: "uncategorized",
-        spanish: "Me muero por… ",
-        english: " im dying to…",
+        term: "Me muero por… ",
+        definition: " im dying to…",
         knowledgelevel: 0
     },
     {
         id: "me_pierdo",
         category: "uncategorized",
-        spanish: "Me pierdo ",
-        english: " I get lost",
+        term: "Me pierdo ",
+        definition: " I get lost",
         knowledgelevel: 0
     },
     {
         id: "menor",
         category: "uncategorized",
-        spanish: "Menor (adj) ",
-        english: " minor",
+        term: "Menor (adj) ",
+        definition: " minor",
         knowledgelevel: 0
     },
     {
         id: "miedosa",
         category: "uncategorized",
-        spanish: "Miedosa ",
-        english: " fearful",
+        term: "Miedosa ",
+        definition: " fearful",
         knowledgelevel: 0
     },
     {
         id: "mientras_tanto",
         category: "uncategorized",
-        spanish: "Mientras tanto ",
-        english: " meanwhile",
+        term: "Mientras tanto ",
+        definition: " meanwhile",
         knowledgelevel: 0
     },
     {
         id: "miles_vs_mil",
         category: "uncategorized",
-        spanish: "Miles vs millas ",
-        english: " miles = thousands,  millas = miles",
+        term: "Miles vs millas ",
+        definition: " miles = thousands,  millas = miles",
         knowledgelevel: 0
     },
     {
         id: "mudo",
         category: "uncategorized",
-        spanish: "Mudo ",
-        english: " dumb,  mute",
+        term: "Mudo ",
+        definition: " dumb,  mute",
         knowledgelevel: 0
     },
     {
         id: "muy_seguido",
         category: "uncategorized",
-        spanish: "Muy seguido ",
-        english: " very often",
+        term: "Muy seguido ",
+        definition: " very often",
         knowledgelevel: 0
     },
     {
         id: "muy_segura_de_sí_misma",
         category: "uncategorized",
-        spanish: "Muy segura de sí misma ",
-        english: " very sure of herself",
+        term: "Muy segura de sí misma ",
+        definition: " very sure of herself",
         knowledgelevel: 0
     },
     {
         id: "nena",
         category: "uncategorized",
-        spanish: "Nena ",
-        english: " chick,  girl",
+        term: "Nena ",
+        definition: " chick,  girl",
         knowledgelevel: 0
     },
     {
         id: "ni_tantito",
         category: "uncategorized",
-        spanish: "Ni tantito ",
-        english: " not in the slightest",
+        term: "Ni tantito ",
+        definition: " not in the slightest",
         knowledgelevel: 0
     },
     {
         id: "no_se_dio_por_vencido",
         category: "uncategorized",
-        spanish: "No se dio por vencido ",
-        english: " she/she did not give up",
+        term: "No se dio por vencido ",
+        definition: " she/she did not give up",
         knowledgelevel: 0
     },
     {
         id: "ortografía",
         category: "uncategorized",
-        spanish: "Ortografía ",
-        english: " spelling/orthography",
+        term: "Ortografía ",
+        definition: " spelling/orthography",
         knowledgelevel: 0
     },
     {
         id: "pálida",
         category: "uncategorized",
-        spanish: "Pálida (adj) ",
-        english: " pale",
+        term: "Pálida (adj) ",
+        definition: " pale",
         knowledgelevel: 0
     },
     {
         id: "pañales",
         category: "uncategorized",
-        spanish: "Pañales ",
-        english: " diapers",
+        term: "Pañales ",
+        definition: " diapers",
         knowledgelevel: 0
     },
     {
         id: "pantuf",
         category: "uncategorized",
-        spanish: "Pantuflas ",
-        english: " slippers",
+        term: "Pantuflas ",
+        definition: " slippers",
         knowledgelevel: 0
     },
     {
         id: "papagayo",
         category: "uncategorized",
-        spanish: "Papagayo ",
-        english: " parrot",
+        term: "Papagayo ",
+        definition: " parrot",
         knowledgelevel: 0
     },
     {
         id: "patas_arriba",
         category: "uncategorized",
-        spanish: "Patas arriba ",
-        english: " upside down",
+        term: "Patas arriba ",
+        definition: " upside down",
         knowledgelevel: 0
     },
     {
         id: "pillado",
         category: "uncategorized",
-        spanish: "Pillado ",
-        english: " caught",
+        term: "Pillado ",
+        definition: " caught",
         knowledgelevel: 0
     },
     {
         id: "placentero",
         category: "uncategorized",
-        spanish: "Placentero ",
-        english: " pleasant",
+        term: "Placentero ",
+        definition: " pleasant",
         knowledgelevel: 0
     },
     {
         id: "plateado",
         category: "uncategorized",
-        spanish: "Plateado ",
-        english: " silver",
+        term: "Plateado ",
+        definition: " silver",
         knowledgelevel: 0
     },
     {
         id: "poco_después",
         category: "uncategorized",
-        spanish: "Poco después ",
-        english: " shoftly after",
+        term: "Poco después ",
+        definition: " shoftly after",
         knowledgelevel: 0
     },
     {
         id: "por_casualidad",
         category: "uncategorized",
-        spanish: "Por casualidad ",
-        english: " by chance",
+        term: "Por casualidad ",
+        definition: " by chance",
         knowledgelevel: 0
     },
     {
         id: "por_ello_de",
         category: "uncategorized",
-        spanish: "Por ello de ",
-        english: " for that reason",
+        term: "Por ello de ",
+        definition: " for that reason",
         knowledgelevel: 0
     },
     {
         id: "por_eso_mismo",
         category: "uncategorized",
-        spanish: "Por eso mismo ",
-        english: " for that reason",
+        term: "Por eso mismo ",
+        definition: " for that reason",
         knowledgelevel: 0
     },
     {
         id: "por_haber_corrido_tan_rápido",
         category: "uncategorized",
-        spanish: "Por haber corrido tan rápido ",
-        english: " for having run so fast",
+        term: "Por haber corrido tan rápido ",
+        definition: " for having run so fast",
         knowledgelevel: 0
     },
     {
         id: "por_medio",
         category: "uncategorized",
-        spanish: "Por medio ",
-        english: " through",
+        term: "Por medio ",
+        definition: " through",
         knowledgelevel: 0
     },
     {
         id: "por_otra_parte",
         category: "uncategorized",
-        spanish: "Por otra parte ",
-        english: " besides",
+        term: "Por otra parte ",
+        definition: " besides",
         knowledgelevel: 0
     },
     {
         id: "por_si_acaso",
         category: "uncategorized",
-        spanish: "Por si acaso ",
-        english: " just in case",
+        term: "Por si acaso ",
+        definition: " just in case",
         knowledgelevel: 0
     },
     {
         id: "por_su_cuenta",
         category: "uncategorized",
-        spanish: "Por su cuenta ",
-        english: " on your own",
+        term: "Por su cuenta ",
+        definition: " on your own",
         knowledgelevel: 0
     },
     {
         id: "presumido",
         category: "uncategorized",
-        spanish: "Presumido ",
-        english: " smug",
+        term: "Presumido ",
+        definition: " smug",
         knowledgelevel: 0
     },
     {
         id: "prometedor",
         category: "uncategorized",
-        spanish: "Prometedor (adj) ",
-        english: " promising (adj)",
+        term: "Prometedor (adj) ",
+        definition: " promising (adj)",
         knowledgelevel: 0
     },
     {
         id: "propósito",
         category: "uncategorized",
-        spanish: "Propósito ",
-        english: " purpose",
+        term: "Propósito ",
+        definition: " purpose",
         knowledgelevel: 0
     },
     {
         id: "pues_resulta",
         category: "uncategorized",
-        spanish: "Pues resulta ",
-        english: " well it turns out",
+        term: "Pues resulta ",
+        definition: " well it turns out",
         knowledgelevel: 0
     },
     {
         id: "que_siga",
         category: "uncategorized",
-        spanish: "Que siga ",
-        english: " continue",
+        term: "Que siga ",
+        definition: " continue",
         knowledgelevel: 0
     },
     {
         id: "que_tal_si_hacemos…",
         category: "uncategorized",
-        spanish: "Que tal si hacemos… ",
-        english: " What if we do…",
+        term: "Que tal si hacemos… ",
+        definition: " What if we do…",
         knowledgelevel: 0
     },
     {
         id: "rebonito",
         category: "uncategorized",
-        spanish: "Rebonito ",
-        english: " very beautiful",
+        term: "Rebonito ",
+        definition: " very beautiful",
         knowledgelevel: 0
     },
     {
         id: "recien_habia_cumplido_nueve_años",
         category: "uncategorized",
-        spanish: "recien habia cumplido nueve años ",
-        english: " had just turned 9 years old",
+        term: "recien habia cumplido nueve años ",
+        definition: " had just turned 9 years old",
         knowledgelevel: 0
     },
     {
         id: "recipientes",
         category: "uncategorized",
-        spanish: "Recipientes ",
-        english: " containers  duplicate?",
+        term: "Recipientes ",
+        definition: " containers  duplicate?",
         knowledgelevel: 0
     },
     {
         id: "regordeta",
         category: "uncategorized",
-        spanish: "Regordeta (adj) ",
-        english: " plump",
+        term: "Regordeta (adj) ",
+        definition: " plump",
         knowledgelevel: 0
     },
     {
         id: "rellena_de_carne",
         category: "uncategorized",
-        spanish: "Rellena de carne ",
-        english: " filled with meat",
+        term: "Rellena de carne ",
+        definition: " filled with meat",
         knowledgelevel: 0
     },
     {
         id: "respetuoso",
         category: "uncategorized",
-        spanish: "Respetuoso ",
-        english: " respectful",
+        term: "Respetuoso ",
+        definition: " respectful",
         knowledgelevel: 0
     },
     {
         id: "rodante",
         category: "uncategorized",
-        spanish: "Rodante ",
-        english: " rolling",
+        term: "Rodante ",
+        definition: " rolling",
         knowledgelevel: 0
     },
     {
         id: "ronca",
         category: "uncategorized",
-        spanish: "Ronca ",
-        english: " hoarse",
+        term: "Ronca ",
+        definition: " hoarse",
         knowledgelevel: 0
     },
     {
         id: "sabias",
         category: "uncategorized",
-        spanish: "Sabias (adj) ",
-        english: " wise",
+        term: "Sabias (adj) ",
+        definition: " wise",
         knowledgelevel: 0
     },
     {
         id: "sabio",
         category: "uncategorized",
-        spanish: "Sabio (adj) ",
-        english: " wise",
+        term: "Sabio (adj) ",
+        definition: " wise",
         knowledgelevel: 0
     },
     {
         id: "se_había_puesto_en_contacto",
         category: "uncategorized",
-        spanish: "Se había puesto en contacto ",
-        english: " had been contacted",
+        term: "Se había puesto en contacto ",
+        definition: " had been contacted",
         knowledgelevel: 0
     },
     {
         id: "se_hace_de_noche",
         category: "uncategorized",
-        spanish: "Se hace de noche ",
-        english: " its getting dark,  its becoming night",
+        term: "Se hace de noche ",
+        definition: " its getting dark,  its becoming night",
         knowledgelevel: 0
     },
     {
         id: "se_supo",
         category: "uncategorized",
-        spanish: "Se supo ",
-        english: " it was known",
+        term: "Se supo ",
+        definition: " it was known",
         knowledgelevel: 0
     },
     {
         id: "sello",
         category: "uncategorized",
-        spanish: "Sello  ",
-        english: " seal for a letter,  stamp",
+        term: "Sello  ",
+        definition: " seal for a letter,  stamp",
         knowledgelevel: 0
     },
     {
         id: "sencillo",
         category: "uncategorized",
-        spanish: "Sencillo ",
-        english: " simple",
+        term: "Sencillo ",
+        definition: " simple",
         knowledgelevel: 0
     },
     {
         id: "si_de_comida_se_trata…",
         category: "uncategorized",
-        spanish: "Si de comida se trata… ",
-        english: " if it’s about food…",
+        term: "Si de comida se trata… ",
+        definition: " if it’s about food…",
         knowledgelevel: 0
     },
     {
         id: "sino",
         category: "uncategorized",
-        spanish: "Sino ",
-        english: " but (conjunction)",
+        term: "Sino ",
+        definition: " but (conjunction)",
         knowledgelevel: 0
     },
     {
         id: "sino_hasta",
         category: "uncategorized",
-        spanish: "Sino hasta ",
-        english: " but until",
+        term: "Sino hasta ",
+        definition: " but until",
         knowledgelevel: 0
     },
     {
         id: "sobresalen",
         category: "uncategorized",
-        spanish: "Sobresalen ",
-        english: " they stand out",
+        term: "Sobresalen ",
+        definition: " they stand out",
         knowledgelevel: 0
     },
     {
         id: "solamente",
         category: "uncategorized",
-        spanish: "Solamente ",
-        english: " only",
+        term: "Solamente ",
+        definition: " only",
         knowledgelevel: 0
     },
     {
         id: "suecia",
         category: "uncategorized",
-        spanish: "Suecia ",
-        english: " Sweden",
+        term: "Suecia ",
+        definition: " Sweden",
         knowledgelevel: 0
     },
     {
         id: "tabaco",
         category: "uncategorized",
-        spanish: "Tabaco ",
-        english: " tobacco",
+        term: "Tabaco ",
+        definition: " tobacco",
         knowledgelevel: 0
     },
     {
         id: "tal",
         category: "uncategorized",
-        spanish: "Tal ",
-        english: " such",
+        term: "Tal ",
+        definition: " such",
         knowledgelevel: 0
     },
     {
         id: "tal_y_como",
         category: "uncategorized",
-        spanish: "Tal y como ",
-        english: " just like",
+        term: "Tal y como ",
+        definition: " just like",
         knowledgelevel: 0
     },
     {
         id: "tan_solo",
         category: "uncategorized",
-        spanish: "Tan solo ",
-        english: " just",
+        term: "Tan solo ",
+        definition: " just",
         knowledgelevel: 0
     },
     {
         id: "tardado",
         category: "uncategorized",
-        spanish: "Tardado (adj) ",
-        english: " delayed",
+        term: "Tardado (adj) ",
+        definition: " delayed",
         knowledgelevel: 0
     },
     {
         id: "temerosa",
         category: "uncategorized",
-        spanish: "Temerosa ",
-        english: " fearful",
+        term: "Temerosa ",
+        definition: " fearful",
         knowledgelevel: 0
     },
     {
         id: "tener_motivos",
         category: "uncategorized",
-        spanish: "Tener motivos ",
-        english: " to have reasons",
+        term: "Tener motivos ",
+        definition: " to have reasons",
         knowledgelevel: 0
     },
     {
         id: "tener_sentido",
         category: "uncategorized",
-        spanish: "Tener sentido ",
-        english: " to make sense",
+        term: "Tener sentido ",
+        definition: " to make sense",
         knowledgelevel: 0
     },
     {
         id: "tengo_fama_de_ser_sabio",
         category: "uncategorized",
-        spanish: "Tengo fama de ser sabio ",
-        english: " I have a reputation for being wise",
+        term: "Tengo fama de ser sabio ",
+        definition: " I have a reputation for being wise",
         knowledgelevel: 0
     },
     {
         id: "tensa",
         category: "uncategorized",
-        spanish: "Tensa ",
-        english: " tense",
+        term: "Tensa ",
+        definition: " tense",
         knowledgelevel: 0
     },
     {
         id: "terca",
         category: "uncategorized",
-        spanish: "Terca ",
-        english: " stubborn",
+        term: "Terca ",
+        definition: " stubborn",
         knowledgelevel: 0
     },
     {
         id: "terciopelo",
         category: "uncategorized",
-        spanish: "Terciopelo ",
-        english: " velvet",
+        term: "Terciopelo ",
+        definition: " velvet",
         knowledgelevel: 0
     },
     {
         id: "tirándole_de_manga",
         category: "uncategorized",
-        spanish: "Tirándole de una manga ",
-        english: " pulling his sleeve",
+        term: "Tirándole de una manga ",
+        definition: " pulling his sleeve",
         knowledgelevel: 0
     },
     {
         id: "tocar_puerta",
         category: "uncategorized",
-        spanish: "Tocar la puerta ",
-        english: " knock on the door",
+        term: "Tocar la puerta ",
+        definition: " knock on the door",
         knowledgelevel: 0
     },
     {
         id: "trasero",
         category: "uncategorized",
-        spanish: "Trasero ",
-        english: " rear",
+        term: "Trasero ",
+        definition: " rear",
         knowledgelevel: 0
     },
     {
         id: "trayectoria",
         category: "uncategorized",
-        spanish: "Trayectoria ",
-        english: " a trajectory",
+        term: "Trayectoria ",
+        definition: " a trajectory",
         knowledgelevel: 0
     },
     {
         id: "últimamente",
         category: "uncategorized",
-        spanish: "Últimamente ",
-        english: " lately",
+        term: "Últimamente ",
+        definition: " lately",
         knowledgelevel: 0
     },
     {
         id: "acabado",
         category: "uncategorized",
-        spanish: "Un acabado ",
-        english: " a finish",
+        term: "Un acabado ",
+        definition: " a finish",
         knowledgelevel: 0
     },
     {
         id: "acertijo",
         category: "uncategorized",
-        spanish: "Un acertijo ",
-        english: " a riddle",
+        term: "Un acertijo ",
+        definition: " a riddle",
         knowledgelevel: 0
     },
     {
         id: "aficionado",
         category: "uncategorized",
-        spanish: "Un aficionado ",
-        english: " an amateur",
+        term: "Un aficionado ",
+        definition: " an amateur",
         knowledgelevel: 0
     },
     {
         id: "alambre",
         category: "uncategorized",
-        spanish: "Un alambre ",
-        english: " a wire",
+        term: "Un alambre ",
+        definition: " a wire",
         knowledgelevel: 0
     },
     {
         id: "alboroto",
         category: "uncategorized",
-        spanish: "Un alboroto ",
-        english: " a rampage,  a riot",
+        term: "Un alboroto ",
+        definition: " a rampage,  a riot",
         knowledgelevel: 0
     },
     {
         id: "alce",
         category: "uncategorized",
-        spanish: "Un alce ",
-        english: " a moose",
+        term: "Un alce ",
+        definition: " a moose",
         knowledgelevel: 0
     },
     {
         id: "amante",
         category: "uncategorized",
-        spanish: "Un amante ",
-        english: " a lover",
+        term: "Un amante ",
+        definition: " a lover",
         knowledgelevel: 0
     },
     {
         id: "arqueólogo",
         category: "uncategorized",
-        spanish: "Un Arqueólogo ",
-        english: " an archeologist",
+        term: "Un Arqueólogo ",
+        definition: " an archeologist",
         knowledgelevel: 0
     },
     {
         id: "átomo",
         category: "uncategorized",
-        spanish: "Un átomo ",
-        english: " an atom",
+        term: "Un átomo ",
+        definition: " an atom",
         knowledgelevel: 0
     },
     {
         id: "aumento",
         category: "uncategorized",
-        spanish: "Un aumento ",
-        english: " an increase",
+        term: "Un aumento ",
+        definition: " an increase",
         knowledgelevel: 0
     },
     {
         id: "banco",
         category: "uncategorized",
-        spanish: "Un banco ",
-        english: " bank or bench",
+        term: "Un banco ",
+        definition: " bank or bench",
         knowledgelevel: 0
     },
     {
         id: "barrote",
         category: "uncategorized",
-        spanish: "Un barrote ",
-        english: " a bar",
+        term: "Un barrote ",
+        definition: " a bar",
         knowledgelevel: 0
     },
     {
         id: "bate",
         category: "uncategorized",
-        spanish: "Un bate ",
-        english: " a bat",
+        term: "Un bate ",
+        definition: " a bat",
         knowledgelevel: 0
     },
     {
         id: "beneficio",
         category: "uncategorized",
-        spanish: "Un beneficio ",
-        english: " a benefit",
+        term: "Un beneficio ",
+        definition: " a benefit",
         knowledgelevel: 0
     },
     {
         id: "bistec",
         category: "uncategorized",
-        spanish: "un Bistec ",
-        english: " steak",
+        term: "un Bistec ",
+        definition: " steak",
         knowledgelevel: 0
     },
     {
         id: "bostezo",
         category: "uncategorized",
-        spanish: "Un bostezo ",
-        english: " a yawn",
+        term: "Un bostezo ",
+        definition: " a yawn",
         knowledgelevel: 0
     },
     {
         id: "brinco",
         category: "uncategorized",
-        spanish: "Un brinco ",
-        english: " a jump",
+        term: "Un brinco ",
+        definition: " a jump",
         knowledgelevel: 0
     },
     {
         id: "buey",
         category: "uncategorized",
-        spanish: "Un buey ",
-        english: " an ox",
+        term: "Un buey ",
+        definition: " an ox",
         knowledgelevel: 0
     },
     {
         id: "buque",
         category: "uncategorized",
-        spanish: "Un buque ",
-        english: " a vessel",
+        term: "Un buque ",
+        definition: " a vessel",
         knowledgelevel: 0
     },
     {
         id: "buzón",
         category: "uncategorized",
-        spanish: "Un buzón ",
-        english: " a mailbox",
+        term: "Un buzón ",
+        definition: " a mailbox",
         knowledgelevel: 0
     },
     {
         id: "campeonato",
         category: "uncategorized",
-        spanish: "Un campeonato ",
-        english: " a championship",
+        term: "Un campeonato ",
+        definition: " a championship",
         knowledgelevel: 0
     },
     {
         id: "cañón",
         category: "uncategorized",
-        spanish: "Un Cañón ",
-        english: " a cannon",
+        term: "Un Cañón ",
+        definition: " a cannon",
         knowledgelevel: 0
     },
     {
         id: "chiste",
         category: "uncategorized",
-        spanish: "un chiste ",
-        english: " a joke",
+        term: "un chiste ",
+        definition: " a joke",
         knowledgelevel: 0
     },
     {
         id: "combustible",
         category: "uncategorized",
-        spanish: "Un combustible ",
-        english: " a fuel",
+        term: "Un combustible ",
+        definition: " a fuel",
         knowledgelevel: 0
     },
     {
         id: "comentario",
         category: "uncategorized",
-        spanish: "un comentario ",
-        english: " a comment",
+        term: "un comentario ",
+        definition: " a comment",
         knowledgelevel: 0
     },
     {
         id: "cuarto_de_pulgada_de_ancho",
         category: "uncategorized",
-        spanish: "Un cuarto de pulgada de ancho ",
-        english: " a quarter inch wide",
+        term: "Un cuarto de pulgada de ancho ",
+        definition: " a quarter inch wide",
         knowledgelevel: 0
     },
     {
         id: "cuentacuento",
         category: "uncategorized",
-        spanish: "Un cuentacuento ",
-        english: " a storyteller",
+        term: "Un cuentacuento ",
+        definition: " a storyteller",
         knowledgelevel: 0
     },
     {
         id: "documental",
         category: "uncategorized",
-        spanish: "Un documental ",
-        english: " a documentary",
+        term: "Un documental ",
+        definition: " a documentary",
         knowledgelevel: 0
     },
     {
         id: "empate",
         category: "uncategorized",
-        spanish: "Un empate ",
-        english: " a tie (like 2 sports teams are tied)",
+        term: "Un empate ",
+        definition: " a tie (like 2 sports teams are tied)",
         knowledgelevel: 0
     },
     {
         id: "escopeta",
         category: "uncategorized",
-        spanish: "Un escopeta ",
-        english: " a shotgun",
+        term: "Un escopeta ",
+        definition: " a shotgun",
         knowledgelevel: 0
     },
     {
         id: "espectáculo",
         category: "uncategorized",
-        spanish: "Un espectáculo ",
-        english: " a show",
+        term: "Un espectáculo ",
+        definition: " a show",
         knowledgelevel: 0
     },
     {
         id: "fenómeno",
         category: "uncategorized",
-        spanish: "un Fenómeno ",
-        english: " a freak,  or a phenomenon",
+        term: "un Fenómeno ",
+        definition: " a freak,  or a phenomenon",
         knowledgelevel: 0
     },
     {
         id: "golfo",
         category: "uncategorized",
-        spanish: "Un golfo ",
-        english: " a gulf",
+        term: "Un golfo ",
+        definition: " a gulf",
         knowledgelevel: 0
     },
     {
         id: "guión",
         category: "uncategorized",
-        spanish: "Un guión ",
-        english: " a script",
+        term: "Un guión ",
+        definition: " a script",
         knowledgelevel: 0
     },
     {
         id: "imán",
         category: "uncategorized",
-        spanish: "Un imán ",
-        english: " a magnet",
+        term: "Un imán ",
+        definition: " a magnet",
         knowledgelevel: 0
     },
     {
         id: "jarrón",
         category: "uncategorized",
-        spanish: "Un jarrón ",
-        english: " a vase",
+        term: "Un jarrón ",
+        definition: " a vase",
         knowledgelevel: 0
     },
     {
         id: "ladrillo",
         category: "uncategorized",
-        spanish: "un ladrillo ",
-        english: " a brick",
+        term: "un ladrillo ",
+        definition: " a brick",
         knowledgelevel: 0
     },
     {
         id: "leopardo",
         category: "uncategorized",
-        spanish: "Un leopardo ",
-        english: " a leopard",
+        term: "Un leopardo ",
+        definition: " a leopard",
         knowledgelevel: 0
     },
     {
         id: "listón",
         category: "uncategorized",
-        spanish: "Un listón ",
-        english: " a ribbon",
+        term: "Un listón ",
+        definition: " a ribbon",
         knowledgelevel: 0
     },
     {
         id: "marco",
         category: "uncategorized",
-        spanish: "Un marco ",
-        english: " a border (como un photo)",
+        term: "Un marco ",
+        definition: " a border (como un photo)",
         knowledgelevel: 0
     },
     {
         id: "martillo",
         category: "uncategorized",
-        spanish: "Un martillo ",
-        english: " a hammer",
+        term: "Un martillo ",
+        definition: " a hammer",
         knowledgelevel: 0
     },
     {
         id: "molusco",
         category: "uncategorized",
-        spanish: "Un molusco ",
-        english: " a mollusk",
+        term: "Un molusco ",
+        definition: " a mollusk",
         knowledgelevel: 0
     },
     {
         id: "murmullo",
         category: "uncategorized",
-        spanish: "Un murmullo ",
-        english: " a murmur",
+        term: "Un murmullo ",
+        definition: " a murmur",
         knowledgelevel: 0
     },
     {
         id: "parpadeo_de_ojo",
         category: "uncategorized",
-        spanish: "Un parpadeo de un ojo ",
-        english: " a blink of an eye",
+        term: "Un parpadeo de un ojo ",
+        definition: " a blink of an eye",
         knowledgelevel: 0
     },
     {
         id: "pasadizo",
         category: "uncategorized",
-        spanish: "Un pasadizo ",
-        english: " passageway",
+        term: "Un pasadizo ",
+        definition: " passageway",
         knowledgelevel: 0
     },
     {
         id: "pavo_real",
         category: "uncategorized",
-        spanish: "Un Pavo real ",
-        english: " a peacock",
+        term: "Un Pavo real ",
+        definition: " a peacock",
         knowledgelevel: 0
     },
     {
         id: "pececil",
         category: "uncategorized",
-        spanish: "Un pececilla ",
-        english: " a minnow",
+        term: "Un pececilla ",
+        definition: " a minnow",
         knowledgelevel: 0
     },
     {
         id: "peón",
         category: "uncategorized",
-        spanish: "Un peón,  Los Peones ",
-        english: " a pawn, the pawns",
+        term: "Un peón,  Los Peones ",
+        definition: " a pawn, the pawns",
         knowledgelevel: 0
     },
     {
         id: "pestillo",
         category: "uncategorized",
-        spanish: "Un pestillo ",
-        english: " a latch",
+        term: "Un pestillo ",
+        definition: " a latch",
         knowledgelevel: 0
     },
     {
         id: "polluelo",
         category: "uncategorized",
-        spanish: "Un Polluelo ",
-        english: " a chick",
+        term: "Un Polluelo ",
+        definition: " a chick",
         knowledgelevel: 0
     },
     {
         id: "pozo",
         category: "uncategorized",
-        spanish: "Un pozo ",
-        english: " a well",
+        term: "Un pozo ",
+        definition: " a well",
         knowledgelevel: 0
     },
     {
         id: "puesto",
         category: "uncategorized",
-        spanish: "Un puesto ",
-        english: " a position,  or a place",
+        term: "Un puesto ",
+        definition: " a position,  or a place",
         knowledgelevel: 0
     },
     {
         id: "punto_de_partida",
         category: "uncategorized",
-        spanish: "Un punto de partida ",
-        english: " a starting point",
+        term: "Un punto de partida ",
+        definition: " a starting point",
         knowledgelevel: 0
     },
     {
         id: "rastro",
         category: "uncategorized",
-        spanish: "Un Rastro ",
-        english: " the trace/trail",
+        term: "Un Rastro ",
+        definition: " the trace/trail",
         knowledgelevel: 0
     },
     {
         id: "recuadro",
         category: "uncategorized",
-        spanish: "Un recuadro ",
-        english: " a box",
+        term: "Un recuadro ",
+        definition: " a box",
         knowledgelevel: 0
     },
     {
         id: "reno",
         category: "uncategorized",
-        spanish: "Un reno ",
-        english: " a reindeer",
+        term: "Un reno ",
+        definition: " a reindeer",
         knowledgelevel: 0
     },
     {
         id: "reportero",
         category: "uncategorized",
-        spanish: "Un reportero ",
-        english: " a reporter",
+        term: "Un reportero ",
+        definition: " a reporter",
         knowledgelevel: 0
     },
     {
         id: "riachuelo",
         category: "uncategorized",
-        spanish: "Un riachuelo ",
-        english: " a creek",
+        term: "Un riachuelo ",
+        definition: " a creek",
         knowledgelevel: 0
     },
     {
         id: "riesgo",
         category: "uncategorized",
-        spanish: "Un riesgo ",
-        english: " a risk",
+        term: "Un riesgo ",
+        definition: " a risk",
         knowledgelevel: 0
     },
     {
         id: "rugido",
         category: "uncategorized",
-        spanish: "Un rugido ",
-        english: " a roar",
+        term: "Un rugido ",
+        definition: " a roar",
         knowledgelevel: 0
     },
     {
         id: "saco",
         category: "uncategorized",
-        spanish: "Un saco ",
-        english: " a sack",
+        term: "Un saco ",
+        definition: " a sack",
         knowledgelevel: 0
     },
     {
         id: "saco_de_dormir",
         category: "uncategorized",
-        spanish: "Un saco de dormir ",
-        english: " a sleeping bag",
+        term: "Un saco de dormir ",
+        definition: " a sleeping bag",
         knowledgelevel: 0
     },
     {
         id: "sentido",
         category: "uncategorized",
-        spanish: "un sentido ",
-        english: " a sense",
+        term: "un sentido ",
+        definition: " a sense",
         knowledgelevel: 0
     },
     {
         id: "siglo",
         category: "uncategorized",
-        spanish: "Un siglo ",
-        english: " a century",
+        term: "Un siglo ",
+        definition: " a century",
         knowledgelevel: 0
     },
     {
         id: "símbolo",
         category: "uncategorized",
-        spanish: "Un símbolo ",
-        english: " a symbol",
+        term: "Un símbolo ",
+        definition: " a symbol",
         knowledgelevel: 0
     },
     {
         id: "similitud",
         category: "uncategorized",
-        spanish: "Un Similitud ",
-        english: " a similarity",
+        term: "Un Similitud ",
+        definition: " a similarity",
         knowledgelevel: 0
     },
     {
         id: "sobresalto",
         category: "uncategorized",
-        spanish: "Un sobresalto ",
-        english: " a shock",
+        term: "Un sobresalto ",
+        definition: " a shock",
         knowledgelevel: 0
     },
     {
         id: "tablero",
         category: "uncategorized",
-        spanish: "Un tablero ",
-        english: " a board",
+        term: "Un tablero ",
+        definition: " a board",
         knowledgelevel: 0
     },
     {
         id: "tallo",
         category: "uncategorized",
-        spanish: "Un tallo ",
-        english: " a stem",
+        term: "Un tallo ",
+        definition: " a stem",
         knowledgelevel: 0
     },
     {
         id: "tanto_molesta",
         category: "uncategorized",
-        spanish: "Un tanto molesta ",
-        english: " kinda annoyed",
+        term: "Un tanto molesta ",
+        definition: " kinda annoyed",
         knowledgelevel: 0
     },
     {
         id: "termostato",
         category: "uncategorized",
-        spanish: "Un termostato ",
-        english: " a thermostat",
+        term: "Un termostato ",
+        definition: " a thermostat",
         knowledgelevel: 0
     },
     {
         id: "adivinanza",
         category: "uncategorized",
-        spanish: "Una adivinanza ",
-        english: " a riddle",
+        term: "Una adivinanza ",
+        definition: " a riddle",
         knowledgelevel: 0
     },
     {
         id: "aleta",
         category: "uncategorized",
-        spanish: "Una aleta ",
-        english: " a fin",
+        term: "Una aleta ",
+        definition: " a fin",
         knowledgelevel: 0
     },
     {
         id: "almeja",
         category: "uncategorized",
-        spanish: "Una almeja ",
-        english: " a clam",
+        term: "Una almeja ",
+        definition: " a clam",
         knowledgelevel: 0
     },
     {
         id: "ba",
         category: "uncategorized",
-        spanish: "Una bala ",
-        english: " a bullet",
+        term: "Una bala ",
+        definition: " a bullet",
         knowledgelevel: 0
     },
     {
         id: "brúju",
         category: "uncategorized",
-        spanish: "Una brújula ",
-        english: " a compass",
+        term: "Una brújula ",
+        definition: " a compass",
         knowledgelevel: 0
     },
     {
         id: "canasta",
         category: "uncategorized",
-        spanish: "una canasta ",
-        english: " a basket",
+        term: "una canasta ",
+        definition: " a basket",
         knowledgelevel: 0
     },
     {
         id: "cancha",
         category: "uncategorized",
-        spanish: "Una cancha ",
-        english: " a court,  for sports or judging people",
+        term: "Una cancha ",
+        definition: " a court,  for sports or judging people",
         knowledgelevel: 0
     },
     {
         id: "casualidad",
         category: "uncategorized",
-        spanish: "Una casualidad ",
-        english: " a chance,  una oportunidad",
+        term: "Una casualidad ",
+        definition: " a chance,  una oportunidad",
         knowledgelevel: 0
     },
     {
         id: "colina",
         category: "uncategorized",
-        spanish: "Una colina ",
-        english: " a hill",
+        term: "Una colina ",
+        definition: " a hill",
         knowledgelevel: 0
     },
     {
         id: "cucharadita",
         category: "uncategorized",
-        spanish: "Una cucharadita ",
-        english: " a teaspoonful",
+        term: "Una cucharadita ",
+        definition: " a teaspoonful",
         knowledgelevel: 0
     },
     {
         id: "destreza",
         category: "uncategorized",
-        spanish: "Una destreza ",
-        english: " skill",
+        term: "Una destreza ",
+        definition: " skill",
         knowledgelevel: 0
     },
     {
         id: "escoba",
         category: "uncategorized",
-        spanish: "Una escoba ",
-        english: " a broom",
+        term: "Una escoba ",
+        definition: " a broom",
         knowledgelevel: 0
     },
     {
         id: "escuadril",
         category: "uncategorized",
-        spanish: "Una Escuadrilla ",
-        english: " a squadron",
+        term: "Una Escuadrilla ",
+        definition: " a squadron",
         knowledgelevel: 0
     },
     {
         id: "esquina",
         category: "uncategorized",
-        spanish: "Una esquina ",
-        english: " a corner",
+        term: "Una esquina ",
+        definition: " a corner",
         knowledgelevel: 0
     },
     {
         id: "fort",
         category: "uncategorized",
-        spanish: "Una fortuna ",
-        english: " a fortune",
+        term: "Una fortuna ",
+        definition: " a fortune",
         knowledgelevel: 0
     },
     {
         id: "gorrión",
         category: "uncategorized",
-        spanish: "Una gorrión ",
-        english: " a sparrow",
+        term: "Una gorrión ",
+        definition: " a sparrow",
         knowledgelevel: 0
     },
     {
         id: "jugada",
         category: "uncategorized",
-        spanish: "Una Jugada ",
-        english: " a move",
+        term: "Una Jugada ",
+        definition: " a move",
         knowledgelevel: 0
     },
     {
         id: "juguetería",
         category: "uncategorized",
-        spanish: "Una Juguetería ",
-        english: " a toy store",
+        term: "Una Juguetería ",
+        definition: " a toy store",
         knowledgelevel: 0
     },
     {
         id: "ladera",
         category: "uncategorized",
-        spanish: "Una ladera ",
-        english: " a hillside",
+        term: "Una ladera ",
+        definition: " a hillside",
         knowledgelevel: 0
     },
     {
         id: "lona",
         category: "uncategorized",
-        spanish: "Una lona ",
-        english: " a tarp",
+        term: "Una lona ",
+        definition: " a tarp",
         knowledgelevel: 0
     },
     {
         id: "maldición",
         category: "uncategorized",
-        spanish: "Una maldición ",
-        english: " a curse",
+        term: "Una maldición ",
+        definition: " a curse",
         knowledgelevel: 0
     },
     {
         id: "mejoría",
         category: "uncategorized",
-        spanish: "Una mejoría ",
-        english: " an improvement",
+        term: "Una mejoría ",
+        definition: " an improvement",
         knowledgelevel: 0
     },
     {
         id: "palmadita",
         category: "uncategorized",
-        spanish: "Una palmadita ",
-        english: " a pat (like a pat on the back with the palm of one’s hand)",
+        term: "Una palmadita ",
+        definition: " a pat (like a pat on the back with the palm of one’s hand)",
         knowledgelevel: 0
     },
     {
         id: "pantal",
         category: "uncategorized",
-        spanish: "Una pantalla ",
-        english: " a screen",
+        term: "Una pantalla ",
+        definition: " a screen",
         knowledgelevel: 0
     },
     {
         id: "pantera",
         category: "uncategorized",
-        spanish: "Una pantera ",
-        english: " a panther",
+        term: "Una pantera ",
+        definition: " a panther",
         knowledgelevel: 0
     },
     {
         id: "patineta",
         category: "uncategorized",
-        spanish: "Una patineta ",
-        english: " a skateboard",
+        term: "Una patineta ",
+        definition: " a skateboard",
         knowledgelevel: 0
     },
     {
         id: "pizarra",
         category: "uncategorized",
-        spanish: "Una pizarra ",
-        english: " a board (like a blackboard)",
+        term: "Una pizarra ",
+        definition: " a board (like a blackboard)",
         knowledgelevel: 0
     },
     {
         id: "premiacion",
         category: "uncategorized",
-        spanish: "una premiacion ",
-        english: " an award",
+        term: "una premiacion ",
+        definition: " an award",
         knowledgelevel: 0
     },
     {
         id: "probadita",
         category: "uncategorized",
-        spanish: "Una probadita ",
-        english: " a taste",
+        term: "Una probadita ",
+        definition: " a taste",
         knowledgelevel: 0
     },
     {
         id: "propina",
         category: "uncategorized",
-        spanish: "Una propina ",
-        english: " a tip",
+        term: "Una propina ",
+        definition: " a tip",
         knowledgelevel: 0
     },
     {
         id: "púa",
         category: "uncategorized",
-        spanish: "Una Púa ",
-        english: " a spike",
+        term: "Una Púa ",
+        definition: " a spike",
         knowledgelevel: 0
     },
     {
         id: "recompense",
         category: "uncategorized",
-        spanish: "Una recompense ",
-        english: " a reward",
+        term: "Una recompense ",
+        definition: " a reward",
         knowledgelevel: 0
     },
     {
         id: "sábana",
         category: "uncategorized",
-        spanish: "Una sábana ",
-        english: " a sheet",
+        term: "Una sábana ",
+        definition: " a sheet",
         knowledgelevel: 0
     },
     {
         id: "soga",
         category: "uncategorized",
-        spanish: "una Soga ",
-        english: " a rope",
+        term: "una Soga ",
+        definition: " a rope",
         knowledgelevel: 0
     },
     {
         id: "sustancia",
         category: "uncategorized",
-        spanish: "Una sustancia ",
-        english: " a substance",
+        term: "Una sustancia ",
+        definition: " a substance",
         knowledgelevel: 0
     },
     {
         id: "tapa",
         category: "uncategorized",
-        spanish: "Una tapa ",
-        english: " a lid",
+        term: "Una tapa ",
+        definition: " a lid",
         knowledgelevel: 0
     },
     {
         id: "tarima",
         category: "uncategorized",
-        spanish: "Una tarima ",
-        english: " a platform",
+        term: "Una tarima ",
+        definition: " a platform",
         knowledgelevel: 0
     },
     {
         id: "tira",
         category: "uncategorized",
-        spanish: "Una tira ",
-        english: " a strip",
+        term: "Una tira ",
+        definition: " a strip",
         knowledgelevel: 0
     },
     {
         id: "tonta",
         category: "uncategorized",
-        spanish: "Una tonta ",
-        english: " a fool",
+        term: "Una tonta ",
+        definition: " a fool",
         knowledgelevel: 0
     },
     {
         id: "tubería",
         category: "uncategorized",
-        spanish: "Una tubería ",
-        english: " a pipe",
+        term: "Una tubería ",
+        definition: " a pipe",
         knowledgelevel: 0
     },
     {
         id: "vainil",
         category: "uncategorized",
-        spanish: "Vainilla ",
-        english: " vanilla",
+        term: "Vainilla ",
+        definition: " vanilla",
         knowledgelevel: 0
     },
     {
         id: "varias_veces",
         category: "uncategorized",
-        spanish: "Varias veces ",
-        english: " repeatedly",
+        term: "Varias veces ",
+        definition: " repeatedly",
         knowledgelevel: 0
     },
     {
         id: "vaya!",
         category: "uncategorized",
-        spanish: "Vaya! ",
-        english: " oh!",
+        term: "Vaya! ",
+        definition: " oh!",
         knowledgelevel: 0
     },
     {
         id: "veloz",
         category: "uncategorized",
-        spanish: "Veloz (adj) ",
-        english: " fast",
+        term: "Veloz (adj) ",
+        definition: " fast",
         knowledgelevel: 0
     },
     {
         id: "vestido_de_novia",
         category: "uncategorized",
-        spanish: "Vestido de novia ",
-        english: " wedding dress",
+        term: "Vestido de novia ",
+        definition: " wedding dress",
         knowledgelevel: 0
     },
     {
         id: "volver_a_guardar",
         category: "uncategorized",
-        spanish: "Volver a guardar ",
-        english: " save again",
+        term: "Volver a guardar ",
+        definition: " save again",
         knowledgelevel: 0
     },
     {
         id: "ya_sea_que",
         category: "uncategorized",
-        spanish: "Ya sea que ",
-        english: " whether",
+        term: "Ya sea que ",
+        definition: " whether",
         knowledgelevel: 0
     },
     {
         id: "abandonar",
         category: "verbs",
-        spanish: "abandonar",
-        english: "to abandon, to leave",
+        term: "abandonar",
+        definition: "to abandon, to leave",
         knowledgelevel: 0
     },
     {
         id: "abrir",
         category: "verbs",
-        spanish: "abrir",
-        english: "to open",
+        term: "abrir",
+        definition: "to open",
         knowledgelevel: 0
     },
     {
         id: "acabar",
         category: "verbs",
-        spanish: "acabar",
-        english: "to finish, to end, to complete",
+        term: "acabar",
+        definition: "to finish, to end, to complete",
         knowledgelevel: 0
     },
     {
         id: "aceptar",
         category: "verbs",
-        spanish: "aceptar",
-        english: "to accept",
+        term: "aceptar",
+        definition: "to accept",
         knowledgelevel: 0
     },
     {
         id: "acercar",
         category: "verbs",
-        spanish: "acercar",
-        english: "to bring closer",
+        term: "acercar",
+        definition: "to bring closer",
         knowledgelevel: 0
     },
     {
         id: "acercarse",
         category: "verbs",
-        spanish: "acercarse",
-        english: "to approach (oneself)",
+        term: "acercarse",
+        definition: "to approach (oneself)",
         knowledgelevel: 0
     },
     {
         id: "acompañar",
         category: "verbs",
-        spanish: "acompañar",
-        english: "to accompany",
+        term: "acompañar",
+        definition: "to accompany",
         knowledgelevel: 0
     },
     {
         id: "aconsejar",
         category: "verbs",
-        spanish: "aconsejar",
-        english: "to advise, to suggest, to counsel",
+        term: "aconsejar",
+        definition: "to advise, to suggest, to counsel",
         knowledgelevel: 0
     },
     {
         id: "acordar",
         category: "verbs",
-        spanish: "acordar",
-        english: "to agree, to agree on or upon",
+        term: "acordar",
+        definition: "to agree, to agree on or upon",
         knowledgelevel: 0
     },
     {
         id: "acordarse",
         category: "verbs",
-        spanish: "acordarse",
-        english: "to remember",
+        term: "acordarse",
+        definition: "to remember",
         knowledgelevel: 0
     },
     {
         id: "acostar",
         category: "verbs",
-        spanish: "acostar",
-        english: "to put to bed, to lay down",
+        term: "acostar",
+        definition: "to put to bed, to lay down",
         knowledgelevel: 0
     },
     {
         id: "acostarse",
         category: "verbs",
-        spanish: "acostarse",
-        english: "to go to bed (oneself), to lie down (oneself)",
+        term: "acostarse",
+        definition: "to go to bed (oneself), to lie down (oneself)",
         knowledgelevel: 0
     },
     {
         id: "actuar",
         category: "verbs",
-        spanish: "actuar",
-        english: "to act, to perform",
+        term: "actuar",
+        definition: "to act, to perform",
         knowledgelevel: 0
     },
     {
         id: "admirar",
         category: "verbs",
-        spanish: "admirar",
-        english: "to admire",
+        term: "admirar",
+        definition: "to admire",
         knowledgelevel: 0
     },
     {
         id: "admitir",
         category: "verbs",
-        spanish: "admitir",
-        english: "to admit",
+        term: "admitir",
+        definition: "to admit",
         knowledgelevel: 0
     },
     {
         id: "adoptar",
         category: "verbs",
-        spanish: "adoptar",
-        english: "to adopt",
+        term: "adoptar",
+        definition: "to adopt",
         knowledgelevel: 0
     },
     {
         id: "adquirir",
         category: "verbs",
-        spanish: "adquirir",
-        english: "to acquire, to purchase",
+        term: "adquirir",
+        definition: "to acquire, to purchase",
         knowledgelevel: 0
     },
     {
         id: "ahorrar",
         category: "verbs",
-        spanish: "ahorrar",
-        english: "to save (money), to spare",
+        term: "ahorrar",
+        definition: "to save (money), to spare",
         knowledgelevel: 0
     },
     {
         id: "alcanzar",
         category: "verbs",
-        spanish: "alcanzar",
-        english: "to reach, to attain, to achieve, to accomplish",
+        term: "alcanzar",
+        definition: "to reach, to attain, to achieve, to accomplish",
         knowledgelevel: 0
     },
     {
         id: "almorzar",
         category: "verbs",
-        spanish: "almorzar",
-        english: "to lunch, to eat lunch",
+        term: "almorzar",
+        definition: "to lunch, to eat lunch",
         knowledgelevel: 0
     },
     {
         id: "alquilar",
         category: "verbs",
-        spanish: "alquilar",
-        english: "to rent, to hire",
+        term: "alquilar",
+        definition: "to rent, to hire",
         knowledgelevel: 0
     },
     {
         id: "amar",
         category: "verbs",
-        spanish: "amar",
-        english: "to love",
+        term: "amar",
+        definition: "to love",
         knowledgelevel: 0
     },
     {
         id: "amenazar",
         category: "verbs",
-        spanish: "amenazar",
-        english: "to threaten, to menace",
+        term: "amenazar",
+        definition: "to threaten, to menace",
         knowledgelevel: 0
     },
     {
         id: "andar",
         category: "verbs",
-        spanish: "andar",
-        english: "to walk, to go, to go around",
+        term: "andar",
+        definition: "to walk, to go, to go around",
         knowledgelevel: 0
     },
     {
         id: "anunciar",
         category: "verbs",
-        spanish: "anunciar",
-        english: "to announce, to advertise",
+        term: "anunciar",
+        definition: "to announce, to advertise",
         knowledgelevel: 0
     },
     {
         id: "apagar",
         category: "verbs",
-        spanish: "apagar",
-        english: "to turn off, to extinguish",
+        term: "apagar",
+        definition: "to turn off, to extinguish",
         knowledgelevel: 0
     },
     {
         id: "aparecer",
         category: "verbs",
-        spanish: "aparecer",
-        english: "to appear",
+        term: "aparecer",
+        definition: "to appear",
         knowledgelevel: 0
     },
     {
         id: "aplicar",
         category: "verbs",
-        spanish: "aplicar",
-        english: "to apply",
+        term: "aplicar",
+        definition: "to apply",
         knowledgelevel: 0
     },
     {
         id: "apoyar",
         category: "verbs",
-        spanish: "apoyar",
-        english: "to support",
+        term: "apoyar",
+        definition: "to support",
         knowledgelevel: 0
     },
     {
         id: "aprender",
         category: "verbs",
-        spanish: "aprender",
-        english: "to learn",
+        term: "aprender",
+        definition: "to learn",
         knowledgelevel: 0
     },
     {
         id: "apretar",
         category: "verbs",
-        spanish: "apretar",
-        english: "to tighten",
+        term: "apretar",
+        definition: "to tighten",
         knowledgelevel: 0
     },
     {
         id: "aprovechar",
         category: "verbs",
-        spanish: "aprovechar",
-        english: "to take advantage of",
+        term: "aprovechar",
+        definition: "to take advantage of",
         knowledgelevel: 0
     },
     {
         id: "arreglar",
         category: "verbs",
-        spanish: "arreglar",
-        english: "to fix, to mend, to arrange",
+        term: "arreglar",
+        definition: "to fix, to mend, to arrange",
         knowledgelevel: 0
     },
     {
         id: "arreglarse",
         category: "verbs",
-        spanish: "arreglarse",
-        english: "to get ready",
+        term: "arreglarse",
+        definition: "to get ready",
         knowledgelevel: 0
     },
     {
         id: "asegurar",
         category: "verbs",
-        spanish: "asegurar",
-        english: "to ensure, to secure, to insure",
+        term: "asegurar",
+        definition: "to ensure, to secure, to insure",
         knowledgelevel: 0
     },
     {
         id: "asegurarse",
         category: "verbs",
-        spanish: "asegurarse",
-        english: "to ensure, to be sure",
+        term: "asegurarse",
+        definition: "to ensure, to be sure",
         knowledgelevel: 0
     },
     {
         id: "asistir",
         category: "verbs",
-        spanish: "asistir",
-        english: "to assist, to attend",
+        term: "asistir",
+        definition: "to assist, to attend",
         knowledgelevel: 0
     },
     {
         id: "atender",
         category: "verbs",
-        spanish: "atender",
-        english: "to attend to, to serve, to tend to",
+        term: "atender",
+        definition: "to attend to, to serve, to tend to",
         knowledgelevel: 0
     },
     {
         id: "aumentar",
         category: "verbs",
-        spanish: "aumentar",
-        english: "to increase, to enlarge",
+        term: "aumentar",
+        definition: "to increase, to enlarge",
         knowledgelevel: 0
     },
     {
         id: "avanzar",
         category: "verbs",
-        spanish: "avanzar",
-        english: "to advance, to proceed, to move",
+        term: "avanzar",
+        definition: "to advance, to proceed, to move",
         knowledgelevel: 0
     },
     {
         id: "averiguar",
         category: "verbs",
-        spanish: "averiguar",
-        english: "to find out, to ascertain",
+        term: "averiguar",
+        definition: "to find out, to ascertain",
         knowledgelevel: 0
     },
     {
         id: "ayudar",
         category: "verbs",
-        spanish: "ayudar",
-        english: "to help, to assist",
+        term: "ayudar",
+        definition: "to help, to assist",
         knowledgelevel: 0
     },
     {
         id: "bailar",
         category: "verbs",
-        spanish: "bailar",
-        english: "to dance",
+        term: "bailar",
+        definition: "to dance",
         knowledgelevel: 0
     },
     {
         id: "bajar",
         category: "verbs",
-        spanish: "bajar",
-        english: "to go down, to lower, to bring down",
+        term: "bajar",
+        definition: "to go down, to lower, to bring down",
         knowledgelevel: 0
     },
     {
         id: "beber",
         category: "verbs",
-        spanish: "beber",
-        english: "to drink",
+        term: "beber",
+        definition: "to drink",
         knowledgelevel: 0
     },
     {
         id: "buscar",
         category: "verbs",
-        spanish: "buscar",
-        english: "to search (for), to look (for)",
+        term: "buscar",
+        definition: "to search (for), to look (for)",
         knowledgelevel: 0
     },
     {
         id: "caber",
         category: "verbs",
-        spanish: "caber",
-        english: "to fit",
+        term: "caber",
+        definition: "to fit",
         knowledgelevel: 0
     },
     {
         id: "caer",
         category: "verbs",
-        spanish: "caer",
-        english: "to fall, to fall down",
+        term: "caer",
+        definition: "to fall, to fall down",
         knowledgelevel: 0
     },
     {
         id: "caerse",
         category: "verbs",
-        spanish: "caerse",
-        english: "to fall, to fall down",
+        term: "caerse",
+        definition: "to fall, to fall down",
         knowledgelevel: 0
     },
     {
         id: "calentar",
         category: "verbs",
-        spanish: "calentar",
-        english: "to warm (up), to heat (up)",
+        term: "calentar",
+        definition: "to warm (up), to heat (up)",
         knowledgelevel: 0
     },
     {
         id: "calentarse",
         category: "verbs",
-        spanish: "calentarse",
-        english: "to heat (oneself)",
+        term: "calentarse",
+        definition: "to heat (oneself)",
         knowledgelevel: 0
     },
     {
         id: "cambiar",
         category: "verbs",
-        spanish: "cambiar",
-        english: "to change",
+        term: "cambiar",
+        definition: "to change",
         knowledgelevel: 0
     },
     {
         id: "cambiarse",
         category: "verbs",
-        spanish: "cambiarse",
-        english: "to change (clothes)",
+        term: "cambiarse",
+        definition: "to change (clothes)",
         knowledgelevel: 0
     },
     {
         id: "caminar",
         category: "verbs",
-        spanish: "caminar",
-        english: "to walk",
+        term: "caminar",
+        definition: "to walk",
         knowledgelevel: 0
     },
     {
         id: "cancelar",
         category: "verbs",
-        spanish: "cancelar",
-        english: "to cancel",
+        term: "cancelar",
+        definition: "to cancel",
         knowledgelevel: 0
     },
     {
         id: "cantar",
         category: "verbs",
-        spanish: "cantar",
-        english: "to sing",
+        term: "cantar",
+        definition: "to sing",
         knowledgelevel: 0
     },
     {
         id: "casarse",
         category: "verbs",
-        spanish: "casarse",
-        english: "to marry",
+        term: "casarse",
+        definition: "to marry",
         knowledgelevel: 0
     },
     {
         id: "celebrar",
         category: "verbs",
-        spanish: "celebrar",
-        english: "to celebrate, to hold (an event), to put on (an event)",
+        term: "celebrar",
+        definition: "to celebrate, to hold (an event), to put on (an event)",
         knowledgelevel: 0
     },
     {
         id: "celebrarse",
         category: "verbs",
-        spanish: "celebrarse",
-        english: "to be celebrated, to take place",
+        term: "celebrarse",
+        definition: "to be celebrated, to take place",
         knowledgelevel: 0
     },
     {
         id: "cenar",
         category: "verbs",
-        spanish: "cenar",
-        english: "to dine",
+        term: "cenar",
+        definition: "to dine",
         knowledgelevel: 0
     },
     {
         id: "cepillar",
         category: "verbs",
-        spanish: "cepillar",
-        english: "to brush",
+        term: "cepillar",
+        definition: "to brush",
         knowledgelevel: 0
     },
     {
         id: "cepillarse",
         category: "verbs",
-        spanish: "cepillarse",
-        english: "to brush (oneself)",
+        term: "cepillarse",
+        definition: "to brush (oneself)",
         knowledgelevel: 0
     },
     {
         id: "cerrar",
         category: "verbs",
-        spanish: "cerrar",
-        english: "to close, to shut, to lock, to seal",
+        term: "cerrar",
+        definition: "to close, to shut, to lock, to seal",
         knowledgelevel: 0
     },
     {
         id: "cocinar",
         category: "verbs",
-        spanish: "cocinar",
-        english: "to cook",
+        term: "cocinar",
+        definition: "to cook",
         knowledgelevel: 0
     },
     {
         id: "coger",
         category: "verbs",
-        spanish: "coger",
-        english: "to take, to catch, to get, to pick",
+        term: "coger",
+        definition: "to take, to catch, to get, to pick",
         knowledgelevel: 0
     },
     {
         id: "colocar",
         category: "verbs",
-        spanish: "colocar",
-        english: "to place, to locate, to put",
+        term: "colocar",
+        definition: "to place, to locate, to put",
         knowledgelevel: 0
     },
     {
         id: "comenzar",
         category: "verbs",
-        spanish: "comenzar",
-        english: "to start, to commence, to begin",
+        term: "comenzar",
+        definition: "to start, to commence, to begin",
         knowledgelevel: 0
     },
     {
         id: "comer",
         category: "verbs",
-        spanish: "comer",
-        english: "to eat",
+        term: "comer",
+        definition: "to eat",
         knowledgelevel: 0
     },
     {
         id: "comerse",
         category: "verbs",
-        spanish: "comerse",
-        english: "to consume, to eat away",
+        term: "comerse",
+        definition: "to consume, to eat away",
         knowledgelevel: 0
     },
     {
         id: "compartir",
         category: "verbs",
-        spanish: "compartir",
-        english: "to share",
+        term: "compartir",
+        definition: "to share",
         knowledgelevel: 0
     },
     {
         id: "comprar",
         category: "verbs",
-        spanish: "comprar",
-        english: "to buy",
+        term: "comprar",
+        definition: "to buy",
         knowledgelevel: 0
     },
     {
         id: "comprender",
         category: "verbs",
-        spanish: "comprender",
-        english: "to comprehend, to understand",
+        term: "comprender",
+        definition: "to comprehend, to understand",
         knowledgelevel: 0
     },
     {
         id: "comprobar",
         category: "verbs",
-        spanish: "comprobar",
-        english: "to check, to test",
+        term: "comprobar",
+        definition: "to check, to test",
         knowledgelevel: 0
     },
     {
         id: "concluir",
         category: "verbs",
-        spanish: "concluir",
-        english: "to conclude",
+        term: "concluir",
+        definition: "to conclude",
         knowledgelevel: 0
     },
     {
         id: "conocer",
         category: "verbs",
-        spanish: "conocer",
-        english: "to know (people, places)",
+        term: "conocer",
+        definition: "to know (people, places)",
         knowledgelevel: 0
     },
     {
         id: "conocerse",
         category: "verbs",
-        spanish: "conocerse",
-        english: "to know (oneself), to meet",
+        term: "conocerse",
+        definition: "to know (oneself), to meet",
         knowledgelevel: 0
     },
     {
         id: "conseguir",
         category: "verbs",
-        spanish: "conseguir",
-        english: "to get, to obtain",
+        term: "conseguir",
+        definition: "to get, to obtain",
         knowledgelevel: 0
     },
     {
         id: "consentir",
         category: "verbs",
-        spanish: "consentir",
-        english: "to consent, to accept, to agree",
+        term: "consentir",
+        definition: "to consent, to accept, to agree",
         knowledgelevel: 0
     },
     {
         id: "conservar",
         category: "verbs",
-        spanish: "conservar",
-        english: "to keep, to retain, to conserve",
+        term: "conservar",
+        definition: "to keep, to retain, to conserve",
         knowledgelevel: 0
     },
     {
         id: "considerar",
         category: "verbs",
-        spanish: "considerar",
-        english: "to consider",
+        term: "considerar",
+        definition: "to consider",
         knowledgelevel: 0
     },
     {
         id: "consistir",
         category: "verbs",
-        spanish: "consistir",
-        english: "to consist",
+        term: "consistir",
+        definition: "to consist",
         knowledgelevel: 0
     },
     {
         id: "consolar",
         category: "verbs",
-        spanish: "consolar",
-        english: "to comfort",
+        term: "consolar",
+        definition: "to comfort",
         knowledgelevel: 0
     },
     {
         id: "consolidar",
         category: "verbs",
-        spanish: "consolidar",
-        english: "to consolidate",
+        term: "consolidar",
+        definition: "to consolidate",
         knowledgelevel: 0
     },
     {
         id: "construir",
         category: "verbs",
-        spanish: "construir",
-        english: "to build, to construct",
+        term: "construir",
+        definition: "to build, to construct",
         knowledgelevel: 0
     },
     {
         id: "consumir",
         category: "verbs",
-        spanish: "consumir",
-        english: "to consume",
+        term: "consumir",
+        definition: "to consume",
         knowledgelevel: 0
     },
     {
         id: "contactar",
         category: "verbs",
-        spanish: "contactar",
-        english: "to contact",
+        term: "contactar",
+        definition: "to contact",
         knowledgelevel: 0
     },
     {
         id: "contagiar",
         category: "verbs",
-        spanish: "contagiar",
-        english: "to transmit, to spread (a virus)",
+        term: "contagiar",
+        definition: "to transmit, to spread (a virus)",
         knowledgelevel: 0
     },
     {
         id: "contar",
         category: "verbs",
-        spanish: "contar",
-        english: "to count, to tell",
+        term: "contar",
+        definition: "to count, to tell",
         knowledgelevel: 0
     },
     {
         id: "contener",
         category: "verbs",
-        spanish: "contener",
-        english: "to contain, to hold, to include",
+        term: "contener",
+        definition: "to contain, to hold, to include",
         knowledgelevel: 0
     },
     {
         id: "contestar",
         category: "verbs",
-        spanish: "contestar",
-        english: "to answer, to reply",
+        term: "contestar",
+        definition: "to answer, to reply",
         knowledgelevel: 0
     },
     {
         id: "continuar",
         category: "verbs",
-        spanish: "continuar",
-        english: "to continue",
+        term: "continuar",
+        definition: "to continue",
         knowledgelevel: 0
     },
     {
         id: "convertir",
         category: "verbs",
-        spanish: "convertir",
-        english: "to convert",
+        term: "convertir",
+        definition: "to convert",
         knowledgelevel: 0
     },
     {
         id: "copiar",
         category: "verbs",
-        spanish: "copiar",
-        english: "to copy",
+        term: "copiar",
+        definition: "to copy",
         knowledgelevel: 0
     },
     {
         id: "corregir",
         category: "verbs",
-        spanish: "corregir",
-        english: "to correct, to mend",
+        term: "corregir",
+        definition: "to correct, to mend",
         knowledgelevel: 0
     },
     {
         id: "correr",
         category: "verbs",
-        spanish: "correr",
-        english: "to run, to race",
+        term: "correr",
+        definition: "to run, to race",
         knowledgelevel: 0
     },
     {
         id: "corresponder",
         category: "verbs",
-        spanish: "corresponder",
-        english: "to correspond",
+        term: "corresponder",
+        definition: "to correspond",
         knowledgelevel: 0
     },
     {
         id: "cortar",
         category: "verbs",
-        spanish: "cortar",
-        english: "to cut",
+        term: "cortar",
+        definition: "to cut",
         knowledgelevel: 0
     },
     {
         id: "coser",
         category: "verbs",
-        spanish: "coser",
-        english: "to sew, to stitch",
+        term: "coser",
+        definition: "to sew, to stitch",
         knowledgelevel: 0
     },
     {
         id: "costar",
         category: "verbs",
-        spanish: "costar",
-        english: "to cost",
+        term: "costar",
+        definition: "to cost",
         knowledgelevel: 0
     },
     {
         id: "crear",
         category: "verbs",
-        spanish: "crear",
-        english: "to create",
+        term: "crear",
+        definition: "to create",
         knowledgelevel: 0
     },
     {
         id: "crecer",
         category: "verbs",
-        spanish: "crecer",
-        english: "to grow up, to rise, to increase",
+        term: "crecer",
+        definition: "to grow up, to rise, to increase",
         knowledgelevel: 0
     },
     {
         id: "creer",
         category: "verbs",
-        spanish: "creer",
-        english: "to believe",
+        term: "creer",
+        definition: "to believe",
         knowledgelevel: 0
     },
     {
         id: "criar",
         category: "verbs",
-        spanish: "criar",
-        english: "to raise, to bring up",
+        term: "criar",
+        definition: "to raise, to bring up",
         knowledgelevel: 0
     },
     {
         id: "criarse",
         category: "verbs",
-        spanish: "criarse",
-        english: "to raise, to bring up",
+        term: "criarse",
+        definition: "to raise, to bring up",
         knowledgelevel: 0
     },
     {
         id: "cruzar",
         category: "verbs",
-        spanish: "cruzar",
-        english: "to cross, to walk across",
+        term: "cruzar",
+        definition: "to cross, to walk across",
         knowledgelevel: 0
     },
     {
         id: "cubrir",
         category: "verbs",
-        spanish: "cubrir",
-        english: "to cover",
+        term: "cubrir",
+        definition: "to cover",
         knowledgelevel: 0
     },
     {
         id: "cuidar",
         category: "verbs",
-        spanish: "cuidar",
-        english: "to look after, to care",
+        term: "cuidar",
+        definition: "to look after, to care",
         knowledgelevel: 0
     },
     {
         id: "cuidarse",
         category: "verbs",
-        spanish: "cuidarse",
-        english: "to look after (oneself)",
+        term: "cuidarse",
+        definition: "to look after (oneself)",
         knowledgelevel: 0
     },
     {
         id: "cumplir",
         category: "verbs",
-        spanish: "cumplir",
-        english: "to carry out, to fulfil",
+        term: "cumplir",
+        definition: "to carry out, to fulfil",
         knowledgelevel: 0
     },
     {
         id: "dar",
         category: "verbs",
-        spanish: "dar",
-        english: "to give",
+        term: "dar",
+        definition: "to give",
         knowledgelevel: 0
     },
     {
         id: "darse",
         category: "verbs",
-        spanish: "darse",
-        english: "to give (oneself)",
+        term: "darse",
+        definition: "to give (oneself)",
         knowledgelevel: 0
     },
     {
         id: "deber",
         category: "verbs",
-        spanish: "deber",
-        english: "to owe, to must, to should",
+        term: "deber",
+        definition: "to owe, to must, to should",
         knowledgelevel: 0
     },
     {
         id: "decidir",
         category: "verbs",
-        spanish: "decidir",
-        english: "to decide",
+        term: "decidir",
+        definition: "to decide",
         knowledgelevel: 0
     },
     {
         id: "decir",
         category: "verbs",
-        spanish: "decir",
-        english: "to say, to tell",
+        term: "decir",
+        definition: "to say, to tell",
         knowledgelevel: 0
     },
     {
         id: "decirse",
         category: "verbs",
-        spanish: "decirse",
-        english: "to say (to oneself)",
+        term: "decirse",
+        definition: "to say (to oneself)",
         knowledgelevel: 0
     },
     {
         id: "dedicar",
         category: "verbs",
-        spanish: "dedicar",
-        english: "to devote, to dedicate",
+        term: "dedicar",
+        definition: "to devote, to dedicate",
         knowledgelevel: 0
     },
     {
         id: "dedicarse",
         category: "verbs",
-        spanish: "dedicarse",
-        english: "to devote (oneself), to dedicate (oneself)",
+        term: "dedicarse",
+        definition: "to devote (oneself), to dedicate (oneself)",
         knowledgelevel: 0
     },
     {
         id: "defender",
         category: "verbs",
-        spanish: "defender",
-        english: "to defend",
+        term: "defender",
+        definition: "to defend",
         knowledgelevel: 0
     },
     {
         id: "defenderse",
         category: "verbs",
-        spanish: "defenderse",
-        english: "to defend (oneself)",
+        term: "defenderse",
+        definition: "to defend (oneself)",
         knowledgelevel: 0
     },
     {
         id: "dejar",
         category: "verbs",
-        spanish: "dejar",
-        english: "to leave, to let, to allow",
+        term: "dejar",
+        definition: "to leave, to let, to allow",
         knowledgelevel: 0
     },
     {
         id: "dejarse",
         category: "verbs",
-        spanish: "dejarse",
-        english: "to let (oneself), to let oneself go",
+        term: "dejarse",
+        definition: "to let (oneself), to let oneself go",
         knowledgelevel: 0
     },
     {
         id: "demandar",
         category: "verbs",
-        spanish: "demandar",
-        english: "to demand",
+        term: "demandar",
+        definition: "to demand",
         knowledgelevel: 0
     },
     {
         id: "demostrar",
         category: "verbs",
-        spanish: "demostrar",
-        english: "to demonstrate, to show, to prove",
+        term: "demostrar",
+        definition: "to demonstrate, to show, to prove",
         knowledgelevel: 0
     },
     {
         id: "depender",
         category: "verbs",
-        spanish: "depender",
-        english: "to depend",
+        term: "depender",
+        definition: "to depend",
         knowledgelevel: 0
     },
     {
         id: "desaparecer",
         category: "verbs",
-        spanish: "desaparecer",
-        english: "to disappear, to vanish",
+        term: "desaparecer",
+        definition: "to disappear, to vanish",
         knowledgelevel: 0
     },
     {
         id: "desarrollar",
         category: "verbs",
-        spanish: "desarrollar",
-        english: "to develop",
+        term: "desarrollar",
+        definition: "to develop",
         knowledgelevel: 0
     },
     {
         id: "desarrollarse",
         category: "verbs",
-        spanish: "desarrollarse",
-        english: "to develop (oneself)",
+        term: "desarrollarse",
+        definition: "to develop (oneself)",
         knowledgelevel: 0
     },
     {
         id: "desayunar",
         category: "verbs",
-        spanish: "desayunar",
-        english: "to have breakfast",
+        term: "desayunar",
+        definition: "to have breakfast",
         knowledgelevel: 0
     },
     {
         id: "descansar",
         category: "verbs",
-        spanish: "descansar",
-        english: "to rest",
+        term: "descansar",
+        definition: "to rest",
         knowledgelevel: 0
     },
     {
         id: "descargar",
         category: "verbs",
-        spanish: "descargar",
-        english: "to download",
+        term: "descargar",
+        definition: "to download",
         knowledgelevel: 0
     },
     {
         id: "desconectar",
         category: "verbs",
-        spanish: "desconectar",
-        english: "to disconnect",
+        term: "desconectar",
+        definition: "to disconnect",
         knowledgelevel: 0
     },
     {
         id: "describir",
         category: "verbs",
-        spanish: "describir",
-        english: "to describe",
+        term: "describir",
+        definition: "to describe",
         knowledgelevel: 0
     },
     {
         id: "descubrir",
         category: "verbs",
-        spanish: "descubrir",
-        english: "to discover",
+        term: "descubrir",
+        definition: "to discover",
         knowledgelevel: 0
     },
     {
         id: "desear",
         category: "verbs",
-        spanish: "desear",
-        english: "to wish, to want, to desire",
+        term: "desear",
+        definition: "to wish, to want, to desire",
         knowledgelevel: 0
     },
     {
         id: "despedirse",
         category: "verbs",
-        spanish: "despedirse",
-        english: "to say goodbye",
+        term: "despedirse",
+        definition: "to say goodbye",
         knowledgelevel: 0
     },
     {
         id: "despertar",
         category: "verbs",
-        spanish: "despertar",
-        english: "to wake, to awaken",
+        term: "despertar",
+        definition: "to wake, to awaken",
         knowledgelevel: 0
     },
     {
         id: "despertarse",
         category: "verbs",
-        spanish: "despertarse",
-        english: "to wake (oneself), to awaken (oneself)",
+        term: "despertarse",
+        definition: "to wake (oneself), to awaken (oneself)",
         knowledgelevel: 0
     },
     {
         id: "detener",
         category: "verbs",
-        spanish: "detener",
-        english: "to stop, to arrest, to detain",
+        term: "detener",
+        definition: "to stop, to arrest, to detain",
         knowledgelevel: 0
     },
     {
         id: "detenerse",
         category: "verbs",
-        spanish: "detenerse",
-        english: "to stop, to arrest, to detain",
+        term: "detenerse",
+        definition: "to stop, to arrest, to detain",
         knowledgelevel: 0
     },
     {
         id: "determinar",
         category: "verbs",
-        spanish: "determinar",
-        english: "to determine",
+        term: "determinar",
+        definition: "to determine",
         knowledgelevel: 0
     },
     {
         id: "devolver",
         category: "verbs",
-        spanish: "devolver",
-        english: "to give back, to return (something)",
+        term: "devolver",
+        definition: "to give back, to return (something)",
         knowledgelevel: 0
     },
     {
         id: "dibujar",
         category: "verbs",
-        spanish: "dibujar",
-        english: "to draw",
+        term: "dibujar",
+        definition: "to draw",
         knowledgelevel: 0
     },
     {
         id: "disculpar",
         category: "verbs",
-        spanish: "disculpar",
-        english: "to excuse",
+        term: "disculpar",
+        definition: "to excuse",
         knowledgelevel: 0
     },
     {
         id: "diseñar",
         category: "verbs",
-        spanish: "diseñar",
-        english: "to design",
+        term: "diseñar",
+        definition: "to design",
         knowledgelevel: 0
     },
     {
         id: "disfrutar",
         category: "verbs",
-        spanish: "disfrutar",
-        english: "to enjoy",
+        term: "disfrutar",
+        definition: "to enjoy",
         knowledgelevel: 0
     },
     {
         id: "disponer",
         category: "verbs",
-        spanish: "disponer",
-        english: "to prepare, to get something ready",
+        term: "disponer",
+        definition: "to prepare, to get something ready",
         knowledgelevel: 0
     },
     {
         id: "divertir",
         category: "verbs",
-        spanish: "divertir",
-        english: "to amuse, to entertain",
+        term: "divertir",
+        definition: "to amuse, to entertain",
         knowledgelevel: 0
     },
     {
         id: "divertirse",
         category: "verbs",
-        spanish: "divertirse",
-        english: "to enjoy (oneself), to amuse (oneself), to entertain (oneself)",
+        term: "divertirse",
+        definition: "to enjoy (oneself), to amuse (oneself), to entertain (oneself)",
         knowledgelevel: 0
     },
     {
         id: "dividir",
         category: "verbs",
-        spanish: "dividir",
-        english: "to divide",
+        term: "dividir",
+        definition: "to divide",
         knowledgelevel: 0
     },
     {
         id: "doler",
         category: "verbs",
-        spanish: "doler",
-        english: "to hurt, to ache, to pain",
+        term: "doler",
+        definition: "to hurt, to ache, to pain",
         knowledgelevel: 0
     },
     {
         id: "dormir",
         category: "verbs",
-        spanish: "dormir",
-        english: "to sleep",
+        term: "dormir",
+        definition: "to sleep",
         knowledgelevel: 0
     },
     {
         id: "dormirse",
         category: "verbs",
-        spanish: "dormirse",
-        english: "to sleep",
+        term: "dormirse",
+        definition: "to sleep",
         knowledgelevel: 0
     },
     {
         id: "duchar",
         category: "verbs",
-        spanish: "duchar",
-        english: "to shower (someone), to shower (something)",
+        term: "duchar",
+        definition: "to shower (someone), to shower (something)",
         knowledgelevel: 0
     },
     {
         id: "ducharse",
         category: "verbs",
-        spanish: "ducharse",
-        english: "to shower (oneself)",
+        term: "ducharse",
+        definition: "to shower (oneself)",
         knowledgelevel: 0
     },
     {
         id: "dudar",
         category: "verbs",
-        spanish: "dudar",
-        english: "to doubt",
+        term: "dudar",
+        definition: "to doubt",
         knowledgelevel: 0
     },
     {
         id: "echar",
         category: "verbs",
-        spanish: "echar",
-        english: "to throw, to put, to drop,",
+        term: "echar",
+        definition: "to throw, to put, to drop,",
         knowledgelevel: 0
     },
     {
         id: "echarse",
         category: "verbs",
-        spanish: "echarse",
-        english: "to throw (oneself), to lean, to lie down",
+        term: "echarse",
+        definition: "to throw (oneself), to lean, to lie down",
         knowledgelevel: 0
     },
     {
         id: "educar",
         category: "verbs",
-        spanish: "educar",
-        english: "to educate",
+        term: "educar",
+        definition: "to educate",
         knowledgelevel: 0
     },
     {
         id: "ejercitar",
         category: "verbs",
-        spanish: "ejercitar",
-        english: "to excercise",
+        term: "ejercitar",
+        definition: "to excercise",
         knowledgelevel: 0
     },
     {
         id: "elegir",
         category: "verbs",
-        spanish: "elegir",
-        english: "to choose, to select, to elect",
+        term: "elegir",
+        definition: "to choose, to select, to elect",
         knowledgelevel: 0
     },
     {
         id: "emigrar",
         category: "verbs",
-        spanish: "emigrar",
-        english: "to emigrate",
+        term: "emigrar",
+        definition: "to emigrate",
         knowledgelevel: 0
     },
     {
         id: "empeorar",
         category: "verbs",
-        spanish: "empeorar",
-        english: "to worsen, to deteriorate",
+        term: "empeorar",
+        definition: "to worsen, to deteriorate",
         knowledgelevel: 0
     },
     {
         id: "empezar",
         category: "verbs",
-        spanish: "empezar",
-        english: "to start, to begin",
+        term: "empezar",
+        definition: "to start, to begin",
         knowledgelevel: 0
     },
     {
         id: "emplear",
         category: "verbs",
-        spanish: "emplear",
-        english: "to employ, to use",
+        term: "emplear",
+        definition: "to employ, to use",
         knowledgelevel: 0
     },
     {
         id: "empujar",
         category: "verbs",
-        spanish: "empujar",
-        english: "to push",
+        term: "empujar",
+        definition: "to push",
         knowledgelevel: 0
     },
     {
         id: "encantar",
         category: "verbs",
-        spanish: "encantar",
-        english: "to love, to enchant",
+        term: "encantar",
+        definition: "to love, to enchant",
         knowledgelevel: 0
     },
     {
         id: "encender",
         category: "verbs",
-        spanish: "encender",
-        english: "to turn on, to switch on, to ignite, to light up",
+        term: "encender",
+        definition: "to turn on, to switch on, to ignite, to light up",
         knowledgelevel: 0
     },
     {
         id: "encontrar",
         category: "verbs",
-        spanish: "encontrar",
-        english: "to find",
+        term: "encontrar",
+        definition: "to find",
         knowledgelevel: 0
     },
     {
         id: "encontrarse",
         category: "verbs",
-        spanish: "encontrarse",
-        english: "to find (oneself)",
+        term: "encontrarse",
+        definition: "to find (oneself)",
         knowledgelevel: 0
     },
     {
         id: "engañar",
         category: "verbs",
-        spanish: "engañar",
-        english: "to cheat, to deceive",
+        term: "engañar",
+        definition: "to cheat, to deceive",
         knowledgelevel: 0
     },
     {
         id: "enseñar",
         category: "verbs",
-        spanish: "enseñar",
-        english: "to teach",
+        term: "enseñar",
+        definition: "to teach",
         knowledgelevel: 0
     },
     {
         id: "entender",
         category: "verbs",
-        spanish: "entender",
-        english: "to understand",
+        term: "entender",
+        definition: "to understand",
         knowledgelevel: 0
     },
     {
         id: "entrar",
         category: "verbs",
-        spanish: "entrar",
-        english: "to enter",
+        term: "entrar",
+        definition: "to enter",
         knowledgelevel: 0
     },
     {
         id: "entregar",
         category: "verbs",
-        spanish: "entregar",
-        english: "to deliver, to give, to submit",
+        term: "entregar",
+        definition: "to deliver, to give, to submit",
         knowledgelevel: 0
     },
     {
         id: "entrenar",
         category: "verbs",
-        spanish: "entrenar",
-        english: "to train",
+        term: "entrenar",
+        definition: "to train",
         knowledgelevel: 0
     },
     {
         id: "enviar",
         category: "verbs",
-        spanish: "enviar",
-        english: "to send",
+        term: "enviar",
+        definition: "to send",
         knowledgelevel: 0
     },
     {
         id: "escalar",
         category: "verbs",
-        spanish: "escalar",
-        english: "to climb",
+        term: "escalar",
+        definition: "to climb",
         knowledgelevel: 0
     },
     {
         id: "escoger",
         category: "verbs",
-        spanish: "escoger",
-        english: "to choose, to pick",
+        term: "escoger",
+        definition: "to choose, to pick",
         knowledgelevel: 0
     },
     {
         id: "escoltar",
         category: "verbs",
-        spanish: "escoltar",
-        english: "to escort",
+        term: "escoltar",
+        definition: "to escort",
         knowledgelevel: 0
     },
     {
         id: "esconder",
         category: "verbs",
-        spanish: "esconder",
-        english: "to hide",
+        term: "esconder",
+        definition: "to hide",
         knowledgelevel: 0
     },
     {
         id: "escribir",
         category: "verbs",
-        spanish: "escribir",
-        english: "to write",
+        term: "escribir",
+        definition: "to write",
         knowledgelevel: 0
     },
     {
         id: "escribirse",
         category: "verbs",
-        spanish: "escribirse",
-        english: "to write to each other",
+        term: "escribirse",
+        definition: "to write to each other",
         knowledgelevel: 0
     },
     {
         id: "escuchar",
         category: "verbs",
-        spanish: "escuchar",
-        english: "to listen",
+        term: "escuchar",
+        definition: "to listen",
         knowledgelevel: 0
     },
     {
         id: "esperar",
         category: "verbs",
-        spanish: "esperar",
-        english: "to wait, to hope",
+        term: "esperar",
+        definition: "to wait, to hope",
         knowledgelevel: 0
     },
     {
         id: "establecer",
         category: "verbs",
-        spanish: "establecer",
-        english: "to establish",
+        term: "establecer",
+        definition: "to establish",
         knowledgelevel: 0
     },
     {
         id: "estacionar",
         category: "verbs",
-        spanish: "estacionar",
-        english: "to park",
+        term: "estacionar",
+        definition: "to park",
         knowledgelevel: 0
     },
     {
         id: "estar",
         category: "verbs",
-        spanish: "estar",
-        english: "to be (temporary)",
+        term: "estar",
+        definition: "to be (temporary)",
         knowledgelevel: 0
     },
     {
         id: "estudiar",
         category: "verbs",
-        spanish: "estudiar",
-        english: "to study",
+        term: "estudiar",
+        definition: "to study",
         knowledgelevel: 0
     },
     {
         id: "evacuar",
         category: "verbs",
-        spanish: "evacuar",
-        english: "to evacuate",
+        term: "evacuar",
+        definition: "to evacuate",
         knowledgelevel: 0
     },
     {
         id: "evitar",
         category: "verbs",
-        spanish: "evitar",
-        english: "to avoid, to prevent",
+        term: "evitar",
+        definition: "to avoid, to prevent",
         knowledgelevel: 0
     },
     {
         id: "examinar",
         category: "verbs",
-        spanish: "examinar",
-        english: "to examine",
+        term: "examinar",
+        definition: "to examine",
         knowledgelevel: 0
     },
     {
         id: "excluir",
         category: "verbs",
-        spanish: "excluir",
-        english: "to exclude",
+        term: "excluir",
+        definition: "to exclude",
         knowledgelevel: 0
     },
     {
         id: "exigir",
         category: "verbs",
-        spanish: "exigir",
-        english: "to require, to demand",
+        term: "exigir",
+        definition: "to require, to demand",
         knowledgelevel: 0
     },
     {
         id: "existir",
         category: "verbs",
-        spanish: "existir",
-        english: "to exist",
+        term: "existir",
+        definition: "to exist",
         knowledgelevel: 0
     },
     {
         id: "explicar",
         category: "verbs",
-        spanish: "explicar",
-        english: "to explain",
+        term: "explicar",
+        definition: "to explain",
         knowledgelevel: 0
     },
     {
         id: "expresar",
         category: "verbs",
-        spanish: "expresar",
-        english: "to express, to convey",
+        term: "expresar",
+        definition: "to express, to convey",
         knowledgelevel: 0
     },
     {
         id: "fabricar",
         category: "verbs",
-        spanish: "fabricar",
-        english: "to manufacture, to make",
+        term: "fabricar",
+        definition: "to manufacture, to make",
         knowledgelevel: 0
     },
     {
         id: "faltar",
         category: "verbs",
-        spanish: "faltar",
-        english: "to lack, to fail, to fall short (of)",
+        term: "faltar",
+        definition: "to lack, to fail, to fall short (of)",
         knowledgelevel: 0
     },
     {
         id: "fijar",
         category: "verbs",
-        spanish: "fijar",
-        english: "to pin up, to set, to fix",
+        term: "fijar",
+        definition: "to pin up, to set, to fix",
         knowledgelevel: 0
     },
     {
         id: "fijarse",
         category: "verbs",
-        spanish: "fijarse",
-        english: "to take notice",
+        term: "fijarse",
+        definition: "to take notice",
         knowledgelevel: 0
     },
     {
         id: "firmar",
         category: "verbs",
-        spanish: "firmar",
-        english: "to sign",
+        term: "firmar",
+        definition: "to sign",
         knowledgelevel: 0
     },
     {
         id: "formar",
         category: "verbs",
-        spanish: "formar",
-        english: "to form",
+        term: "formar",
+        definition: "to form",
         knowledgelevel: 0
     },
     {
         id: "fortalecer",
         category: "verbs",
-        spanish: "fortalecer",
-        english: "to strengthen",
+        term: "fortalecer",
+        definition: "to strengthen",
         knowledgelevel: 0
     },
     {
         id: "forzar",
         category: "verbs",
-        spanish: "forzar",
-        english: "to force",
+        term: "forzar",
+        definition: "to force",
         knowledgelevel: 0
     },
     {
         id: "funcionar",
         category: "verbs",
-        spanish: "funcionar",
-        english: "to function, to work",
+        term: "funcionar",
+        definition: "to function, to work",
         knowledgelevel: 0
     },
     {
         id: "ganar",
         category: "verbs",
-        spanish: "ganar",
-        english: "to win, to gain, to earn",
+        term: "ganar",
+        definition: "to win, to gain, to earn",
         knowledgelevel: 0
     },
     {
         id: "garantizar",
         category: "verbs",
-        spanish: "garantizar",
-        english: "to guarantee",
+        term: "garantizar",
+        definition: "to guarantee",
         knowledgelevel: 0
     },
     {
         id: "gastar",
         category: "verbs",
-        spanish: "gastar",
-        english: "to expend",
+        term: "gastar",
+        definition: "to expend",
         knowledgelevel: 0
     },
     {
         id: "gestionar",
         category: "verbs",
-        spanish: "gestionar",
-        english: "to manage",
+        term: "gestionar",
+        definition: "to manage",
         knowledgelevel: 0
     },
     {
         id: "girar",
         category: "verbs",
-        spanish: "girar",
-        english: "to turn",
+        term: "girar",
+        definition: "to turn",
         knowledgelevel: 0
     },
     {
         id: "gritar",
         category: "verbs",
-        spanish: "gritar",
-        english: "to shout, to scream, to yell",
+        term: "gritar",
+        definition: "to shout, to scream, to yell",
         knowledgelevel: 0
     },
     {
         id: "guardar",
         category: "verbs",
-        spanish: "guardar",
-        english: "to save, to keep, to guard, to hold",
+        term: "guardar",
+        definition: "to save, to keep, to guard, to hold",
         knowledgelevel: 0
     },
     {
         id: "gustar",
         category: "verbs",
-        spanish: "gustar",
-        english: "to like, to be pleased by",
+        term: "gustar",
+        definition: "to like, to be pleased by",
         knowledgelevel: 0
     },
     {
         id: "haber",
         category: "verbs",
-        spanish: "haber",
-        english: "to have (auxiliary)",
+        term: "haber",
+        definition: "to have (auxiliary)",
         knowledgelevel: 0
     },
     {
         id: "hablar",
         category: "verbs",
-        spanish: "hablar",
-        english: "to speak, to talk",
+        term: "hablar",
+        definition: "to speak, to talk",
         knowledgelevel: 0
     },
     {
         id: "hacer",
         category: "verbs",
-        spanish: "hacer",
-        english: "to do, to make",
+        term: "hacer",
+        definition: "to do, to make",
         knowledgelevel: 0
     },
     {
         id: "hervir",
         category: "verbs",
-        spanish: "hervir",
-        english: "to boil",
+        term: "hervir",
+        definition: "to boil",
         knowledgelevel: 0
     },
     {
         id: "imaginar",
         category: "verbs",
-        spanish: "imaginar",
-        english: "to imagine",
+        term: "imaginar",
+        definition: "to imagine",
         knowledgelevel: 0
     },
     {
         id: "implementar",
         category: "verbs",
-        spanish: "implementar",
-        english: "to implement",
+        term: "implementar",
+        definition: "to implement",
         knowledgelevel: 0
     },
     {
         id: "implicar",
         category: "verbs",
-        spanish: "implicar",
-        english: "to implicate, to imply",
+        term: "implicar",
+        definition: "to implicate, to imply",
         knowledgelevel: 0
     },
     {
         id: "imponer",
         category: "verbs",
-        spanish: "imponer",
-        english: "to impose",
+        term: "imponer",
+        definition: "to impose",
         knowledgelevel: 0
     },
     {
         id: "importar",
         category: "verbs",
-        spanish: "importar",
-        english: "to import, to matter",
+        term: "importar",
+        definition: "to import, to matter",
         knowledgelevel: 0
     },
     {
         id: "imprimir",
         category: "verbs",
-        spanish: "imprimir",
-        english: "to print",
+        term: "imprimir",
+        definition: "to print",
         knowledgelevel: 0
     },
     {
         id: "inclinar",
         category: "verbs",
-        spanish: "inclinar",
-        english: "to incline",
+        term: "inclinar",
+        definition: "to incline",
         knowledgelevel: 0
     },
     {
         id: "incluir",
         category: "verbs",
-        spanish: "incluir",
-        english: "to include",
+        term: "incluir",
+        definition: "to include",
         knowledgelevel: 0
     },
     {
         id: "indicar",
         category: "verbs",
-        spanish: "indicar",
-        english: "to indicate",
+        term: "indicar",
+        definition: "to indicate",
         knowledgelevel: 0
     },
     {
         id: "infectar",
         category: "verbs",
-        spanish: "infectar",
-        english: "to infect",
+        term: "infectar",
+        definition: "to infect",
         knowledgelevel: 0
     },
     {
         id: "informar",
         category: "verbs",
-        spanish: "informar",
-        english: "to inform, to report",
+        term: "informar",
+        definition: "to inform, to report",
         knowledgelevel: 0
     },
     {
         id: "inhalar",
         category: "verbs",
-        spanish: "inhalar",
-        english: "to breathe in, to inhale",
+        term: "inhalar",
+        definition: "to breathe in, to inhale",
         knowledgelevel: 0
     },
     {
         id: "iniciar",
         category: "verbs",
-        spanish: "iniciar",
-        english: "to start, to initiate",
+        term: "iniciar",
+        definition: "to start, to initiate",
         knowledgelevel: 0
     },
     {
         id: "insistir",
         category: "verbs",
-        spanish: "insistir",
-        english: "to insist",
+        term: "insistir",
+        definition: "to insist",
         knowledgelevel: 0
     },
     {
         id: "intentar",
         category: "verbs",
-        spanish: "intentar",
-        english: "to try, to attempt",
+        term: "intentar",
+        definition: "to try, to attempt",
         knowledgelevel: 0
     },
     {
         id: "interesar",
         category: "verbs",
-        spanish: "interesar",
-        english: "to interest",
+        term: "interesar",
+        definition: "to interest",
         knowledgelevel: 0
     },
     {
         id: "ir",
         category: "verbs",
-        spanish: "ir",
-        english: "to go",
+        term: "ir",
+        definition: "to go",
         knowledgelevel: 0
     },
     {
         id: "irse",
         category: "verbs",
-        spanish: "irse",
-        english: "to go (oneself)",
+        term: "irse",
+        definition: "to go (oneself)",
         knowledgelevel: 0
     },
     {
         id: "jugar",
         category: "verbs",
-        spanish: "jugar",
-        english: "to play",
+        term: "jugar",
+        definition: "to play",
         knowledgelevel: 0
     },
     {
         id: "juzgar",
         category: "verbs",
-        spanish: "juzgar",
-        english: "to judge",
+        term: "juzgar",
+        definition: "to judge",
         knowledgelevel: 0
     },
     {
         id: "lamentar",
         category: "verbs",
-        spanish: "lamentar",
-        english: "to regret, to lament",
+        term: "lamentar",
+        definition: "to regret, to lament",
         knowledgelevel: 0
     },
     {
         id: "lanzar",
         category: "verbs",
-        spanish: "lanzar",
-        english: "to throw, to launch",
+        term: "lanzar",
+        definition: "to throw, to launch",
         knowledgelevel: 0
     },
     {
         id: "lavar",
         category: "verbs",
-        spanish: "lavar",
-        english: "to wash",
+        term: "lavar",
+        definition: "to wash",
         knowledgelevel: 0
     },
     {
         id: "lavarse",
         category: "verbs",
-        spanish: "lavarse",
-        english: "to wash (oneself)",
+        term: "lavarse",
+        definition: "to wash (oneself)",
         knowledgelevel: 0
     },
     {
         id: "leer",
         category: "verbs",
-        spanish: "leer",
-        english: "to read",
+        term: "leer",
+        definition: "to read",
         knowledgelevel: 0
     },
     {
         id: "levantar",
         category: "verbs",
-        spanish: "levantar",
-        english: "to lift (up), to raise, to pick up",
+        term: "levantar",
+        definition: "to lift (up), to raise, to pick up",
         knowledgelevel: 0
     },
     {
         id: "levantarse",
         category: "verbs",
-        spanish: "levantarse",
-        english: "to get up (oneself), to stand up",
+        term: "levantarse",
+        definition: "to get up (oneself), to stand up",
         knowledgelevel: 0
     },
     {
         id: "liderar",
         category: "verbs",
-        spanish: "liderar",
-        english: "to lead",
+        term: "liderar",
+        definition: "to lead",
         knowledgelevel: 0
     },
     {
         id: "limpiar",
         category: "verbs",
-        spanish: "limpiar",
-        english: "to clean",
+        term: "limpiar",
+        definition: "to clean",
         knowledgelevel: 0
     },
     {
         id: "llamar",
         category: "verbs",
-        spanish: "llamar",
-        english: "to call",
+        term: "llamar",
+        definition: "to call",
         knowledgelevel: 0
     },
     {
         id: "llamarse",
         category: "verbs",
-        spanish: "llamarse",
-        english: "to be named",
+        term: "llamarse",
+        definition: "to be named",
         knowledgelevel: 0
     },
     {
         id: "llegar",
         category: "verbs",
-        spanish: "llegar",
-        english: "to arrive, to come, to reach",
+        term: "llegar",
+        definition: "to arrive, to come, to reach",
         knowledgelevel: 0
     },
     {
         id: "llenar",
         category: "verbs",
-        spanish: "llenar",
-        english: "to fill",
+        term: "llenar",
+        definition: "to fill",
         knowledgelevel: 0
     },
     {
         id: "llenarse",
         category: "verbs",
-        spanish: "llenarse",
-        english: "to be full, to fill up (oneself)",
+        term: "llenarse",
+        definition: "to be full, to fill up (oneself)",
         knowledgelevel: 0
     },
     {
         id: "llevar",
         category: "verbs",
-        spanish: "llevar",
-        english: "to carry, to take, to bring, to wear",
+        term: "llevar",
+        definition: "to carry, to take, to bring, to wear",
         knowledgelevel: 0
     },
     {
         id: "llevarse",
         category: "verbs",
-        spanish: "llevarse",
-        english: "to take (with oneself), to get along with",
+        term: "llevarse",
+        definition: "to take (with oneself), to get along with",
         knowledgelevel: 0
     },
     {
         id: "llorar",
         category: "verbs",
-        spanish: "llorar",
-        english: "to cry",
+        term: "llorar",
+        definition: "to cry",
         knowledgelevel: 0
     },
     {
         id: "lograr",
         category: "verbs",
-        spanish: "lograr",
-        english: "to achieve, to accomplish, to attain",
+        term: "lograr",
+        definition: "to achieve, to accomplish, to attain",
         knowledgelevel: 0
     },
     {
         id: "luchar",
         category: "verbs",
-        spanish: "luchar",
-        english: "to struggle, to fight",
+        term: "luchar",
+        definition: "to struggle, to fight",
         knowledgelevel: 0
     },
     {
         id: "manchar",
         category: "verbs",
-        spanish: "manchar",
-        english: "to stain",
+        term: "manchar",
+        definition: "to stain",
         knowledgelevel: 0
     },
     {
         id: "mandar",
         category: "verbs",
-        spanish: "mandar",
-        english: "to send, to command, to order",
+        term: "mandar",
+        definition: "to send, to command, to order",
         knowledgelevel: 0
     },
     {
         id: "manejar",
         category: "verbs",
-        spanish: "manejar",
-        english: "to drive, to manage, to handle, to operate",
+        term: "manejar",
+        definition: "to drive, to manage, to handle, to operate",
         knowledgelevel: 0
     },
     {
         id: "mantener",
         category: "verbs",
-        spanish: "mantener",
-        english: "to maintain, to keep",
+        term: "mantener",
+        definition: "to maintain, to keep",
         knowledgelevel: 0
     },
     {
         id: "mantenerse",
         category: "verbs",
-        spanish: "mantenerse",
-        english: "to support (oneself), to hold up, to remain",
+        term: "mantenerse",
+        definition: "to support (oneself), to hold up, to remain",
         knowledgelevel: 0
     },
     {
         id: "marcar",
         category: "verbs",
-        spanish: "marcar",
-        english: "to mark, to dial",
+        term: "marcar",
+        definition: "to mark, to dial",
         knowledgelevel: 0
     },
     {
         id: "matar",
         category: "verbs",
-        spanish: "matar",
-        english: "to kill",
+        term: "matar",
+        definition: "to kill",
         knowledgelevel: 0
     },
     {
         id: "medir",
         category: "verbs",
-        spanish: "medir",
-        english: "to measure",
+        term: "medir",
+        definition: "to measure",
         knowledgelevel: 0
     },
     {
         id: "mencionar",
         category: "verbs",
-        spanish: "mencionar",
-        english: "to mention",
+        term: "mencionar",
+        definition: "to mention",
         knowledgelevel: 0
     },
     {
         id: "mentir",
         category: "verbs",
-        spanish: "mentir",
-        english: "to lie",
+        term: "mentir",
+        definition: "to lie",
         knowledgelevel: 0
     },
     {
         id: "merecer",
         category: "verbs",
-        spanish: "merecer",
-        english: "to deserve, to merit",
+        term: "merecer",
+        definition: "to deserve, to merit",
         knowledgelevel: 0
     },
     {
         id: "meter",
         category: "verbs",
-        spanish: "meter",
-        english: "to put, to place",
+        term: "meter",
+        definition: "to put, to place",
         knowledgelevel: 0
     },
     {
         id: "mezclar",
         category: "verbs",
-        spanish: "mezclar",
-        english: "to mix",
+        term: "mezclar",
+        definition: "to mix",
         knowledgelevel: 0
     },
     {
         id: "mirar",
         category: "verbs",
-        spanish: "mirar",
-        english: "to look, to watch",
+        term: "mirar",
+        definition: "to look, to watch",
         knowledgelevel: 0
     },
     {
         id: "mirarse",
         category: "verbs",
-        spanish: "mirarse",
-        english: "to look at (oneself)",
+        term: "mirarse",
+        definition: "to look at (oneself)",
         knowledgelevel: 0
     },
     {
         id: "molestar",
         category: "verbs",
-        spanish: "molestar",
-        english: "to bother, to disturb, to annoy",
+        term: "molestar",
+        definition: "to bother, to disturb, to annoy",
         knowledgelevel: 0
     },
     {
         id: "montar",
         category: "verbs",
-        spanish: "montar",
-        english: "to mount, to ride",
+        term: "montar",
+        definition: "to mount, to ride",
         knowledgelevel: 0
     },
     {
         id: "morir",
         category: "verbs",
-        spanish: "morir",
-        english: "to die, to decease",
+        term: "morir",
+        definition: "to die, to decease",
         knowledgelevel: 0
     },
     {
         id: "morirse",
         category: "verbs",
-        spanish: "morirse",
-        english: "to die, to be dying (expression)",
+        term: "morirse",
+        definition: "to die, to be dying (expression)",
         knowledgelevel: 0
     },
     {
         id: "mostrar",
         category: "verbs",
-        spanish: "mostrar",
-        english: "to show",
+        term: "mostrar",
+        definition: "to show",
         knowledgelevel: 0
     },
     {
         id: "mover",
         category: "verbs",
-        spanish: "mover",
-        english: "to move (something)",
+        term: "mover",
+        definition: "to move (something)",
         knowledgelevel: 0
     },
     {
         id: "moverse",
         category: "verbs",
-        spanish: "moverse",
-        english: "to move (oneself)",
+        term: "moverse",
+        definition: "to move (oneself)",
         knowledgelevel: 0
     },
     {
         id: "nacer",
         category: "verbs",
-        spanish: "nacer",
-        english: "to be born",
+        term: "nacer",
+        definition: "to be born",
         knowledgelevel: 0
     },
     {
         id: "nadar",
         category: "verbs",
-        spanish: "nadar",
-        english: "to swim",
+        term: "nadar",
+        definition: "to swim",
         knowledgelevel: 0
     },
     {
         id: "necesitar",
         category: "verbs",
-        spanish: "necesitar",
-        english: "to need",
+        term: "necesitar",
+        definition: "to need",
         knowledgelevel: 0
     },
     {
         id: "negar",
         category: "verbs",
-        spanish: "negar",
-        english: "to deny",
+        term: "negar",
+        definition: "to deny",
         knowledgelevel: 0
     },
     {
         id: "negociar",
         category: "verbs",
-        spanish: "negociar",
-        english: "to negotiate",
+        term: "negociar",
+        definition: "to negotiate",
         knowledgelevel: 0
     },
     {
         id: "notar",
         category: "verbs",
-        spanish: "notar",
-        english: "to note",
+        term: "notar",
+        definition: "to note",
         knowledgelevel: 0
     },
     {
         id: "numerar",
         category: "verbs",
-        spanish: "numerar",
-        english: "to number",
+        term: "numerar",
+        definition: "to number",
         knowledgelevel: 0
     },
     {
         id: "obligar",
         category: "verbs",
-        spanish: "obligar",
-        english: "to force, to bind, to oblige",
+        term: "obligar",
+        definition: "to force, to bind, to oblige",
         knowledgelevel: 0
     },
     {
         id: "observar",
         category: "verbs",
-        spanish: "observar",
-        english: "to observe",
+        term: "observar",
+        definition: "to observe",
         knowledgelevel: 0
     },
     {
         id: "obtener",
         category: "verbs",
-        spanish: "obtener",
-        english: "to get, to obtain",
+        term: "obtener",
+        definition: "to get, to obtain",
         knowledgelevel: 0
     },
     {
         id: "ocultar",
         category: "verbs",
-        spanish: "ocultar",
-        english: "to hide",
+        term: "ocultar",
+        definition: "to hide",
         knowledgelevel: 0
     },
     {
         id: "ocupar",
         category: "verbs",
-        spanish: "ocupar",
-        english: "to occupy, to concern",
+        term: "ocupar",
+        definition: "to occupy, to concern",
         knowledgelevel: 0
     },
     {
         id: "ocurrir",
         category: "verbs",
-        spanish: "ocurrir",
-        english: "to occur, to happen",
+        term: "ocurrir",
+        definition: "to occur, to happen",
         knowledgelevel: 0
     },
     {
         id: "odiar",
         category: "verbs",
-        spanish: "odiar",
-        english: "to hate, to detest",
+        term: "odiar",
+        definition: "to hate, to detest",
         knowledgelevel: 0
     },
     {
         id: "ofrecer",
         category: "verbs",
-        spanish: "ofrecer",
-        english: "to offer",
+        term: "ofrecer",
+        definition: "to offer",
         knowledgelevel: 0
     },
     {
         id: "oír",
         category: "verbs",
-        spanish: "oír",
-        english: "to hear",
+        term: "oír",
+        definition: "to hear",
         knowledgelevel: 0
     },
     {
         id: "oler",
         category: "verbs",
-        spanish: "oler",
-        english: "to smell",
+        term: "oler",
+        definition: "to smell",
         knowledgelevel: 0
     },
     {
         id: "olvidar",
         category: "verbs",
-        spanish: "olvidar",
-        english: "to forget",
+        term: "olvidar",
+        definition: "to forget",
         knowledgelevel: 0
     },
     {
         id: "olvidarse",
         category: "verbs",
-        spanish: "olvidarse",
-        english: "to forget",
+        term: "olvidarse",
+        definition: "to forget",
         knowledgelevel: 0
     },
     {
         id: "organizar",
         category: "verbs",
-        spanish: "organizar",
-        english: "to organise, to arrange",
+        term: "organizar",
+        definition: "to organise, to arrange",
         knowledgelevel: 0
     },
     {
         id: "originar",
         category: "verbs",
-        spanish: "originar",
-        english: "to originate",
+        term: "originar",
+        definition: "to originate",
         knowledgelevel: 0
     },
     {
         id: "pagar",
         category: "verbs",
-        spanish: "pagar",
-        english: "to pay (for)",
+        term: "pagar",
+        definition: "to pay (for)",
         knowledgelevel: 0
     },
     {
         id: "parar",
         category: "verbs",
-        spanish: "parar",
-        english: "to stop",
+        term: "parar",
+        definition: "to stop",
         knowledgelevel: 0
     },
     {
         id: "parecer",
         category: "verbs",
-        spanish: "parecer",
-        english: "to seem, to appear, to look like",
+        term: "parecer",
+        definition: "to seem, to appear, to look like",
         knowledgelevel: 0
     },
     {
         id: "parecerse",
         category: "verbs",
-        spanish: "parecerse",
-        english: "to look alike, to be alike",
+        term: "parecerse",
+        definition: "to look alike, to be alike",
         knowledgelevel: 0
     },
     {
         id: "partir",
         category: "verbs",
-        spanish: "partir",
-        english: "to split, to depart",
+        term: "partir",
+        definition: "to split, to depart",
         knowledgelevel: 0
     },
     {
         id: "pasar",
         category: "verbs",
-        spanish: "pasar",
-        english: "to pass, to happen, to go through",
+        term: "pasar",
+        definition: "to pass, to happen, to go through",
         knowledgelevel: 0
     },
     {
         id: "pedir",
         category: "verbs",
-        spanish: "pedir",
-        english: "to ask for, to request, to order (e.g. food)",
+        term: "pedir",
+        definition: "to ask for, to request, to order (e.g. food)",
         knowledgelevel: 0
     },
     {
         id: "pelear",
         category: "verbs",
-        spanish: "pelear",
-        english: "to fight, to quarrel, to argue",
+        term: "pelear",
+        definition: "to fight, to quarrel, to argue",
         knowledgelevel: 0
     },
     {
         id: "peligrar",
         category: "verbs",
-        spanish: "peligrar",
-        english: "to jeopardize, to be in danger",
+        term: "peligrar",
+        definition: "to jeopardize, to be in danger",
         knowledgelevel: 0
     },
     {
         id: "pensar",
         category: "verbs",
-        spanish: "pensar",
-        english: "to think",
+        term: "pensar",
+        definition: "to think",
         knowledgelevel: 0
     },
     {
         id: "perder",
         category: "verbs",
-        spanish: "perder",
-        english: "to lose",
+        term: "perder",
+        definition: "to lose",
         knowledgelevel: 0
     },
     {
         id: "permitir",
         category: "verbs",
-        spanish: "permitir",
-        english: "to allow, to permit",
+        term: "permitir",
+        definition: "to allow, to permit",
         knowledgelevel: 0
     },
     {
         id: "permitirse",
         category: "verbs",
-        spanish: "permitirse",
-        english: "to afford (something)",
+        term: "permitirse",
+        definition: "to afford (something)",
         knowledgelevel: 0
     },
     {
         id: "persistir",
         category: "verbs",
-        spanish: "persistir",
-        english: "to persist",
+        term: "persistir",
+        definition: "to persist",
         knowledgelevel: 0
     },
     {
         id: "pertenecer",
         category: "verbs",
-        spanish: "pertenecer",
-        english: "to belong",
+        term: "pertenecer",
+        definition: "to belong",
         knowledgelevel: 0
     },
     {
         id: "picar",
         category: "verbs",
-        spanish: "picar",
-        english: "to chop, to string, to bite, to itch",
+        term: "picar",
+        definition: "to chop, to string, to bite, to itch",
         knowledgelevel: 0
     },
     {
         id: "pintar",
         category: "verbs",
-        spanish: "pintar",
-        english: "to paint",
+        term: "pintar",
+        definition: "to paint",
         knowledgelevel: 0
     },
     {
         id: "pintarse",
         category: "verbs",
-        spanish: "pintarse",
-        english: "to put on makeup",
+        term: "pintarse",
+        definition: "to put on makeup",
         knowledgelevel: 0
     },
     {
         id: "planchar",
         category: "verbs",
-        spanish: "planchar",
-        english: "to iron",
+        term: "planchar",
+        definition: "to iron",
         knowledgelevel: 0
     },
     {
         id: "plantar",
         category: "verbs",
-        spanish: "plantar",
-        english: "to plant",
+        term: "plantar",
+        definition: "to plant",
         knowledgelevel: 0
     },
     {
         id: "poder",
         category: "verbs",
-        spanish: "poder",
-        english: "to be able to",
+        term: "poder",
+        definition: "to be able to",
         knowledgelevel: 0
     },
     {
         id: "poner",
         category: "verbs",
-        spanish: "poner",
-        english: "to put, to place",
+        term: "poner",
+        definition: "to put, to place",
         knowledgelevel: 0
     },
     {
         id: "ponerse",
         category: "verbs",
-        spanish: "ponerse",
-        english: "to put on, to place on",
+        term: "ponerse",
+        definition: "to put on, to place on",
         knowledgelevel: 0
     },
     {
         id: "practicar",
         category: "verbs",
-        spanish: "practicar",
-        english: "to practice",
+        term: "practicar",
+        definition: "to practice",
         knowledgelevel: 0
     },
     {
         id: "preferir",
         category: "verbs",
-        spanish: "preferir",
-        english: "to prefer",
+        term: "preferir",
+        definition: "to prefer",
         knowledgelevel: 0
     },
     {
         id: "preguntar",
         category: "verbs",
-        spanish: "preguntar",
-        english: "to ask, to question",
+        term: "preguntar",
+        definition: "to ask, to question",
         knowledgelevel: 0
     },
     {
         id: "preguntarse",
         category: "verbs",
-        spanish: "preguntarse",
-        english: "to ask (oneself), to wonder",
+        term: "preguntarse",
+        definition: "to ask (oneself), to wonder",
         knowledgelevel: 0
     },
     {
         id: "preocuparse",
         category: "verbs",
-        spanish: "preocuparse",
-        english: "to worry, to concern",
+        term: "preocuparse",
+        definition: "to worry, to concern",
         knowledgelevel: 0
     },
     {
         id: "preparar",
         category: "verbs",
-        spanish: "preparar",
-        english: "to prepare",
+        term: "preparar",
+        definition: "to prepare",
         knowledgelevel: 0
     },
     {
         id: "presentar",
         category: "verbs",
-        spanish: "presentar",
-        english: "to present",
+        term: "presentar",
+        definition: "to present",
         knowledgelevel: 0
     },
     {
         id: "probar",
         category: "verbs",
-        spanish: "probar",
-        english: "to try, to taste, to test, to prove",
+        term: "probar",
+        definition: "to try, to taste, to test, to prove",
         knowledgelevel: 0
     },
     {
         id: "probarse",
         category: "verbs",
-        spanish: "probarse",
-        english: "to try on (oneself)",
+        term: "probarse",
+        definition: "to try on (oneself)",
         knowledgelevel: 0
     },
     {
         id: "producir",
         category: "verbs",
-        spanish: "producir",
-        english: "to produce",
+        term: "producir",
+        definition: "to produce",
         knowledgelevel: 0
     },
     {
         id: "progresar",
         category: "verbs",
-        spanish: "progresar",
-        english: "to progress",
+        term: "progresar",
+        definition: "to progress",
         knowledgelevel: 0
     },
     {
         id: "prohibir",
         category: "verbs",
-        spanish: "prohibir",
-        english: "to ban, to prohibit, to forbid",
+        term: "prohibir",
+        definition: "to ban, to prohibit, to forbid",
         knowledgelevel: 0
     },
     {
         id: "prometer",
         category: "verbs",
-        spanish: "prometer",
-        english: "to promise",
+        term: "prometer",
+        definition: "to promise",
         knowledgelevel: 0
     },
     {
         id: "pronunciar",
         category: "verbs",
-        spanish: "pronunciar",
-        english: "to pronounce",
+        term: "pronunciar",
+        definition: "to pronounce",
         knowledgelevel: 0
     },
     {
         id: "proponer",
         category: "verbs",
-        spanish: "proponer",
-        english: "to propose, to put forward",
+        term: "proponer",
+        definition: "to propose, to put forward",
         knowledgelevel: 0
     },
     {
         id: "proteger",
         category: "verbs",
-        spanish: "proteger",
-        english: "to protect",
+        term: "proteger",
+        definition: "to protect",
         knowledgelevel: 0
     },
     {
         id: "protegerse",
         category: "verbs",
-        spanish: "protegerse",
-        english: "to protect (oneself)",
+        term: "protegerse",
+        definition: "to protect (oneself)",
         knowledgelevel: 0
     },
     {
         id: "proyectar",
         category: "verbs",
-        spanish: "proyectar",
-        english: "to project",
+        term: "proyectar",
+        definition: "to project",
         knowledgelevel: 0
     },
     {
         id: "quedar",
         category: "verbs",
-        spanish: "quedar",
-        english: "to remain, to be left",
+        term: "quedar",
+        definition: "to remain, to be left",
         knowledgelevel: 0
     },
     {
         id: "quedarse",
         category: "verbs",
-        spanish: "quedarse",
-        english: "to stay",
+        term: "quedarse",
+        definition: "to stay",
         knowledgelevel: 0
     },
     {
         id: "quejarse",
         category: "verbs",
-        spanish: "quejarse",
-        english: "to complain, to moan",
+        term: "quejarse",
+        definition: "to complain, to moan",
         knowledgelevel: 0
     },
     {
         id: "querer",
         category: "verbs",
-        spanish: "querer",
-        english: "to want, to love",
+        term: "querer",
+        definition: "to want, to love",
         knowledgelevel: 0
     },
     {
         id: "quitar",
         category: "verbs",
-        spanish: "quitar",
-        english: "to take away, to remove, to take from",
+        term: "quitar",
+        definition: "to take away, to remove, to take from",
         knowledgelevel: 0
     },
     {
         id: "quitarse",
         category: "verbs",
-        spanish: "quitarse",
-        english: "to take off (something)",
+        term: "quitarse",
+        definition: "to take off (something)",
         knowledgelevel: 0
     },
     {
         id: "realizar",
         category: "verbs",
-        spanish: "realizar",
-        english: "to perform, to carry out, to realise",
+        term: "realizar",
+        definition: "to perform, to carry out, to realise",
         knowledgelevel: 0
     },
     {
         id: "recibir",
         category: "verbs",
-        spanish: "recibir",
-        english: "to receive",
+        term: "recibir",
+        definition: "to receive",
         knowledgelevel: 0
     },
     {
         id: "recoger",
         category: "verbs",
-        spanish: "recoger",
-        english: "to collect, to pick up",
+        term: "recoger",
+        definition: "to collect, to pick up",
         knowledgelevel: 0
     },
     {
         id: "recomendar",
         category: "verbs",
-        spanish: "recomendar",
-        english: "to recommend",
+        term: "recomendar",
+        definition: "to recommend",
         knowledgelevel: 0
     },
     {
         id: "reconocer",
         category: "verbs",
-        spanish: "reconocer",
-        english: "to recognise",
+        term: "reconocer",
+        definition: "to recognise",
         knowledgelevel: 0
     },
     {
         id: "recordar",
         category: "verbs",
-        spanish: "recordar",
-        english: "to remember, to recall, to remind",
+        term: "recordar",
+        definition: "to remember, to recall, to remind",
         knowledgelevel: 0
     },
     {
         id: "referir",
         category: "verbs",
-        spanish: "referir",
-        english: "to refer",
+        term: "referir",
+        definition: "to refer",
         knowledgelevel: 0
     },
     {
         id: "referirse",
         category: "verbs",
-        spanish: "referirse",
-        english: "to refer (to oneself)",
+        term: "referirse",
+        definition: "to refer (to oneself)",
         knowledgelevel: 0
     },
     {
         id: "registrar",
         category: "verbs",
-        spanish: "registrar",
-        english: "to register, to record, to search",
+        term: "registrar",
+        definition: "to register, to record, to search",
         knowledgelevel: 0
     },
     {
         id: "regresar",
         category: "verbs",
-        spanish: "regresar",
-        english: "to return, to go back, to come back",
+        term: "regresar",
+        definition: "to return, to go back, to come back",
         knowledgelevel: 0
     },
     {
         id: "reír",
         category: "verbs",
-        spanish: "reír",
-        english: "to laugh",
+        term: "reír",
+        definition: "to laugh",
         knowledgelevel: 0
     },
     {
         id: "reírse",
         category: "verbs",
-        spanish: "reírse",
-        english: "to laugh",
+        term: "reírse",
+        definition: "to laugh",
         knowledgelevel: 0
     },
     {
         id: "repetir",
         category: "verbs",
-        spanish: "repetir",
-        english: "to repeat",
+        term: "repetir",
+        definition: "to repeat",
         knowledgelevel: 0
     },
     {
         id: "representar",
         category: "verbs",
-        spanish: "representar",
-        english: "to represent",
+        term: "representar",
+        definition: "to represent",
         knowledgelevel: 0
     },
     {
         id: "reservar",
         category: "verbs",
-        spanish: "reservar",
-        english: "to reserve, to book",
+        term: "reservar",
+        definition: "to reserve, to book",
         knowledgelevel: 0
     },
     {
         id: "resolver",
         category: "verbs",
-        spanish: "resolver",
-        english: "to solve, to resolve",
+        term: "resolver",
+        definition: "to solve, to resolve",
         knowledgelevel: 0
     },
     {
         id: "respirar",
         category: "verbs",
-        spanish: "respirar",
-        english: "to breathe",
+        term: "respirar",
+        definition: "to breathe",
         knowledgelevel: 0
     },
     {
         id: "responder",
         category: "verbs",
-        spanish: "responder",
-        english: "to answer, to respond",
+        term: "responder",
+        definition: "to answer, to respond",
         knowledgelevel: 0
     },
     {
         id: "resultar",
         category: "verbs",
-        spanish: "resultar",
-        english: "to become, to turn out, to work",
+        term: "resultar",
+        definition: "to become, to turn out, to work",
         knowledgelevel: 0
     },
     {
         id: "reunir",
         category: "verbs",
-        spanish: "reunir",
-        english: "to gather",
+        term: "reunir",
+        definition: "to gather",
         knowledgelevel: 0
     },
     {
         id: "reunirse",
         category: "verbs",
-        spanish: "reunirse",
-        english: "to get together",
+        term: "reunirse",
+        definition: "to get together",
         knowledgelevel: 0
     },
     {
         id: "rezar",
         category: "verbs",
-        spanish: "rezar",
-        english: "to pray",
+        term: "rezar",
+        definition: "to pray",
         knowledgelevel: 0
     },
     {
         id: "robar",
         category: "verbs",
-        spanish: "robar",
-        english: "to steal, to rob",
+        term: "robar",
+        definition: "to steal, to rob",
         knowledgelevel: 0
     },
     {
         id: "romper",
         category: "verbs",
-        spanish: "romper",
-        english: "to break",
+        term: "romper",
+        definition: "to break",
         knowledgelevel: 0
     },
     {
         id: "saber",
         category: "verbs",
-        spanish: "saber",
-        english: "to know (things)",
+        term: "saber",
+        definition: "to know (things)",
         knowledgelevel: 0
     },
     {
         id: "sacar",
         category: "verbs",
-        spanish: "sacar",
-        english: "to take, to get, to take out",
+        term: "sacar",
+        definition: "to take, to get, to take out",
         knowledgelevel: 0
     },
     {
         id: "sacarse",
         category: "verbs",
-        spanish: "sacarse",
-        english: "to extract, to pull out",
+        term: "sacarse",
+        definition: "to extract, to pull out",
         knowledgelevel: 0
     },
     {
         id: "salir",
         category: "verbs",
-        spanish: "salir",
-        english: "to leave, to go out, to get out",
+        term: "salir",
+        definition: "to leave, to go out, to get out",
         knowledgelevel: 0
     },
     {
         id: "saltar",
         category: "verbs",
-        spanish: "saltar",
-        english: "to jump, to skip",
+        term: "saltar",
+        definition: "to jump, to skip",
         knowledgelevel: 0
     },
     {
         id: "secar",
         category: "verbs",
-        spanish: "secar",
-        english: "to dry, to dry off",
+        term: "secar",
+        definition: "to dry, to dry off",
         knowledgelevel: 0
     },
     {
         id: "secarse",
         category: "verbs",
-        spanish: "secarse",
-        english: "to dry (oneself), to dry off (oneself)",
+        term: "secarse",
+        definition: "to dry (oneself), to dry off (oneself)",
         knowledgelevel: 0
     },
     {
         id: "seguir",
         category: "verbs",
-        spanish: "seguir",
-        english: "to follow, to continue",
+        term: "seguir",
+        definition: "to follow, to continue",
         knowledgelevel: 0
     },
     {
         id: "seleccionar",
         category: "verbs",
-        spanish: "seleccionar",
-        english: "to select",
+        term: "seleccionar",
+        definition: "to select",
         knowledgelevel: 0
     },
     {
         id: "señalar",
         category: "verbs",
-        spanish: "señalar",
-        english: "to point, to mark",
+        term: "señalar",
+        definition: "to point, to mark",
         knowledgelevel: 0
     },
     {
         id: "sentar",
         category: "verbs",
-        spanish: "sentar",
-        english: "to sit",
+        term: "sentar",
+        definition: "to sit",
         knowledgelevel: 0
     },
     {
         id: "sentarse",
         category: "verbs",
-        spanish: "sentarse",
-        english: "to sit (oneself)",
+        term: "sentarse",
+        definition: "to sit (oneself)",
         knowledgelevel: 0
     },
     {
         id: "sentir",
         category: "verbs",
-        spanish: "sentir",
-        english: "to feel, to regret",
+        term: "sentir",
+        definition: "to feel, to regret",
         knowledgelevel: 0
     },
     {
         id: "sentirse",
         category: "verbs",
-        spanish: "sentirse",
-        english: "to feel",
+        term: "sentirse",
+        definition: "to feel",
         knowledgelevel: 0
     },
     {
         id: "ser",
         category: "verbs",
-        spanish: "ser",
-        english: "to be (permanent)",
+        term: "ser",
+        definition: "to be (permanent)",
         knowledgelevel: 0
     },
     {
         id: "servir",
         category: "verbs",
-        spanish: "servir",
-        english: "to serve",
+        term: "servir",
+        definition: "to serve",
         knowledgelevel: 0
     },
     {
         id: "servirse",
         category: "verbs",
-        spanish: "servirse",
-        english: "to serve (oneself), to make use of",
+        term: "servirse",
+        definition: "to serve (oneself), to make use of",
         knowledgelevel: 0
     },
     {
         id: "significar",
         category: "verbs",
-        spanish: "significar",
-        english: "to mean, to signify",
+        term: "significar",
+        definition: "to mean, to signify",
         knowledgelevel: 0
     },
     {
         id: "sobrevivir",
         category: "verbs",
-        spanish: "sobrevivir",
-        english: "to survive",
+        term: "sobrevivir",
+        definition: "to survive",
         knowledgelevel: 0
     },
     {
         id: "soler",
         category: "verbs",
-        spanish: "soler",
-        english: "to be used to, to usually do",
+        term: "soler",
+        definition: "to be used to, to usually do",
         knowledgelevel: 0
     },
     {
         id: "sonar",
         category: "verbs",
-        spanish: "sonar",
-        english: "to sound, to ring",
+        term: "sonar",
+        definition: "to sound, to ring",
         knowledgelevel: 0
     },
     {
         id: "sonreír",
         category: "verbs",
-        spanish: "sonreír",
-        english: "to smile",
+        term: "sonreír",
+        definition: "to smile",
         knowledgelevel: 0
     },
     {
         id: "soportar",
         category: "verbs",
-        spanish: "soportar",
-        english: "to put up with, to endure",
+        term: "soportar",
+        definition: "to put up with, to endure",
         knowledgelevel: 0
     },
     {
         id: "sorprender",
         category: "verbs",
-        spanish: "sorprender",
-        english: "to surprise",
+        term: "sorprender",
+        definition: "to surprise",
         knowledgelevel: 0
     },
     {
         id: "subir",
         category: "verbs",
-        spanish: "subir",
-        english: "to go up, to upload, to rise",
+        term: "subir",
+        definition: "to go up, to upload, to rise",
         knowledgelevel: 0
     },
     {
         id: "suceder",
         category: "verbs",
-        spanish: "suceder",
-        english: "to happen",
+        term: "suceder",
+        definition: "to happen",
         knowledgelevel: 0
     },
     {
         id: "sufrir",
         category: "verbs",
-        spanish: "sufrir",
-        english: "to suffer, to sustain",
+        term: "sufrir",
+        definition: "to suffer, to sustain",
         knowledgelevel: 0
     },
     {
         id: "sugerir",
         category: "verbs",
-        spanish: "sugerir",
-        english: "to suggest",
+        term: "sugerir",
+        definition: "to suggest",
         knowledgelevel: 0
     },
     {
         id: "suponer",
         category: "verbs",
-        spanish: "suponer",
-        english: "to suppose, to guess",
+        term: "suponer",
+        definition: "to suppose, to guess",
         knowledgelevel: 0
     },
     {
         id: "surfear",
         category: "verbs",
-        spanish: "surfear",
-        english: "to surf",
+        term: "surfear",
+        definition: "to surf",
         knowledgelevel: 0
     },
     {
         id: "surgir",
         category: "verbs",
-        spanish: "surgir",
-        english: "to emerge, to arise",
+        term: "surgir",
+        definition: "to emerge, to arise",
         knowledgelevel: 0
     },
     {
         id: "tardar",
         category: "verbs",
-        spanish: "tardar",
-        english: "to delay, to be slow",
+        term: "tardar",
+        definition: "to delay, to be slow",
         knowledgelevel: 0
     },
     {
         id: "temblar",
         category: "verbs",
-        spanish: "temblar",
-        english: "to tremble",
+        term: "temblar",
+        definition: "to tremble",
         knowledgelevel: 0
     },
     {
         id: "temer",
         category: "verbs",
-        spanish: "temer",
-        english: "to fear",
+        term: "temer",
+        definition: "to fear",
         knowledgelevel: 0
     },
     {
         id: "tener",
         category: "verbs",
-        spanish: "tener",
-        english: "to have",
+        term: "tener",
+        definition: "to have",
         knowledgelevel: 0
     },
     {
         id: "terminar",
         category: "verbs",
-        spanish: "terminar",
-        english: "to end, to terminate, to finish",
+        term: "terminar",
+        definition: "to end, to terminate, to finish",
         knowledgelevel: 0
     },
     {
         id: "tirar",
         category: "verbs",
-        spanish: "tirar",
-        english: "to throw",
+        term: "tirar",
+        definition: "to throw",
         knowledgelevel: 0
     },
     {
         id: "tirarse",
         category: "verbs",
-        spanish: "tirarse",
-        english: "to throw (oneself)",
+        term: "tirarse",
+        definition: "to throw (oneself)",
         knowledgelevel: 0
     },
     {
         id: "tocar",
         category: "verbs",
-        spanish: "tocar",
-        english: "to play (an instrument), to touch",
+        term: "tocar",
+        definition: "to play (an instrument), to touch",
         knowledgelevel: 0
     },
     {
         id: "tolerar",
         category: "verbs",
-        spanish: "tolerar",
-        english: "to tolerate",
+        term: "tolerar",
+        definition: "to tolerate",
         knowledgelevel: 0
     },
     {
         id: "tomar",
         category: "verbs",
-        spanish: "tomar",
-        english: "to drink, to take",
+        term: "tomar",
+        definition: "to drink, to take",
         knowledgelevel: 0
     },
     {
         id: "tomarse",
         category: "verbs",
-        spanish: "tomarse",
-        english: "to take (for oneself), to have, to consume",
+        term: "tomarse",
+        definition: "to take (for oneself), to have, to consume",
         knowledgelevel: 0
     },
     {
         id: "toser",
         category: "verbs",
-        spanish: "toser",
-        english: "to cough",
+        term: "toser",
+        definition: "to cough",
         knowledgelevel: 0
     },
     {
         id: "trabajar",
         category: "verbs",
-        spanish: "trabajar",
-        english: "to work",
+        term: "trabajar",
+        definition: "to work",
         knowledgelevel: 0
     },
     {
         id: "traducir",
         category: "verbs",
-        spanish: "traducir",
-        english: "to translate",
+        term: "traducir",
+        definition: "to translate",
         knowledgelevel: 0
     },
     {
         id: "traer",
         category: "verbs",
-        spanish: "traer",
-        english: "to bring, to get, to carry",
+        term: "traer",
+        definition: "to bring, to get, to carry",
         knowledgelevel: 0
     },
     {
         id: "transformar",
         category: "verbs",
-        spanish: "transformar",
-        english: "to transform",
+        term: "transformar",
+        definition: "to transform",
         knowledgelevel: 0
     },
     {
         id: "transportar",
         category: "verbs",
-        spanish: "transportar",
-        english: "to transport",
+        term: "transportar",
+        definition: "to transport",
         knowledgelevel: 0
     },
     {
         id: "tratar",
         category: "verbs",
-        spanish: "tratar",
-        english: "to treat, to try",
+        term: "tratar",
+        definition: "to treat, to try",
         knowledgelevel: 0
     },
     {
         id: "usar",
         category: "verbs",
-        spanish: "usar",
-        english: "to use",
+        term: "usar",
+        definition: "to use",
         knowledgelevel: 0
     },
     {
         id: "utilizar",
         category: "verbs",
-        spanish: "utilizar",
-        english: "to use, to utilize",
+        term: "utilizar",
+        definition: "to use, to utilize",
         knowledgelevel: 0
     },
     {
         id: "vaciar",
         category: "verbs",
-        spanish: "vaciar",
-        english: "to empty",
+        term: "vaciar",
+        definition: "to empty",
         knowledgelevel: 0
     },
     {
         id: "vacunar",
         category: "verbs",
-        spanish: "vacunar",
-        english: "to vaccinate",
+        term: "vacunar",
+        definition: "to vaccinate",
         knowledgelevel: 0
     },
     {
         id: "valer",
         category: "verbs",
-        spanish: "valer",
-        english: "to value, to be worth",
+        term: "valer",
+        definition: "to value, to be worth",
         knowledgelevel: 0
     },
     {
         id: "valorar",
         category: "verbs",
-        spanish: "valorar",
-        english: "to value, to assess, to appraise",
+        term: "valorar",
+        definition: "to value, to assess, to appraise",
         knowledgelevel: 0
     },
     {
         id: "vender",
         category: "verbs",
-        spanish: "vender",
-        english: "to sell",
+        term: "vender",
+        definition: "to sell",
         knowledgelevel: 0
     },
     {
         id: "venir",
         category: "verbs",
-        spanish: "venir",
-        english: "to come",
+        term: "venir",
+        definition: "to come",
         knowledgelevel: 0
     },
     {
         id: "ver",
         category: "verbs",
-        spanish: "ver",
-        english: "to see",
+        term: "ver",
+        definition: "to see",
         knowledgelevel: 0
     },
     {
         id: "vestir",
         category: "verbs",
-        spanish: "vestir",
-        english: "to dress, to wear",
+        term: "vestir",
+        definition: "to dress, to wear",
         knowledgelevel: 0
     },
     {
         id: "vestirse",
         category: "verbs",
-        spanish: "vestirse",
-        english: "to dress (oneself), to wear",
+        term: "vestirse",
+        definition: "to dress (oneself), to wear",
         knowledgelevel: 0
     },
     {
         id: "viajar",
         category: "verbs",
-        spanish: "viajar",
-        english: "to travel",
+        term: "viajar",
+        definition: "to travel",
         knowledgelevel: 0
     },
     {
         id: "visitar",
         category: "verbs",
-        spanish: "visitar",
-        english: "to visit",
+        term: "visitar",
+        definition: "to visit",
         knowledgelevel: 0
     },
     {
         id: "vivir",
         category: "verbs",
-        spanish: "vivir",
-        english: "to live",
+        term: "vivir",
+        definition: "to live",
         knowledgelevel: 0
     },
     {
         id: "volar",
         category: "verbs",
-        spanish: "volar",
-        english: "to fly",
+        term: "volar",
+        definition: "to fly",
         knowledgelevel: 0
     },
     {
         id: "volver",
         category: "verbs",
-        spanish: "volver",
-        english: "to return",
+        term: "volver",
+        definition: "to return",
         knowledgelevel: 0
     },
     {
         id: "votar",
         category: "verbs",
-        spanish: "votar",
-        english: "to vote",
+        term: "votar",
+        definition: "to vote",
         knowledgelevel: 0
     },
     {
         id: "pingüino",
         category: "animals",
-        spanish: "pingüino",
-        english: "penguin",
+        term: "pingüino",
+        definition: "penguin",
         knowledgelevel: 0
     },
     {
         id: "varita",
         category: "household",
-        spanish: "una varita",
-        english: "a wand",
+        term: "una varita",
+        definition: "a wand",
         knowledgelevel: 1
     }
 ]

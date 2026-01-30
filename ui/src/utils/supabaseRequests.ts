@@ -176,8 +176,8 @@ export async function updateData(
         .from(tableName)
         .update({
           category: newWordData.category,
-          spanish: newWordData.spanish,
-          english: newWordData.english,
+          term: newWordData.term,
+          definition: newWordData.definition,
           knowledgelevel: newWordData.knowledgelevel,
         })
         .eq("id", newWordData.id)
