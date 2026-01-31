@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
 import { updateData } from '../../utils/supabaseRequests';
 import type { SupabaseClient } from "@supabase/supabase-js";
-import shuffle from '@/assets/svg/shuffle.svg?react';
-import edit from '@/assets/svg/edit.svg?react';
-import { knowledgelevels } from '../../data/SampleVocabData';
-
+import VocabTermsMenu from './VocabTermsMenu';
+import { defaultMLTags } from '../../data/SampleVocabData';
 import type { WordData, CurrentPage, Topic, TableName } from '../../types/vocabTypes';
-
 
 type VocabTermsProps = {
   selectedCategory: string;
@@ -39,16 +36,24 @@ const VocabTerms = ({
   const [correct, setCorrect] = useState<number | null>(null);
   const [filter, setFilter] = useState<number>(0);
   const [filteredWords, setFilteredWords] = useState<WordData[] | null>(null);
-  const [newSelectedCategory, setNewSelectedCategory]= useState<string>(selectedCategory)
+  const [newSelectedCategory, setNewSelectedCategory]= useState<string>(selectedCategory);
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchDefinition, setSearchDefinition] = useState<string>('');
+  const [filteredTags, setFilteredTags] = useState<string[]>([])
 
-  const Shuffle = shuffle;
-  const Edit = edit;
-
-
-  const options = [
-    { label: "Got it!", value: 1, color: "green", textColor: "white" },
-    { label: "Missed it", value: 0, color: "red", textColor: "white" },
-  ];
+  /* Debugging
+  const checkForTagsNotInDefault = () => {
+    const defaultTags = Object.values(defaultMLTags).flat();
+    wordsInCategory.forEach(word => {
+      if(Array.isArray(word.tags)) {
+         word.tags?.forEach(tag => {
+          if (!defaultTags.includes(tag)) {
+            console.log('word:', word, ' has ', tag, ' missing from defaultTags');
+          }
+        });
+      }
+    });
+  };*/
 
   useEffect(() => {
     if(!selectedWord) return;
@@ -67,7 +72,6 @@ const VocabTerms = ({
       }
     }
     if(currentKnowledgelevel !== newKnowledgelevel || selectedCategory !== newSelectedCategory) {
-      console.log('updating newKnowledgelevel and/or selected category')
       const newWordData = {
         ...selectedWord,
         category: newSelectedCategory,
@@ -80,14 +84,36 @@ const VocabTerms = ({
   }, [correct])
 
   useEffect(() => {
-    if(filter < 0) {
+    // checkForTagsNotInDefault();
+    if(filter < 0 && !searchTerm && !searchDefinition && filteredTags.length < 1) {
       setFilteredWords(wordsInCategory);
     } else {
-      const filteredWordsInCategory = wordsInCategory.filter((word: WordData) => word.knowledgelevel === filter);
-      setFilteredWords(filteredWordsInCategory);
+      let filteredWords = wordsInCategory;
+      if(filter > -1) {
+        filteredWords = wordsInCategory.filter((word: WordData) => word.knowledgelevel === filter);
+      } 
+      if(searchTerm) {
+        filteredWords = filteredWords.filter((word: WordData) => word.term.toLowerCase().includes(searchTerm.toLowerCase()))
+      }
+      if(searchDefinition) {
+        filteredWords = filteredWords.filter((word: WordData) => word.definition.toLowerCase().includes(searchDefinition.toLowerCase()))
+      }
+      if(filteredTags.length > 0) {
+        filteredWords = words.filter(word =>
+          filteredTags.every(tag => word.tags?.includes(tag))
+        );
+      }
+      setFilteredWords(filteredWords);
     }
-  }, [filter, words, selectedCategory])
+  }, [filter, words, selectedCategory, searchTerm, searchDefinition, filteredTags])
 
+  const toggleTag = (tag: string) => {
+    setFilteredTags(prev =>
+      prev.includes(tag)
+        ? prev.filter(t => t !== tag)   // remove
+        : [...prev, tag]                // add
+    );
+  };
   
   async function _updateData(newWordData: WordData): Promise<void> {
     if(!newWordData) return;
@@ -101,7 +127,7 @@ const VocabTerms = ({
                 ...word,
                 knowledgelevel: newWordData.knowledgelevel,
                 category: newWordData.category,
-                showTerm: newWordData.knowledgelevel === 1 ? false : true
+                showTerm: newWordData.knowledgelevel === 1 ? false : true,
               }
               : word
           )
@@ -113,104 +139,48 @@ const VocabTerms = ({
       setSelectedWord(null);
       setCorrect(null);
   }
-  
-  function _shuffleArray<T>(array: T[]): T[] {
-    const result = [...array];
-    for (let i = result.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [result[i], result[j]] = [result[j], result[i]];
-    }
-    return result;
-  } 
-
-  const shuffleArray = () => {
-    const newWords = _shuffleArray(words);
-    setWords(newWords);
-  }
 
   return (
     <div className='vocab-terms-page'>
-      <div className='vocab-terms-settings-section'>
-        <div className='vocab-terms-settings-section-row'>
-          <h2>{selectedCategory}</h2>
-            <div className='vocab-terms-filter-section'>
-            <p>Filter:</p>
-            <form>
-              <fieldset style={{ border: "none", padding: 0 }}>
-                <div style={{ display: "flex", gap: "10px" }}>
-                  {knowledgelevels.map((level) => (
-                    <label
-                      key={level.value}
-                      className={`
-                        vocab-knowledgelevel-button
-                        vocab-knowledgelevel-button-${level.value}
-                        ${filter === level.value ? 'selected' : ''}
-                      `}
+      <VocabTermsMenu
+        selectedTable={selectedTable}
+        selectedCategory={selectedCategory}
+        words={words}
+        setWords={setWords}
+        setCurrentPage={setCurrentPage}
+        filter={filter}
+        setFilter={setFilter}
+        correct={correct}
+        setCorrect={setCorrect}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        searchDefinition={searchDefinition}
+        setSearchDefinition={setSearchDefinition}
+      />
 
-                    >
-                      <input
-                        type="radio"
-                        name="knowledge"
-                        value={level.value}
-                        checked={filter === level.value}
-                        onChange={() => {
-                          const value = level.value;
-                          setFilter(value);
-                        }}
-                        style={{ display: "none" }}
-                      />
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
-            </form>
-          </div>
 
-        </div>
-        <div className='vocab-terms-settings-section-row'>
-          <div className='vocab-terms-answer-section'>
-            <p>Answer:</p>
-            <form>
-              <fieldset style={{ border: "none", padding: 0 }}>
-                <div style={{ display: "flex", gap: "10px" }}>
-                  {options.map((option) => (
-                    <label
-                      key={option.value}
-                      className={`vocab-answer-button vocab-answer-button-${option.value}`}
-                    >
-                      <input
-                        type="radio"
-                        name="knowledge"
-                        value={option.value}
-                        checked={correct === option.value}
-                        onChange={() => {
-                          setCorrect(option.value);
-                        }}
-                        style={{ display: "none" }}
-                      />
-                      {option.label}
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
-            </form>
-          </div>
-
-          <div className='vocab-terms-buttons-section'>
-            <button className='vocab-menu-circle-button' onClick={shuffleArray}>
-              <Shuffle className='header-icon' />
-            </button>
-            <button 
-              className='vocab-menu-circle-button'
-              onClick={() => setCurrentPage('Update') }
-            >
-              <Edit className='header-icon' />
-            </button>
-          </div>
-        </div>
-      </div>
       <p className='vocab-terms-page-status-msg'>{statusMsg}</p>
       <div className='vocab-terms-section-and-categories'>
+        {selectedCategory === 'machine_learning' && <div className='vocab-terms-section-tags'>
+          <p>Filter by tag(s):</p>
+          {Object.entries(defaultMLTags).map(([groupName, tags]) => (
+            <div key={groupName} className='vocab-terms-section-tags-col'>
+              <p>{groupName}</p>
+              {tags.map(tag => (
+                <button 
+                  key={tag}
+                  className={`
+                    vocab-terms-section-tag-button
+                    ${filteredTags.includes(tag) ? 'vocab-terms-section-tag-button-selected' : ''}
+                  `}
+                  onClick={() => toggleTag(tag)}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          ))}
+        </div>}
         
         {selectedCategory === 'uncategorized' && <div className='vocab-terms-section-categories'>
           <p>Pick a category:</p>

@@ -8,15 +8,45 @@ export const knowledgelevels = [
 
 export const defaultScienceCategories = [
     'sound',
-    'audio signal processing',
+    'audio_signal_processing',
     'python',
-    'natural language processing',
     'statistics',
-    'data science and traditional machine learning',
-    'linguistics',
-    'machine learning',
-    'ai and neural networks'
+    'machine_learning'
 ]
+
+export const defaultMLTags = {
+    subtopics: [
+        'neural_networks',
+        'traditional_machine_learning',
+        'transformers',
+        'natural_langauge_processing',
+        'image_recognition',
+        'reinforcement_learning',
+        'generative_adversarial_networks',
+        'automatic_speech_recognition',
+        'data_science',
+    ],
+    lifecycle: [
+        'problem_definition',
+        'gathering_data',
+        'data_preparation',
+        'data_exploration',
+        'data_feature_engineering',
+        'model_selection',
+        'model_training',
+        'model_fine_tuning',
+        'model_tuning_and_evaluation',
+        'model_deployment',
+        'model_maintenance',
+    ],
+    other: [
+        'computing_resources',
+        'tools_and_libraries',
+        'security',
+        'ethics',
+        'history',
+    ]
+}
 
 export const defaultSpanishCategories = [
     'uncategorized',

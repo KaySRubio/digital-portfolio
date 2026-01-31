@@ -7,7 +7,7 @@ export interface WordData {
   knowledgelevel: number;
   id?: string;
   showTerm?: boolean;
-  tags?: string[];
+  tags?: string[] | string;
 }
 
 export type BoolAndError = [boolean, PostgrestError | null];

@@ -4,6 +4,7 @@ import { addData, fetchOneWord, updateData, deleteById } from '../../utils/supab
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { knowledgelevels } from '../../data/SampleVocabData';
 import { libretranslate } from '../../utils/apiRequests';
+import VocabAddSpecialChar from './VocabAddSpecialChar';
 
 type VocabUpdateTermProps = {
   supabase: SupabaseClient | null;
@@ -23,7 +24,7 @@ const VocabUpdateTerm = ({
   selectedWord
 }: VocabUpdateTermProps) => {
   const [id, setId] = useState<string | undefined>(selectedWord ? selectedWord.id : '');
-  const [idToDelete, setIdToDelete] = useState<string | undefined>(selectedWord ? selectedWord.id : '');
+  const [idToDelete, setIdToDelete] = useState<string>(selectedWord && selectedWord.id ? selectedWord.id : '');
   const [definition, setDefinition] = useState<string>(selectedWord ? selectedWord.definition : '');
   const [term, setTerm] = useState<string>(selectedWord ? selectedWord.term : '');
   const [knowledgelevel, setKnowledgelevel] = useState<number>(selectedWord ? selectedWord.knowledgelevel : 0);
@@ -32,12 +33,14 @@ const VocabUpdateTerm = ({
   const [statusMsg, setStatusMsg] = useState<string>('');
   const [spanishAlternatives, setSpanishAlternatives] = useState<string[]>([]);
   const [englishAlternatives, setEnglishAlternatives] = useState<string[]>([]);
-  const [tags, setTags] = useState<string>(selectedWord && selectedWord.tags ? selectedWord.tags.join(',') : '');
+  const [tags, setTags] = useState<string>(
+    selectedWord && 
+    selectedWord.tags && 
+    Array.isArray(selectedWord.tags) ? selectedWord.tags.join(',') : '');
 
   const spanishInputRef = useRef<HTMLTextAreaElement>(null);
   const idToDeleteInputRef = useRef<HTMLInputElement>(null);
 
-  const specialChars = ['\u00E1', '\u00E9', '\u00ED', '\u00F3', '\u00FA', '\u00F1', '\u00FC', '\u00A1', '\u00BF'];
   type UpdateGoal = 'add new word' | 'correct word info';
 
   const createDocumentId = (input: string) => {
@@ -53,6 +56,13 @@ const VocabUpdateTerm = ({
     const newId = createDocumentId(term);
     setId(newId);
   }, [term])
+
+  const formatTagsForSupabase = (tags: string) => {
+    return `{${tags
+      .split(',')
+      .map(s => `"${s.trim().replace(/\s+/g, '_')}"`)
+      .join(',')}}`;
+  }
 
   const update = async (updateGoal: UpdateGoal) => {
     setStatusMsg('');
@@ -80,9 +90,7 @@ const VocabUpdateTerm = ({
       // Process the tags to turn into array,
       // remove leading/trailing spaces, and
       // replace inner spaces with underscores
-      const newTags = tags.split(',').map(s =>
-        s.trim().replace(/\s+/g, '_')
-      );
+      const newTags = formatTagsForSupabase(tags);
 
       newWordData = {
         ...newWordData,
@@ -201,6 +209,10 @@ const VocabUpdateTerm = ({
     setTags('');
   }
 
+  /* TODO - replace tags text box with checkbox for selecting from default tags
+  const defaultTags = Object.values(defaultMLTags).flat();
+  */
+
   return (
     <div className='vocab-form-page'>
       <h2>Update</h2>
@@ -247,23 +259,17 @@ const VocabUpdateTerm = ({
               />
             </div>
             {selectedTable === 'spanish_vocab' && <div className='vocab-special-char-row'>
-              {specialChars.map((char, index) => (
-                <button 
-                  className='vocab-special-char-button'
-                  type="button"
-                  key={index}
-                  onClick={() => {
-                    setTerm(prev => prev+=char);
-                    requestAnimationFrame(() => {
-                      spanishInputRef.current?.focus();
-                      const len = spanishInputRef.current?.value.length ?? 0;
-                      spanishInputRef.current?.setSelectionRange(len, len);
-                    });
-                  }}
-                >
-                  {char}
-                </button>
-              ))}
+              <VocabAddSpecialChar 
+                onClick={(char) => {
+                  setTerm(prev => prev+=char);
+                  requestAnimationFrame(() => {
+                    spanishInputRef.current?.focus();
+                    const len = spanishInputRef.current?.value.length ?? 0;
+                    spanishInputRef.current?.setSelectionRange(len, len);
+                  });
+                }}
+              />
+
             </div>}
             <p className='vocab-alt'>{spanishAlternatives.map((alt, index) => <span key={index}> {alt} </span>) }</p>
           </div>
@@ -336,6 +342,7 @@ const VocabUpdateTerm = ({
           <p>Delete by id:</p>
             <div>
               <input
+                className='vocab-terms-filter-input'
                 ref={idToDeleteInputRef}
                 type="text"
                 value={idToDelete}
@@ -344,7 +351,47 @@ const VocabUpdateTerm = ({
               />
             </div>
             <div className='vocab-special-char-row'>
+              <VocabAddSpecialChar 
+                onClick={(char) => {
+                  setIdToDelete(prev => prev+=char);
+                  requestAnimationFrame(() => {
+                    idToDeleteInputRef.current?.focus();
+                    const len = idToDeleteInputRef.current?.value.length ?? 0;
+                    idToDeleteInputRef.current?.setSelectionRange(len, len);
+                  });
+                }}
+              />
+            </div>
+            <div className='vocab-update-form-button-row'>
+              <button type="button" className='vocab-text-button' onClick={deleteWord}>Remove from database</button>
+            </div>
+        </form>
+    </div>
+  );
+}
+  
+export default VocabUpdateTerm;
+
+/*
+
               {specialChars.map((char, index) => (
+                <button 
+                  className='vocab-special-char-button'
+                  type="button"
+                  key={index}
+                  onClick={() => {
+                    setTerm(prev => prev+=char);
+                    requestAnimationFrame(() => {
+                      spanishInputRef.current?.focus();
+                      const len = spanishInputRef.current?.value.length ?? 0;
+                      spanishInputRef.current?.setSelectionRange(len, len);
+                    });
+                  }}
+                >
+                  {char}
+                </button>
+              ))}
+{specialChars.map((char, index) => (
                 <button 
                   className='vocab-special-char-button'
                   type="button"
@@ -361,13 +408,6 @@ const VocabUpdateTerm = ({
                   {char}
                 </button>
               ))}
-            </div>
-            <div className='vocab-update-form-button-row'>
-              <button type="button" className='vocab-text-button' onClick={deleteWord}>Remove from database</button>
-            </div>
-        </form>
-    </div>
-  );
-}
-  
-export default VocabUpdateTerm;
+
+
+*/

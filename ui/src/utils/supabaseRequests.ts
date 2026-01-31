@@ -92,7 +92,6 @@ export async function fetchOneWord(
     .single()
 
   if(data) {
-    console.log("got data", data);
     return data;
   } else if (error) {
     console.warn(error);
@@ -179,13 +178,13 @@ export async function updateData(
           term: newWordData.term,
           definition: newWordData.definition,
           knowledgelevel: newWordData.knowledgelevel,
+          tags: newWordData.tags,
         })
         .eq("id", newWordData.id)
         .select()
         .single();
       
       if (data) {
-        console.log('updated data: ', data);
         return [true, null];
       } else {
         console.warn(error);
@@ -212,7 +211,6 @@ export async function addData(
       .single();
 
     if (data) {
-      console.log('updated data: ', data);
       return [true, null];
     } else {
       console.warn(error);
@@ -229,7 +227,6 @@ export async function deleteById(
   tableName: string, 
   id: string,
 ): Promise<BoolAndError> {
-  console.log('addData running');
   if(!supabase) return [false, null];
   try {
     await supabase

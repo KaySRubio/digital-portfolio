@@ -1,4 +1,3 @@
-import {useEffect} from 'react'
 import type { Topic, CurrentPage } from '../../types/vocabTypes';
 
 type VocabMenuProps = {
@@ -13,11 +12,6 @@ type VocabMenuProps = {
 const VocabMenu = ({ selectedTopic, setSelectedTopic, setCurrentPage }: VocabMenuProps) => {
 
   const topics = ['Spanish', 'Science']
-
-  useEffect(() => {
-    console.log('selected topic updated to ', selectedTopic)
-
-  }, [selectedTopic])
 
   return (
     <div className='vocab-menu'>

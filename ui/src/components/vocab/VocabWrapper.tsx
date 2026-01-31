@@ -57,32 +57,12 @@ const Notecards = () => {
   }, [selectedCategory])
 
   useEffect(() => {
-    console.log('words: ', words);
-  }, [words])
-
-  useEffect(() => {
     if(selectedTopic === 'Spanish') {
       setSelectedTable('spanish_vocab');
     } else {
       setSelectedTable('science');
     }
   }, [selectedTopic])
-
-  /*
-  useEffect(() => {
-    if(selectedTopic === 'Spanish') {
-      const dbCategories = words.map(word => word.category);
-      const allCategories = [...dbCategories, ...defaultSpanishCategories]
-      const uniqueCategories = [...new Set(allCategories)];
-      console.log('uniqueCategories from db', uniqueCategories);
-      const spanishCategories = uniqueCategories.filter(category => !defaultScienceCategories.includes(category));
-      spanishCategories.sort();
-      // setCategories(spanishCategories);
-    } else {
-      // setCategories(defaultScienceCategories);
-    }
-  }, [words, selectedTopic])
-  */
 
   useEffect(() => {
     setCurrentPage('Categories')
@@ -100,7 +80,6 @@ const Notecards = () => {
       if(dbCategories) {
         const allCategories = [...dbCategories, ...defaultCategories]
         const uniqueCategories = [...new Set(allCategories)];
-        console.log('uniqueCategories from db', uniqueCategories);
         uniqueCategories.sort();
         setCategories(uniqueCategories);
         // const finalCategories = uniqueCategories.filter(category => !defaultCategories.includes(category));
@@ -115,6 +94,7 @@ const Notecards = () => {
 
     if(useSupabase && supabase) {
       wordsArray = await fetchFilteredData(supabase, selectedTable, 'category', selectedCategory);
+      console.log('wordsArray returned from supabase: ', wordsArray);
     
     } else {
       wordsArray = sampleVocabData;
