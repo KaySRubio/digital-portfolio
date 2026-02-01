@@ -17,3 +17,11 @@ export type Topic = 'Spanish' | 'Science';
 export type CurrentPage = 'Categories' | 'Terms' | 'Update';
 
 export type TableName = 'spanish_vocab' | 'science';
+
+export type CategoryTags = {
+  [key: string]: string[];
+}
+
+export type AllTags = {
+  [key: string]: CategoryTags
+}

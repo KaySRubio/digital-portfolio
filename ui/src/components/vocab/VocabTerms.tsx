@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { updateData } from '../../utils/supabaseRequests';
 import type { SupabaseClient } from "@supabase/supabase-js";
 import VocabTermsMenu from './VocabTermsMenu';
-import { defaultMLTags } from '../../data/SampleVocabData';
-import type { WordData, CurrentPage, Topic, TableName } from '../../types/vocabTypes';
+import { defaultTags } from '../../data/SampleVocabData';
+import type { WordData, CurrentPage, Topic, TableName, CategoryTags } from '../../types/vocabTypes';
 
 type VocabTermsProps = {
   selectedCategory: string;
@@ -39,7 +39,8 @@ const VocabTerms = ({
   const [newSelectedCategory, setNewSelectedCategory]= useState<string>(selectedCategory);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [searchDefinition, setSearchDefinition] = useState<string>('');
-  const [filteredTags, setFilteredTags] = useState<string[]>([])
+  const [categoryTags, setCategoryTags] = useState<CategoryTags | null>(null);
+  const [filteredTags, setFilteredTags] = useState<string[]>([]);
 
   /* Debugging
   const checkForTagsNotInDefault = () => {
@@ -54,6 +55,15 @@ const VocabTerms = ({
       }
     });
   };*/
+
+  useEffect(() => {
+    if(Object.keys(defaultTags).includes(selectedCategory)) {
+      console.log(defaultTags[selectedCategory]);
+      setCategoryTags(defaultTags[selectedCategory]);
+    } else {
+      setCategoryTags(null);
+    }
+  }, [selectedCategory])
 
   useEffect(() => {
     if(!selectedWord) return;
@@ -161,9 +171,9 @@ const VocabTerms = ({
 
       <p className='vocab-terms-page-status-msg'>{statusMsg}</p>
       <div className='vocab-terms-section-and-categories'>
-        {selectedCategory === 'machine_learning' && <div className='vocab-terms-section-tags'>
+        {categoryTags && <div className='vocab-terms-section-tags'>
           <p>Filter by tag(s):</p>
-          {Object.entries(defaultMLTags).map(([groupName, tags]) => (
+          {Object.entries(categoryTags).map(([groupName, tags]) => (
             <div key={groupName} className='vocab-terms-section-tags-col'>
               <p>{groupName}</p>
               {tags.map(tag => (
@@ -181,6 +191,8 @@ const VocabTerms = ({
             </div>
           ))}
         </div>}
+
+        
         
         {selectedCategory === 'uncategorized' && <div className='vocab-terms-section-categories'>
           <p>Pick a category:</p>

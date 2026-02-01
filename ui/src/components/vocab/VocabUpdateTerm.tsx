@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import type { WordData, TableName } from '../../types/vocabTypes';
+import type { WordData, TableName, CategoryTags } from '../../types/vocabTypes';
 import { addData, fetchOneWord, updateData, deleteById } from '../../utils/supabaseRequests';
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { knowledgelevels } from '../../data/SampleVocabData';
+import { knowledgelevels, defaultTags } from '../../data/SampleVocabData';
 import { libretranslate } from '../../utils/apiRequests';
 import VocabAddSpecialChar from './VocabAddSpecialChar';
 
@@ -33,10 +33,8 @@ const VocabUpdateTerm = ({
   const [statusMsg, setStatusMsg] = useState<string>('');
   const [spanishAlternatives, setSpanishAlternatives] = useState<string[]>([]);
   const [englishAlternatives, setEnglishAlternatives] = useState<string[]>([]);
-  const [tags, setTags] = useState<string>(
-    selectedWord && 
-    selectedWord.tags && 
-    Array.isArray(selectedWord.tags) ? selectedWord.tags.join(',') : '');
+  const [categoryTags, setCategoryTags] = useState<CategoryTags | null>(null);
+  const [tagsToAdd, setTagsToAdd] = useState<string[]>([]);
 
   const spanishInputRef = useRef<HTMLTextAreaElement>(null);
   const idToDeleteInputRef = useRef<HTMLInputElement>(null);
@@ -48,14 +46,30 @@ const VocabUpdateTerm = ({
       .toLowerCase()
       .replace(/\b(el|la|un|una|los|las)\b/g, '')
       .trim()
-      // .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // optional to remove accents
       .replace(/\s+/g, '_');
   }
+
+  useEffect(() => {
+    const selectedCategory = newCategory ? newCategory : category;
+    if(Object.keys(defaultTags).includes(selectedCategory)) {
+      setCategoryTags(defaultTags[selectedCategory]);
+    } else {
+      setCategoryTags(null);
+    }
+  }, [category, newCategory])
 
   useEffect(() => {
     const newId = createDocumentId(term);
     setId(newId);
   }, [term])
+
+  const toggleTag = (tag: string) => {
+    setTagsToAdd(prev =>
+      prev.includes(tag)
+        ? prev.filter(t => t !== tag)   // remove
+        : [...prev, tag]                // add
+    );
+  };
 
   const formatTagsForSupabase = (tags: string) => {
     return `{${tags
@@ -86,15 +100,12 @@ const VocabUpdateTerm = ({
       knowledgelevel: knowledgelevel,
     };
 
-    if(selectedTable === 'science') {
-      // Process the tags to turn into array,
-      // remove leading/trailing spaces, and
-      // replace inner spaces with underscores
-      const newTags = formatTagsForSupabase(tags);
-
+    if(tagsToAdd.length > 0) {
+      const tagString = tagsToAdd.join(',');
+      const formattedTagString = formatTagsForSupabase(tagString);
       newWordData = {
         ...newWordData,
-        tags: newTags,
+        tags: formattedTagString,
       }
     }
 
@@ -206,12 +217,8 @@ const VocabUpdateTerm = ({
     setKnowledgelevel(0);
     setEnglishAlternatives([]);
     setSpanishAlternatives([]);
-    setTags('');
+    setTagsToAdd([]);
   }
-
-  /* TODO - replace tags text box with checkbox for selecting from default tags
-  const defaultTags = Object.values(defaultMLTags).flat();
-  */
 
   return (
     <div className='vocab-form-page'>
@@ -286,14 +293,28 @@ const VocabUpdateTerm = ({
           </div>
         </div>
 
-        {selectedTable === 'science' && <div>
-          <p>Tags (enter comma-separated)</p>
-          <textarea
-              className='vocab-update-form-input-science-tags'
-              value={tags}
-              onChange={(e) => setTags(e.target.value)}
-              required={true}
-            />
+        {categoryTags && <div className='vocab-update-tags-section'>
+          <p>Add tag(s):</p>
+          {Object.entries(categoryTags).map(([groupName, tags]) => (
+            <div key={groupName}>
+              <p>{groupName}</p>
+              <div className='vocab-update-tags'>
+                {tags.map(tag => (
+                  <button 
+                    type='button'
+                    key={tag}
+                    className={`
+                      vocab-terms-section-tag-button
+                      ${tagsToAdd.includes(tag) ? 'vocab-terms-section-tag-button-selected' : ''}
+                    `}
+                    onClick={() => toggleTag(tag)}
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>}
 
         <p>Knowledge Level</p>
@@ -371,43 +392,3 @@ const VocabUpdateTerm = ({
 }
   
 export default VocabUpdateTerm;
-
-/*
-
-              {specialChars.map((char, index) => (
-                <button 
-                  className='vocab-special-char-button'
-                  type="button"
-                  key={index}
-                  onClick={() => {
-                    setTerm(prev => prev+=char);
-                    requestAnimationFrame(() => {
-                      spanishInputRef.current?.focus();
-                      const len = spanishInputRef.current?.value.length ?? 0;
-                      spanishInputRef.current?.setSelectionRange(len, len);
-                    });
-                  }}
-                >
-                  {char}
-                </button>
-              ))}
-{specialChars.map((char, index) => (
-                <button 
-                  className='vocab-special-char-button'
-                  type="button"
-                  key={index}
-                  onClick={() => {
-                    setIdToDelete(prev => prev+=char);
-                    requestAnimationFrame(() => {
-                      idToDeleteInputRef.current?.focus();
-                      const len = idToDeleteInputRef.current?.value.length ?? 0;
-                      idToDeleteInputRef.current?.setSelectionRange(len, len);
-                    });
-                  }}
-                >
-                  {char}
-                </button>
-              ))}
-
-
-*/

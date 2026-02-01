@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import shuffle from '@/assets/svg/shuffle.svg?react';
 import edit from '@/assets/svg/edit.svg?react';
 import magnifyingGlass from '@/assets/svg/magnifying-glass.svg?react';
@@ -40,7 +40,13 @@ const VocabTermsMenu = ({
   setSearchDefinition,
 }: VocabTermsMenuProps) => {
   const [showSearchSection, setShowSearchSection] = useState<boolean>(false);
+  const [numOfAllWords, setNumOfAllWords] = useState<number>(0);
+  const [numOfKL0Words, setNumOfKL0Words] = useState<number>(0);
+  const [numOfKL1Words, setNumOfKL1Words] = useState<number>(0);
+  const [numOfKL2Words, setNumOfKL2Words] = useState<number>(0);
+
   const searchTermRef = useRef<HTMLInputElement>(null);
+
   const options = [
     { label: "Got it!", value: 1, color: "green", textColor: "white" },
     { label: "Missed it", value: 0, color: "red", textColor: "white" },
@@ -56,17 +62,37 @@ const VocabTermsMenu = ({
       [result[i], result[j]] = [result[j], result[i]];
     }
     return result;
-  } 
+  }
+
+  useEffect(() => {
+    console.log(words.length);
+    setNumOfAllWords(words.filter((word) => selectedCategory === word.category).length);
+    setNumOfKL0Words(words.filter((word) => word.knowledgelevel === 0 && selectedCategory === word.category).length);
+    setNumOfKL1Words(words.filter((word) => word.knowledgelevel === 1 && selectedCategory === word.category).length);
+    setNumOfKL2Words(words.filter((word) => word.knowledgelevel === 2 && selectedCategory === word.category).length)
+  }, [words])
 
   const shuffleArray = () => {
     const newWords = _shuffleArray(words);
     setWords(newWords);
   }
 
+  const getKnowledgeLevelButtonLabel = (knowledgeLevel: number): number => {
+    if(knowledgeLevel === -1) {
+      return numOfAllWords;
+    } else if(knowledgeLevel === 0) {
+      return numOfKL0Words;
+    } else if (knowledgeLevel === 1) {
+      return numOfKL1Words;
+    } else if (knowledgeLevel === 2) {
+      return numOfKL2Words
+    } else {
+      return 0;
+    }
+  }
+
   return (
     <div>
-
-
       <div className='vocab-terms-settings-section'>
         <div className='vocab-terms-settings-section-row'>
           <h2>{selectedCategory}</h2>
@@ -84,7 +110,7 @@ const VocabTermsMenu = ({
                         ${filter === level.value ? 'selected' : ''}
                       `}
 
-                    >
+                    >{getKnowledgeLevelButtonLabel(level.value)}
                       <input
                         type="radio"
                         name="knowledge"
