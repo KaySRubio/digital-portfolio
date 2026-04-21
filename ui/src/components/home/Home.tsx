@@ -3,8 +3,8 @@ import FeaturedProjects from './FeaturedProjects';
 import Contact from './Contact';
 import { homePageData } from '../../data/portfolioData';
 import WaveBackground from './WaveBackground';
-import whale_music from '@/assets/png/whale_music2.png';
-import sand from '@/assets/png/sand.png';
+import whale_music from '@/assets/png/whale_music3.png';
+import sand from '@/assets/png/sand3.png';
 
 const Home = () => {
   /* Try this again later
@@ -23,20 +23,22 @@ const Home = () => {
       <h1>Digital Portfolio</h1>
       <FeaturedProjects />
       <WaveBackground />
-      <div className='about'>
+      <div className='about' id='about'>
         <h2>About me</h2>
         <div className='about-centered-row'>
           <div className='centered-row'>
             <h1 className='sr-only'>Home</h1>
-            <div className={`headline-desc-area`}>
-              <p className='headline'>{homePageData.headline}</p>
-              <p className='desc'>{homePageData.desc}</p>
-            </div>
             <div>
               <img className='avatar' src={whale_music} alt='A whale swimming upwards with a wave of musical notes coming from it' />
             </div>
+            <div className={`headline-desc-area`}>
+              {/*<p className='headline'>{homePageData.headline}</p>*/}
+              <p className='desc'>{homePageData.desc}</p>
+              <p className='desc'>{homePageData.long_desc}</p>
+            </div>
+            
           </div>
-          <p className='long-desc'>{homePageData.long_desc}</p>
+          {/*<p className='long-desc'>{homePageData.long_desc}</p>*/}
         </div>
       </div>
       <div

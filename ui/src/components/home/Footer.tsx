@@ -22,7 +22,7 @@ const Footer = () => {
   let iconClass;
   if(isHomePage()) {
     footerClass = 'sand-background';
-    iconClass = 'dark-blue';
+    iconClass = 'light-teal';
   } else {
     footerClass = 'dark-blue-background';
     iconClass = 'white';

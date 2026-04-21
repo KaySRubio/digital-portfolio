@@ -103,9 +103,13 @@ import vietnamese from '@/assets/wav/vietnamese.wav';
 const timeItTakesAHuggingFaceSpaceToWakeUp = 180;
 
 export const homePageData = {
-  headline: 'Listener, Developer, Explorer',
-  desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics',
-  long_desc: 'As a React developer I build interactive educational websites. In my free time I dabble in machine learning and record wildlife. My dream is to analyze animal communication to decode structure and meaning and use the web to engage the public in bioacoustics.',
+  // headline: 'Listener, Developer, Explorer',
+  headline: '',
+  // desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics',
+  desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics. By day, I\'m a React developer on an AI-lab team at an EdTech company. I build educational websites that use speech recognition to evaluate children\'s reading skills.',
+  long_desc: 'By night, I record wildlife and analyze sound. My dream is to use neural networks to decode structure and meaning in animal communication. I also hope to build apps that engage the public in bioacoustics.',
+  //long_desc: 'As a React developer I build interactive educational websites. In my free time I dabble in machine learning and record wildlife. My dream is to analyze animal communication to decode structure and meaning and use the web to engage the public in bioacoustics.',
+
 }
 
 export const base_path = '/digital-portfolio/'
@@ -1663,6 +1667,63 @@ export const projects: Project[] = [
       },
     ],
   },
+    // algorithm-ocean --> DONE!!
+  {
+    path: 'algorithm-ocean',
+    short_title: 'Algorithm Ocean',
+    title: 'Algorithm Ocean: Practice sorting algorithms live!',
+    date: 'Summer 2022',
+    topics: [TopicNames.WEBAPPDEVELOPMENT],
+    visible: true,
+    featured: true,
+    desc: 'Web app to teach students sorting algorithms with an under-the-sea theme',
+    long_desc: 'Created a React and TypeScript website to teach users sorting algorithms that they can perform live on screen and get instant feedback about their steps.',
+    mainImage: {
+      type: 'png',
+      src: anemone,
+      alt: 'A cartoon anemone with a green body and pink tentacles and eyes looking up',
+    },
+    projectCardTechStack: ['react', 'typescript', 'vite', 'nodejs'],
+    project_details: [
+      {
+        type: 'div',
+        className: 'project-details-restricted-width',
+        elements: [
+          {
+            type: 'GoalAndGithub',
+            elements: [
+              {type: 'h2', text: 'Goal'},
+              {type: 'ul', elements: [
+                [{type: 'text', text: 'I created AlgorithmOcean as a school project to teach my classmates sorting algorithms!'},],
+                [{type: 'text', text: 'The program randomly generates an array of numbers. Users sort the numbers using bubble, selection, or insertion sort.'}],
+                [{type: 'text', text: 'Once sorted, the user presses "Submit" and the program tells them if they used the correct steps according to the algorithm.'}],
+                [{type: 'text', text: 'For fun, the program also provides interesting facts about how algorithms relate to ocean science.'}]
+              ]}
+            ],
+            href: 'https://github.com/KaySRubio/algorithm-ocean-2',
+          },
+          {type: 'h2', text: 'Demo'},
+        ]
+      },
+
+      {type: 'iframe', title: 'Algorithm Ocean lesson page showing bubble sort', src: 'https://kaysrubio.github.io/algorithm-ocean-2/#/lesson/bubble'},
+      {
+        type: 'div',
+        className: 'project-details-restricted-width',
+        elements: [    
+          {type: 'h2', text: 'Tech Stack'},
+          {
+            type: 'TechStack',
+            techList: ['react', 'typescript', 'nodejs', 'vite'],
+          },
+          {type: 'h2', text: 'More Information'},
+          {type: 'p', text: 'I created this app for an independent study course at Framingham State University from April - July 2022. In 2025, I updated it to work with modern React, TypeScript, and Vite.'},
+          {type: 'a', className: 'centerWidth100', text: 'Go to AlgorithmOcean site', href: 'https://kaysrubio.github.io/algorithm-ocean-2/#/'},
+        ]
+      },
+
+    ],
+  },
   // danceability --> DONE!!
   {
     path: 'danceability',
@@ -1671,8 +1732,8 @@ export const projects: Project[] = [
     date: 'January 2024',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
-    featured: false,
-    desc: 'Trained models to predict the danceability of songs',
+    featured: true,
+    desc: 'Trained traditional machine learning models to predict the danceability of songs',
     long_desc: 'Trained machine learning model for regression to predict danceability scores from the temporal features of songs using scikit-learn.',
     mainImage: {
       type: 'png',
@@ -1741,12 +1802,12 @@ export const projects: Project[] = [
   // diabetes-classifier --> DONE!!
   {
     path: 'diabetes-classifier',
-    short_title: 'Diabetes Classifier',
+    short_title: 'Hospitalization Classifier',
     title: 'Using ML Classification Algorithms to Predict Hospital Readmission in Patients with Diabetes',
     date: 'January 2024',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
-    featured: false,
+    featured: true,
     desc: 'Trained traditional machine learning models to predict hospital readmission',
     long_desc: 'Trained machine learning classification models to predict hospital readmission in patients with diabetes using scikit-learn.',
     mainImage: {
@@ -1826,8 +1887,8 @@ export const projects: Project[] = [
     date: 'February 2024',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
-    featured: false,
-    desc: 'Explored underlying topics in 20,000 Dear Abby questions to practice Natural Language Processing (NLP)',
+    featured: true,
+    desc: 'Explored underlying topics in Dear Abby questions using Natural Language Processing',
     long_desc: 'Used unsupervised machine learning and natural language processing to explore underlying topics in 20,000 Dear Abby questions.',
     mainImage: {
       type: 'png',
@@ -2078,63 +2139,6 @@ export const projects: Project[] = [
           },
         ]
       },
-    ],
-  },
-  // algorithm-ocean --> DONE!!
-  {
-    path: 'algorithm-ocean',
-    short_title: 'Algorithm Ocean',
-    title: 'Algorithm Ocean: Practice sorting algorithms live!',
-    date: 'Summer 2022',
-    topics: [TopicNames.WEBAPPDEVELOPMENT],
-    visible: true,
-    featured: true,
-    desc: 'Web app to teach students sorting algorithms with an under-the-sea theme',
-    long_desc: 'Created a React and TypeScript website to teach users sorting algorithms that they can perform live on screen and get instant feedback about their steps.',
-    mainImage: {
-      type: 'png',
-      src: anemone,
-      alt: 'A cartoon anemone with a green body and pink tentacles and eyes looking up',
-    },
-    projectCardTechStack: ['react', 'typescript', 'vite', 'nodejs'],
-    project_details: [
-      {
-        type: 'div',
-        className: 'project-details-restricted-width',
-        elements: [
-          {
-            type: 'GoalAndGithub',
-            elements: [
-              {type: 'h2', text: 'Goal'},
-              {type: 'ul', elements: [
-                [{type: 'text', text: 'I created AlgorithmOcean as a school project to teach my classmates sorting algorithms!'},],
-                [{type: 'text', text: 'The program randomly generates an array of numbers. Users sort the numbers using bubble, selection, or insertion sort.'}],
-                [{type: 'text', text: 'Once sorted, the user presses "Submit" and the program tells them if they used the correct steps according to the algorithm.'}],
-                [{type: 'text', text: 'For fun, the program also provides interesting facts about how algorithms relate to ocean science.'}]
-              ]}
-            ],
-            href: 'https://github.com/KaySRubio/algorithm-ocean-2',
-          },
-          {type: 'h2', text: 'Demo'},
-        ]
-      },
-
-      {type: 'iframe', title: 'Algorithm Ocean lesson page showing bubble sort', src: 'https://kaysrubio.github.io/algorithm-ocean-2/#/lesson/bubble'},
-      {
-        type: 'div',
-        className: 'project-details-restricted-width',
-        elements: [    
-          {type: 'h2', text: 'Tech Stack'},
-          {
-            type: 'TechStack',
-            techList: ['react', 'typescript', 'nodejs', 'vite'],
-          },
-          {type: 'h2', text: 'More Information'},
-          {type: 'p', text: 'I created this app for an independent study course at Framingham State University from April - July 2022. In 2025, I updated it to work with modern React, TypeScript, and Vite.'},
-          {type: 'a', className: 'centerWidth100', text: 'Go to AlgorithmOcean site', href: 'https://kaysrubio.github.io/algorithm-ocean-2/#/'},
-        ]
-      },
-
     ],
   },
   // i-ready --> not done

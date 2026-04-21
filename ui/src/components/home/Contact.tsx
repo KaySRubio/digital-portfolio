@@ -28,7 +28,7 @@ const Contact = () => {
   return (
     <div className='contact-form-area'>
       {!formSent ? 
-        <div>
+        <div id='contact'>
           <h2>Contact</h2>
           <form onSubmit={onSubmit}>
             <input type="hidden" name="access_key" value="8c460fad-8096-477d-b9cc-a8ad8ab13300" />

@@ -20,7 +20,7 @@ const TopicPage = ({topic}: ProjectListPageProps) => {
       <meta name="description" content={`Software engineering portfolio showing ${topic.title}. Includes live demos and GitHub links.`} />
       <h1 className='topic-page-title'>{topic.title}</h1>
       <div className='project-card-container'>
-      {visibleProjectsOnTopic.map(project => ( <ProjectCard key={project.path} project={project} theme='dark' />))}
+      {visibleProjectsOnTopic.map(project => ( <ProjectCard key={project.path} project={project} theme='light' />))}
       </div>
     </div>
   )

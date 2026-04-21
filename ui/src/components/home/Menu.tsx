@@ -21,6 +21,12 @@ const Menu = () => {
     }
   }
 
+  const isHomePage = () => {
+    const crumbs = location.pathname;
+    if(crumbs === '/') return true;
+    else return false;
+  }
+
   // Check which color scheme to use based on page
   let backgroundColor;
   let color;
@@ -44,8 +50,24 @@ const Menu = () => {
         <Link className={`large-menu-home-button ${color}`} to={''}>Kay Rubio</Link>
         <Breadcrumbs className={color} />
       </div>
-
       <div className='large-menu-project-button-group'>
+        {isHomePage() && <a className='large-menu-button-short'
+          href="#about"
+          // prevent HashRouter inteference
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('about')?.scrollIntoView({behavior: 'smooth'});
+          }}
+        >About</a>}
+        {isHomePage() && <a className='large-menu-button-short'
+          href="#contact"
+          // prevent HashRouter inteference
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});
+          }}
+        >Contact</a>}
+        {!isHomePage() && <Link to={''} className={`large-menu-button-short`}>Home</Link>}
         {topics.map(topic => {
           return (
             <Link to={topic.path} key={topic.title} className={`large-menu-button ${color}`}>
@@ -66,7 +88,27 @@ const Menu = () => {
             x
           </button>
           <ul className='dropdown-menu-contents'>
-            {topics.map(topic => {
+
+          {isHomePage() && <li><a className={`dropdown-menu-button dark-blue`}
+            href="#about"
+            // prevent HashRouter inteference
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('about')?.scrollIntoView({behavior: 'smooth'});
+            }}
+          >About</a></li>}
+          
+          {isHomePage() && <li><a className={`dropdown-menu-button dark-blue`}
+            href="#contact"
+            // prevent HashRouter inteference
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});
+            }}
+          >Contact</a></li>}
+          {!isHomePage() && <li><Link to={''} className={`dropdown-menu-button dark-blue`}>Home</Link></li>}
+
+          {topics.map(topic => {
             return (
               <li key={topic.title}>
                 <Link onClick={() => setMenuOpen(false)} to={topic.path} className={`dropdown-menu-button dark-blue`}>

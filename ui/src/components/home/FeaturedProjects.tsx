@@ -14,7 +14,7 @@ const FeaturedProjects = () => {
   return (
     <div>
       <div className="featured-projects-section" onClick={() => setAutoPlay(false)}>
-        <h2 className='hidden-on-phone'>Featured Projects</h2>
+        <h2 className='sr-only'>Featured Projects</h2>
         <Carousel 
           autoplay={autoPlay}
           showDots={true}
