@@ -47,10 +47,9 @@ const Menu = () => {
 
       <div className='large-menu-project-button-group'>
         {topics.map(topic => {
-          const Icon = topic.iconComponent;
           return (
             <Link to={topic.path} key={topic.title} className={`large-menu-button ${color}`}>
-              <Icon className={`large-menu-icon ${color}`} />
+              
               {topic.title}
             </Link>
           );
@@ -68,11 +67,9 @@ const Menu = () => {
           </button>
           <ul className='dropdown-menu-contents'>
             {topics.map(topic => {
-            const Icon = topic.iconComponent;
             return (
               <li key={topic.title}>
                 <Link onClick={() => setMenuOpen(false)} to={topic.path} className={`dropdown-menu-button dark-blue`}>
-                  <Icon className={`dropdown-menu-icon white`} />
                   {topic.title}
                 </Link>
               </li>
@@ -88,3 +85,6 @@ const Menu = () => {
 }
 
 export default Menu;
+// <Icon className={`large-menu-icon ${color}`} />
+//const Icon = topic.iconComponent;
+// <Icon className={`dropdown-menu-icon white`} />

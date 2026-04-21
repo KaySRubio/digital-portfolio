@@ -17,6 +17,7 @@
     "@wavesurfer/react": "^1.0.11",
     "lodash.get": "^4.4.2",
     "multi-range-slider-react": "^2.0.7",
+    "nuka-carousel": "^8.2.0",
     "plotly.js": "^3.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

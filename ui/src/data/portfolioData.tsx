@@ -118,7 +118,7 @@ export const topics: Topic[] = [
   },
   {
     path: 'machine-learning',
-    title: 'AI and Machine Learning Projects',
+    title: 'AI and Machine Learning',
     iconComponent: aiIcon,
   },
   {
@@ -576,7 +576,7 @@ export const projects: Project[] = [
       },
     ],
   },
-  // bat-calls --> not done
+  // bat-calls --> DONE!!
   {
     path: 'bat-echolocation',
     short_title: 'Bat Echolocation Calls',
@@ -2088,7 +2088,7 @@ export const projects: Project[] = [
     date: 'Summer 2022',
     topics: [TopicNames.WEBAPPDEVELOPMENT],
     visible: true,
-    featured: false,
+    featured: true,
     desc: 'Web app to teach students sorting algorithms with an under-the-sea theme',
     long_desc: 'Created a React and TypeScript website to teach users sorting algorithms that they can perform live on screen and get instant feedback about their steps.',
     mainImage: {

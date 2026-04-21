@@ -1,35 +1,29 @@
-import { Link } from 'react-router-dom';
-import { topics, projects } from '../../data/portfolioData';
+import { useState } from 'react';
+import { projects } from '../../data/portfolioData';
 import ProjectCard from './ProjectCard'
+// https://nearform.com/open-source/nuka-carousel/docs/api/navigation
+import { Carousel, } from 'nuka-carousel';
 
 const FeaturedProjects = () => {
+  const [autoPlay, setAutoPlay] = useState(true);
 
-    // find only the featured projects from the projectList
-    const featured_projects = projects
-    .filter(project => project.featured);
+  // find only the featured projects from the projectList
+  const featured_projects = projects
+  .filter(project => project.featured);
 
   return (
     <div>
-      <div className="featured-projects-section">
+      <div className="featured-projects-section" onClick={() => setAutoPlay(false)}>
         <h2>Featured Projects</h2>
-        <p className='center'>Click on a card to view a project</p>
-        <div className='project-card-container'>
-          {featured_projects.map(project => ( <ProjectCard key={project.path} project={project} theme='light' />))}
-        </div>
-      </div>
-      <div className="featured-projects-section">
-        <h2>See more projects</h2>
-        <div className='project-icon-row'>
-          {topics.map(topic => {
-          const Icon = topic.iconComponent;
-          return (
-            <Link to={`${topic.path}`} key={topic.title} className={`large-menu-button white`}>
-              <Icon className={`large-menu-icon white`} />
-              See all {topic.title}
-            </Link>
-          );
-        })}
-        </div>
+        <Carousel 
+          autoplay={autoPlay}
+          showDots={true}
+          showArrows={true}
+          scrollDistance='slide'
+          wrapMode='wrap'
+        >
+          {featured_projects.map(project => ( <ProjectCard key={project.path} project={project} theme='dark' />))}
+        </Carousel>
       </div>
     </div>
   )

@@ -36,17 +36,22 @@ const ProjectCard = ({project, theme='light'}: ProjectCardProps) => {
 
   return (
     <Link className={`project-card ${projectCardClass}`} to={`${project.path}`}>
-      <h3>{project.short_title}</h3>
-      <p>{project.desc}</p>
-      {project.mainImage && renderProjectImage()}
-      {project.projectCardTechStack && <TechStack techList={project.projectCardTechStack} className='project-card-tech-stack-row' />}
-      {project.techStack && <ul>
-        {project.techStack.map((tech, index) => (
-          <li key={index}>
-            {tech}
-          </li>
-        ))}
-      </ul>}
+      <div className='project-card-contents'>
+
+      
+        <h3>{project.short_title}</h3>
+        <p>{project.desc}</p>
+        {project.mainImage && renderProjectImage()}
+        {project.projectCardTechStack && <TechStack techList={project.projectCardTechStack} className='project-card-tech-stack-row' />}
+        {project.techStack && <ul>
+          {project.techStack.map((tech, index) => (
+            <li key={index}>
+              {tech}
+            </li>
+          ))}
+        </ul>}
+      </div>
+      <div className='project-card-click-me'>Click to learn more &rarr;</div>
     </Link>
   )
 }
