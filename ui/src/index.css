@@ -156,7 +156,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  margin: 30px 0;
+  margin: 10px 0;
   color: var(--med-blue);
 }
 
@@ -229,11 +229,11 @@ h1 {
   text-decoration: none;
   width: 90px;
   padding: 5px;
-  margin: 2px;
+  margin: 1px;
 }
 
 .large-menu-button:hover {
-  border: 2px solid var(--dark-blue);
+  border: 1px solid var(--dark-blue);
   margin: 0;
 }
 
@@ -413,8 +413,12 @@ h1 {
   margin-right: auto;
 }
 
+.nuka-wrapper {
+  padding: 20px 0;
+}
+
 .nuka-page-indicator {
-  border: 2px solid var(--dark-blue) !important;
+  border: 1px solid var(--dark-blue) !important;
   background-color: white !important;
   height: 16px !important;
   width: 15px !important;
@@ -457,6 +461,8 @@ h1 {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--dark-blue);
+  box-shadow: 0px 0px 3px var(--dark-blue);
 }
 
 .project-card-contents {
@@ -504,8 +510,9 @@ h1 {
 .project-card-click-me {
   margin-top: auto;
   position: relative;
-  background-color: var(--dark-blue);
-  color: white;
+  /*background-color: var(--dark-blue);
+  color: white;*/
+  color: var(--dark-blue);
   padding: 10px;
   overflow: hidden;
   z-index: 0;
@@ -610,7 +617,7 @@ form button {
 }
 
 .footer p {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .footer-button-group {
@@ -622,8 +629,8 @@ form button {
 }
 
 .footer-icon {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .tech-stack-row {
@@ -670,6 +677,15 @@ form button {
 }
 
 @media (max-width: 500px) {
+
+  .hidden-on-phone {
+    display: none;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
   .large-menu-project-button-group {
     display: none;
   }
@@ -763,8 +779,8 @@ form button {
   }
   
   .footer-icon {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
 }
 

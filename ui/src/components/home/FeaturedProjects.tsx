@@ -14,15 +14,15 @@ const FeaturedProjects = () => {
   return (
     <div>
       <div className="featured-projects-section" onClick={() => setAutoPlay(false)}>
-        <h2>Featured Projects</h2>
+        <h2 className='hidden-on-phone'>Featured Projects</h2>
         <Carousel 
           autoplay={autoPlay}
           showDots={true}
-          showArrows={true}
+          showArrows={false}
           scrollDistance='slide'
           wrapMode='wrap'
         >
-          {featured_projects.map(project => ( <ProjectCard key={project.path} project={project} theme='dark' />))}
+          {featured_projects.map(project => ( <ProjectCard key={project.path} project={project} theme='light' />))}
         </Carousel>
       </div>
     </div>
