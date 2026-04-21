@@ -22,7 +22,11 @@ const FeaturedProjects = () => {
           scrollDistance='slide'
           wrapMode='wrap'
         >
-          {featured_projects.map(project => ( <ProjectCard key={project.path} project={project} theme='light' />))}
+          {featured_projects.map(project => (
+            <div className='project-card-wrapper-in-carousel' key={project.path}>
+              <ProjectCard project={project} theme='light' />
+            </div>
+          ))}
         </Carousel>
       </div>
     </div>

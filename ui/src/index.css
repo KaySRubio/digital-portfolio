@@ -463,7 +463,7 @@ h1 {
 }
 
 .project-card {
-  min-height: 280px;
+  height: 390px;
   width: 240px;
   min-width: 240px;
   border-radius: 5px;
@@ -476,8 +476,6 @@ h1 {
   flex-direction: column;
   border: 1px solid var(--dark-blue);
   box-shadow: -2px 2px 5px var(--dark-blue);
-  /* margin: 8px; PROBLEM for nuka-carousel on small screens */
-
 }
 
 .project-card-contents {
@@ -487,6 +485,15 @@ h1 {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+}
+
+.project-card-wrapper-in-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  min-width: 270px;
+  height: 430px;
 }
 
 .nuka-container {
@@ -507,15 +514,7 @@ h1 {
   background-color: var(--dark-blue) !important;
 }
 
-.nuka-wrapper {
-  padding: 20px 10px;
-  gap: 20px;
-  /* gap: 20px; PROBLEM for nuka-carousel on small screens */
-}
-
-
 /* optional animation that makes cards larger when hovered */
-
 .project-card:hover {
   transform: scale(1.05);
   z-index: 2;
@@ -551,8 +550,6 @@ h1 {
 .project-card-click-me {
   margin-top: auto;
   position: relative;
-  /*background-color: var(--dark-blue);
-  color: white;*/
   color: var(--dark-blue);
   padding: 10px;
   overflow: hidden;
@@ -654,7 +651,7 @@ form button {
   margin: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* vertically centers if needed */
+  align-items: center;
   padding: 10px 1rem;
   flex-direction: row;
 }
@@ -667,7 +664,7 @@ form button {
 .footer-button-group {
   display: flex;
   margin: 0;
-  gap: 2rem; /* spacing between the project buttons */
+  gap: 2rem;
   text-align: center;
   font-size: 0.7em;
 }
@@ -701,10 +698,6 @@ form button {
 }
 
 @media (max-width: 600px) {
-  .nuka-wrapper {
-    gap: 5px;
-  }
-
   .form-row {
     display: flex;
     flex-direction: column;
@@ -746,7 +739,6 @@ form button {
   .hamburger-button {
     display: inline;
     border: none;
-    /* background-color: white; */
     padding: 0;
     width: 30px;
     height: 30px;
@@ -827,7 +819,7 @@ form button {
   }
   
   .footer-button-group {
-    gap: 1rem; /* spacing between the project buttons */
+    gap: 1rem;
   }
   
   .footer-icon {
