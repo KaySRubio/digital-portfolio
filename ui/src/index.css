@@ -69,6 +69,7 @@ button {
   margin: 20px 0
 }
 
+
 .width100 {
   width: 100%;
   margin: 0;
@@ -86,7 +87,6 @@ button {
 .max-width310 {
   max-width: 310px;
 }
-
 
 .bold {
   font-weight: bold;
@@ -151,6 +151,7 @@ html, body, #root {
   white-space: nowrap;
 }
 
+
 h1, h2, h3 {
   margin: 0;
   text-align: center;
@@ -198,6 +199,7 @@ h1 {
   color: var(--very-light-teal);
   fill: currentColor;
 }
+
 
 .white {
   color: white;
@@ -397,6 +399,18 @@ h1 {
   color: white;
 }
 
+
+.topic-page-title {
+  margin: 40px 0 10px 0;
+  color: var(--dark-blue);
+}
+
+.topic-page-directions {
+  text-align: center;
+  color: var(--dark-blue);
+}
+
+
 .repeat-horiz-background {
   background-repeat: repeat-x;
   background-position: bottom; 
@@ -436,15 +450,48 @@ h1 {
   margin: 20px;
   width: calc(100% - 40px);
   max-width: calc(100vw - 40px);
+  overflow: hidden;
+}
+
+
+.project-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+.project-card {
+  min-height: 280px;
+  width: 240px;
+  min-width: 240px;
+  border-radius: 5px;
+  padding: 0;
+  text-decoration: none;
+  flex: 0 0 auto;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--dark-blue);
+  box-shadow: -2px 2px 5px var(--dark-blue);
+  /* margin: 8px; PROBLEM for nuka-carousel on small screens */
+
+}
+
+.project-card-contents {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .nuka-container {
   margin-left: auto;
   margin-right: auto;
-}
-
-.nuka-wrapper {
-  padding: 20px 10px;
 }
 
 .nuka-page-indicator {
@@ -460,50 +507,12 @@ h1 {
   background-color: var(--dark-blue) !important;
 }
 
-.topic-page-title {
-  margin: 40px 0 10px 0;
-  color: var(--dark-blue);
+.nuka-wrapper {
+  padding: 20px 10px;
+  gap: 20px;
+  /* gap: 20px; PROBLEM for nuka-carousel on small screens */
 }
 
-.topic-page-directions {
-  text-align: center;
-  color: var(--dark-blue);
-}
-
-
-.project-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 10px;
-}
-
-
-.project-card {
-  min-height: 280px;
-  width: 240px;
-  border-radius: 5px;
-  padding: 0;
-  margin: 8px;
-  text-decoration: none;
-  flex: 0 0 auto;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--dark-blue);
-  box-shadow: -5px 5px 10px var(--dark-blue);
-}
-
-.project-card-contents {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-}
 
 /* optional animation that makes cards larger when hovered */
 
@@ -511,6 +520,7 @@ h1 {
   transform: scale(1.05);
   z-index: 2;
 }
+
 
 /* optional animation to change color on hover that interferes with onload
 .project-card-click-me::before {
@@ -578,6 +588,8 @@ h1 {
 .project-card p {
   margin: 10px 0 0 0;
 }
+
+
 
 .project-card ul {
   margin: 0;
@@ -651,6 +663,7 @@ form button {
   font-size: 12px;
 }
 
+
 .footer-button-group {
   display: flex;
   margin: 0;
@@ -680,6 +693,7 @@ form button {
   height: 40px;
 }
 
+
 @media (max-width: 899px) {
   .two-column {
     flex-direction: column;
@@ -687,7 +701,9 @@ form button {
 }
 
 @media (max-width: 600px) {
-
+  .nuka-wrapper {
+    gap: 5px;
+  }
 
   .form-row {
     display: flex;
@@ -705,6 +721,7 @@ form button {
   
 }
 
+
 @media (max-width: 500px) {
   .centered-row {
     flex-direction: column;
@@ -712,10 +729,6 @@ form button {
   }
   .hidden-on-phone {
     display: none;
-  }
-
-  .nuka-wrapper {
-    padding: 5px;
   }
 
   .project-card {
@@ -805,8 +818,8 @@ form button {
   }
 }
 
-@media (max-width: 400px) {
 
+@media (max-width: 400px) {
 
   .project-icon-row {
     flex-direction: column;
@@ -1136,7 +1149,7 @@ form button {
   justify-content: left;
   flex-direction: row;
   align-items: center;
-	width: 100%;
+  width: 100%;
   background-color: var(--Speech_very_light_gray);
   font-weight: bold;
   font-size: 12px;
@@ -1581,6 +1594,10 @@ form button {
 .interactive-box-results {
   width: 100%;
 }
+
+
+
+
 
 .spinner-wrapper, .spinner-wrapper-absolute {
   display: flex;
