@@ -608,7 +608,7 @@ export const projects: Project[] = [
           {type: 'text', text: ', Spectrogram photo from bat recorded by K. Rubio', className: 'small-text'},
           {type: 'h2', text: 'About'},
           {type: 'p', text: 'Bats are critical to ecosystem health as insect-eaters, pollinators, and seed dispersers. However, nearly half of all bat species worldwide are threatened with extinction, and 90% of bats in North America are facing drastic population declines.  Monitoring bat populations is an important way to support conservation efforts.'},
-          {type: 'p', text: 'Since most bats echolocate, passive recording their echolocation calls can help. At present, there\'s no easy way to identify species from echolocation calls alone, but they can be grouped into phonic groups based on auditory features and matched to potential species whose calls are typically consistent to that phonic group.'},
+          {type: 'p', text: 'Since most bats echolocate, passively recording their echolocation calls can help. At present, there\'s no easy way to identify species from echolocation calls alone, but they can be grouped into phonic groups based on auditory features and matched to potential species whose calls are typically consistent to that phonic group.'},
           {type: 'p', text: ''},
           {type: 'text', text: 'There are professional equipment and software that analyze bat calls from companies like '},
           {type: 'a', href: 'https://sonobat.com/purchase/', text: 'Sonobat'},
@@ -639,7 +639,6 @@ export const projects: Project[] = [
               {type: 'text', text: ' microphone with '},
               {type: 'a', href: 'https://www.audacityteam.org/download/', text: 'Audacity'},
               {type: 'text', text: ' running on a MacBook Pro'},
-              {type: 'text', text: ' microphone with '},
               {type: 'table',
                 headers: ['Date', 'City/State', 'Environment', 'Num of good bat passes'],
                 rows: [

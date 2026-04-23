@@ -21,10 +21,8 @@ export default function SubmitButton({requests}: SubmitButtonProps) {
 
   const submitButtonClick = async () => {
     setRequestFromBackendError('');
-    // Handle case where sample files already have results so not necessary to query back end
-    if(selectedFileDetails.sampleResults) {
-      setResultFromBackend(selectedFileDetails.sampleResults);
-    } else {
+    // If there's no sample results, query backend
+    if(!selectedFileDetails.sampleResults) {
       setWaitingForResults(true);
       setResultFromBackend(null);
       for (const request of requests) {

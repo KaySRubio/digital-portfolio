@@ -141,7 +141,10 @@ export const DemoProvider = ({ children }: DemoProviderProps) => {
 
   // Results
   useEffect(() => {
-    setResultFromBackend(null);
+    // clear result for user input that isn't preloaded samples
+    if(uploadedFileUrl || userPhotoUrl || recordedUrl) {
+      setResultFromBackend(null);
+    }
     const urlToLoad = uploadedFileUrl || sampleFileUrl || userPhotoUrl || recordedUrl;
 
     const ws = wavesurferRef.current;

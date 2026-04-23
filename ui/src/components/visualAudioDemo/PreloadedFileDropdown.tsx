@@ -7,6 +7,7 @@ type PreloadedFileDropdownProps = {
   handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   defaultOption?: string;
   className?: string;
+  value: string;
 };
 
 export default function PreloadedFileDropdown({
@@ -15,6 +16,7 @@ export default function PreloadedFileDropdown({
   handleChange,
   defaultOption = '-- Select a file --',
   className,
+  value,
 }: PreloadedFileDropdownProps) {
 
   return(
@@ -23,7 +25,7 @@ export default function PreloadedFileDropdown({
       name={name}
       id={name}
       onChange={handleChange}
-      defaultValue='default'
+      value={value}
     >
        {defaultOption && (
           <option value='default' disabled hidden>

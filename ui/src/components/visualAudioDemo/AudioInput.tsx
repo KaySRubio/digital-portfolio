@@ -33,15 +33,18 @@ export default function AudioInput({data}: AudioInputProps) {
     </>
   );
 
-  // When use changes type of audio input, clear url's and reset results from backend to null
+  // When user changes type of audio input, clear url's and reset results from backend to null
   useEffect(() => {
-    setUploadedFileUrl('');
-    setSampleFileUrl('');
-    setRecordedUrl('');
-    setFileAvailable(false);
-    setResultFromBackend(null);
-    setUploadedFileError('');
-    setSelectedFileDetails([]);
+    // clear data for recording or upload tabs
+    if(audioInput !== 'Samples') {
+      setFileAvailable(false);
+      setUploadedFileUrl('');
+      setSampleFileUrl('');
+      setRecordedUrl('');
+      setResultFromBackend(null);
+      setUploadedFileError('');
+      setSelectedFileDetails([]);
+    }
   }, [audioInput])
 
 
