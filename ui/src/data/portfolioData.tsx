@@ -173,7 +173,7 @@ export const projects: Project[] = [
                 ],
               },
             ],
-            href: 'https://github.com/KaySRubio/audio-signal-processing/blob/main/Feature%20Extraction%20Frequency%20Domain.ipynb',
+            href: 'https://github.com/KaySRubio/audio-signal-analysis/blob/main/notebooks/audio_feature_extraction.ipynb',
           },
         ]
       },
@@ -435,7 +435,7 @@ export const projects: Project[] = [
               {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/transcribe_sperm_whale_coda/blob/main/app.py'},
               {type: 'text', text: '.'},
             ],
-            href: 'https://github.com/KaySRubio/audio-signal-processing/blob/main/Analyzing%20Sperm%20Whale%20Codas%20with%20VAD.ipynb',
+            href: 'https://github.com/KaySRubio/audio-signal-analysis/blob/main/notebooks/sperm_whale_codas_exploration.ipynb',
           },
           {type: 'h2', text: 'Demo'},
         ]
@@ -626,7 +626,7 @@ export const projects: Project[] = [
                 [{type: 'text', text: 'Compare findings with information about known local bat species'}],
               ]},
             ],
-            href: 'https://github.com/KaySRubio/audio-signal-processing/blob/main/bat_echolocation_feature_extraction.ipynb',
+            href: 'https://github.com/KaySRubio/audio-signal-analysis/blob/main/notebooks/bat_echolocation_call_exploration.ipynb',
           },
           {type: 'h2', text: 'Methods'},
           {
@@ -784,11 +784,11 @@ export const projects: Project[] = [
                 [{type: 'text', text: 'Explore characterstics of the clusters and plot using a scatterplot'}],
               ]},
               {type: 'h4', text: 'Program links'},
-              {type: 'a', text: 'Program 1: In-depth exploration of a bat pass', href: 'https://github.com/KaySRubio/audio-signal-processing/blob/main/bat_echolocation_feature_extraction.ipynb'},
+              {type: 'a', text: 'Program 1: In-depth exploration of a bat pass', href: 'https://github.com/KaySRubio/audio-signal-analysis/blob/main/notebooks/bat_echolocation_call_exploration.ipynb'},
               {type: 'p', text: ''},
-              {type: 'a', text: 'Program 2: Semi-automated bat pass feature extraction', href: 'https://github.com/KaySRubio/audio-signal-processing/blob/main/bat_echolocation_feature_extraction_semi_automated.ipynb'},
+              {type: 'a', text: 'Program 2: Semi-automated bat pass feature extraction', href: 'https://github.com/KaySRubio/audio-signal-analysis/blob/main/notebooks/bat_echolocation_feature_extraction_semiautomated.ipynb'},
               {type: 'p', text: ''},
-              {type: 'a', text: 'Program 3: K-means clustering bat calls into phonic groups', href: 'https://github.com/KaySRubio/audio-signal-processing/blob/main/k_means_clustering_bat_calls_into_phonic_groups.ipynb'},
+              {type: 'a', text: 'Program 3: K-means clustering bat calls into phonic groups', href: 'https://github.com/KaySRubio/audio-signal-analysis/blob/main/notebooks/k_means_clustering_bat_calls_into_phonic_groups.ipynb'},
             ]
           },
           {
