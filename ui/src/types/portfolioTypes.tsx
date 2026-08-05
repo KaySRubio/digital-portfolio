@@ -67,7 +67,8 @@ export type ProjectDetailComponent =
   DemoBoard | 
   TextFromPath |
   HeatMap | 
-  Iframe;
+  Iframe |
+  PlayAudioComponent;
 
 export type TextType = 
   'h2' |
@@ -480,4 +481,11 @@ export type AudioFeatureExtractionResult = {
   }]
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 	[key: string]: any;
+}
+
+export type PlayAudioComponent = {
+  type: 'playAudio',
+  src: string,
+  className?: string, 
+  key?: number | string;
 }

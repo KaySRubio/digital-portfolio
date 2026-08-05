@@ -16,7 +16,7 @@ import type { SupabaseClient, Session } from "@supabase/supabase-js";
 import type { WordData, Topic, CurrentPage, TableName } from '../../types/vocabTypes.tsx';
 
 // Turn off database during some parts of development
-const useSupabase = true;
+const useSupabase = false;
 
 // Initialize database here works best, catch errors
 let supabase: SupabaseClient | null = null;

@@ -17,7 +17,7 @@ To update:
 ## How to add a new project
 All the content in this portfolio is added to a data file and then dynamically rendered and formatted according to predefined components. This makes it easy to extend, as new projects can be easily added and automatically show up, and details about the project can be easily assembled.
 
-1.	Go to `/ui/src/data/portfolioData` and in `const projects` add a new object for your project's data:
+1.	Go to `/ui/src/data/portfolioData` and in `const projects` add a new object for your project's data. Example:
 
 ```
   {
@@ -29,7 +29,7 @@ All the content in this portfolio is added to a data file and then dynamically r
     visible: true, // update to true when your done so it shows up in the list of projects by topic
     featured: false, // update to true if you want it to be listed on the home page
     desc: 'Fine-tuned an image recognition model to identify species', // Longer description for the projectCard. Try to keep under 12 words.
-    long_desc: 'Page description for SEO, keep to 120-155 characters'
+    long_desc: '', // Page description for SEO, keep to 120-155 characters
     mainImage: {
       type: '',
       src: '',
