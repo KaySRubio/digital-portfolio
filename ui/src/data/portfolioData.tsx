@@ -128,7 +128,7 @@ export const homePageData = {
   // headline: 'Listener, Developer, Explorer',
   headline: '',
   // desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics',
-  desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics. By day, I\'m a React developer on an AI-lab team at an EdTech company. I build educational websites that use speech recognition to evaluate children\'s reading skills.',
+  desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics. By day, I\'m part of an AI-focused team at an EdTech company. I build educational websites that use speech recognition to evaluate children\'s reading skills.',
   long_desc: 'By night, I record wildlife and analyze sound. My dream is to use neural networks to decode structure and meaning in animal communication. I also hope to build apps that engage the public in bioacoustics and conservation research.',
   //long_desc: 'As a React developer I build interactive educational websites. In my free time I dabble in machine learning and record wildlife. My dream is to analyze animal communication to decode structure and meaning and use the web to engage the public in bioacoustics.',
 
@@ -144,7 +144,7 @@ export const topics: Topic[] = [
   },
   {
     path: 'machine-learning',
-    title: 'AI and Machine Learning',
+    title: 'AI and Machine Learning Projects',
     iconComponent: aiIcon,
   },
   {
@@ -480,8 +480,9 @@ export const projects: Project[] = [
     topics: [TopicNames.BIOACOUSTICS],
     visible: true,
     featured: true,
-    desc: 'Extract time- and frequency-domain features from audio files',
+    desc: 'Program that extracts and visualizes features from audio files',
     long_desc: 'Uses audio feature extraction to show amplitude envelope, MFCCs, and other features. Shows waveform and spectrogram. Live demo available.',
+    liveDemo: true,
     mainImage: {
       type: 'png',
       src: spectrogram,
@@ -497,11 +498,11 @@ export const projects: Project[] = [
             type: 'GoalAndGithub',
             elements: [
               {type: 'h2', text: 'Goal'},
-              {type: 'text', text: 'Apply skills learned in '},
+              {type: 'text', text: 'The goal of this project is to apply skills learned in '},
               {type: 'a', text: 'Audio Signal Processing for Machine Learning by Valerio Velardi', href: 'https://www.youtube.com/watch?v=iCwMQJnKk2c&list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0'},
-              {type: 'text', text: ' to extract features from human and animal vocalizations. Send audio files to a python back end hosted on '},
+              {type: 'text', text: ' to extract features from human and animal vocalizations. The demo below sends audio files to a python back-end hosted on '},
               {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/audio_feature_extraction/blob/main/app.py'},
-              {type: 'text', text: ' for analysis and visualize on waveforms and spectrograms. Features include:'},
+              {type: 'text', text: ' for analysis and the front-end demo visualizes the results on waveforms and spectrograms. Features include:'},
               {type: 'ul', elements: [
                 [{type: 'text', text: 'Amplitude envelope (AE)'}],
                 [{type: 'text', text: 'Root-mean-square energy (RMS)'}],
@@ -522,7 +523,7 @@ export const projects: Project[] = [
           // size: 'full-screen',
           className: 'max-width-650',
           elements: [
-            {type: 'p', text: 'Select a sample file, record, or upload your own to view the audio features, then press Submit.'},
+            {type: 'p', text: 'Select a sample file, record, or upload your own .wav file to view the audio features, then press Submit.'},
             {type: 'p', text: 'Results will appear in these locations:'},
             {type: 'ul', elements: [
               [
@@ -540,7 +541,7 @@ export const projects: Project[] = [
               ],
               [
                 {type: 'text',  className: 'bold', text: 'Spectral centroid and bandwidth'},
-                {type: 'text', text: ' are mapped on the spectrogram in the Visualizer section. The page may slow down while spectrogram is visible; to turn off, click on Waveform tab.'}
+                {type: 'text', text: ' are mapped on the spectrogram in the Visualizer section. This website may slow down while spectrogram is visible; to turn off, click on Waveform tab.'}
               ],
               [{type: 'text', text: 'All raw values are provided in the JSON tab in the Results section.'}],
             ]}
@@ -623,7 +624,6 @@ export const projects: Project[] = [
                   [{type: 'text', text: 'C4-C13 are considered middle-order coefficients and give finer details about the spectral shape such as locations and relationships of formants in the spectrum. These are helpful to distinguish between phonemes.'}],
                   [{type: 'text', text: 'C14+ are higher order coefficients that provide information about fine-grained variations of the spectrum. They may hold information about speaker identity but are also influenced by background noise and may give more irrelevant information. These are not displayed in these results.'}],
                 ]},
-                {type: 'p', text: 'MFCCs used to be the standard features used in speech and music processing algorithms. However, more recently they have been replaced by deep learning models that take the raw signal as input and come up with their own features. But MFCCs can still be helpful for understanding an audio signal and recognizing patterns in less studied sounds such as animal vocalizations.'},
               ],
             },
           ],
@@ -705,7 +705,7 @@ export const projects: Project[] = [
         elements: [
           {type: 'h2', text: 'Tech Stack'},
           {type: 'TechStack', techList: ['librosa', 'matplotlib'] },
-          {type: 'text', text: 'Audio sources '},
+          {type: 'h2', text: 'Audio sources '},
           {type: 'ol', elements: [
             [
               {type: 'text', text: 'American Alligator in the Everglades National Park in Florida, from the '},
@@ -757,6 +757,7 @@ export const projects: Project[] = [
       src: spermwhalepng,
       alt: 'A sperm whale with its mouth open showing teeth',
     },
+    liveDemo: true,
     projectCardTechStack: ['librosa', 'matplotlib'],
     project_details: [
       {
@@ -769,7 +770,7 @@ export const projects: Project[] = [
             type: 'GoalAndGithub',
             elements: [
               {type: 'h2', text: 'Goal'},
-              {type: 'text', text: 'Use Voice Activity Detection (VAD) to separate a recording of sperm whale vocalizations into individual codas. Then use VAD to gather metadata on each coda that could be used to transcribe them, including the number of clicks per coda, the total coda duration, and the durations of inter-click intervals. For demonstration purposes a simple formula has been used to highlight the 1+1+3 coda, which is the most common coda used by the Eastern Caribbean clan. Files are analyzed on a python back end hosted on '},
+              {type: 'text', text: 'Use Voice Activity Detection (VAD) to separate a recording of sperm whale vocalizations into individual codas. Then use VAD to gather metadata on each coda that could be used to transcribe them, including the number of clicks per coda, the total coda duration, and the durations of inter-click intervals. For demonstration purposes a simple formula has been used to highlight the 1+1+3 coda, which is the most common coda used by the Eastern Caribbean clan. Files are analyzed on a python back-end hosted on '},
               {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/transcribe_sperm_whale_coda/blob/main/app.py'},
               {type: 'text', text: '.'},
             ],
@@ -1328,33 +1329,34 @@ export const projects: Project[] = [
   },
   // frog-identifier --> DONE!!
   {
-    path: 'frog-identifier',
-    short_title: 'Frog Identifier',
-    title: 'Frog Identifier',
+    path: 'frog-classifier',
+    short_title: 'Frog Classifier',
+    title: 'Frog Classifier',
     date: '',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
     featured: true,
-    desc: 'Fine-tuned an image recognition model to identify species',
+    desc: 'An image recognition model fine-tuned to identify frog species',
     long_desc: 'Trained an image classifier to identify frog species in Massachusetts. Live demo with camera. Model hosted in Hugging Face.',
     mainImage: {
       type: 'png',
       src: frog,
       alt: 'A green frog',
     },
+    liveDemo: true,
     projectCardTechStack: ['fastai'],
     project_details: [
       {
         type: 'div',
         className: 'project-details-restricted-width',
         elements: [
-          {type: 'h2', text: 'Goals'},
+          {type: 'h2', text: 'Goal'},
           {
             type: 'GoalAndGithub',
             elements: [
-              {type: 'text', text: 'I created an image classifier for frog species in Massachusetts by fine-tuning a pre-trained neural network model, '},
+              {type: 'text', text: 'In this practice project on transfer learning, I created an image classifier for the 10 frog species found in Massachusetts by fine-tuning a pre-trained neural network model, '},
               {type: 'a', text: 'resnet18', href: 'https://huggingface.co/microsoft/resnet-18'},
-              {type: 'text', text: ', on ~200 frog pictures per species collected from a search engine. The model is hosted on '},
+              {type: 'text', text: ', on 2000 frog pictures. The model is hosted on '},
               {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/Identifying_Frogs_in_Massachusetts/tree/main'},
               {type: 'text', text: '.'},
             ],
@@ -1461,14 +1463,15 @@ export const projects: Project[] = [
           {type: 'h2', text: 'Model Training Details'},
           {
             type: 'ol', elements: [
-              [{type: 'text', text: 'Model error rate improved from 40% to 34% when I shifted from 100 to 200 photos per frog species.'}],
-              [{type: 'text', text: 'Model error rate further improved from 34% to 27% when I used RandomResizedCrop rather than squish on the data each epoch.'}],
-              [{type: 'text', text: 'Final model only needed 2 epoch\'s to train. '}],
+              [{type: 'text', text: 'The model error rate improved from 40% to 34% when I shifted from 100 to 200 photos per frog species.'}],
+              [{type: 'text', text: 'The model error rate further improved from 34% to 27% when I used RandomResizedCrop rather than squish on the data each epoch.'}],
+              [{type: 'text', text: 'The final model only needed 2 epoch\'s to train. '}],
               [{type: 'text', text: 'Epochs 3-4 showed overfitting as training loss decreased but validation loss didn\'t improve and error rate slightly increased.'}],
-              [{type: 'text', text: 'Final model trained on 200 pictures had 27% error rate.'}],
-              [{type: 'text', text: 'To improve this model, it would be helpful to clean the training data. Delete images of tadpoles and the occasional icon, as well as ask a frog expert to see if any are mislabelled.'}],
+              [{type: 'text', text: 'The final model trained on 200 pictures had 27% error rate.'}],
             ]
-          }
+          },
+          {type: 'h2', text: 'Next Steps'},
+          {type: 'p', text: 'To improve this model, it would be helpful to clean the training data. For instance, delete images of tadpoles and icons, as well as ask a frog expert to see if any are mislabeled.'}
         ]
       },
     ],
@@ -1497,20 +1500,21 @@ export const projects: Project[] = [
   },
   // speech-recognition --> DONE!!
   {
-    path: 'speech-recognition',
-    short_title: 'Speech Recognition',
-    title: 'Speech Recognition and Accent Classification using Neural Networks',
+    path: 'accent-classifier',
+    short_title: 'Accent Classifier',
+    title: 'Training an Accent Classifier using Transfer Learning',
     date: 'February 2025',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
     featured: true,
-    desc: 'Fine-tuned a neural network for accent classification and explored existing ASR models',
+    desc: 'An accent classification model and exploration of speech recognition technologies',
     long_desc: 'Fine-tuned an accent classification model using hugging face transformers. Live demo features audio recording.',
     mainImage: {
       type: 'png',
       src: asrPng,
       alt: 'A cartoon of a woman talking in front of a microphone and a computer screen with a robot on the screen',
     },
+    liveDemo: true,
     projectCardTechStack: ['huggingface', 'wandb'],
     project_details: [
       {
@@ -1520,25 +1524,18 @@ export const projects: Project[] = [
           {
             type: 'GoalAndGithub',
             elements: [
-              {type: 'h2', text: 'Goals'},
-              {type: 'text', text: 'This was a personal project I completed to practice skills learned from the '},
+              {type: 'h2', text: 'Introduction'},
+              {type: 'p', text: 'Existing accent classifiers focus on native English speakers from around the world but exclude people who learned English as a second language. This renders them inaccurate for many common accents among people in the US, such as people whose first language is Spanish or Chinese.'},
+              {type: 'p', text: 'My goal was to create an accent classifier for people who learned English as a second language by fine-tuning a speech recognition model. I also explored other publicly available models for transcription and phonemic transcription.'},
+              {type: 'text', text: 'Although the generalizability of the model is limited based on the data available as discussed below, the project helped me practice skills learned from the '},
               {type: 'a', text: 'Hugging Face Transformers for Audio', href: 'https://huggingface.co/learn/audio-course/en/chapter0/introduction'},
               {type: 'text', text: ' course.'},
-              {type: 'ol', elements: [
-                [{type: 'text', text: 'Explore and implement preexisting open-source transformers models for speech including ASR, phonemic transcription, and accent classification'}],
-                [{type: 'text', text: 'Fine-tune my own ASR model for accent classification'}],
-                [
-                  {type: 'text', text: 'Demo work on '},
-                  {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/speech_transcribe_phonemes_and_accent/tree/main'},
-                  {type: 'text', text: ' with '},
-                  {type: 'a', text: 'Gradio', href: 'https://www.gradio.app/'},
-                  {type: 'text', text: ' and create an API endpoint that can take in audio and pass ASR output in json format to a front-end application'}
-                ],
-              ]},
+              
             ],
             href: 'https://github.com/KaySRubio/transformers_speech_recognition_and_classification/tree/main',
           },
           {type: 'h2', text: 'Demo'},
+          {type: 'p', text: 'The live demo below shows output from the accent classification model I trained as well as other publicly available models that transcribe and classify speech.'},
         ]
       },
       {
@@ -1886,27 +1883,22 @@ export const projects: Project[] = [
         type: 'div',
         className: 'project-details-restricted-width',
         elements: [
-          {type: 'h2', text: 'Tech Stack'},
+          {type: 'h2', text: 'Methods'},
           {
             type: 'TechStack',
             techList: ['wandb', 'huggingface'],
           },
-          {type: 'h2', text: 'Models used'},
-          {
-            type: 'table',
-            headers: ['Type', 'Model', 'Data used'],
-            rows: [
-              ['Automatic Speech Recognition', {type: 'a', text: 'openai/whisper-base.end', href: 'https://huggingface.co/openai/whisper-base.en'}, '680k hours of labelled data'],
-              ['Phonemic Transcription', {type: 'a', text: 'vitouphy/wav2vec2-xls-r-300m-timit-phoneme', href: 'https://huggingface.co/vitouphy/wav2vec2-xls-r-300m-timit-phoneme'}, 'DARPA TIMIT American English'],
-              ['Phonemic Transcription', {type: 'a', text: 'mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme', href: 'https://huggingface.co/mrrubino/wav2vec2-large-xlsr-53-l2-arctic-phoneme'}, 'L2 arctic, speakers of English as a second language'],
-              ['Accent Classification', {type: 'a', text: 'Jzuluaga/accent-id-commonaccent_ecapa', href: 'https://huggingface.co/Jzuluaga/accent-id-commonaccent_ecapa'}, ' Native English speakers from around the world'],
-              ['Accent Classification', {type: 'a', text: 'kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2', href: 'https://huggingface.co/kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2'}, 'L2 arctic, speakers of English as a second language'],
+          {type: 'ol', elements: [
+            [{type: 'text', text: 'Explore open-source models for speech including ASR, phonemic transcription, and accent classification'}],
+            [{type: 'text', text: 'Fine-tune my own ASR model for accent classification'}],
+            [
+              {type: 'text', text: 'Demo work on '},
+              {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/speech_transcribe_phonemes_and_accent/tree/main'},
+              {type: 'text', text: ' with '},
+              {type: 'a', text: 'Gradio', href: 'https://www.gradio.app/'},
+              {type: 'text', text: ' and create an API endpoint that can take in audio and pass ASR output in json format to a front-end application'}
             ],
-          },
-          {type: 'h2', text: 'Fine-tuning DistilHuBERT for Accent Classification'},
-          {type: 'h3', text: 'Purpose'},
-          {type: 'p', text: 'Existing accent classifiers focus on native English speakers from around the world but exclude people who learned English as a second language rendering them inaccurate for many common accents among people in the US, such as people whose first language is Spanish or Chinese.'},
-          {type: 'p', text: 'My goal was to create an accent classifier for people who learned English as a second language by fine-tuning a speech recognition model.'},      
+          ]},
           {
             type: 'DisclosurePanel', 
             title: 'Data and Data Preparation',
@@ -1920,14 +1912,14 @@ export const projects: Project[] = [
               {
                 type: 'ol',
                 elements: [
-                  [{type: 'text', text: 'Split the dataset in 6 smaller pieces, one for each language group to reduce memory problems during reformatting. The number of files per speaker is limited to 560 to use approximately half of the original data. Thus each piece is about 0.66GB with 2,240 rows.'}],
-                  [{type: 'text', text: 'Resampled audio to 16,000 Hz using PyTorch.'}],
-                  [{type: 'text', text: 'Combined sequential audio files from the same speaker to improve training efficiency. For instance, instead of a lot of audio files that are only 1-3 seconds, I combined them so there were fewer files and they were just under 30 seconds in length.'}],
-                  [{type: 'text', text: 'Reformatted data so that it is wrapped in the Hugging Face dataset class.'}],
-                  [{type: 'text', text: 'Add the language category and stack the final 6 datasets on top of one another to create a unified dataset.'}],
+                  [{type: 'text', text: 'The dataset was split in 6 smaller pieces, one for each language group to reduce memory problems during reformatting. The number of files per speaker was limited to 560 to use approximately half of the original data. Thus, each piece was about 0.66GB with 2,240 rows.'}],
+                  [{type: 'text', text: 'Audio was resampled to 16,000 Hz.'}],
+                  [{type: 'text', text: 'Sequential audio files from the same speaker were combined to improve training efficiency. For instance, instead of a lot of audio files that are only 1-3 seconds, I combined them so there were fewer files and they were just under 30 seconds in length.'}],
+                  [{type: 'text', text: 'The data was reformatted and wrapped in the Hugging Face dataset class.'}],
+                  [{type: 'text', text: 'A variable for language category was added and the datasets were stacked to create a unified dataset.'}],
                 ]
               },
-              {type: 'p', text: 'Final dataset inluded 6 language groups with about 300 rows per group. Each row contains the label for the language group and an audio file of 30 seconds or less at 16k Hz.'},
+              {type: 'p', text: 'The final dataset included 6 language groups with about 300 rows per group. Each row contained the label for the language group and an audio file of 30 seconds or less at 16k Hz.'},
               {type: 'p', className: 'note', text: 'Note: Reformatting such a large volume of audio took quite a bit of computing resources, and so I explored/compared different free resources like Kaggle, GoogleCollab, as well as CPU vs. GPU.'}, 
             ],
           },
@@ -1944,7 +1936,7 @@ export const projects: Project[] = [
               {type: 'a', text: 'DistilHuBERT', href: 'https://huggingface.co/ntu-spml/distilhubert'},
               {type: 'text', text: ' on 50% of the '},
               {type: 'a', text: 'L2-Actic', href: 'https://psi.engr.tamu.edu/l2-arctic-corpus/'},
-              {type: 'text', text: ' data to classify the accents in the 6 language groups and create this model on Hugging Face: '},
+              {type: 'text', text: ' data to classify the accents in the 6 language groups and created this model on Hugging Face: '},
               {type: 'a', text: 'kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2', href: 'https://huggingface.co/kaysrubio/accent-id-distilhubert-finetuned-l2-arctic2'},
               {type: 'h4', text: 'Hyperparameters used'},
               {
@@ -1966,10 +1958,12 @@ export const projects: Project[] = [
               {type: 'text', text: ' T4 GPU'},
             ],
           },
-          {type: 'h3', text: 'Limitations'},
-          {type: 'p', text: 'The model is very accurate for novel recordings from the original dataset that were not used for train/test. However, the model is not accurate for voices from outside the dataset. Unfortunately with only 24 speakers represented, it seems like the model memorized other characteristics of these voices besides accent, thus not creating a model very generalizable to the real world.'},
-          {type: 'h3', text: 'Next Steps'},
-          {type: 'p', text: 'The code is good! If a new dataset becomes available that includes many more voices and clear accent categories, this code may be reused to train a model that generalizes to the real world.'},
+          {type: 'h2', text: 'Results'},
+          {type: 'p', text: 'After 10 epochs, model accuracy was 100%, training loss was 0.0007, and validation loss was 0.0004.'},
+
+          {type: 'h2', text: 'Discussion'},
+          {type: 'p', text: 'The model is very accurate for novel recordings from the original dataset that were not used for train/test. However, the model is not accurate for voices from outside the dataset. Unfortunately, with only 24 speakers represented, it seems like the model memorized other characteristics of these voices besides accent, thus not creating a model very generalizable to the real world.'},
+          {type: 'p', text: 'However, if a new dataset becomes available that includes many more voices and clear accent categories, this code may be reused to train a model that generalizes to the real world.'},
           {type: 'h2', text: 'Audio Sources Used'},
           {type: 'ul', className: 'shortLineHeight', elements: [
             [{type: 'text', text: 'irish.wav, a clip from '}, {type: 'a', text: 'Derry Girls', href: 'https://www.youtube.com/watch?v=5J211yVWIzg'}],
@@ -2000,6 +1994,7 @@ export const projects: Project[] = [
       src: anemone,
       alt: 'A cartoon anemone with a green body and pink tentacles and eyes looking up',
     },
+    liveDemo: true,
     projectCardTechStack: ['react', 'typescript', 'vite', 'nodejs'],
     project_details: [
       {
@@ -2009,36 +2004,22 @@ export const projects: Project[] = [
           {
             type: 'GoalAndGithub',
             elements: [
-              {type: 'h2', text: 'Goal'},
-              {type: 'ul', elements: [
-                [{type: 'text', text: 'I created AlgorithmOcean as a school project to teach my classmates sorting algorithms!'},],
-                [{type: 'text', text: 'The program randomly generates an array of numbers. Users sort the numbers using bubble, selection, or insertion sort.'}],
-                [{type: 'text', text: 'Once sorted, the user presses "Submit" and the program tells them if they used the correct steps according to the algorithm.'}],
-                [{type: 'text', text: 'For fun, the program also provides interesting facts about how algorithms relate to ocean science.'}]
-              ]}
+              {type: 'h2', text: 'Purpose'},
+              {type: 'p', text: 'AlgorithmOcean is the first online resource that allows students to perform sorting algorithms live on screen and get instant feedback about the steps they used. The program randomly generates an array of numbers. Users sort the numbers using bubble, selection, or insertion sort. Once sorted, the user presses "Submit" and the program tells them if they used the correct steps according to the algorithm. For fun, the program also provides interesting facts about how algorithms relate to ocean science. I created AlgorithmOcean as part of an independent study course at Framingham State University in 2022. In 2025 I updated it to work with modern React, TypeScript, and Vite.'},
+              {type: 'text', text: 'Try it out live at '},
+              {type: 'a', text: 'kaysrubio.github.io/algorithm-ocean-2/', href: 'https://kaysrubio.github.io/algorithm-ocean-2/#/'},
+              {type: 'text', text: ' or or use the demo screen embedded below.'}
             ],
             href: 'https://github.com/KaySRubio/algorithm-ocean-2',
           },
-          {type: 'h2', text: 'Demo'},
-        ]
-      },
-
-      {type: 'iframe', title: 'Algorithm Ocean lesson page showing bubble sort', src: 'https://kaysrubio.github.io/algorithm-ocean-2/#/lesson/bubble'},
-      {
-        type: 'div',
-        className: 'project-details-restricted-width',
-        elements: [    
-          {type: 'h2', text: 'Tech Stack'},
           {
             type: 'TechStack',
             techList: ['react', 'typescript', 'nodejs', 'vite'],
           },
-          {type: 'h2', text: 'More Information'},
-          {type: 'p', text: 'I created this app for an independent study course at Framingham State University from April - July 2022. In 2025, I updated it to work with modern React, TypeScript, and Vite.'},
-          {type: 'a', className: 'centerWidth100', text: 'Go to AlgorithmOcean site', href: 'https://kaysrubio.github.io/algorithm-ocean-2/#/'},
+          {type: 'h2', text: 'Demo'},
         ]
       },
-
+      {type: 'iframe', title: 'Algorithm Ocean lesson page showing bubble sort', src: 'https://kaysrubio.github.io/algorithm-ocean-2/#/lesson/bubble'},
     ],
   },
   // danceability --> DONE!!
@@ -2050,7 +2031,7 @@ export const projects: Project[] = [
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
     featured: true,
-    desc: 'Trained traditional machine learning models to predict the danceability of songs',
+    desc: 'A traditional machine learning model that predicts the danceability of songs',
     long_desc: 'Trained machine learning model for regression to predict danceability scores from the temporal features of songs using scikit-learn.',
     mainImage: {
       type: 'png',
@@ -2066,8 +2047,8 @@ export const projects: Project[] = [
           {
             type: 'GoalAndGithub',
             elements: [
-              {type: 'h2', text: 'Goal'},
-              {type: 'p', text: 'Train a model that predicts danceability scores from the temporal features of songs. This was a practice project I completed after completing trainings in scikit-learn.'},
+              {type: 'h2', text: 'Introduction'},
+              {type: 'p', text: 'In this project, I trained a model that predicts danceability scores from the temporal features of songs. This was a practice project that I completed after training in scikit-learn.'},
             ],
             href: 'https://github.com/KaySRubio/music-data-sci-regression',
           },
@@ -2092,7 +2073,7 @@ export const projects: Project[] = [
           },
           {type: 'p', className: 'note', text: '*Mean accuracy score is how far off the model\'s predictions of danceability was from the actual danceability score in the test data. Danceability ranged from 0-1, so the best model was able to predict danceability of songs very close to the actual scores, only an average of 0.06 points off!'},
           {type: 'p', className: 'note', text: '**I used a restricted set of predictors were used based on what I found to be linearly related to the outcome during data cleaning'},
-          {type: 'h2', text: 'Putting the strongest model to the test'},
+          {type: 'h3', text: 'Inference with the strongest model'},
           {type: 'p', text: 'The gradient boosting model with max-depth of 3 and number of estimators of 100 was used on 3 new songs.'},
           {
             type: 'table',
@@ -2103,29 +2084,30 @@ export const projects: Project[] = [
               ['Niris', 'Nicky Cook', '0.83163573', '0.94879937'],
             ]
           },
-          {type: 'h3', text: 'Takeaways'},
           {type: 'ul', elements: [
-            [{type: 'p', text: 'Danceabilty ranges from 0-1 so these danceability predictions are pretty close!'}],
-            [{type: 'p', text: 'Model agreed that Wooden Ships is not very danceable with a score of 0.0487 (actual: 0.0517)'}],
-            [{type: 'p', text: 'Model agreed that Shakkei (Remixed) by Origamibiro is medium danceable with a score of 0.511 (actual 0.447)'}],
-            [{type: 'p', text: 'Model agreed that Niris by Nicky Cook is super danceable with a score of 0.832 (actual 0.949)'}],
+            [{type: 'text', text: 'Danceabilty ranges from 0-1 so these danceability predictions are pretty close!'}],
+            [{type: 'text', text: 'The model agreed that Wooden Ships is not very danceable with a score of 0.0487 (actual: 0.0517)'}],
+            [{type: 'text', text: 'The model agreed that Shakkei (Remixed) by Origamibiro is medium danceable with a score of 0.511 (actual 0.447)'}],
+            [{type: 'text', text: 'The model agreed that Niris by Nicky Cook is super danceable with a score of 0.832 (actual 0.949)'}],
           ]},
-          {type: 'h2', text: 'Dataset Citation'},
+          {type: 'h2', text: 'Discussion'},
+          {type: 'p', text: 'A gradient boosting model with 500 trees and a max depth of 3 was successfully able to predict the danceability rating of songs from their temporal features with accuracy within .06 out of a scale from 0 to 1.'},
+          {type: 'h2', text: 'Dataset'},
           {type: 'p', text: 'Defferrard, Michael and Benzi, Kirell and Vandergheynst, Pierre and Bresson, Xavier (2017). FMA: A Dataset for Music Analysis. In 18th International Society for Music Information Retrieval Conference (ISMIR). arXiv. 1612.01840. https://arxiv.org/abs/1612.01840'},
         ]
       },
     ],
   },
-  // diabetes-classifier --> DONE!!
+  // medical-classifier --> DONE!!
   {
-    path: 'diabetes-classifier',
-    short_title: 'Hospitalization Classifier',
+    path: 'medical-classifier',
+    short_title: 'Medical Classifier',
     title: 'Using ML Classification Algorithms to Predict Hospital Readmission in Patients with Diabetes',
     date: 'January 2024',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
     featured: true,
-    desc: 'Trained traditional machine learning models to predict hospital readmission',
+    desc: 'A traditional machine learning model that predicts hospital readmission',
     long_desc: 'Trained machine learning classification models to predict hospital readmission in patients with diabetes using scikit-learn.',
     mainImage: {
       type: 'png',
@@ -2141,8 +2123,8 @@ export const projects: Project[] = [
           {
             type: 'GoalAndGithub',
             elements: [
-              {type: 'h2', text: 'Goal'},
-              {type: 'p', text: 'Train traditional machine learning models to predict hospital readmission within 30 days for patients with diabetes and compare results to pick the best model. This was a practice project I completed after completing trainings in scikit-learn.'},
+              {type: 'h2', text: 'Introduction'},
+              {type: 'p', text: 'In this project, I utilized open-source patient data to train traditional machine learning models to predict hospital readmission within 30 days for patients with diabetes. This was a practice project that I completed after training in scikit-learn.'},
             ],
             href: 'https://github.com/KaySRubio/data-sci-diabetes-readmission-classifier',
           },
@@ -2153,8 +2135,8 @@ export const projects: Project[] = [
             techList: ['scikitlearn', 'skopt', 'joblib', 'pandas', 'matplotlib', 'numpy', 'seaborn'],
           },
           {type: 'h3', text: 'Data'},
-          {type: 'p', text: 'I picked an open-source dataset from the UC Irvine Machine Learning Repository containing hospital records on 101,766 hospitalizations among patients with diabetes from 1999-2008 at 130 US hospitals. Predictors include some demographics (race, gender, age), admission type, discharge type, time in hospital, number of lab procedures and medications given during hospitalization, number of prior visits (outpatient, emergency, inpatient) in the last year, some lab values, etc. I split data into 75% training and 25% test.'},
-          {type: 'p', text: 'I cleaned the data, checking values and imputing missing data (where variables had a relatively small percent of missing data). I dropped variables with very high amounts of missing data, as well as variables unlikely to be related to the outcome like insurance payer code. I also collapsed some categories where variables had a lot of categories and checked linear relationships with outcome. Variables without a linear relationship with the outcome were left out of the logistic regression model.'},
+          {type: 'p', text: 'I chose an open-source dataset from the UC Irvine Machine Learning Repository containing hospital records on 101,766 hospitalizations among patients with diabetes from 1999-2008 at 130 US hospitals. Predictors include demographics (race, gender, age), admission type, discharge type, time in hospital, number of lab procedures and medications given during hospitalization, number of prior visits (outpatient, emergency, inpatient) in the last year and various lab values. I split the data into 75% training and 25% test.'},
+          {type: 'p', text: 'I cleaned the data, dropped variables with high amounts of missing data, and imputed missing values where the variable was missing only a small percent of data. I also collapsed some categories and checked the linearity of relationships between the predictors and the outcome. Variables without a linear relationship with the outcome were left out of the logistic regression model.'},
           {type: 'h2', text: 'Results'},
           {
             type: 'table',
@@ -2169,27 +2151,22 @@ export const projects: Project[] = [
           },
           {type: 'p', className: 'note', text: '*Hyperparameter combinations were examined using Bayes Search CV from scikit-optimize with 3-fold cross-validation on the training data'},
           {type: 'p', className: 'note', text: '*Accuracy, Precision, and Recall were calculated on the test data'},
-          {type: 'h3', text: 'Random Forest Classifier Results after Tuning for Precision'},
-          {type: 'p', text: 'Since users of this type of medical model would likely want to prioritize identifying as many people as possible who are going to be re-hospitalized and keep a low false-negative rate, I tuned the best model, Random Forest Classifier, to reduce precision'},
-          {type: 'ul', elements: [
-            [{type: 'text', text: 'At threshold: 0.07, predicted readmitted: 19882, predicted not readmitted: 19558, accuracy: 29.737%, precision: 12.916%, recall: 91.323%'}],
-            [{type: 'text', text: 'At threshold: 0.05, predicted readmitted: 24129, predicted not readmitted: 19558, accuracy: 14.414%, precision: 11.509%, recall: 98.755%'}],
-          ]},
-          {type: 'h3', text: 'Best predictors'},
+          {type: 'p', className: 'note', text: 'Note: During data cleaning/exploration, I noted that many predictors in the dataset did not have a significant linear relationship with the outcome. I left out these out of some models such as logistic regression. I checked other models on both datasets (all predictors vs. only predictors with a linear relationships) but including more or fewer predictors did not make a significant difference on results.'},
+          {type: 'h3', text: 'Strongest predictors'},
           {type: 'p', text: 'According to logistic regression, the 3 strongest predictors in a linear model are:'},
           {type: 'ul', elements: [
             [{type: 'text', text: 'discharge disposition'}],
             [{type: 'text', text: 'number of inpatient visits in past year'}],
             [{type: 'text', text: 'change in diabetes medication during hospitalization'}],
           ]},
-          {type: 'p', text: 'Note: During data cleaning/exploration, I noted that many predictors in the dataset did not have a significant linear relationship with the outcome. I left out these out of some models such as logistic regression. I checked other models on both datasets (all predictors vs. only predictors with a linear relationships) but including more or fewer predictors did not make a significant difference on results.'},
-          {type: 'h2', text: 'Discussion'},
+          {type: 'h3', text: 'Hyperparameter tuning for precision'},
+          {type: 'p', text: 'Users of this medical model would want to reduce false-negatives and prioritize identifying as many people as possible who are could be re-hospitalized.  So, I tuned the best model, Random Forest Classifier, to reduce precision using the threshold hyperparameter.'},
           {type: 'ul', elements: [
-            [{type: 'text', text: 'All models struggled to differentiate between patients destined to be readmitted in 30 days from those who weren\'t based on predictors available, but Random Forest Classifier came out the strongest.'}],
-            [{type: 'text', text: 'When tuned by default to prioritize accuracy, the highest accuracy rate of 88.8% is little better than a prediction that 0 patients would be re-hospitalized in 30 days, which would be correct 88.7% of the time.'}],
-            [{type: 'text', text: 'When the best model was tuned to prioritize precision, I\'d have to assume that just over half of all patients are at risk of being re-hospitalized in order to capture almost all of the 11% who will be re-hospitalized.'}],
-            [{type: 'text', text: 'more data exploration/preparation could be conducted to reduce skew, bring back categorical diversity among some variables, and work with a medical expert to determine what comorbid diagnoses are relevant and create categories around that. This could improve the relationships in the data for future models.'}],
+            [{type: 'text', text: 'At threshold: 0.07, accuracy was 29.737%, precision was 12.916%, and recall was 91.323%'}],
+            [{type: 'text', text: 'At threshold: 0.05, accuracy was 14.414%, precision was 11.509%, and recall was 98.755%'}],
           ]},
+          {type: 'h2', text: 'Discussion'},
+          {type: 'p', text: 'The strongest model, Random Forest Classifier, can predict which patients are going to be hospitalized within 30 days with 89% accuracy.  When tuned to reduce false negatives, recall was 99%.  This indicates that of the patients who will be re-hospitalized within 30 days, the model successfully flags 99% of them as likely to be re-hospitalized.  This practice project on real open-source patient data shows the utility that traditional machine learning models can have in medical applications.'},
           {type: 'h2', text: 'Dataset Citation'},
           {type: 'p', text: 'Beata Strack, Jonathan P. DeShazo, Chris Gennings, Juan L. Olmo, Sebastian Ventura, Krzysztof J. Cios, and John N. Clore, “Impact of HbA1c Measurement on Hospital Readmission Rates: Analysis of 70,000 Clinical Database Patient Records,” BioMed Research International, vol. 2014, Article ID 781670, 11 pages, 2014.'}
         ]
@@ -2205,7 +2182,7 @@ export const projects: Project[] = [
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
     featured: true,
-    desc: 'Explored underlying topics in Dear Abby questions using Natural Language Processing',
+    desc: 'Discovery of topics in Dear Abby questions using Natural Language Processing',
     long_desc: 'Used unsupervised machine learning and natural language processing to explore underlying topics in 20,000 Dear Abby questions.',
     mainImage: {
       type: 'png',
@@ -2221,8 +2198,12 @@ export const projects: Project[] = [
           {
             type: 'GoalAndGithub',
             elements: [
-              {type: 'h2', text: 'Goal'},
-              {type: 'p', text: 'I used unsupervised machine learning to explore underlying topics in 20,000 Dear Abby questions from 1985-2017. This involved cleaning and preparing the data using natural language processing (NLP) techniques like tokenization and lemmatization. Then I used topic modeling algorithms including Latent Dirichlet Allocation (LDA) and Non-negative matrix factorization (NMF) to generate underlying topics from the data. This was a practice project I completed after completing trainings in NLP.'},
+              {type: 'h2', text: 'Introduction'},
+              {type: 'text', text: 'I used unsupervised machine learning to explore underlying topics in 20,000 Dear Abby questions from 1985-2017. This involved cleaning and preparing the data using natural language processing (NLP) techniques like tokenization and lemmatization. Then I used topic modeling algorithms including '},
+              {type: 'a', text: 'Latent Dirichlet Allocation (LDA)', href: 'https://pyldavis.readthedocs.io/en/latest/readme.html'},
+              {type: 'text', text: ' and '},
+              {type: 'a', text: 'Non-negative matrix factorization (NMF)', href: 'https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html'},
+              {type: 'text', text: ' to generate underlying topics from the data. This was a practice project that I completed after completing trainings in NLP.'},
             ],
             href: 'https://github.com/KaySRubio/dear-abby-topic-modeling'
           },
@@ -2263,13 +2244,13 @@ export const projects: Project[] = [
               },
             ],
           },
-          {type: 'h3', text: 'Algorithms'},
-          {type: 'p', text: 'Non-Negative Matrix Factorization (NMF) is a topic modeling algorithm that assumes each question belongs to only 1 topic. I used Inverse document frequency (TF-IDF) Vectorization to create a document-term matrix for each unique single word (unigram) and pair of words (bigram). I used both unigrams and bigrams as input for NMF.'},
-          {type: 'p', text: 'In contrast with NMF, Latent Dirichlet Allocation (LDA) assumes all questions share topics but have different weightings of those topics.'},
+          {type: 'h3', text: 'Algorithms Used'},
+          {type: 'p', text: 'I used Inverse document frequency (TF-IDF) Vectorization to create a document-term matrix for each unique single word (unigram) and pair of words (bigram).'},
+          {type: 'p', text: 'Non-Negative Matrix Factorization (NMF) is a topic modeling algorithm that assumes each question belongs to only 1 topic. I used both unigrams and bigrams as input for NMF.'},
+          {type: 'p', text: 'I also used Latent Dirichlet Allocation (LDA) which assumes all questions share topics but have different weightings of those topics.'},
           {type: 'h2', text: 'Results'},
           {type: 'img', src: dear_abby_word_cloud, alt: 'A word cloud with the largest words being year, time, husband, friend, mother, love, old, people, children, family, marry, etc.', className: 'medium-large-img'},
           {type: 'h3', text: 'Topic Modeling with Non-Negative Matrix Factorization (NMF)'},
-          {type: 'p', text: 'Since Non-Negative Matrix Factorization (NMF) assumes each question belongs to only 1 topic, the results seemed less repetitive and more interesting compared to LDA in this project. I also appreciated having the algorithm to pull out more topics (21) rather than fewer (4), so I\'ll highlight these results.'},
           {
             type: 'DisclosurePanel',
             title: '21 Topics generated by NMF (click to see all topics):',
@@ -2409,7 +2390,6 @@ export const projects: Project[] = [
             ],
           },
           {type: 'h3', text: 'Topic Modeling with Latent Dirichlet Allocation (LDA)'},
-          {type: 'p', text: 'I found that LDA tended to identify topics focused heavily on time, husbands, and mothers, with some additional more minor themes that were present in most or all of the questions. Coherence scores suggested trying 2, 5, and 21 topics. 2 topics didn\'t seem to provide enough information and 21 topics had a lot of overlap so I will highlight the results using 5 topics here.'},
           {
             type: 'DisclosurePanel',
             title: '5 Topics generated by LDA (click to see all topics):',
@@ -2443,17 +2423,12 @@ export const projects: Project[] = [
             ],
           },
           {type: 'img', src: dear_abby_lda_5, alt: 'A diagram of LDA results showing 5 topics, 3 of which overlap, and listing 30 most relevant terms for topic #1 which include husband, years, mother, time, etc.', className: 'medium-large-img'},
-          {type: 'h2', text: 'Next Steps'},
+          {type: 'h2', text: 'Discussion'},
+          {type: 'p', text: 'Since Non-Negative Matrix Factorization (NMF) assumes each question belongs to only 1 topic, the results seemed more interesting compared to LDA in this project. I also appreciated having the algorithm to pull out more topics (21) rather than fewer (4). To loosely summarize, NMF\'s topics included work issues, house guests, dating/sex, breakups, friend/parties, marriage/divorce, siblings & holidays, children and adoption, wedding dilemmas, holiday/event planning, graduations, pregnancy, problems with the neighbors pets, and other family issues.'},
+          {type: 'p', text: 'I found that LDA results were more generic and repetitive. Main topics included time, husbands, and mothers, with some more minor themes that were present in most or all of the questions. Coherence scores suggested trying 2, 5, and 21 topics. 2 topics didn\'t seem to provide enough information and 21 topics had a lot of overlap so 5 seemed like the most useful number.'},
           {type: 'p', text: 'Future directions include modeling how topics may have changed over time from 1985-2017 and identifying trends. Also, there\'s always more data cleaning to do. While I excluded some column-related phrasing and words in the first pass, I discovered that some logistical info was still left in and affected some of the topics, so more rigorous data cleaning could improve results. I\'d also like to explore Latent Semantic Analysis (LSA) and other topic modeling algorithms.',},
-          {type: 'h2', text: 'Sources'},
-          {
-            type: 'ul',
-            elements: [
-              [{type: 'a', text: 'pyLDAvis', href: 'https://pyldavis.readthedocs.io/en/latest/readme.html'}],
-              [{type: 'a', text: 'NMF from scikit-learn', href: 'https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html'}],
-              [{type: 'a', href: 'https://www.kaggle.com/datasets/thedevastator/american-anxieties-dear-abby-s-questions', text: 'American Anxieties: Dear Abby\'s Questions 20,000 Questions to Dear Abby: Insights on American Anxieties By Kelly Garrett'}],
-            ]
-          },
+          {type: 'h2', text: 'Data Source'},
+          {type: 'a', href: 'https://www.kaggle.com/datasets/thedevastator/american-anxieties-dear-abby-s-questions', text: 'Garret, K. (2023). American Anxieties: Dear Abby\'s Questions. Kaggle.com. Accessed February 1, 2024.'},
         ]
       },
     ],

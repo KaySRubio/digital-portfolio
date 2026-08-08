@@ -34,6 +34,7 @@ export type Project = {
   long_desc: string;
   mainImage?: MainImage;
   techStack?: string[]; // older list version
+  liveDemo?: boolean;
   projectCardTechStack?: string[]; // better icon version
   project_details: ProjectDetails;
 }

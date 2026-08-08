@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
-    "@gradio/client": "^1.15.0",
+    "@gradio/client": "^2.4.0",
     "@types/lodash.get": "^4.4.9",
     "@types/node": "^22.15.17",
     "@types/react": "^19.1.2",

@@ -41,6 +41,9 @@ export default function SubmitButton({requests}: SubmitButtonProps) {
         }
         // TODO - if you have other types of requests on the future, add them here
       }
+    } else {
+      setWaitingForResults(false);
+      setResultFromBackend(selectedFileDetails.sampleResults);
     }
   }
   return (

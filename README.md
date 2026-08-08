@@ -118,7 +118,7 @@ project_details: [
             type: 'gradio',
             huggingFaceClient: 'kaysrubio/speech_transcribe_phonemes_and_accent',
             huggingFaceApi: '/transcribe_and_classify_speech_1',
-            key: '682d2362-894c-800c-af30-a4c56b7f074b'
+            key: ''
           }
         ],
 ```
