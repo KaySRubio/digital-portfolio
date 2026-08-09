@@ -134,6 +134,11 @@ html, body, #root {
   font-size: 10px;
 }
 
+.small-text-center {
+  font-size: 10px;
+  text-align: center;
+}
+
 .med-text {
   font-size: 14px;
 }
@@ -718,6 +723,11 @@ form button {
 }
 
 .project-card-tech-stack-row svg {
+  width: 40px;
+  height: 40px;
+}
+
+.project-card-tech-stack-row img {
   width: 40px;
   height: 40px;
 }
@@ -1743,6 +1753,10 @@ iframe {
 .play-audio-progress-indicator {
   width: calc(100% - 70px);
   accent-color: var(--purple);
+}
+
+.code {
+  font-family: "Courier New", monospace;
 }
 
 @media (max-width: 600px) {

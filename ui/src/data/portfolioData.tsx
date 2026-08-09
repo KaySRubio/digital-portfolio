@@ -71,6 +71,11 @@ import frustration from '@/assets/png/chickens_20250925_frustration_denied_nest_
 import growl from '@/assets/png/chickens_20241006_0600_coop_growl3_clip.png';
 import long_call from '@/assets/png/chickens_20241006_1000_coopFL_long_call_Louise.png';
 import ravenAnnotate from '@/assets/png/ravenAnnotate.png';
+import ageClassifier from '@/assets/png/age_classifier_pic.png';
+import speakerDiarizationOutput from '@/assets/png/speaker_diarization.png';
+import speakerDiarizationProgram from '@/assets/png/speaker_diarization_program.png';
+import amazonSagemaker from '@/assets/png/amazon_sagemaker.png';
+import mlflow from '@/assets/png/mlflow.png';
 
 // svg
 import aiIcon from '@/assets/svg/ai.svg?react';
@@ -128,7 +133,7 @@ export const homePageData = {
   // headline: 'Listener, Developer, Explorer',
   headline: '',
   // desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics',
-  desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics. By day, I\'m part of an AI-focused team at an EdTech company. I build educational websites that use speech recognition to evaluate children\'s reading skills.',
+  desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics. By day, I\'m part of an AI innovation team at an EdTech company. I build educational websites that use speech recognition to evaluate children\'s reading skills.',
   long_desc: 'By night, I record wildlife and analyze sound. My dream is to use neural networks to decode structure and meaning in animal communication. I also hope to build apps that engage the public in bioacoustics and conservation research.',
   //long_desc: 'As a React developer I build interactive educational websites. In my free time I dabble in machine learning and record wildlife. My dream is to analyze animal communication to decode structure and meaning and use the web to engage the public in bioacoustics.',
 
@@ -164,7 +169,7 @@ export const projects: Project[] = [
     topics: [TopicNames. BIOACOUSTICS], // choose 1-3 categories
     visible: true, // update to true when your done so it shows up in the list of projects by topic
     featured: true, // update to true if you want it to be listed on the home page
-    desc: 'Extracted audio features from chicken calls are clustered into major call types', // Longer description for the projectCard. Try to keep under 12 words.
+    desc: 'Hen vocalizations are fit into 8 major clusters based on their acoustic features', // Longer description for the projectCard. Try to keep under 12 words.
     long_desc: 'Extract audio features from chicken calls and use K-means clustering to identify major call types',
     mainImage: {
       type: 'png',
@@ -179,7 +184,7 @@ export const projects: Project[] = [
         elements: [
           {type: 'h2', text: 'Abstract'},
           {type: 'div', className: 'row-with-text-and-pic', elements: [
-            {type: 'p', text: 'Better understanding the communication systems of other species can improve human empathy, animal welfare, and support conservation efforts.  It is believed that flock birds vocalize to coordinate flock behavior, and that their vocalizations reveal information about their activity, emotions, and ability to adjust to environmental conditions.  In this study, 6 hens were recorded in a backyard coop/run setting doing various behaviors (foraging, dust bathing, nesting, roosting, etc.) over the course of a year. The calls were separated into individual calls where only 1 chicken was vocalizing at a time with voice activity detection (VAD). Then, audio features were extracted and used to identify that the calls fit into 8 major clusters. Next steps for future research are suggested, including examining nuances within clusters, pairing with behavioral observations, and extending this methodology to other vocally complex species to decode communication systems.'},
+            {type: 'p', text: 'Better understanding the communication systems of other species can improve human empathy, animal welfare, and support conservation efforts.  It is believed that flock birds vocalize to coordinate flock behavior, and that their vocalizations reveal information about their activity, emotions, and ability to adjust to environmental conditions.  In this study, 6 hens were recorded in a backyard coop/run setting doing various behaviors (foraging, dust bathing, nesting, roosting, etc.) over the course of a year. The calls were separated into individual calls where only 1 chicken was vocalizing at a time with voice activity detection (VAD). Then, audio features were extracted and used to identify that the calls fit into 8 major clusters. Next steps for future research are suggested, including examining nuances within clusters, pairing with behavioral observations, and extending this methodology to other vocally complex species to decode animal communication.'},
             {type: 'img', src: chicken4, className: '', alt: 'hen making sounds'},
           ]},
           
@@ -201,8 +206,8 @@ export const projects: Project[] = [
             titleEl: 'h3',
             expandedByDefault: false,
             children: [
-              {type: 'p', text: 'Chickens vocalize between 50 Hz to 10 kHz (Tefera, 2012), which is within the human hearing range. Previous research has found that chickens make about 24 different sound patterns (Collias, 1987) with about 30 different syllables (Tefera, 2012), and that their vocalizations can reliably indicate illness vs. health, and stress vs. non-stress (Manikandan & Neethirajan, 2025). However, traditional methods of classifying chicken calls often rely on human perception of which calls sound different from others and are made in different contexts we can observe. While important, this can introduce some anthropocentric bias.'},
-              {type: 'p', text: 'During infant development, the human brain loses the ability to differentiate sounds that are not used or are used interchangeably in our native language creating a phenomenon called phonemic blindness. People learning a second language often run into this issue when they cannot perceptually distinguish certain phonemes or use pitch to change meaning in nuanced ways that don\'t exist in their native languages. Given our struggle to perceive all possible sounds within our own species, it\'s possible that we cannot perceive the nuanced differences in sound patterns made by other species. This suggests that it is important to include acoustic/computational methods to detect differences between sounds.'},
+              {type: 'p', text: 'Chickens vocalize between 50 Hz to 10 kHz (Tefera, 2012), which is within the human hearing range. Previous research has found that chickens make about 24 different sound patterns (Collias, 1987) with about 30 different syllables (Tefera, 2012), and that their vocalizations can reliably indicate illness vs. health, and stress vs. non-stress (Manikandan & Neethirajan, 2025). However, traditional methods of classifying chicken calls often rely on human perception to identify which calls sound different from others. While important, this can introduce some anthropocentric bias.'},
+              {type: 'p', text: 'For instance, during infant development, the human brain loses the ability to differentiate sounds that are not used or are used interchangeably in our native language creating a phenomenon called phonemic blindness. People learning a second language often run into this issue when they cannot perceptually distinguish certain phonemes that are allophones or not used in their native language. Given our struggle to perceive sounds within our own species, it\'s possible that we cannot perceive the nuanced differences in sound patterns made by other species. This suggests that it is important to include acoustic/computational methods to detect differences between sounds.'},
             ],
           },
           {
@@ -211,9 +216,9 @@ export const projects: Project[] = [
             titleEl: 'h3',
             expandedByDefault: false,
             children: [
-              {type: 'p', text: 'According to Darwin\'s principal of antithesis, opposite emotions and situations should result in communicative sounds with opposite acoustic properties. For instance, alarm calls due to a predator should have opposite acoustic properties compared with sounds made during comfortable scenarios like foraging or resting.'},
-              {type: 'p', text: 'One possible starting place for decoding animal communication is to start with acoustic feature extraction and statistical clustering to identify groupings of sounds that have opposite meanings. Once major acoustic clusters are identified, they can be used to train a model that can transcribe recordings based on those clusters and then sounds within the same cluster can be explored to identify more nuanced differences and paired with behavioral observation and playback experiments to determine which sound differences have meaning to the chickens.'},
-              {type: 'p', text: 'The goal of this study is to record hens and chicks vocalizing during a variety of natural behaviors, separate out individual calls from one another, extract acoustic features, and then use K-means clustering to create broad categories of calls with opposite acoustic properties.'},
+              {type: 'p', text: 'According to Darwin\'s principal of antithesis, opposite emotions and situations should result in communicative sounds with opposite acoustic properties. For instance, alarm calls due to a predator should have opposite acoustic properties from sounds made during comfortable scenarios like foraging or resting.'},
+              {type: 'p', text: 'One possible starting place for decoding animal communication is to start with acoustic feature extraction and statistical clustering to identify groupings of sounds that have opposite qualities. Once major acoustic clusters are identified, they can be used to train a model that can transcribe recordings based on those clusters. Then sounds within the same cluster can be explored to identify more nuanced differences. When paired with behavioral observation and playback experiments, we may be able to determine which sound properties contain meaning to species in question while seeking to avoid anthropocentric bias.'},
+              {type: 'p', text: 'The goal of this study is to record a small flock of hens vocalizing during a variety of natural behaviors, separate out individual calls from one another, extract acoustic features, and then use K-means clustering to create broad categories of calls with opposite acoustic properties.'},
              ],
           },
           {
@@ -231,7 +236,7 @@ export const projects: Project[] = [
             href: 'https://github.com/KaySRubio/audio-signal-analysis/tree/main/notebooks/chickens',
           },
           {type: 'h2', text: 'Methods'},
-              {type: 'TechStack', techList: ['scikitlearn', 'librosa', 'pandas', 'ravenannotate', 'matplotlib']},
+          {type: 'TechStack', techList: ['scikitlearn', 'librosa', 'pandas', 'ravenannotate', 'matplotlib']},
           {
             type: 'DisclosurePanel',
             title: 'The chickens and recording equipment',
@@ -469,6 +474,91 @@ export const projects: Project[] = [
           ]},
         ]
       }
+    ],
+  },
+  // age-classifier --> DONE!!
+  {
+    path: 'age-classifier',
+    short_title: 'Age Classifier',
+    title: 'An Age Classifier Fine-Tuned using Hugging Face Transformers',
+    date: 'March 2026',
+    topics: [TopicNames.MACHINELEARNING],
+    visible: true,
+    featured: true,
+    desc: 'An age classification model that can differentiate child vs. adult voices',
+    long_desc: 'A neural network based age classification model fine-tuned using Hugging Face transformers.',
+    mainImage: {
+      type: 'png',
+      src: ageClassifier,
+      alt: 'A cartoon of a boy in front of a computer with a woman standing behind him looking at the screen',
+    },
+    projectCardTechStack: ['huggingface', 'pandas', 'amazonsagemaker', 'mlflow'],
+    project_details: [
+      {
+        type: 'div',
+        className: 'project-details-restricted-width',
+        elements: [
+          {type: 'img', src: speakerDiarizationOutput, className: 'width100', alt: 'An audio waveform with multiple timestamps highlighted and labels indicating adult_1, child_2, etc.'},
+          
+          {type: 'h2', text: 'Introduction'},
+          {type: 'p', text: 'Through advances in educational technology, oral reading and conversational tests can be recorded and analyzed using automatic speech recognition technology (ASR) giving teachers new tools to detect reading and speaking difficulties and identify children in need of support.  One important step in this process is to be able to identify which voices are the child and which are the adult.  As a member of the AI Innovation team at Curriculum Associates, Inc., I used transfer learning to fine-tune an ASR network to classify child vs. adult voices.'},
+          {type: 'h2', text: 'Methods'},
+          {type: 'TechStack', techList: ['huggingface', 'pandas', 'amazonsagemaker', 'mlflow']},
+          
+          {type: 'text', text: 'I first explored audio data available at my company.  We have large speech datasets stored in S3 buckets that are allowed to be used to train neural networks. Using '},
+          {type: 'a', text: 'AmazonSagemaker', href: 'https://aws.amazon.com/sagemaker/ai/?trk=047fc009-5bd4-4337-800d-8b880665cece&sc_channel=ps&ef_id=CjwKCAjwyuDTBhB-EiwANCQhLB5hwjkxJz0PcLpknPkA-bv0hToaTbSGjyP-i8a2nxERyc_3C00X0RoC2sYQAvD_BwE&gads_camp=23532472972&gads_ag=194311071804&gads_ad=795877020716&gads_kw=amazon%20sagemaker&gads_matchtype=e&gads_network=g&gads_device=c&gads_geo=9002012&gad_campaignid=23532472972&gbraid=0AAAAADjHtp_ihiM0jhrzhDPNDyx_ue486&gclid=CjwKCAjwyuDTBhB-EiwANCQhLB5hwjkxJz0PcLpknPkA-bv0hToaTbSGjyP-i8a2nxERyc_3C00X0RoC2sYQAvD_BwE'},
+          {type: 'text', text: ' for computing resources, I created a data preparation python program that iterates over different data sources to gather audio files of at least 10 seconds in length, normalizes the audio, and adds metadata about source and a label for age of speaker.'},
+          {type: 'p', text: 'Training data included 10 hours of adults and 10 hours of elementary and middle-school aged children. Both groups had a mix of reading vs. spontaneous speech. I split the training data into 75% train and 25% test.'},
+          {type: 'text', text: 'Utilizing skills I learned from the '},
+          {type: 'a', text: 'Hugging Face Transformers for Audio', href: 'https://huggingface.co/learn/audio-course/en/chapter0/introduction'},
+          {type: 'text', text: ', I finetuned '},
+          {type: 'a', text: 'DistilHuBERT', href: 'https://huggingface.co/ntu-spml/distilhubert'},
+          {type: 'text', text: ', which is a smaller version of HuBERT that was modified from BERT. BERT is a speech recognition model with encoder-only CTC architecture. For this project, a classification layer was added that outputs 0 (child) or 1 (adult). I used the '},
+          {type: 'a', text: 'Transformers AutoModelForAudioClassification', href: 'https://huggingface.co/docs/transformers/v5.14.0/en/model_doc/auto#transformers.AutoModelForAudioClassification'},
+          {type: 'text', text: ' from HuggingFace for transfer learning. Fine-tuning was done in Amazon Sagemaker instance ml.g5.xlarge (24 GB VRAM) with 50 GB storage. I also used '},
+          {type: 'a', text: 'MLFlow', href: 'https://mlflow.org/genai/observability?gad_source=1&gad_campaignid=23556358454&gbraid=0AAAABCrGXuIIuu78ScUD44wxdVwTMeVN4&gclid=CjwKCAjwyuDTBhB-EiwANCQhLO4yKjaHagephRzYXYSsKwj5veZDI05GUtRZtw1JWU2Skv22TU5MrBoCk0YQAvD_BwE'},
+          {type: 'text', text: ' to track of various metrics related to the training process. '},
+          {type: 'p', text: ''},
+          {type: 'text', text: 'Hyperparameters used'},
+          {
+            type: 'table', headers: ['Hyperparameter', 'Value'],
+            rows: [
+              ['epochs', '5'],
+              ['learning_rate', '5e-5'],
+              ['batch_size', '4'],
+              ['gradient_accumulation_steps', '1'],
+              ['warmup_steps', '100'],
+              ['logging_steps', '5'],
+            ],
+          },
+          {type: 'p', text: 'The final model was saved on S3 and an additional program was created for inference with a single audio file as input. Inference was run in SageMaker using instance ml.g4dn.xlarge with storage 5 GB.'},
+          {type: 'h2', text: 'Results'},
+          {type: 'p', text: 'By the fifth epoch, the model was 99% accurate at classifying child vs. adult voices. '},
+          {
+            type: 'table', headers: ['Epoch', 'Training Loss', 'Validation Loss', 'Accuracy'],
+            rows: [
+              ['1', '0.366713', '0.105891', '0.977778'],
+              ['2', '0.006447', '0.086432', '0.987500'],
+              ['3', '0.000380', '0.079321', '0.986111'],
+              ['4', '0.000094', '0.075839', '0.987500'],
+              ['5', '0.000051', '0.085785', '0.988889'],
+            ],
+          },
+          {type: 'text', text: 'To test the utility of the model on new data, I gathered open-source recordings of children and adults having conversations from the '},
+          {type: 'a', text: 'CHILDES English Van Houten Corpus', href: 'https://talkbank.org/childes/access/Eng-NA/VanHouten.html'},
+          {type: 'text', text: ' which was not part of the finetuning data. I utilized a pretrained model, '},
+          {type: 'a', text: 'NeMo Sortformer Diarizer', href: 'https://docs.nvidia.com/nemo-framework/user-guide/latest/nemotoolkit/asr/speaker_diarization/models.html'},
+          {type: 'text', text: ', to generate timestamps of the individual voices in the recording, e.g., '},
+          {type: 'text', className: 'code', text: '[{start: 0.00, end: 0:05, label: "speaker_01"}, {start: 0.06, end: 0:10, label: "speaker_02"}]'},
+          {type: 'p', text: ''},
+          {type: 'text', text: 'Then, I created a python program that takes in the full audio splices it by the timestamps generated from speaker diarization to create individual audio files for each speaker. These files are then used as input for the age classifier which outputs if the speaker is a child or adult. Then the program utilizes that output to update the labels to indicate of the speaker is a child or adult, e.g.,  '},
+          {type: 'text', className: 'code', text: '[{start: 0.00, end: 0:05, label: "child_01"}, {start: 0.06, end: 0:10, label: "adult_02"}]'},
+          {type: 'p', text: 'Finally, I created a front-end web program that takes in the audio and the timestamps data and displays these timestamps on the waveform visualization.  Users can play back the audio live and watch the timestamps highlighting the speech.  I presented this work to my team.'},
+          {type: 'img', src: speakerDiarizationProgram , className: 'width100', alt: 'A program showing an input box where the user can upload audio, a text box where the user can input timestamp data, and a waveform with regions highlighted and labeled as adult or child speech'},
+          {type: 'h2', text: 'Discussion'},
+          {type: 'p', text: 'Through this project, I created a functional age classifier that can identifying child vs. adult voices in classroom settings and can be integrated into an ASR pipeline. Possible applications include labeled transcriptions of child vs. adult speech, as well as using the child-output only to identify speaking and reading difficulties for diagnostic purposes in classrooms.  It shows the power of transfer learning and neural networks in supporting education.'},
+        ]
+      },
     ],
   },
   // audio-feature-extraction --> DONE!!
@@ -750,7 +840,7 @@ export const projects: Project[] = [
     topics: [TopicNames.BIOACOUSTICS],
     visible: true,
     featured: true,
-    desc: 'Created algorithm that extracts features like number of clicks and inter-click-intervals',
+    desc: 'Algorithm extracts the timing between clicks to analyze sperm whale codas',
     long_desc: 'Uses voice activity detection to analyze sperm whale vocalization codas. Shows waveform and spectrogram. Links to GitHub and Hugging Face.',
     mainImage: {
       type: 'png',
@@ -765,17 +855,19 @@ export const projects: Project[] = [
         className: 'project-details-restricted-width',
         elements: [
           {type: 'h2', text: 'About'},
-          {type: 'p', text: 'Sperm whales communicate with each other through making clicks, and combining these into patterns called codas. A sperm whale coda is 3-40 clicks grouped together usually lasting for less than 2 seconds, and separated from the next coda by a silence of at least a second. Different coda\'s differ in the number of clicks, the spacing between the clicks. The sperm whales of the Eastern Caribbean clan have at least 18 codas, but these codas are further modified in various ways such as varying the tempo.'},
+          {type: 'p', text: 'Sperm whales communicate with each other through making clicks that they combine into patterns called codas. A sperm whale coda is 3-40 clicks grouped together usually lasting for less than 2 seconds. Each coda is separated from the next by a silence of at least one second. Different codas differ in their number of clicks and the spacing between the clicks. Codas are further modified in various ways such as varying the tempo.'},
           {
             type: 'GoalAndGithub',
             elements: [
-              {type: 'h2', text: 'Goal'},
-              {type: 'text', text: 'Use Voice Activity Detection (VAD) to separate a recording of sperm whale vocalizations into individual codas. Then use VAD to gather metadata on each coda that could be used to transcribe them, including the number of clicks per coda, the total coda duration, and the durations of inter-click intervals. For demonstration purposes a simple formula has been used to highlight the 1+1+3 coda, which is the most common coda used by the Eastern Caribbean clan. Files are analyzed on a python back-end hosted on '},
-              {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/transcribe_sperm_whale_coda/blob/main/app.py'},
-              {type: 'text', text: '.'},
+              
+              {type: 'text', text: 'To learn more about sperm whale communication and programming techniques to analyze sound, I created this project that uses Voice Activity Detection (VAD) to separate a recording of sperm whale vocalizations into individual codas. Then I used VAD to gather metadata on each coda including the number of clicks per coda, the total coda duration, and the durations of inter-click intervals. For demonstration purposes a simple formula has been used to highlight the 1+1+3 coda, which is the most common coda used by the Eastern Caribbean clan and is believed to represent the clan membership name.'},
+              
             ],
             href: 'https://github.com/KaySRubio/audio-signal-analysis/blob/main/notebooks/sperm_whales/sperm_whale_codas_exploration.ipynb',
           },
+          {type: 'text', text: 'Files are analyzed on a python back-end hosted on '},
+          {type: 'a', text: 'Hugging Face Spaces', href: 'https://huggingface.co/spaces/kaysrubio/transcribe_sperm_whale_coda/blob/main/app.py'},
+          {type: 'text', text: '. Audio waveform and spectrogram are displayed on the front-end demo below where users can toggle switches to show the timestamps of the codas, their individual clicks, etc. The output of the program is also below in a table. In the future, I\'d like to learn more about transcribing codas, and if it is possible to separate the voices of individual sperm whales.'},
           {type: 'h2', text: 'Demo'},
         ]
       },
@@ -784,7 +876,7 @@ export const projects: Project[] = [
         customSection: {
           displayText: 'Directions',
           elements: [
-            {type: 'p', text: 'Select a sample file to see coda\'s highlighted on the wavefrom and metadata below in the results section. You can also upload a sperm whale recording, or record live. Don\'t have a sperm whale friend close by? Try making coda\'s such as 1+1+3 by tapping on the table.'}
+            {type: 'p', text: 'Select a sample file to see coda\'s highlighted on the wavefrom and metadata below in the results section. You can also upload a sperm whale recording, or record live. Don\'t have a sperm whale friend close by? Try making coda\'s such as 1+1+3 by clapping your hands.'}
           ]
         },
         input: {
@@ -891,14 +983,7 @@ export const projects: Project[] = [
         type: 'div',
         className: 'project-details-restricted-width',
         elements: [
-          {type: 'h2', text: 'Tech Stack'},
-          {type: 'TechStack', techList: ['librosa', 'matplotlib'] },
-          {type: 'h2', text: 'Next Steps'},
-          {type: 'ul', elements: [
-            [{type: 'text', text: 'Separate out the voices of individual sperm whales'}],
-            [{type: 'text', text: 'Transcribe each coda by creating an algorithm that takes the known dialects and matches them to coda metadata like inter-click-intervals'}],
-          ]},
-          {type: 'h2', text: 'References'},
+          {type: 'h2', text: 'Resources'},
           {type: 'div', elements: [
             {type: 'a', text: 'Project CETI', href: 'https://www.projectceti.org/'}
           ]},
@@ -928,7 +1013,7 @@ export const projects: Project[] = [
     topics: [TopicNames.BIOACOUSTICS],
     visible: true,
     featured: true,
-    desc: 'Recording and analyzing bat calls using audio signal processing & machine learning',
+    desc: 'Species identification based on clustering calls into phonic groups by their audio features',
     long_desc: 'Recorded 100+ bats in Massachusetts. Extracted audio features and explored phonic groups using K-Means clustering. Identified possible species.',
     mainImage: {
       type: 'png',
@@ -945,41 +1030,68 @@ export const projects: Project[] = [
           {type: 'img', src: bat_calls1, className: 'width100', alt: 'A spectrogram showing a series of bat calls'},
           {type: 'a', href: 'ttps://commons.wikimedia.org/w/index.php?curid=163925545', text: 'Bat photo by Rhododendrites - Own work, CC BY-SA 4.0', className: 'small-text'},
           {type: 'text', text: ', Spectrogram photo from bat recorded by K. Rubio', className: 'small-text'},
-          {type: 'h2', text: 'About'},
-          {type: 'p', text: 'Bats are critical to ecosystem health as insect-eaters, pollinators, and seed dispersers. However, nearly half of all bat species worldwide are threatened with extinction, and 90% of bats in North America are facing drastic population declines.  Monitoring bat populations is an important way to support conservation efforts.'},
-          {type: 'p', text: 'Since most bats echolocate, passively recording their echolocation calls can help. At present, there\'s no easy way to identify species from echolocation calls alone, but they can be grouped into phonic groups based on auditory features and matched to potential species whose calls are typically consistent to that phonic group.'},
-          {type: 'p', text: ''},
-          {type: 'text', text: 'There are professional equipment and software that analyze bat calls from companies like '},
+          {type: 'h2', text: 'Introduction'},
+          {type: 'p', text: 'Bats are critical to ecosystem health as insect-eaters, pollinators, and seed dispersers. However, nearly half of all bat species worldwide are threatened with extinction and 90% of bats in North America are facing drastic population declines.  Monitoring bat populations is an important way to support conservation efforts.'},
+          {type: 'p', text: 'Since most bats echolocate, passively recording their echolocation calls can help detect their presence. Then, through audio signal analysis, calls can be grouped into phonic groups based on auditory features and matched to potential species whose calls are typically consistent to that phonic group.'},
+
+          {type: 'text', text: 'Although some closed-source software exists to analyze bat calls (e.g., '},
           {type: 'a', href: 'https://sonobat.com/purchase/', text: 'Sonobat'},
           {type: 'text', text: ' and '},
-          {type: 'a', href: 'https://www.wildlifeacoustics.com/products/echo-meter-touch-2', text: 'Wildlife Acoustics'},
-          {type: 'text', text: '.  However, it is quite costly, so I created this personal project to explore local bat calls, practice audio signal processing and machine learning.'},
+          {type: 'a', href: 'https://www.wildlifeacoustics.com/products/kaleidoscope-pro', text: 'Kaleidoscope Pro'},
+          {type: 'text', text: ') these can be expensive and there is a need for open-source resources to identify species. In this project, I completed 5 main goals:'},
+          {type: 'p', text: ''},
           {
             type: 'GoalAndGithub',
             elements: [
-              {type: 'h2', text: 'Goal'},
               {type: 'ol', elements: [
                 [{type: 'text', text: 'Record bats in Massachusetts using an ultrasonic mic'}],
                 [{type: 'text', text: 'Create a python program using audio signal processing to extract features from bat passes'}],
                 [{type: 'text', text: 'Use features to explore different phonic groups using K-Means Clustering'}],
                 [{type: 'text', text: 'Compare findings with information about known local bat species'}],
+                [{type: 'text', text: 'Utilize KaleidoscopePro to auto-identify calls and compare results'}],
               ]},
             ],
             href: 'https://github.com/KaySRubio/audio-signal-analysis/blob/main/notebooks/bats/bat_echolocation_call_exploration.ipynb',
           },
+          {
+            type: 'DisclosurePanel',
+            title: 'More About Bats and Their Calls',
+            titleEl: 'h3',
+            children: [
+              {type: 'text', className: 'bold', text: 'Bat Pass: '},
+              {type: 'text', text: 'A sequence of echolocation calls that typically increase in energy as a bat gets closer, then fade out completely as the bat flies away.'},
+              {type: 'p', text: ''},
+              {type: 'text', className: 'bold', text: 'FM: '},
+              {type: 'text', text: 'Frequency modulated call shape, which looks like a steep continuous slope on a spectrogram.'},
+              {type: 'p', text: ''},
+              {type: 'text', className: 'bold', text: 'FM-QCF: '},
+              {type: 'text', text: 'Frequency-modulated with quasi-constant frequency call shape that typically has a steep downward slope, that bends into a flatter, nearly horizontal shape on a spectrogram. These calls can also be described as a hockey stick or backwards J shape.'},
+              {type: 'p', text: ''},
+              {type: 'text', className: 'bold', text: 'K-Means Clustering: '},
+              {type: 'text', text: 'K-means clustering is an unsupervised machine learning algorithm that groups cases (e.g., rows in a dataset) into clusters based on their similarity, by minimizing the distance between data points and their cluster\'s center. Every case must fit in one and only one cluster. '},
+              {type: 'p', text: ''},
+              {type: 'text', className: 'bold', text: 'Peak Frequency: '},
+              {type: 'text', text: 'The frequency in hz or kHz with the highest energy (amplitude) of a sound.'},
+              {type: 'img', src: bats_in_mass, className: 'width-limit-500', alt: 'Labelled images of multiple types of bats that live in Massachusetts'},
+              {type: 'div', className: 'small-text-center', elements: [
+                {type: 'text', text: 'Source: ', className: 'small-text'},
+                {type: 'a', text: 'AnimalSpot.net Bats in Massachusetts', className: 'small-text-center', href: 'https://www.animalspot.net/bats-in-us/bats-in-massachusetts'},
+              ]}
+              ]
+          },
           {type: 'h2', text: 'Methods'},
           {
             type: 'DisclosurePanel',
-            title: 'Recording Details',
+            title: 'Recording and Data Preparation',
             titleEl: 'h3',
             children: [
-              {type: 'h4', text: 'Devices: '},
+              {type: 'text', text: '115 bat passes were recorded in 7 towns in northeastern Massachusetts. Recordings were taken at dusk for about 1 hour. To capture echolocation calls, I used a '},
               {type: 'a', href: 'https://www.dodotronic.com/product/ultramic-384k-evo/', text: 'Dodotronic 384k EVO'},
               {type: 'text', text: ' microphone with '},
               {type: 'a', href: 'https://www.audacityteam.org/download/', text: 'Audacity'},
-              {type: 'text', text: ' running on a MacBook Pro'},
+              {type: 'text', text: ' running on a MacBook Pro and set the sampling rate to 384 kHz.'},
               {type: 'table',
-                headers: ['Date', 'City/State', 'Environment', 'Num of good bat passes'],
+                headers: ['Date', 'City/State', 'Environment', 'Num of bat passes'],
                 rows: [
                   [
                     '10/20/24',
@@ -1077,20 +1189,7 @@ export const projects: Project[] = [
                   ]
                 ]
               },
-              {type: 'text', text: 'Total bat passes recorded: over 115'},
-              {type: 'h4', text: 'Methods'},
-              {type: 'ul', elements: [
-                [{type: 'text', text: 'Checked each recording and trimmed/split to only include 1 bat pass per file.'}],
-                [{type: 'text', text: 'Mark files as "good" if they are reasonably clear/loud, and don\'t obviously have more than 1 bat overlapping in time/frequency.'}],
-                [{type: 'text', text: 'Wrote a python program that extracts features from each bat pass.'}],
-                [{type: 'text', text: 'Wrote a second python program that groups bat passes into phonic groups using K-means clustering.'}],
-                [
-                  {type: 'text', text: 'Compared phonic groups with known information about bat species in Massachusetts using call features from '},
-                  {type: 'a', text: 'Cal Poly Humboldt Bat Lab', href: 'https://sonobat.com/download/Eastern_NA_Acoustic_Table.pdf'},  
-                  {type: 'text', text: ' and known-species recordings from '},
-                  {type: 'a', text: 'Xeno-canto', href: 'https://xeno-canto.org/explore/taxonomy?ord=CHIROPTERA'},
-                ], 
-              ]},
+              {type: 'p', text: 'Recordings were checked and trimmed/split to include only 1 bat pass per file. Bat calls that were very quiet or had overlapping bats of different timing/frequency were discarded. High-pitched insect calls were also removed (high-pitched insect calls are distinguishable from bat calls because they are extremely flat and consistent unlike bat calls which change in frequency over the course of the call and fade in and out as the bat flies closer and farther from the microphone).'},
             ]
           },
           {
@@ -1102,25 +1201,25 @@ export const projects: Project[] = [
               {type: 'TechStack', techList: ['librosa', 'matplotlib', 'pandas', 'numpy', 'scikitlearn']},
               {type: 'h4', text: 'Audio Feature Extraction Program Steps'},
               {type: 'ol', elements: [
-                [{type: 'text', text: 'Load audio data with correct sampling rate and visualize using waveform.'}],
-                [{type: 'text', text: 'Apply the Short-Time Fourier Transform to convert to the frequency domain and generate spectrogram to check work.'}],
-                [{type: 'text', text: 'Apply high-pass filter to remove lower frequency background noise.'}],
-                [{type: 'text', text: 'Normalize audio signal so amplitude/volume is consistent across files using root mean square energy.'}],
-                [{type: 'text', text: 'Apply energy-based voice activity detection (VAD) to detect which frames have sound.'}],
-                [{type: 'text', text: 'Use the VAD output to get timestamps for each echolocation call and inter-call interval (ICI). Check work on a waveform and adjust frame length, frame shift, and energy threshold as needed.'}],
-                [{type: 'text', text: 'Save duration and ICI for each call in a data frame.'}],
-                [{type: 'text', text: 'Extract minimum frequency, maximum frequency, and peak frequency for each call and add to data frame.'}],
-                [{type: 'text', text: 'For each call, create a simple estimate of slope in Hz/ms and save in data frame.'}],
-                [{type: 'text', text: 'Do some data cleaning on data frame of results for each call, removing outliers.'}],
-                [{type: 'text', text: 'Calculate averages and export the features: average call duration, average ICI, average min/max/peak frequency, and average slope.'}],
+                [{type: 'text', text: 'Loaded audio data with correct sampling rate and visualized using waveforms.'}],
+                [{type: 'text', text: 'Applied the Short-Time Fourier Transform to convert to the frequency domain and generated spectrogram.'}],
+                [{type: 'text', text: 'Applied a high-pass filter to remove lower frequency background noise.'}],
+                [{type: 'text', text: 'Normalized audio signal so amplitude/volume was consistent across files.'}],
+                [{type: 'text', text: 'Applied energy-based voice activity detection (VAD) to detect individual calls.'}],
+                [{type: 'text', text: 'Used VAD output to obtain timestamps for each echolocation call and inter-call interval (ICI). Checked spectrogram and adjusted frame length, frame shift, and energy threshold as needed.'}],
+                [{type: 'text', text: 'Saved duration and ICI for each call in a data frame.'}],
+                [{type: 'text', text: 'Extracted minimum frequency, maximum frequency, and peak frequency for each call and added to data frame.'}],
+                [{type: 'text', text: 'For each call, estimated slope (Hz/ms) and saved in data frame.'}],
+                [{type: 'text', text: 'Cleaned numeric data, removing outliers as needed.'}],
+                [{type: 'text', text: 'Calculated averages and exported the features: average call duration, average ICI, average min/max/peak frequency, and average slope.'}],
               ]},
               {type: 'h4', text: 'K-Means Clustering Program Steps'},
               {type: 'ol', elements: [
-                [{type: 'text', text: 'Import and visualize data'}],
-                [{type: 'text', text: 'Use StandardScaler to get all variables on the same scale'}],
-                [{type: 'text', text: 'Use Elbow method to determine best number of clusters'}],
-                [{type: 'text', text: 'Use K-means clustering to fit cases into clusters'}],
-                [{type: 'text', text: 'Explore characterstics of the clusters and plot using a scatterplot'}],
+                [{type: 'text', text: 'Imported and visualized the data'}],
+                [{type: 'text', text: 'Used StandardScaler to normalize variables.'}],
+                [{type: 'text', text: 'Used Elbow method to determine best number of clusters'}],
+                [{type: 'text', text: 'Use K-means clustering to fit cases into clusters.'}],
+                [{type: 'text', text: 'Explored characterstics of the clusters and plot using scatterplots.'}],
               ]},
               {type: 'h4', text: 'Program links'},
               {type: 'a', text: 'Program 1: In-depth exploration of a bat pass', href: 'https://github.com/KaySRubio/audio-signal-analysis/blob/main/notebooks/bats/bat_echolocation_call_exploration.ipynb'},
@@ -1130,29 +1229,7 @@ export const projects: Project[] = [
               {type: 'a', text: 'Program 3: K-means clustering bat calls into phonic groups', href: 'https://github.com/KaySRubio/audio-signal-analysis/blob/main/notebooks/bats/k_means_clustering_bat_calls_into_phonic_groups.ipynb'},
             ]
           },
-          {
-            type: 'DisclosurePanel',
-            title: 'Helpful Definitions',
-            titleEl: 'h3',
-            children: [
-              {type: 'text', className: 'bold', text: 'Bat Pass: '},
-              {type: 'text', text: 'A sequence of echolocation calls that typically increase in energy as a bat gets closer, then fade out completely as the bat flies away.'},
-              {type: 'p', text: ''},
-              {type: 'text', className: 'bold', text: 'FM: '},
-              {type: 'text', text: 'Frequency modulated call shape, which looks like a steep continuous slope on a spectrogram.'},
-              {type: 'p', text: ''},
-              {type: 'text', className: 'bold', text: 'FM-QCF: '},
-              {type: 'text', text: 'Frequency-modulated with quasi-constant frequency call shape that typically has a steep downward slope, that bends into a flatter, nearly horizontal shape on a spectrogram. These calls can also be described as a hockey stick or backwards J shape.'},
-              {type: 'p', text: ''},
-              {type: 'text', className: 'bold', text: 'K-Means Clustering: '},
-              {type: 'text', text: 'K-means clustering is an unsupervised machine learning algorithm that groups cases (e.g., rows in a dataset) into clusters based on their similarity, by minimizing the distance between data points and their cluster\'s center. Every case must fit in one and only one cluster. '},
-              {type: 'p', text: ''},
-              {type: 'text', className: 'bold', text: 'Peak Frequency: '},
-              {type: 'text', text: 'The frequency in hz or kHz with the highest energy (amplitude) of a sound. A helpful feature of a bat call, but never perfect as higher frequencies attenuate more over distance.'},
-            ]
-          },
           {type: 'h2', text: 'Results'},
-          
           {type: 'h3', text: 'Peak frequencies of bat passes recorded in Massachusetts'},
           {type: 'img', src: melrose_bat_histogram, className: 'width100', alt: 'A histogram titled Peak Frequencies of 40 Bat Passes Recorded in MA showing 3 groups of bats, the most calls clustered around 26-32 kHz, some calls between 34-38 kHz, and a few calls 43-45 kHz'},
           {type: 'h3', text: 'Phonic groups found through K-means clustering'},
@@ -1180,120 +1257,144 @@ export const projects: Project[] = [
               ['3B', '53', '46', '84', '9', 'FM', '1', '1'],
             ]
           },
-          {type: 'h3', text: 'Example recordings from the phonic groups'},
-          {type: 'text', className: 'small-text', text: 'Note: Each spectrogram screenshot uses similar time/frequency scale for ease of visual comparison'},
-          {type: 'h4', text: 'Group 1A (Peak 19-20 kHz flatter FM-QCF)'},
-          {type: 'img', src: bat_19, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 26 kHz'},
-          {type: 'text', className: 'small-text', text: 'Bat recorded 9/14/2025 in Medford, MA over Upper Mystic Lake'},
-          {type: 'p', text: 'Loud hockey stick shaped calls that are flatter and lower frequency from group 2a.'},
-          {type: 'h4', text: 'Group 1B (Peak 25-32 kHz loud FM-QCF) '},
-          {type: 'img', src: bat_25, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 36 kHz'},
-          {type: 'text', className: 'small-text', text: 'Bat recorded 6/30/3035 in Melrose, MA on Naples Rd'},
-          {type: 'p', text: 'Many passes in this group are loud hockey stick shaped calls with harmonics at approx. 55, 90, and 150 kHz.'},
+          {
+            type: 'DisclosurePanel',
+            title: 'Example recordings from the phonic groups',
+            titleEl: 'h3',
+            children: [
           
-          {type: 'h4', text: 'Group 2 (Peak 27-38 kHz varied shapes)'},
-          {type: 'img', src: bat_32, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
-          {type: 'text', className: 'small-text', text: 'Bat recorded 9/1/2025 in Melrose, MA over Pine Banks Pond'},
-          {type: 'p', text: 'Many are hockey stick shaped calls with max energy 33-38 kHz, some flatter calls with max energy 32-35 kHz, some have upturn at end. Quiet to moderate energy, no visible harmonics.'},
+            {type: 'text', className: 'small-text', text: 'Note: Each spectrogram screenshot uses similar time/frequency scale for ease of visual comparison'},
+            {type: 'h4', text: 'Group 1A (Peak 19-20 kHz flatter FM-QCF)'},
+            {type: 'img', src: bat_19, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 26 kHz'},
+            {type: 'text', className: 'small-text', text: 'Bat recorded 9/14/2025 in Medford, MA over Upper Mystic Lake'},
+            {type: 'p', text: 'Loud hockey stick shaped calls that are flatter and lower frequency from group 2a.'},
+            {type: 'h4', text: 'Group 1B (Peak 25-32 kHz loud FM-QCF) '},
+            {type: 'img', src: bat_25, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 36 kHz'},
+            {type: 'text', className: 'small-text', text: 'Bat recorded 6/30/3035 in Melrose, MA on Naples Rd'},
+            {type: 'p', text: 'Many passes in this group are loud hockey stick shaped calls with harmonics at approx. 55, 90, and 150 kHz.'},
+            
+            {type: 'h4', text: 'Group 2 (Peak 27-38 kHz varied shapes)'},
+            {type: 'img', src: bat_32, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
+            {type: 'text', className: 'small-text', text: 'Bat recorded 9/1/2025 in Melrose, MA over Pine Banks Pond'},
+            {type: 'p', text: 'Many are hockey stick shaped calls with max energy 33-38 kHz, some flatter calls with max energy 32-35 kHz, some have upturn at end. Quiet to moderate energy, no visible harmonics.'},
 
-          {type: 'img', src: bat_32_squiggle, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
-          {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Melrose, MA over Swain\'s Pond'},
-          {type: 'p', text: 'Some are flatter calls with upturn at beginning, slope down, then upturn at end. These \'squiggle\' calls were not mixed in same bat passes as the hockey-stick shaped calls.'},
+            {type: 'img', src: bat_32_squiggle, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
+            {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Melrose, MA over Swain\'s Pond'},
+            {type: 'p', text: 'Some are flatter calls with upturn at beginning, slope down, then upturn at end. These \'squiggle\' calls were not mixed in same bat passes as the hockey-stick shaped calls.'},
 
-          {type: 'h4', text: 'Group 3A (Peak 37-45 kHz FM & FM-QCF)'},
-          {type: 'img', src: bat_41, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
-          {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Melrose, MA over Towner\'s Pond'},
-          {type: 'p', text: 'Loud hockey stick shaped calls, some show upturn or downturn at end of call, others look more FM. Closer/louder calls show harmonic at 78 kHz.'},
+            {type: 'h4', text: 'Group 3A (Peak 37-45 kHz FM & FM-QCF)'},
+            {type: 'img', src: bat_41, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
+            {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Melrose, MA over Towner\'s Pond'},
+            {type: 'p', text: 'Loud hockey stick shaped calls, some show upturn or downturn at end of call, others look more FM. Closer/louder calls show harmonic at 78 kHz.'},
 
-          {type: 'h4', text: 'Group 3B (Peak 53 kHz FM)'},
-          {type: 'img', src: bat_53, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
-          {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Malden, MA over Forestdale Cemetery Pond'},
-          {type: 'p', text: 'Higher pitched call, no visible harmonics, moderate energy, steep hockey-stick shape closer to FM.'},
-          
-          {type: 'h3', text: 'Other Findings'},
-          {type: 'p', text: '1. Bats making social calls in between their echolocation calls'},
-          {type: 'img', src: bat_social, className: 'width100', alt: 'A spectrogram showing bat echolocation with squiggly lines showing social calls made in between the echolocation calls'},
-          {type: 'text', className: 'small-text', text: 'Bat recorded 10/20/2024 in Melrose, MA on Naples Rd.'},
-          {type: 'p', text: '2. Bats using strobe groups (an echolocation call consisting of more than 2+ rapid pulses)'},
-          {type: 'img', src: bat_strobe, className: 'width100', alt: 'A spectrogram showing bat echolocation calls where some calls involve 2+ rapid pulses'},
-          {type: 'text', className: 'small-text', text: 'Bat recorded 6/30/2025 in Melrose, MA on Naples Rd. '},
-          {type: 'p', text: '3. Search, approach, and terminal Phases (feeding buzz) where calls change in shape and frequency as bat approaches a tasty insect'},
-          {type: 'img', src: bat_feed, className: 'width100', alt: 'A spectrogram showing bat echolocation calls which grow closer together and drop in frequency for a feeding buzz'},
-          {type: 'text', className: 'small-text', text: 'Bat recorded 9/11/2025 in Andover, MA over a field'},
+            {type: 'h4', text: 'Group 3B (Peak 53 kHz FM)'},
+            {type: 'img', src: bat_53, className: 'width100', alt: 'A spectrogram showing a series of bat calls with peak frequency around 45 kHz'},
+            {type: 'text', className: 'small-text', text: 'Bat recorded 9/13/2025 in Malden, MA over Forestdale Cemetery Pond'},
+            {type: 'p', text: 'Higher pitched call, no visible harmonics, moderate energy, steep hockey-stick shape closer to FM.'},
+            
+            {type: 'h3', text: 'Other Findings'},
+            {type: 'p', text: '1. Bats making social calls in between their echolocation calls'},
+            {type: 'img', src: bat_social, className: 'width100', alt: 'A spectrogram showing bat echolocation with squiggly lines showing social calls made in between the echolocation calls'},
+            {type: 'text', className: 'small-text', text: 'Bat recorded 10/20/2024 in Melrose, MA on Naples Rd.'},
+            {type: 'p', text: '2. Bats using strobe groups (an echolocation call consisting of more than 2+ rapid pulses)'},
+            {type: 'img', src: bat_strobe, className: 'width100', alt: 'A spectrogram showing bat echolocation calls where some calls involve 2+ rapid pulses'},
+            {type: 'text', className: 'small-text', text: 'Bat recorded 6/30/2025 in Melrose, MA on Naples Rd. '},
+            {type: 'p', text: '3. A feeding buzz with 3 main phases (search, approach, and terminal) showing that calls change in shape and frequency as bat approaches a tasty insect'},
+            {type: 'img', src: bat_feed, className: 'width100', alt: 'A spectrogram showing bat echolocation calls which grow closer together and drop in frequency for a feeding buzz'},
+            {type: 'text', className: 'small-text', text: 'Bat recorded 9/11/2025 in Andover, MA over a field'},
+          ]},
           {type: 'h2', text: 'Discussion'},
+          {
+            type: 'DisclosurePanel',
+            title: 'Echolocation characteristics of species in Massachusetts',
+            titleEl: 'h3',
+            children: [
           
-          {type: 'img', src: bats_in_mass, className: 'width-limit-500', alt: 'Labelled images of multiple types of bats that live in Massachusetts'},
-          {type: 'text', text: 'Source: ', className: 'small-text'},
-          {type: 'a', text: 'AnimalSpot.net Bats in Massachusetts', className: 'small-text', href: 'https://www.animalspot.net/bats-in-us/bats-in-massachusetts'},
-          {type: 'h3', text: 'Echolocation characteristics of species in Massachusetts'},
-          {type: 'table', className: 'med-text',
-            headers: [
-              'Name',
-              'Status',
-              'Typical peak freq',
-              'Typical volume'
-            ],
-            rows: [
-              ['Hoary bat (Lasiurus cinereus)', 'concern', '18-23 kHz', 'variable'],
-              ['Silver-haired bat (Lasionycteris noctivagans)', 'concern', '27-31 kHz', 'moderate'],
-              ['Big brown bat (Eptesicus fuscus)', 'common', '28-32 kHz', 'shouting'],
-              ['Eastern red bat (Lasiurus borealis)', 'concern', '39-49 kHz', 'shouting'],
-              ['Little brown bat (Myotis lucifugus)', 'endangered', '40-47 kHz', 'shouting'],
-              ['Indiana bat (Myotis sodalist)', 'endangered', '41-47 kHz', 'moderate'],
-              ['Tricolored bat (Perimyotis subflavus)', 'endangered', '42-46 kHz', 'whispering'],
-              ['Eastern small-footed bat (Myotis leibii)', 'endangered', '46-52 kHz', 'whispering'],
-              ['Northern long-eared bat (Myotis septentrionalis)', 'endangered', '41-62 kHz', 'whispering'],
-            ]
-          },
-          {type: 'text', text: 'Sources: ', className: 'small-text'},
-          {type: 'a', text: 'MassAudubon', className: 'small-text', href: 'https://www.massaudubon.org/nature-wildlife/mammals-in-massachusetts/bats'},
-          {type: 'text', text: ', ', className: 'small-text'},
-          {type: 'a', className: 'small-text', text: 'Joe Szewczak, Cal Poly Humboldt Bat Lab, 2006, 2011, 2018, 2022, 2024', href: 'https://sonobat.com/download/Eastern_NA_Acoustic_Table.pdf'},              
+            {type: 'table', className: 'med-text',
+              headers: [
+                'Name',
+                'Status',
+                'Typical peak freq',
+                'Typical volume'
+              ],
+              rows: [
+                ['Hoary bat (Lasiurus cinereus)', 'concern', '18-23 kHz', 'variable'],
+                ['Silver-haired bat (Lasionycteris noctivagans)', 'concern', '27-31 kHz', 'moderate'],
+                ['Big brown bat (Eptesicus fuscus)', 'common', '28-32 kHz', 'shouting'],
+                ['Eastern red bat (Lasiurus borealis)', 'concern', '39-49 kHz', 'shouting'],
+                ['Little brown bat (Myotis lucifugus)', 'endangered', '40-47 kHz', 'shouting'],
+                ['Indiana bat (Myotis sodalist)', 'endangered', '41-47 kHz', 'moderate'],
+                ['Tricolored bat (Perimyotis subflavus)', 'endangered', '42-46 kHz', 'whispering'],
+                ['Eastern small-footed bat (Myotis leibii)', 'endangered', '46-52 kHz', 'whispering'],
+                ['Northern long-eared bat (Myotis septentrionalis)', 'endangered', '41-62 kHz', 'whispering'],
+              ]
+            },
+            {type: 'text', text: 'Sources: ', className: 'small-text'},
+            {type: 'a', text: 'MassAudubon', className: 'small-text', href: 'https://www.massaudubon.org/nature-wildlife/mammals-in-massachusetts/bats'},
+            {type: 'text', text: ', ', className: 'small-text'},
+            {type: 'a', className: 'small-text', text: 'Joe Szewczak, Cal Poly Humboldt Bat Lab, 2006, 2011, 2018, 2022, 2024', href: 'https://sonobat.com/download/Eastern_NA_Acoustic_Table.pdf'},              
+          ]},
           {type: 'h3', text: 'What species might I have recorded?'},
           {type: 'text', className: 'bold', text: 'Phonic Group 1A (Peak 19-20 kHz flatter FM-QCF) '},
           {type: 'text', text: 'recordings could be hoary bats ('},
           {type: 'text', text: 'Lasiurus cinereus', className: 'italic'},
-          {type: 'text', text: '). While uncommon, they are the only known bat species in MA to echolocate at these lower frequencies.'},
+          {type: 'text', text: '). While uncommon, they are the only bat species in MA known to echolocate at these lower frequencies. Kaleidoscope Pro also identified these recordings as containing hoary bats.'},
           {type: 'p', text: ''},
           {type: 'text', className: 'bold', text: 'Phonic Group 1B (Peak 25-32 kHz loud FM-QCF) '},
           {type: 'text', text: 'recordings are most likely of big brown bats ('},
           {type: 'text', text: 'Eptesicus fuscus', className: 'italic'},
-          {type: 'text', text: ') who are very common throughout the state. 37% of my recordings were in this phonic group.'},
+          {type: 'text', text: ') who are very common throughout the state. 37% of my recordings were in this phonic group. Kaleidoscope Pro identified most of these recordings as being big brown bats, but also said 5 were silver-haired bats ('},
+          {type: 'text', text: 'Lasionycteris noctivagans', className: 'italic'},
+          {type: 'text', text: ') and 1 was an eastern red bat ('},
+          {type: 'text', text: 'Lasiurus borealis', className: 'italic'},
+          {type: 'text', text: ').'},
           {type: 'p', text: ''},
           {type: 'text', className: 'bold', text: 'Phonic group 2 (Peak 27-38 kHz varied shapes) '},
-          {type: 'text', text: 'is a little mysterious. I have 45+ recordings from this group, but the peak frequencies of many of them are atypical for bats in Massachusetts. Some are flatter FM-QCF and some are almost flat and squiggly. Some calls could be Big brown bats ('},
+          {type: 'text', text: 'is a little mysterious. I have 45+ recordings from this group, but the peak frequencies of many of them are atypical for bats in Massachusetts. Some are flatter FM-QCF and some are almost flat and squiggly. Some calls could be big brown bats ('},
           {type: 'text', text: 'Eptesicus fuscus', className: 'italic'},
-          {type: 'text', text: ') but many calls are somewhat high pitched for this species. Some could be from the uncommon Eastern red bat ('},
+          {type: 'text', text: ') but many calls are somewhat high pitched for this species. Some could be from the uncommon eastern red bat ('},
           {type: 'text', text: 'Lasiurus borealis', className: 'italic'},
-          {type: 'text', text: ') or the endangered Tri-colored bat ('},
+          {type: 'text', text: ') or the endangered tricolored bat ('},
           {type: 'text', text: 'Perimyotis subflavus', className: 'italic'},
-          {type: 'text', text: '). The latter are known to make "squiggles" but the peak frequencies of these species are typically higher.'},
+          {type: 'text', text: '). The latter are known to make "squiggles" but the peak frequencies of these species are typically higher. Kaleidoscope Pro identified most of these recordings as eastern red bat but some were also labeled as NoID or noise.'},
+          
           {type: 'p', text: ''},
           {type: 'text', className: 'bold', text: 'Phonic Group 3A (Peak 37-45 kHz FM & FM-QCF) '},
-          {type: 'text', text: 'comprised of about 16 recordings that are possibly from the uncommon Eastern red bat ('},
+          {type: 'text', text: 'comprised of about 16 recordings that are possibly from the uncommon eastern red bat ('},
           {type: 'text', text: 'Lasiurus borealis', className: 'italic'},
-          {type: 'text', text: ') or the endangered Little brown bat ('},
+          {type: 'text', text: ') or the endangered little brown bat ('},
           {type: 'text', text: 'Myotis lucifugus', className: 'italic'},
-          {type: 'text', text: ') whose calls are consistent with these frequencies and shapes. More expertise and investigation would be helpful to differentiate the two.'},
+          {type: 'text', text: ') whose calls are consistent with these frequencies and shapes. More expertise and investigation would be helpful to differentiate the two. Kaleidoscope Pro identified these recordings as a mix of eastern red bats, tricolored bats ('},
+          {type: 'text', text: 'Perimyotis subflavus', className: 'italic'},
+          {type: 'text', text: ') and Indiana bats ('},
+          {type: 'text', text: 'Myotis sodalist', className: 'italic'},
+          {type: 'text', text: '), while a few recordings were labeled as NoID or noise.'},
           {type: 'p', text: ''},
           {type: 'text', className: 'bold', text: 'Phonic Group 3B (Peak 53 kHz FM) '},
-          {type: 'text', text: 'consisted of a single recording with higher-pitched FM calls that could possibly come from the Eastern small-footed bat ('},
+          {type: 'text', text: 'consisted of a single recording with higher-pitched FM calls that could possibly come from the eastern small-footed bat ('},
           {type: 'text', text: 'Myotis leibii', className: 'italic'},
-          {type: 'text', text: ') or Northern long-eared bat ('},
+          {type: 'text', text: ') or northern long-eared bat ('},
           {type: 'text', text: 'Myotis septentrionalis', className: 'italic'},
-          {type: 'text', text: '). Both are endangered in MA, but their whispering calls are consistent with this frequency.'},
+          {type: 'text', text: '). Both are endangered in MA, but their whispering calls are consistent with this frequency. Kaleidoscope Pro identified this recording as an Indiana bat ('},
+          {type: 'text', text: 'Myotis sodalist', className: 'italic'},
+          {type: 'text', text: ') although the peak frequency seems high for that species. '},
           {type: 'p', text: ''},
+          
+          
           {type: 'h3', text: 'Challenges / Things I Learned'},
-          {type: 'p', text: 'I had originally hoped to fully automate my audio feature extraction program but found that it was challenging to choose the right energy threshold and filter cutoffs that best highlight the bat calls given variable factors in the recordings like bat call energy vs. wind energy.  Manual checking the calls highlighted on the waveform and spectrogram and adjusting parameters seemed to work best.'},
-          {type: 'p', text: 'I also found that energy threshold can bias the call duration, slope, and max frequency. For instance, if it\'s very windy or the bat is farther away or quieter, the energy threshold needs to be higher to separate the bat calls from wind, but this artificially shortens call duration and reduces max frequency as the higher frequencies and sustain/release portion of the sound envelope get cutoff, or \'lost in the wind.\''},
+          {type: 'p', text: 'I had originally hoped to fully automate my audio feature extraction program but found that it was challenging to automatically select the right energy threshold and filter cutoffs that best highlight the bat calls given variable factors in the recordings including bat call energy vs. wind energy.  So I created a semi-automated program that shows the waveform and spectrogram and prompts the user to adjust the energy threshold, ensuring the calls are correctly highlighted before the program automatically extracts features.'},
+          {type: 'p', text: 'I also found that energy threshold can bias the call duration, slope, and max frequency. For instance, if it\'s very windy or the bat is farther away or quieter, the energy threshold needs to be higher to separate the bat calls from wind, but this artificially shortens call duration and reduces max frequency as the higher frequencies and sustain/release portion of the sound envelope get cutoff or \'lost in the wind.\' This means that max frequency and duration were not as reliable as min frequency and frequency of peak energy.'},
           {type: 'text', text: 'High- and low-pass filter cutoffs also needed to be manually adjusted to account for bats of very different frequencies who were sometimes present in the same recording, as well as cut out loud high-pitched insects like katydids who were sometimes present.'},
           {type: 'h3', text: 'Next Steps'},
-          {type: 'p', text: 'It would be great to compare my results with results from professional software, and learn about the methods other researchers use to adjust energy thresholds and high- and low-pass filter cutoffs. I would also like to learn more advanced methods of capturing call shape such as multiple slopes, or using machine learning methods like image recognition for spectrograms to classify calls.'},
+          {type: 'text', text: 'It would be great to compare my results with results from professional software, and learn about the methods other researchers use to adjust energy thresholds and high- and low-pass filter cutoffs. This project was completed prior to the release of Cornell University\'s '},
+          {type: 'a', href: 'https://www.ravensoundsoftware.com/software/raven-workbench/raven-annotate/', text: 'RavenAnnotate'},
+          {type: 'text', text: ', but in the future I would like to explore use these tools to analyze bat calls. Finally, I would like to learn more advanced methods of capturing call shape and explore machine learning methods like image recognition of spectrograms to classify calls.'},
+          {type: 'p', text: ''},
           {type: 'text', text: 'As described in '},
           {type: 'a', text: 'Bat Conservation International (BATCON) 2020 Handbook', href: 'https://www.batcon.org/wp-content/uploads/2020/09/Bat_Echolocation_Research_2nd_Ed_20200918.pdf'},
-          {type: 'text', text: ', identifying species from recordings alone is challenging, as individual bats can vary their calls dramatically, and many species can sound similar. But I was pleased to significant differences between groups in my recordings, suggesting grouping into phonic groups that fit certain species is possible.'},
+          {type: 'text', text: ', identifying species from recordings alone is challenging, as individual bats can vary their calls dramatically, and many species can sound similar. But I was pleased to find significant differences between groups in my recordings, suggesting species identification is possible through audio feature extraction.'},
   
-          {type: 'h2', text: 'References'},
+          {type: 'h2', text: 'Resources'},
           {type: 'ul', elements: [
             [{type: 'a', text: 'Bat Conservation International (BATCON) 2020 Handbook', href: 'https://www.batcon.org/wp-content/uploads/2020/09/Bat_Echolocation_Research_2nd_Ed_20200918.pdf'}],
             [{type: 'a', text: 'Bats of Massachusetts', href: 'https://www.mass.gov/info-details/bats-of-massachusetts'}],
@@ -1332,7 +1433,7 @@ export const projects: Project[] = [
     path: 'frog-classifier',
     short_title: 'Frog Classifier',
     title: 'Frog Classifier',
-    date: '',
+    date: 'February 2025',
     topics: [TopicNames.MACHINELEARNING],
     visible: true,
     featured: true,
@@ -1498,7 +1599,7 @@ export const projects: Project[] = [
     ],
     project_details: [],
   },
-  // speech-recognition --> DONE!!
+  // accent-classifier --> DONE!!
   {
     path: 'accent-classifier',
     short_title: 'Accent Classifier',
@@ -2565,6 +2666,18 @@ export const techStackData: TechStackData = [
     name: 'Weights & Biases',
     icon: wandb,
     href: 'https://wandb.ai/site/',
+  },
+  {
+    type: 'amazonsagemaker',
+    name: 'Amazon SageMaker',
+    icon: amazonSagemaker,
+    href: 'https://aws.amazon.com/campaigns/sagemaker/',
+  },
+  {
+    type: 'mlflow',
+    name: 'MLFlow',
+    icon: mlflow,
+    href: 'https://mlflow.org/',
   },
 
   // Front-end libraries
