@@ -182,55 +182,25 @@ export const projects: Project[] = [
         type: 'div',
         className: 'project-details-restricted-width',
         elements: [
-          {type: 'h2', text: 'Abstract'},
+          {type: 'h2', text: 'Introduction'},
           {type: 'div', className: 'row-with-text-and-pic', elements: [
-            {type: 'p', text: 'Better understanding the communication systems of other species can improve human empathy, animal welfare, and support conservation efforts.  It is believed that flock birds vocalize to coordinate flock behavior, and that their vocalizations reveal information about their activity, emotions, and ability to adjust to environmental conditions.  In this study, 6 hens were recorded in a backyard coop/run setting doing various behaviors (foraging, dust bathing, nesting, roosting, etc.) over the course of a year. The calls were separated into individual calls where only 1 chicken was vocalizing at a time with voice activity detection (VAD). Then, audio features were extracted and used to identify that the calls fit into 8 major clusters. Next steps for future research are suggested, including examining nuances within clusters, pairing with behavioral observations, and extending this methodology to other vocally complex species to decode animal communication.'},
+            {type: 'p', text: 'Better understanding the communication systems of other species can improve human empathy, animal welfare, and support conservation. Birds often vocalize to coordinate flock behavior, and their vocalizations reveal information about their activity, emotions, and environmental conditions. Previous research has indicated that chicken vocalizations are extremely similar to their wild ancestors who relied on flock communication to survive (Collias, 1987).'},
             {type: 'img', src: chicken4, className: '', alt: 'hen making sounds'},
           ]},
           
-          {type: 'h2', text: 'Introduction'},
-          {
-            type: 'DisclosurePanel',
-            title: 'Why study chickens?',
-            titleEl: 'h3',
-            expandedByDefault: false,
-            children: [
-              {type: 'p', text: 'Chickens have a complex vocal repertoire that includes clucks, squawks, purrs, growls, whines, hisses, deep moans, soft clicks and more. They combine these sounds to make patterned calls. Although they were domesticated over 4,000 years ago, previous research has indicated that the vocalizations of free roaming chickens are extremely similar to their wild ancestors who relied on flock communication for their survival (Collias, 1987).  Prior research also indicates that domestic chickens have similar intelligence and socially-emotional complexity as other birds and mammals (Marino, 2017).'},
-              {type: 'p', text: 'Chickens can be easy to study. Their tameness makes them easy to observe and record without disrupting their behavior. The diversity of breeds and colors can make it easy to visually identify different individuals in mix-breed flocks. Finally, being the most populous bird on earth, they are easy to find in a variety of settings.'},
-              {type: 'p', text: 'By starting with chickens, we may uncover the complex ways that inter-flock communication supports survival in changing environments and apply these research methods to decode communication systems in wild birds in need of conservation support. Finally, better understanding chicken communication can also support chicken welfare in a variety of settings.'},
-            ],
-          },
-          {
-            type: 'DisclosurePanel',
-            title: 'Human perception and listening to chickens',
-            titleEl: 'h3',
-            expandedByDefault: false,
-            children: [
-              {type: 'p', text: 'Chickens vocalize between 50 Hz to 10 kHz (Tefera, 2012), which is within the human hearing range. Previous research has found that chickens make about 24 different sound patterns (Collias, 1987) with about 30 different syllables (Tefera, 2012), and that their vocalizations can reliably indicate illness vs. health, and stress vs. non-stress (Manikandan & Neethirajan, 2025). However, traditional methods of classifying chicken calls often rely on human perception to identify which calls sound different from others. While important, this can introduce some anthropocentric bias.'},
-              {type: 'p', text: 'For instance, during infant development, the human brain loses the ability to differentiate sounds that are not used or are used interchangeably in our native language creating a phenomenon called phonemic blindness. People learning a second language often run into this issue when they cannot perceptually distinguish certain phonemes that are allophones or not used in their native language. Given our struggle to perceive sounds within our own species, it\'s possible that we cannot perceive the nuanced differences in sound patterns made by other species. This suggests that it is important to include acoustic/computational methods to detect differences between sounds.'},
-            ],
-          },
-          {
-            type: 'DisclosurePanel',
-            title: 'Clustering by acoustic properties',
-            titleEl: 'h3',
-            expandedByDefault: false,
-            children: [
-              {type: 'p', text: 'According to Darwin\'s principal of antithesis, opposite emotions and situations should result in communicative sounds with opposite acoustic properties. For instance, alarm calls due to a predator should have opposite acoustic properties from sounds made during comfortable scenarios like foraging or resting.'},
-              {type: 'p', text: 'One possible starting place for decoding animal communication is to start with acoustic feature extraction and statistical clustering to identify groupings of sounds that have opposite qualities. Once major acoustic clusters are identified, they can be used to train a model that can transcribe recordings based on those clusters. Then sounds within the same cluster can be explored to identify more nuanced differences. When paired with behavioral observation and playback experiments, we may be able to determine which sound properties contain meaning to species in question while seeking to avoid anthropocentric bias.'},
-              {type: 'p', text: 'The goal of this study is to record a small flock of hens vocalizing during a variety of natural behaviors, separate out individual calls from one another, extract acoustic features, and then use K-means clustering to create broad categories of calls with opposite acoustic properties.'},
-             ],
-          },
+          {type: 'p', text: 'In this project, I explore how unsupervised machine learning can uncover insights in the structure of bird communication. According to Darwin\'s principal of antithesis, opposite situations should result in communication with opposite properties.  For instance, alarm calls due to a predator should have opposite acoustic properties from sounds made during comfortable scenarios like foraging or resting. Following this idea, clustering sounds by their acoustic properties can be a way to group vocalizations into clusters with opposing properties that are theoretically related to opposing situations (e.g., danger vs. comfort). With this hypothesis in mind, I recorded a small flock of hens and explored the data with 5 main steps:'},
+              
+
           {
             type: 'GoalAndGithub',
             elements: [
-              {type: 'h2', text: 'Goals'},
+              {type: 'h3', text: 'Goals'},
               {type: 'ol', elements: [
                 [{type: 'text', text: 'Isolate individual chicken calls'}],
                 [{type: 'text', text: 'Extract auditory features from each call'}],
-                [{type: 'text', text: 'Utilize principal components analysis to reduce dimensionality in the data while retaining features that capture most of the variance'}],
-                [{type: 'text', text: 'Utilize K-means clustering to fit calls into clusters based on their acoustic features'}],
-                [{type: 'text', text: 'Examine the means and standard deviations of each cluster\'s features, as well as audio and spectrograms of calls to gain a human interpretation of each cluster'}],
+                [{type: 'text', text: 'Reduce dimensionality in the data'}],
+                [{type: 'text', text: 'Cluster calls by their acoustic properties'}],
+                [{type: 'text', text: 'Explore the clusters by examining the means and standard deviations of their features, and examining a sample of audio and spectrograms from each'}],
               ]},
             ],
             href: 'https://github.com/KaySRubio/audio-signal-analysis/tree/main/notebooks/chickens',
@@ -243,7 +213,7 @@ export const projects: Project[] = [
             titleEl: 'h3',
             expandedByDefault: false,
             children: [
-              {type: 'p', text: '6 heritage breed hens in a backyard coop/run setting were recorded over the course of a year doing a variety of natural behaviors including foraging, dust bathing, nesting, and roosting. I used a Zoom H1n directional microphone and the chickens were often spread out over a large space making it possible to obtain many recordings of only 1 chicken vocalizing at a time.'},
+              {type: 'p', text: '6 heritage breed hens in a backyard coop/run setting were recorded over the course of a year doing a variety of natural behaviors including foraging, dust bathing, nesting, and roosting. A Zoom H1n directional microphone was used and the chickens were often spread out over a large space making it possible to obtain many recordings of only 1 chicken vocalizing at a time.'},
             ],
           },
           {
@@ -252,15 +222,15 @@ export const projects: Project[] = [
             titleEl: 'h3',
             expandedByDefault: false,
             children: [
-              {type: 'p', text: 'For this analysis it is important that the recordings contain individual calls of only 1 chicken at a time, without overlap of multiple individuals.'},
-              {type: 'p', text: 'Speaker diarization models trained on human speech accomplish this task in human recordings, clustering different voices by their vocal qualities, identifying different individuals by timestamps and overlap where more than 1 individual is speaking at once.  Speaker diarization models are neural networks trained on annotated recordings.'},
-              {type: 'text', text: 'To explore if existing speaker diarzation models can identify individual chicken voices a composite recording was created in Audacity with 3 known individual chickens vocalizing one after another with some overlap. Then '},
+              {type: 'p', text: 'For this analysis it is important that the recordings contain individual calls of only one chicken at a time, without overlap of multiple individuals.'},
+              {type: 'p', text: 'Speaker diarization models trained on human speech accomplish this task in human recordings, clustering different voices by their vocal qualities, and identifying when more than one individual is speaking at once by timestamp overlap.'},
+              {type: 'text', text: 'Can a speaker diarization model trained on human voices work on chickens? To explore this question, I created a composite recording in Audacity with 3 known individual chickens vocalizing one after another with some overlap. Then I used '},
               {type: 'a', href: 'https://docs.nvidia.com/nemo-framework/user-guide/latest/nemotoolkit/asr/speaker_diarization/models.html', text: 'NeMo Sortformer Diairizer'},
               {type: 'text', text: ' and '},
               {type: 'a', href: 'https://huggingface.co/pyannote/speaker-diarization-3.1', text: 'Pyannote Speaker Diarization model'},
-              {type: 'text', text: ' were used to generate timestamps that ideally would highlight individual voices and show overlap.'},
+              {type: 'text', text: ' to generate timestamps that ideally would highlight individual voices and show overlap.'},
               {type: 'p', text: 'Unfortunately, the timestamp output from both diarizers did not identify individual chicken voices correctly. Most chicken sounds were excluded from the timestamps and instead of 3 speakers, both diarizers identified only 1 speaker in seemingly random locations through the recording.  These results suggest that speaker diarization models trained to cluster individual human voices are not generalizable to chickens and would require species-specific fine-tuning before they can be used.'},
-              {type: 'p', text: 'Since automatic speaker diarization models and annotated datasets appropriate for chickens are not available, recordings were manually examined to cut out portions where more than 1 chicken is vocalizing based on presence of multiple fundamental frequencies and overlapping sounds.  Background noises were also cut out including the occasional dog bark, human voice, hawk call, loud wind gust, bells ringing (in chick recordings), or loud scratching sounds from the chickens digging.'}],
+              {type: 'p', text: 'In place of automatic speaker diarization, the recordings were manually examined to cut out portions where more than 1 chicken is vocalizing based on presence of multiple fundamental frequencies and overlapping sounds. Background noises were also cut out including the occasional dog bark, human voice, loud wind gust, or loud scratching sounds from the chickens digging.'}],
           },
           {
             type: 'DisclosurePanel',
@@ -286,6 +256,7 @@ export const projects: Project[] = [
               {type: 'ul', elements: [
                 [{type: 'text', text: 'duration (ms)'}],
                 [{type: 'text', text: 'time to next call (ms)'}],
+                [{type: 'text', text: 'zero-crossing rate (ZCR)'}],
                 [{type: 'text', text: 'min and max frequency (Hz)'}],
                 [{type: 'text', text: 'frequency of peak energy (Hz)'}],
                 [{type: 'text', text: 'frequency with most energy (Hz) in first segment, second segment, and third segment of call'}],
@@ -295,7 +266,7 @@ export const projects: Project[] = [
                 [{type: 'text', text: 'spectral bandwidth'}],
                 [{type: 'text', text: 'MFCCs 0-9 with mean, standard deviation, min and max'}],
               ]},
-              {type: 'p', text: 'Acoustic features for each call were exported along with metadata related the call including the original filename and timestamps of the call within the file.  The resulting dataset contained that contained 1 row per call, and 818 calls were from adult chickens, and 276 were from chicks.'},
+              {type: 'p', text: 'Acoustic features for each call were exported along with metadata related the call including the original filename and timestamps of the call within the file.  The resulting dataset contained 818 calls.'},
             ],
           },
           {
@@ -304,10 +275,30 @@ export const projects: Project[] = [
             titleEl: 'h3',
             expandedByDefault: false,
             children: [
-              {type: 'p', text: 'Prior to clustering, I normalized all variables and performed principal component analysis to reduce dimensionality in the data while still explaining 90% of the variance for adults.  I used the Elbow method to determine that 8 was a good number of clusters. I then used K-means clustering to fit calls into clusters based on their acoustic features.'}
+              {type: 'p', text: 'Prior to clustering, I normalized all variables and performed principal component analysis to reduce dimensionality in the data while still explaining 90% of the variance.  I used the Elbow method to determine that 8 was a good number of clusters. I then used K-means clustering to fit calls into clusters based on their acoustic features.'}
             ],
           },
           {type: 'h2', text: 'Results'},
+          {type: 'p', text: 'Means and standard deviations for the 8 clusters on selected acoustic features are shown in the table below.'},
+          {
+            type: 'table', headers: ['Feature', 'Cluster 0', 'Cluster 1', 'Cluster 2', 'Cluster 3', 'Cluster 4', 'Cluster 5', 'Cluster 6', 'Cluster 7'],
+            rows: [
+              ['count', '141', '29', '69', '72', '34', '111', '135', '227'],
+              ['duration (ms)', '89 ±140', '90 ±107', '629 ±480', '193 ±258', '117 ±198', '241 ±209', '251 ±225', '150 ±220'],
+              ['time to next call (ms)', '259 ±434', '291 ±468', '1180 ±1674', '206 ±335', '308 ±146', '209 ±382', '198 ±220', '135 ±169'],
+              ['zero-crossing rate', '.08 ±.01', '.15 ±.06', '.10 ±.02', '.08 ±.02', '.05 ±.01', '.07 ±.01', '.11 ±.02', '.06±.01'],
+              ['min frequency (Hz)', '476 ±240', '273 ±269', '735 ±266.', '342 ±165', '210 ±56', '595 ±148', '482 ±141', '238 ±100'],
+              ['max frequency (Hz)', '1442 ±399', '3093 ±2872', '1434 ±604', '1405 ±413', '889 ±120', '965 ±171', '1897 ±651', '1204 ±342'],
+              ['peak frequency (Hz)', '1018 ±159', '616 ±359', '1000 ±135', '770 ±208', '593 ±157', '771 ±124', '1059 ±207', '551 ±196'],
+              ['frequency slope', '219 ±4780', '-5879 ±12766', '394 ±1535', '-228 ±5781', '-2232 ±6264', '492 ±2400', '595 ±2032', '-154 ±4540'],
+              ['spectral bandwidth', '1750 ±298', '2738 ±295.', '1569 ±275', '1809 ±318', '1209 ±291', '1604 ±284', '1816 ±291', '1767 ±331'],
+              
+              
+            ],
+          },
+          {type: 'p', text: 'More information and audio/spectrogram examples from each cluster are in the panels below.'},
+          {type: 'p', text: 'Click the purple play button to listen the the example chicken calls.'},
+          
           {
             type: 'DisclosurePanel',
             title: 'Cluster 0',
@@ -315,7 +306,7 @@ export const projects: Project[] = [
             expandedByDefault: true,
             children: [
 
-              {type: 'p', text: 'Cluster 0 (141 calls) includes very short calls (89 ms) of a higher frequency (1018 Hz) with medium spectral bandwidth and ZCR. In the example below, the "egg song" consists of many notes in cluster 0 followed by a long loud note in cluster 6. '},
+              {type: 'p', text: 'Cluster 0 (141 calls) includes very short calls (mean 89 ms) of a higher frequency (mean 1018 Hz) with medium spectral bandwidth and ZCR. In the example below, the "egg song" consists of many notes in cluster 0 followed by a long loud note in cluster 6. '},
               {type: 'img', className: 'width100', src: egg_song, alt: 'Spectrogram of a chicken egg song showing multiple short notes labeled cluster 0 followed by one long note labeled cluster 6'},
               {
                 type: 'playAudio',
@@ -331,7 +322,7 @@ export const projects: Project[] = [
             expandedByDefault: true,
             children: [
 
-              {type: 'p', text: 'Cluster 1 (29 calls) includes also very short calls (90 ms) with a lower frequency (661 Hz), much higher ZCR and largest spectral bandwidth and frequency change over the course of the call, as well as a lot of slope variability. Recordings of hens in nest boxes, such as the recording below, often contain many short notes in clusters 1 and 3, as well as longer wavering notes from cluster 2. '},
+              {type: 'p', text: 'Cluster 1 (29 calls) includes also very short calls (mean 90 ms) with a lower frequency (mean 661 Hz), much higher ZCR and largest spectral bandwidth and frequency change over the course of the call, as well as a lot of slope variability. Recordings of hens in nest boxes, such as the recording below, often contain many short notes in clusters 1 and 3, as well as longer wavering notes from cluster 2. '},
               {type: 'img', className: 'width100', src: nesting, alt: 'Spectrogram showing chicken sounds related to nesting'},
               {
                 type: 'playAudio',
@@ -347,7 +338,7 @@ export const projects: Project[] = [
             expandedByDefault: true,
             children: [
 
-              {type: 'p', text: 'Cluster 2 (69 calls) includes very long calls (629 ms) which vary a lot in length and tend to be followed by long silences. They are relatively high frequency (1000 Hz), have a narrower spectral bandwidth, relatively high ZCR. They vary in length and frequency patterns as the examples below show.'},
+              {type: 'p', text: 'Cluster 2 (69 calls) includes very long calls (mean 629 ms) which vary a lot in length and tend to be followed by long silences. They are relatively high frequency (mean 1000 Hz), have a narrower spectral bandwidth, relatively high ZCR. They vary in length and frequency patterns as the examples below show.'},
               {type: 'img', className: 'width100', src: wavering, alt: 'Spectrogram showing chicken vocalizations in cluster 2'},
               {
                 type: 'playAudio',
@@ -368,7 +359,7 @@ export const projects: Project[] = [
             expandedByDefault: true,
             children: [
 
-              {type: 'p', text: 'Cluster 3 (72 calls) includes medium-length calls (193 ms) of medium frequency (770 Hz) and medium ZCR and medium spectral bandwidth. The frequency may change a lot over the course of the call. These clucks are often made by hens in the nest box and combined with notes in clusters 2 and 0 as shown in the example below. '},
+              {type: 'p', text: 'Cluster 3 (72 calls) includes medium-length calls (mean 193 ms) of medium frequency (mean 770 Hz) and medium ZCR and medium spectral bandwidth. The frequency may change a lot over the course of the call. These clucks are often made by hens in the nest box and combined with notes in clusters 2 and 0 as shown in the example below. '},
               {type: 'img', className: 'width100', src: nesting2, alt: 'Spectrogram showing chicken vocalizations'},
               {
                 type: 'playAudio',
@@ -383,7 +374,7 @@ export const projects: Project[] = [
             expandedByDefault: true,
             children: [
 
-              {type: 'p', text: 'Cluster 4 (34 calls) includes shorter calls (117 ms) that are relatively low frequency (593 Hz) with the lowest spectral bandwidth and low ZCR. The example below is of a broody hen making a low repeated cluck while she searches for a nesting site.'},
+              {type: 'p', text: 'Cluster 4 (34 calls) includes shorter calls (mean 117 ms) that are relatively low frequency (mean 593 Hz) with the lowest spectral bandwidth and low ZCR. The example below is of a broody hen making a low repeated cluck while she searches for a nesting site.'},
               {type: 'img', className: 'width100', src: broody, alt: 'Spectrogram showing chicken vocalizations'},
               {
                 type: 'playAudio',
@@ -398,7 +389,7 @@ export const projects: Project[] = [
             expandedByDefault: true,
             children: [
 
-              {type: 'p', text: 'Cluster 5 (111 calls) includes medium-length calls (241 ms) that are medium frequency (771 Hz) with medium ZCR and spectral bandwidth and vary the least in frequency over the course of the call. These sounds are often heard in the run when a human approaches with food, such as the calls below.'},
+              {type: 'p', text: 'Cluster 5 (111 calls) includes medium-length calls (mean 241 ms) that are medium frequency (mean 771 Hz) with medium ZCR and spectral bandwidth and vary the least in frequency over the course of the call. These sounds are often heard in the run when a human approaches with food, such as the calls below.'},
               {type: 'img', className: 'width100', src: begging, alt: 'Spectrogram showing chicken vocalizations'},
               {
                 type: 'playAudio',
@@ -413,7 +404,7 @@ export const projects: Project[] = [
             expandedByDefault: true,
             children: [
 
-              {type: 'p', text: 'Cluster 6 (135 calls) includes relatively long calls (251 ms) that are the highest frequency (1059 Hz) with high spectral bandwidth with high ZCR and may be made in quick succession. These harsh sounds are made in a variety of contexts including the loud long harsh sounds of a hen temporarily denied access to her nesting site (first example below), as well as shorter calls that are part of a long-call sequence preceeded by more harmonic calls (second example below).'},
+              {type: 'p', text: 'Cluster 6 (135 calls) includes relatively long calls (mean 251 ms) that are the highest frequency (mean 1059 Hz) with high spectral bandwidth with high ZCR and may be made in quick succession. These harsh sounds are made in a variety of contexts including the loud long harsh sounds of a hen temporarily denied access to her nesting site (first example below), as well as shorter calls that are part of a long-call sequence preceeded by more harmonic calls (second example below).'},
               {type: 'img', className: 'width100', src: frustration, alt: 'Spectrogram showing chicken vocalizations'},
               {
                 type: 'playAudio',
@@ -434,7 +425,7 @@ export const projects: Project[] = [
             expandedByDefault: true,
             children: [
 
-              {type: 'p', text: 'Cluster 7 (227 calls) includes medium-length calls (150 ms) that are low frequency (551 Hz) with medium spectral bandwidth, that may be made in quick succession and have low ZCR. These sounds can often be described as growls like the one below recorded in the coop.'},
+              {type: 'p', text: 'Cluster 7 (227 calls) includes medium-length calls (mean 150 ms) that are low frequency (mean 551 Hz) with medium spectral bandwidth, that may be made in quick succession and have low ZCR. These sounds can often be described as growls like the one below recorded in the coop.'},
               {type: 'img', className: 'width100', src: growl, alt: 'Spectrogram showing chicken vocalizations'},
               {
                 type: 'playAudio',
@@ -443,15 +434,16 @@ export const projects: Project[] = [
             ],
           },
           {type: 'h2', text: 'Discussion'},
-          {type: 'p', text: 'The goal of this study was to cluster chicken sounds using their acoustic properties. It\'s the beginning step in a method that may help decode animal vocalizations using chickens as an example species. Once major acoustic clusters are identified, they can be used to train a model that can transcribe recordings based on those clusters. Then sounds within the same cluster can be explored to identify more nuanced differences. When paired with behavioral observation and playback experiments, researchers can determine which sound variations have meaning to the chickens.'},
+          {type: 'p', text: 'The goal of this study was to cluster chicken sounds by their acoustic properties.  In backyard hens, 8 clusters of vocalizations with differing acoustic features were identified. They had different means and standard deviations with regards to duration, frequency of most energy, spectral bandwidth, zero-crossing rate, and other features. When examples from each cluster were gathered, it was noted that different clusters sound quite different from each other, and that there is also diversity within the cluster.'},
+          {type: 'p', text: 'The clusters can be used to transcribe multi-syllabic chicken calls. For instance, the common hen "egg song" consisted of many cluster-0 sounds followed by one cluster-6 sound.  These findings are a starting point that can branch off into many interesting directions, such as examining the nuance within clusters, training models that can transcribe multisyllabic calls, and pairing with behavioral observations.'},
           {
             type: 'DisclosurePanel',
             title: 'Limitations',
             titleEl: 'h3',
             expandedByDefault: true,
             children: [
-              {type: 'p', text: 'This study includes adult hens who engage in some of their natural behaviors (foraging, nesting, digging holes, dust bathing, sunbathing, chasing games, roosting) but does not include roosters, younger chickens or chicks. Additionally, sounds related to pain, injury, hunger, disease, and predator defense were also not well represented in the dataset.  Future research should aim to include sounds related to defending territory, mating, male-male competition, maternal care, etc.'},
-              {type: 'p', text: 'Additionally, the acoustic features extracted may not have captured all meaningful qualities of the call.  For instance, amplitude was not captured because the chickens varied in distance from the microphone and all audio was normalized prior to analysis. However, volume likely carries important meaning for chicken calls where loud calls are intended to be heard by outsiders, while quieter calls are meant for conspecifics close-by. Future research should aim to include some measure of amplitude.  Additionally, many longer calls contained patterns of frequency changes over time which were not captured by the relatively simple slope measures. It is unknown if these frequency variations have meaning for the chickens.  Future research should explore frequency variation inside calls. Finally, the feature extraction program wasn\'t set up to handle sounds shorter than 50ms, but chickens do make some sounds this short, including quiet ticking sounds like a clock that were observed coming from a hen searching for a nest site. Future research should include these briefer sounds.'},
+              {type: 'p', text: 'This study did not include roosters or chicks, so many chicken sounds related to mating, male-male competition, maternal care were not included. Additionally, all the hens were healthy and protected from predators, so sounds related to pain, injury, hunger, disease, and predator defense were also not represented in the dataset. Future research should aim to include a more diverse group of chickens who can engage in a broader array of natural behaviors.'},
+              {type: 'p', text: 'The acoustic features extracted may not have captured all meaningful qualities of the calls. For instance, amplitude was not measured because the chickens varied in distance from the microphone and all audio was normalized prior to analysis.  However, call volume likely carries meaning for the chickens as louder calls may be intended to be heard by outsiders while quieter calls are meant for nearby conspecifics. Additionally, many longer calls contained patterns of frequency changes over time which were not captured by the relatively simple slope measures. It is unknown if these frequency variations have meaning for the chickens. Future research should include more advanced measures of intra-call frequency variation. Finally, the feature extraction program wasn\'t set up to handle sounds shorter than 50ms, but chickens do make some sounds this short and future research should include these briefer sounds.'},
             ],
           },
           {
@@ -460,12 +452,12 @@ export const projects: Project[] = [
             titleEl: 'h3',
             expandedByDefault: true,
             children: [
-              {type: 'p', text: 'Next steps include recording more chickens doing diverse behaviors, clustering and examining nuances within clusters. Furthermore, it is important to pair recordings with behavioral observations that can be gathered through traditional observation or through computer vision trained to label videos of behaviors. This can get closer to the question of meaning behind the vocalizations.'},
-              {type: 'p', text: 'For instance, one hypothesis could be that flock animals vocalize primarily to coordinate their activity, which would be supported if evidence showed that chickens make one set of sounds while dustbathing, and a different set of sounds when returning to the roost at night.  Another hypothesis is that flock animals vocalize primarily to reinforce their social hierarchy and reduce conflict over limited resources. For example, if a dominant hen makes the same sound patterns in many different scenarios (foraging, dust bathing, roosting), different sounds might indicate to subordinates when they are allowed to access a resource (food, a nesting site, etc.), versus when only the dominant members are to access the resource.'},
-              {type: 'p', text: 'Better understanding the nuances of animal communication systems can help us understand how social animals survive as a group and can support interventions for conservation in changing environments.'},
+              {type: 'p', text: 'A key next step is to pair audio recordings with video data and behavioral observations. Do the clusters of calls with opposing acoustic features map onto opposing scenarios, as Darwin predicted?  Furthermore, what are the various purposes of chicken vocalizations in opposing situations?'},
+              {type: 'p', text: 'For instance, one hypothesis could be that flock animals vocalize primarily to coordinate their activity, which would be supported if evidence showed that chickens make one set of sounds while dustbathing, and a different set of sounds when going to roost at night. Another hypothesis is that flock animals vocalize to reinforce their social hierarchy and reduce conflict over limited resources. For example, a dominant hen might make a certain type of sound when communicating to subordinates that they are allowed to access a certain resource (food, a nesting site, etc.) and a different type of sound when they are not allowed to access the resource.'},
+              {type: 'p', text: 'Better understanding the nuances of animal communication systems can help us understand how social animals survive as a group and can support interventions for animal welfare and conservation.'},
             ],
           },
-          {type: 'h2', text: 'References'},
+          {type: 'h2', text: 'References and Resources'},
           {type: 'ul', elements: [
             [{type: 'text', text: 'Collias, N. E. (1987). The vocal repertoire of the red junglefowl: A spectrographic classification and the code of communication. The Condor, 89:510-524. doi: 10.2307/1368641'}],
             [{type: 'text', text: 'Marino, L. (2017). Thinking chickens: a review of cognition, emotion, and behavior in the domestic chicken. Animal Cognition, 20:127-147. doi: 10.1007/s10071-016-1064-4'}],
