@@ -132,9 +132,11 @@ const timeItTakesAHuggingFaceSpaceToWakeUp = 180;
 export const homePageData = {
   // headline: 'Listener, Developer, Explorer',
   headline: '',
+  desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics. By day, I\'m part of an AI innovation team at an EdTech company. I explore ways that automatic speech recognition and related technologies can help children learn to read. By night, I record wildlife and analyze sound.',
+  long_desc: 'I have a background in psychology and neurology research and am excited about how neural networks can be used to develop speech-biomarkers of neurological disease. I\'m also excited about training neural networks to identify species and uncover meaning in animal vocalizations. Please message me below if you\'d like to collaborate!',
   // desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics',
-  desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics. By day, I\'m part of an AI innovation team at an EdTech company. I build educational websites that use speech recognition to evaluate children\'s reading skills.',
-  long_desc: 'By night, I record wildlife and analyze sound. My dream is to use neural networks to decode structure and meaning in animal communication. I also hope to build apps that engage the public in bioacoustics and conservation research.',
+  // desc: 'I\'m a software engineer and amateur scientist with a passion for bioacoustics. By day, I\'m part of an AI innovation team at an EdTech company. I build educational websites that use speech recognition to evaluate children\'s reading skills.',
+  // long_desc: 'By night, I record wildlife and analyze sound. My dream is to use neural networks to decode structure and meaning in animal communication. I also hope to build apps that engage the public in bioacoustics and conservation research.',
   //long_desc: 'As a React developer I build interactive educational websites. In my free time I dabble in machine learning and record wildlife. My dream is to analyze animal communication to decode structure and meaning and use the web to engage the public in bioacoustics.',
 
 }
